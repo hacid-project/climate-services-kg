@@ -9,7 +9,7 @@ WHERE {
         ?class a owl:Class
     }
     FILTER(! STRSTARTS(STR(?class), STR(owl:)))
-    FILTER(! STRSTARTS(STR(?property), STR(rdf:)))
-    FILTER(! STRSTARTS(STR(?property), STR(rdfs:)))
+    FILTER(! STRSTARTS(STR(?class), STR(rdf:)))
+    FILTER(! STRSTARTS(STR(?class), STR(rdfs:)))
 }
 ORDER BY ?class
