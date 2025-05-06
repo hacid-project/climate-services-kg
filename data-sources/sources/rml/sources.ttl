@@ -18,7 +18,7 @@
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix top: <https://w3id.org/hacid/onto/top-level/> .
-@prefix cs: <https://w3id.org/hacid/onto/cs/> .
+@prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
 @prefix idlab: <http://example.com/idlab/function/> .
 @base <https://w3id.org/hacid/data/rml/> .
@@ -43,7 +43,7 @@
 
 	rr:subjectMap [
 	    rr:template "https://w3id.org/hacid/cs/data/model/{source_id}" ; 
-            rr:class cs:Model
+            rr:class ccso:Model
 	] ;
 	
 	rr:predicateObjectMap [
@@ -58,7 +58,7 @@
 
         {% for descr in model_descrs %}
         rr:predicateObjectMap [
-	  rr:predicate cs:hasModelComponent;
+	  rr:predicate ccso:hasModelComponent;
 	  rr:objectMap :ModelDescrControl_model_{{descr}}
 	] ;
         {% endfor %}

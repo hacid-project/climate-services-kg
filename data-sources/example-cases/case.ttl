@@ -44,11 +44,11 @@
     wf:CaseCreator org:MetOffice ;
     wf:CaseSolver people:CaseSolver1 .
 
-org:MetOffice a top:Organisation ;
+org:MetOffice a top:Organization ;
     rdfs:label "Met Office"@en ;
     rdfs:comment "United Kingdom's national weather service"@en .
     
-org:TheWildlifeTrusts a top:Organisation ;
+org:TheWildlifeTrusts a top:Organization ;
     rdfs:label "The Wildlife Trusts"@en ;
     rdfs:comment "The Wildlife Trusts is the trading name of the Royal Society of Wildlife Trusts, an organisation made up of 47 local Wildlife Trusts in the United Kingdom, the Isle of Man and Alderney"@en .
 

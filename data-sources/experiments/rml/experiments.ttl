@@ -18,7 +18,7 @@
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix top: <https://w3id.org/hacid/onto/top-level/> .
-@prefix cs: <https://w3id.org/hacid/onto/cs/> .
+@prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
 @base <https://w3id.org/hacid/data/rml/> .
 
@@ -42,7 +42,7 @@
 
 	rr:subjectMap [
 	    rr:template "https://w3id.org/hacid/cs/data/experiment/{experiment_id}" ; 
-            rr:class cs:Experiment
+            rr:class ccso:Experiment
 	] ;
 	
 	rr:predicateObjectMap [
@@ -67,12 +67,12 @@
 	] ;
 
         rr:predicateObjectMap [
-	  rr:predicate cs:usesRequiredModel;
+	  rr:predicate ccso:usesRequiredModel;
 	  rr:objectMap :RequiredModels
 	] ;
 
         rr:predicateObjectMap [
-	  rr:predicate cs:usesAdditionalAllowedModel;
+	  rr:predicate ccso:usesAdditionalAllowedModel;
 	  rr:objectMap :OptionalModels
 	] ;
 
@@ -85,7 +85,7 @@
 	] ;
 
         rr:predicateObjectMap [
-	  rr:predicate cs:minNumberYearsPerSimulation;
+	  rr:predicate ccso:minNumberYearsPerSimulation;
 	  rr:objectMap [
             rml:reference "min_number_yrs_per_sim" ;
             rr:datatype xsd:int
@@ -141,7 +141,7 @@
 	] ;
 
 	rr:predicateObjectMap [
-	  rr:predicate cs:hasExperiment;
+	  rr:predicate ccso:hasExperiment;
 	  rr:objectMap [
               rr:template "https://w3id.org/hacid/cs/data/experiment/{experiment_id}" ;
               rr:termType rr:IRI 
@@ -156,7 +156,7 @@
 	rr:predicateObjectMap [
 	  rr:predicate rdf:type;
 	  rr:objectMap [ 
-	  	rr:constant cs:Experiment ;
+	  	rr:constant ccso:Experiment ;
 	  	rr:termType rr:IRI
 	  ]
 	] .
@@ -169,7 +169,7 @@
 	rr:predicateObjectMap [
 	  rr:predicate rdf:type;
 	  rr:objectMap [ 
-	  	rr:constant cs:Model ;
+	  	rr:constant ccso:Model ;
 	  	rr:termType rr:IRI
 	  ]
 	] ;
@@ -190,7 +190,7 @@
 	rr:predicateObjectMap [
 	  rr:predicate rdf:type;
 	  rr:objectMap [ 
-	  	rr:constant cs:Model ;
+	  	rr:constant ccso:Model ;
 	  	rr:termType rr:IRI
 	  ]
 	] .
@@ -203,7 +203,7 @@
 	rr:predicateObjectMap [
 	  rr:predicate rdf:type;
 	  rr:objectMap [ 
-	  	rr:constant cs:Experiment ;
+	  	rr:constant ccso:Experiment ;
 	  	rr:termType rr:IRI
 	  ]
 	] ;
@@ -238,7 +238,7 @@
             rr:objectMap [ rr:constant "/" ]
         ];
     ];
-    rr:class cs:Experiment .
+    rr:class ccso:Experiment .
 
 
 

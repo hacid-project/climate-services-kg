@@ -466,7 +466,7 @@
 
 :SimulationIRI
     rr:termType rr:IRI ;
-    rr:class ccso:Simulation, ccso:GlobalSimulation ;
+    rr:class ccso:Simulation, ccso:GlobalClimateSimulation ;
     fnml:functionValue [
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
@@ -502,7 +502,7 @@
 
 :InstituteIRI
     rr:termType rr:IRI ;
-    rr:class top:Organisation ;
+    rr:class top:Organization ;
     fnml:functionValue [
         rr:predicateObjectMap [
             rr:predicate fno:executes ;

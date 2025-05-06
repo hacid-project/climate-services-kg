@@ -508,7 +508,7 @@
 
 :InstituteIRI
     rr:termType rr:IRI ;
-    rr:class top:Organisation ;
+    rr:class top:Organization ;
     fnml:functionValue [
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
