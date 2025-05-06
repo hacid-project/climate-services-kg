@@ -11,7 +11,7 @@
 @prefix geodetic: <https://w3id.org/hacid/data/cs/metric-space/geodetic/> .
 @base <https://w3id.org/hacid/data/cs/> .
 
-<world/region> a geo:Geometry, data:SpatialRegion ;
+<world/region> a geo:Geometry, data:GeodeticRegion ;
     rdfs:label "World"@en ;
     geo:asWKT "POLYGON((-180 -90,-180 90,180 90,180 -90))"^^<geo:wktLiteral> .
     rdfs:comment "Geographic region covering the whole Earth surface, as reference for global simulations."@en .

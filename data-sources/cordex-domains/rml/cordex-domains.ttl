@@ -242,7 +242,7 @@
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
-        rr:class data:SpatialRegion, geo:Geometry ;
+        rr:class data:GeodeticRegion, geo:Geometry ;
         rr:template "https://w3id.org/hacid/data/cs/geodetic-region/WGS84/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
     ] ;
 	
@@ -279,7 +279,7 @@
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
-        rr:class data:SpatialRegion, geo:Geometry ;
+        rr:class data:GeodeticRegion, geo:Geometry ;
         rr:template "https://w3id.org/hacid/data/cs/geodetic-region/rotated-WGS84/{pollon},{pollat}/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
     ] ;
 	
