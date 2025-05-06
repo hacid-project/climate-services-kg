@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/hacid/data/> .
+@prefix : <https://w3id.org/hacid/data/cs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -19,7 +19,7 @@
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix gml: <http://www.opengis.net/ont/gml#> .
-@base <https://w3id.org/hacid/data/rml/> .
+@base <https://w3id.org/hacid/data/cs/rml/> .
 
 # LOGICAL SOURCE #
 :LogicalSource a rml:BaseSource ;
@@ -49,7 +49,7 @@
     
 	rr:subjectMap [ 
         rr:class data:DimensionalSpace ;
-        rr:template "https://w3id.org/hacid/data/cordex-domain/{CORDEX_domain}/ds"
+        rr:template "https://w3id.org/hacid/data/cs/cordex-domain/{CORDEX_domain}/ds"
     ] ;
 	
     rr:predicateObjectMap [
@@ -83,7 +83,7 @@
         fnml:functionValue [
             rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
                 rr:predicate hrf:template ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cordex-domain/{regular_domain}/ds" ]
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domain/{regular_domain}/ds" ]
             ]
         ] 
     ] ;
@@ -108,7 +108,7 @@
         fnml:functionValue [
             rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
                 rr:predicate hrf:template ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cordex-domain/{rotated_domain}/ds" ]
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domain/{rotated_domain}/ds" ]
             ]
         ] 
     ] ;
@@ -132,7 +132,7 @@
     
 	rr:subjectMap [ 
         rr:class data:DimensionalSpace ;
-        rr:template "https://w3id.org/hacid/data/rotated-WGS84/{pollon},{pollat}"
+        rr:template "https://w3id.org/hacid/data/cs/rotated-WGS84/{pollon},{pollat}"
     ] ;
 	
     rr:predicateObjectMap [
@@ -168,7 +168,7 @@
     
 	rr:subjectMap [ 
         rr:class data:Quantization, data:RollingRegularGrid;
-        rr:template "https://w3id.org/hacid/data/geodetic-grid/{dlon}"
+        rr:template "https://w3id.org/hacid/data/cs/geodetic-grid/{dlon}"
     ] ;
 	
     rr:predicateObjectMap [
@@ -205,7 +205,7 @@
     
 	rr:subjectMap [ 
         rr:class data:GeodeticPoint, geo:Geometry ;
-        rr:template "https://w3id.org/hacid/data/geodetic-point/WGS84/{pollon},{pollat}"
+        rr:template "https://w3id.org/hacid/data/cs/geodetic-point/WGS84/{pollon},{pollat}"
     ] ;
 	
     rr:predicateObjectMap [
@@ -243,7 +243,7 @@
     
 	rr:subjectMap [ 
         rr:class data:SpatialRegion, geo:Geometry ;
-        rr:template "https://w3id.org/hacid/data/geodetic-region/WGS84/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
+        rr:template "https://w3id.org/hacid/data/cs/geodetic-region/WGS84/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
     ] ;
 	
     rr:predicateObjectMap [
@@ -280,7 +280,7 @@
     
 	rr:subjectMap [ 
         rr:class data:SpatialRegion, geo:Geometry ;
-        rr:template "https://w3id.org/hacid/data/geodetic-region/rotated-WGS84/{pollon},{pollat}/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
+        rr:template "https://w3id.org/hacid/data/cs/geodetic-region/rotated-WGS84/{pollon},{pollat}/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
     ] ;
 	
     rr:predicateObjectMap [

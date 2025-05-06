@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/hacid/data/> .
+@prefix : <https://w3id.org/hacid/data/cs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -20,7 +20,7 @@
 @prefix georegion: <https://w3id.org/hacid/data/cs/geodetic-regions/> .
 @prefix geospecialization: <https://w3id.org/hacid/data/cs/geodetic-specs/> .
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
-@base <https://w3id.org/hacid/data/rml/> .
+@base <https://w3id.org/hacid/data/cs/rml/> .
 
 
 # LOGICAL SOURCE #
@@ -442,7 +442,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/ds/dataset/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/dataset/" ]
         ] 
     ].
 
@@ -460,7 +460,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/ds/dataset/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/dataset/" ]
         ] 
     ].
 
@@ -478,7 +478,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/ds/simulation/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/simulation/" ]
         ] 
     ].
 
@@ -496,7 +496,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/ds/model/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/model/" ]
         ] 
     ].
 
@@ -514,7 +514,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/institute/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/institute/" ]
         ] 
     ].
 

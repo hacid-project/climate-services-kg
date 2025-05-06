@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/hacid/data/> .
+@prefix : <https://w3id.org/hacid/data/cs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -21,7 +21,7 @@
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
 @prefix idlab: <http://example.com/idlab/function/> .
-@base <https://w3id.org/hacid/data/rml/> .
+@base <https://w3id.org/hacid/data/cs/rml/> .
 
 
 # LOGICAL SOURCE #
@@ -42,7 +42,7 @@
 	rml:logicalSource :LogicalSource ;
 
 	rr:subjectMap [
-	    rr:template "https://w3id.org/hacid/cs/data/model/{source_id}" ; 
+	    rr:template "https://w3id.org/hacid/data/cs/model/{source_id}" ; 
             rr:class ccso:Model
 	] ;
 	
@@ -86,7 +86,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/cs/data/model/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/model/" ]
         ]
     ].
 
@@ -106,7 +106,7 @@
         rr:predicateObjectMap [
             rr:predicate grel:any_true ;
             rr:objectMap [
-                rr:template "https://w3id.org/hacid/cs/data/model/{model_component.{{descr}}.description}"; 
+                rr:template "https://w3id.org/hacid/data/cs/model/{model_component.{{descr}}.description}"; 
                 rr:termType rr:IRI
             ]
         ]

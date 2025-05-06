@@ -7,7 +7,7 @@
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix data: <https://w3id.org/hacid/onto/data/> .
 @prefix wf: <https://w3id.org/hacid/data/cs/wf/> .
-@prefix rcp: <https://w3id.org/hacid/data/greenhousegasconcentrationpathway/rcp->
+@prefix rcp: <https://w3id.org/hacid/data/cs/greenhousegasconcentrationpathway/rcp->
 @prefix variable: <https://w3id.org/hacid/data/cs/variable/mip/>
 
 
@@ -17,7 +17,7 @@
 @prefix models: <https://w3id.org/hacid/data/cs/examples/models/> .
 @prefix risktolerance: <https://w3id.org/hacid/data/cs/examples/risktolerance/>
 
-@base <https://w3id.org/hacid/data/examples/cases/1/> .
+@base <https://w3id.org/hacid/data/cs/examples/cases/1/> .
 
 # General description of case as workflow execution
 

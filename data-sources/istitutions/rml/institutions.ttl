@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/hacid/data/> .
+@prefix : <https://w3id.org/hacid/data/cs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -18,7 +18,7 @@
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix csvw: <http://www.w3.org/ns/csvw#> .
 @prefix top: <https://w3id.org/hacid/onto/top-level/> .
-@base <https://w3id.org/hacid/data/rml/> .
+@base <https://w3id.org/hacid/data/cs/rml/> .
 
 
 # LOGICAL SOURCE #
@@ -38,7 +38,7 @@
 :InstitutionMapping a rr:TriplesMap ;
 	rml:logicalSource :LogicalSource ;
 	rr:subjectMap [
-	  rr:template "https://w3id.org/hacid/cs/data/organisation/{id}";
+	  rr:template "https://w3id.org/hacid/data/cs/organisation/{id}";
 	  rr:class top:Organization;
 	] ;
 	

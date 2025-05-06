@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/hacid/data/> .
+@prefix : <https://w3id.org/hacid/data/cs/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -6,10 +6,10 @@
 @prefix gml: <http://www.opengis.net/ont/gml#> .
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix data: <https://w3id.org/hacid/onto/data/> .
-@prefix dimension: <https://w3id.org/hacid/data/dimension/> .
-@prefix time: <https://w3id.org/hacid/data/metric-space/time/> .
-@prefix geodetic: <https://w3id.org/hacid/data/metric-space/geodetic/> .
-@base <https://w3id.org/hacid/data/> .
+@prefix dimension: <https://w3id.org/hacid/data/cs/dimension/> .
+@prefix time: <https://w3id.org/hacid/data/cs/metric-space/time/> .
+@prefix geodetic: <https://w3id.org/hacid/data/cs/metric-space/geodetic/> .
+@base <https://w3id.org/hacid/data/cs/> .
 
 <world/region> a geo:Geometry, data:SpatialRegion ;
     rdfs:label "World"@en ;

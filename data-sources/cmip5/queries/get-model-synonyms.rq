@@ -18,8 +18,8 @@ WHERE {
     UNION
         {
             VALUES (?institution ?simpleSynonym ?modelLabel) {
-                (<https://w3id.org/hacid/data/institute/csiro_qccce> 'CSIRO-Mk3' 'CSIRO-Mk3-6-0')
-                (<https://w3id.org/hacid/data/institute/csiro_qccce> 'CSIRO-Mk3-6' 'CSIRO-Mk3-6-0')
+                (<https://w3id.org/hacid/data/cs/institute/csiro_qccce> 'CSIRO-Mk3' 'CSIRO-Mk3-6-0')
+                (<https://w3id.org/hacid/data/cs/institute/csiro_qccce> 'CSIRO-Mk3-6' 'CSIRO-Mk3-6-0')
             }
         }
     }
