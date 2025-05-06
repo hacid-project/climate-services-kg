@@ -9,7 +9,7 @@ WHERE {
     ?simulation a ccso:Simulation;
         ccso:hasOutput/data:isSpecializedAccordingTo [
             data:isSpecializationOn/data:holdsSpecializationOf* dimension:geodetic;
-            data:isSelectedRegion ?geodeticRegion
+            data:hasSelectedRegion ?geodeticRegion
         ]
 }
 LIMIT 100

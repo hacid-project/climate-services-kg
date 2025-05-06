@@ -7,7 +7,7 @@ SELECT DISTINCT
   ?model_name
 WHERE {
   ?simulation a ccso:Simulation;
-  ccso:isDownScalingOf ?global_simulation.
+  ccso:isDownscalingOf ?global_simulation.
   FILTER NOT EXISTS {?global_simulation a ccso:Simulation}
   BIND(STRBEFORE(SUBSTR(STR(?global_simulation),46),".") AS ?model_name)
 } 

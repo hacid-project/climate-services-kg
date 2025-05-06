@@ -9,7 +9,7 @@ WHERE {
     ?simulation a ccso:Simulation;
         ccso:hasOutput/data:isSpecializedAccordingTo [
             data:isSpecializationOn/data:holdsSpecializationOf* dimension:time;
-            data:isSelectedRegion ?timeInterval
+            data:hasSelectedRegion ?timeInterval
         ]
 }
 LIMIT 100

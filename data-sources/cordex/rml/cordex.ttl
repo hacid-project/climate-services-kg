@@ -138,7 +138,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:isDownScalingOf ;
+        rr:predicate ccso:isDownscalingOf ;
         rr:objectMap :DrivingSimulationIRI 
     ] ;
     

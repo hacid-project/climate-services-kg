@@ -12,7 +12,7 @@ INSERT {
         ?specialization
             a data:VariableSpecialization;
             data:isSpecializationOn ?indepVarGeneralized;
-            data:isSelectedRegion ?boundingRegion
+            data:hasSelectedRegion ?boundingRegion
     }
 }
 WHERE {
