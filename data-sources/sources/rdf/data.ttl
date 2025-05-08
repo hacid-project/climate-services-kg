@@ -1,4 +1,4 @@
-@prefix ns1: <https://w3id.org/hacid/onto/cs/> .
+@prefix ns1: <https://w3id.org/hacid/onto/ccso/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <https://w3id.org/hacid/data/cs/model/4AOP-v1-5> a ns1:Model ;

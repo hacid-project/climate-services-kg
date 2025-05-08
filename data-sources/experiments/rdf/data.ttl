@@ -1,5 +1,5 @@
 @prefix ns1: <https://w3id.org/hacid/onto/top-level/> .
-@prefix ns2: <https://w3id.org/hacid/onto/cs/> .
+@prefix ns2: <https://w3id.org/hacid/onto/ccso/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
