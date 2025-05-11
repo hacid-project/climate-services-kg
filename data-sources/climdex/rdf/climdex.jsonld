@@ -5,7 +5,7 @@
     "top": "https://w3id.org/hacid/onto/top-level/",
     "ccso": "https://w3id.org/hacid/onto/ccso/",
     "data": "https://w3id.org/hacid/onto/data/",
-    "index": "https://w3id.org/hacid/data/cs/climdex/index",
+    "index": "https://w3id.org/hacid/data/cs/climdex/index/",
     "sector": "https://w3id.org/hacid/data/cs/climdex/sector/",
     "parameter": "https://w3id.org/hacid/data/cs/climdex/parameter/",
     "variable": "https://w3id.org/hacid/data/cs/variable/mip/",
