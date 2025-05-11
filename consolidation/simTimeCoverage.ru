@@ -56,7 +56,10 @@ WHERE {
             }
             FILTER NOT EXISTS {
                 GRAPH ?simulationGraph {
-                    ?simulationOutput data:dependsOnVariable/data:hasExactBoundingRegion ?simulationTemporalRegion
+                    ?simulationOutput data:dependsOnVariable [
+                        data:basedOnDimensionalSpace+ dimension:time;
+              			data:hasExactBoundingRegion ?simulationTemporalRegion
+          			]
                 }
             }
         }
