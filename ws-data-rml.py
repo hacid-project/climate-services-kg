@@ -244,11 +244,12 @@ def cordex_simulation_iri(_id: str, _ns: str) -> str:
 def cordex_driving_simulation_iri(_id: str, _ns: str) -> str:
     # template "cordex.%(product)s.%(domain)s.%(institute)s.%(driving_model)s.%(experiment)s.%(ensemble)s.%(rcm_name)s.%(rcm_version)s.%(time_frequency)s.%(variable)s"
     _id_parts = _id.split('.')
-    _driving_model= _id_parts[4]
-    _experiment= _id_parts[5]
+    _driving_model = _id_parts[4]
+    _experiment = _id_parts[5]
+    _ensemble = _id_parts[6]
     return _ns + '.'.join([
         'cmip5',
-         _driving_model, _experiment
+         _driving_model, _experiment, _ensemble
     ])
     
 @rml_function(fun_id='https://w3id.org/hacid/rml-functions/formatCordexDomain',
