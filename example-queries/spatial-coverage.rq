@@ -8,7 +8,7 @@ SELECT *
 WHERE {
     ?simulation a ccso:Simulation;
         ccso:hasOutput/data:isSpecializedAccordingTo [
-            data:isSpecializationOn/data:holdsSpecializationOf* dimension:geodetic;
+            data:isSpecializationOn/data:holdsSpecializationOfVariable* dimension:geodetic;
             data:hasSelectedRegion ?geodeticRegion
         ]
 }

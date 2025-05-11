@@ -8,7 +8,7 @@ SELECT *
 WHERE {
     ?simulation a ccso:Simulation;
         ccso:hasOutput/data:isSpecializedAccordingTo [
-            data:isSpecializationOn/data:holdsSpecializationOf* dimension:time;
+            data:isSpecializationOn/data:holdsSpecializationOfVariable* dimension:time;
             data:hasSelectedRegion ?timeInterval
         ]
 }
