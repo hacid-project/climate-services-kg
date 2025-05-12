@@ -1,0 +1,14 @@
+PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX dimension: <https://w3id.org/hacid/data/cs/dimension/>
+
+# Get models used for simulations
+
+SELECT 
+    #(COUNT(DISTINCT ?model) AS ?count)
+    DISTINCT ?model
+WHERE {
+    ?simulation a ccso:ClimateSimulation;
+        ccso:usesModel ?model
+}
+LIMIT 100
