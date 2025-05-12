@@ -11,7 +11,7 @@
 [
     $indices_to_sectors | values | flatten | unique | .[] |
     {
-        "@id": @uri "sectors:\(.)",
+        "@id": @uri "sector:\(.)",
         "@type": "top:Concept",
         label: .,
         isDefinedIn: {"@id": "https://w3id.org/hacid/data/cs/climdex/sectors"}
@@ -23,8 +23,8 @@
         rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         rdfs: "http://www.w3.org/2000/01/rdf-schema#",
         top: "https://w3id.org/hacid/onto/top-level/",
-        index: "https://w3id.org/hacid/data/cs/climdex/index",
-        sectors: "https://w3id.org/hacid/data/cs/climdex/sectors/",
+        index: "https://w3id.org/hacid/data/cs/climdex/index/",
+        sector: "https://w3id.org/hacid/data/cs/climdex/sectors/",
         label: "rdfs:label",
         comment: "rdfs:comment",
         acronym: "top:acronym",

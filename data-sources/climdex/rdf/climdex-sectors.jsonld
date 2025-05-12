@@ -3,8 +3,8 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "top": "https://w3id.org/hacid/onto/top-level/",
-    "index": "https://w3id.org/hacid/data/cs/climdex/index",
-    "sectors": "https://w3id.org/hacid/data/cs/climdex/sectors/",
+    "index": "https://w3id.org/hacid/data/cs/climdex/index/",
+    "sector": "https://w3id.org/hacid/data/cs/climdex/sectors/",
     "label": "rdfs:label",
     "comment": "rdfs:comment",
     "acronym": "top:acronym",
@@ -1077,7 +1077,7 @@
       ]
     },
     {
-      "@id": "sectors:Agriculture%20and%20food%20security",
+      "@id": "sector:Agriculture%20and%20food%20security",
       "@type": "top:Concept",
       "label": "Agriculture and food security",
       "isDefinedIn": {
@@ -1085,7 +1085,7 @@
       }
     },
     {
-      "@id": "sectors:Coasts",
+      "@id": "sector:Coasts",
       "@type": "top:Concept",
       "label": "Coasts",
       "isDefinedIn": {
@@ -1093,7 +1093,7 @@
       }
     },
     {
-      "@id": "sectors:Cryosphere",
+      "@id": "sector:Cryosphere",
       "@type": "top:Concept",
       "label": "Cryosphere",
       "isDefinedIn": {
@@ -1101,7 +1101,7 @@
       }
     },
     {
-      "@id": "sectors:Disaster%20Risk%20Reduction",
+      "@id": "sector:Disaster%20Risk%20Reduction",
       "@type": "top:Concept",
       "label": "Disaster Risk Reduction",
       "isDefinedIn": {
@@ -1109,7 +1109,7 @@
       }
     },
     {
-      "@id": "sectors:Energy",
+      "@id": "sector:Energy",
       "@type": "top:Concept",
       "label": "Energy",
       "isDefinedIn": {
@@ -1117,7 +1117,7 @@
       }
     },
     {
-      "@id": "sectors:Fisheries",
+      "@id": "sector:Fisheries",
       "@type": "top:Concept",
       "label": "Fisheries",
       "isDefinedIn": {
@@ -1125,7 +1125,7 @@
       }
     },
     {
-      "@id": "sectors:Forestry%2FGHGs",
+      "@id": "sector:Forestry%2FGHGs",
       "@type": "top:Concept",
       "label": "Forestry/GHGs",
       "isDefinedIn": {
@@ -1133,7 +1133,7 @@
       }
     },
     {
-      "@id": "sectors:Health",
+      "@id": "sector:Health",
       "@type": "top:Concept",
       "label": "Health",
       "isDefinedIn": {
@@ -1141,7 +1141,7 @@
       }
     },
     {
-      "@id": "sectors:Water%20resources%20and%20food%20security",
+      "@id": "sector:Water%20resources%20and%20food%20security",
       "@type": "top:Concept",
       "label": "Water resources and food security",
       "isDefinedIn": {
