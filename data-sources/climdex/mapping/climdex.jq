@@ -267,7 +267,7 @@ def convert_parameter:
         top: "https://w3id.org/hacid/onto/top-level/",
         ccso: "https://w3id.org/hacid/onto/ccso/",
         data: "https://w3id.org/hacid/onto/data/",
-        index: "https://w3id.org/hacid/data/cs/climdex/index",
+        index: "https://w3id.org/hacid/data/cs/climdex/index/",
         sector: "https://w3id.org/hacid/data/cs/climdex/sector/",
         parameter: "https://w3id.org/hacid/data/cs/climdex/parameter/",
         variable: "https://w3id.org/hacid/data/cs/variable/mip/",
@@ -281,34 +281,35 @@ def convert_parameter:
         definition: "top:definition",
         hasUnitOfMeasure: {
             "@id": "top:hasUnitOfMeasure",
-            "@type": "top:UnitOfMeasure"
+            "@type": "@id"
         },
         hasValuesOn: {
             "@id": "data:hasValuesOn",
-            "@type": "data:DimensionalSpace"
+            "@type": "@id"
         },
         dependsOnVariable: {
             "@id": "data:dependsOnVariable",
-            "@type": "data:Variable"
+            "@type": "@id"
         },
         definesAggregation: {
             "@id": "data:definesAggregation",
-            "@type": "data:Aggregation"
+            "@type": "@id"
         },
         aggregatesVariable: {
-            "@id": "data:aggregatesVariable"
+            "@id": "data:aggregatesVariable",
+            "@type": "@id"
         },
         suggestedAggregationGrid: {
             "@id": "data:suggestedAggregationGrid",
-            "@type": "data:Grid"
+            "@type": "@id"
         },
         permitsTemporalResolution: {
             "@id": "ccso:permitsTemporalResolution",
-            "@type": "top:TimeDuration"
+            "@type": "@id"
         },
         basedOnVariable: {
             "@id": "data:derivedFromVariable",
-            "@type": "data:Variable"
+            "@type": "@id"
         },
         generated: {
             "@reverse": "data:holdsSpecializationOfVariable"
