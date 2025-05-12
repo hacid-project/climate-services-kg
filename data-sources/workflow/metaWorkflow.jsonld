@@ -83,44 +83,46 @@
                             "@type": "top:Task",
                             "comment": "The task of identifying metrics and variables.",
                             "label": "Metric and variable identification",
+                            "directlyPrecedes": "tasks/BaselinePeriodChoice",
                             "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedVariable"
                         },
                         {
-                            "@id": "tasks/BaselineChoice",
+                            "@id": "tasks/BaselinePeriodChoice",
                             "@type": "top:Task",
-                            "comment": "The task of choosing the baseline.",
-                            "label": "Baseline choice",
+                            "comment": "The task of choosing the baseline period.",
+                            "label": "Baseline period choice",
+                            "directlyPrecedes": [ "tasks/FuturePeriodChoice", "tasks/GlobalWarmingLevelChoice"],
                             "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedBaselineInterval"
                         },
                         {
-                            "@id": "subtasks/FuturePeriodChoice",
+                            "@id": "tasks/FuturePeriodChoice",
                             "@type": "top:Task",
                             "comment": "The task of choosing the future period.",
                             "label": "Future period choice",
+                            "directlyPrecedes": "tasks/EmissionScenarioDefinition",
                             "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedFutureInterval"
                         },
                         {
-                            "@id": "subtasks/EmissionScenarioDefinition",
+                            "@id": "tasks/EmissionScenarioDefinition",
                             "@type": "top:Task",
                             "comment": "The task of defining the emission scenarios.",
                             "label": "Emission scenario definition",
+                            "directlyPrecedes": "tasks/DataSelectionByAdditionalCriteria",
                             "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedEmissionScenario"
                         },
                         {
-                            "@id": "subtasks/GlobalWarmingLevelChoice",
+                            "@id": "tasks/GlobalWarmingLevelChoice",
                             "@type": "top:Task",
                             "comment": "The task of choosing the global warming level as target, rather than (or in addition to) chosing a specific future period and emission scenario.",
                             "label": "Global warming level choice",
+                            "directlyPrecedes": "tasks/DataSelectionByAdditionalCriteria",
                             "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedGlobalWarmingLevel"
                         },
                         {
-                            "@id": "subtasks/DataSelectionByAdditionalCriteria",
+                            "@id": "tasks/DataSelectionByAdditionalCriteria",
                             "@type": "top:Task",
                             "comment": "The task of selecting the avalaible data by some criteria that is not by variable/metric, baseline period, future period, nor global warmin level.",
-                            "label": "Data selection by additional criteria",
-                            "directlyPrecedes": "subtasks/ClimateModelEvaluation",
-                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedDataset",
-                            "executedThroughOperation": "ops:DatasetSelection"
+                            "label": "Data selection by additional criteria"
                         }
                     ],
                     "roles":[
@@ -157,13 +159,6 @@
                             "@type": "top:WorkflowRole",
                             "label": "Selected global warming level",
                             "comment": "An global warming level selected for a case in the context of a climate service workflow execution."
-                        },
-                        {
-                            "@id": "object-roles/SelectedDataset",
-                            "@type": "top:WorkflowRole",
-                            "label": "Selected dataset",
-                            "comment": "A dataset selected for a case in the context of a climate service workflow execution.",
-                            "range": "data:Dataset"
                         }
                     ]
                 }
@@ -195,8 +190,8 @@
                                     "@type": "top:Task",
                                     "comment": "The task of selecting the avalaible data that will be used in the analysis.",
                                     "label": "Data selection",
-                                    "directlyPrecedes": "subtasks/ClimateModelEvaluation",
                                     "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedDataset",
+                                    "directlyPrecedes": "subtasks/SpatialDownscalingApplication",
                                     "executedThroughOperation": "ops:DatasetSelection"
                                 },
                                 {
@@ -204,6 +199,7 @@
                                     "@type": "top:Task",
                                     "comment": "The task of applying spatial downscaling methods if needed: according to the resolution available in the datasets and the required resolution.",
                                     "label": "Spatial downscaling application",
+                                    "directlyPrecedes": "subtasks/ComputationOfMetrics",
                                     "toBeAssociatedWithARole": true
                                 },
                                 {
@@ -211,6 +207,7 @@
                                     "@type": "top:Task",
                                     "comment": "The task of computing relevant metrics from the values of the climate variables in the datasets, possibly including bias correction using observational data.",
                                     "label": "Computation of  metrics",
+                                    "directlyPrecedes": "subtasks/ClimateSimulationEvaluation",
                                     "toBeAssociatedWithARole": true
                                 },
                                 {
@@ -224,7 +221,7 @@
                                     "@id": "subtasks/ClimateSimulationSelection",
                                     "@type": "top:Task",
                                     "comment": "The task of selecting the climate simulations to be considered in the analysis, according to results of the evaluation.",
-                                    "label": "Climate model selection",
+                                    "label": "Climate simulation selection",
                                     "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedClimateSimulation"
                                 }
                             ]
