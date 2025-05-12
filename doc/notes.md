@@ -19,4 +19,13 @@
 
 all (641) cmip sims without geo discretization
 
+## Variables
 
+693 vars used in sim outputs (specialization of 352 cf vars)
+546 vars used in cmip5 (spec of 349)
+209 vars used in cordex (spec of 53)
+
+## Models
+
+41 models used in cmip5
+45 models used in cordex
