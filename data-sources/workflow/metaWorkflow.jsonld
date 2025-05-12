@@ -1,5 +1,7 @@
 {
     "@context": {
+        "@base": "https://w3id.org/hacid/data/cs/wf/",
+        "ops": "https://w3id.org/hacid/data/cs/wf/ops/",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "top": "https://w3id.org/hacid/onto/top-level/",
         "ccso": "https://w3id.org/hacid/onto/ccso/",
@@ -45,512 +47,659 @@
             "@id": "top:isTaskOf",
             "@type": "@id"
         },
-        "hasInputRole": {
-            "@id": "top:hasInputRole",
+        "isRealizedByPlan": {
+            "@id": "top:isRealizedByPlan",
             "@type": "@id"
         },
-        "hasOutputRole": {
-            "@id": "top:hasOutputRole",
+        "executedThroughOperation": {
+            "@id": "top:executedThroughOperation",
+            "@type": "@id"
+        },
+        "getsDefaultInputFromPlanRole": {
+            "@id": "top:getsDefaultInputFromPlanRole",
+            "@type": "@id"
+        },
+        "sendsDefaultOutputToPlanRole": {
+            "@id": "top:sendsDefaultOutputToPlanRole",
             "@type": "@id"
         }
     },
     "@graph": [
         {
-            "@id": "wf:ClimateAnalysis",
+            "@id": "ops/DatasetSelection",
             "@type": "top:Operation",
-            "comment": "The operation describing the analysis of climate model predictions relevant to a specific context.",
-            "label": "Climate analysis",
+            "comment": "The selection of some datasets according to relevance to a specific case.",
+            "label": "Datset selection",
             "isRealizedByPlan": [
                 {
-                    "@id": "wf:ClimateAnalysisPlan",
+                    "@context": {"@base": "plans/DatasetSelectionPlan/"},
+                    "@id": "../DatasetSelectionPlan",
                     "@type": "top:Plan",
-                    "comment": "A typical plan for the analysis of climate model predictions relevant to a specific context, organized in two phases: climate information preparation and climate information analysis.",
-                    "label": "Climate analysis plan",
-                    "hasPart": [
+                    "comment": "A typical plan for the selection of climate datasets relevant to a specific context.",
+                    "label": "Dataset selection plan",
+                    "tasks": [
                         {
-                            "@id": "wf:ClimateInformationPreparation",
+                            "@id": "tasks/MetricAndVariableIdentification",
                             "@type": "top:Task",
-                            "comment": "The task of preparing the climate information.",
-                            "label": "Climate information preparation",
-                            "directlyPrecedes": "wf:ClimateInformationAnalysis",
-                            "hasPart": [
-                                {
-                                    "@id": "wf:MetricAndVariableIdentification",
-                                    "@type": "top:Task",
-                                    "comment": "The task of identifying metrics and variables.",
-                                    "label": "Metric and variable identification",
-                                    "directlyPrecedes": "wf:EmissionScenarioDefinition",
-                                    "hasOutputRole": "wf:SelectedVariable"
-                                },
-                                {
-                                    "@id": "wf:EmissionScenarioDefinition",
-                                    "@type": "top:Task",
-                                    "comment": "The task of defining the emission scenarios.",
-                                    "label": "Emission scenario definition",
-                                    "directlyPrecedes": "wf:DataSelection",
-                                    "hasOutputRole": "wf:SelectedEmissionScenario"
-                                },
-                                {
-                                    "@id": "wf:DataSelection",
-                                    "@type": "top:Task",
-                                    "comment": "The task of selecting the data.",
-                                    "label": "Data selection",
-                                    "directlyPrecedes": "wf:ClimateModelEvaluation",
-                                    "hasOutputRole": "wf:SelectedDataset"
-                                },
-                                {
-                                    "@id": "wf:ClimateModelEvaluation",
-                                    "@type": "top:Task",
-                                    "comment": "The task of evaluating the climate model.",
-                                    "label": "Climate model evaluation",
-                                    "directlyPrecedes": "wf:ClimateModelSelection"
-                                },
-                                {
-                                    "@id": "wf:ClimateModelSelection",
-                                    "@type": "top:Task",
-                                    "comment": "The task of selecing the climate model.",
-                                    "label": "Climate model selection",
-                                    "hasOutputRole": "wf:SelectedClimateModel"
-                                }
-                            ]
+                            "comment": "The task of identifying metrics and variables.",
+                            "label": "Metric and variable identification",
+                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedVariable"
                         },
                         {
-                            "@id": "wf:ClimateInformationAnalysis",
+                            "@id": "tasks/BaselineChoice",
                             "@type": "top:Task",
-                            "comment": "The task of analysing the avalaible climate information.",
-                            "label": "Climate information analysis",
-                            "hasPart": [
-                                {
-                                    "@id": "wf:BaselineChoice",
-                                    "@type": "top:Task",
-                                    "comment": "The task of choosing the baseline.",
-                                    "label": "Baseline choice",
-                                    "directlyPrecedes": "wf:FuturePeriodChoice",
-                                    "hasOutputRole": "wf:SelectedBaselineInterval"
-                                },
-                                {
-                                    "@id": "wf:FuturePeriodChoice",
-                                    "@type": "top:Task",
-                                    "comment": "The task of choosing the future period.",
-                                    "label": "Future period choice",
-                                    "directlyPrecedes": "wf:ClimateChangeQuantificationApplication",
-                                    "hasOutputRole": "wf:SelectedFutureInterval"
-                                },
-                                {
-                                    "@id": "wf:ClimateChangeQuantificationApplication",
-                                    "@type": "top:Task",
-                                    "comment": "The task of applying the climate change quantification method.",
-                                    "label": "Climate change quantification application",
-                                    "directlyPrecedes": "wf:UncertaintyQuantificationApplication",
-                                    "toBeAssociatedWithARole": true
-                                },
-                                {
-                                    "@id": "wf:UncertaintyQuantificationApplication",
-                                    "@type": "top:Task",
-                                    "comment": "The task of applying uncertainty quantification",
-                                    "label": "Uncertainty quantification application",
-                                    "toBeAssociatedWithARole": true
-                                },
-                                {
-                                    "@id": "wf:DataPreprocessingApplication",
-                                    "@type": "top:Task",
-                                    "comment": "The task of applying data preprocessing methods for the analysis of the climate information.",
-                                    "label": "Data preprocessing application",
-                                    "toBeAssociatedWithARole": true
-                                },
-                                {
-                                    "@id": "wf:SpatialDownscalingApplication",
-                                    "@type": "top:Task",
-                                    "comment": "The task of applying spatial downscaling methods for the analysis of the climate information.",
-                                    "label": "Spatial downscaling application",
-                                    "toBeAssociatedWithARole": true
-                                },
-                                {
-                                    "@id": "wf:StatisticalAnalysisApplication",
-                                    "@type": "top:Task",
-                                    "comment": "The task of applying statistical methods for the analysis of the climate information.",
-                                    "label": "Statistical analysis application",
-                                    "toBeAssociatedWithARole": true
-                                }
-                            ]
+                            "comment": "The task of choosing the baseline.",
+                            "label": "Baseline choice",
+                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedBaselineInterval"
+                        },
+                        {
+                            "@id": "subtasks/FuturePeriodChoice",
+                            "@type": "top:Task",
+                            "comment": "The task of choosing the future period.",
+                            "label": "Future period choice",
+                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedFutureInterval"
+                        },
+                        {
+                            "@id": "subtasks/EmissionScenarioDefinition",
+                            "@type": "top:Task",
+                            "comment": "The task of defining the emission scenarios.",
+                            "label": "Emission scenario definition",
+                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedEmissionScenario"
+                        },
+                        {
+                            "@id": "subtasks/GlobalWarmingLevelChoice",
+                            "@type": "top:Task",
+                            "comment": "The task of choosing the global warming level as target, rather than (or in addition to) chosing a specific future period and emission scenario.",
+                            "label": "Global warming level choice",
+                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedGlobalWarmingLevel"
+                        },
+                        {
+                            "@id": "subtasks/DataSelectionByAdditionalCriteria",
+                            "@type": "top:Task",
+                            "comment": "The task of selecting the avalaible data by some criteria that is not by variable/metric, baseline period, future period, nor global warmin level.",
+                            "label": "Data selection by additional criteria",
+                            "directlyPrecedes": "subtasks/ClimateModelEvaluation",
+                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedDataset",
+                            "executedThroughOperation": "ops:DatasetSelection"
+                        }
+                    ],
+                    "roles":[
+                        {
+                            "@id": "object-roles/SelectedVariable",
+                            "@type": "top:WorkflowRole",
+                            "label": "Selected variable",
+                            "comment": "A variable selected for a case in the context of a climate service workflow execution.",
+                            "range": "data:Variable"
+                        },
+                        {
+                            "@id": "object-roles/SelectedBaselineInterval",
+                            "@type": "top:WorkflowRole",
+                            "label": "Selected baseline interval",
+                            "comment": "A time interval selected as baseline for a case in the context of a climate service workflow execution.",
+                            "range": "data:TemporalRegion"
+                        },
+                        {
+                            "@id": "object-roles/SelectedFutureInterval",
+                            "@type": "top:WorkflowRole",
+                            "label": "Selected future interval",
+                            "comment": "A time interval selected as future interval for a case in the context of a climate service workflow execution.",
+                            "range": "data:TemporalRegion"
+                        },
+                        {
+                            "@id": "object-roles/SelectedEmissionScenario",
+                            "@type": "top:WorkflowRole",
+                            "label": "Selected emission scenario",
+                            "comment": "An emission scenario selected for a case in the context of a climate service workflow execution.",
+                            "range": "ccso:EmissionScenario"
+                        },
+                        {
+                            "@id": "object-roles/SelectedGlobalWarmingLevel",
+                            "@type": "top:WorkflowRole",
+                            "label": "Selected global warming level",
+                            "comment": "An global warming level selected for a case in the context of a climate service workflow execution."
+                        },
+                        {
+                            "@id": "object-roles/SelectedDataset",
+                            "@type": "top:WorkflowRole",
+                            "label": "Selected dataset",
+                            "comment": "A dataset selected for a case in the context of a climate service workflow execution.",
+                            "range": "data:Dataset"
                         }
                     ]
                 },
                 {
-                    "@id": "wf:CollectiveClimateAnalysisPlan",
+                    "@context": {"@base": "plans/CollectiveClimateAnalysisPlan/"},
+                    "@id": "../CollectiveClimateAnalysisPlan",
                     "@type": "top:Plan",
                     "comment": "A plan for the collaborative analysis of climate model predictions. It involves the collection of multiple climate analysis plan, their consolidation in one plan, and the execution of such a plan.",
                     "label": "Collective climate analysis plan",
-                    "hasPart": [
+                    "tasks": [
                         {
-                            "@id": "wf:ClimateInformationAnalysisContribution",
+                            "@id": "tasks/ClimateInformationAnalysisContribution",
                             "@type": "top:Task",
                             "comment": "The task of designing a contribution to the case consisting of a plan for climate information analysis.",
                             "label": "Contribution for climate information analysis",
-                            "directlyPrecedes": "wf:SendClimateInformation",
-                            "isTaskOf": "wf:CaseSolver",
-                            "sendsDefaultOutputToPlanRole": "wf:ProposedClimateInformationAnalysisPlan"
+                            "directlyPrecedes": "tasks/ClimateInformationAnalysisConsolidation",
+                            "isTaskOf": "agent-roles/CaseContributor",
+                            "sendsDefaultOutputToPlanRole": "object-roles/ProposedClimateInformationAnalysisPlan"
                         },
                         {
-                            "@id": "wf:ClimateInformationAnalysisConsolidation",
+                            "@id": "tasks/ClimateInformationAnalysisConsolidation",
                             "@type": "top:Task",
                             "comment": "The task of evaluating the proposed plans for climate analysis and the development of a single plan based on the proposals.",
                             "label": "Climate information analysis consolidation",
-                            "getsDefaultInputFromPlanRole": "wf:ProposedClimateInformationAnalysisPlan",
-                            "sendsDefaultOutputToPlanRole": "wf:ConsolidatedClimateInformationAnalysisPlan"
+                            "directlyPrecedes": "tasks/ClimateInformationAnalysisExecution",
+                            "isTaskOf": "agent-roles/CaseSolver",
+                            "getsDefaultInputFromPlanRole": "object-roles/ProposedClimateInformationAnalysisPlan",
+                            "sendsDefaultOutputToPlanRole": "object-roles/ConsolidatedClimateInformationAnalysisPlan"
                         },
                         {
-                            "@id": "wf:ClimateInformationAnalysisExecution",
+                            "@id": "tasks/ClimateInformationAnalysisExecution",
                             "@type": "top:Task",
-                            "comment": "The task of executing the the consolidated plan for climate analysis.",
+                            "comment": "The task of executing the consolidated plan for climate analysis.",
                             "label": "Climate information analysis execution",
-                            "getsDefaultInputFromPlanRole": "wf:ConsolidatedClimateInformationAnalysisPlan"
+                            "isTaskOf": "agent-roles/CaseSolver",
+                            "getsDefaultInputFromPlanRole": "object-roles/ConsolidatedClimateInformationAnalysisPlan"
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "@id": "object-roles/ProposedClimateInformationAnalysis",
+                            "@type": "top:WorkflowRole",
+                            "label": "Proposed climate information analysis",
+                            "comment": "A proposal for climate information analysis, structured as a plan. The analysis of the context is considered a prerequisite, so outside of such proposal. The impact analysis is also not considered, as it is meant to be carried on after climate informationa aalysis.",
+                            "range": null
+                        },
+                        {
+                            "@id": "object-roles/ConsolidatedClimateInformationAnalysisPlan",
+                            "@type": "top:WorkflowRole",
+                            "label": "Consolidated climate information analysis",
+                            "comment": "A plan for climate information analysis, composed considering a set of proposed plans contributed by different experts.",
+                            "range": null
                         }
                     ]
                 }
             ]
         },
         {
-            "@id": "wf:ClimateServiceCaseResolution",
+            "@id": "ops/ClimateInformationStudy",
+            "@type": "top:Operation",
+            "comment": "The operation describing the analysis of climate model predictions relevant to a specific context.",
+            "label": "Climate information study",
+            "isRealizedByPlan": [
+                {
+                    "@context": {"@base": "plans/ClimateInformationStudyPlan/"},
+                    "@id": "../ClimateInformationStudyPlan",
+                    "@type": "top:Plan",
+                    "comment": "A typical plan for the analysis of climate model predictions relevant to a specific context, organized in two phases: climate information preparation and climate information analysis.",
+                    "label": "Climate information study plan",
+                    "tasks": [
+                        {
+                            "@context": {"@base": "tasks/ClimateInformationPreparation/"},
+                            "@id": "../ClimateInformationPreparation",
+                            "@type": "top:Task",
+                            "comment": "The task of preparing the climate information.",
+                            "label": "Climate information preparation",
+                            "directlyPrecedes": "tasks/ClimateInformationAnalysis",
+                            "hasPart": [
+                                {
+                                    "@id": "subtasks/DataSelection",
+                                    "@type": "top:Task",
+                                    "comment": "The task of selecting the avalaible data that will be used in the analysis.",
+                                    "label": "Data selection",
+                                    "directlyPrecedes": "subtasks/ClimateModelEvaluation",
+                                    "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedDataset",
+                                    "executedThroughOperation": "ops:DatasetSelection"
+                                },
+                                {
+                                    "@id": "subtasks/SpatialDownscalingApplication",
+                                    "@type": "top:Task",
+                                    "comment": "The task of applying spatial downscaling methods if needed: according to the resolution available in the datasets and the required resolution.",
+                                    "label": "Spatial downscaling application",
+                                    "toBeAssociatedWithARole": true
+                                },
+                                {
+                                    "@id": "subtasks/ComputationOfMetrics",
+                                    "@type": "top:Task",
+                                    "comment": "The task of computing relevant metrics from the values of the climate variables in the datasets, possibly including bias correction using observational data.",
+                                    "label": "Computation of  metrics",
+                                    "toBeAssociatedWithARole": true
+                                },
+                                {
+                                    "@id": "subtasks/ClimateSimulationEvaluation",
+                                    "@type": "top:Task",
+                                    "comment": "The task of evaluating the considered climate simulations, according to reliability and relevance to the case.",
+                                    "label": "Climate simulation evaluation",
+                                    "directlyPrecedes": "subtasks/ClimateSimulationSelection"
+                                },
+                                {
+                                    "@id": "subtasks/ClimateSimulationSelection",
+                                    "@type": "top:Task",
+                                    "comment": "The task of selecting the climate simulations to be considered in the analysis, according to results of the evaluation.",
+                                    "label": "Climate model selection",
+                                    "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedClimateSimulation"
+                                }
+                            ]
+                        },
+                        {
+                            "@context": {"@base": "tasks/ClimateInformationAnalysis/"},
+                            "@id": "../ClimateInformationAnalysis",
+                            "@type": "top:Task",
+                            "comment": "The task of analysing the avalaible climate information.",
+                            "label": "Climate information analysis",
+                            "hasPart": [
+                                {
+                                    "@id": "subtasks/ClimateChangeQuantificationApplication",
+                                    "@type": "top:Task",
+                                    "comment": "The task of applying the climate change quantification method.",
+                                    "label": "Climate change quantification application",
+                                    "directlyPrecedes": "subtasks/UncertaintyQuantificationApplication",
+                                    "toBeAssociatedWithARole": true
+                                },
+                                {
+                                    "@id": "subtasks/UncertaintyQuantificationApplication",
+                                    "@type": "top:Task",
+                                    "comment": "The task of applying uncertainty quantification",
+                                    "label": "Uncertainty quantification application",
+                                    "toBeAssociatedWithARole": true
+                                }
+                            ]
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "@id": "object-roles/SelectedDataset",
+                            "@type": "top:WorkflowRole",
+                            "label": "Selected dataset",
+                            "comment": "An available dataset selected for a case in the context of a climate service workflow execution.",
+                            "range": "data:Dataset"
+                        },
+                        {
+                            "@id": "object-roles/SelectedClimateSimulation",
+                            "@type": "top:WorkflowRole",
+                            "label": "Selected climate simulation",
+                            "comment": "A climate simulation selected for analysis in the context of a climate service workflow execution.",
+                            "range": "data:Dataset"
+                        }
+                    ]
+                },
+                {
+                    "@context": {"@base": "plans/CollectiveClimateAnalysisPlan/"},
+                    "@id": "../CollectiveClimateAnalysisPlan",
+                    "@type": "top:Plan",
+                    "comment": "A plan for the collaborative analysis of climate model predictions. It involves the collection of multiple climate analysis plan, their consolidation in one plan, and the execution of such a plan.",
+                    "label": "Collective climate analysis plan",
+                    "tasks": [
+                        {
+                            "@id": "tasks/ClimateInformationAnalysisContribution",
+                            "@type": "top:Task",
+                            "comment": "The task of designing a contribution to the case consisting of a plan for climate information analysis.",
+                            "label": "Contribution for climate information analysis",
+                            "directlyPrecedes": "tasks/ClimateInformationAnalysisConsolidation",
+                            "isTaskOf": "agent-roles/CaseContributor",
+                            "sendsDefaultOutputToPlanRole": "object-roles/ProposedClimateInformationAnalysisPlan"
+                        },
+                        {
+                            "@id": "tasks/ClimateInformationAnalysisConsolidation",
+                            "@type": "top:Task",
+                            "comment": "The task of evaluating the proposed plans for climate analysis and the development of a single plan based on the proposals.",
+                            "label": "Climate information analysis consolidation",
+                            "directlyPrecedes": "tasks/ClimateInformationAnalysisExecution",
+                            "isTaskOf": "agent-roles/CaseSolver",
+                            "getsDefaultInputFromPlanRole": "object-roles/ProposedClimateInformationAnalysisPlan",
+                            "sendsDefaultOutputToPlanRole": "object-roles/ConsolidatedClimateInformationAnalysisPlan"
+                        },
+                        {
+                            "@id": "tasks/ClimateInformationAnalysisExecution",
+                            "@type": "top:Task",
+                            "comment": "The task of executing the consolidated plan for climate analysis.",
+                            "label": "Climate information analysis execution",
+                            "isTaskOf": "agent-roles/CaseSolver",
+                            "getsDefaultInputFromPlanRole": "object-roles/ConsolidatedClimateInformationAnalysisPlan"
+                        }
+                    ],
+                    "roles": [
+                        {
+                            "@id": "object-roles/ProposedClimateInformationAnalysis",
+                            "@type": "top:WorkflowRole",
+                            "label": "Proposed climate information analysis",
+                            "comment": "A proposal for climate information analysis, structured as a plan. The analysis of the context is considered a prerequisite, so outside of such proposal. The impact analysis is also not considered, as it is meant to be carried on after climate informationa aalysis.",
+                            "range": null
+                        },
+                        {
+                            "@id": "object-roles/ConsolidatedClimateInformationAnalysisPlan",
+                            "@type": "top:WorkflowRole",
+                            "label": "Consolidated climate information analysis",
+                            "comment": "A plan for climate information analysis, composed considering a set of proposed plans contributed by different experts.",
+                            "range": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "@context": {"@base": "ops/ClimateServiceCaseResolution/"},
+            "@id": "../ClimateServiceCaseResolution",
             "@type": "top:Operation",
             "comment": "The operation describing, at an abstract level, the handling of a request for climate information.",
             "label": "Climate service case resolution",
             "isRealizedByPlan": {
-                "@id": "wf:ClimateProcessWorkflow",
+                "@context": {"@base": "plans/ClimateProcessWorkflow/"},
+                "@id": "../ClimateProcessWorkflow",
                 "@type": "top:Workflow",
                 "comment": "A workflow describing the typical handling of a request for climate information.",
                 "label": "Climate service case resolution workflow",
                 "tasks": [
                     {
-                        "@id": "wf:ClimateInformationRequest",
+                        "@id": "tasks/ClimateInformationRequest",
                         "@type": "top:Task",
                         "comment": "The task of requesting the climate information.",
                         "label": "Climate information request",
-                        "directlyPrecedes": "wf:UserBackgroundInformationRequest",
-                        "isTaskOf": "wf:InformationRequester"
+                        "directlyPrecedes": "tasks/UserBackgroundInformationRequest",
+                        "isTaskOf": "agent-roles/InformationRequester"
                     },
                     {
-                        "@id": "wf:UserBackgroundInformationRequest",
+                        "@id": "tasks/UserBackgroundInformationRequest",
                         "@type": "top:Task",
                         "comment": "The task of requesting user background information.",
                         "label": "User background information request",
-                        "directlyPrecedes": "wf:ProvideBackgroundInformation",
-                        "isTaskOf": "wf:CaseCreator"
+                        "directlyPrecedes": "tasks/ProvideOrganizationInformation",
+                        "isTaskOf": "agent-roles/CaseCreator"
                     },
                     {
-                        "@id": "wf:ProvideBackgroundInformation",
+                        "@context": {"@base": "tasks/ProvideOrganizationInformation/"},
+                        "@id": "../ProvideOrganizationInformation",
                         "@type": "top:Task",
-                        "comment": "The task of providing background information.",
-                        "label": "Provide background information",
-                        "directlyPrecedes": "wf:ProvideDecisionContextInformation",
-                        "isTaskOf": "wf:InformationRequester",
+                        "comment": "The task of providing information on the organization requesting the service.",
+                        "label": "Provide organization information",
+                        "directlyPrecedes": "tasks/ProvideClimateCaseInformation",
+                        "isTaskOf": "agent-roles/InformationRequester",
                         "hasPart": [
                             {
-                                "@id": "wf:ClimateInformationRequestGoalDefinition",
-                                "@type": "top:Task",
-                                "comment": "The task of defining the goal of the climate information request.",
-                                "label": "Climate information request goal definition",
-                                "isTaskOf": "wf:InformationRequester",
-                                "hasOutputRole": "wf:Goal"
-                            },
-                            {
-                                "@id": "wf:CustomerNeedDefinition",
-                                "@type": "top:Task",
-                                "comment": "The task of defining the customer needs (identifying climate-related challenges faced by the organisation.)",
-                                "label": "Customer need definition",
-                                "isTaskOf": "wf:InformationRequester",
-                                "hasOutputRole": "wf:CustomerNeed"
-                            },
-                            {
-                                "@id": "wf:OrganisationInformationDescription",
+                                "@id": "subtasks/OrganisationInformationDescription",
                                 "@type": "top:Task",
                                 "comment": "The task of describing organisation information.",
                                 "label": "Organisation information description",
-                                "isTaskOf": "wf:InformationRequester"
+                                "isTaskOf": "../../agent-roles/InformationRequester"
+                            },
+                            {
+                                "@id": "subtasks/CustomerNeedDefinition",
+                                "@type": "top:Task",
+                                "comment": "The task of defining the customer needs (identifying climate-related challenges faced by the organisation.)",
+                                "label": "Customer need definition",
+                                "isTaskOf": "../../agent-roles/InformationRequester",
+                                "sendsDefaultOutputToPlanRole": "../../object-roles/CustomerNeed"
                             }
                         ]
                     },
                     {
-                        "@id": "wf:ProvideDecisionContextInformation",
+                        "@context": {"@base": "tasks/ProvideClimateCaseInformation/"},
+                        "@id": "../ProvideClimateCaseInformation",
+                        "@type": "top:Task",
+                        "comment": "The task of providing information on the organization requesting the service.",
+                        "label": "Provide organization information",
+                        "directlyPrecedes": "tasks/ProvideDecisionContextInformation",
+                        "isTaskOf": "agent-roles/InformationRequester",
+                        "hasPart": [
+                            {
+                                "@id": "subtasks/ClimateInformationRequestGoalDefinition",
+                                "@type": "top:Task",
+                                "comment": "The task of defining the goal of the climate information request.",
+                                "label": "Climate information request goal definition",
+                                "isTaskOf": "../../agent-roles/InformationRequester",
+                                "sendsDefaultOutputToPlanRole": "../../object-roles/Goal"
+                            },
+                            {
+                                "@id": "subtasks/CustomerNeedDefinition",
+                                "@type": "top:Task",
+                                "comment": "The task of defining the customer needs (identifying climate-related challenges faced by the organisation.)",
+                                "label": "Customer need definition",
+                                "isTaskOf": "../../agent-roles/InformationRequester",
+                                "sendsDefaultOutputToPlanRole": "../../object-roles/CustomerNeed"
+                            },
+                            {
+                                "@id": "subtasks/OrganisationInformationDescription",
+                                "@type": "top:Task",
+                                "comment": "The task of describing organisation information.",
+                                "label": "Organisation information description",
+                                "isTaskOf": "../../agent-roles/InformationRequester"
+                            }
+                        ]
+                    },
+                    {
+                        "@context": {"@base": "tasks/ProvideDecisionContextInformation/"},
+                        "@id": "../ProvideDecisionContextInformation",
                         "@type": "top:Task",
                         "comment": "The task of providing decision context information.",
                         "label": "Provide decision context information",
-                        "directlyPrecedes": "wf:UserInformationExtraction",
-                        "isTaskOf": "wf:InformationRequester",
+                        "directlyPrecedes": "tasks/UserInformationExtraction",
+                        "isTaskOf": "agent-roles/InformationRequester",
                         "hasPart": [
                             {
-                                "@id": "wf:ClimateHazardImpactDescription",
+                                "@id": "subtasks/ClimateHazardImpactDescription",
                                 "@type": "top:Task",
                                 "comment": "The task of describing how climate hazards impact the organisation's activities.",
                                 "label": "Climate hazard impact description",
-                                "isTaskOf": "wf:InformationRequester"
+                                "isTaskOf": "../../agent-roles/InformationRequester"
                             },
                             {
-                                "@id": "wf:ClimateQuestionDescription",
+                                "@id": "subtasks/ClimateQuestionDescription",
                                 "@type": "top:Task",
                                 "comment": "The task of describing climate questions.",
                                 "label": "Climate question description",
-                                "isTaskOf": "wf:InformationRequester",
-                                "hasInputRole": "wf:RelevantHazardType",
-                                "hasOutputRole": "wf:RelevantClimateQuestion"
+                                "isTaskOf": "../../agent-roles/InformationRequester",
+                                "getsDefaultInputFromPlanRole": "../../object-roles/RelevantHazardType",
+                                "sendsDefaultOutputToPlanRole": "../../object-roles/RelevantClimateQuestion"
                             },
                             {
-                                "@id": "wf:ClimateRiskFramingSpecification",
+                                "@id": "subtasks/ClimateRiskFramingSpecification",
                                 "@type": "top:Task",
                                 "comment": "The task of specifying the climate risk framing.",
                                 "label": "Climate risk framing specification",
-                                "isTaskOf": "wf:InformationRequester"
+                                "isTaskOf": "../../agent-roles/InformationRequester"
                             },
                             {
-                                "@id": "wf:DecisionContextSpecification",
+                                "@id": "subtasks/DecisionContextSpecification",
                                 "@type": "top:Task",
                                 "label": "Decision context specification",
                                 "comment": "The task of listing decisions or actions that would benefit from better climate information.",
                                 "isTaskOf": [
-                                    "wf:CaseCreator",
-                                    "wf:InformationRequester"
+                                    "../../agent-roles/CaseCreator",
+                                    "../../agent-roles/InformationRequester"
                                 ]
                             },
                             {
-                                "@id": "wf:HazardIdentification",
+                                "@id": "subtasks/HazardIdentification",
                                 "@type": "top:Task",
                                 "comment": "The task of identifying hazards.",
                                 "label": "Hazard identification",
                                 "isTaskOf": [
-                                    "wf:CaseSolver",
-                                    "wf:InformationRequester"
+                                    "../../agent-roles/CaseSolver",
+                                    "../../agent-roles/InformationRequester"
                                 ],
-                                "hasOutputRole": "wf:RelevantHazardType"
+                                "sendsDefaultOutputToPlanRole": "../../object-roles/RelevantHazardType"
                             },
                             {
-                                "@id": "wf:InformationOnExposureIdentification",
+                                "@id": "subtasks/InformationOnExposureIdentification",
                                 "@type": "top:Task",
                                 "comment": "The task of identifying information on exposure.",
                                 "label": "Information on exposure identification",
                                 "isTaskOf": [
-                                    "wf:CaseCreator",
-                                    "wf:InformationRequester"
+                                    "../../agent-roles/CaseCreator",
+                                    "../../agent-roles/InformationRequester"
                                 ]
                             },
                             {
-                                "@id": "wf:ObservationAnalysis",
+                                "@id": "subtasks/ObservationAnalysis",
                                 "@type": "top:Task",
                                 "label": "Observation analysis",
                                 "isTaskOf": [
-                                    "wf:CaseCreator",
-                                    "wf:InformationRequester"
+                                    "../../agent-roles/CaseCreator",
+                                    "../../agent-roles/InformationRequester"
                                 ]
                             },
                             {
-                                "@id": "wf:PlanningTimeScalesDefinition",
+                                "@id": "subtasks/PlanningTimeScalesDefinition",
                                 "@type": "top:Task",
                                 "comment": "The task of defining planning time scales.",
                                 "label": "Planning time scales definition",
                                 "isTaskOf": [
-                                    "wf:CaseCreator",
-                                    "wf:InformationRequester"
+                                    "../../agent-roles/CaseCreator",
+                                    "../../agent-roles/InformationRequester"
                                 ],
                                 "toBeAssociatedWithARole": true
                             },
                             {
-                                "@id": "wf:RiskToleranceRating",
+                                "@id": "subtasks/RiskToleranceRating",
                                 "@type": "top:Task",
                                 "comment": "The task of rating the risk tolerance.",
                                 "label": "Risk tolerance rating",
-                                "isTaskOf": "wf:InformationRequester",
-                                "hasOutputRole": "wf:RiskToleranceRatingOutput"
+                                "isTaskOf": "../../agent-roles/InformationRequester",
+                                "sendsDefaultOutputToPlanRole": "../../object-roles/RiskToleranceRatingOutput"
                             },
                             {
-                                "@id": "wf:SpatialRegionIndication",
+                                "@id": "subtasks/SpatialRegionIndication",
                                 "@type": "top:Task",
                                 "comment": "The task of indicating the spatial region of interest.",
                                 "label": "Spatial region indication",
                                 "isTaskOf": [
-                                    "wf:CaseCreator",
-                                    "wf:InformationRequester"
+                                    "../../agent-roles/CaseCreator",
+                                    "../../agent-roles/InformationRequester"
                                 ],
-                                "hasOutputRole": "wf:SelectedGeodeticRegion"
+                                "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedGeodeticRegion"
                             }
                         ]
                     },
                     {
-                        "@id": "wf:UserInformationExtraction",
+                        "@id": "tasks/UserInformationExtraction",
                         "@type": "top:Task",
                         "comment": "The task of extracting user information.",
                         "label": "User information request",
-                        "directlyPrecedes": "wf:CaseCreation",
-                        "isTaskOf": "wf:CaseCreator"
+                        "directlyPrecedes": "tasks/CaseCreation",
+                        "isTaskOf": "agent-roles/CaseCreator"
                     },
                     {
-                        "@id": "wf:CaseCreation",
+                        "@id": "tasks/CaseCreation",
                         "@type": "top:Task",
                         "comment": "The task of creating a case.",
                         "label": "Case creation",
                         "directlyPrecedes": [
-                            "wf:AdditionalInformationSearch",
-                            "wf:ClimateInformationPreparation"
+                            "tasks/AdditionalInformationSearch",
+                            "tasks/ClimateInformationPreparation"
                         ],
-                        "isTaskOf": "wf:CaseCreator"
+                        "isTaskOf": "agent-roles/CaseCreator"
                     },
                     {
-                        "@id": "wf:AdditionalInformationSearch",
+                        "@context": {"@base": "tasks/AdditionalInformationSearch/"},
+                        "@id": "../AdditionalInformationSearch",
                         "@type": "top:Task",
                         "comment": "The task of requesting external expertise such as an expert or literature review.",
                         "label": "Additional information search",
-                        "directlyPrecedes": "wf:ClimateInformationAnalysis",
-                        "isTaskOf": "wf:CaseSolver",
+                        "directlyPrecedes": "tasks/ClimateInformationAnalysis",
+                        "isTaskOf": "agent-roles/CaseSolver",
                         "hasPart": [
                             {
-                                "@id": "wf:ExternalExpertiseSearch",
+                                "@id": "subtasks/ExternalExpertiseSearch",
                                 "@type": "top:Task",
                                 "label": "External expertise search",
-                                "isTaskOf": "wf:CaseSolver"
+                                "isTaskOf": "agent-roles/CaseSolver"
                             },
                             {
-                                "@id": "wf:PerformLiteratureReview",
+                                "@id": "subtasks/PerformLiteratureReview",
                                 "@type": "top:Task",
                                 "label": "Perform literature review",
-                                "isTaskOf": "wf:CaseSolver"
+                                "isTaskOf": "agent-roles/CaseSolver"
                             }
                         ]
                     },
                     {
-                        "@id": "wf:ClimateInformationAnalysisContribution",
+                        "@id": "tasks/ClimateInformationAnalysis",
                         "@type": "top:Task",
                         "comment": "The task of designing a contribution to the case consisting of a plan for climate information analysis.",
                         "label": "Contribution for climate information analysis",
-                        "directlyPrecedes": "wf:SendClimateInformation",
-                        "isTaskOf": "wf:CaseSolver",
-                        "sendsDefaultOutputToPlanRole": "wf:ProposedClimateInformationAnalysis"
+                        "directlyPrecedes": "tasks/SendClimateInformation",
+                        "isTaskOf": "agent-roles/CaseSolver",
+                        "executedThroughOperation": "ops/ClimateInformationAnalysis"
                     },
                     {
-                        "@id": "wf:SendClimateInformation",
+                        "@id": "tasks/SendClimateInformation",
                         "@type": "top:Task",
                         "comment": "The task of sending climate information.",
                         "label": "Send climate information",
-                        "isTaskOf": "wf:CaseSolver"
+                        "directlyPrecedes": "tasks/ClimateInformationCommunication",
+                        "isTaskOf": "agent-roles/CaseSolver"
                     },
                     {
-                        "@id": "wf:ClimateInformationCommunication",
+                        "@id": "tasks/ClimateInformationCommunication",
                         "@type": "top:Task",
                         "comment": "The task of communicating the climate information.",
                         "label": "Climate information communication",
-                        "directlyFollows": "wf:SendClimateInformation",
-                        "isTaskOf": "wf:InformationRequester"
+                        "isTaskOf": "agent-roles/InformationRequester"
                     }
                 ],
                 "roles": [
                     {
-                        "@id": "wf:InformationRequester",
+                        "@id": "agent-roles/InformationRequester",
                         "@type": "top:WorkflowRole",
                         "label": "Information requester",
                         "comment": "The user that requests and uses the climate information.",
                         "range": "top:Agent"
                     },
                     {
-                        "@id": "wf:CaseCreator",
+                        "@id": "agent-roles/CaseCreator",
                         "@type": "top:WorkflowRole",
                         "label": "Creator",
                         "comment": "The creator of the climate case.",
                         "range": "top:Agent"
                     },
                     {
-                        "@id": "wf:CaseSolver",
+                        "@id": "agent-roles/CaseSolver",
                         "@type": "top:WorkflowRole",
                         "label": "Solver",
                         "comment": "The solver of the climate case.",
                         "range": "top:Agent"
                     },
                     {
-                        "@id": "wf:RelevantClimateQuestion",
+                        "@id": "object-roles/RelevantClimateQuestion",
                         "@type": "top:WorkflowRole",
                         "label": "Relevant climate question",
                         "comment": "A climate question deemed relevant for the solution of a case in the context of a climate service workflow execution.",
                         "range": "top:Description"
                     },
                     {
-                        "@id": "wf:CustomerNeed",
+                        "@id": "object-roles/CustomerNeed",
                         "@type": "top:WorkflowRole",
                         "label": "Customer need",
                         "comment": "A description of the customer needs, in respect to the request.",
                         "range": "top:Description"
                     },
                     {
-                        "@id": "wf:Goal",
+                        "@id": "object-roles/Goal",
                         "@type": "top:WorkflowRole",
                         "label": "Goal",
                         "comment": "Concrete information goal that should be achieved in order to solve the case.",
                         "range": "top:Goal"
                     },
                     {
-                        "@id": "wf:RelevantHazardType",
+                        "@id": "object-roles/RelevantHazardType",
                         "@type": "top:WorkflowRole",
                         "label": "Relevant hazard type",
                         "comment": "An hazard type deemed relevant for a case in the context of a climate service workflow execution.",
                         "range": "ccso:HazardType"
                     },
                     {
-                        "@id": "wf:RelevantClimateQuestion",
+                        "@id": "object-roles/RelevantClimateQuestion",
                         "@type": "top:WorkflowRole",
                         "label": "Relevant climate question",
                         "comment": "A climate question deemed relevant for the solution of a case in the context of a climate service workflow execution.",
                         "range": "top:Description"
                     },
                     {
-                        "@id": "wf:SelectedClimateModel",
-                        "@type": "top:WorkflowRole",
-                        "label": "Selected climate model",
-                        "comment": "A climate model selected for a case in the context of a climate service workflow execution.",
-                        "range": "ccso:ClimateModel"
-                    },
-                    {
-                        "@id": "wf:SelectedBaselineInterval",
-                        "@type": "top:WorkflowRole",
-                        "label": "Selected baseline interval",
-                        "comment": "A time interval selected as baseline for a case in the context of a climate service workflow execution.",
-                        "range": "data:TemporalRegion"
-                    },
-                    {
-                        "@id": "wf:SelectedFutureInterval",
-                        "@type": "top:WorkflowRole",
-                        "label": "Selected future interval",
-                        "comment": "A time interval selected as future interval for a case in the context of a climate service workflow execution.",
-                        "range": "data:TemporalRegion"
-                    },
-                    {
-                        "@id": "wf:SelectedEmissionScenario",
-                        "@type": "top:WorkflowRole",
-                        "label": "Selected emission scenario",
-                        "comment": "An emission scenario selected for a case in the context of a climate service workflow execution.",
-                        "range": "ccso:EmissionScenario"
-                    },
-                    {
-                        "@id": "wf:SelectedDataset",
-                        "@type": "top:WorkflowRole",
-                        "label": "Selected dataset",
-                        "comment": "A dataset selected for a case in the context of a climate service workflow execution.",
-                        "range": "data:Dataset"
-                    },
-                    {
-                        "@id": "wf:SelectedVariable",
-                        "@type": "top:WorkflowRole",
-                        "label": "Selected variable",
-                        "comment": "A variable selected for a case in the context of a climate service workflow execution.",
-                        "range": "data:Variable"
-                    },
-                    {
-                        "@id": "wf:SelectedGeodeticRegion",
+                        "@id": "object-roles/SelectedGeodeticRegion",
                         "@type": "top:WorkflowRole",
                         "label": "Selected geodetic region",
                         "comment": "A geodetic region selected for a case in the context of a climate service workflow execution.",
                         "range": "data:GeodeticRegion"
-                    },
-                    {
-                        "@id": "wf:ProposedClimateInformationAnalysis",
-                        "@type": "top:WorkflowRole",
-                        "label": "Proposed climate information analysis",
-                        "comment": "A proposal for climate information analysis, structured as a plan. The analysis of the context is considered a prerequisite, so outside of such proposal. The impact analysis is also not considered, as it is meant to be carried on after climate informationa aalysis.",
-                        "range": null
                     }
                 ]
             }
