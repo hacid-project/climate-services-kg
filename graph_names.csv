@@ -14,5 +14,5 @@ data-sources/cordex-domains/rdf/data.ttl,https://w3id.org/hacid/data/cs/cordex/c
 data-sources/cordex/rdf/*.ttl,https://w3id.org/hacid/data/cs/cordex/datasets,n
 data-sources/climdex/rdf/*.jsonld,https://w3id.org/hacid/data/cs/climdex,n
 data-sources/climdex/rdf/*.ttl,https://w3id.org/hacid/data/cs/climdex,n
-data-sources/workflow/*.jsonld,https://w3id.org/hacid/data/cs/wf,n
+data-sources/workflow/metaWorkflow.jsonld,https://w3id.org/hacid/data/cs/wf,n
 data-sources/example-cases/*.ttl,https://w3id.org/hacid/data/cs/examples,n
