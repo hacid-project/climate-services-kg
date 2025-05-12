@@ -6,7 +6,7 @@ PREFIX dimension: <https://w3id.org/hacid/data/cs/dimension/>
 
 SELECT DISTINCT ?simulation ?geodeticDiscretization ?geodeticResolution ?geodeticPeriod
 WHERE {
-    ?simulation a ccso:Simulation;
+    ?simulation a ccso:ClimateSimulation;
         ccso:hasOutput/data:dependsOnVariable ?geodeticVariable.
     ?geodeticVariable
         data:holdsSpecializationOfVariable* dimension:geodetic;

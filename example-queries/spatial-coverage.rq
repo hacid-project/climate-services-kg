@@ -6,7 +6,7 @@ PREFIX dimension: <https://w3id.org/hacid/data/cs/dimension/>
 
 SELECT *
 WHERE {
-    ?simulation a ccso:Simulation;
+    ?simulation a ccso:ClimateSimulation;
         ccso:hasOutput/data:isSpecializedAccordingTo [
             data:isSpecializationOn/data:holdsSpecializationOfVariable* dimension:geodetic;
             data:hasSelectedRegion ?geodeticRegion

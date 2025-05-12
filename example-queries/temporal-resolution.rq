@@ -6,7 +6,7 @@ PREFIX dimension: <https://w3id.org/hacid/data/cs/dimension/>
 
 SELECT DISTINCT ?simulation ?temporalDiscretization ?temporalResolution ?temporalPeriod
 WHERE {
-    ?simulation a ccso:Simulation;
+    ?simulation a ccso:ClimateSimulation;
         ccso:hasOutput/data:dependsOnVariable ?temporalVariable.
     ?temporalVariable
         data:holdsSpecializationOfVariable* dimension:time;
