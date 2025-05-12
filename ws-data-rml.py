@@ -1,16 +1,14 @@
 import re
 import string
-from pyrml import Framework, rml_function, TermUtils
+from pyrml import Framework, rml_function
 import json
 from jsonpath_ng import parse
 import pandas as pd
-import numpy as np
 import glob
 import os
 from typing import List
 from rdflib.term import URIRef, Literal
 import shortuuid
-from slugify import slugify
 from typing import Literal
 from datetime import datetime, timedelta, timezone
 from dateutil.relativedelta import relativedelta
@@ -96,7 +94,7 @@ def uri_from_list(arr: str, ns: str) -> List:
     arr = eval(arr)
     i = 0
     for s in arr:
-        arr[i] = URIRef(ns + TermUtils.irify(s))
+        arr[i] = URIRef(ns + quote(s))
         i += 1
         
     
