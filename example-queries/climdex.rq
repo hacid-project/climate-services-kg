@@ -1,0 +1,15 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+
+# Get indeces, variables, datasets
+
+SELECT 
+	*
+WHERE {
+    ?sector top:isDefinedIn <https://w3id.org/hacid/data/cs/climdex/sectors>;
+    	top:classifies ?index.
+    ?index data:derivedFromVariable ?mip_var.
+    ?mip_var data:derivedFromVariable ?cf_var.
+    ?dataset data:holdsSpecializationOfVariable ?mip_var
+}
