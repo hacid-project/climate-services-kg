@@ -45,7 +45,13 @@
 	rr:predicateObjectMap [
 	  rr:predicate rdfs:label;
 	  rr:objectMap [ 
-	  	rml:reference "label" ; 
-	  	rr:language "en" 
+	  	rml:reference "id"
+	  ]
+	] ;
+
+	rr:predicateObjectMap [
+	  rr:predicate rdfs:comment;
+	  rr:objectMap [ 
+	  	rml:reference "label"
 	  ]
 	] .

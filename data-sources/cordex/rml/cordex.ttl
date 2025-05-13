@@ -595,7 +595,6 @@
     ].
 
 :InstituteLabel
-    rr:language "en" ;
     fnml:functionValue [
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
