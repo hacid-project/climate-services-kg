@@ -167,14 +167,14 @@
         {
             "@id": "ops/ClimateInformationStudy",
             "@type": "top:Operation",
-            "comment": "The operation describing the analysis of climate model predictions relevant to a specific context.",
+            "comment": "The operation describing the study of climate information relevant to a specific context.",
             "label": "Climate information study",
             "isRealizedByPlan": [
                 {
                     "@context": {"@base": "plans/ClimateInformationStudyPlan/"},
                     "@id": "../ClimateInformationStudyPlan",
                     "@type": "top:Plan",
-                    "comment": "A typical plan for the analysis of climate model predictions relevant to a specific context, organized in two phases: climate information preparation and climate information analysis.",
+                    "comment": "A typical plan for the study of climate information relevant to a specific context, organized in two phases: climate information preparation and climate information analysis.",
                     "label": "Climate information study plan",
                     "tasks": [
                         {
@@ -269,53 +269,53 @@
                     ]
                 },
                 {
-                    "@context": {"@base": "plans/CollectiveClimateAnalysisPlan/"},
-                    "@id": "../CollectiveClimateAnalysisPlan",
+                    "@context": {"@base": "plans/CollectiveClimateInformationStudyPlan/"},
+                    "@id": "../CollectiveClimateInformationStudyPlan",
                     "@type": "top:Plan",
-                    "comment": "A plan for the collaborative analysis of climate model predictions. It involves the collection of multiple climate analysis plan, their consolidation in one plan, and the execution of such a plan.",
-                    "label": "Collective climate analysis plan",
+                    "comment": "A plan for the collaborative study of climate information in order to address a specific need. It involves the collection of multiple climate information study plan, their consolidation in one plan, and the execution of such a plan.",
+                    "label": "Collective climate information study plan",
                     "tasks": [
                         {
-                            "@id": "tasks/ClimateInformationAnalysisContribution",
+                            "@id": "tasks/ClimateInformationStudyContribution",
                             "@type": "top:Task",
-                            "comment": "The task of designing a contribution to the case consisting of a plan for climate information analysis.",
-                            "label": "Contribution for climate information analysis",
-                            "directlyPrecedes": "tasks/ClimateInformationAnalysisConsolidation",
+                            "comment": "The task of designing a contribution to the case consisting of a plan for climate information study.",
+                            "label": "Contribution for climate information study",
+                            "directlyPrecedes": "tasks/ClimateInformationStudyConsolidation",
                             "isTaskOf": "agent-roles/CaseContributor",
-                            "sendsDefaultOutputToPlanRole": "object-roles/ProposedClimateInformationAnalysisPlan"
+                            "sendsDefaultOutputToPlanRole": "object-roles/ProposedClimateInformationStudyPlan"
                         },
                         {
-                            "@id": "tasks/ClimateInformationAnalysisConsolidation",
+                            "@id": "tasks/ClimateInformationStudyConsolidation",
                             "@type": "top:Task",
-                            "comment": "The task of evaluating the proposed plans for climate analysis and the development of a single plan based on the proposals.",
-                            "label": "Climate information analysis consolidation",
-                            "directlyPrecedes": "tasks/ClimateInformationAnalysisExecution",
+                            "comment": "The task of evaluating the proposed plans for climate information study and the development of a single plan based on the proposals.",
+                            "label": "Climate information study consolidation",
+                            "directlyPrecedes": "tasks/ClimateInformationStudyExecution",
                             "isTaskOf": "agent-roles/CaseSolver",
-                            "getsDefaultInputFromPlanRole": "object-roles/ProposedClimateInformationAnalysisPlan",
-                            "sendsDefaultOutputToPlanRole": "object-roles/ConsolidatedClimateInformationAnalysisPlan"
+                            "getsDefaultInputFromPlanRole": "object-roles/ProposedClimateInformationStudyPlan",
+                            "sendsDefaultOutputToPlanRole": "object-roles/ConsolidatedClimateInformationStudyPlan"
                         },
                         {
-                            "@id": "tasks/ClimateInformationAnalysisExecution",
+                            "@id": "tasks/ClimateInformationStudyExecution",
                             "@type": "top:Task",
-                            "comment": "The task of executing the consolidated plan for climate analysis.",
-                            "label": "Climate information analysis execution",
+                            "comment": "The task of executing the consolidated plan for climate information study.",
+                            "label": "Climate information study execution",
                             "isTaskOf": "agent-roles/CaseSolver",
-                            "getsDefaultInputFromPlanRole": "object-roles/ConsolidatedClimateInformationAnalysisPlan"
+                            "getsDefaultInputFromPlanRole": "object-roles/ConsolidatedClimateInformationStudyPlan"
                         }
                     ],
                     "roles": [
                         {
-                            "@id": "object-roles/ProposedClimateInformationAnalysis",
+                            "@id": "object-roles/ProposedClimateInformationStudyPlan",
                             "@type": "top:WorkflowRole",
-                            "label": "Proposed climate information analysis",
-                            "comment": "A proposal for climate information analysis, structured as a plan. The analysis of the context is considered a prerequisite, so outside of such proposal. The impact analysis is also not considered, as it is meant to be carried on after climate informationa aalysis.",
+                            "label": "Proposed climate information study plan",
+                            "comment": "A proposal for climate information study, structured as a plan. The analysis of the context is considered a prerequisite, so outside of such proposal. The impact analysis is also not considered, as it is meant to be carried on after climate information study.",
                             "range": null
                         },
                         {
-                            "@id": "object-roles/ConsolidatedClimateInformationAnalysisPlan",
+                            "@id": "object-roles/ConsolidatedClimateInformationStudyPlan",
                             "@type": "top:WorkflowRole",
-                            "label": "Consolidated climate information analysis",
-                            "comment": "A plan for climate information analysis, composed considering a set of proposed plans contributed by different experts.",
+                            "label": "Consolidated climate information study plan",
+                            "comment": "A plan for climate information study, composed considering a set of proposed plans contributed by different experts.",
                             "range": null
                         }
                     ]
@@ -540,7 +540,7 @@
                         "@type": "top:Task",
                         "comment": "The task of requesting external expertise such as an expert or literature review.",
                         "label": "Additional information search",
-                        "directlyPrecedes": "tasks/ClimateInformationAnalysis",
+                        "directlyPrecedes": "tasks/ClimateInformationStudy",
                         "isTaskOf": "agent-roles/CaseSolver",
                         "hasPart": [
                             {
@@ -558,13 +558,13 @@
                         ]
                     },
                     {
-                        "@id": "tasks/ClimateInformationAnalysis",
+                        "@id": "tasks/ClimateInformationStudy",
                         "@type": "top:Task",
-                        "comment": "The task of designing a contribution to the case consisting of a plan for climate information analysis.",
-                        "label": "Contribution for climate information analysis",
+                        "comment": "The task of performing climate information study in order to address the case.",
+                        "label": "Climate information study",
                         "directlyPrecedes": "tasks/SendClimateInformation",
                         "isTaskOf": "agent-roles/CaseSolver",
-                        "executedThroughOperation": "ops/ClimateInformationAnalysis"
+                        "executedThroughOperation": "ops/ClimateInformationStudy"
                     },
                     {
                         "@id": "tasks/SendClimateInformation",
