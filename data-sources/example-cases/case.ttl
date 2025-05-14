@@ -7,7 +7,7 @@
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix data: <https://w3id.org/hacid/onto/data/> .
 @prefix wf: <https://w3id.org/hacid/data/cs/wf/> .
-@prefix rcp: <https://w3id.org/hacid/data/cs/greenhousegasconcentrationpathway/rcp->
+@prefix rcp: <https://w3id.org/hacid/data/cs/scenarios/RCP/>
 @prefix variable: <https://w3id.org/hacid/data/cs/variable/mip/>
 
 
@@ -66,7 +66,7 @@ people:CaseSolver1 a top:Person ;
     wf:SelectedClimateModel models:UKCP18_Local_data_at_5km_resolution ;
     wf:SelectedBaselineInterval <time/baseline> ;
     wf:SelectedFutureInterval <time/future/1>, <time/future/2> ;
-    wf:SelectedEmissionScenario rcp:8.5 ;
+    wf:SelectedEmissionScenario rcp:RCP8.5 ;
     wf:SelectedVariable variable:pr, variable:tas, variable:tasmin, variable:tasmax .
 
 risktolerance:Medium a top:Concept ;
@@ -252,7 +252,7 @@ models:UKCP18_Local_data_at_5km_resolution
 <actions/EmissionScenarioDefinition> a top:Action ;
     top:executesTask wf:EmissionScenarioDefinition ;
     top:hasParticipant people:CaseSolver1 ;
-    top:hasOutput rcp:8.5 .
+    top:hasOutput rcp:RCP8.5 .
 
 
 ## 9. ClimateInformationAnalysis

@@ -16,10 +16,10 @@ from dateutil.parser import isoparse
 from urllib.parse import quote
 
 scenario_map = {
-    'rcp45': 'https://w3id.org/hacid/data/cs/greenhousegasconcentrationpathway/rcp-4.5',
-    'rcp85': 'https://w3id.org/hacid/data/cs/greenhousegasconcentrationpathway/rcp-8.5',
-    'rcp26': 'https://w3id.org/hacid/data/cs/greenhousegasconcentrationpathway/rcp-2.6',
-    'rcp60': 'https://w3id.org/hacid/data/cs/greenhousegasconcentrationpathway/rcp-6'
+    'rcp45': 'https://w3id.org/hacid/data/cs/scenarios/RCP/RCP4.5',
+    'rcp85': 'https://w3id.org/hacid/data/cs/scenarios/RCP/RCP8.5',
+    'rcp26': 'https://w3id.org/hacid/data/cs/scenarios/RCP/RCP2.6',
+    'rcp60': 'https://w3id.org/hacid/data/cs/scenarios/RCP/RCP6'
     }
     
 def _purge_none_values(dictionary: dict) -> dict:

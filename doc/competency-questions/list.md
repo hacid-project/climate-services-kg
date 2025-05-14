@@ -133,21 +133,21 @@ ORDER BY ?index
 
 ### Filter simulations
 
-Filter available simulations by chosen emission scenario (in this case RCP-4.5), available variables (in this case tas), and required spatial resolution (in this case less than 0.2 degrees).
+Filter available simulations by chosen emission scenario (in this case RCP4.5), available variables (in this case tas), and required spatial resolution (in this case less than 0.2 degrees).
 
 ```sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX top: <https://w3id.org/hacid/onto/top-level/> 
 PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
 PREFIX data: <https://w3id.org/hacid/onto/data/>
-PREFIX rcp: <https://w3id.org/hacid/data/cs/greenhousegasconcentrationpathway/>
+PREFIX rcp: <https://w3id.org/hacid/data/cs/scenarios/RCP/>
 PREFIX mip: <https://w3id.org/hacid/data/cs/variable/mip/>
 PREFIX dimension: <https://w3id.org/hacid/data/cs/dimension/>
 
 SELECT ?model ?simulation ?output ?geodeticResolution
 WHERE {
     ?simulation a ccso:Simulation;
-        ccso:refersToScenario rcp:rcp-4.5;
+        ccso:refersToScenario rcp:RCP4.5;
         ccso:hasOutput ?output.
     ?output data:holdsSpecializationOfVariable* mip:tas;
     data:dependsOnVariable ?geodeticVariable.
@@ -219,7 +219,29 @@ ORDER BY ?organization ?regional_model ?downscaling
 
 ## Climate Service Workflow
 
-To be defined
+List all the defined operations, the possible plans to execute them, and the number of tasks the plans are composed of.
+
+```sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+
+SELECT 
+	?operation ?operation_label
+	?plan ?plan_label
+	(COUNT(?task) as ?num_tasks)
+WHERE {
+    ?operation a top:Operation;
+    	rdfs:label ?operation_label;
+    	top:isRealizedByPlan ?plan.
+    ?plan rdfs:label ?plan_label;
+    	top:definesTask ?task
+}
+GROUP BY
+	?operation ?operation_label
+	?plan ?plan_label
+ORDER BY
+	?operation ?plan
+```
 
 ## Climate Service Case
 
