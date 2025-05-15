@@ -243,6 +243,32 @@ ORDER BY
 	?operation ?plan
 ```
 
+List tasks and subtasks of a specific plan (in this case a ClimateInformationStudyPlan), in order of precedence, alongside the optional output information role of each subtask.
+
+```sparql
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+PREFIX plans: <https://w3id.org/hacid/data/cs/wf/plans/>
+
+SELECT 
+	?task ?task_label ?sub_task ?sub_task_label ?sub_task_output_role
+	(COUNT(DISTINCT ?following_task) AS ?num_following_tasks)
+	(COUNT(DISTINCT ?following_sub_task) AS ?num_following_sub_tasks)
+WHERE {
+    plans:ClimateInformationStudyPlan top:definesTask ?task.
+    ?task rdfs:label ?task_label;
+        top:directlyPrecedes* ?following_task;
+        top:hasPart ?sub_task.
+    ?sub_task rdfs:label ?sub_task_label;
+        top:directlyPrecedes* ?following_sub_task.
+    OPTIONAL {
+    	?sub_task top:sendsDefaultOutputToPlanRole ?sub_task_output_role.
+    }
+}
+GROUP BY ?task ?task_label ?sub_task ?sub_task_label ?sub_task_output_role
+ORDER BY DESC(?num_following_tasks) DESC(?num_following_sub_tasks)
+```
+
 ## Climate Service Case
 
 To be defined
