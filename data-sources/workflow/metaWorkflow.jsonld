@@ -84,7 +84,7 @@
                             "comment": "The task of identifying metrics and variables.",
                             "label": "Metric and variable identification",
                             "directlyPrecedes": "tasks/BaselinePeriodChoice",
-                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedVariable"
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedVariable"
                         },
                         {
                             "@id": "tasks/BaselinePeriodChoice",
@@ -92,7 +92,7 @@
                             "comment": "The task of choosing the baseline period.",
                             "label": "Baseline period choice",
                             "directlyPrecedes": [ "tasks/FuturePeriodChoice", "tasks/GlobalWarmingLevelChoice"],
-                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedBaselineInterval"
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedBaselineInterval"
                         },
                         {
                             "@id": "tasks/FuturePeriodChoice",
@@ -100,7 +100,7 @@
                             "comment": "The task of choosing the future period.",
                             "label": "Future period choice",
                             "directlyPrecedes": "tasks/EmissionScenarioDefinition",
-                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedFutureInterval"
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedFutureInterval"
                         },
                         {
                             "@id": "tasks/EmissionScenarioDefinition",
@@ -108,7 +108,7 @@
                             "comment": "The task of defining the emission scenarios.",
                             "label": "Emission scenario definition",
                             "directlyPrecedes": "tasks/DataSelectionByAdditionalCriteria",
-                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedEmissionScenario"
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedEmissionScenario"
                         },
                         {
                             "@id": "tasks/GlobalWarmingLevelChoice",
@@ -116,7 +116,7 @@
                             "comment": "The task of choosing the global warming level as target, rather than (or in addition to) chosing a specific future period and emission scenario.",
                             "label": "Global warming level choice",
                             "directlyPrecedes": "tasks/DataSelectionByAdditionalCriteria",
-                            "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedGlobalWarmingLevel"
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedGlobalWarmingLevel"
                         },
                         {
                             "@id": "tasks/DataSelectionByAdditionalCriteria",
@@ -131,7 +131,7 @@
                             "@type": "top:WorkflowRole",
                             "label": "Selected variable",
                             "comment": "A variable selected for a case in the context of a climate service workflow execution.",
-                            "range": "data:Variable"
+                            "range": "data:DependentVariable"
                         },
                         {
                             "@id": "object-roles/SelectedBaselineInterval",
@@ -323,8 +323,7 @@
             ]
         },
         {
-            "@context": {"@base": "ops/ClimateServiceCaseResolution/"},
-            "@id": "../ClimateServiceCaseResolution",
+            "@id": "ops/ClimateServiceCaseResolution",
             "@type": "top:Operation",
             "comment": "The operation describing, at an abstract level, the handling of a request for climate information.",
             "label": "Climate service case resolution",
