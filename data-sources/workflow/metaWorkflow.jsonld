@@ -191,22 +191,22 @@
                                     "comment": "The task of selecting the avalaible data that will be used in the analysis.",
                                     "label": "Data selection",
                                     "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedDataset",
-                                    "directlyPrecedes": "subtasks/SpatialDownscalingApplication",
+                                    "directlyPrecedes": "subtasks/SpatialDownscaling",
                                     "executedThroughOperation": "ops:DatasetSelection"
                                 },
                                 {
-                                    "@id": "subtasks/SpatialDownscalingApplication",
+                                    "@id": "subtasks/SpatialDownscaling",
                                     "@type": "top:Task",
                                     "comment": "The task of applying spatial downscaling methods if needed: according to the resolution available in the datasets and the required resolution.",
-                                    "label": "Spatial downscaling application",
-                                    "directlyPrecedes": "subtasks/RegriddingApplication",
+                                    "label": "Spatial downscaling",
+                                    "directlyPrecedes": "subtasks/Regridding",
                                     "toBeAssociatedWithARole": true
                                 },
                                 {
-                                    "@id": "subtasks/RegriddingApplication",
+                                    "@id": "subtasks/Regridding",
                                     "@type": "top:Task",
                                     "comment": "The task of applying regridding methods if needed: according to the grid(s) available in the datasets and the desired grid.",
-                                    "label": "Regridding application",
+                                    "label": "Regridding",
                                     "directlyPrecedes": "subtasks/ComputationOfMetrics",
                                     "toBeAssociatedWithARole": true
                                 },
@@ -215,14 +215,14 @@
                                     "@type": "top:Task",
                                     "comment": "The task of computing relevant metrics from the values of the climate variables in the datasets, possibly including bias correction using observational data.",
                                     "label": "Computation of metrics",
-                                    "directlyPrecedes": "subtasks/BiasCorrectionApplication",
+                                    "directlyPrecedes": "subtasks/BiasCorrection",
                                     "toBeAssociatedWithARole": true
                                 },
                                 {
-                                    "@id": "subtasks/BiasCorrectionApplication",
+                                    "@id": "subtasks/BiasCorrection",
                                     "@type": "top:Task",
                                     "comment": "The task of applying bias correction methods to the obtained metrics, based on observational data.",
-                                    "label": "Bias correction application",
+                                    "label": "Bias correction",
                                     "directlyPrecedes": "subtasks/ClimateSimulationEvaluation",
                                     "toBeAssociatedWithARole": true
                                 },
@@ -250,18 +250,18 @@
                             "label": "Climate information analysis",
                             "hasPart": [
                                 {
-                                    "@id": "subtasks/ClimateChangeQuantificationApplication",
+                                    "@id": "subtasks/ClimateChangeQuantification",
                                     "@type": "top:Task",
                                     "comment": "The task of applying the climate change quantification method.",
-                                    "label": "Climate change quantification application",
-                                    "directlyPrecedes": "subtasks/UncertaintyQuantificationApplication",
+                                    "label": "Climate change quantification",
+                                    "directlyPrecedes": "subtasks/UncertaintyQuantification",
                                     "toBeAssociatedWithARole": true
                                 },
                                 {
-                                    "@id": "subtasks/UncertaintyQuantificationApplication",
+                                    "@id": "subtasks/UncertaintyQuantification",
                                     "@type": "top:Task",
                                     "comment": "The task of applying uncertainty quantification",
-                                    "label": "Uncertainty quantification application",
+                                    "label": "Uncertainty quantification",
                                     "toBeAssociatedWithARole": true
                                 }
                             ]
