@@ -199,6 +199,14 @@
                                     "@type": "top:Task",
                                     "comment": "The task of applying spatial downscaling methods if needed: according to the resolution available in the datasets and the required resolution.",
                                     "label": "Spatial downscaling application",
+                                    "directlyPrecedes": "subtasks/RegriddingApplication",
+                                    "toBeAssociatedWithARole": true
+                                },
+                                {
+                                    "@id": "subtasks/RegriddingApplication",
+                                    "@type": "top:Task",
+                                    "comment": "The task of applying regridding methods if needed: according to the grid(s) available in the datasets and the desired grid.",
+                                    "label": "Regridding application",
                                     "directlyPrecedes": "subtasks/ComputationOfMetrics",
                                     "toBeAssociatedWithARole": true
                                 },
@@ -206,7 +214,15 @@
                                     "@id": "subtasks/ComputationOfMetrics",
                                     "@type": "top:Task",
                                     "comment": "The task of computing relevant metrics from the values of the climate variables in the datasets, possibly including bias correction using observational data.",
-                                    "label": "Computation of  metrics",
+                                    "label": "Computation of metrics",
+                                    "directlyPrecedes": "subtasks/BiasCorrectionApplication",
+                                    "toBeAssociatedWithARole": true
+                                },
+                                {
+                                    "@id": "subtasks/BiasCorrectionApplication",
+                                    "@type": "top:Task",
+                                    "comment": "The task of applying bias correction methods to the obtained metrics, based on observational data.",
+                                    "label": "Bias correction application",
                                     "directlyPrecedes": "subtasks/ClimateSimulationEvaluation",
                                     "toBeAssociatedWithARole": true
                                 },
