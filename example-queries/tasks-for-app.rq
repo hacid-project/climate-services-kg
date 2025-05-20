@@ -7,7 +7,7 @@ PREFIX data_sel_task: <plans/ClimateInformationStudyPlan/tasks/ClimateInformatio
 # Get tasks
 
 SELECT 
-	?task ?task_label ?sub_task ?sub_task_label ?output_role
+	?task ?task_label ?sub_task ?sub_task_label ?role ?role_label
 	(COUNT(DISTINCT ?following_task) AS ?num_following_tasks)
 	(COUNT(DISTINCT ?following_sub_task) AS ?num_following_sub_tasks)
 WHERE {
@@ -26,9 +26,10 @@ WHERE {
     ?sub_task rdfs:label ?sub_task_label.
     ?sub_task top:directlyPrecedes* ?following_sub_task.
     OPTIONAL {
-    	?sub_task top:sendsDefaultOutputToPlanRole ?output_role.
+    	?sub_task top:sendsDefaultOutputToPlanRole ?role.
+    	?role rdfs:label ?role_label
     }
     
 }
-GROUP BY ?task ?task_label ?sub_task ?sub_task_label ?output_role
+GROUP BY ?task ?task_label ?sub_task ?sub_task_label ?role ?role_label
 ORDER BY DESC(?num_following_tasks) DESC(?num_following_sub_tasks)

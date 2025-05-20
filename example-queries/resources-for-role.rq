@@ -1,0 +1,11 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT 
+	?resource ?resource_label
+WHERE {
+  	VALUES $role {<https://w3id.org/hacid/data/cs/wf/plans/DatasetSelectionPlan/object-roles/SelectedVariable>}
+	$role rdfs:range ?range_class.
+  	?resource a ?range_class;
+    	rdfs:label ?resource_label.
+}
+ORDER BY ?resource_label
