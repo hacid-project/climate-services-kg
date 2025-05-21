@@ -135,7 +135,7 @@
             "hasInputRole": {
                 "@id": "ops:ComputationOfMetrics/roles/metric",
                 "label": "metric",
-                "hasExpectedType": "data:DepedentVariable"
+                "hasExpectedType": "data:DependentVariable"
             }
         },
         {
@@ -290,7 +290,7 @@
                     "hasInputRole": {
                         "@id": "ops:FilterClimateProjectionsByVariable/roles/SelectedVariable",
                         "label": "Selected variable",
-                        "hasExpectedType": "data:DepedentVariable"
+                        "hasExpectedType": "data:DependentVariable"
                     }
                 },
                 {
