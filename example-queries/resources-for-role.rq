@@ -1,3 +1,4 @@
+BASE <https://w3id.org/hacid/data/cs/wf/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX top: <https://w3id.org/hacid/onto/top-level/>
 PREFIX method_role: <app-profile/roles/Method>
@@ -10,9 +11,22 @@ WHERE {
   		?resource a ?resource_class;
     		rdfs:label ?resource_label.
 	} UNION {
-		VALUES $role {method_role:}
-  		?resource a top:Method;
-    		rdfs:label ?resource_label.
+		FILTER($role = method_role:).
+		{
+			?op top:isRealizedByMethod ?resource
+		} UNION {
+			?op top:isSpecializedBy ?resource.
+			FILTER(?op != ops:FilterClimateProjections)
+		} UNION {
+			?op top:isRealizedByPlan/top:definesTask/top:executedThroughOperation ?resource
+			FILTER NOT EXISTS {?other_op1 top:isRealizedByMethod|top:isSpecializedBy ?resource}
+			FILTER NOT EXISTS {?resource top:isRealizedByMethod|top:isSpecializedBy|(top:isRealizedByPlan/top:definesTask/top:executedThroughOperation) ?other_op2}
+			FILTER (?op != ops:ClimateProjectionSelection)
+			FILTER (?op != ops:ClimateServiceCaseResolution)
+		}
+		?op rdfs:label ?op_label.
+		?resource rdfs:label ?method_label.
+		BIND(CONCAT(?op_label, ' - ', ?method_label) AS ?resource_label)
 	}
 }
 ORDER BY ?resource_label
