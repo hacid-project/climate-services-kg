@@ -51,6 +51,10 @@
             "@id": "top:isRealizedByPlan",
             "@type": "@id"
         },
+        "isRealizedByMethod": {
+            "@id": "top:isRealizedByMethod",
+            "@type": "@id"
+        },
         "executedThroughOperation": {
             "@id": "top:executedThroughOperation",
             "@type": "@id"
@@ -62,123 +66,487 @@
         "sendsDefaultOutputToPlanRole": {
             "@id": "top:sendsDefaultOutputToPlanRole",
             "@type": "@id"
+        },
+        "isSpecializedBy": {
+            "@id": "top:isSpecializedBy",
+            "@type": "@id"
+        },
+        "hasInputRole": {
+            "@id": "top:hasInputRole",
+            "@type": "@id"
+        },
+        "hasExpectedType": {
+            "@id": "top:hasExpectedType",
+            "@type": "@id"
         }
     },
     "@graph": [
         {
-            "@id": "ops/DatasetSelection",
+            "@id": "ops:SpatialDownscaling",
             "@type": "top:Operation",
-            "comment": "The selection of some datasets according to relevance to a specific case.",
-            "label": "Dataset selection",
+            "comment": "Derive local- to regional-scale (10 to 100 km) information from larger-scale models or data analyses.",
+            "label": "Spatial downscaling",
+            "isRealizedByMethod": [
+                {
+                    "@id": "ops:SpatialDownscaling/methods/StatisticalDownscaling",
+                    "@type": "top:Method",
+                    "label": "Statistical downscaling"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/DynamicalDownscaling",
+                    "@type": "top:Method",
+                    "label": "Dynamical downscaling using climate models"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/AIMethods",
+                    "@type": "top:Method",
+                    "label": "AI methods (experimental)"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/HybridDownscaling",
+                    "@type": "top:Method",
+                    "label": "Hybrid downscaling"
+                }
+            ]
+        },
+        {
+            "@id": "ops:Regridding",
+            "@type": "top:Operation",
+            "comment": "Interpolation from one grid resolution to a different grid resolution.",
+            "label": "Regridding",
+            "isRealizedByMethod": [
+                {
+                    "@id": "ops:SpatialDownscaling/methods/BilinearRegridding",
+                    "@type": "top:Method",
+                    "label": "Bilinear regridding"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/NearestNeighbour",
+                    "@type": "top:Method",
+                    "label": "Nearest neighbour"
+                }
+            ]
+        },
+        {
+            "@id": "ops:ComputationOfMetrics",
+            "@type": "top:Operation",
+            "comment": "",
+            "label": "Computation of metrics",
+            "hasInputRole": {
+                "@id": "ops:ComputationOfMetrics/roles/metric",
+                "label": "metric",
+                "hasExpectedType": "data:DepedentVariable"
+            }
+        },
+        {
+            "@id": "ops:BiasCorrection",
+            "@type": "top:Operation",
+            "comment": "Bias correction/adjustment/calibration using statistical techniques",
+            "label": "Bias correction",
+            "isRealizedByMethod": [
+                {
+                    "@id": "ops:SpatialDownscaling/methods/DeltaMethod",
+                    "@type": "top:Method",
+                    "label": "Delta method"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/QuantileMapping",
+                    "@type": "top:Method",
+                    "label": "Quantile mapping"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/LinearScaling",
+                    "@type": "top:Method",
+                    "label": "Linear scaling"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/QuantileDeltaMapping",
+                    "@type": "top:Method",
+                    "label": "Quantile delta mapping"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/ScaleDistributionMapping",
+                    "@type": "top:Method",
+                    "label": "Scale distribution mapping"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/CDFt",
+                    "@type": "top:Method",
+                    "label": "CDFt"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/EquidistantCDFMatching",
+                    "@type": "top:Method",
+                    "label": "Equidistant CDF matching"
+                },
+                {
+                    "@id": "ops:SpatialDownscaling/methods/ISIMIP3BASD",
+                    "@type": "top:Method",
+                    "label": "ISIMIP3BASD"
+                }
+            ]
+        },
+        {
+            "@id": "ops:BiasQuantification",
+            "@type": "top:Operation",
+            "comment": "Bias indicates a systematic difference, and bias relative to reliable observations is interpreted as “error”. The baseline values can come from observations or a benchmark model simulation, or ensemble mean.",
+            "label": "Bias quantification"
+        },
+        {
+            "@id": "ops:Clustering",
+            "@type": "top:Operation",
+            "comment": "Clustering operation.",
+            "label": "Clustering"
+        },
+        {
+            "@id": "ops:EnsembleDescriptiveStatistic",
+            "@type": "top:Operation",
+            "label": "Ensemble descriptive stastic.",
+            "comment": "A summary statistic that quantitatively describes or summarizes features from an ensemble of climate projections.",
+            "isSpecializedBy": [
+                {
+                    "@id": "ops:Mean",
+                    "@type": "top:Operation",
+                    "label": "Mean"
+                },
+                {
+                    "@id": "ops:Median",
+                    "@type": "top:Operation",
+                    "label": "Median"
+                },
+                {
+                    "@id": "ops:StandardDeviation",
+                    "@type": "top:Operation",
+                    "label": "Standard deviation"
+                },
+                {
+                    "@id": "ops:EnsembleRange",
+                    "@type": "top:Operation",
+                    "label": "Ensemble range"
+                }
+            ]
+        },
+        {
+            "@id": "ops:PatternMatching",
+            "@type": "top:Operation",
+            "label": "Pattern matching",
             "isRealizedByPlan": [
                 {
-                    "@context": {"@base": "plans/DatasetSelectionPlan/"},
-                    "@id": "../DatasetSelectionPlan",
+                    "@id": "ops:PatternMatching/plans/WithClustering",
                     "@type": "top:Plan",
-                    "comment": "A typical plan for the selection of climate datasets relevant to a specific context.",
-                    "label": "Dataset selection plan",
+                    "label": "Pattern matching plan including a clustering step.",
+                    "tasks": {
+                        "@id": "ops:PatternMatching/plans/WithClustering/tasks/Clustering",
+                        "@type": "top:Plan",
+                        "label": "Clustering step of a pattern matching plan",
+                        "executedThroughOperation": "ops:Clustering"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "ops:ClimateProjectionEvaluation",
+            "@type": "top:Operation",
+            "comment": "Evaluation of the considered climate projections, according to reliability and relevance to the case.",
+            "label": "Climate projection evaluation",
+            "isRealizedByPlan": {
+                "@id": "ops:ClimateProjectionEvaluation/plans/generic",
+                "@type": "top:Plan",
+                "label": "Generic plan for the evaluation of climate projections, possbily including bias quantification or pattern matching.",
+                "tasks": [
+                    {
+                        "@id": "ops:ClimateProjectionEvaluation/plans/generic/tasks/BiasQuantification",
+                        "@type": "top:Task",
+                        "comment": "Bias indicates a systematic difference, and bias relative to reliable observations is interpreted as “error”. The baseline values can come from observations or a benchmark model simulation, or ensemble mean.",
+                        "label": "Bias quantification",
+                        "executedThroughOperation": "ops:BiasQuantification"
+                    },
+                    {
+                        "@id": "ops:ClimateProjectionEvaluation/plans/generic/tasks/PatternMatching",
+                        "@type": "top:Task",
+                        "label": "Pattern matching",
+                        "executedThroughOperation": "ops:PatternMatching"
+                    }
+                ]
+            }
+        },
+        {
+            "@id": "ops:ClimateProjectionSelection",
+            "@type": "top:Operation",
+            "comment": "Selection of the the climate projections to be considered in the analysis, according to results of the evaluation.",
+            "label": "Climate projection selection"
+        },
+        {
+            "@id": "ops:FilterClimateProjections",
+            "@type": "top:Operation",
+            "comment": "Filter available climate projections, according to some criteria.",
+            "label": "Filter climate projections",
+            "isSpecializedBy": [
+                {
+                    "@id": "ops:FilterClimateProjectionsByVariable",
+                    "@type": "top:Operation",
+                    "comment": "Filter available climate projections, according to exposed variables or metrics.",
+                    "label": "Filter climate projections by variable",
+                    "hasInputRole": {
+                        "@id": "ops:FilterClimateProjectionsByVariable/roles/SelectedVariable",
+                        "label": "Selected variable",
+                        "hasExpectedType": "data:DepedentVariable"
+                    }
+                },
+                {
+                    "@id": "ops:FilterClimateProjectionsByBaselinePeriod",
+                    "@type": "top:Operation",
+                    "comment": "Filter available climate projections, according to the baseline period.",
+                    "label": "Filter climate projections by baseline period",
+                    "hasInputRole": {
+                        "@id": "ops:FilterClimateProjectionsByBaselineInterval/roles/SelectedBaselineInterval",
+                        "label": "Selected baseline interval",
+                        "hasExpectedType": "data:TemporalRegion"
+                    }
+                },
+                {
+                    "@id": "ops:FilterClimateProjectionsByFuturePeriod",
+                    "@type": "top:Operation",
+                    "comment": "Filter available climate projections, according to the future period.",
+                    "label": "Filter climate projections by future period",
+                    "hasInputRole": {
+                        "@id": "ops:FilterClimateProjectionsByFuturePeriod/roles/SelectedFuturePeriod",
+                        "label": "Selected future period",
+                        "hasExpectedType": "data:TemporalRegion"
+                    }
+                },
+                {
+                    "@id": "ops:FilterClimateProjectionsByEmissionScenario",
+                    "@type": "top:Operation",
+                    "comment": "Filter available climate projections, according to the emission scenarios.",
+                    "label": "Filter climate projections by emission scenario",
+                    "hasInputRole": {
+                        "@id": "ops:FilterClimateProjectionsByEmissionScenario/roles/SelectedEmissionScenario",
+                        "label": "Selected emission scenario",
+                        "hasExpectedType": "ccso:EmissionScenario"
+                    }
+                },
+                {
+                    "@id": "ops:FilterClimateProjectionsByGlobalWarmingLevel",
+                    "@type": "top:Operation",
+                    "comment": "Filter available climate projections, according to the global warming level as target, rather than (or in addition to) doing it on a specific future period and emission scenario.",
+                    "label": "Filter climate projections by global warming level",
+                    "hasInputRole": {
+                        "@id": "ops:FilterClimateProjectionsByGlobalWarmingLevel/roles/SelectedGlobalWarmingLevel",
+                        "label": "Selected global warming level"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "ops:ClimateProjectionSelection",
+            "@type": "top:Operation",
+            "comment": "The selection of some climate projections according to relevance to a specific case.",
+            "label": "Climate projection selection",
+            "isRealizedByPlan": [
+                {
+                    "@context": {
+                        "@base": "plans/ClimateProjectionSelectionPlan/"
+                    },
+                    "@id": "../ClimateProjectionSelectionPlan",
+                    "@type": "top:Plan",
+                    "comment": "A typical plan for the selection of climate projections relevant to a specific context.",
+                    "label": "Climate projection selection plan",
                     "tasks": [
                         {
-                            "@id": "tasks/MetricAndVariableIdentification",
+                            "@id": "tasks/FilterByVariable",
                             "@type": "top:Task",
-                            "comment": "The task of identifying metrics and variables.",
-                            "label": "Metric and variable identification",
-                            "directlyPrecedes": "tasks/BaselinePeriodChoice",
-                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedVariable"
+                            "comment": "The task of filtering available climate projections, according to exposed variables or metrics.",
+                            "label": "Filter by variable",
+                            "directlyPrecedes": "tasks/FilterByBaselinePeriod",
+                            "executedThroughOperation": "ops:FilterClimateProjectionsByVariable",
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedProjection"
                         },
                         {
-                            "@id": "tasks/BaselinePeriodChoice",
+                            "@id": "tasks/FilterByBaselinePeriod",
                             "@type": "top:Task",
-                            "comment": "The task of choosing the baseline period.",
-                            "label": "Baseline period choice",
-                            "directlyPrecedes": [ "tasks/FuturePeriodChoice", "tasks/GlobalWarmingLevelChoice"],
-                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedBaselineInterval"
+                            "comment": "The task of filtering available climate projections, according to the baseline period.",
+                            "label": "Filter by baseline period",
+                            "directlyPrecedes": [
+                                "tasks/FilterByFuturePeriod",
+                                "tasks/FilterByGlobalWarmingLevel"
+                            ],
+                            "executedThroughOperation": "ops:FilterClimateProjectionsByBaselinePeriod",
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedProjection"
                         },
                         {
-                            "@id": "tasks/FuturePeriodChoice",
+                            "@id": "tasks/FilterByFuturePeriod",
                             "@type": "top:Task",
-                            "comment": "The task of choosing the future period.",
-                            "label": "Future period choice",
-                            "directlyPrecedes": "tasks/EmissionScenarioDefinition",
-                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedFutureInterval"
+                            "comment": "The task of filtering available climate projections, according to the future period.",
+                            "label": "Filter by future period",
+                            "directlyPrecedes": "tasks/FilterByEmissionScenario",
+                            "executedThroughOperation": "ops:FilterClimateProjectionsByFuturePeriod",
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedProjection"
                         },
                         {
-                            "@id": "tasks/EmissionScenarioDefinition",
+                            "@id": "tasks/FilterByEmissionScenario",
                             "@type": "top:Task",
-                            "comment": "The task of defining the emission scenarios.",
-                            "label": "Emission scenario definition",
-                            "directlyPrecedes": "tasks/DataSelectionByAdditionalCriteria",
-                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedEmissionScenario"
+                            "comment": "The task of filtering available climate projections, according to the emission scenario.",
+                            "label": "Filter by emission scenario",
+                            "directlyPrecedes": "tasks/FilterByAdditionalCriteria",
+                            "executedThroughOperation": "ops:FilterClimateProjectionsByEmissionScenario",
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedProjection"
                         },
                         {
-                            "@id": "tasks/GlobalWarmingLevelChoice",
+                            "@id": "tasks/FilterByGlobalWarmingLevel",
                             "@type": "top:Task",
-                            "comment": "The task of choosing the global warming level as target, rather than (or in addition to) chosing a specific future period and emission scenario.",
-                            "label": "Global warming level choice",
-                            "directlyPrecedes": "tasks/DataSelectionByAdditionalCriteria",
-                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedGlobalWarmingLevel"
+                            "comment": "The task of filtering available climate projections, according to the global warming level as target, rather than (or in addition to) doing it on a specific future period and emission scenario.",
+                            "label": "Filter by global warming level",
+                            "directlyPrecedes": "tasks/FilterByAdditionalCriteria",
+                            "executedThroughOperation": "ops:FilterClimateProjectionsByGlobalWarmingLevel",
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedProjection"
                         },
                         {
-                            "@id": "tasks/DataSelectionByAdditionalCriteria",
+                            "@id": "tasks/FilterByAdditionalCriteria",
                             "@type": "top:Task",
-                            "comment": "The task of selecting the avalaible data by some criteria that is not by variable/metric, baseline period, future period, nor global warmin level.",
-                            "label": "Data selection by additional criteria"
-                        }
-                    ],
-                    "roles":[
-                        {
-                            "@id": "object-roles/SelectedVariable",
-                            "@type": "top:WorkflowRole",
-                            "label": "Selected variable",
-                            "comment": "A variable selected for a case in the context of a climate service workflow execution.",
-                            "range": "data:DependentVariable"
-                        },
-                        {
-                            "@id": "object-roles/SelectedBaselineInterval",
-                            "@type": "top:WorkflowRole",
-                            "label": "Selected baseline interval",
-                            "comment": "A time interval selected as baseline for a case in the context of a climate service workflow execution.",
-                            "range": "data:TemporalRegion"
-                        },
-                        {
-                            "@id": "object-roles/SelectedFutureInterval",
-                            "@type": "top:WorkflowRole",
-                            "label": "Selected future interval",
-                            "comment": "A time interval selected as future interval for a case in the context of a climate service workflow execution.",
-                            "range": "data:TemporalRegion"
-                        },
-                        {
-                            "@id": "object-roles/SelectedEmissionScenario",
-                            "@type": "top:WorkflowRole",
-                            "label": "Selected emission scenario",
-                            "comment": "An emission scenario selected for a case in the context of a climate service workflow execution.",
-                            "range": "ccso:EmissionScenario"
-                        },
-                        {
-                            "@id": "object-roles/SelectedGlobalWarmingLevel",
-                            "@type": "top:WorkflowRole",
-                            "label": "Selected global warming level",
-                            "comment": "An global warming level selected for a case in the context of a climate service workflow execution."
+                            "comment": "The task of filtering the avalaible data by some criteria that is not by variable/metric, baseline period, future period, nor global warmin level.",
+                            "label": "Filter by additional criteria",
+                            "executedThroughOperation": "ops:FilterClimateProjections",
+                            "sendsDefaultOutputToPlanRole": "object-roles/SelectedProjection"
                         }
                     ]
                 }
             ]
         },
         {
-            "@id": "ops/ClimateInformationStudy",
+            "@id": "ops:TimeSeriesAnalysis",
+            "@type": "top:Operation",
+            "label": "Time series analysis",
+            "isSpecializedBy": [
+                {
+                    "@id": "ops:DifferenceQuantification",
+                    "@type": "top:Operation",
+                    "label": "Difference quantification"
+                },
+                {
+                    "@id": "ops:TrendAnalysis",
+                    "@type": "top:Operation",
+                    "label": "Trend analysis"
+                }
+            ]
+        },
+        {
+            "@id": "ops:ModelWeighting",
+            "@type": "top:Operation",
+            "label": "Model weighting"
+        },
+        {
+            "@id": "ops:ExtremeValueAnalysis",
+            "@type": "top:Operation",
+            "label": "Extreme value analysis",
+            "isRealizedByMethod": [
+                {
+                    "@id": "ops:ExtremeValueAnalysis/methods/ReturnPeriodAnalysis",
+                    "@type": "top:Method",
+                    "label": "Return period analysis"
+                },
+                {
+                    "@id": "ops:ExtremeValueAnalysis/methods/ThresholdAnalysis",
+                    "@type": "top:Method",
+                    "label": "Threshold analysis"
+                },
+                {
+                    "@id": "ops:ExtremeValueAnalysis/methods/FrequencyAnalysis",
+                    "@type": "top:Method",
+                    "label": "Frequency analysis"
+                },
+                {
+                    "@id": "ops:ExtremeValueAnalysis/methods/ExtremeValueDistribution",
+                    "@type": "top:Method",
+                    "label": "Extreme value distribution"
+                }
+            ]
+        },
+        {
+            "@id": "ops:SignificanceTesting",
+            "@type": "top:Operation",
+            "label": "Significance testing"
+        },
+        {
+            "@id": "ops:ClimateChangeQuantification",
+            "@type": "top:Operation",
+            "comment": "Quantify the magnitude of climate change in respect to a baseline.",
+            "label": "Climate change quantification",
+            "isRealizedByPlan": {
+                "@id": "ops:ClimateChangeQuantification/plans/generic",
+                "@type": "top:Plan",
+                "label": "Generic plan for climate change quantification",
+                "comment": "Generic plan for the quantification of climate change considering an ensemble of projections.",
+                "tasks": [
+                    {
+                        "@id": "ops:ClimateChangeQuantification/plans/generic/tasks/ModelWeighting",
+                        "@type": "top:Task",
+                        "label": "Model weighting",
+                        "executedThroughOperation": "ops:ModelWeighting"
+                    },
+                    {
+                        "@id": "ops:ClimateChangeQuantification/plans/generic/tasks/DifferenceQuantification",
+                        "@type": "top:Task",
+                        "label": "Difference quantification",
+                        "executedThroughOperation": "ops:DifferenceQuantification"
+                    },
+                    {
+                        "@id": "ops:ClimateChangeQuantification/plans/generic/tasks/ExtremeValueAnalysis",
+                        "@type": "top:Task",
+                        "label": "Extreme value analysis",
+                        "executedThroughOperation": "ops:ExtremeValueAnalysis"
+                    },
+                    {
+                        "@id": "ops:ClimateChangeQuantification/plans/generic/tasks/TrendAnalysis",
+                        "@type": "top:Task",
+                        "label": "Trend analysis",
+                        "executedThroughOperation": "ops:TrendAnalysis"
+                    },
+                    {
+                        "@id": "ops:ClimateChangeQuantification/plans/generic/tasks/SignificanceTesting",
+                        "@type": "top:Task",
+                        "label": "Significance testing",
+                        "executedThroughOperation": "ops:SignificanceTesting"
+                    }
+                ]
+            }
+        },
+        {
+            "@id": "ops:UncertaintyQuantification",
+            "@type": "top:Operation",
+            "label": "Uncertainty quantification",
+            "isRealizedByMethod": [
+                {
+                    "@id": "ops:UncertaintyQuantification/methods/CDFAnalysis",
+                    "@type": "top:Operation",
+                    "label": "Analysis of cumulative distribution function (CDF)"
+                },
+                {
+                    "@id": "ops:UncertaintyQuantification/methods/PDFAnalysis",
+                    "@type": "top:Operation",
+                    "label": "Analysis of probability density function (PDF)"
+                }
+            ]
+        },
+        {
+            "@id": "ops:ClimateInformationStudy",
             "@type": "top:Operation",
             "comment": "The operation describing the study of climate information relevant to a specific context.",
             "label": "Climate information study",
             "isRealizedByPlan": [
                 {
-                    "@context": {"@base": "plans/ClimateInformationStudyPlan/"},
+                    "@context": {
+                        "@base": "plans/ClimateInformationStudyPlan/"
+                    },
                     "@id": "../ClimateInformationStudyPlan",
                     "@type": "top:Plan",
                     "comment": "A typical plan for the study of climate information relevant to a specific context, organized in two phases: climate information preparation and climate information analysis.",
                     "label": "Climate information study plan",
                     "tasks": [
                         {
-                            "@context": {"@base": "tasks/ClimateInformationPreparation/"},
+                            "@context": {
+                                "@base": "tasks/ClimateInformationPreparation/"
+                            },
                             "@id": "../ClimateInformationPreparation",
                             "@type": "top:Task",
                             "comment": "The task of preparing the climate information.",
@@ -186,37 +554,37 @@
                             "directlyPrecedes": "tasks/ClimateInformationAnalysis",
                             "hasPart": [
                                 {
-                                    "@id": "subtasks/DataSelection",
+                                    "@id": "subtasks/BaseClimateProjectionSelection",
                                     "@type": "top:Task",
-                                    "comment": "The task of selecting the avalaible data that will be used in the analysis.",
+                                    "comment": "The task of selecting the avalaible climate projections that will be used in the analysis.",
                                     "label": "Data selection",
-                                    "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedDataset",
+                                    "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedProjection",
                                     "directlyPrecedes": "subtasks/SpatialDownscaling",
-                                    "executedThroughOperation": "ops:DatasetSelection"
+                                    "executedThroughOperation": "ops:ClimateProjectionSelection"
                                 },
                                 {
                                     "@id": "subtasks/SpatialDownscaling",
                                     "@type": "top:Task",
-                                    "comment": "The task of applying spatial downscaling methods if needed: according to the resolution available in the datasets and the required resolution.",
+                                    "comment": "The task of applying spatial downscaling methods if needed: according to the resolution available in the projections and the required resolution.",
                                     "label": "Spatial downscaling",
                                     "directlyPrecedes": "subtasks/Regridding",
-                                    "toBeAssociatedWithARole": true
+                                    "executedThroughOperation": "ops:SpatialDownscaling"
                                 },
                                 {
                                     "@id": "subtasks/Regridding",
                                     "@type": "top:Task",
-                                    "comment": "The task of applying regridding methods if needed: according to the grid(s) available in the datasets and the desired grid.",
+                                    "comment": "The task of applying regridding methods if needed: according to the grid(s) available in the projections and the desired grid.",
                                     "label": "Regridding",
                                     "directlyPrecedes": "subtasks/ComputationOfMetrics",
-                                    "toBeAssociatedWithARole": true
+                                    "executedThroughOperation": "ops:Regridding"
                                 },
                                 {
                                     "@id": "subtasks/ComputationOfMetrics",
                                     "@type": "top:Task",
-                                    "comment": "The task of computing relevant metrics from the values of the climate variables in the datasets, possibly including bias correction using observational data.",
+                                    "comment": "The task of computing relevant metrics from the values of the climate variables in the projections, possibly including bias correction using observational data.",
                                     "label": "Computation of metrics",
                                     "directlyPrecedes": "subtasks/BiasCorrection",
-                                    "toBeAssociatedWithARole": true
+                                    "executedThroughOperation": "ops:ComputationOfMetrics"
                                 },
                                 {
                                     "@id": "subtasks/BiasCorrection",
@@ -224,26 +592,30 @@
                                     "comment": "The task of applying bias correction methods to the obtained metrics, based on observational data.",
                                     "label": "Bias correction",
                                     "directlyPrecedes": "subtasks/ClimateSimulationEvaluation",
-                                    "toBeAssociatedWithARole": true
+                                    "executedThroughOperation": "ops:BiasCorrection"
                                 },
                                 {
-                                    "@id": "subtasks/ClimateSimulationEvaluation",
+                                    "@id": "subtasks/ClimateProjectionEvaluation",
                                     "@type": "top:Task",
-                                    "comment": "The task of evaluating the considered climate simulations, according to reliability and relevance to the case.",
-                                    "label": "Climate simulation evaluation",
-                                    "directlyPrecedes": "subtasks/ClimateSimulationSelection"
+                                    "comment": "The task of evaluating the considered climate projections, according to reliability and relevance to the case.",
+                                    "label": "Climate projection evaluation",
+                                    "directlyPrecedes": "subtasks/ClimateProjectionSelection",
+                                    "executedThroughOperation": "ops:ClimateProjectionEvaluation"
                                 },
                                 {
-                                    "@id": "subtasks/ClimateSimulationSelection",
+                                    "@id": "subtasks/ClimateProjectionSelection",
                                     "@type": "top:Task",
-                                    "comment": "The task of selecting the climate simulations to be considered in the analysis, according to results of the evaluation.",
-                                    "label": "Climate simulation selection",
-                                    "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedClimateSimulation"
+                                    "comment": "The task of selecting the climate projections to be considered in the analysis, according to results of the evaluation.",
+                                    "label": "Climate projection selection",
+                                    "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedClimateSimulation",
+                                    "executedThroughOperation": "ops:ClimateProjectionSelection"
                                 }
                             ]
                         },
                         {
-                            "@context": {"@base": "tasks/ClimateInformationAnalysis/"},
+                            "@context": {
+                                "@base": "tasks/ClimateInformationAnalysis/"
+                            },
                             "@id": "../ClimateInformationAnalysis",
                             "@type": "top:Task",
                             "comment": "The task of analysing the avalaible climate information.",
@@ -255,37 +627,39 @@
                                     "comment": "The task of applying the climate change quantification method.",
                                     "label": "Climate change quantification",
                                     "directlyPrecedes": "subtasks/UncertaintyQuantification",
-                                    "toBeAssociatedWithARole": true
+                                    "executedThroughOperation": "ops:ClimateChangeQuantification"
                                 },
                                 {
                                     "@id": "subtasks/UncertaintyQuantification",
                                     "@type": "top:Task",
                                     "comment": "The task of applying uncertainty quantification",
                                     "label": "Uncertainty quantification",
-                                    "toBeAssociatedWithARole": true
+                                    "executedThroughOperation": "ops:UncertaintyQuantification"
                                 }
                             ]
                         }
                     ],
                     "roles": [
                         {
-                            "@id": "object-roles/SelectedDataset",
+                            "@id": "object-roles/SelectedBaseProjection",
                             "@type": "top:WorkflowRole",
-                            "label": "Selected dataset",
-                            "comment": "An available dataset selected for a case in the context of a climate service workflow execution.",
+                            "label": "Selected base projection",
+                            "comment": "An already available projection selected for a case in the context of a climate service workflow execution.",
                             "range": "data:Dataset"
                         },
                         {
-                            "@id": "object-roles/SelectedClimateSimulation",
+                            "@id": "object-roles/SelectedProjection",
                             "@type": "top:WorkflowRole",
-                            "label": "Selected climate simulation",
-                            "comment": "A climate simulation selected for analysis in the context of a climate service workflow execution.",
+                            "label": "Selected projection",
+                            "comment": "A projection selected for analysis in the context of a climate service workflow execution, after adaptation and comparison of relevant available projections.",
                             "range": "data:Dataset"
                         }
                     ]
                 },
                 {
-                    "@context": {"@base": "plans/CollectiveClimateInformationStudyPlan/"},
+                    "@context": {
+                        "@base": "plans/CollectiveClimateInformationStudyPlan/"
+                    },
                     "@id": "../CollectiveClimateInformationStudyPlan",
                     "@type": "top:Plan",
                     "comment": "A plan for the collaborative study of climate information in order to address a specific need. It involves the collection of multiple climate information study plan, their consolidation in one plan, and the execution of such a plan.",
@@ -339,12 +713,14 @@
             ]
         },
         {
-            "@id": "ops/ClimateServiceCaseResolution",
+            "@id": "ops:ClimateServiceCaseResolution",
             "@type": "top:Operation",
             "comment": "The operation describing, at an abstract level, the handling of a request for climate information.",
             "label": "Climate service case resolution",
             "isRealizedByPlan": {
-                "@context": {"@base": "plans/ClimateProcessWorkflow/"},
+                "@context": {
+                    "@base": "plans/ClimateProcessWorkflow/"
+                },
                 "@id": "../ClimateProcessWorkflow",
                 "@type": "top:Workflow",
                 "comment": "A workflow describing the typical handling of a request for climate information.",
@@ -367,7 +743,9 @@
                         "isTaskOf": "agent-roles/CaseCreator"
                     },
                     {
-                        "@context": {"@base": "tasks/ProvideOrganizationInformation/"},
+                        "@context": {
+                            "@base": "tasks/ProvideOrganizationInformation/"
+                        },
                         "@id": "../ProvideOrganizationInformation",
                         "@type": "top:Task",
                         "comment": "The task of providing information on the organization requesting the service.",
@@ -393,7 +771,9 @@
                         ]
                     },
                     {
-                        "@context": {"@base": "tasks/ProvideClimateCaseInformation/"},
+                        "@context": {
+                            "@base": "tasks/ProvideClimateCaseInformation/"
+                        },
                         "@id": "../ProvideClimateCaseInformation",
                         "@type": "top:Task",
                         "comment": "The task of providing information on the organization requesting the service.",
@@ -427,7 +807,9 @@
                         ]
                     },
                     {
-                        "@context": {"@base": "tasks/ProvideDecisionContextInformation/"},
+                        "@context": {
+                            "@base": "tasks/ProvideDecisionContextInformation/"
+                        },
                         "@id": "../ProvideDecisionContextInformation",
                         "@type": "top:Task",
                         "comment": "The task of providing decision context information.",
@@ -550,7 +932,9 @@
                         "isTaskOf": "agent-roles/CaseCreator"
                     },
                     {
-                        "@context": {"@base": "tasks/AdditionalInformationSearch/"},
+                        "@context": {
+                            "@base": "tasks/AdditionalInformationSearch/"
+                        },
                         "@id": "../AdditionalInformationSearch",
                         "@type": "top:Task",
                         "comment": "The task of requesting external expertise such as an expert or literature review.",
@@ -579,7 +963,7 @@
                         "label": "Climate information study",
                         "directlyPrecedes": "tasks/SendClimateInformation",
                         "isTaskOf": "agent-roles/CaseSolver",
-                        "executedThroughOperation": "ops/ClimateInformationStudy"
+                        "executedThroughOperation": "ops:ClimateInformationStudy"
                     },
                     {
                         "@id": "tasks/SendClimateInformation",
