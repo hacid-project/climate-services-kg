@@ -1,11 +1,18 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+PREFIX method_role: <app-profile/roles/Method>
 
 SELECT 
 	?resource ?resource_label
 WHERE {
-  	VALUES $role {<https://w3id.org/hacid/data/cs/wf/plans/DatasetSelectionPlan/object-roles/SelectedVariable>}
-	$role rdfs:range ?range_class.
-  	?resource a ?range_class;
-    	rdfs:label ?resource_label.
+	{
+		$role top:hasExpectedType ?resource_class.
+  		?resource a ?resource_class;
+    		rdfs:label ?resource_label.
+	} UNION {
+		VALUES $role {method_role:}
+  		?resource a top:Method;
+    		rdfs:label ?resource_label.
+	}
 }
 ORDER BY ?resource_label
