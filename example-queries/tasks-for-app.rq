@@ -7,6 +7,7 @@ PREFIX data_sel_task: <plans/ClimateInformationStudyPlan/tasks/ClimateInformatio
 PREFIX method_role: <app-profile/roles/Method>
 PREFIX preproc: <app-profile/ops/Preprocessing>
 PREFIX obs_analysis: <app-profile/ops/ObservationAnalysis>
+PREFIX ds_select: <app-profile/ops/DatasetSelection>
 
 # Get tasks
 
@@ -27,11 +28,9 @@ WHERE {
             }
             <plans/ClimateProjectionSelectionPlan> top:definesTask ?sub_task.
         }
-        ?sub_task top:directlyPrecedes* ?following_sub_task.
-        ?sub_task top:executedThroughOperation ?sub_op.
-        OPTIONAL {
-            ?sub_op rdfs:label ?sub_op_label.
-        }
+        ?sub_task top:directlyPrecedes* ?following_sub_task;
+            top:executedThroughOperation ?sub_op.
+        ?sub_op rdfs:label ?sub_op_label.
         OPTIONAL {
             ?sub_op top:hasInputRole ?role.
             ?role rdfs:label ?role_label
@@ -43,7 +42,8 @@ WHERE {
     } UNION {
         VALUES (?task ?sub_task ?sub_op ?sub_op_label ?main_order ?role ?role_label) {
             (info_prep_task: preproc: preproc: "Preprocessing"@en 1 method_role: "Method"@en)
-            (info_prep_task: obs_analysis: obs_analysis: "Observation Analysis"@en 1 method_role: "Method"@en)
+            (info_prep_task: obs_analysis: obs_analysis: "Observation analysis"@en 1 method_role: "Method"@en)
+            (info_prep_task: ds_select: ds_select: "Dataset selection"@en 0 UNDEF UNDEF)
         }
     }
 	?task rdfs:label ?task_label.
