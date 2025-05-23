@@ -133,8 +133,8 @@
             "comment": "",
             "label": "Computation of metrics",
             "hasInputRole": {
-                "@id": "ops:ComputationOfMetrics/roles/metric",
-                "label": "metric",
+                "@id": "ops:ComputationOfMetrics/roles/Metric",
+                "label": "Metric",
                 "hasExpectedType": "data:DependentVariable"
             }
         },
@@ -271,10 +271,10 @@
             }
         },
         {
-            "@id": "ops:ClimateProjectionSelection",
+            "@id": "ops:ClimateProjectionEnsembleSelection",
             "@type": "top:Operation",
-            "comment": "Selection of the the climate projections to be considered in the analysis, according to results of the evaluation.",
-            "label": "Climate projection selection"
+            "comment": "Selection of the the climate projection ensemble to be considered in the analysis, according to results of the evaluation.",
+            "label": "Climate projection ensemble selection"
         },
         {
             "@id": "ops:FilterClimateProjections",
@@ -529,6 +529,128 @@
             ]
         },
         {
+            "@id": "ops:ClimateDataCollection",
+            "@type": "top:Operation",
+            "comment": "The operation describing the preparation of the climate projections and other datasets used for analysis in relationship to a climate service use case.",
+            "label": "Climate data collection",
+            "isRealizedByPlan": {
+                "@context": {
+                    "@base": "plans/ClimateDataCollectionPlan/"
+                },
+                "@id": "../ClimateDataCollectionPlan",
+                "@type": "top:Plan",
+                "comment": "A typical plan for climate data collection, including identifying relevant existing datasets and extending/adapting as required by the context.",
+                "label": "Climate data collection plan",
+                "tasks": [
+                    {
+                        "@id": "tasks/BaseClimateProjectionSelection",
+                        "@type": "top:Task",
+                        "comment": "The task of selecting the avalaible climate projections that will be used in the analysis.",
+                        "label": "Data selection",
+                        "sendsDefaultOutputToPlanRole": "object-roles/SelectedProjection",
+                        "directlyPrecedes": "tasks/SpatialDownscaling",
+                        "executedThroughOperation": "ops:ClimateProjectionSelection"
+                    },
+                    {
+                        "@id": "tasks/SpatialDownscaling",
+                        "@type": "top:Task",
+                        "comment": "The task of applying spatial downscaling methods if needed: according to the resolution available in the projections and the required resolution.",
+                        "label": "Spatial downscaling",
+                        "directlyPrecedes": "tasks/Regridding",
+                        "executedThroughOperation": "ops:SpatialDownscaling"
+                    },
+                    {
+                        "@id": "tasks/Regridding",
+                        "@type": "top:Task",
+                        "comment": "The task of applying regridding methods if needed: according to the grid(s) available in the projections and the desired grid.",
+                        "label": "Regridding",
+                        "directlyPrecedes": "tasks/ComputationOfMetrics",
+                        "executedThroughOperation": "ops:Regridding"
+                    },
+                    {
+                        "@id": "tasks/ComputationOfMetrics",
+                        "@type": "top:Task",
+                        "comment": "The task of computing relevant metrics from the values of the climate variables in the projections, possibly including bias correction using observational data.",
+                        "label": "Computation of metrics",
+                        "directlyPrecedes": "tasks/BiasCorrection",
+                        "executedThroughOperation": "ops:ComputationOfMetrics"
+                    },
+                    {
+                        "@id": "tasks/BiasCorrection",
+                        "@type": "top:Task",
+                        "comment": "The task of applying bias correction methods to the obtained metrics, based on observational data.",
+                        "label": "Bias correction",
+                        "directlyPrecedes": "tasks/ClimateSimulationEvaluation",
+                        "executedThroughOperation": "ops:BiasCorrection"
+                    },
+                    {
+                        "@id": "tasks/ClimateProjectionEvaluation",
+                        "@type": "top:Task",
+                        "comment": "The task of evaluating the considered climate projections, according to reliability and relevance to the case.",
+                        "label": "Climate projection evaluation",
+                        "directlyPrecedes": "tasks/ClimateProjectionSelection",
+                        "executedThroughOperation": "ops:ClimateProjectionEvaluation"
+                    },
+                    {
+                        "@id": "tasks/ClimateProjectionEnsembleSelection",
+                        "@type": "top:Task",
+                        "comment": "The task of selecting the climate projections to be considered in the analysis, according to results of the evaluation.",
+                        "label": "Climate projection ensemble selection",
+                        "sendsDefaultOutputToPlanRole": "object-roles/SelectedClimateSimulation",
+                        "executedThroughOperation": "ops:ClimateProjectionEnsembleSelection"
+                    }
+                ],
+                "roles": [
+                    {
+                        "@id": "object-roles/SelectedBaseProjection",
+                        "@type": "top:WorkflowRole",
+                        "label": "Selected base projection",
+                        "comment": "An already available projection selected for a case in the context of a climate service workflow execution.",
+                        "range": "data:Dataset"
+                    },
+                    {
+                        "@id": "object-roles/SelectedProjection",
+                        "@type": "top:WorkflowRole",
+                        "label": "Selected projection",
+                        "comment": "A projection selected for analysis in the context of a climate service workflow execution, after adaptation and comparison of relevant available projections.",
+                        "range": "data:Dataset"
+                    }
+                ]
+            }
+        },
+        {
+            "@id": "ops:ClimateDataAnalyisis",
+            "@type": "top:Operation",
+            "comment": "The operation describing the analysis of climate data, in particular climate projections, relevant to a specific context.",
+            "label": "Climate data analysis",
+            "isRealizedByPlan": {
+                "@context": {
+                    "@base": "plans/ClimateDataAnalyisisPlan/"
+                },
+                "@id": "../ClimateDataAnalyisisPlan",
+                "@type": "top:Plan",
+                "comment": "A typical plan for the study of analysis of climate data, organized in two phases: climate change quantification and uncertainty quantification.",
+                "label": "Climate data analysis plan",
+                "tasks": [
+                    {
+                        "@id": "tasks/ClimateChangeQuantification",
+                        "@type": "top:Task",
+                        "comment": "The task of applying the climate change quantification method.",
+                        "label": "Climate change quantification",
+                        "directlyPrecedes": "tasks/UncertaintyQuantification",
+                        "executedThroughOperation": "ops:ClimateChangeQuantification"
+                    },
+                    {
+                        "@id": "tasks/UncertaintyQuantification",
+                        "@type": "top:Task",
+                        "comment": "The task of applying uncertainty quantification",
+                        "label": "Uncertainty quantification",
+                        "executedThroughOperation": "ops:UncertaintyQuantification"
+                    }
+                ]
+            }
+        },
+        {
             "@id": "ops:ClimateInformationStudy",
             "@type": "top:Operation",
             "comment": "The operation describing the study of climate information relevant to a specific context.",
@@ -552,65 +674,7 @@
                             "comment": "The task of preparing the climate information.",
                             "label": "Climate information preparation",
                             "directlyPrecedes": "tasks/ClimateInformationAnalysis",
-                            "hasPart": [
-                                {
-                                    "@id": "subtasks/BaseClimateProjectionSelection",
-                                    "@type": "top:Task",
-                                    "comment": "The task of selecting the avalaible climate projections that will be used in the analysis.",
-                                    "label": "Data selection",
-                                    "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedProjection",
-                                    "directlyPrecedes": "subtasks/SpatialDownscaling",
-                                    "executedThroughOperation": "ops:ClimateProjectionSelection"
-                                },
-                                {
-                                    "@id": "subtasks/SpatialDownscaling",
-                                    "@type": "top:Task",
-                                    "comment": "The task of applying spatial downscaling methods if needed: according to the resolution available in the projections and the required resolution.",
-                                    "label": "Spatial downscaling",
-                                    "directlyPrecedes": "subtasks/Regridding",
-                                    "executedThroughOperation": "ops:SpatialDownscaling"
-                                },
-                                {
-                                    "@id": "subtasks/Regridding",
-                                    "@type": "top:Task",
-                                    "comment": "The task of applying regridding methods if needed: according to the grid(s) available in the projections and the desired grid.",
-                                    "label": "Regridding",
-                                    "directlyPrecedes": "subtasks/ComputationOfMetrics",
-                                    "executedThroughOperation": "ops:Regridding"
-                                },
-                                {
-                                    "@id": "subtasks/ComputationOfMetrics",
-                                    "@type": "top:Task",
-                                    "comment": "The task of computing relevant metrics from the values of the climate variables in the projections, possibly including bias correction using observational data.",
-                                    "label": "Computation of metrics",
-                                    "directlyPrecedes": "subtasks/BiasCorrection",
-                                    "executedThroughOperation": "ops:ComputationOfMetrics"
-                                },
-                                {
-                                    "@id": "subtasks/BiasCorrection",
-                                    "@type": "top:Task",
-                                    "comment": "The task of applying bias correction methods to the obtained metrics, based on observational data.",
-                                    "label": "Bias correction",
-                                    "directlyPrecedes": "subtasks/ClimateSimulationEvaluation",
-                                    "executedThroughOperation": "ops:BiasCorrection"
-                                },
-                                {
-                                    "@id": "subtasks/ClimateProjectionEvaluation",
-                                    "@type": "top:Task",
-                                    "comment": "The task of evaluating the considered climate projections, according to reliability and relevance to the case.",
-                                    "label": "Climate projection evaluation",
-                                    "directlyPrecedes": "subtasks/ClimateProjectionSelection",
-                                    "executedThroughOperation": "ops:ClimateProjectionEvaluation"
-                                },
-                                {
-                                    "@id": "subtasks/ClimateProjectionSelection",
-                                    "@type": "top:Task",
-                                    "comment": "The task of selecting the climate projections to be considered in the analysis, according to results of the evaluation.",
-                                    "label": "Climate projection selection",
-                                    "sendsDefaultOutputToPlanRole": "../../object-roles/SelectedClimateSimulation",
-                                    "executedThroughOperation": "ops:ClimateProjectionSelection"
-                                }
-                            ]
+                            "executedThroughOperation": "ops:ClimateDataCollection"
                         },
                         {
                             "@context": {
@@ -620,33 +684,10 @@
                             "@type": "top:Task",
                             "comment": "The task of analysing the avalaible climate information.",
                             "label": "Climate information analysis",
-                            "hasPart": [
-                                {
-                                    "@id": "subtasks/ClimateChangeQuantification",
-                                    "@type": "top:Task",
-                                    "comment": "The task of applying the climate change quantification method.",
-                                    "label": "Climate change quantification",
-                                    "directlyPrecedes": "subtasks/UncertaintyQuantification",
-                                    "executedThroughOperation": "ops:ClimateChangeQuantification"
-                                },
-                                {
-                                    "@id": "subtasks/UncertaintyQuantification",
-                                    "@type": "top:Task",
-                                    "comment": "The task of applying uncertainty quantification",
-                                    "label": "Uncertainty quantification",
-                                    "executedThroughOperation": "ops:UncertaintyQuantification"
-                                }
-                            ]
+                            "executedThroughOperation": "ops:ClimateDataAnalyisis"
                         }
                     ],
                     "roles": [
-                        {
-                            "@id": "object-roles/SelectedBaseProjection",
-                            "@type": "top:WorkflowRole",
-                            "label": "Selected base projection",
-                            "comment": "An already available projection selected for a case in the context of a climate service workflow execution.",
-                            "range": "data:Dataset"
-                        },
                         {
                             "@id": "object-roles/SelectedProjection",
                             "@type": "top:WorkflowRole",
