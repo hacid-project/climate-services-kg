@@ -2,8 +2,8 @@ BASE <https://w3id.org/hacid/data/cs/wf/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX top: <https://w3id.org/hacid/onto/top-level/>
 PREFIX wf: <https://w3id.org/hacid/data/cs/wf/>
-PREFIX info_prep_task: <https://w3id.org/hacid/data/cs/wf/plans/ClimateInformationStudyPlan/tasks/ClimateInformationPreparation>
-PREFIX data_sel_task: <plans/ClimateInformationStudyPlan/tasks/ClimateInformationPreparation/subtasks/BaseClimateProjectionSelection>
+PREFIX info_prep_task: <plans/ClimateInformationStudyPlan/tasks/ClimateInformationPreparation>
+PREFIX data_sel_task: <plans/ClimateDataCollectionPlan/tasks/BaseClimateProjectionSelection>
 PREFIX method_role: <app-profile/roles/Method>
 PREFIX preproc: <app-profile/ops/Preprocessing>
 PREFIX obs_analysis: <app-profile/ops/ObservationAnalysis>
@@ -12,21 +12,21 @@ PREFIX ds_select: <app-profile/ops/DatasetSelection>
 # Get tasks
 
 SELECT 
-	?task ?task_label ?sub_op ?sub_op_label ?role ?role_label
+	?task_label ?op ?sub_op ?sub_op_label ?role ?role_label
 	(COUNT(DISTINCT ?following_task) AS ?num_following_tasks)
 	(COUNT(DISTINCT ?following_sub_task) AS ?num_following_sub_tasks)
 WHERE {
     {
         {
             <plans/ClimateInformationStudyPlan> top:definesTask ?task.
-            ?task top:hasPart ?sub_task.
+      		?op top:isRealizedByPlan/top:definesTask ?sub_task.
             FILTER (?sub_task != data_sel_task:)
             VALUES ?main_order {1}
         } UNION {
             VALUES (?task ?main_order) {
                 (info_prep_task: 0)
             }
-            <plans/ClimateProjectionSelectionPlan> top:definesTask ?sub_task.
+    		data_sel_task: top:executedThroughOperation/top:isRealizedByPlan/top:definesTask ?sub_task.
         }
         ?sub_task top:directlyPrecedes* ?following_sub_task;
             top:executedThroughOperation ?sub_op.
@@ -40,14 +40,16 @@ WHERE {
             VALUES (?role ?role_label) {(method_role: "Method"@en)}
         }
     } UNION {
-        VALUES (?task ?sub_task ?sub_op ?sub_op_label ?main_order ?role ?role_label) {
-            (info_prep_task: preproc: preproc: "Preprocessing"@en 1 method_role: "Method"@en)
-            (info_prep_task: obs_analysis: obs_analysis: "Observation analysis"@en 1 method_role: "Method"@en)
-            (info_prep_task: ds_select: ds_select: "Dataset selection"@en 0 UNDEF UNDEF)
+        VALUES (?task ?sub_op ?sub_op_label ?main_order ?role ?role_label) {
+            (info_prep_task: preproc: "Preprocessing"@en 1 method_role: "Method"@en)
+            (info_prep_task: obs_analysis: "Observation analysis"@en 1 method_role: "Method"@en)
+            (info_prep_task: ds_select: "Dataset selection"@en 0 UNDEF UNDEF)
         }
     }
-	?task rdfs:label ?task_label.
-    ?task top:directlyPrecedes* ?following_task.
+	?task rdfs:label ?task_label;
+  		top:executedThroughOperation ?op;
+    	top:directlyPrecedes* ?following_task.
+    ?op rdfs:label ?op_label.
 }
-GROUP BY ?task ?task_label ?sub_op ?sub_op_label ?role ?role_label ?main_order
+GROUP BY ?task_label ?op ?sub_op ?sub_op_label ?role ?role_label ?main_order
 ORDER BY ?main_order DESC(?num_following_tasks) DESC(?num_following_sub_tasks)
