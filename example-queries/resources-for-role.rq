@@ -22,6 +22,7 @@ WHERE {
 			?op top:isRealizedByPlan/top:definesTask/top:executedThroughOperation ?resource
 			FILTER NOT EXISTS {?other_op1 top:isRealizedByMethod|top:isSpecializedBy ?resource}
 			FILTER NOT EXISTS {?resource top:isRealizedByMethod|top:isSpecializedBy|(top:isRealizedByPlan/top:definesTask/top:executedThroughOperation) ?other_op2}
+			FILTER (?op != ops:ClimateDataCollection)
 			FILTER (?op != ops:ClimateProjectionSelection)
 			FILTER (?op != ops:ClimateServiceCaseResolution)
 		}
