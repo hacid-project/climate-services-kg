@@ -271,4 +271,43 @@ ORDER BY DESC(?num_following_tasks) DESC(?num_following_sub_tasks)
 
 ## Climate Service Case
 
-To be defined
+# List all climate cases (executions of the climate process wf) in the KG
+
+```sparql
+SELECT *
+WHERE {
+    ?case a top:WorkflowExecution;
+    top:satisfies wf:ClimateProcessWorkflow
+}
+```
+
+# Show outputs produced by actions in the execution of the workflow associated to a climate case
+
+```sparql
+SELECT DISTINCT ?action ?output ?outputRole ?agent ?agentRole
+WHERE {
+    ex:workflow-execution
+        top:includesEvent/top:hasPart* ?action.
+    ?action top:hasOutput ?output.
+    ex:workflow-execution ?outputRole ?output.
+    OPTIONAL {
+        ?action top:hasParticipant ?agent.
+        ?agent rdf:type/rdfs:subClassOf* top:Agent.
+        ex:workflow-execution ?agentRole ?agent.
+    }
+}
+```
+
+# Show simulations relevant to the case (specifically, conforming to the selected emission scenario and producing in the output the selected variable)
+
+```sparql
+SELECT *
+WHERE {
+    ex:workflow-execution
+        wf:SelectedEmissionScenario ?emissionScenario;
+        wf:SelectedVariable ?variable .
+    ?simulation a ccso:Simulation;
+        ccso:refersToScenario ?emissionScenario;
+        ccso:hasOutput/data:holdsSpecializationOfVariable ?variable.
+}
+```
