@@ -4,7 +4,7 @@ PREFIX dimension: <https://w3id.org/hacid/data/cs/dimension/>
 
 # Get geodetic (spatial) resolutions for simulations
 
-SELECT DISTINCT ?simulation ?geodeticDiscretization ?geodeticResolution ?geodeticPeriod
+SELECT DISTINCT ?simulation ?geodeticDiscretization ?geodeticResolution
 WHERE {
     ?simulation a ccso:ClimateSimulation;
         ccso:hasOutput/data:dependsOnVariable ?geodeticVariable.
@@ -12,6 +12,5 @@ WHERE {
         data:holdsSpecializationOfVariable* dimension:geodetic;
         data:hasDiscretization ?geodeticDiscretization.
     OPTIONAL {?geodeticDiscretization data:hasResolutionValue ?geodeticResolution}
-    OPTIONAL {?geodeticDiscretization data:hasPeriodValue ?geodeticPeriod}
 }
 LIMIT 100

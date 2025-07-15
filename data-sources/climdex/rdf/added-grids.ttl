@@ -4,7 +4,7 @@
 
 <https://w3id.org/hacid/data/cs/temporalgrid/3mon> a data:DimensionalSpace,
         data:IndependentVariable,
-        data:RollingRegularGrid,
+        data:SimpleRegularBinning,
         data:Variable ;
     data:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimension/time>,
         <https://w3id.org/hacid/data/cs/metric-space/time/gregorian> ;
@@ -12,7 +12,7 @@
 
 <https://w3id.org/hacid/data/cs/temporalgrid/6mon> a data:DimensionalSpace,
         data:IndependentVariable,
-        data:RollingRegularGrid,
+        data:SimpleRegularBinning,
         data:Variable ;
     data:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimension/time>,
         <https://w3id.org/hacid/data/cs/metric-space/time/gregorian> ;

@@ -169,7 +169,7 @@
 	rr:predicateObjectMap [
 	  rr:predicate rdf:type;
 	  rr:objectMap [ 
-	  	rr:constant ccso:Model ;
+	  	rr:constant ccso:GlobalClimateModel ;
 	  	rr:termType rr:IRI
 	  ]
 	] ;
@@ -190,7 +190,7 @@
 	rr:predicateObjectMap [
 	  rr:predicate rdf:type;
 	  rr:objectMap [ 
-	  	rr:constant ccso:Model ;
+	  	rr:constant ccso:GlobalClimateModel ;
 	  	rr:termType rr:IRI
 	  ]
 	] .

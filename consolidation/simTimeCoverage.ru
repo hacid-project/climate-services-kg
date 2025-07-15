@@ -19,9 +19,10 @@ INSERT {
             data:hasStartDateTime ?simulationStartTime;
             data:hasEndDateTime ?simulationEndTime.
         ?simulationQuantization
-            a ?finestTemporalQuantizationType;
-            data:hasResolutionValue ?minResolution;
-            data:hasPeriodValue ?minGridPeriod.
+#            a ?finestTemporalQuantizationType;
+            a data:SimpleRegularBinning;
+            data:hasResolutionValue ?minResolution.
+#           data:hasPeriodValue ?minGridPeriod.
     }
 }
 WHERE {
@@ -30,9 +31,9 @@ WHERE {
             ?simulationGraph ?simulationOutput
             (MIN(?startTime) AS ?simulationStartTime)
             (MAX(?endTime)AS ?simulationEndTime) 
-            (MAX(?quantizationTypeId) AS ?mostFineGrainedQuantizationTypeId)
+#            (MAX(?quantizationTypeId) AS ?mostFineGrainedQuantizationTypeId)
             (MIN(?resolution) AS ?minResolution)
-            (MIN(?gridPeriod) AS ?minGridPeriod)
+#            (MIN(?gridPeriod) AS ?minGridPeriod)
         WHERE {
             GRAPH ?simulationGraph {
                 ?simulation a ccso:Simulation;
@@ -47,11 +48,12 @@ WHERE {
                     data:hasDiscretization ?quantization.
         		?quantization a ?quantizationType.
                 OPTIONAL {?quantization data:hasResolutionValue ?resolution}.
-                OPTIONAL {?quantization data:hasPeriodValue ?gridPeriod}.
+#                OPTIONAL {?quantization data:hasPeriodValue ?gridPeriod}.
                 VALUES (?quantizationType ?quantizationTypeId) {
-                    (data:RollingRegularGrid 'rolling')
-                    (data:PeriodicRegularGrid 'periodic')
-                    (data:ConstantDimensionalSpace 'constant')
+                    (data:SimpleRegularBinning 'regular')
+                    (data:SinglePeriodicBinning 'periodic')
+                    (data:RegularPeriodicBinning 'regular-periodic')
+                    (data:SingleBinBinning 'constant')
                 }.
             }
             FILTER NOT EXISTS {
@@ -84,9 +86,10 @@ WHERE {
     ).
     BIND(
         CONCAT(
-            ?mostFineGrainedQuantizationTypeId,
-            COALESCE(CONCAT ('/', STR(?minResolution)), ''),
-            COALESCE(CONCAT ('/', STR(?minGridPeriod)), '')
+#            ?mostFineGrainedQuantizationTypeId,
+            'regular',
+            COALESCE(CONCAT ('/', STR(?minResolution)), '')
+#            COALESCE(CONCAT ('/', STR(?minGridPeriod)), '')
         ) AS ?gridTypeId
     ).
     BIND(
@@ -108,9 +111,9 @@ WHERE {
             )
         ) AS ?simulationQuantization
     ).
-    VALUES (?finestTemporalQuantizationType ?mostFineGrainedQuantizationTypeId) {
-        (data:RollingRegularGrid 'rolling')
-        (data:PeriodicRegularGrid 'periodic')
-        (data:ConstantDimensionalSpace 'constant')
-    }.
+    # VALUES (?finestTemporalQuantizationType ?mostFineGrainedQuantizationTypeId) {
+    #     (data:RollingRegularGrid 'rolling')
+    #     (data:PeriodicRegularGrid 'periodic')
+    #     (data:ConstantDimensionalSpace 'constant')
+    # }.
 }

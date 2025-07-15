@@ -320,6 +320,19 @@
                 ]
             ]
         ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:hasInPeriodResolutionValue ;
+        rr:objectMap [ 
+            rr:datatype xsd:duration ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [ rr:constant "{grid_in_period_step}" ]
+                ]
+            ]
+        ]
     ] .
 
 :TemporalRegionMapping a rr:TriplesMap ;
@@ -418,7 +431,7 @@
 
 :DatasetIRI
     rr:termType rr:IRI ;
-    rr:class ccso:Dataset ;
+    rr:class data:Dataset ;
     fnml:functionValue [
         rr:predicateObjectMap [
             rr:predicate fno:executes ;

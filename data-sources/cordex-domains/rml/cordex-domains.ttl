@@ -167,7 +167,7 @@
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
-        rr:class data:Quantization, data:RollingRegularGrid;
+        rr:class data:Quantization, data:SimpleRegularBinning;
         rr:template "https://w3id.org/hacid/data/cs/geodetic-grid/{dlon}"
     ] ;
 	

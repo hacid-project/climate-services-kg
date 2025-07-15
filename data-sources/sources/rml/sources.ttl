@@ -43,7 +43,7 @@
 
 	rr:subjectMap [
 	    rr:template "https://w3id.org/hacid/data/cs/model/{source_id}" ; 
-            rr:class ccso:Model
+            rr:class ccso:GlobalClimateModel
 	] ;
 	
 	rr:predicateObjectMap [

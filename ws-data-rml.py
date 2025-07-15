@@ -416,20 +416,20 @@ def round_datetime_interval(
     )
 
 _time_frequency_descr_and_value = {
-    '3hr': ['three hours', 'points', 'PT3H', None],
-    '6hr': ['six hours', 'rolling', 'PT6H', None],
-    'day': ['day', 'rolling', 'P1D', None],
-    'mon': ['month', 'rolling', 'P1M', None],
-    'monClim': ['all time aggregated month of the year', 'periodic', 'P1M', 'P1Y'],
-    'yr': ['year', 'rolling', 'P1Y', None],
-    'fx': ['all time', None, None, None]
+    '3hr': ['three hours', 'points', 'PT3H', None, None],
+    '6hr': ['six hours', 'regular', 'PT6H', None, None],
+    'day': ['day', 'regular', 'P1D', None, None],
+    'mon': ['month', 'regular', 'P1M', None, None],
+    'monClim': ['all time aggregated month of the year', 'periodic', None, 'P1M', 'P1Y'],
+    'yr': ['year', 'regular', 'P1Y', None, None],
+    'fx': ['all time', None, None, None, None]
 }
 
 _dimensional_space_type = {
     'points': 'IntervalSampling',
-    'rolling': 'RollingRegularGrid',
-    'periodic': 'PeriodicRegularGrid',
-    'constant': 'SingleRegionPartitioning'
+    'regular': 'SimpleRegularBinning',
+    'periodic': 'SinglePeriodicBinning',
+    'constant': 'SingleBinBinning'
 }
 
 @rml_function(fun_id='https://w3id.org/hacid/rml-functions/formatTemporalGrid',
@@ -451,7 +451,8 @@ def format_temporal_grid(
         _grid_type_description,
         _dimensional_space_id,
         _grid_step,
-        _grid_period
+        _grid_period,
+        _grid_in_period_step
     ] = _time_frequency_descr_and_value[_granularity]
     
     def _path(_strs: list[str]) -> str:
@@ -466,7 +467,8 @@ def format_temporal_grid(
         'grid_type_description': _grid_type_description,
         'dimensional_space_type': _dimensional_space_id and _dimensional_space_type[_dimensional_space_id],
         'grid_step': _grid_step,
-        'grid_period': _grid_period
+        'grid_period': _grid_period,
+        'grid_in_period_step': _grid_in_period_step
     }
     try:
         return _template.format_map(_purge_none_values(_temporal_info_dict))
