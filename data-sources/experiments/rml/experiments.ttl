@@ -41,7 +41,7 @@
 	rml:logicalSource :LogicalSource ;
 
 	rr:subjectMap [
-	    rr:template "https://w3id.org/hacid/data/cs/experiment/{experiment_id}" ; 
+	    rr:template "https://w3id.org/hacid/data/cs/experiments/{experiment_id}" ; 
             rr:class ccso:Experiment
 	] ;
 	
@@ -79,7 +79,7 @@
         rr:predicateObjectMap [
 	  rr:predicate top:atTime;
 	  rr:objectMap [
-            rr:template "https://w3id.org/hacid/data/cs/timeinterval/{start_year}-{end_year}" ;
+            rr:template "https://w3id.org/hacid/data/cs/timeintervals/{start_year}-{end_year}" ;
             rr:termType rr:IRI
           ]
 	] ;
@@ -98,7 +98,7 @@
 	rml:logicalSource :LogicalSource ;
 
 	rr:subjectMap [
-	    rr:template "https://w3id.org/hacid/data/cs/timeinterval/{start_year}-{end_year}" ; 
+	    rr:template "https://w3id.org/hacid/data/cs/timeintervals/{start_year}-{end_year}" ; 
             rr:class top:TimeInterval
 	] ;
 
@@ -143,7 +143,7 @@
 	rr:predicateObjectMap [
 	  rr:predicate ccso:hasExperiment;
 	  rr:objectMap [
-              rr:template "https://w3id.org/hacid/data/cs/experiment/{experiment_id}" ;
+              rr:template "https://w3id.org/hacid/data/cs/experiments/{experiment_id}" ;
               rr:termType rr:IRI 
           ]
 	] .
@@ -211,7 +211,7 @@
         rr:predicateObjectMap [
 	  rr:predicate top:hasBroader;
 	  rr:objectMap [ 
-	  	rr:template "https://w3id.org/hacid/data/cs/experiment/{experiment_id}" ; 
+	  	rr:template "https://w3id.org/hacid/data/cs/experiments/{experiment_id}" ; 
 	  	rr:termType rr:IRI
 	  ]
 	] .
@@ -227,7 +227,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate grel:p_array_a ;
-            rr:objectMap  [ rr:constant "https://w3id.org/hacid/data/cs/experiment"]
+            rr:objectMap  [ rr:constant "https://w3id.org/hacid/data/cs/experiments"]
         ];
         rr:predicateObjectMap [
             rr:predicate grel:p_array_a ;
@@ -276,7 +276,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/experiment/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/experiments/" ]
         ]
     ].
 
@@ -293,7 +293,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/experiment/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/experiments/" ]
         ]
     ].
 
@@ -324,7 +324,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/activity/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/activities/" ]
         ]
     ].
 
@@ -342,7 +342,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/model/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/models/" ]
         ]
     ].
 
@@ -359,6 +359,6 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/model/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/models/" ]
         ]
     ].

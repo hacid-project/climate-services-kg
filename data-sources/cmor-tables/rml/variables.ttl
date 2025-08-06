@@ -14,7 +14,7 @@
 @prefix top: <https://w3id.org/hacid/onto/top-level/> .
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix data: <https://w3id.org/hacid/onto/data/> .
-@prefix dimension: <https://w3id.org/hacid/data/cs/dimension/> .
+@prefix dimension: <https://w3id.org/hacid/data/cs/dimensions/> .
 @prefix time: <https://w3id.org/hacid/data/cs/metric-space/time/> .
 @prefix geodetic: <https://w3id.org/hacid/data/cs/metric-space/geodetic/> .
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
@@ -39,7 +39,7 @@
     rml:logicalSource :LogicalSource ;
     
     rr:subjectMap [
-        rr:template "https://w3id.org/hacid/data/cs/variable/mip/{out_name}" ;
+        rr:template "https://w3id.org/hacid/data/cs/variables/mip/{out_name}" ;
         rr:class data:Variable
     ] ;
 	
@@ -55,7 +55,7 @@
         rr:predicate data:holdsSpecializationOfVariable;
         rr:objectMap [ 
             rr:termType rr:IRI;
-            rr:template "https://w3id.org/hacid/data/cs/variable/cf/{standard_name}";
+            rr:template "https://w3id.org/hacid/data/cs/variables/cf/{standard_name}";
             rr:class data:Variable
         ]
     ] ;
@@ -119,7 +119,7 @@
     rml:logicalSource :LogicalSource ;
     
     rr:subjectMap [
-        rr:template "https://w3id.org/hacid/data/cs/realm/{modeling_realm}" ;
+        rr:template "https://w3id.org/hacid/data/cs/realms/{modeling_realm}" ;
         rr:class ccso:Realm
     ] .
 
@@ -127,7 +127,7 @@
     rml:logicalSource :LogicalSource ;
     
     rr:subjectMap [
-        rr:template "https://w3id.org/hacid/data/cs/unitofmeasure/{units}" ;
+        rr:template "https://w3id.org/hacid/data/cs/unitsofmeasure/{units}" ;
         rr:class top:UnitOfMeasure, data:DimensionalSpace
     ] ;
 

@@ -23,7 +23,7 @@
         rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         rdfs: "http://www.w3.org/2000/01/rdf-schema#",
         top: "https://w3id.org/hacid/onto/top-level/",
-        index: "https://w3id.org/hacid/data/cs/climdex/index/",
+        index: "https://w3id.org/hacid/data/cs/climdex/indices/",
         sector: "https://w3id.org/hacid/data/cs/climdex/sectors/",
         label: "rdfs:label",
         comment: "rdfs:comment",

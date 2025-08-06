@@ -14,7 +14,7 @@
 @prefix top: <https://w3id.org/hacid/onto/top-level/> .
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix data: <https://w3id.org/hacid/onto/data/> .
-@prefix dimension: <https://w3id.org/hacid/data/cs/dimension/> .
+@prefix dimension: <https://w3id.org/hacid/data/cs/dimensions/> .
 @prefix time: <https://w3id.org/hacid/data/cs/metric-space/time/> .
 @prefix geodetic: <https://w3id.org/hacid/data/cs/metric-space/geodetic/> .
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
@@ -57,7 +57,7 @@
             fnml:functionValue [
                 rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
                     rr:predicate hrf:template ;
-                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domain/{domain}/ds" ]
+                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domains/{domain}/ds" ]
                 ]
             ] 
         ]
@@ -111,7 +111,7 @@
             fnml:functionValue [
                 rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
                     rr:predicate hrf:template ;
-                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domain/{domain}/ds" ]
+                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domains/{domain}/ds" ]
                 ]
             ] 
         ]
@@ -213,7 +213,7 @@
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
                 rr:objectMap [
-                    rr:constant "https://w3id.org/hacid/data/cs/temporalspec/{start_datetime}-{end_datetime}"
+                    rr:constant "https://w3id.org/hacid/data/cs/temporalspecs/{start_datetime}-{end_datetime}"
                 ]
             ] 
         ]
@@ -240,7 +240,7 @@
         fnml:functionValue [
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/temporalgrid/{start_datetime}-{end_datetime}/{grid_type_id}" ]
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/temporalgrids/{start_datetime}-{end_datetime}/{grid_type_id}" ]
             ] 
         ]
     ] ;
@@ -273,7 +273,7 @@
         fnml:functionValue [
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/temporalgrid/{grid_type_id}" ]
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/temporalgrids/{grid_type_id}" ]
             ] 
         ]
     ] ;
@@ -344,7 +344,7 @@
         fnml:functionValue [
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/temporalregion/{start_datetime}-{end_datetime}" ]
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/temporalregions/{start_datetime}-{end_datetime}" ]
             ] 
         ]
     ] ;
@@ -425,7 +425,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/variable/mip/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/variables/mip/" ]
         ] 
     ].
 
@@ -443,7 +443,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/dataset/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/datasets/" ]
         ] 
     ].
 
@@ -461,7 +461,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/dataset/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/datasets/" ]
         ] 
     ].
 
@@ -479,7 +479,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/simulation/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/simulations/" ]
         ] 
     ].
 
@@ -497,7 +497,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/simulation/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/simulations/" ]
         ] 
     ].
 
@@ -515,7 +515,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/model/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/models/" ]
         ] 
     ].
 
@@ -533,7 +533,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/organization/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/organizations/" ]
         ] 
     ].
 
@@ -551,7 +551,7 @@
 #         ] ;
 #         rr:predicateObjectMap [
 #             rr:predicate hrf:ns ;
-#             rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domain/" ]
+#             rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domains/" ]
 #         ] 
 #     ].
 

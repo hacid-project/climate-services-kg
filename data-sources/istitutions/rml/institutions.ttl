@@ -38,7 +38,7 @@
 :InstitutionMapping a rr:TriplesMap ;
 	rml:logicalSource :LogicalSource ;
 	rr:subjectMap [
-	  rr:template "https://w3id.org/hacid/data/cs/organization/{id}";
+	  rr:template "https://w3id.org/hacid/data/cs/organizations/{id}";
 	  rr:class top:Organization;
 	] ;
 	

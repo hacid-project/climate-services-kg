@@ -6,7 +6,7 @@
 
 List climate models with available projections, organised by institution and type.
 
-```SPARQL
+```sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
 
@@ -74,7 +74,7 @@ List MIP climate variables that specialize a specific CF variable (in this examp
 ```sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX data: <https://w3id.org/hacid/onto/data/>
-PREFIX cf: <https://w3id.org/hacid/data/cs/variable/cf/>
+PREFIX cf: <https://w3id.org/hacid/data/cs/variables/cf/>
 
 SELECT 
 	?var ?var_label ?var_descr
@@ -141,8 +141,8 @@ PREFIX top: <https://w3id.org/hacid/onto/top-level/>
 PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
 PREFIX data: <https://w3id.org/hacid/onto/data/>
 PREFIX rcp: <https://w3id.org/hacid/data/cs/scenarios/RCP/>
-PREFIX mip: <https://w3id.org/hacid/data/cs/variable/mip/>
-PREFIX dimension: <https://w3id.org/hacid/data/cs/dimension/>
+PREFIX mip: <https://w3id.org/hacid/data/cs/variables/mip/>
+PREFIX dimension: <https://w3id.org/hacid/data/cs/dimensions/>
 
 SELECT ?model ?simulation ?output ?geodeticResolution
 WHERE {
@@ -171,9 +171,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX top: <https://w3id.org/hacid/onto/top-level/> 
 PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
 PREFIX data: <https://w3id.org/hacid/onto/data/>
-PREFIX mip: <https://w3id.org/hacid/data/cs/variable/mip/>
-PREFIX dimension: <https://w3id.org/hacid/data/cs/dimension/>
-PREFIX sim: <https://w3id.org/hacid/data/cs/simulation/>
+PREFIX mip: <https://w3id.org/hacid/data/cs/variables/mip/>
+PREFIX dimension: <https://w3id.org/hacid/data/cs/dimensions/>
+PREFIX sim: <https://w3id.org/hacid/data/cs/simulations/>
 
 SELECT ?dataset
 WHERE {
@@ -199,9 +199,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX top: <https://w3id.org/hacid/onto/top-level/> 
 PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
 PREFIX data: <https://w3id.org/hacid/onto/data/>
-PREFIX mip: <https://w3id.org/hacid/data/cs/variable/mip/>
-PREFIX dimension: <https://w3id.org/hacid/data/cs/dimension/>
-PREFIX sim: <https://w3id.org/hacid/data/cs/simulation/>
+PREFIX mip: <https://w3id.org/hacid/data/cs/variables/mip/>
+PREFIX dimension: <https://w3id.org/hacid/data/cs/dimensions/>
+PREFIX sim: <https://w3id.org/hacid/data/cs/simulations/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
 SELECT ?organization ?regional_model ?downscaling ?geodetic_region
@@ -271,7 +271,7 @@ ORDER BY DESC(?num_following_tasks) DESC(?num_following_sub_tasks)
 
 ## Climate Service Case
 
-# List all climate cases (executions of the climate process wf) in the KG
+### List all climate cases (executions of the climate process wf) in the KG
 
 ```sparql
 SELECT *
@@ -281,7 +281,7 @@ WHERE {
 }
 ```
 
-# Show outputs produced by actions in the execution of the workflow associated to a climate case
+### Show outputs produced by actions in the execution of the workflow associated to a climate case
 
 ```sparql
 SELECT DISTINCT ?action ?output ?outputRole ?agent ?agentRole
@@ -298,7 +298,7 @@ WHERE {
 }
 ```
 
-# Show simulations relevant to the case (specifically, conforming to the selected emission scenario and producing in the output the selected variable)
+### Show simulations relevant to the case (specifically, conforming to the selected emission scenario and producing in the output the selected variable)
 
 ```sparql
 SELECT *

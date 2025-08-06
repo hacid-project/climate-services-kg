@@ -8,7 +8,7 @@
 @prefix data: <https://w3id.org/hacid/onto/data/> .
 @prefix wf: <https://w3id.org/hacid/data/cs/wf/> .
 @prefix rcp: <https://w3id.org/hacid/data/cs/scenarios/RCP/>
-@prefix variable: <https://w3id.org/hacid/data/cs/variable/mip/>
+@prefix variable: <https://w3id.org/hacid/data/cs/variables/mip/>
 
 
 @prefix org: <https://w3id.org/hacid/data/cs/examples/organizations/> .

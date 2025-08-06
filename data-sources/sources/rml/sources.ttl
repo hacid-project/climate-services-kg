@@ -42,7 +42,7 @@
 	rml:logicalSource :LogicalSource ;
 
 	rr:subjectMap [
-	    rr:template "https://w3id.org/hacid/data/cs/model/{source_id}" ; 
+	    rr:template "https://w3id.org/hacid/data/cs/models/{source_id}" ; 
             rr:class ccso:GlobalClimateModel
 	] ;
 	
@@ -86,7 +86,7 @@
         ] ;
         rr:predicateObjectMap [
             rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/model/" ]
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/models/" ]
         ]
     ].
 
@@ -106,7 +106,7 @@
         rr:predicateObjectMap [
             rr:predicate grel:any_true ;
             rr:objectMap [
-                rr:template "https://w3id.org/hacid/data/cs/model/{model_component.{{descr}}.description}"; 
+                rr:template "https://w3id.org/hacid/data/cs/models/{model_component.{{descr}}.description}"; 
                 rr:termType rr:IRI
             ]
         ]

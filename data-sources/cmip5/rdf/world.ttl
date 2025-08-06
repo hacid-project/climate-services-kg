@@ -6,7 +6,7 @@
 @prefix gml: <http://www.opengis.net/ont/gml#> .
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix data: <https://w3id.org/hacid/onto/data/> .
-@prefix dimension: <https://w3id.org/hacid/data/cs/dimension/> .
+@prefix dimension: <https://w3id.org/hacid/data/cs/dimensions/> .
 @prefix time: <https://w3id.org/hacid/data/cs/metric-space/time/> .
 @prefix geodetic: <https://w3id.org/hacid/data/cs/metric-space/geodetic/> .
 @base <https://w3id.org/hacid/data/cs/> .
