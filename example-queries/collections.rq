@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/> 
+
+# List all collections
+
+SELECT ?collection ?collection_label (COUNT(1) AS ?num_members)
+WHERE {
+    ?collection a top:Collection;
+        rdfs:label ?collection_label;
+        top:hasMember []
+}
+GROUP BY ?collection ?collection_label
+

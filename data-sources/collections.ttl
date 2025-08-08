@@ -1,0 +1,14 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix top: <https://w3id.org/hacid/onto/top-level/> .
+
+<https://w3id.org/hacid/data/cs/variables/cf> a top:Collection ;
+    rdfs:label "CF variables"@en ;
+    rdfs:comment "Collection of standard variables defined in the CF Metadata Conventions."@en .
+
+<https://w3id.org/hacid/data/cs/variables/mip> a top:Collection ;
+    rdfs:label "MIP variables"@en ;
+    rdfs:comment "Collection of stadard MIP variables defined in the CMOR Tables."@en .
+
+<https://w3id.org/hacid/data/cs/climdex/indices> a top:Collection ;
+    rdfs:label "Climdex indices"@en ;
+    rdfs:comment "Collection of climate indices described in climdex.org."@en .

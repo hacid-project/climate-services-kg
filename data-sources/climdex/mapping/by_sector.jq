@@ -4,7 +4,8 @@
     $indices_to_sectors | to_entries | .[] |
     {
         "@id": @uri "index:\(.key)",
-        isClassifiedBy: [.value.[] | {"@id": @uri "sector:\(.)"} ]
+        isClassifiedBy: [.value.[] | {"@id": @uri "sector:\(.)"} ],
+        isMemberOf: {"@id": "https://w3id.org/hacid/data/cs/climdex/indices"}
     }
 ] as $indices |
 
@@ -29,6 +30,7 @@
         comment: "rdfs:comment",
         acronym: "top:acronym",
         definition: "top:definition",
+        isMemberOf: "top:isMemberOf",
         isClassifiedBy: {
             "@reverse": "top:classifies"
         },

@@ -18,6 +18,7 @@
 @prefix time: <https://w3id.org/hacid/data/cs/metric-space/time/> .
 @prefix geodetic: <https://w3id.org/hacid/data/cs/metric-space/geodetic/> .
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
+@prefix variables: <https://w3id.org/hacid/data/cs/variables/> .
 @base <https://w3id.org/hacid/data/cs/rml/> .
 
 
@@ -43,6 +44,12 @@
         rr:class data:Variable
     ] ;
 	
+
+    rr:predicateObjectMap [
+        rr:predicate top:isMemberOf;
+        rr:object variables:mip
+    ] ;
+
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
         rr:objectMap [ 

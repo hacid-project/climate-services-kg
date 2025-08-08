@@ -9,6 +9,7 @@
     "comment": "rdfs:comment",
     "acronym": "top:acronym",
     "definition": "top:definition",
+    "isMemberOf": "top:isMemberOf",
     "isClassifiedBy": {
       "@reverse": "top:classifies"
     },
@@ -35,7 +36,10 @@
         {
           "@id": "sector:Health"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TNlt2",
@@ -49,7 +53,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TNltm2",
@@ -63,7 +70,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TNltm20",
@@ -80,7 +90,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:ID",
@@ -97,7 +110,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:SU",
@@ -108,7 +124,10 @@
         {
           "@id": "sector:Health"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TR",
@@ -125,7 +144,10 @@
         {
           "@id": "sector:Health"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:GSL",
@@ -139,7 +161,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TXx",
@@ -156,7 +181,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TNn",
@@ -173,7 +201,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:WSDI",
@@ -205,7 +236,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:WSDId",
@@ -237,7 +271,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:CSDI",
@@ -266,7 +303,10 @@
         {
           "@id": "sector:Health"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:CSDId",
@@ -298,7 +338,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TXgt50p",
@@ -315,7 +358,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TX95t",
@@ -326,7 +372,10 @@
         {
           "@id": "sector:Health"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TMge5",
@@ -337,7 +386,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TMlt5",
@@ -348,7 +400,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TMge10",
@@ -359,7 +414,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TMlt10",
@@ -370,7 +428,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TXge30",
@@ -384,7 +445,10 @@
         {
           "@id": "sector:Health"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TXge35",
@@ -404,7 +468,10 @@
         {
           "@id": "sector:Health"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TXdTNd",
@@ -424,7 +491,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:HDDheatn",
@@ -435,7 +505,10 @@
         {
           "@id": "sector:Health"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:CDDcoldn",
@@ -446,7 +519,10 @@
         {
           "@id": "sector:Health"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:GDDgrown",
@@ -460,7 +536,10 @@
         {
           "@id": "sector:Health"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:CDD",
@@ -480,7 +559,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:R20mm",
@@ -494,7 +576,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:PRCPTOT",
@@ -508,7 +593,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:R95pTOT",
@@ -522,7 +610,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:R99pTOT",
@@ -536,7 +627,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:RXdday",
@@ -556,7 +650,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:SPI",
@@ -576,7 +673,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:SPEI",
@@ -596,7 +696,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TXbdTNbd",
@@ -613,7 +716,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:DTR",
@@ -621,7 +727,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TNx",
@@ -629,7 +738,10 @@
         {
           "@id": "sector:Cryosphere"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TXn",
@@ -637,7 +749,10 @@
         {
           "@id": "sector:Cryosphere"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TMm",
@@ -648,7 +763,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TXm",
@@ -659,7 +777,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TNm",
@@ -667,7 +788,10 @@
         {
           "@id": "sector:Cryosphere"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TX10p",
@@ -675,7 +799,10 @@
         {
           "@id": "sector:Energy"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TX90p",
@@ -683,7 +810,10 @@
         {
           "@id": "sector:Energy"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TN10p",
@@ -691,7 +821,10 @@
         {
           "@id": "sector:Energy"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:TN90p",
@@ -699,7 +832,10 @@
         {
           "@id": "sector:Energy"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:CWD",
@@ -707,7 +843,10 @@
         {
           "@id": "sector:Coasts"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:R10mm",
@@ -715,7 +854,10 @@
         {
           "@id": "sector:Coasts"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:Rnnmm",
@@ -723,7 +865,10 @@
         {
           "@id": "sector:Coasts"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:SDII",
@@ -734,7 +879,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:R95p",
@@ -742,7 +890,10 @@
         {
           "@id": "sector:Coasts"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:R99p",
@@ -750,7 +901,10 @@
         {
           "@id": "sector:Coasts"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:Rx1day",
@@ -767,7 +921,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:Rx5day",
@@ -784,7 +941,10 @@
         {
           "@id": "sector:Forestry%2FGHGs"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:HWN%20%28EHF%2FTX90%2FTN90%29",
@@ -816,7 +976,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:HWF%20%28EHF%2FTX90%2FTN90%29",
@@ -848,7 +1011,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:HWD%20%28EHF%2FTX90%2FTN90%29",
@@ -880,7 +1046,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:HWM%20%28EHF%2FTX90%2FTN90%29",
@@ -912,7 +1081,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:HWA%20%28EHF%2FTX90%2FTN90%29",
@@ -944,7 +1116,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:CWN%20%28ECF%29",
@@ -970,7 +1145,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:CWF%20%28ECF%29",
@@ -996,7 +1174,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:CWD%20%28ECF%29",
@@ -1022,7 +1203,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:CWM%20%28ECF%29",
@@ -1048,7 +1232,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "index:CWA%20%28ECF%29",
@@ -1074,7 +1261,10 @@
         {
           "@id": "sector:Water%20resources%20and%20food%20security"
         }
-      ]
+      ],
+      "isMemberOf": {
+        "@id": "https://w3id.org/hacid/data/cs/climdex/indices"
+      }
     },
     {
       "@id": "sector:Agriculture%20and%20food%20security",
