@@ -12,3 +12,7 @@
 <https://w3id.org/hacid/data/cs/climdex/indices> a top:Collection ;
     rdfs:label "Climdex indices"@en ;
     rdfs:comment "Collection of climate indices described in climdex.org."@en .
+
+<https://w3id.org/hacid/data/cs/cordex/domains> a top:Collection ;
+    rdfs:label "CORDEX domains"@en ;
+    rdfs:comment "Collection of CORDEX domains."@en .
