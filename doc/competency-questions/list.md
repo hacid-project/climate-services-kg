@@ -44,6 +44,7 @@ ORDER BY ?org ?model_type ?model
 List climate variables defined in [CF Metadata Conventions](https://cfconventions.org/) and their usage in available projections.
 
 ```sparql
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX data: <https://w3id.org/hacid/onto/data/>
 
@@ -51,13 +52,12 @@ SELECT
 	?var ?var_label ?var_descr
 	(COUNT(DISTINCT ?dataset) AS ?num_datasets_using_it)
 WHERE {
-    GRAPH <https://w3id.org/hacid/data/cs/cf> {
-        ?var a data:Variable;
-            rdfs:label ?var_label.
-        OPTIONAL {
-            ?var rdfs:comment ?var_descr.
-        }
-    }
+  	?var a data:Variable;
+  	    top:isMemberOf <https://w3id.org/hacid/data/cs/variables/cf>;
+  	    rdfs:label ?var_label.
+  	OPTIONAL {
+    	?var rdfs:comment ?var_descr.
+  	}
     OPTIONAL {
 	    ?dataset data:holdsSpecializationOfVariable* ?var
     }
@@ -72,6 +72,7 @@ ORDER BY DESC(?num_datasets_using_it) ?var
 List MIP climate variables that specialize a specific CF variable (in this example air-temperature) and their usage.
 
 ```sparql
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX data: <https://w3id.org/hacid/onto/data/>
 PREFIX cf: <https://w3id.org/hacid/data/cs/variables/cf/>
@@ -80,13 +81,12 @@ SELECT
 	?var ?var_label ?var_descr
 	(COUNT(DISTINCT ?dataset) AS ?num_datasets_using_it)
 WHERE {
-    GRAPH <https://w3id.org/hacid/data/cs/cmip6/cmor-tables> {
-        ?var a data:Variable;
-            data:holdsSpecializationOfVariable* cf:air_temperature;
-            rdfs:label ?var_label.
-        OPTIONAL {
-            ?var rdfs:comment ?var_descr.
-        }
+    ?var a data:Variable;
+  		top:isMemberOf <https://w3id.org/hacid/data/cs/variables/mip>;
+        data:holdsSpecializationOfVariable* cf:air_temperature;
+        rdfs:label ?var_label.
+    OPTIONAL {
+        ?var rdfs:comment ?var_descr.
     }
     OPTIONAL {
 	    ?dataset data:holdsSpecializationOfVariable* ?var
@@ -110,20 +110,19 @@ PREFIX sector: <https://w3id.org/hacid/data/cs/climdex/sectors/>
 SELECT 
 	?index ?index_label ?index_descr ?index_dim ?index_definition
 WHERE {
-    GRAPH <https://w3id.org/hacid/data/cs/climdex> {
-        sector:Water%20resources%20and%20food%20security top:classifies ?index.
-        ?index a data:Variable;
-            rdfs:label ?index_label;
-        	data:derivedFromVariable ?from_variable.
-        OPTIONAL {
-            ?index rdfs:comment ?index_descr.
-        }
-        OPTIONAL {
-            ?index data:hasValuesOn ?index_dim.
-        }
-       	OPTIONAL {
-        	?index top:definition ?index_definition.
-        }
+    ?index a data:Variable;
+        top:isMemberOf <https://w3id.org/hacid/data/cs/climdex/indices>;
+        top:isClassifiedBy sector:Water%20resources%20and%20food%20security;
+        rdfs:label ?index_label;
+        data:derivedFromVariable ?from_variable.
+    OPTIONAL {
+        ?index rdfs:comment ?index_descr.
+    }
+    OPTIONAL {
+        ?index data:hasValuesOn ?index_dim.
+    }
+    OPTIONAL {
+        ?index top:definition ?index_definition.
     }
 }
 ORDER BY ?index
@@ -153,9 +152,7 @@ WHERE {
     data:dependsOnVariable ?geodeticVariable.
     ?geodeticVariable
         data:holdsSpecializationOfVariable* dimension:geodetic;
-        data:hasDiscretization ?geodeticDiscretization.
-    ?geodeticDiscretization a data:RollingRegularGrid;
-    	data:hasResolutionValue ?geodeticResolution.
+        data:hasDiscretization/data:hasResolutionValue ?geodeticResolution.
 	FILTER(?geodeticResolution < 0.2)
 }
 ORDER BY ?model ?simulation ?output
@@ -182,9 +179,7 @@ WHERE {
     	data:dependsOnVariable ?temporalVariable.
 	?temporalVariable
         data:holdsSpecializationOfVariable* dimension:time;
-        data:hasDiscretization ?temporalDiscretization.
-    ?temporalDiscretization a data:RollingRegularGrid;
-    	data:hasResolutionValue "P1M"^^xsd:duration.
+        data:hasDiscretization/data:hasResolutionValue "P1M"^^xsd:duration.
 }
 ORDER BY ?dataset
 ```
@@ -243,7 +238,7 @@ ORDER BY
 	?operation ?plan
 ```
 
-List tasks and subtasks of a specific plan (in this case a ClimateInformationStudyPlan), in order of precedence, alongside the optional output information role of each subtask.
+List tasks and subtasks of a specific plan (in this case a ClimateDataCollectionPlan), in order of precedence, alongside the optional output information role of each subtask.
 
 ```sparql
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -251,63 +246,27 @@ PREFIX top: <https://w3id.org/hacid/onto/top-level/>
 PREFIX plans: <https://w3id.org/hacid/data/cs/wf/plans/>
 
 SELECT 
-	?task ?task_label ?sub_task ?sub_task_label ?sub_task_output_role
+	?plan ?task ?task_label
 	(COUNT(DISTINCT ?following_task) AS ?num_following_tasks)
-	(COUNT(DISTINCT ?following_sub_task) AS ?num_following_sub_tasks)
 WHERE {
-    plans:ClimateInformationStudyPlan top:definesTask ?task.
+    plans:ClimateDataCollectionPlan top:definesTask ?task.
     ?task rdfs:label ?task_label;
-        top:directlyPrecedes* ?following_task;
-        top:hasPart ?sub_task.
-    ?sub_task rdfs:label ?sub_task_label;
-        top:directlyPrecedes* ?following_sub_task.
-    OPTIONAL {
-    	?sub_task top:sendsDefaultOutputToPlanRole ?sub_task_output_role.
-    }
+        top:directlyPrecedes* ?following_task.
 }
-GROUP BY ?task ?task_label ?sub_task ?sub_task_label ?sub_task_output_role
-ORDER BY DESC(?num_following_tasks) DESC(?num_following_sub_tasks)
+GROUP BY ?plan ?task ?task_label
+ORDER BY DESC(?num_following_tasks)
 ```
 
 ## Climate Service Case
 
 ### List all climate cases (executions of the climate process wf) in the KG
 
-```sparql
-SELECT *
-WHERE {
-    ?case a top:WorkflowExecution;
-    top:satisfies wf:ClimateProcessWorkflow
-}
-```
+TODO
 
 ### Show outputs produced by actions in the execution of the workflow associated to a climate case
 
-```sparql
-SELECT DISTINCT ?action ?output ?outputRole ?agent ?agentRole
-WHERE {
-    ex:workflow-execution
-        top:includesEvent/top:hasPart* ?action.
-    ?action top:hasOutput ?output.
-    ex:workflow-execution ?outputRole ?output.
-    OPTIONAL {
-        ?action top:hasParticipant ?agent.
-        ?agent rdf:type/rdfs:subClassOf* top:Agent.
-        ex:workflow-execution ?agentRole ?agent.
-    }
-}
-```
+TODO
 
 ### Show simulations relevant to the case (specifically, conforming to the selected emission scenario and producing in the output the selected variable)
 
-```sparql
-SELECT *
-WHERE {
-    ex:workflow-execution
-        wf:SelectedEmissionScenario ?emissionScenario;
-        wf:SelectedVariable ?variable .
-    ?simulation a ccso:Simulation;
-        ccso:refersToScenario ?emissionScenario;
-        ccso:hasOutput/data:holdsSpecializationOfVariable ?variable.
-}
-```
+TODO
