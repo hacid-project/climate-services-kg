@@ -110,8 +110,12 @@
         rr:objectMap [
             rr:parentTriplesMap :DatasetMapping
         ]
-    ] .
+    ] ;
 
+    rr:predicateObjectMap [
+        rr:predicate data:isSpecializedAccordingTo ;
+        rr:object geospecialization:World
+    ] .      
 
 :VariableMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;

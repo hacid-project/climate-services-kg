@@ -8,14 +8,19 @@ PREFIX time: <https://w3id.org/hacid/data/cs/metric-space/time/>
 
 INSERT {
     GRAPH ?simulationGraph {
-        ?simulationOutput data:dependsOnVariable ?simulationTemporalGrid.
-        ?simulationTemporalGrid
+        ?simulationOutput
+            data:dependsOnVariable ?simulationTemporalGrid;
+            data:isSpecializedAccordingTo ?simulationTemporalSpecialization.
+        ?simulationTemporalGrid a data:DimensionalSpace;
             data:basedOnDimensionalSpace dimension:time, time:gregorian;
             data:hasExactBoundingRegion ?simulationTemporalRegion;
             data:hasDiscretization ?simulationQuantization.
-        ?simulationTemporalRegion
-            rdfs:label ?simulationTemporalRegionLabel ;
-            rdfs:comment ?simulationTemporalRegionComment ;
+        ?simulationTemporalSpecialization a data:VariableSpecialization;
+            data:isSpecializationOn dimension:time;
+            data:hasSelectedRegion ?simulationTemporalRegion.
+        ?simulationTemporalRegion a data:TemporalRegion;
+            rdfs:label ?simulationTemporalRegionLabel;
+            rdfs:comment ?simulationTemporalRegionComment;
             data:hasStartDateTime ?simulationStartTime;
             data:hasEndDateTime ?simulationEndTime.
         ?simulationQuantization
@@ -83,6 +88,11 @@ WHERE {
         STRLANG(REPLACE(?simInterval, ?re,
             "Time interval starting at date time $1 and ending at date time $2."
         ), "en") AS ?simulationTemporalRegionComment
+    ).
+    BIND(
+        IRI(REPLACE(?simInterval, ?re,
+            "https://w3id.org/hacid/data/cs/temporalspecs/$1-$2"
+        )) AS ?simulationTemporalSpecialization
     ).
     BIND(
         CONCAT(

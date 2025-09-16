@@ -48,10 +48,46 @@
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
-        rr:class data:DimensionalSpace ;
-        rr:template "https://w3id.org/hacid/data/cs/cordex-domains/{CORDEX_domain}/ds"
+        rr:class top:Concept ;
+        rr:template "https://w3id.org/hacid/data/cs/cordex/domains/{area_id}"
     ] ;
 	
+    rr:predicateObjectMap [
+        rr:predicate top:isMemberOf ;
+        rr:object <https://w3id.org/hacid/data/cs/cordex/domains>
+    ] ;  
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ 
+            rr:language "en";
+            rr:template "CORDEX:{area_id}"
+        ]
+    ] ;  
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:comment ;
+        rr:objectMap [ 
+            rr:language "en";
+            rr:template "CORDEX geographic domain for {domain} ({area_id})."
+        ]
+    ] .
+
+:GridMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subjectMap [ 
+        rr:class data:DimensionalSpace ;
+        rr:template "https://w3id.org/hacid/data/cs/cordex/grids/{CORDEX_domain}/ds"
+    ] ;
+	
+    rr:predicateObjectMap [
+        rr:predicate top:isConstituentOf ;
+        rr:objectMap [ 
+            rr:parentTriplesMap :DomainMapping
+        ]
+    ] ;  
+
     rr:predicateObjectMap [
         rr:predicate rdfs:label ;
         rr:objectMap [ 
@@ -64,7 +100,7 @@
         rr:predicate rdfs:comment ;
         rr:objectMap [ 
             rr:language "en";
-            rr:template "CORDEX geographic domain of {domain}, with {type} coordinates and a resolution of {dlon}° degrees ({CORDEX_domain})."
+            rr:template "CORDEX geographic grid for {area_id}, with {type} coordinates and a resolution of {dlon}° degrees ({CORDEX_domain})."
         ]
     ] ;
 
@@ -75,7 +111,7 @@
         ]
     ] .
 
-:RegularDomainMapping a rr:TriplesMap ;
+:RegularGridMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
@@ -83,7 +119,7 @@
         fnml:functionValue [
             rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
                 rr:predicate hrf:template ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domains/{regular_domain}/ds" ]
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{regular_grid_id}/ds" ]
             ]
         ] 
     ] ;
@@ -100,7 +136,7 @@
         ]
     ] .
 
-:RotatedDomainMapping a rr:TriplesMap ;
+:RotatedGridMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
@@ -108,7 +144,7 @@
         fnml:functionValue [
             rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
                 rr:predicate hrf:template ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domains/{rotated_domain}/ds" ]
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{rotated_grid_id}/ds" ]
             ]
         ] 
     ] ;
@@ -122,6 +158,59 @@
 
     rr:predicateObjectMap [
         rr:predicate data:hasExactBoundingRegion ;
+        rr:objectMap [
+            rr:parentTriplesMap :RotatedBoundingRegionMapping
+        ]
+    ] .
+
+:SpecializationMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subjectMap [ 
+        rr:class data:Specialization ;
+        rr:template "https://w3id.org/hacid/data/cs/cordex/grids/{CORDEX_domain}/specialization"
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate data:isSpecializationOn ;
+        rr:object dimension:geodetic
+    ] .
+
+:RegularSpecializationMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subjectMap [ 
+        rr:termType rr:IRI ;
+        fnml:functionValue [
+            rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
+                rr:predicate hrf:template ;
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{regular_grid_id}/specialization" ]
+            ]
+        ] 
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:hasSelectedRegion ;
+        rr:objectMap [
+            rr:parentTriplesMap :RegularBoundingRegionMapping
+        ]
+    ] .
+
+:RotatedSpecializationMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subjectMap [ 
+        rr:termType rr:IRI ;
+        fnml:functionValue [
+            rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
+                rr:predicate hrf:template ;
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{rotated_grid_id}/specialization" ]
+            ]
+        ] 
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:hasSelectedRegion ;
         rr:objectMap [
             rr:parentTriplesMap :RotatedBoundingRegionMapping
         ]

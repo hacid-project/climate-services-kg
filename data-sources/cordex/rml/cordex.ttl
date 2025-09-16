@@ -57,11 +57,24 @@
             fnml:functionValue [
                 rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
                     rr:predicate hrf:template ;
-                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domains/{domain}/ds" ]
+                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{grid_id}/ds" ]
                 ]
             ] 
         ]
     ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:isSpecializedAccordingTo ;
+        rr:objectMap [
+            rr:termType rr:IRI ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{grid_id}/specialization" ]
+                ]
+            ] 
+        ]
+    ] ;      
 
     rr:predicateObjectMap [
         rr:predicate data:dependsOnVariable ;
@@ -111,11 +124,24 @@
             fnml:functionValue [
                 rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
                     rr:predicate hrf:template ;
-                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domains/{domain}/ds" ]
+                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{grid_id}/ds" ]
                 ]
             ] 
         ]
     ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:isSpecializedAccordingTo ;
+        rr:objectMap [
+            rr:termType rr:IRI ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{grid_id}/specialization" ]
+                ]
+            ] 
+        ]
+    ] ;      
 
     rr:predicateObjectMap [
         rr:predicate top:hasPart ;
@@ -551,7 +577,7 @@
 #         ] ;
 #         rr:predicateObjectMap [
 #             rr:predicate hrf:ns ;
-#             rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex-domains/" ]
+#             rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/" ]
 #         ] 
 #     ].
 

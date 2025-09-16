@@ -262,11 +262,11 @@ def format_cordex_domain(_domains: str, _template: str) -> str:
     # _rotated_area_id = _area_id if _is_rotated else None
     # _regular_area_id = None if _is_rotated else _area_id
     return _template.format_map(_purge_none_values({
-        'domain': _domain,
+        'grid_id': _domain,
         'area_id': _area_id,
         'resolution_id': _resolution_id,
-        'rotated_domain': _domain if _is_rotated else None,
-        'regular_domain': None if _is_rotated else _domain,
+        'rotated_grid_id': _domain if _is_rotated else None,
+        'regular_grid_id': None if _is_rotated else _domain,
         'rotated_area_id': _area_id if _is_rotated else None,
         'regular_area_id': None if _is_rotated else _area_id
     }))
@@ -476,17 +476,17 @@ def format_temporal_grid(
         return None
     
 _dim_var_mapping = {
-    'longitude': ['dimension/geodetic'],
-    'xant': ['dimension/geodetic'],
-    'xgre': ['dimension/geodetic'],
-    'time': ['dimension/time'],
-    'time1': ['dimension/time'],
-    'time2': ['dimension/time'],
-    'time3': ['dimension/time'],
-    'gridlatitude': ['dimension/geodetic_lat'],
-    'alevel': ['dimension/elevation'],
-    'alevhalf': ['dimension/elevation'],
-    'olevel': ['dimension/elevation']
+    'longitude': ['geodetic'],
+    'xant': ['geodetic'],
+    'xgre': ['geodetic'],
+    'time': ['time'],
+    'time1': ['time'],
+    'time2': ['time'],
+    'time3': ['time'],
+    'gridlatitude': ['geodetic_lat'],
+    'alevel': ['elevation'],
+    'alevhalf': ['elevation'],
+    'olevel': ['elevation']
 }
 
 @rml_function(fun_id='https://w3id.org/hacid/rml-functions/MIPVariableDependsFrom',
@@ -579,6 +579,7 @@ if __name__ == '__main__':
     
     for subfolder in subfolders:
         # if subfolder.endswith('cmip5'):
+        # if subfolder.endswith('cordex') or subfolder.endswith('cordex-domains'):
         # if subfolder.endswith('cordex') or subfolder.endswith('cmip5'):
         # if subfolder.endswith('cordex-domains'):
         # if subfolder.endswith('cmor-tables'):
