@@ -23,7 +23,9 @@ tail -n +2 $MAP_FILE_PATH | awk -F "," '{
     }
 ' | awk -F "," '
     {
+        print("Loading into " $1 " files " $2 "...")
         system("tdb2.tdbloader --tdb '$TDB2_CONF_PATH' --graph=" $1 " " $2)
+        print("Done!\n")
     }
 '
 
