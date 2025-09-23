@@ -76,7 +76,7 @@ WHERE {
     BIND("(.*) (.*)" AS ?re)
     BIND(
         IRI(REPLACE(?simInterval, ?re,
-            "https://w3id.org/hacid/data/cs/temporalregions/$1-$2"
+            "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/$1-$2"
         )) AS ?simulationTemporalRegion
     ).
     BIND(
@@ -91,7 +91,7 @@ WHERE {
     ).
     BIND(
         IRI(REPLACE(?simInterval, ?re,
-            "https://w3id.org/hacid/data/cs/temporalspecs/$1-$2"
+            "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/$1-$2/specialization"
         )) AS ?simulationTemporalSpecialization
     ).
     BIND(
@@ -107,7 +107,7 @@ WHERE {
             CONCAT(
                 REPLACE(
                     ?simInterval, ?re,
-                    "https://w3id.org/hacid/data/cs/temporalregions/$1-$2/"
+                    "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/$1-$2/"
                 ),
                 ?gridTypeId
             )
@@ -116,7 +116,7 @@ WHERE {
     BIND(
         IRI(
             CONCAT(
-                "https://w3id.org/hacid/data/cs/temporalgrids/",
+                "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/",
                 ?gridTypeId
             )
         ) AS ?simulationQuantization

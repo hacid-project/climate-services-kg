@@ -2,18 +2,18 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/hacid/data/cs/temporalgrids/3mon> a data:DimensionalSpace,
+<https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P3M> a data:DimensionalSpace,
         data:IndependentVariable,
         data:SimpleRegularBinning,
         data:Variable ;
     data:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/metric-spaces/time/gregorian> ;
+        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     data:hasGridStep "P3M"^^xsd:duration .
 
-<https://w3id.org/hacid/data/cs/temporalgrids/6mon> a data:DimensionalSpace,
+<https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P6M> a data:DimensionalSpace,
         data:IndependentVariable,
         data:SimpleRegularBinning,
         data:Variable ;
     data:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/metric-spaces/time/gregorian> ;
+        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     data:hasGridStep "P6M"^^xsd:duration .

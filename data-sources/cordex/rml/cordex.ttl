@@ -15,8 +15,8 @@
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix data: <https://w3id.org/hacid/onto/data/> .
 @prefix dimension: <https://w3id.org/hacid/data/cs/dimensions/> .
-@prefix time: <https://w3id.org/hacid/data/cs/metric-spaces/time/> .
-@prefix geodetic: <https://w3id.org/hacid/data/cs/metric-spaces/geodetic/> .
+@prefix time: <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/> .
+@prefix geodetic: <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/> .
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
 @base <https://w3id.org/hacid/data/cs/rml/> .
 
@@ -239,7 +239,7 @@
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
                 rr:objectMap [
-                    rr:constant "https://w3id.org/hacid/data/cs/temporalspecs/{start_datetime}-{end_datetime}"
+                    rr:constant "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/{start_datetime}-{end_datetime}/specialization"
                 ]
             ] 
         ]
@@ -266,7 +266,7 @@
         fnml:functionValue [
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/temporalgrids/{start_datetime}-{end_datetime}/{grid_type_id}" ]
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/{start_datetime}-{end_datetime}/quantized/{grid_type_id}" ]
             ] 
         ]
     ] ;
@@ -299,7 +299,7 @@
         fnml:functionValue [
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/temporalgrids/{grid_type_id}" ]
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/{grid_type_id}" ]
             ] 
         ]
     ] ;
@@ -370,7 +370,7 @@
         fnml:functionValue [
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/temporalregions/{start_datetime}-{end_datetime}" ]
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/{start_datetime}-{end_datetime}" ]
             ] 
         ]
     ] ;

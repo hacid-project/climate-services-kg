@@ -12,7 +12,7 @@
     "unit": "https://w3id.org/hacid/data/cs/unitsofmeasure/",
     "dimension": "https://w3id.org/hacid/data/cs/dimensions/",
     "aggregation": "https://w3id.org/hacid/data/cs/climdex/index-time-aggregations/",
-    "temporalgrid": "https://w3id.org/hacid/data/cs/temporalgrids/",
+    "temporalgrid": "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/",
     "label": "rdfs:label",
     "comment": "rdfs:comment",
     "acronym": "top:acronym",

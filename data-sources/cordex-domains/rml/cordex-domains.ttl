@@ -15,7 +15,7 @@
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix data: <https://w3id.org/hacid/onto/data/> .
 @prefix dimension: <https://w3id.org/hacid/data/cs/dimensions/> .
-@prefix geodetic: <https://w3id.org/hacid/data/cs/metric-spaces/geodetic/> .
+@prefix geodetic: <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/> .
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix gml: <http://www.opengis.net/ont/gml#> .
@@ -221,7 +221,7 @@
     
 	rr:subjectMap [ 
         rr:class data:Continuum ;
-        rr:template "https://w3id.org/hacid/data/cs/metric-spaces/rotated-WGS84/{pollon},{pollat}"
+        rr:template "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/{pollon},{pollat}"
     ] ;
 	
     rr:predicateObjectMap [
@@ -257,7 +257,7 @@
     
 	rr:subjectMap [ 
         rr:class data:Quantization, data:SimpleRegularBinning;
-        rr:template "https://w3id.org/hacid/data/cs/geodetic-grids/{dlon}"
+        rr:template "https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/{dlon}"
     ] ;
 	
     rr:predicateObjectMap [
@@ -294,7 +294,7 @@
     
 	rr:subjectMap [ 
         rr:class data:GeodeticPoint, geo:Geometry ;
-        rr:template "https://w3id.org/hacid/data/cs/geodetic-points/WGS84/{pollon},{pollat}"
+        rr:template "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/{pollon},{pollat}"
     ] ;
 	
     rr:predicateObjectMap [
@@ -332,7 +332,7 @@
     
 	rr:subjectMap [ 
         rr:class data:GeodeticRegion, geo:Geometry ;
-        rr:template "https://w3id.org/hacid/data/cs/geodetic-regions/WGS84/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
+        rr:template "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
     ] ;
 	
     rr:predicateObjectMap [
@@ -369,7 +369,7 @@
     
 	rr:subjectMap [ 
         rr:class data:GeodeticRegion, geo:Geometry ;
-        rr:template "https://w3id.org/hacid/data/cs/geodetic-regions/rotated-WGS84/{pollon},{pollat}/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
+        rr:template "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/{pollon},{pollat}/regions/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
     ] ;
 	
     rr:predicateObjectMap [
