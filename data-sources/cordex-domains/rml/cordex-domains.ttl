@@ -15,7 +15,7 @@
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 @prefix data: <https://w3id.org/hacid/onto/data/> .
 @prefix dimension: <https://w3id.org/hacid/data/cs/dimensions/> .
-@prefix geodetic: <https://w3id.org/hacid/data/cs/metric-space/geodetic/> .
+@prefix geodetic: <https://w3id.org/hacid/data/cs/metric-spaces/geodetic/> .
 @prefix hrf: <https://w3id.org/hacid/rml-functions/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix gml: <http://www.opengis.net/ont/gml#> .
@@ -167,7 +167,7 @@
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
-        rr:class data:Specialization ;
+        rr:class data:VariableSpecialization ;
         rr:template "https://w3id.org/hacid/data/cs/cordex/grids/{CORDEX_domain}/specialization"
     ] ;
     
@@ -220,8 +220,8 @@
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
-        rr:class data:DimensionalSpace ;
-        rr:template "https://w3id.org/hacid/data/cs/rotated-WGS84/{pollon},{pollat}"
+        rr:class data:Continuum ;
+        rr:template "https://w3id.org/hacid/data/cs/metric-spaces/rotated-WGS84/{pollon},{pollat}"
     ] ;
 	
     rr:predicateObjectMap [

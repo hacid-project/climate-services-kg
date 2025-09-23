@@ -150,6 +150,7 @@ def convert_timescales:
 def convert_parameter:
     {
         "@id": @uri "parameter:\(.propertyId)",
+        "@type": "data:IndependentVariable",
         "label": .shortName,
         "acronym": .varLabel
     };
@@ -252,8 +253,9 @@ def convert_parameter:
         dependsOnVariable: ["dimension:geodetic", "dimension:time", if .parameters then (.parameters | .[] | convert_parameter) else empty end],
         definesAggregation: {
             "@id": @uri "aggregation:\(.shortName)",
+            "@type": "data:Aggregation",
             aggregatesVariable: "dimension:time",
-            suggestedAggregationGrid: [ .timeScales | convert_timescales | .[] | @uri "temporalgrid:\(.)" ]
+            suggestedQuantization: [ .timeScales | convert_timescales | .[] | @uri "temporalgrid:\(.)" ]
         },
 #        isClassifiedBy: [.sectors | ("sector:" + .)],
         rest: .
@@ -299,8 +301,8 @@ def convert_parameter:
             "@id": "data:aggregatesVariable",
             "@type": "@id"
         },
-        suggestedAggregationGrid: {
-            "@id": "data:suggestedAggregationGrid",
+        suggestedQuantization: {
+            "@id": "data:hasSuggestedQuantization",
             "@type": "@id"
         },
         permitsTemporalResolution: {

@@ -387,7 +387,7 @@
         "Cryosphere": true
     },
     {
-        "Index": "CWN (ECF)",
+        "Index": "CWN_ECF",
         "Health": true,
         "Agriculture and food security": true,
         "Water resources and food security": true,
@@ -397,7 +397,7 @@
         "Cryosphere": true
     },
     {
-        "Index": "CWF (ECF)",
+        "Index": "CWF_ECF",
         "Health": true,
         "Agriculture and food security": true,
         "Water resources and food security": true,
@@ -407,7 +407,7 @@
         "Cryosphere": true
     },
     {
-        "Index": "CWD (ECF)",
+        "Index": "CWD_ECF",
         "Health": true,
         "Agriculture and food security": true,
         "Water resources and food security": true,
@@ -417,7 +417,7 @@
         "Cryosphere": true
     },
     {
-        "Index": "CWM (ECF)",
+        "Index": "CWM_ECF",
         "Health": true,
         "Agriculture and food security": true,
         "Water resources and food security": true,
@@ -427,7 +427,7 @@
         "Cryosphere": true
     },
     {
-        "Index": "CWA (ECF)",
+        "Index": "CWA_ECF",
         "Health": true,
         "Agriculture and food security": true,
         "Water resources and food security": true,
