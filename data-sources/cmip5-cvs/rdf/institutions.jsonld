@@ -1,0 +1,154 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "top": "https://w3id.org/hacid/onto/top-level/",
+    "label": "rdfs:label",
+    "acronym": "top:acronym"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/BCC",
+      "@type": "top:Organization",
+      "acronym": "BCC",
+      "label": "Beijing Climate Center, China Meteorological Administration"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/CCCMA",
+      "@type": "top:Organization",
+      "acronym": "CCCMA",
+      "label": "Canadian Centre for Climate Modelling and Analysis"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/CMCC",
+      "@type": "top:Organization",
+      "acronym": "CMCC",
+      "label": "Centro Euro-Mediterraneo per I Cambiamenti Climatici"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM-CERFACS",
+      "@type": "top:Organization",
+      "acronym": "CNRM-CERFACS",
+      "label": "Centre National de Recherches Meteorologiques / Centre Europeen de Recherche et Formation Avancees en Calcul Scientifique (CNRM/CERFACS)"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/CSIRO-BOM",
+      "@type": "top:Organization",
+      "acronym": "CSIRO-BOM",
+      "label": "CSIRO/Bureau of Meteorology"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/CSIRO-QCCCE",
+      "@type": "top:Organization",
+      "acronym": "CSIRO-QCCCE",
+      "label": "Commonwealth Scientific and Industrial Research Organization/Queensland Climate Change Centre of Excellence (CSIRO-QCCCE)"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/EC-EARTH",
+      "@type": "top:Organization",
+      "acronym": "EC-EARTH",
+      "label": "EC-EARTH, EC-Earth consortium"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/FIO",
+      "@type": "top:Organization",
+      "acronym": "FIO",
+      "label": "The First Institute of Oceanography, SOA, China"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/GCESS",
+      "@type": "top:Organization",
+      "acronym": "GCESS",
+      "label": "College of Global Change and Earth System Science, Beijing Normal University"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/INM",
+      "@type": "top:Organization",
+      "acronym": "INM",
+      "label": "Institute for Numerical Mathematics"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/IPSL",
+      "@type": "top:Organization",
+      "acronym": "IPSL",
+      "label": "Institut Pierre-Simon Laplace"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/LASG-IAP",
+      "@type": "top:Organization",
+      "acronym": "LASG-IAP",
+      "label": "LASG, Institute of Atmospheric Physics, Chinese Academy of Sciences"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/MIROC",
+      "@type": "top:Organization",
+      "acronym": "MIROC",
+      "label": "Atmosphere and Ocean Research Institute (The University of Tokyo), National Institute for Environmental Studies, and Japan Agency for Marine-Earth Science and Technology"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/MOHC",
+      "@type": "top:Organization",
+      "acronym": "MOHC",
+      "label": "Met Office Hadley Centre"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/MPI-M",
+      "@type": "top:Organization",
+      "acronym": "MPI-M",
+      "label": "Max Planck Institute for Meteorology"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/MRI",
+      "@type": "top:Organization",
+      "acronym": "MRI",
+      "label": "Meteorological Research Institute"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/NASA-GISS",
+      "@type": "top:Organization",
+      "acronym": "NASA-GISS",
+      "label": "NASA Goddard Institute for Space Studies"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/NASA-GMAO",
+      "@type": "top:Organization",
+      "acronym": "NASA-GMAO",
+      "label": "NASA Global Modeling and Assimilation Office"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/NCAR",
+      "@type": "top:Organization",
+      "acronym": "NCAR",
+      "label": "National Center for Atmospheric Research"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/NCC",
+      "@type": "top:Organization",
+      "acronym": "NCC",
+      "label": "Norwegian Climate Centre (NorClim)"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/NCEP",
+      "@type": "top:Organization",
+      "acronym": "NCEP",
+      "label": null
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/NMR-KMA",
+      "@type": "top:Organization",
+      "acronym": "NMR-KMA",
+      "label": "National Institute of Meteorological Research/Korea Meteorological Administration"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/NOAA-GFDL",
+      "@type": "top:Organization",
+      "acronym": "NOAA-GFDL",
+      "label": "NOAA Geophysical Fluid Dynamics Laboratory"
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/organizations/RSMAS",
+      "@type": "top:Organization",
+      "acronym": "RSMAS",
+      "label": "University of Miami - RSMAS"
+    }
+  ]
+}
