@@ -173,8 +173,10 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-data-sources/cordex/data
-data-sources/cordex/raw-data/chunks
-data-sources/cordex/rdf
+data-sources/cordex-cmip5/data
+data-sources/cordex-cmip5/raw-data/chunks
+data-sources/cordex-cmip5/rdf
 data-sources/cmor-tables/rdf
 data-sources/cmor-tables/data
+data-sources/ukcp18/data
+data-sources/observations/data
