@@ -1,0 +1,1030 @@
+{
+  "@context": {
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "top": "https://w3id.org/hacid/onto/top-level/",
+    "ccso": "https://w3id.org/hacid/onto/ccso/",
+    "label": "rdfs:label",
+    "comment": "rdfs:comment",
+    "acronym": "top:acronym",
+    "isMaintainedBy": {
+      "@id": "ccso:isMaintainedBy",
+      "@type": "@id"
+    },
+    "isPartOf": {
+      "@id": "top:isPartOf",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/AUTH-MC-WRF371M",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "AUTH-MC-WRF371M",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/AUTH-MC",
+        "acronym": "AUTH-MC",
+        "label": "Aristotle University of Thessaloniki, Department of Meteorology & Climatology"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/AWI-HIRHAM5",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "AWI-HIRHAM5",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/AWI",
+        "acronym": "AWI",
+        "label": "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/BCCR-WRF331",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "BCCR-WRF331",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/BCCR",
+        "acronym": "BCCR",
+        "label": "Uni Research and the Bjerknes Centre for Climate Research"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/BCCR-WRF331C",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "BCCR-WRF331C",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/BCCR",
+        "acronym": "BCCR",
+        "label": "Uni Research and the Bjerknes Centre for Climate Research"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/BCCR-WRF361",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "BCCR-WRF361",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/BCCR",
+        "acronym": "BCCR",
+        "label": "Uni Research and the Bjerknes Centre for Climate Research"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/BOUN-RegCM4-3",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "BOUN-RegCM4-3",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/BOUN",
+        "acronym": "BOUN",
+        "label": "Bogazici University, Turkey"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CCCma-CanRCM4",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CCCma-CanRCM4",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CCCma",
+        "acronym": "CCCma",
+        "label": "CCCma (Canadian Centre for Climate Modelling and Analysis, Victoria, BC, Canada)"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CHMI-ALADIN53",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CHMI-ALADIN53",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CHMI",
+        "acronym": "CHMI",
+        "label": "Czech Hydrometeorological Institute"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-BTU-CCLM5-0-14",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-BTU-CCLM5-0-14",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-BTU",
+        "acronym": "CLMcom-BTU",
+        "label": "BTU, Cottbus, Germany,in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-CCLM4-8-17",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-CCLM4-8-17",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom",
+        "acronym": "CLMcom",
+        "label": "Climate Limited-area Modelling Community (CLM-Community)"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-CCLM4-8-17-CLM3-5",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-CCLM4-8-17-CLM3-5",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom",
+        "acronym": "CLMcom",
+        "label": "Climate Limited-area Modelling Community (CLM-Community)"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-CCLM5-0-0",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-CCLM5-0-0",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom",
+        "acronym": "CLMcom",
+        "label": "Climate Limited-area Modelling Community (CLM-Community)"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-CCLM5-0-2",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-CCLM5-0-2",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom",
+        "acronym": "CLMcom",
+        "label": "Climate Limited-area Modelling Community (CLM-Community)"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-CCLM5-0-6",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-CCLM5-0-6",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom",
+        "acronym": "CLMcom",
+        "label": "Climate Limited-area Modelling Community (CLM-Community)"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-CMCC-CCLM4-21-2",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-CMCC-CCLM4-21-2",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-CMCC",
+        "acronym": "CLMcom-CMCC",
+        "label": "CMCC, REMHI division, Italy in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-CMCC-CCLM5-0-9",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-CMCC-CCLM5-0-9",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-CMCC",
+        "acronym": "CLMcom-CMCC",
+        "label": "CMCC, REMHI division, Italy in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-DWD-CCLM5-0-15",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-DWD-CCLM5-0-15",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-DWD",
+        "acronym": "CLMcom-DWD",
+        "label": "DWD, Offenbach, Germany in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-ETH-COSMO-crCLIM-v1-1",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-ETH-COSMO-crCLIM-v1-1",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-ETH",
+        "acronym": "CLMcom-ETH",
+        "label": "ETH Zurich, Zurich, Switzerland in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-GUF-CCLM5-0-9",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-GUF-CCLM5-0-9",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-GUF",
+        "acronym": "CLMcom-GUF",
+        "label": "Institute for Atmospheric and Environmental Sciences, Goethe University Frankfurt"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-GUF-CCLM5-0-9-NEMOMED12-3-6",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-GUF-CCLM5-0-9-NEMOMED12-3-6",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-GUF",
+        "acronym": "CLMcom-GUF",
+        "label": "Institute for Atmospheric and Environmental Sciences, Goethe University Frankfurt"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-GUF-CCLM5-0-9-NEMOMED12-3-6-NEMONORDIC3-3",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-GUF-CCLM5-0-9-NEMOMED12-3-6-NEMONORDIC3-3",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-GUF",
+        "acronym": "CLMcom-GUF",
+        "label": "Institute for Atmospheric and Environmental Sciences, Goethe University Frankfurt"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-HZG-CCLM5-0-15",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-HZG-CCLM5-0-15",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-HZG",
+        "acronym": "CLMcom-HZG",
+        "label": "HZG, Geesthacht, Germany in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-JLU-CCLM5-0-15",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-JLU-CCLM5-0-15",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-JLU",
+        "acronym": "CLMcom-JLU",
+        "label": "JLU, Giessen, Germany in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-KIT-CCLM5-0-10",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-KIT-CCLM5-0-10",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-KIT",
+        "acronym": "CLMcom-KIT",
+        "label": "KIT, Karlsruhe, Germany in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-KIT-CCLM5-0-14",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-KIT-CCLM5-0-14",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-KIT",
+        "acronym": "CLMcom-KIT",
+        "label": "KIT, Karlsruhe, Germany in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-KIT-CCLM5-0-15",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-KIT-CCLM5-0-15",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-KIT",
+        "acronym": "CLMcom-KIT",
+        "label": "KIT, Karlsruhe, Germany in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-KIT-CCLM5-0-9",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-KIT-CCLM5-0-9",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-KIT",
+        "acronym": "CLMcom-KIT",
+        "label": "KIT, Karlsruhe, Germany in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-WEGC-CCLM5-0-9",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-WEGC-CCLM5-0-9",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-WEGC",
+        "acronym": "CLMcom-WEGC",
+        "label": "WEGC, Graz, Austria in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CLMcom-ZAMG-CCLM5-0-14",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CLMcom-ZAMG-CCLM5-0-14",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-ZAMG",
+        "acronym": "CLMcom-ZAMG",
+        "label": "ZAMG, Vienna, Austria, in collaboration with the CLM-Community"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CMCC-REMHI",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CMCC-REMHI",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CMCC",
+        "acronym": "CMCC",
+        "label": "Centro Euromediterraneo sui Cambiamenti Climatici"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CNRM-ALADIN52",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CNRM-ALADIN52",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "acronym": "CNRM",
+        "label": "Météo-France / Centre National de Recherches Météorologiques"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CNRM-ALADIN53",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CNRM-ALADIN53",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "acronym": "CNRM",
+        "label": "Météo-France / Centre National de Recherches Météorologiques"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CNRM-ALADIN63",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CNRM-ALADIN63",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "acronym": "CNRM",
+        "label": "Météo-France / Centre National de Recherches Météorologiques"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CNRM-ALADIN64",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CNRM-ALADIN64",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "acronym": "CNRM",
+        "label": "Météo-France / Centre National de Recherches Météorologiques"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CNRM-AROME41t1",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CNRM-AROME41t1",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "acronym": "CNRM",
+        "label": "Météo-France / Centre National de Recherches Météorologiques"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CNRM-ARPEGE52",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CNRM-ARPEGE52",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "acronym": "CNRM",
+        "label": "Météo-France / Centre National de Recherches Météorologiques"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CNRM-RCSM4",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CNRM-RCSM4",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "acronym": "CNRM",
+        "label": "Météo-France / Centre National de Recherches Météorologiques"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CNRM-RCSM6",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CNRM-RCSM6",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "acronym": "CNRM",
+        "label": "Météo-France / Centre National de Recherches Météorologiques"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CRC-BGS-WRF381",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CRC-BGS-WRF381",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CRC-BGS",
+        "acronym": "CRC-BGS",
+        "label": "Centre de Recherches de Climatologie, Biogéoscience, Université de Bourgogne Franche-Comté"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CRP-GL-WRF331A",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CRP-GL-WRF331A",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CRP-GL",
+        "acronym": "CRP-GL",
+        "label": "Public Research Centre - Gabriel Lippmann, Luxembourg"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CSIRO-CCAM",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CSIRO-CCAM",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CSIRO",
+        "acronym": "CSIRO",
+        "label": "Commonwealth Scientific and Industrial Research Organisation"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CSIRO-CCAM-1704",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CSIRO-CCAM-1704",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CSIRO",
+        "acronym": "CSIRO",
+        "label": "Commonwealth Scientific and Industrial Research Organisation"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CSIRO-CCAM-2008",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CSIRO-CCAM-2008",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CSIRO",
+        "acronym": "CSIRO",
+        "label": "Commonwealth Scientific and Industrial Research Organisation"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/CUNI-RegCM4-2",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "CUNI-RegCM4-2",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/CUNI",
+        "acronym": "CUNI",
+        "label": "Charles University"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/DHMZ-RegCM4-2",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "DHMZ-RegCM4-2",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/DHMZ",
+        "acronym": "DHMZ",
+        "label": "Meteorological and Hydrological Service of Croatia"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/DMI-HIRHAM5",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "DMI-HIRHAM5",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/DMI",
+        "acronym": "DMI",
+        "label": "Danish Meteorological Institute"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/ENEA-RegCM4-3",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "ENEA-RegCM4-3",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/ENEA",
+        "acronym": "ENEA",
+        "label": "Italian National Agency for New Technologies, Energy and Sustainable Economic Development"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/GERICS-AWI-REMO2009",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "GERICS-AWI-REMO2009",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/GERICS-AWI",
+        "acronym": "GERICS-AWI",
+        "label": "Helmholtz-Zentrum Geesthacht, Climate Service Center Germany, Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/GERICS-AWI-ROM1.1",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "GERICS-AWI-ROM1.1",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/GERICS-AWI",
+        "acronym": "GERICS-AWI",
+        "label": "Helmholtz-Zentrum Geesthacht, Climate Service Center Germany, Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/GERICS-REMO2009",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "GERICS-REMO2009",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/GERICS",
+        "acronym": "GERICS",
+        "label": "Helmholtz-Zentrum Geesthacht, Climate Service Center Germany"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/GERICS-REMO2015",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "GERICS-REMO2015",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/GERICS",
+        "acronym": "GERICS",
+        "label": "Climate Service Center Germany"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/HMS-ALADIN52",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "HMS-ALADIN52",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/HMS",
+        "acronym": "HMS",
+        "label": "Hungarian Meteorological Service"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/ICTP-RegCM4-3",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "ICTP-RegCM4-3",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/ICTP",
+        "acronym": "ICTP",
+        "label": "Abdus Salam International Centre for Theoretical Physics"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/ICTP-RegCM4-4",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "ICTP-RegCM4-4",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/ICTP",
+        "acronym": "ICTP",
+        "label": "Abdus Salam International Centre for Theoretical Physics"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/ICTP-RegCM4-6",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "ICTP-RegCM4-6",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/ICTP",
+        "acronym": "ICTP",
+        "label": "Abdus Salam International Centre for Theoretical Physics"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/ICTP-RegCM4-7",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "ICTP-RegCM4-7",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/ICTP",
+        "acronym": "ICTP",
+        "label": "Abdus Salam International Centre for Theoretical Physics"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/IDL-WRF350D",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "IDL-WRF350D",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/IDL",
+        "acronym": "IDL",
+        "label": "Instituto Dom Luiz, University of Lisbon"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/IITM-RegCM4-1",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "IITM-RegCM4-1",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/IITM",
+        "acronym": "IITM",
+        "label": "Indian Institute of Tropical Meteorology"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/IITM-RegCM4-4",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "IITM-RegCM4-4",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/IITM",
+        "acronym": "IITM",
+        "label": "Centre for Climate Change Research. Indian Institute for Tropical Meteorology"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/INPE-ETA",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "INPE-ETA",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/INPE",
+        "acronym": "INPE",
+        "label": "National Institute for Space Research, Brazil"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/IPSL-INERIS-WRF331F",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "IPSL-INERIS-WRF331F",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/IPSL-INERIS",
+        "acronym": "IPSL-INERIS",
+        "label": "Institut Pierre-Simon Laplace"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/IPSL-INERIS-WRF361F",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "IPSL-INERIS-WRF361F",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/IPSL-INERIS",
+        "acronym": "IPSL-INERIS",
+        "label": "Institut Pierre-Simon Laplace"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/IPSL-WRF311",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "IPSL-WRF311",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/IPSL",
+        "acronym": "IPSL",
+        "label": "Institut Pierre-Simon Laplace"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/IPSL-WRF311NEMO",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "IPSL-WRF311NEMO",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/IPSL",
+        "acronym": "IPSL",
+        "label": "Institut Pierre-Simon Laplace"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/KNMI-RACMO21P",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "KNMI-RACMO21P",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/KNMI",
+        "acronym": "KNMI",
+        "label": "Royal Netherlands Meteorological Institute, De Bilt, The Netherlands"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/KNMI-RACMO22E",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "KNMI-RACMO22E",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/KNMI",
+        "acronym": "KNMI",
+        "label": "Royal Netherlands Meteorological Institute, De Bilt, The Netherlands"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/KNMI-RACMO22T",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "KNMI-RACMO22T",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/KNMI",
+        "acronym": "KNMI",
+        "label": "Royal Netherlands Meteorological Institute, De Bilt, The Netherlands"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/KNU-RegCM4-0",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "KNU-RegCM4-0",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/KNU",
+        "acronym": "KNU",
+        "label": "Kongju National University, S. Korea"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/MGO-RRCM",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "MGO-RRCM",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/MGO",
+        "acronym": "MGO",
+        "label": "Main Geophysical Observatory, St. Petersburg"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/MIUB-WRF331A",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "MIUB-WRF331A",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/MIUB",
+        "acronym": "MIUB",
+        "label": "Meteorological Institute, Bonn University"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/MOHC-HadGEM3-RA",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "MOHC-HadGEM3-RA",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/MOHC",
+        "acronym": "MOHC",
+        "label": "Met Office Hadley Centre"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/MOHC-HadREM3-GA7-05",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "MOHC-HadREM3-GA7-05",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/MOHC",
+        "acronym": "MOHC",
+        "label": "Met Office Hadley Centre"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/MOHC-HadRM3P",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "MOHC-HadRM3P",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/MOHC",
+        "acronym": "MOHC",
+        "label": "Met Office Hadley Centre"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/MPI-CSC-REMO2009",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "MPI-CSC-REMO2009",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/MPI-CSC",
+        "acronym": "MPI-CSC",
+        "label": "Helmholtz-Zentrum Geesthacht, Climate Service Center, Max Planck Institute for Meteorology"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/MU-WRF360M",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "MU-WRF360M",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/MU",
+        "acronym": "MU",
+        "label": "Murdoch University"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/NIMS-KMA-HadGEM3-RA",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "NIMS-KMA-HadGEM3-RA",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/NIMS-KMA",
+        "acronym": "NIMS-KMA",
+        "label": "National Institute of Meteorological Sciences-Korea Meteorological Administration"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/NUIM-WRF341E",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "NUIM-WRF341E",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/NUIM",
+        "acronym": "NUIM",
+        "label": "National University of Ireland Maynooth"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/OURANOS-CRCM5",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "OURANOS-CRCM5",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/OURANOS",
+        "acronym": "OURANOS",
+        "label": "Ouranos Consortium on climate change"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/PNU-WRF370",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "PNU-WRF370",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/PNU",
+        "acronym": "PNU",
+        "label": "Pusan National University, S. Korea"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/POSTECH-CCLM5-0-9",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "POSTECH-CCLM5-0-9",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/POSTECH",
+        "acronym": "POSTECH",
+        "label": "Pohang University of Science and Technology, S. Korea"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/RMIB-UGent-ALARO-0",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "RMIB-UGent-ALARO-0",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/RMIB-UGent",
+        "acronym": "RMIB-UGent",
+        "label": "Royal Meteorological Institute of Belgium and Ghent University"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/SMHI-RCA4",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "SMHI-RCA4",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/SMHI",
+        "acronym": "SMHI",
+        "label": "Swedish Meteorological and Hydrological Institute, Rossby Centre"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/SMHI-RCA4-SN",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "SMHI-RCA4-SN",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/SMHI",
+        "acronym": "SMHI",
+        "label": "Swedish Meteorological and Hydrological Institute, Rossby Centre"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/SMHI-RCAO",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "SMHI-RCAO",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/SMHI",
+        "acronym": "SMHI",
+        "label": "Swedish Meteorological and Hydrological Institute, Rossby Centre"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/SMHI-RCAO-SN",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "SMHI-RCAO-SN",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/SMHI",
+        "acronym": "SMHI",
+        "label": "Swedish Meteorological and Hydrological Institute, Rossby Centre"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UCAN-WRF331G",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UCAN-WRF331G",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UCAN",
+        "acronym": "UCAN",
+        "label": "University of Cantabria"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UCAN-WRF341I",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UCAN-WRF341I",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UCAN",
+        "acronym": "UCAN",
+        "label": "University of Cantabria"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UCLM-PROMES",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UCLM-PROMES",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UCLM",
+        "acronym": "UCLM",
+        "label": "University of Castilla-La Mancha, Toledo, Spain"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UHOH-WRF361H",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UHOH-WRF361H",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UHOH",
+        "acronym": "UHOH",
+        "label": "University of Hohenheim"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/ULg-MAR36",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "ULg-MAR36",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/ULg",
+        "acronym": "ULg",
+        "label": "Dpt. Of Geography, University of Liège, Belgium"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UM-RegCM4-3",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UM-RegCM4-3",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UM",
+        "acronym": "UM",
+        "label": "University of Michigan"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UM-WRF331",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UM-WRF331",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UM",
+        "acronym": "UM",
+        "label": "Universidad de Murcia"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UNIBELGRADE-EBU1",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UNIBELGRADE-EBU1",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UNIBELGRADE",
+        "acronym": "UNIBELGRADE",
+        "label": "University of Belgrade, South East European Virtual Climate Change Center and University of Novi Sad"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UNIBELGRADE-EBUPOM2c1",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UNIBELGRADE-EBUPOM2c1",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UNIBELGRADE",
+        "acronym": "UNIBELGRADE",
+        "label": "University of Belgrade, South East European Virtual Climate Change Center and University of Novi Sad"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UNIST-SNURCM",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UNIST-SNURCM",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UNIST",
+        "acronym": "UNIST",
+        "label": "Ulsan National Institute of Science and Technology, S. Korea"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UNSW-WRF360J",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UNSW-WRF360J",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UNSW",
+        "acronym": "UNSW",
+        "label": "University of New South Wales"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UNSW-WRF360K",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UNSW-WRF360K",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UNSW",
+        "acronym": "UNSW",
+        "label": "University of New South Wales"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UNSW-WRF360L",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UNSW-WRF360L",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UNSW",
+        "acronym": "UNSW",
+        "label": "University of New South Wales"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UQAM-CRCM5",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UQAM-CRCM5",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UQAM",
+        "acronym": "UQAM",
+        "label": "Universite du Quebec a Montreal"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/UQAM-CRCM5-SN",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "UQAM-CRCM5-SN",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UQAM",
+        "acronym": "UQAM",
+        "label": "Universite du Quebec a Montreal"
+      }
+    },
+    {
+      "@id": "https://w3id.org/hacid/data/cs/models/WEGC-WRF371O",
+      "@type": "ccso:RegionalClimateModel",
+      "label": "WEGC-WRF371O",
+      "isMaintainedBy": {
+        "@id": "https://w3id.org/hacid/data/cs/organizations/WEGC",
+        "acronym": "WEGC",
+        "label": "Wegener Center for Climate and Global Change, University of Graz"
+      }
+    }
+  ]
+}

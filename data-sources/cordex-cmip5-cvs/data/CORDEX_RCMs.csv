@@ -1,0 +1,102 @@
+model_id,institute_id,institute_name,terms_of_use 
+AUTH-MC-WRF371M,AUTH-MC,"Aristotle University of Thessaloniki, Department of Meteorology & Climatology",unrestricted
+AWI-HIRHAM5,AWI,"Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research",unrestricted
+BCCR-WRF331,BCCR,Uni Research and the Bjerknes Centre for Climate Research,unrestricted
+BCCR-WRF331C,BCCR,Uni Research and the Bjerknes Centre for Climate Research,unrestricted
+BCCR-WRF361,BCCR,Uni Research and the Bjerknes Centre for Climate Research,unrestricted
+BOUN-RegCM4-3,BOUN,"Bogazici University, Turkey",non-commercial
+CCCma-CanRCM4,CCCma,"CCCma (Canadian Centre for Climate Modelling and Analysis, Victoria, BC, Canada)",unrestricted
+CHMI-ALADIN53,CHMI,Czech Hydrometeorological Institute,non-commercial
+CLMcom-BTU-CCLM5-0-14,CLMcom-BTU,"BTU, Cottbus, Germany,in collaboration with the CLM-Community",unrestricted
+CLMcom-CCLM4-8-17,CLMcom,Climate Limited-area Modelling Community (CLM-Community),unrestricted
+CLMcom-CCLM4-8-17-CLM3-5,CLMcom,Climate Limited-area Modelling Community (CLM-Community),unrestricted
+CLMcom-CCLM5-0-0,CLMcom,Climate Limited-area Modelling Community (CLM-Community),unrestricted
+CLMcom-CCLM5-0-2,CLMcom,Climate Limited-area Modelling Community (CLM-Community),unrestricted
+CLMcom-CCLM5-0-6,CLMcom,Climate Limited-area Modelling Community (CLM-Community),unrestricted
+CLMcom-CMCC-CCLM4-21-2,CLMcom-CMCC,"CMCC, REMHI division, Italy in collaboration with the CLM-Community",unrestricted
+CLMcom-CMCC-CCLM5-0-9,CLMcom-CMCC,"CMCC, REMHI division, Italy in collaboration with the CLM-Community",unrestricted
+CLMcom-DWD-CCLM5-0-15,CLMcom-DWD,"DWD, Offenbach, Germany in collaboration with the CLM-Community",unrestricted
+CLMcom-ETH-COSMO-crCLIM-v1-1,CLMcom-ETH,"ETH Zurich, Zurich, Switzerland in collaboration with the CLM-Community",unrestricted
+CLMcom-GUF-CCLM5-0-9,CLMcom-GUF,"Institute for Atmospheric and Environmental Sciences, Goethe University Frankfurt",unrestricted
+CLMcom-GUF-CCLM5-0-9-NEMOMED12-3-6,CLMcom-GUF,"Institute for Atmospheric and Environmental Sciences, Goethe University Frankfurt",unrestricted
+CLMcom-GUF-CCLM5-0-9-NEMOMED12-3-6-NEMONORDIC3-3,CLMcom-GUF,"Institute for Atmospheric and Environmental Sciences, Goethe University Frankfurt",unrestricted
+CLMcom-HZG-CCLM5-0-15,CLMcom-HZG,"HZG, Geesthacht, Germany in collaboration with the CLM-Community",unrestricted
+CLMcom-JLU-CCLM5-0-15,CLMcom-JLU,"JLU, Giessen, Germany in collaboration with the CLM-Community",unrestricted
+CLMcom-KIT-CCLM5-0-10,CLMcom-KIT,"KIT, Karlsruhe, Germany in collaboration with the CLM-Community",unrestricted
+CLMcom-KIT-CCLM5-0-14,CLMcom-KIT,"KIT, Karlsruhe, Germany in collaboration with the CLM-Community",unrestricted
+CLMcom-KIT-CCLM5-0-15,CLMcom-KIT,"KIT, Karlsruhe, Germany in collaboration with the CLM-Community",unrestricted
+CLMcom-KIT-CCLM5-0-9,CLMcom-KIT,"KIT, Karlsruhe, Germany in collaboration with the CLM-Community",unrestricted
+CLMcom-WEGC-CCLM5-0-9,CLMcom-WEGC,"WEGC, Graz, Austria in collaboration with the CLM-Community",unrestricted
+CLMcom-ZAMG-CCLM5-0-14,CLMcom-ZAMG,"ZAMG, Vienna, Austria, in collaboration with the CLM-Community",unrestricted
+CMCC-REMHI,CMCC,Centro Euromediterraneo sui Cambiamenti Climatici,non-commercial
+CNRM-ALADIN52,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
+CNRM-ALADIN53,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
+CNRM-ALADIN63,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
+CNRM-ALADIN64,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
+CNRM-AROME41t1,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
+CNRM-ARPEGE52,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
+CNRM-RCSM4,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
+CNRM-RCSM6,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
+CRC-BGS-WRF381,CRC-BGS,"Centre de Recherches de Climatologie, Biogéoscience, Université de Bourgogne Franche-Comté",non-commercial
+CRP-GL-WRF331A,CRP-GL,"Public Research Centre - Gabriel Lippmann, Luxembourg",unrestricted
+CSIRO-CCAM,CSIRO,Commonwealth Scientific and Industrial Research Organisation,unrestricted
+CSIRO-CCAM-1704,CSIRO,Commonwealth Scientific and Industrial Research Organisation,unrestricted
+CSIRO-CCAM-2008,CSIRO,Commonwealth Scientific and Industrial Research Organisation,unrestricted
+CUNI-RegCM4-2,CUNI,Charles University,unrestricted
+DHMZ-RegCM4-2,DHMZ,Meteorological and Hydrological Service of Croatia,non-commercial
+DMI-HIRHAM5,DMI,Danish Meteorological Institute,unrestricted
+ENEA-RegCM4-3,ENEA,"Italian National Agency for New Technologies, Energy and Sustainable Economic Development",non-commercial
+GERICS-AWI-REMO2009,GERICS-AWI,"Helmholtz-Zentrum Geesthacht, Climate Service Center Germany, Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research",unrestricted
+GERICS-AWI-ROM1.1,GERICS-AWI,"Helmholtz-Zentrum Geesthacht, Climate Service Center Germany, Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research",unrestricted
+GERICS-REMO2009,GERICS,"Helmholtz-Zentrum Geesthacht, Climate Service Center Germany",unrestricted
+GERICS-REMO2015,GERICS,Climate Service Center Germany,unrestricted
+HMS-ALADIN52,HMS,Hungarian Meteorological Service,non-commercial
+ICTP-RegCM4-3,ICTP,Abdus Salam International Centre for Theoretical Physics,unrestricted
+ICTP-RegCM4-4,ICTP,Abdus Salam International Centre for Theoretical Physics,unrestricted
+ICTP-RegCM4-6,ICTP,Abdus Salam International Centre for Theoretical Physics,unrestricted
+ICTP-RegCM4-7,ICTP,Abdus Salam International Centre for Theoretical Physics,unrestricted
+IDL-WRF350D,IDL,"Instituto Dom Luiz, University of Lisbon",non-commercial
+IITM-RegCM4-1,IITM,Indian Institute of Tropical Meteorology,non-commercial
+IITM-RegCM4-4,IITM,Centre for Climate Change Research. Indian Institute for Tropical Meteorology,non-commercial
+INPE-ETA,INPE,"National Institute for Space Research, Brazil",unrestricted
+IPSL-INERIS-WRF331F,IPSL-INERIS,Institut Pierre-Simon Laplace,unrestricted
+IPSL-INERIS-WRF361F,IPSL-INERIS,Institut Pierre-Simon Laplace,unrestricted
+IPSL-WRF311,IPSL,Institut Pierre-Simon Laplace,non-commercial
+IPSL-WRF311NEMO,IPSL,Institut Pierre-Simon Laplace,non-commercial
+KNMI-RACMO21P,KNMI,"Royal Netherlands Meteorological Institute, De Bilt, The Netherlands",unrestricted
+KNMI-RACMO22E,KNMI,"Royal Netherlands Meteorological Institute, De Bilt, The Netherlands",unrestricted
+KNMI-RACMO22T,KNMI,"Royal Netherlands Meteorological Institute, De Bilt, The Netherlands",unrestricted
+KNU-RegCM4-0,KNU,"Kongju National University, S. Korea",unrestricted
+MGO-RRCM,MGO,"Main Geophysical Observatory, St. Petersburg",unrestricted
+MIUB-WRF331A,MIUB,"Meteorological Institute, Bonn University",unrestricted
+MOHC-HadGEM3-RA,MOHC,Met Office Hadley Centre,unrestricted
+MOHC-HadREM3-GA7-05,MOHC,Met Office Hadley Centre,unrestricted
+MOHC-HadRM3P,MOHC,Met Office Hadley Centre,unrestricted
+MPI-CSC-REMO2009,MPI-CSC,"Helmholtz-Zentrum Geesthacht, Climate Service Center, Max Planck Institute for Meteorology",unrestricted
+MU-WRF360M,MU,Murdoch University,non-commercial
+NIMS-KMA-HadGEM3-RA,NIMS-KMA,National Institute of Meteorological Sciences-Korea Meteorological Administration,unrestricted
+NUIM-WRF341E,NUIM,National University of Ireland Maynooth,non-commercial
+OURANOS-CRCM5,OURANOS,Ouranos Consortium on climate change,unrestricted
+PNU-WRF370,PNU,"Pusan National University, S. Korea",unrestricted
+POSTECH-CCLM5-0-9,POSTECH,"Pohang University of Science and Technology, S. Korea",unrestricted
+RMIB-UGent-ALARO-0,RMIB-UGent,Royal Meteorological Institute of Belgium and Ghent University,unrestricted
+SMHI-RCA4,SMHI,"Swedish Meteorological and Hydrological Institute, Rossby Centre",unrestricted
+SMHI-RCA4-SN,SMHI,"Swedish Meteorological and Hydrological Institute, Rossby Centre",unrestricted
+SMHI-RCAO,SMHI,"Swedish Meteorological and Hydrological Institute, Rossby Centre",unrestricted
+SMHI-RCAO-SN,SMHI,"Swedish Meteorological and Hydrological Institute, Rossby Centre",unrestricted
+UCAN-WRF331G,UCAN,University of Cantabria,unrestricted
+UCAN-WRF341I,UCAN,University of Cantabria,unrestricted
+UCLM-PROMES,UCLM,"University of Castilla-La Mancha, Toledo, Spain",unrestricted
+UHOH-WRF361H,UHOH,University of Hohenheim,non-commercial
+ULg-MAR36,ULg,"Dpt. Of Geography, University of Liège, Belgium",unrestricted
+UM-RegCM4-3,UM,University of Michigan,unrestricted
+UM-WRF331,UM,Universidad de Murcia,unrestricted
+UNIBELGRADE-EBU1,UNIBELGRADE,"University of Belgrade, South East European Virtual Climate Change Center and University of Novi Sad",non-commercial
+UNIBELGRADE-EBUPOM2c1,UNIBELGRADE,"University of Belgrade, South East European Virtual Climate Change Center and University of Novi Sad",non-commercial
+UNIST-SNURCM,UNIST,"Ulsan National Institute of Science and Technology, S. Korea",unrestricted
+UNSW-WRF360J,UNSW,University of New South Wales,unrestricted
+UNSW-WRF360K,UNSW,University of New South Wales,unrestricted
+UNSW-WRF360L,UNSW,University of New South Wales,unrestricted
+UQAM-CRCM5,UQAM,Universite du Quebec a Montreal,unrestricted
+UQAM-CRCM5-SN,UQAM,Universite du Quebec a Montreal,unrestricted
+WEGC-WRF371O,WEGC,"Wegener Center for Climate and Global Change, University of Graz",unrestricted
