@@ -1,0 +1,148 @@
+Tasks,Subtasks,Parent Task,Task description,Associated entities,Range,Backward dependency,Forward dependency,Conflict,Input,Output,Type of info,Condition,Comment,Role,In DSS?,FF comments,Colour code,
+Request climate information,,Create case,The task of requesting the climate information.,,,,,,,,Obligatory,,,Information requester,NO,,,Change to verb form
+Request user background information,,Create case,The task of requesting user background information.,,,,,,,,Obligatory,,,Case creator,NO,,,
+Provide background information,,Create case,The task of providing background information such as information about the organisation and their climate information needs,Text,No,,,,,,Obligatory,,,Information requester/Case creator,YES,,,
+,Provide organization name,Provide background information,The task of providing the name of the customer organisation.,Text,No,,,,,,Obligatory,,,Information requester,YES,,,
+,Describe organization type,Provide background information,The task of describing the type of the customer organisation.,Organisation Type,No,,,,,,Obligatory,,,Information requester,YES,,,
+,Describe organization size,Provide background information,"The task of describing the size (e.g. small, medium, large) of the customer organisation.",Organization Size,No,,,,,,Optional,,Neha promised to come up with the size definitions,Information requester,MAYBE,,,
+,Describe organization operating sector,Provide background information,The task of describing the operating sector of the customer organisation.,Sector,No,,,,,,Optional,,Can use sectors associated with hazards,Information requester,MAYBE,,,
+,Provide years of experience in using climate data,Provide background information,"Less than 1 year
+1-3 years
+4-6 years
+7-10 years
+More than 10 years",Number,Yes,,,,,,Optional,,Can be described in one of the text fields regarding the case,Information requester,MAYBE,,,
+Provide climate case information,,Create case,The task of providing climate case information such as spatial region and planning time range.,Text,No,,,,,,Obligatory,,,,YES,Looks good to me,,
+,Add case title,Provide climate case information,The task of providing a title for the case.,Text,No,,,,,,Obligatory,,,Information requester/Case creator,YES,,,
+,Define customer needs,Provide climate case information,The task of stating the climate-related challenges faced by the organisation or by its operational activities.,Text,No,,,,,,Obligatory,,,Information requester,YES,,,
+,Define request goal,Provide climate case information,The task of stating the main goals for which the customer is seeking climate information.,Text,No,,,,,,Optional,,,Information requester,YES,,,
+,Add expected deadline,Provide climate case information,The task of setting a deadline (a date in the form MM/YYYY) for climate intelligence provision.,Date,No,,,,,,Optional,,I guess we need to know when it should be ready to be able to plan,Information requester/Case creator,NO,,,
+,Add required resources,Provide climate case information,"The task of estimating the required resources (e.g., human, computational, financial).",Text,No,,,,,,Optional,,Would be good if this was also planned before delivering climate service,Case creator,NO,"This feels like it should sit under ""Add expected deadline""",,
+,Indicate spatial region,Provide climate case information,The task of indicating the geographic area of interest.,Spatial region,No,,,,,Spatial region (custom or predefined cordex domain),Obligatory,,,Information requester/Case creator,YES,,,
+,Define planning time horizon,Provide climate case information,"The task of stating the overall time horizon over which the climate information is required. If multiple horizons are of interest, provide the time horizon that covers them all. In case such information is not available or not explicitly defined, provide the typical time horizon for organisations' planning decisions.
+",Date (range),Yes,,,,,Time range,Obligatory,,,Information requester/Case creator,YES,,,
+Provide decision context information,,Create case,The task of providing decision context information.,Text,No,,,,,,Obligatory,,was climate question,Information requester/Case creator,YES,Again. These look good. It did stimulate questions about whether we need to include organisational standard practices regarding certain hazards...but this could be a bit detailed...not sure.,,
+,Formulate climate questions,Provide decision context information,The task of formulating key questions related to climate information that the customer seeks to answer.,Text,No,,,,,,Obligatory,,"In HACID, we diced that each case can have one or more climate questions, and that each climate question can be associated to one or more hazards.",Information requester,YES,"We need a better phrase than ""climate question"". We can keep it at the task level but perhaps use something else in the ""Task Description"", i.e. The task of formulating questions related to climate information that the customer seeks to answer",,
+,Identify hazards,Provide decision context information,The task of identifying the climate hazards (a climate-related physical event or process) that impact the customer organisation.,Hazard,No,,,,,Relevant Hazard,Obligatory,,,Information requester/Case creator,YES,,,
+,Describe climate hazard impacts,Provide decision context information,The task of describing how climate hazards impact the organisation's activities and the proposed case. ,Text,No,Identify hazards,,,,,Optional,,,Information requester,YES,,,
+,Specify decision context,Provide decision context information,The task of listing decisions or actions that could be better informed with improved climate information for the identified hazards.,Text,No,,,,,,Optional,,,Information requester/Case creator,YES,,,
+,Provide information on organisational standards,Provide decision context information,The task of outlining the organisational standard practices regarding the identified hazards,Text,No,,,,,,Optional,,Would require an additional text field in the DSS,Information requester/Case creator,MAYBE,,,
+,Provide information on exposure identification,Provide decision context information,"The task of identifying the presence of people, assets, resources, or activities in places and settings potentially affected by the identified hazards.",Text,No,,,,,,Optional,,,Information requester/Case creator,YES,Don't think exposure is purely about location. We need to check (now updated with World Bank definition.,,
+,Provide information on vulnerability identification,Provide decision context information,"The task of collecting information regarding how susceptible a system, asset or population is to the climate hazards. It reflects lack of capacity to cope with or adapt to impacts. High vulnerability often reduces risk tolerance.",Text,No,,,,,,Optional,,,Information requester/Case creator,YES,"also add the word ""asset""",,
+,Rate risk tolerance,Provide decision context information,"Low Medium High. A measure of the extent to which a user is willing to accept uncertainty and potential adverse outcomes related to climate risks. For example, a low risk tolerance indicates a preference for detailed quantification of even the most extreme climate scenarios, enabling proactive planning and adaptation to minimise potential impacts. ",Risk rating,No,,,,,,Optional,,low - medium - high,Information requester,YES,,,
+,Specify climate risk framing,Provide decision context information,"The task of specifying the climate risk framing (e.g., loss probability, combination of hazard, exposure and vulnerability: risk index, etc.)",Text,No,,,,,,Optional,,no way of specifying this information in the KG yet,Information requester/Case creator,NO,I like the words in red,,
+Case creation,,,The task of creating a case.,,,,,,,,Obligatory,,,Case creator,YES,,,
+Search additional Information,,,The task of requesting external expertise such as an expert or literature review.,,,,,,,,Optional,,,Case solver,YES,,,
+,Perform literature review,Search additional Information,The task of looking for additional information from existing literature.,Text,No,,,,,Literature review,Optional,,,Case solver,YES,,,
+,Search for external expertise,Search additional Information,The task of requesting external expertise from an expert.,Text,No,,,,,Domain expert advice,Optional,,,Case solver,YES,,,
+Prepare climate information,,,The task of preparing the climate information.,,,,,,,,Obligatory,,,Case solver,YES,,,
+,Identify indices and variables,Prepare climate information,"The task of identifying the climate indices (e.g., number of tropical nights per calendar year, standardised precipitation index) or variables (e.g.,  max temperature, monthly rainfall) if no suitable indicator is found relevant to the study or decision-making context.",Index; variable,No,,,,,Indices or variables,Obligatory,,,Case solver,YES,,,
+,Choose baseline period,Prepare climate information,"The task of choosing a historical reference period (e.g., 1850–1900 as pre-industrial baseline, 1986–2005 in IPCC AR5, 1995–2014 in IPCC AR6) to serve as a baseline for comparing future climate projections or for global warming level extraction",Date,Yes,,,,,Time range (custom selected),Optional,,Not always needed - if absolute values are used in output and no comparison to observations are made,Case solver,YES,I'm wondering whether the baseline is sometimes determined by what climate data is available... Could we also set out the examples as those used in the IPCC reports and also WMO?,,
+,Choose future period,Prepare climate information,"The task of choosing the future time horizons of interest (e.g., specific period in the future like 2080–2100, 2030–2080) for climate information or risk or impact assessment.",Date,Yes,,Define emission scenarios,Choose global warming level,,Time range (custom selected),Conditional,Obligatory if GWL is not selected,,Case solver,YES,,,
+,Choose global warming level,Prepare climate information,"The task of selecting specific global warming levels (e.g., +1.5°C, +2°C).",Global warming level,Optional,,Choose global warming level extraction method,Choose future period,,Selected GWL (specific value or range),Conditional,Obligatory if future period is not selected,,Case solver,YES,,,
+,Choose global warming level extraction method,Prepare climate information,The task of choosing a method to extract regional climate change data in relation to selected global warming levels above pre-industrial (default: 1850-1900).,Method,No,Choose global warming level,"Filter climate simulations by global warming level exceedance
+Apply pattern scaling",,Time range (optional),GWL extraction method,Conditional,"Obligatory if task ""Global warming level choice"" is selected",,Case solver,YES,"I would even just say ""regional climate data"". The signal is then determined in a later step",,
+,Define emission scenarios,Prepare climate information,"The task of defining appropriate representative concentration pathways (RCPs) or shared socioeconomic
+pathways (SSPs) to explore a range of future climate outcomes.",Emission scenario,Optional,,,,,Selected emission scenario,Conditional,Obligatory if future period choice is used,,Case solver,YES,"Keep it here. I think there's a movement towards GWLs although quite often people still want to retain the time dimension... That is, we may want to keep the time infomration alongside the GWL.",,
+,Define relevant spatial resolutions,Prepare climate information,"The task of selecting the required spatial resolution (e.g., 1 km, 60 km, 0.25°) range for the output climate data.",Spatial resolution,Optional,,,,,Selected spatial resolution range,Obligatory,,,Case solver,YES,,,
+,Define relevant temporal resolutions,Prepare climate information,"The task of selecting the required temporal resolution (e.g., daily, monthly, annual, seasonal) range for the output climate data.",Temporal resolution,Optional,,,,,Selected temporal resolution range,Obligatory,,,Case solver,YES,,,
+,Define subannual selection,Prepare climate information,"The task of selecting a sub-annual period (e.g. month, season, period in year) of interest (e.g. boreal winter (DJFM), austral spring (SON), Januarys, Julys).",Sub-annual period,Optional,,,,,Subseasonal slice,Optional,"For possible values, see Table 1 of this document: https://docs.google.com/document/d/1svoQ4lW1i4nFaPWZEzIxQakPmS_sDS4uO9yy9OmeSQo/edit?tab=t.0",,Case solver,YES,,,
+,Define observation type,Prepare climate information,"The task of defining the preferred observation type (e.g., station-based, gridded).",Observation type,No,,,,,Observation type,Obligatory,"CV would only be ""station-based"" and ""gridded"". ""station-based"" refers to observations collected at a specific geographic point, ""gridded"" refers to observations interpolated or modelled onto a regular grid of cells. I think it can be related to ""GeodeticPoint"" and ""RegularGrid"" respectively.",,Case solver,YES,,,
+,Define preferred access point,Prepare climate information,"The task of choosing the preferred source for climate simulation data access (access point: e.g., ESGF datanodes, Copernicus CDS, OpenDAP, national portals).",Access point,No,,,,,Access point organisation or country of origin,Optional,,,Case solver,NO,,,
+,Provide additional climate simulation selection criteria,Prepare climate information,"The task of providing additional constraints to the climate simulation selection like origin of source (e.g., institution, country of origin), etc. Provide information with URIs taken from the KG where possible.",Text,No,,,,,Additional selection criteria for climate simulations,Optional,,"free text to be possibly parsed and linked. In the description, added a request to provide URIs",Case solver,YES,,,
+,Provide additional observation selection criteria,Prepare climate information,"The task of providing additional constraints to the observation selection, such as the origin of the source (e.g., institution, country of origin), etc. Provide information with URIs taken from the KG where possible.",Text,No,,,,,Additional selection criteria for observations,Optional,,"free text to be possibly parsed and linked. In the description, added a request to provide URIs",Case solver,YES,,,
+,Filter climate simulations by selection criteria,Prepare climate information,The task of applying filtering criteria to the list of climate simulations and shortlisting matching entries.,,,"Identify indices and variables
+Choose future period
+Define emission scenarios
+Define relevant spatial resolutions
+Define relevant temporal resolutions
+Provide additional climate simulation selection criteria",,,All relevant filtering dimensions,List of climate simulations,Optional,Obligatory if case solver decides not to manually select the climate simulations or use impact models instead,,Case solver,YES,,,
+,Filter observations by selection criteria,Prepare climate information,The task of applying filtering criteria to the list of observations and shortlisting matching entries.,,,"Identify indices and variables
+Choose baseline period
+Define relevant spatial resolutions
+Define relevant temporal resolutions
+Define observation type
+Define preferred access point
+Provide additional observation selection criteria",,,All relevant filtering dimensions,List of observation datasets,Optional,Obligatory if case solver decides not to manually select the observations,,Case solver,YES,,,
+,Conduct manual selection of climate simulations,Prepare climate information,The task of manually selecting the climate simulations,Climate simulations,No,Filter climate simulations by selection criteria,,,,List of climate simulations,Optional,,,Case solver,YES,,,
+,Conduct manual selection of observations,Prepare climate information,The task of manually selecting the observations,Observation datasets,No,Filter observations by selection criteria,,,,List of observation datasets,Optional,,,Case solver,YES,,,
+,Filter climate simulations by global warming level exceedance,Prepare climate information,The task of selecting simulations exceeding the specific global warming level.,,,"Choose global warming level
+Choose global warming level extraction method",,Apply pattern scaling,"GWL range; GWL extraction method; if scenario-based, emission scenario definition",List of climate simulations (with associated global warming exceeding selected GWL),Conditional,"Obligatory if task ""Global warming level choice"" is selected and ""Global warming level extraction method"" is not ""Pattern scaling""","Simulations need to be retrieved at this stage to do this - but only GCMs, not RCMs",Case solver,YES,Agreed,,
+,Extract global warming level time slice,Prepare climate information,The task of extracting the time slice centered around the point in time when the specific global warming level is exceeded.,Number,Yes,"Choose global warming level
+Choose global warming level extraction method
+Filter climate simulations by global warming level exceedance",,,List of climate simulations (with associated global warming exceeding selected GWL),Future period (associated with GWL exceedance),Conditional,"Obligatory if ""Global warming level extraction method"" is ""Time slice""",,Case solver,YES,"Change ""reached"" to ""exceeded""",,
+,Apply pattern scaling,Prepare climate information,The task of conducting pattern scaling of regional climate response to the global warming level.,,,"Conduct manual selection of climate simulations
+Filter climate simulations by selection criteria
+Choose global warming level
+Choose global warming level extraction method",,,GWL; Climate simulations; Observations,Pattern-scaled climate data,Conditional,"Obligatory if ""Global warming level extraction method"" is ""Pattern scaling""","Requires simulation (and observation, if used) retrieval",Case solver,YES,"Good question. Could we adopt the same as ""bias-corrected data"" and name it ""pattern-scaled climate data""",,
+,Apply additional spatial downscaling,Prepare climate information,The task of applying statistical or dynamical downscaling techniques to increase the spatial resolution of global or regional climate model outputs. This task is normally unnecessary if the selected data is already downscaled.,Method,No,"Choose future period choice
+Define subannual selection
+Extract global warming level time slice
+Conduct manual selection of climate simulations
+Filter climate simulations by selection criteria
+Filter climate simulations by global warming level exceedance",,,Climate simulations,Downscaled climate simulations,Optional,,"Requires simulation retrieval - I see an issue with I/O as ""Climate simulations"" are not defined before.",Case solver,YES,,,
+,Apply data preprocessing,Prepare climate information,"The task of performing data preprocessing (e.g., regridding, gap-filling, aggregation, filtering, bias correction) on raw climate model output and observations to ensure it is accurate, consistent, and suitable for analysis.",Method,No,"Choose future period
+Define subannual selection
+Extract global warming level time slice
+Define relevant spatial resolutions
+Define relevant temporal resolution
+Conduct manual selection of climate simulations
+Conduct manual selection of observations
+Filter climate simulations by selection criteria
+Filter observations by selection criteria
+Filter climate simulations by global warming level exceedance
+Apply pattern scaling
+Apply spatial downscaling",,,"Raw observations, raw or downscaled climate simulations, or pattern-scaled climate data","Processed climate data - processed observations, processed climate simulations",Optional,,"Requires simulation and observation retrieval (unless downscaled or pattern-scaled data are used).
+Can apply no methods, but must be conducted to ensure consistency",Case solver,YES,"could we call it ""raw climate model output and observations"". Preprocessing includes regridding, averaging etc - is that linked",,
+,Compute climate indices,Prepare climate information,"The task of computing relevant climate indices from both observational and climate model datasets. Possibly, emulators could be used to obtain relevant information for index computation.",,,"Identify indices and variables
+Extract global warming level time slice
+Choose future period
+Define subannual selection
+Conduct manual selection of climate simulations
+Conduct manual selection of observations
+Filter climate simulations by selection criteria
+Filter observations by selection criteria
+Filter climate simulations by global warming level exceedance
+Apply pattern scaling
+Apply spatial downscaling
+Apply data preproccesing",,,"Processed climate data, selected index definitions",Calculated indices for observations and climate simulations,Optional,,,Case solver,YES,,,
+,Conduct observation analysis,Prepare climate information,The task of analyzing observational datasets to establish historical trends and variability.,Method,No,"Conduct manual selection of observations
+Filter observations by selection criteria
+Apply data preproccesing",,,Processed observations,Observation analysis,Optional,,,Case solver,YES,,,
+,Conduct spatial aggregation,Prepare climate information,The task of spatially aggregating calculated indices.,Method,No,Compute climate indices,,,Calculated indices,Aggregated indices,Optional,,,Case solver,YES,,,
+,Evaluate climate simulations,Prepare climate information,"The task of evaluating the performance of climate simulations against observations, by comparing how well climate models reproduce historical climate conditions for selected indices or variables. This evaluation helps determine which models could be more reliable for projecting future climate changes.",Method,No,"Filter climate simulations by selection criteria
+Conduct manual selection of climate simulations 
+Apply pattern scaling
+Apply spatial downscaling 
+Filter observations by selection criteria
+Conduct manual selection of observations
+Apply data preproccesing
+Compute climate indices
+Conduct observation analysis
+Conduct spatial aggregation",Select climate simulations,,"Calculated or aggregated indices, or processed climate data, or observation analysis",Model performance metric,Conditional,Obligatory unless case solver decides to only use impact models (like ISIMIP) without input data from climate simulations,We require case solver to add at least some type of quality evaluation metric - regardless it is used to make the final decision or not.,Case solver,YES,"Perhaps change ""more reliable"" to ""could be more reliable"".  Do we need to include ""variable"" or ""index"" in here?",,
+,Select climate simulations,Prepare climate information,The task of rejecting the climate model simulations that do not meet the evaluation criteria or the ad hoc selection by the case solver.,Method,No,Evaluate climate simulations,,,Model performance metric,Processed climate simulation data (selection),Conditional,"Obligatory if ""Climate simulation evaluation"" is conducted",,Case solver,YES,Selection by rejection too,,
+Analyse climate information,,,The task of analysing the climate information to understand what future climatic changes are simulated and associated uncertainties.,,,,,,,,Conditional,"If not pursued, climate impact assessment is obligatory",,Case solver,YES,"Change to ""The task of analysing the climate information to understand what future climatic changes are simulated and associated uncertainties""
+",,
+,Quantify future climate change,Analyse climate information,The task of analysing and projecting the future climate by creating an output metric based on the selected climate simulations.,Method,No,Select climate simulations,,,Processed climate simulation data (selection),Output metric,Obligatory,,,Case solver,YES,I agree with the red text. ,,
+,Quantify uncertainty,Analyse climate information,The task of quantifying the uncertainty in projections of the selected climate simulations.,Method,No,Select climate simulations,,,Processed climate simulation data (selection),Uncertainty estimate,Obligatory,,,Case solver,YES,Agreed,,
+,Estimate subjective confidence,Analyse climate information,The task of indicating the subjective level of confidence in future climate change and uncertainty quantification.,"Confidence level: low, medium, high",No,"Quantify future climate change
+Quantify uncertainty",,,"Output metric, uncertainty estimate",Confidence estimate,Obligatory,,,Case solver,YES,Agreed. Do we have anything on how we measure confidence?,,
+,Postprocess climate information,Analyse climate information,"The task of postprocessing (e.g., spatially aggregating) provided climate information",Method,No,"Quantify future climate change
+Quantify uncertainty",,,"Output metric, uncertainty estimate",Aggregated climate information,Optional,,,Case solver,YES,It's needed,,
+Assess climate impacts,,,The task of conducting the climate impact assessment to understand the impacts of each hazard,,,,,,,,Conditional,Only obligatory if climate information analysis is not done.,,,YES,,,
+,Select impact model,Assess climate impacts,"The task of identifying models, transfer functions or datasets that can translate climate information into an impact assesment",Text,No,,,,"Aggregated climate information or output metric and uncertainty estimate, impact assessment method",Impact assessment method,Obligatory,,,Case solver,YES,,,
+,Conduct impact analysis,Assess climate impacts,"The task of applying impact models, transfer functions or datasets to simulate, quantify, or describe the impacts",Text,No,"Select impact model
+Quantify future climate change
+Quantify uncertainty
+Postprocess climate information
+",,,"Aggregated climate information or output metric and uncertainty estimate, impact assessment method",Impact analysis,Obligatory,,,Case solver,YES,,,
+,Postprocess impact analysis,Assess climate impacts,"The task of postprocessing the provided climate impact information (e.g., spatial aggregation, regridding) as necessary",Method,No,Conduct impact analysis,,,Impact analysis,Postprocessed impact analysis,Optional,,,Case solver,YES,Keep this,,
+Conduct climate risk assessment,,,The task of conducting climate risk assessment.,,,,,,,,Optional,,,,YES,Very much so,,
+,Identify vulnerability,Conduct climate risk assessment,The task of providing vulnerability information.,Text (Vulnerability),No,,Assess risk,,,Vulnerability information,Optional,,,Case solver,YES,,,
+,Identify exposure,Conduct climate risk assessment,The task of providing exposure information.,Text (Exposure),No,,Assess risk,,,Exposure information,Optional,,,Case solver,YES,,,
+,Assess risk,Conduct climate risk assessment,The task of conducting the climate risk assessment.,Text,No,"Identify vulnerability
+Identify exposure
+Conduct impact analysis
+Postprocess impact analysis",,,"Impact analysis OR postprocessed impact analysis, vulnerability & exposure information",Risk assessment,Optional,,,Case solver,YES,,,
+Present climate information,,,"The task of presenting the climate or climate impact information through visual (e.g., plot, diagram, flowchart, graph, map), quantitative (e.g., table), or qualitative (e.g. narrative) formats",,,,,,,,Optional,,,Case solver,YES,,,
+Send climate information,,,The task of sending climate information.,,,,,,,,Obligatory,,,Case solver,NO,,,
+Disseminate climate information,,,The task of communicating the climate information.,,,,,,,,Obligatory,,,Information requester,NO,,,

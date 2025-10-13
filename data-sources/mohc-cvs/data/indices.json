@@ -1,0 +1,2328 @@
+{
+  "Climate ADAPT": {
+    "Name": "Climate ADAPT",
+    "Members": {
+      "Warmest Three-Day Period": {
+        "Name": "Warmest Three-Day Period",
+        "Units": [
+          "°C",
+          "°C change from 1991-2010 mean"
+        ],
+        "Definition": "The highest daily mean temperature averaged over a three-day window over a period (°C). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health",
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Apparent Temperature Heatwave Days": {
+        "Name": "Apparent Temperature Heatwave Days",
+        "Units": [
+          "days/year (abs and change)"
+        ],
+        "Definition": "The Apparent Temperature Heatwave Days Index (Number of Days) is defined as a period of at least two consecutive days during the summer months (June, July, August) in which both the daily apparent temperature and the daily minimum temperature exceed their monthly 90th percentiles defined over a reference period. Apparent temperature is a linear function of temperature and dew point temperature to account for humidity conditions.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tas, tasmin, hurs",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "tasmin",
+          "hurs"
+        ]
+      },
+      "Climatological Heatwave Days": {
+        "Name": "Climatological Heatwave Days",
+        "Units": [
+          "days/year (abs and change)"
+        ],
+        "Definition": "The count of days under climatological heatwaves conditions (Number of days). A climatological heatwave is a period of at least three consecutive days exceeding the 99th percentile of the daily maximum temperatures of the May to September season during a reference period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "UK CRI",
+            "index": "Met Office Heatwave"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Health",
+          "Agriculture and Food Security",
+          "Transport",
+          "Energy",
+          "Forestry/GHG",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "High UTCI Days": {
+        "Name": "High UTCI Days",
+        "Units": [
+          "days/year"
+        ],
+        "Definition": "The UTCI is an equivalent temperature (°C) and is a measure of the human physiological response to meteorological conditions that also takes into consideration the clothing adaptation of the population in response to outdoor temperature. It is based on four surface variables: air temperature, relative humidity, wind speed and mean radiant temperature. UTCI values are divided in 5 classes of heat stress: no thermal stress (9°C-26°C), moderate heat stress (26°C-32°C), strong heat stress (32°C-38°C), very strong heat stress (38C°-46C°), and extreme heat stress (>46°C). The index refers to the number of days in the category of strong heat stress or stronger (>32°C).",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tas, sfcWind, hurs, rss, rls",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "sfcWind",
+          "hurs",
+          "rss",
+          "rls"
+        ]
+      },
+      "Total Precipitation": {
+        "Name": "Total Precipitation",
+        "Units": [
+          "mm/period",
+          "% change from 1991-2020 mean"
+        ],
+        "Definition": "The cumulated precipitation over a period (mm/period). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg⋅m⁻²⋅sec⁻² and converted to mm/day). This Index is usually presented as annual, seasonal or monthly cumulated values over the considered period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "Total Precipitation"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "Mean Temperature": {
+        "Name": "Mean Temperature",
+        "Units": [
+          "°C",
+          "°C change from 1991-2010 mean"
+        ],
+        "Definition": "The mean of 2m temperature (°C) values during a given period. In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tas",
+        "Commentary": "Like TMm, but for monthly, seasonal, annual instead of daily mean temperatures",
+        "LinkToCLIMDEX": "TMm",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicators": [
+          {
+            "group": "UK CRI",
+            "index": "Average Temperature"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas"
+        ]
+      },
+      "Maximum Temperature": {
+        "Name": "Maximum Temperature",
+        "Units": [
+          "°C",
+          "°C change from 1991-2010 mean"
+        ],
+        "Definition": "The maximum value of daily maximum temperature over a period (°C). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tasmax",
+        "Commentary": "Like TXm, but for monthly, seasonal, annual instead of daily max temperatures",
+        "LinkToCLIMDEX": "TXm",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicators": [
+          {
+            "group": "UK CRI",
+            "index": "Maximum Temperature"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Human Health",
+          "Agriculture and Food Security",
+          "Biodiversity/Ecosystems"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Minimum Temperature": {
+        "Name": "Minimum Temperature",
+        "Units": [
+          "°C",
+          "°C change from 1991-2010 mean"
+        ],
+        "Definition": "The minimum value of daily minimum temperature over a period (°C). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tasmin",
+        "Commentary": "Like TNm, but for monthly, seasonal, annual instead of daily min temperatures",
+        "LinkToCLIMDEX": "TNm",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicators": [
+          {
+            "group": "UK CRI",
+            "index": "Minimum Temperature"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Human Health",
+          "Agriculture and Food Security",
+          "Biodiversity/Ecosystems"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmin"
+        ]
+      },
+      "Maximum Consecutive Five-Day Precipitation": {
+        "Name": "Maximum Consecutive Five-Day Precipitation",
+        "Units": [
+          "mm",
+          "mm change"
+        ],
+        "Definition": "Maximum five days cumulated precipitation (mm). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg.m-2.sec-2 and converted to mm/day). Precipitation is usually presented as annual, seasonal or monthly cumulated values over the considered period but extremes are cumulated on shorter periods (eg daily, 3-Day, or 5-days maximums).",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": "Rx5day",
+        "CLIMDEXRelation": "identicalTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Agriculture and Food Security",
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "Extreme Precipitation Total": {
+        "Name": "Extreme Precipitation Total",
+        "Units": [
+          "mm",
+          "mm change"
+        ],
+        "Definition": "The total sum in a year of daily precipitation values exceeding the 95th percentile of the reference period (mm). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg.m-2.sec-2 and converted to mm/day). Precipitation is usually presented as annual, seasonal or monthly cumulated values over the considered period but extremes are cumulated on shorter periods (eg daily, 3-Days, or 5-Days maximums).",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": "R95p",
+        "CLIMDEXRelation": "identicalTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Agriculture and Food Security",
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "Extreme Precipitation Days": {
+        "Name": "Extreme Precipitation Days",
+        "Units": [
+          "days (abs and change)"
+        ],
+        "Definition": "The count of days in a year with daily precipitation exceeding the 95th percentile threshold of rainy days over a reference period, here the 1981-2010 period (day). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg.m-2.sec-2 and converted to mm day-1). This Index is usually presented as annual, seasonal or monthly cumulated values over the considered period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "Extreme Precipitation Total"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Water Resources",
+          "Agriculture and Food Security",
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "Consecutive Dry Days": {
+        "Name": "Consecutive Dry Days",
+        "Units": [
+          "days (abs and change)"
+        ],
+        "Definition": "The longest period of consecutive days with daily precipitation below 1 mm in a year (day). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": "CDD",
+        "CLIMDEXRelation": "identicalTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Water Resources",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "Meteorological Drought Duration": {
+        "Name": "Meteorological Drought Duration",
+        "Units": [
+          "months (abs and change)"
+        ],
+        "Definition": "The count of months in a year with anomalously low precipitation conditions based on the 3-month Standardised Precipitation Index (SPI-3) relative to a reference period, here 1981-2010 (month). A drought event starts when SPI-3 values fall below -1 for at least two consecutive months and ends when the index returns positive.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": "SPI",
+        "CLIMDEXRelation": "derivedFrom",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Water Resources",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "Meteorological Drought Magnitude": {
+        "Name": "Meteorological Drought Magnitude",
+        "Units": [
+          "dimensionless"
+        ],
+        "Definition": "The cumulative severity of drought events in a year based on the 3-month Standardised Precipitation Index (SPI-3) relative to a reference period, here 1981-2010 (dimensionless). A drought event starts when SPI-3 values fall below -1 for at least two consecutive months and ends when the index returns positive. The magnitude of the event is defined as the sum of SPI-3 absolute values in the months of the drought episode.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": "SPI",
+        "CLIMDEXRelation": "identicalTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Water Resources",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "River Discharge": {
+        "Name": "River Discharge",
+        "Units": [
+          "m³⋅s⁻¹ (abs and change)"
+        ],
+        "Definition": "The River Discharge index is defined as the annual mean daily river discharge (m³⋅s⁻¹).",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "pr, tas + sfcWind, rss, rls, psl, huss",
+        "Commentary": "Output of a hydrological model; climate model variables used to drive the model are mentioned here: https://confluence.ecmwf.int/pages/viewpage.action?pageId=283549812#Hydrologyrelatedclimateimpactindicatorsfrom1970to2100derivedfrombiasadjustedEuropeanclimateprojections:ProductUserGuide,SpecificationandWorkflow-3.4InputdataInputdata",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Disaster Risk Reduction",
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "tas",
+          "sfcWind",
+          "rss",
+          "rls",
+          "psl",
+          "huss"
+        ]
+      },
+      "River Flood": {
+        "Name": "River Flood",
+        "Units": [
+          "m³⋅s⁻¹ (abs and change)"
+        ],
+        "Definition": "The River Flood index is the 50-year (also 10-, 5- and 2-year) flood recurrence value based on maximum river discharge. It is estimated from annual daily maximum river discharge using a Gumbel distribution.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "pr, tas + sfcWind, rss, rls, psl, huss",
+        "Commentary": "Output of a hydrological model; climate model variables used to drive the model are mentioned here: https://confluence.ecmwf.int/pages/viewpage.action?pageId=283549812#Hydrologyrelatedclimateimpactindicatorsfrom1970to2100derivedfrombiasadjustedEuropeanclimateprojections:ProductUserGuide,SpecificationandWorkflow-3.4InputdataInputdata",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "UK CRI",
+            "index": "River Flood (10-Year Return Period)"
+          },
+          {
+            "group": "UK CRI",
+            "index": "River Flood (2-Year Return Period)"
+          },
+          {
+            "group": "UK CRI",
+            "index": "River Flood (5-Year Return Period)"
+          },
+          {
+            "group": "UK CRI",
+            "index": "River Flood (Likelihood of Current 10-Year Event)"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Disaster Risk Reduction",
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "tas",
+          "sfcWind",
+          "rss",
+          "rls",
+          "psl",
+          "huss"
+        ]
+      },
+      "Aridity Actual": {
+        "Name": "Aridity Actual",
+        "Units": [
+          "dimensionless"
+        ],
+        "Definition": "The ratio between mean annual actual evapotranspiration and mean annual precipitation, generally calculated over a reference period of 30 years. Actual evapotranspiration is estimated using hydrological models and, in contrast to potential evapotranspiration, accounts for the limited water content actually available in the soil when estimating the evapotranspiration demand.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "pr, evspsbl / pr, tas + sfcWind, huss, psl, rss, rsl",
+        "Commentary": "Output of a hydrological model; climate model variables used to drive the model are mentioned here: https://confluence.ecmwf.int/pages/viewpage.action?pageId=283549812#Hydrologyrelatedclimateimpactindicatorsfrom1970to2100derivedfrombiasadjustedEuropeanclimateprojections:ProductUserGuide,SpecificationandWorkflow-3.4InputdataInputdata",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Water Resources",
+          "Forestry/GHG",
+          "Biodiversity/Ecosystems"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsbl"
+        ]
+      },
+      "Mean Soil Moisture": {
+        "Name": "Mean Soil Moisture",
+        "Units": [
+          "dimensionless"
+        ],
+        "Definition": "The soil moisture is defined as the monthly mean values of soil moisture in the root zone as the fraction of the field capacity volume over a 30 year period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "rzwc (Mass Content Of Water In Soil Layer Defined By Root Depth), mrsofc / pr, tas + sfcWind, rss, rls, psl, huss",
+        "Commentary": "Output of a hydrological model; climate model variables used to drive the model are mentioned here: https://confluence.ecmwf.int/pages/viewpage.action?pageId=283549812#Hydrologyrelatedclimateimpactindicatorsfrom1970to2100derivedfrombiasadjustedEuropeanclimateprojections:ProductUserGuide,SpecificationandWorkflow-3.4InputdataInputdata",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "Mean Soil Moisture"
+          }
+        ],
+        "LinkedIndicatorRelation": "identicalTo",
+        "Sector": [
+          "Forestry/GHG",
+          "Water Resources",
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "rzwc",
+          "mrsofc"
+        ]
+      },
+      "High Fire Danger Days": {
+        "Name": "High Fire Danger Days",
+        "Units": [
+          "days (abs and change)"
+        ],
+        "Definition": "The count of days in a period with a FWI value greater than 30 (Number of days) based upon the European Forest Fire Information System (EFFIS) classification. The Fire Weather Index (FWI) is a meteorologically based index used worldwide to estimate fire danger. It is developed by the Canadian Forestry Service to estimate forest fire ignition and spread conditions based on several weather variables (temperature, precipitation, relative humidity, and wind speed).",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tas, pr, hurs, sfcWind",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "Fire Weather Index"
+          }
+        ],
+        "LinkedIndicatorRelation": "derivedFrom",
+        "Sector": [
+          "Forestry/GHG",
+          "Transport",
+          "Energy"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "pr",
+          "hurs",
+          "sfcWind"
+        ]
+      },
+      "Fire Weather Index": {
+        "Name": "Fire Weather Index",
+        "Units": [
+          "dimensionless"
+        ],
+        "Definition": "The Fire Weather Index (FWI) is a meteorologically based index used worldwide to estimate fire danger. It is developed by the Canadian Forestry Service to estimate forest fire ignition and spread conditions based on several weather variables (temperature, precipitation, relative humidity, and wind speed).",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tas, pr, hurs, sfcWind",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "UK CRI",
+            "index": "Met Office Fire Danger"
+          },
+          {
+            "group": "UK CRI",
+            "index": "Wildfire: Daily Hazard Assessment"
+          },
+          {
+            "group": "UK CRI",
+            "index": "Wildfire: FFMC 99th Percentile"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Forestry/GHG",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "pr",
+          "hurs",
+          "sfcWind"
+        ]
+      },
+      "Mean Wind Speed": {
+        "Name": "Mean Wind Speed",
+        "Units": [
+          "m s-1 (abs and change)"
+        ],
+        "Definition": "The mean daily 10m wind speed over a period (m s-1).",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "sfcWind",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Energy",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "sfcWind"
+        ]
+      },
+      "Extreme Wind Days": {
+        "Name": "Extreme Wind Days",
+        "Units": [
+          "days (abs and change)"
+        ],
+        "Definition": "The count of days in a year with daily 10m wind speed exceeding the 98th percentile threshold over a reference period, here the 1981-2010 period (days).",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "sfcWind",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Energy",
+          "Transport",
+          "Forestry/GHG",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "sfcWind"
+        ]
+      },
+      "Snowfall Amount": {
+        "Name": "Snowfall Amount",
+        "Units": [
+          "mm",
+          "mm change"
+        ],
+        "Definition": "The Snowfall Amount index (mm) corresponds to the cumulative value of snowfall precipitation over the winter season from November to April.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "prsn",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Tourism",
+          "Cryosphere"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "prsn"
+        ]
+      },
+      "High Snow Days": {
+        "Name": "High Snow Days",
+        "Units": [
+          "days (abs and change)"
+        ],
+        "Definition": "The High Snow Days index (days) counts the number of days where the water equivalent of natural snow is above a given threshold (here 120 kg m-2) from august to july of the following year.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "prsn",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Tourism",
+          "Cryosphere"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "prsn"
+        ]
+      },
+      "Relative Sea Level Rise": {
+        "Name": "Relative Sea Level Rise",
+        "Units": [
+          "cm (abs and change from 1986-2005)"
+        ],
+        "Definition": "The Relative Sea Level Rise index (cm) is the annual mean sea level height relative to the 1986-2005 period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "change_in_mean_sea_level_wrt_solid_surface, sea_surface_height_above_geoid, sea_surface_height_above_geopotential_datum, sea_surface_height_above_mean_sea_level, sea_surface_height_above_reference_ellipsoid",
+        "Commentary": "Output of Global Tide and Surge Model (2D hydrodynamic model)",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Coasts"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "change_in_mean_sea_level_wrt_solid_surface",
+          "sea_surface_height_above_geoid",
+          "sea_surface_height_above_geopotential_datum",
+          "sea_surface_height_above_mean_sea_level",
+          "sea_surface_height_above_reference_ellipsoid"
+        ]
+      },
+      "Extreme Sea Level": {
+        "Name": "Extreme Sea Level",
+        "Units": [
+          "m (abs and change from 1951-1980)"
+        ],
+        "Definition": "The Extreme Sea Level index (m) is the Total water level value for a return period of 100 years caused by tidal and surge levels as well as their interactions but without including sea level rise.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "change_in_mean_sea_level_wrt_solid_surface, tidal_sea_surface_height_above_lowest_astronomical_tide, tidal_sea_surface_height_above_mean_higher_high_water, tidal_sea_surface_height_above_mean_lower_low_water, tidal_sea_surface_height_above_mean_low_water_springs, tidal_sea_surface_height_above_mean_sea_level, sea_surface_height_above_geoid, sea_surface_height_above_geopotential_datum, sea_surface_height_above_mean_sea_level, sea_surface_height_above_reference_ellipsoid, non_tidal_elevation_of_sea_surface_height",
+        "Commentary": "Output of Global Tide and Surge Model (2D hydrodynamic model); Return period of total water level (TWL), which includes annual sea level change, tides, storm surge",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Coasts",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "change_in_mean_sea_level_wrt_solid_surface",
+          "tidal_sea_surface_height_above_lowest_astronomical_tide",
+          "tidal_sea_surface_height_above_mean_higher_high_water",
+          "tidal_sea_surface_height_above_mean_lower_low_water",
+          "tidal_sea_surface_height_above_mean_low_water_springs",
+          "tidal_sea_surface_height_above_mean_sea_level",
+          "sea_surface_height_above_geoid",
+          "sea_surface_height_above_geopotential_datum",
+          "sea_surface_height_above_mean_sea_level",
+          "sea_surface_height_above_reference_ellipsoid",
+          "non_tidal_elevation_of_sea_surface_height"
+        ]
+      },
+      "Sea Surface Temperature": {
+        "Name": "Sea Surface Temperature",
+        "Units": [
+          "°C",
+          "°C change from 1981-2010"
+        ],
+        "Definition": "The Sea Surface Temperature index represents the mean sea surface temperature over different timescales (°C).",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tos",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Fisheries",
+          "Marine Ecosystems"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tos"
+        ]
+      },
+      "Marine Heatwaves Days Index (MHD)": {
+        "Name": "Marine Heatwaves Days Index (MHD)",
+        "Units": [
+          "days (abs and change)"
+        ],
+        "Definition": "The Marine Heatwaves Days index (MHD) is defined as the count of days under marine heatwaves conditions (days). A Marine Heatwave day is a day exceeding the daily climatological 90th percentile of SST during the May to September season and a reference period.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tos",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Fisheries",
+          "Marine Ecosystems"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tos"
+        ]
+      },
+      "Dissolved Oxygen Level": {
+        "Name": "Dissolved Oxygen Level",
+        "Units": [
+          "mol / m³"
+        ],
+        "Definition": "The Dissolved Oxygen Level index (mol / m³) is the concentration of dissolved oxygen at a certain depth. Oxygen concentrations above 190 mmol m³ are considered to be sufficient to support healthy marine communities with minimal problems, while oxygen concentrations below 62.5 mmol m³ are considered to be a source of serious concern.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "o2 + (sometimes: zo2min, fgo2, dpo2)",
+        "Commentary": "Output of ecosystem model: might require solar radiation and ocean absorption, wind, partial CO2 in air, nutrients and inflow of freshwater into ocean and other parameters to run",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Fisheries",
+          "Marine Ecosystems"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "o2"
+        ]
+      },
+      "Ocean pH Level": {
+        "Name": "Ocean pH Level",
+        "Units": [
+          "pH"
+        ],
+        "Definition": "The Ocean pH Level index (dimensionless) is the seawater pH at a certain depth. pH is a measure of the concentration of hydrogen ions in a solution. The more hydrogen ions that are present, the more acidic is the solution. The pH scale ranges from zero (very acidic) to 14 (very basic). The scale is logarithmic, meaning a single unit corresponds to a ten-fold difference. A pH of 7 is neutral, a pH less than 7 is acidic, and a pH greater than 7 is basic.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "ph + (sometimes evaluated: spco2, spco2abio, spco2nat, dpco2, dpco2abio, dpco2nat, talk, talknat, dissic, dissicabio, dissicnat)",
+        "Commentary": "Output of ecosystem model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Fisheries",
+          "Marine Ecosystems"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "ph"
+        ]
+      },
+      "Tiger Mosquito Climatic Suitability": {
+        "Name": "Tiger Mosquito Climatic Suitability",
+        "Units": [
+          "dimensionless"
+        ],
+        "Definition": "The Climatic Suitability index of Tiger mosquito (Aedes albopictus) presence (Dimensionless, from 0 to 100). The Tiger Mosquito Climatic Suitability index is relevant to human health. The tiger mosquito is an invasive species from south-east Asia favoured by a warmer climate and represents a serious threat as it transmits vector-borne diseases such as dengue and chikungunya. Environmental factors, among which weather conditions, affect both the potential presence and seasonal activity of the tiger mosquito. The Tiger mosquito's climatic suitability is determined by summer temperatures, January temperatures and annual rainfall. The suitability is null for summer temperatures lower than 15°C or higher than 30°C, with a maximum between 20°C and 25°C. It is null for January temperatures lower than - 1°C and annual rainfall lower than 450 mm, and maximal for January temperatures above 3°C and annual rainfall above 800 mm.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tas, tasmax, tasmin, pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "tasmax",
+          "tasmin",
+          "pr"
+        ]
+      },
+      "Tiger Mosquito Climatic Season Length": {
+        "Name": "Tiger Mosquito Climatic Season Length",
+        "Units": [
+          "days (abs and change)"
+        ],
+        "Definition": "The season length of the climatic suitability of tiger mosquito presence (Days). The Tiger mosquito's climatic suitability seasonal presence is determined by temperature thresholds and hours of sunlight (photoperiod) during spring (when egg hatching occurs) and autumn (a period of suspended development or diapause). In spring the temperature should be above 10.5°C and the photoperiod above 11.25 hours and in autumn the temperature should be below 9.5°C and the photoperiod below 13.5 hours. The latter is conditioned by the ability of the mosquito to survive the winter combined with a threshold on annual rainfall. Survival conditions are considered as unsuitable for January temperatures below 0°C and annual rainfall below 500 mm.",
+        "DefinitionSource": "Climate ADAPT",
+        "AssociatedVariable": "tas, tasmax, tasmin, pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "tasmax",
+          "tasmin",
+          "pr"
+        ]
+      }
+    }
+  },
+  "Copernicus CCS": {
+    "Name": "Copernicus CCS",
+    "Members": {
+      "Consecutive Summer Days (CSD)": {
+        "Name": "Consecutive Summer Days (CSD)",
+        "Units": [
+          "days"
+        ],
+        "Definition": "Let TX_ij be the daily maximum temperature at day i of period j. Then counted is the largest number of consecutive days where daily maximum temperature exceeds 25 degrees Celsius (TX_ij > 25).",
+        "DefinitionSource": "Copernicus CCS",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": "SU",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Consecutive Frost Days (CFD)": {
+        "Name": "Consecutive Frost Days (CFD)",
+        "Units": [
+          "days"
+        ],
+        "Definition": "Let TX_ij be the daily maximum temperature at day i of period j. Then counted is the largest number of consecutive days where daily maximum temperature is less than 0 degrees Celsius (TX_ij < 0).",
+        "DefinitionSource": "Copernicus CCS",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": "FD",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health",
+          "Disaster Risk Reduction",
+          "Agriculture and Food Security",
+          "Forestry/GHG",
+          "Transport",
+          "Energy"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Potential Evapotranspiration (PET: Penman-Monteith)": {
+        "Name": "Potential Evapotranspiration (PET: Penman-Monteith)",
+        "Units": [
+          "mm/day"
+        ],
+        "Definition": "PET is an index which gives the FAO-endorsed potential evapotranspiration as calculated by the Penman-Monteith parametrization. Here reference crop evapotranspiration is a measure for potential evapotranspiration. Reference crop evaporation is defined as the rate of evaporation from an idealized grass reference crop with a fixed crop height of 0.12 m, an albedo of 0.23, and a surface resistance of 70 s m−1 . In terms of of its evaporation rate, such a crop closely resembles the reference crop of an extensive surface of short green grass cover of uniform height, actively growing, completely shading the ground, and not short of water.",
+        "DefinitionSource": "Copernicus CCS",
+        "AssociatedVariable": "tas, hurs, psl, rss, rls, sfcWind",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Water Resources",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "hurs",
+          "psl",
+          "rss",
+          "rls",
+          "sfcWind"
+        ]
+      },
+      "Potential Evapotranspiration (PET: Makkink)": {
+        "Name": "Potential Evapotranspiration (PET: Makkink)",
+        "Units": [
+          "mm/day"
+        ],
+        "Definition": "This formulation of Reference Evapotranspiration is a simplification of the more comprehensive Penman-Monteith parameterization and recognizes that evapotranspiration is determined primarily by the radiation and the ambient air temperature. A further simplification is that Global Radiation is used rather than the net radiation which is used in more comprehensive formulas.",
+        "DefinitionSource": "Copernicus CCS",
+        "AssociatedVariable": "tas, rsd, psl",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Water Resources",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "rsd",
+          "psl"
+        ]
+      },
+      "Self-Calibrating Palmer Drought Severity Index (scPDSI)": {
+        "Name": "Self-Calibrating Palmer Drought Severity Index (scPDSI)",
+        "Units": [
+          "dimensionless"
+        ],
+        "Definition": "The Palmer Drought Severity Index (PDSI) is a measure of regional moisture availability that has been used extensively to study droughts and wet spells in the contiguous USA. The computation of the index involves a classification of relative moisture conditions within 11 categories as defined by Palmer (1965), ranging from extremely dry with PDSI, to extremely wet with PDSI values. The index is based on water supply and demand which is calculated using a water-budget system based on historic records of precipitation and temperature and the soil characteristics of the site being considered. \nThe scPDSI as put forward by Wells et al. (2004) is more appropriate for geographical comparison of climates of diverse regions. Wells et al. (2004) improve the performance of the PDSI by automating the calculations Palmer made when he derived the empirical constants used in the PDSI algorithm.",
+        "DefinitionSource": "Copernicus CCS",
+        "AssociatedVariable": "tas, pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Disaster Risk Reduction",
+          "Water Resources"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "pr"
+        ]
+      },
+      "Huglin Index": {
+        "Name": "Huglin Index",
+        "Units": [
+          "dimensionless"
+        ],
+        "Definition": "The Huglin Index is an index specifically aimed at grap growth and defined using daily averaged temperature TG_i and the daily maximum temperature TX_i for day i in the period 1 April to 30 September: K/2 * SUM((TG_i - 10) + (TX_i - 10)), where K is a daylength coefficient. The daylight coefficient is a function of the latitude of the station but a clear definition is absent. The value of K is 1 (<= 40°N) or 1.02 (40-42°N), increasing at increment of 0.01 for each 2 degrees of latitude until 50°N and reaching 1.06.",
+        "DefinitionSource": "Copernicus CCS",
+        "AssociatedVariable": "tas, tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "tasmax"
+        ]
+      }
+    }
+  },
+  "ETCCDI": {
+    "Name": "ETCCDI",
+    "Members": {
+      "altCSDI": {
+        "Name": "altCSDI",
+        "Units": [
+          "days"
+        ],
+        "Definition": "Similar to CSDI. For CSDI, the spells cannot span years, while for altCSDI the spells can span years.",
+        "DefinitionSource": "ETCCDI",
+        "AssociatedVariable": "tasmin",
+        "Commentary": null,
+        "LinkToCLIMDEX": "CSDI",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Health",
+          "Agriculture and Food Security",
+          "Transport",
+          "Energy",
+          "Forestry/GHG",
+          "Disaster Risk Reduction",
+          "Fisheries",
+          "Cryosphere"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmin"
+        ]
+      },
+      "altWSDI": {
+        "Name": "altWSDI",
+        "Units": [
+          "days"
+        ],
+        "Definition": "Similar to WSDI. For WSDI, the spells cannot span years, while for altWSDI the spells can span years.",
+        "DefinitionSource": "ETCCDI",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": "WSDI",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Health",
+          "Water Resources",
+          "Agriculture and Food Security",
+          "Transport",
+          "Energy",
+          "Forestry/GHG",
+          "Disaster Risk Reduction",
+          "Fisheries",
+          "Cryosphere",
+          "Coasts"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "altCDD": {
+        "Name": "altCDD",
+        "Units": [
+          "days/year"
+        ],
+        "Definition": "Similar to CDD. For CDD, the spells can span years, while for altCDD the spells cannot span years.",
+        "DefinitionSource": "ETCCDI",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": "CDD",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Health",
+          "Agriculture and Food Security",
+          "Water Resources",
+          "Forestry/GHG",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "altCWD": {
+        "Name": "altCWD",
+        "Units": [
+          "days/year"
+        ],
+        "Definition": "Similar to CWD. For CWD, the spells can span years, while for altCWD the spells cannot span years.",
+        "DefinitionSource": "ETCCDI",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": "CWD",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Coasts"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      }
+    }
+  },
+  "UK CRI": {
+    "Name": "UK CRI",
+    "Members": {
+      "Average Temperature": {
+        "Name": "Average Temperature",
+        "Units": [
+          "°C change from 1981-2010 mean"
+        ],
+        "Definition": "Seasonal average temperature",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas",
+        "Commentary": "Like TMm, but for seasonal instead of daily mean temperatures",
+        "LinkToCLIMDEX": "TMm",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "Mean Temperature"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [],
+        "Source": "UK CRI",
+        "SourceLink": "https://uk-cri.org/",
+        "AssociatedVariableSimple": [
+          "tas"
+        ]
+      },
+      "Minimum Temperature": {
+        "Name": "Minimum Temperature",
+        "Units": [
+          "°C change from 1981-2010 mean"
+        ],
+        "Definition": "Seasonal average minimum temperature",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tmin",
+        "Commentary": "Like TNm, but for seasonal instead of daily min temperatures",
+        "LinkToCLIMDEX": "TNm",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicators": [
+          {
+            "group": "Climate-ADAPT",
+            "index": "Minimum Temperature"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Human Health",
+          "Agriculture and Food Security",
+          "Biodiversity/Ecosystems"
+        ],
+        "Source": "Climate ADAPT",
+        "SourceLink": "https://climate-adapt.eea.europa.eu/en/knowledge/european-climate-data-explorer/overview-list",
+        "AssociatedVariableSimple": [
+          "tmin"
+        ]
+      },
+      "Maximum Temperature": {
+        "Name": "Maximum Temperature",
+        "Units": [
+          "°C change from 1981-2010 mean"
+        ],
+        "Definition": "Seasonal average maximum temperature",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tmax",
+        "Commentary": "Like TXm, but for seasonal instead of daily max temperatures",
+        "LinkToCLIMDEX": "TXm",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicators": [
+          {
+            "group": "Climate-ADAPT",
+            "index": "Maximum Temperature"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Human Health",
+          "Agriculture and Food Security",
+          "Biodiversity/Ecosystems"
+        ],
+        "Source": "Copernicus CCS",
+        "SourceLink": "https://surfobs.climate.copernicus.eu/userguidance/indicesdictionary.php",
+        "AssociatedVariableSimple": [
+          "tmax"
+        ]
+      },
+      "Rainfall": {
+        "Name": "Rainfall",
+        "Units": [
+          "% change from 1981-2010 mean"
+        ],
+        "Definition": "Seasonal total rainfall",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr/prra",
+        "Commentary": "If using pr, requires aux data like temperature to control for solid phase",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "Total Precipitation"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [],
+        "Source": null,
+        "SourceLink": "https://www.ecad.eu/documents/atbd.pdf",
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "Record-Breaking Weather (Hottest Day)": {
+        "Name": "Record-Breaking Weather (Hottest Day)",
+        "Units": [
+          "Days/year"
+        ],
+        "Definition": "Number of days per year at least as hot as the hottest day (Tmax) between 1981 and 2010",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmax",
+        "Commentary": "In relation to max(TXx over 1981-2010)",
+        "LinkToCLIMDEX": "TXx",
+        "CLIMDEXRelation": "derivedFrom",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health",
+          "Disaster Risk Reduction",
+          "Energy",
+          "Agriculture and Food Security",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Record-Breaking Weather (Hottest Month)": {
+        "Name": "Record-Breaking Weather (Hottest Month)",
+        "Units": [
+          "Months/year"
+        ],
+        "Definition": "Number of months per year at least as hot as the hottest month (Tmax) between 1981 and 2010",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health",
+          "Disaster Risk Reduction",
+          "Energy",
+          "Agriculture and Food Security",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Record-Breaking Weather (Wettest Month)": {
+        "Name": "Record-Breaking Weather (Wettest Month)",
+        "Units": [
+          "Months/year"
+        ],
+        "Definition": "Number of months per year at least as wet as the wettest month between 1981 and 2010",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Disaster Risk Reduction",
+          "Agriculture and Food Security",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "Met Office Heatwave": {
+        "Name": "Met Office Heatwave",
+        "Units": [
+          "Events/year",
+          "duration (days)",
+          "% chance"
+        ],
+        "Definition": "Occurrence of heatwave following Met Office definition: heatwave threshold is met when a location records a period of at least three consecutive days with daily maximum temperatures meeting or exceeding the heatwave temperature threshold [set between 25 (most of the country) and 28 (London and certain surrounding counties)]. Definitions valid only for the UK.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "Climatological Heatwave Days"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Human Health",
+          "Agriculture and Food Security",
+          "Transport",
+          "Energy",
+          "Forestry/GHG",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Amber Heat-Health Alert": {
+        "Name": "Amber Heat-Health Alert",
+        "Units": [
+          "Events/year",
+          "duration (days)",
+          "% chance"
+        ],
+        "Definition": "Occurrence of a public health heat-health alert: potential warning if medium heat-health alert thresholds reached for maximum daytime temperature (32.0°C to 39.9°C for London, 30.0°C to 37.0°C for other areas) and night-time temperature (95th percentile or higher of summer \"nights\"). Definitions valid only for the UK.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmax, tasmin",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax",
+          "tasmin"
+        ]
+      },
+      "Cold weather alert": {
+        "Name": "Cold weather alert",
+        "Units": [
+          "Events/year",
+          "duration (days)",
+          "% chance"
+        ],
+        "Definition": "Occurrence of a public health cold weather alert: potential warning if daily mean temperature below 2.0°C for 5 days AND below 0.0°C for 48hrs or more. Definitions valid only for the UK.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health",
+          "Energy",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas"
+        ]
+      },
+      "Very Hot Days": {
+        "Name": "Very Hot Days",
+        "Units": [
+          "Events/year",
+          "% chance"
+        ],
+        "Definition": "Days with maximum temperature above 35°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": "TXge35",
+        "CLIMDEXRelation": "identicalTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Health",
+          "Disaster Risk Reduction",
+          "Agriculture and Food Security",
+          "Forestry/GHG",
+          "Energy"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Tropical Nights": {
+        "Name": "Tropical Nights",
+        "Units": [
+          "Events/year",
+          "% chance"
+        ],
+        "Definition": "Days with minimum temperature above 20°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmin",
+        "Commentary": null,
+        "LinkToCLIMDEX": "TR",
+        "CLIMDEXRelation": "identicalTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Health",
+          "Disaster Risk Reduction",
+          "Agriculture and Food Security",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmin"
+        ]
+      },
+      "Heat Stress": {
+        "Name": "Heat Stress",
+        "Units": [
+          "Events/year",
+          "% chance"
+        ],
+        "Definition": "Days with shade Wet Bulb Globe Temperature (WBGT) above 25",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas, sfcWind, huss, rss, psl (air temperature at surface, surface wind, specific humidity, net surface shortwave flux, surface pressure at sea level)",
+        "Commentary": "This paper describes similar derivation of WBGT for climate projections: https://doi.org/10.1007/s00484-024-02776-5",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Human Health",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "sfcWind",
+          "huss",
+          "rss",
+          "psl"
+        ]
+      },
+      "Heating Degree Days": {
+        "Name": "Heating Degree Days",
+        "Units": [
+          "°C-days"
+        ],
+        "Definition": "Average annual heating degree days: relative to 15.5°C and 18°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas",
+        "Commentary": null,
+        "LinkToCLIMDEX": "HDDheatn",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Energy",
+          "Human Health"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas"
+        ]
+      },
+      "Cooling Degree Days": {
+        "Name": "Cooling Degree Days",
+        "Units": [
+          "°C-days"
+        ],
+        "Definition": "Average annual cooling degree days: relative to 18°C and 22°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas",
+        "Commentary": null,
+        "LinkToCLIMDEX": "CDDcoldn",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Energy",
+          "Human Health"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas"
+        ]
+      },
+      "Road Melt Risk": {
+        "Name": "Road Melt Risk",
+        "Units": [
+          "Days/year"
+        ],
+        "Definition": "Days with Tmax above 25°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": "SU",
+        "CLIMDEXRelation": "identicalTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Road Accident Risk": {
+        "Name": "Road Accident Risk",
+        "Units": [
+          "Days/year"
+        ],
+        "Definition": "Days with Tmin below 0°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmin",
+        "Commentary": null,
+        "LinkToCLIMDEX": "FD",
+        "CLIMDEXRelation": "identicalTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmin"
+        ]
+      },
+      "Rail: High Temperatures": {
+        "Name": "Rail: High Temperatures",
+        "Units": [
+          "Days/year"
+        ],
+        "Definition": "Days with Tmax above thresholds (>21, 24, 26, 30°C)",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Rail: Bad Weather Days": {
+        "Name": "Rail: Bad Weather Days",
+        "Units": [
+          "Days/year"
+        ],
+        "Definition": "Days with temperature, rainfall and/or windspeed beyond thresholds (not defined)",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmax, tasmin, pr, sfcWind",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax",
+          "tasmin",
+          "pr",
+          "sfcWind"
+        ]
+      },
+      "Start of Crop Growing Season": {
+        "Name": "Start of Crop Growing Season",
+        "Units": [
+          "Day of year (1 = January 1st)"
+        ],
+        "Definition": "First day of first five-day period with average temperature above 5.6°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas"
+        ]
+      },
+      "Growing Season Length": {
+        "Name": "Growing Season Length",
+        "Units": [
+          "Days"
+        ],
+        "Definition": "Length between start and end of growing season",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas",
+        "Commentary": null,
+        "LinkToCLIMDEX": "GSL",
+        "CLIMDEXRelation": "identicalTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas"
+        ]
+      },
+      "Growing Degree Days": {
+        "Name": "Growing Degree Days",
+        "Units": [
+          "°C-days"
+        ],
+        "Definition": "Accumulated degree-days relative to 5.6°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas",
+        "Commentary": null,
+        "LinkToCLIMDEX": "GDDgrown",
+        "CLIMDEXRelation": "relatedTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas"
+        ]
+      },
+      "Crop Growth Duration": {
+        "Name": "Crop Growth Duration",
+        "Units": [
+          "Days"
+        ],
+        "Definition": "Time to accumulate the 1981-2010 average growing degree days",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "UK CRI",
+            "index": "Growing Degree Days"
+          }
+        ],
+        "LinkedIndicatorRelation": "derivedFrom",
+        "Sector": [
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas"
+        ]
+      },
+      "Start of Field Operations (Tsum200)": {
+        "Name": "Start of Field Operations (Tsum200)",
+        "Units": [
+          "Day of year (1 = January 1st)"
+        ],
+        "Definition": "Day when accumulated temperatures above 0°C reach 200°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas"
+        ]
+      },
+      "Accumulated Frost": {
+        "Name": "Accumulated Frost",
+        "Units": [
+          "°C-days"
+        ],
+        "Definition": "Sum of minimum temperatures below 0°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmin",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmin"
+        ]
+      },
+      "Frost Days": {
+        "Name": "Frost Days",
+        "Units": [
+          "Days/year"
+        ],
+        "Definition": "Days with Tmin below 0°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmin",
+        "Commentary": null,
+        "LinkToCLIMDEX": "FD",
+        "CLIMDEXRelation": "identicalTo",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Health",
+          "Cryosphere",
+          "Forestry/GHG",
+          "Disaster Risk Reduction"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmin"
+        ]
+      },
+      "Dairy Cattle Heat Stress": {
+        "Name": "Dairy Cattle Heat Stress",
+        "Units": [
+          "Days/year"
+        ],
+        "Definition": "Days with a Temperature Humidity Index above 70.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas, hurs",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "hurs"
+        ]
+      },
+      "Wheat Heat Stress": {
+        "Name": "Wheat Heat Stress",
+        "Units": [
+          "Days/year",
+          "% chance"
+        ],
+        "Definition": "Days between 1 May and 15 June with maximum temperature above 32°C",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tasmax",
+        "Commentary": null,
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tasmax"
+        ]
+      },
+      "Potential Soil Moisture Deficit": {
+        "Name": "Potential Soil Moisture Deficit",
+        "Units": [
+          "mm"
+        ],
+        "Definition": "Average annual maximum cumulative difference between rainfall and potential evaporation",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot (potential evaporation/CF: water_potential_evaporation_flux). Potential evaporation can be calculated using huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Based on Hannaford et al. (2023): https://doi.org/10.5194/essd-15-2391-2023",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Water Resources"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "Days Above Field Capacity": {
+        "Name": "Days Above Field Capacity",
+        "Units": [
+          "Days/year"
+        ],
+        "Definition": "Number of days with soil moisture at or above field capacity",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "mrso (mass_content_of_water_in_soil), mrsofc (soil_moisture_content_at_field_capacity) or calculate using land surface model: pr, tas, huss, rls, rss, sfcWind, psl",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Water Resources"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "mrso "
+        ]
+      },
+      "SPI Drought": {
+        "Name": "SPI Drought",
+        "Units": [
+          "Proportion of time"
+        ],
+        "Definition": "Number of months with a Standardised Precipitation Index (calculated from 3-month accumulated rainfall) less than -1.5.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr",
+        "Commentary": null,
+        "LinkToCLIMDEX": "SPI",
+        "CLIMDEXRelation": "derivedFrom",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Water Resources"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr"
+        ]
+      },
+      "SPEI Drought": {
+        "Name": "SPEI Drought",
+        "Units": [
+          "Proportion of time"
+        ],
+        "Definition": "Number of months with a Standardised Precipitation Evaporation Index (calculated from 6-month accumulated rainfall minus potential evaporation) less than -1.5.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot",
+        "Commentary": null,
+        "LinkToCLIMDEX": "SPEI",
+        "CLIMDEXRelation": "derivedFrom",
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Agriculture and Food Security",
+          "Water Resources"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "Met Office Fire Danger": {
+        "Name": "Met Office Fire Danger",
+        "Units": [
+          "Days/year",
+          "% chance greater than the current mean"
+        ],
+        "Definition": "Days with the MOFSI index above specific thresholds: >17.35 for very high, >52.538 for exception. Definitions valid only for the UK.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas, hurs, sfcWind, pr, evspsblpot",
+        "Commentary": "Calculation based on Canadian Forest Fire Weather Index and described in detail in: Arnell et al. (2021) https://doi.org/10.1088/1748-9326/abd9f2",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "High Fire Danger Days"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Disaster Risk Reduction",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "hurs",
+          "sfcWind",
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "Wildfire: Daily Hazard Assessment": {
+        "Name": "Wildfire: Daily Hazard Assessment",
+        "Units": [
+          "Days/year",
+          "% chance greater than the current mean"
+        ],
+        "Definition": "Days with MOFSI components above specific thresholds. Components are FFMC (Fine Fuel Moisture Code), ISI (Initial Spread Index), DMC (Duff Moisture Code), DC (Drought Code) and FWI (Fire Weather Index). Thresholds are season-specific and available for FFMC, ISI, and FWI. Relates to amber and red warning conditions. An ‘amber’ warning level means that severe wildfire conditions are forecast with a likelihood of difficult-to-control wildfires. The ‘red’ level means extreme wildfire conditions are forecast, and occurs when the amber thresholds are passed and other weather conditions are conducive to fire (persistent high temperatures, low humidity and high windspeeds).",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas, hurs, sfcWind, pr, evspsblpot",
+        "Commentary": "Described in detail in Arnell et al. (2021) https://doi.org/10.1088/1748-9326/abd9f3",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "UK CRI",
+            "index": "Met Office Fire Danger"
+          },
+          null,
+          {
+            "group": "Climate ADAPT",
+            "index": "Fire Weather Index"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Disaster Risk Reduction",
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "hurs",
+          "sfcWind",
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "Wildfire: FFMC 99th Percentile": {
+        "Name": "Wildfire: FFMC 99th Percentile",
+        "Units": [
+          "Days/year"
+        ],
+        "Definition": "Days with Fine Fuel Moisture Code component of MOFSI above the 99th percentile over the period 1981-2010, calculated by season. FFMC index represents the availability of dry ‘tinder’ material in and around the vegetation susceptible to ignition.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "tas, hurs, sfcWind, pr",
+        "Commentary": "Described in detail in Arnell et al. (2021) https://doi.org/10.1088/1748-9326/abd9f4",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "UK CRI",
+            "index": "Met Office Fire Danger"
+          },
+          {
+            "group": "UK CRI",
+            "index": "Wildfire: Daily Hazard Assessment"
+          },
+          {
+            "group": "Climate ADAPT",
+            "index": "Fire Weather Index"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Forestry/GHG"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "tas",
+          "hurs",
+          "sfcWind",
+          "pr"
+        ]
+      },
+      "River Runoff": {
+        "Name": "River Runoff",
+        "Units": [
+          "% change from 1981-2010 mean"
+        ],
+        "Definition": "Annual and seasonal river runoff",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Disaster Risk Reduction",
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "River Flood (2-Year Return Period)": {
+        "Name": "River Flood (2-Year Return Period)",
+        "Units": [
+          "% change from 1981-2010 mean"
+        ],
+        "Definition": "Magnitude of the 2-year flood",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "River Flood"
+          }
+        ],
+        "LinkedIndicatorRelation": "identicalTo",
+        "Sector": [
+          "Disaster Risk Reduction",
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "River Flood (5-Year Return Period)": {
+        "Name": "River Flood (5-Year Return Period)",
+        "Units": [
+          "% change from 1981-2010 mean"
+        ],
+        "Definition": "Magnitude of the 5-year flood",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "River Flood"
+          }
+        ],
+        "LinkedIndicatorRelation": "identicalTo",
+        "Sector": [
+          "Disaster Risk Reduction",
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "River Flood (10-Year Return Period)": {
+        "Name": "River Flood (10-Year Return Period)",
+        "Units": [
+          "% change from 1981-2010 mean"
+        ],
+        "Definition": "Magnitude of the 10-year flood",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "River Flood"
+          }
+        ],
+        "LinkedIndicatorRelation": "identicalTo",
+        "Sector": [
+          "Disaster Risk Reduction",
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "River Flood (Likelihood of Current 10-Year Event)": {
+        "Name": "River Flood (Likelihood of Current 10-Year Event)",
+        "Units": [
+          "% chance of occurring"
+        ],
+        "Definition": "Likelihood of the 10-year flood",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "Climate ADAPT",
+            "index": "River Flood"
+          },
+          {
+            "group": "UK CRI",
+            "index": "River Flood (10-Year Return Period)"
+          }
+        ],
+        "LinkedIndicatorRelation": "relatedTo",
+        "Sector": [
+          "Disaster Risk Reduction",
+          "Transport"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "Low Flows (2-Year Return Period)": {
+        "Name": "Low Flows (2-Year Return Period)",
+        "Units": [
+          "% change from 1981-2010 mean"
+        ],
+        "Definition": "Change in the 2-year lowest 7-day average river flow",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Energy"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "Low Flows (10-Year Return Period)": {
+        "Name": "Low Flows (10-Year Return Period)",
+        "Units": [
+          "% change from 1981-2010 mean"
+        ],
+        "Definition": "Change in the 10-year lowest 7-day average river flow",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Energy"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "Low Flows (Likelihood of Current 10-Year Event)": {
+        "Name": "Low Flows (Likelihood of Current 10-Year Event)",
+        "Units": [
+          "% chance of occurring"
+        ],
+        "Definition": "Likelihood of 20-year low river flows",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Energy"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "12-Month River Drought (Extreme)": {
+        "Name": "12-Month River Drought (Extreme)",
+        "Units": [
+          "Proportion of time"
+        ],
+        "Definition": "Number of months with a Standardised Streamflow Index (calculated from 12-month accumulated river flow) less than -1.5.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Energy"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "12-Month River Drought (Severe)": {
+        "Name": "12-Month River Drought (Severe)",
+        "Units": [
+          "Proportion of time"
+        ],
+        "Definition": "Number of months with a Standardised Streamflow Index (calculated from 12-month accumulated river flow) less than-2.0.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Energy"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "24-Month River Drought (Extreme)": {
+        "Name": "24-Month River Drought (Extreme)",
+        "Units": [
+          "Proportion of time"
+        ],
+        "Definition": "Number of months with a Standardised Streamflow Index (calculated from 24-month accumulated river flow) less than -1.5.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Energy"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "24-Month River Drought (Severe)": {
+        "Name": "24-Month River Drought (Severe)",
+        "Units": [
+          "Proportion of time"
+        ],
+        "Definition": "Number of months with a Standardised Streamflow Index (calculated from 24-month accumulated river flow) less than -2.0.",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
+        "Commentary": "Calculated using hydrological model",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicatorRelation": null,
+        "Sector": [
+          "Water Resources",
+          "Energy"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "pr",
+          "evspsblpot"
+        ]
+      },
+      "Soil Moisture": {
+        "Name": "Soil Moisture",
+        "Units": [
+          "% change from 1981-2010 mean"
+        ],
+        "Definition": "Average seasonal soil moisture content",
+        "DefinitionSource": "UK CRI",
+        "AssociatedVariable": "mrso (Mass Content Of Water In Soil) or calculate using land surface model: pr, tas, huss, rls, rss, sfcWind, psl",
+        "Commentary": "Can be calculated by land surface model like in Szczykulska et al. (2024) https://doi.org/10.1088/1748-9326/ad7045",
+        "LinkToCLIMDEX": null,
+        "CLIMDEXRelation": null,
+        "LinkedIndicators": [
+          {
+            "group": "UK CRI",
+            "index": "Soil Moisture"
+          }
+        ],
+        "LinkedIndicatorRelation": "identicalTo",
+        "Sector": [
+          "Forestry/GHG",
+          "Water Resources",
+          "Agriculture and Food Security"
+        ],
+        "Source": null,
+        "SourceLink": null,
+        "AssociatedVariableSimple": [
+          "mrso "
+        ]
+      }
+    }
+  }
+}
