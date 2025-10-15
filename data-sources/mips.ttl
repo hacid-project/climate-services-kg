@@ -1,0 +1,41 @@
+@prefix : <https://w3id.org/hacid/data/cs/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gml: <http://www.opengis.net/ont/gml#> .
+@prefix top: <https://w3id.org/hacid/onto/top-level/> .
+@prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
+@prefix data: <https://w3id.org/hacid/onto/data/> .
+@prefix dimension: <https://w3id.org/hacid/data/cs/dimensions/> .
+@prefix time: <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/> .
+@prefix geodetic: <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/> .
+@base <https://w3id.org/hacid/data/cs/> .
+
+<mips/cmip> a top:Action ;
+    rdfs:label "CMIP";
+    rdfs:comment "Coupled Model Intercomparison Project (CMIP)."@en .
+
+<mips/cmip5> a top:Action, data:DataGeneratingProcess ;
+    rdfs:label "CMIP5";
+    rdfs:comment "5th phase of the Coupled Model Intercomparison Project (CMIP)."@en ;
+    top:isComponentOf <mips/cmip> ;
+    data:hasOutput <mips/cmip5/output> .
+
+<mips/cmip5/output> a data:Dataset ;
+    rdfs:label "CMIP5 output";
+    rdfs:comment "Comprehensive output of 5th phase of the Coupled Model Intercomparison Project (CMIP5), composed of the outputs of each participating simulation to each of the experiments."@en .
+
+<mips/cordex> a top:Action ;
+    rdfs:label "CORDEX";
+    rdfs:comment "Coordinated Regional Climate Downscaling Experiment (CORDEX)."@en .
+
+<mips/cordex-cmip5> a top:Action, data:DataGeneratingProcess ;
+    rdfs:label "CORDEX-CMIP5";
+    rdfs:comment "1st Edition of the Coordinated Regional Climate Downscaling Experiment (CORDEX), using as input CMIP5."@en ;
+    top:isComponentOf <mips/cordex> ;
+    data:hasOutput <mips/cordex-cmip5/output> .
+
+<mips/cordex-cmip5/output> a data:Dataset ;
+    rdfs:label "CORDEX-CMIP5 output";
+    rdfs:comment "Comprehensive output of the 1st Edition of the Coordinated Regional Climate Downscaling Experiment (CORDEX), using as input CMIP5."@en .

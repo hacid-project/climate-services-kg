@@ -34,15 +34,29 @@
     ];
     rml:referenceFormulation ql:CSV .
   
+:FormatDatasetCall
+    rr:predicate fno:executes ;
+    rr:objectMap [ rr:constant hrf:formatCordexCmip5Dataset ] .
+
+:ParamMasterId
+    rr:predicate hrf:masterId ;
+    rr:objectMap [ rml:reference "master_id" ] .
+  
 # TRIPLE MAPPINGS #
 :DatasetMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     
-	rr:subjectMap :DatasetIRI ;
+	rr:subjectMap [
+        rr:termType rr:IRI ;
+        rr:class data:Dataset ;
+    	rr:template "https://w3id.org/hacid/data/cs/datasets/{master_id}"
+    ] ;
 	
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
-        rr:objectMap :DatasetLabel
+        rr:objectMap [
+            rml:reference "master_id"
+        ]
     ] ;
 
     rr:predicateObjectMap [
@@ -52,28 +66,12 @@
 
     rr:predicateObjectMap [
         rr:predicate data:dependsOnVariable ;
-        rr:objectMap [
-            rr:termType rr:IRI ;
-            fnml:functionValue [
-                rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
-                    rr:predicate hrf:template ;
-                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{grid_id}/ds" ]
-                ]
-            ] 
-        ]
+        rr:objectMap :GeodeticVariableIRI
     ] ;
 
     rr:predicateObjectMap [
         rr:predicate data:isSpecializedAccordingTo ;
-        rr:objectMap [
-            rr:termType rr:IRI ;
-            fnml:functionValue [
-                rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
-                    rr:predicate hrf:template ;
-                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{grid_id}/specialization" ]
-                ]
-            ] 
-        ]
+        rr:objectMap :GeodeticSpecializationIRI
     ] ;      
 
     rr:predicateObjectMap [
@@ -97,6 +95,39 @@
     #     ]
     # ] .      
 
+:GeodeticVariableIRI
+    rr:termType rr:IRI ;
+    rr:class data:Dataset ; 
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
+            rr:predicate hrf:template ;
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{grid_id}/ds" ]
+        ]
+    ].
+
+:GeodeticSpecializationIRI
+    rr:termType rr:IRI ;
+    rr:class data:Dataset ; 
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
+            rr:predicate hrf:template ;
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{grid_id}/specialization" ]
+        ]
+    ].
+
+:OutputIRI
+    rr:termType rr:IRI ;
+    rr:class data:Dataset ; 
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/datasets/cordex.{product}.{domain}.{driving_model}.{experiment}.{model}.{model_version}.{ensemble}"
+            ]
+        ] 
+    ].
+
 :OutputMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     
@@ -104,12 +135,18 @@
 	
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
-        rr:objectMap :OutputLabel
-    ] ;
-
-    rr:predicateObjectMap [
-        rr:predicate rdfs:comment ;
-        rr:objectMap :OutputDescription
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cordex.{product}.{domain}.{driving_model}.{experiment}.{model}.{model_version}.{ensemble}"
+                    ]
+                ] 
+            ]
+        ]
     ] ;
 
     rr:predicateObjectMap [
@@ -119,40 +156,34 @@
 
     rr:predicateObjectMap [
         rr:predicate data:dependsOnVariable ;
-        rr:objectMap [
-            rr:termType rr:IRI ;
-            fnml:functionValue [
-                rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
-                    rr:predicate hrf:template ;
-                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{grid_id}/ds" ]
-                ]
-            ] 
-        ]
+        rr:objectMap :GeodeticVariableIRI
     ] ;
 
     rr:predicateObjectMap [
         rr:predicate data:isSpecializedAccordingTo ;
-        rr:objectMap [
-            rr:termType rr:IRI ;
-            fnml:functionValue [
-                rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
-                    rr:predicate hrf:template ;
-                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/cordex/grids/{grid_id}/specialization" ]
-                ]
-            ] 
-        ]
+        rr:objectMap :GeodeticSpecializationIRI
     ] ;      
 
+
     rr:predicateObjectMap [
-        rr:predicate top:hasPart ;
+        rr:predicate top:hasComponent ;
         rr:objectMap [
             rr:parentTriplesMap :DatasetMapping
         ]
     ] .
 
-:VariableMapping a rr:TriplesMap ;
-    rml:logicalSource :LogicalSource ;
-    rr:subjectMap :VariableIRI .
+:SimulationIRI
+    rr:termType rr:IRI ;
+    rr:class ccso:Simulation, ccso:DynamicalDownscaling ;
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/simulations/cordex.{domain}.{driving_model}.{experiment}.{model}.{model_version}.{ensemble}"
+            ]
+        ] 
+    ] .
 
 :SimulationMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
@@ -160,12 +191,35 @@
 
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
-        rr:objectMap :SimulationLabel
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cordex.{domain}.{driving_model}.{experiment}.{model}.{model_version}.{ensemble}"
+                    ]
+                ] 
+            ]
+        ]
     ] ;
 
     rr:predicateObjectMap [
         rr:predicate ccso:isDownscalingOf ;
-        rr:objectMap :DrivingSimulationIRI 
+        rr:objectMap [
+            rr:termType rr:IRI ;
+            rr:class ccso:Simulation ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cmip5.{driving_model}.{experiment}.{ensemble}"
+                    ]
+                ] 
+            ]
+        ]
     ] ;
     
     rr:predicateObjectMap [
@@ -180,10 +234,472 @@
     
     rr:predicateObjectMap [
         rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
+    ] .    
+
+:DrivingEnsembleIRI
+    rr:termType rr:IRI ;
+    rr:class ccso:EnsembleSimulation, ccso:DynamicalDownscaling ;
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/simulations/cordex.{domain}.{driving_model}.{experiment}.{model}.{model_version}"
+            ]
+        ] 
+    ] .
+
+:DrivingEnsembleMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    rr:subjectMap :DrivingEnsembleIRI ;
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
         rr:objectMap [
-            rr:parentTriplesMap :ScenarioMapping
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cmip5.{domain}.{driving_model}.{experiment}.{model}.{model_version}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasMemberSimulation ;
+        rr:objectMap :SimulationIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap [
+            rr:parentTriplesMap :SimulationMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasOutput ;
+        rr:objectMap [
+            rr:parentTriplesMap :DrivingEnsembleOutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:usesModel ;
+        rr:objectMap  [
+            rr:parentTriplesMap :ModelMapping
+        ] 
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
+    ] .    
+
+:DrivingEnsembleOutputIRI
+    rr:termType rr:IRI ;
+    rr:class data:Dataset ; 
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/datasets/cordex.{product}.{domain}.{driving_model}.{experiment}.{model}.{model_version}"
+            ]
+        ] 
+    ].
+
+:DrivingEnsembleOutputMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subjectMap :DrivingEnsembleOutputIRI ;
+	
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cordex.{product}.{domain}.{driving_model}.{experiment}.{model}.{model_version}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate data:holdsSpecializationOfVariable;
+        rr:objectMap :VariableIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap [
+            rr:parentTriplesMap :OutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:dependsOnVariable ;
+        rr:objectMap :GeodeticVariableIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:isSpecializedAccordingTo ;
+        rr:objectMap :GeodeticSpecializationIRI
+    ] .      
+
+:EnsembleIRI
+    rr:termType rr:IRI ;
+    rr:class ccso:EnsembleSimulation, ccso:DynamicalDownscaling ;
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/simulations/cordex.{domain}.{experiment}.{model}.{model_version}"
+            ]
+        ] 
+    ] .
+
+:EnsembleMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    rr:subjectMap :EnsembleIRI ;
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cordex.{domain}.{experiment}.{model}.{model_version}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasMemberSimulation ;
+        rr:objectMap :SimulationIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap [
+            rr:parentTriplesMap :DrivingEnsembleMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasOutput ;
+        rr:objectMap [
+            rr:parentTriplesMap :EnsembleOutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:usesModel ;
+        rr:objectMap  [
+            rr:parentTriplesMap :ModelMapping
+        ] 
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
+    ] .    
+
+:EnsembleOutputIRI
+    rr:termType rr:IRI ;
+    rr:class data:Dataset ; 
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/datasets/cordex.{domain}.{experiment}.{model}.{model_version}"
+            ]
+        ] 
+    ].
+
+:EnsembleOutputMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subjectMap :EnsembleOutputIRI ;
+	
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cordex.{domain}.{experiment}.{model}.{model_version}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate data:holdsSpecializationOfVariable;
+        rr:objectMap :VariableIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap [
+            rr:parentTriplesMap :DrivingEnsembleOutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:dependsOnVariable ;
+        rr:objectMap :GeodeticVariableIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:isSpecializedAccordingTo ;
+        rr:objectMap :GeodeticSpecializationIRI
+    ] .      
+
+:ExperimentMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    rr:subjectMap [
+        rr:termType rr:IRI ;
+        rr:class ccso:EnsembleSimulation ;
+        fnml:functionValue [
+            rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                rr:predicate hrf:template ;
+                rr:objectMap [
+                    rr:constant
+                        "https://w3id.org/hacid/data/cs/simulations/cordex.{domain}.{experiment}"
+                ]
+            ] 
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cordex.{domain}.{experiment}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:isComponentOf ;
+        rr:object <https://w3id.org/hacid/data/cs/mips/cordex-cmip5>
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasMemberSimulation ;
+        rr:objectMap :SimulationIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap [
+            rr:parentTriplesMap :EnsembleMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasOutput ;
+        rr:objectMap [
+            rr:parentTriplesMap :ExperimentOutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
+    ] .    
+
+:ExperimentOutputIRI
+    rr:termType rr:IRI ;
+    rr:class data:Dataset ; 
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/datasets/cordex.{domain}.{experiment}"
+            ]
+        ] 
+    ].
+
+:ExperimentOutputMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subjectMap :ExperimentOutputIRI ;
+	
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "output of cordex.{domain}.{experiment}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate data:holdsSpecializationOfVariable;
+        rr:objectMap :VariableIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap [
+            rr:parentTriplesMap :EnsembleOutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:dependsOnVariable ;
+        rr:objectMap :GeodeticVariableIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:isSpecializedAccordingTo ;
+        rr:objectMap :GeodeticSpecializationIRI
+    ] .      
+
+:DomainMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    rr:subjectMap [
+        rr:termType rr:IRI ;
+        rr:class top:Action ;
+        fnml:functionValue [
+            rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                rr:predicate hrf:template ;
+                rr:objectMap [
+                    rr:constant
+                        "https://w3id.org/hacid/data/cs/simulations/cordex.{domain}"
+                ]
+            ] 
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cordex.{domain}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap [
+            rr:parentTriplesMap :ExperimentMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:isComponentOf ;
+        rr:object <https://w3id.org/hacid/data/cs/mips/cordex-cmip5>
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasOutput ;
+        rr:objectMap [
+            rr:parentTriplesMap :DomainOutputMapping
         ]
     ] .    
+
+:DomainOutputIRI
+    rr:termType rr:IRI ;
+    rr:class data:Dataset ; 
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/datasets/cordex.{domain}"
+            ]
+        ] 
+    ].
+
+:DomainOutputMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subjectMap :DomainOutputIRI ;
+	
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "output of cordex.{domain}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap [
+            rr:parentTriplesMap :ExperimentOutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:isComponentOf ;
+        rr:object <https://w3id.org/hacid/data/cs/mips/cordex-cmip5/output>
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:dependsOnVariable ;
+        rr:objectMap :GeodeticVariableIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:isSpecializedAccordingTo ;
+        rr:objectMap :GeodeticSpecializationIRI
+    ] .      
 
 :ModelMapping a rr:TriplesMap ;
 	rml:logicalSource :LogicalSource ;
@@ -208,10 +724,6 @@
         rr:predicate rdfs:label ;
         rr:objectMap :InstituteLabel
     ] .
-
-:ScenarioMapping a rr:TriplesMap ;
-    rml:logicalSource :LogicalSource ;
-    rr:subjectMap :ScenarioIRI .
 
 :FormatTemporalGridCall
     rr:predicate fno:executes ;
@@ -455,78 +967,6 @@
         ] 
     ].
 
-:DatasetIRI
-    rr:termType rr:IRI ;
-    rr:class data:Dataset ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cordexDatasetIri ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/datasets/" ]
-        ] 
-    ].
-
-:OutputIRI
-    rr:termType rr:IRI ;
-    rr:class data:Dataset ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cordexOutputIri ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/datasets/" ]
-        ] 
-    ].
-
-:SimulationIRI
-    rr:termType rr:IRI ;
-    rr:class ccso:Simulation, ccso:DynamicalDownscaling ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cordexSimulationIri ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/simulations/" ]
-        ] 
-    ].
-
-:DrivingSimulationIRI
-    rr:termType rr:IRI ;
-    rr:class ccso:Simulation ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cordexDrivingSimulationIri ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/simulations/" ]
-        ] 
-    ].
-
 :ModelIRI
     rr:termType rr:IRI ;
     rr:class ccso:ClimateModel, ccso:RegionalClimateModel ;
@@ -581,45 +1021,6 @@
 #         ] 
 #     ].
 
-:DatasetLabel
-    rr:language "en" ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cordexDatasetId ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] 
-    ].
-
-:OutputLabel
-    rr:language "en" ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cordexOutputId ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] 
-    ].
-
-:SimulationLabel
-    rr:language "en" ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cordexSimulationId ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] 
-    ].
-
 :ModelLabel
     rr:language "en" ;
     fnml:functionValue [
@@ -645,7 +1046,7 @@
         ] 
     ].
 
-:ScenarioIRI
+:EmissionScenarioIRI
     rr:termType rr:IRI ;
     rr:class ccso:GreenhouseGasConcentrationPathway ;
     fnml:functionValue [

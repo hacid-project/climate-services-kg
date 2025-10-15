@@ -34,16 +34,30 @@
       ]
     ];
     rml:referenceFormulation ql:CSV .
+
+:FormatDatasetCall
+    rr:predicate fno:executes ;
+    rr:objectMap [ rr:constant hrf:formatCmip5Dataset ] .
+
+:ParamMasterId
+    rr:predicate hrf:masterId ;
+    rr:objectMap [ rml:reference "master_id" ] .
   
 # TRIPLE MAPPINGS #
 :DatasetMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     
-	rr:subjectMap :DatasetIRI ;
+	rr:subjectMap [
+        rr:termType rr:IRI ;
+        rr:class data:Dataset ;
+    	rr:template "https://w3id.org/hacid/data/cs/datasets/{master_id}"
+    ] ;
 	
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
-        rr:objectMap :DatasetLabel
+        rr:objectMap [
+            rml:reference "master_id"
+        ]
     ] ;
 
     rr:predicateObjectMap [
@@ -77,6 +91,19 @@
         rr:object geo_specialization_all:
     ] .      
 
+:OutputIRI
+    rr:termType rr:IRI ;
+    rr:class data:Dataset ; 
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/datasets/cmip5.{model}.{experiment}.{ensemble}.{product}"
+            ]
+        ] 
+    ].
+
 :OutputMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     
@@ -84,12 +111,35 @@
 	
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
-        rr:objectMap :OutputLabel
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cmip5.{model}.{experiment}.{ensemble}.{product}"
+                    ]
+                ] 
+            ]
+        ]
     ] ;
 
     rr:predicateObjectMap [
         rr:predicate rdfs:comment ;
-        rr:objectMap :OutputDescription
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap [
+                    rr:predicate fno:executes ;
+                    rr:objectMap [ rr:constant hrf:eval ]
+                ] ;
+                rr:predicateObjectMap [
+                    rr:predicate hrf:str ;
+                    rr:objectMap [ rml:reference "description" ]
+                ] 
+            ]
+        ]
     ] ;
 
     rr:predicateObjectMap [
@@ -105,7 +155,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate top:hasPart ;
+        rr:predicate top:hasComponent ;
         rr:objectMap [
             rr:parentTriplesMap :DatasetMapping
         ]
@@ -116,9 +166,45 @@
         rr:object geo_specialization_all:
     ] .      
 
-:VariableMapping a rr:TriplesMap ;
-    rml:logicalSource :LogicalSource ;
-    rr:subjectMap :VariableIRI .
+:EmissionScenarioIRI
+    rr:termType rr:IRI ;
+    rr:class ccso:GreenhouseGasConcentrationPathway ;
+    fnml:functionValue [
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ rr:constant hrf:getScenario ]
+        ] ;
+        rr:predicateObjectMap [
+            rr:predicate hrf:scenario ;
+            rr:objectMap [ 
+                fnml:functionValue [
+                    rr:predicateObjectMap [
+                        rr:predicate fno:executes ;
+                        rr:objectMap [ rr:constant hrf:eval ]
+                    ];
+                    rr:predicateObjectMap [
+                        rr:predicate hrf:str ;
+                        rr:objectMap [ 
+                            rml:reference "experiment"
+                        ]
+                    ]
+                ] 
+            ]
+        ]         
+    ] .
+
+:SimulationIRI
+    rr:termType rr:IRI ;
+    rr:class ccso:Simulation, ccso:GlobalClimateSimulation ;
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/simulations/cmip5.{model}.{experiment}.{ensemble}"
+            ]
+        ] 
+    ] .
 
 :SimulationMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
@@ -126,7 +212,18 @@
 
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
-        rr:objectMap :SimulationLabel
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cmip5.{model}.{experiment}.{ensemble}"
+                    ]
+                ] 
+            ]
+        ]
     ] ;
 
     rr:predicateObjectMap [
@@ -136,44 +233,293 @@
 
     rr:predicateObjectMap [
         rr:predicate ccso:usesModel ;
-        rr:objectMap :ModelIRI 
+        rr:objectMap  [
+            rr:parentTriplesMap :ModelMapping
+        ] 
     ] ;
     
     rr:predicateObjectMap [
         rr:predicate ccso:refersToScenario ;
-        rr:objectMap [
-            rr:parentTriplesMap :ScenarioMapping
-        ]
+        rr:objectMap :EmissionScenarioIRI
     ] .    
 
+:EnsembleIRI
+    rr:termType rr:IRI ;
+    rr:class ccso:EnsembleSimulation, ccso:GlobalClimateSimulation ;
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/simulations/cmip5.{model}.{experiment}"
+            ]
+        ] 
+    ] .
+
+:EnsembleMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    rr:subjectMap :EnsembleIRI ;
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cmip5.{model}.{experiment}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasMemberSimulation ;
+        rr:objectMap :SimulationIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasOutput ;
+        rr:objectMap [
+            rr:parentTriplesMap :EnsembleOutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:usesModel ;
+        rr:objectMap  [
+            rr:parentTriplesMap :ModelMapping
+        ] 
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
+    ] .    
+
+:EnsembleOutputIRI
+    rr:termType rr:IRI ;
+    rr:class data:Dataset ; 
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/datasets/cmip5.{model}.{experiment}.{product}"
+            ]
+        ] 
+    ].
+
+:EnsembleOutputMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subjectMap :EnsembleOutputIRI ;
+	
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cmip5.{model}.{experiment}.{product}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate data:holdsSpecializationOfVariable;
+        rr:objectMap :VariableIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap [
+            rr:parentTriplesMap :OutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:isSpecializedAccordingTo ;
+        rr:object geo_specialization_all:
+    ] .      
+
+:ExperimentMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    rr:subjectMap [
+        rr:termType rr:IRI ;
+        rr:class ccso:EnsembleSimulation ;
+        fnml:functionValue [
+            rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                rr:predicate hrf:template ;
+                rr:objectMap [
+                    rr:constant
+                        "https://w3id.org/hacid/data/cs/simulations/cmip5.{experiment}"
+                ]
+            ] 
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "cmip5.{experiment}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:isComponentOf ;
+        rr:object <https://w3id.org/hacid/data/cs/mips/cmip5>
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasMemberSimulation ;
+        rr:objectMap :SimulationIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:hasOutput ;
+        rr:objectMap [
+            rr:parentTriplesMap :ExperimentOutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
+    ] .    
+
+:ExperimentOutputIRI
+    rr:termType rr:IRI ;
+    rr:class data:Dataset ; 
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/datasets/cmip5.{experiment}/output"
+            ]
+        ] 
+    ].
+
+:ExperimentOutputMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subjectMap :ExperimentOutputIRI ;
+	
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [
+                        rr:constant
+                            "output of cmip5.{experiment}"
+                    ]
+                ] 
+            ]
+        ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate data:holdsSpecializationOfVariable;
+        rr:objectMap :VariableIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap [
+            rr:parentTriplesMap :EnsembleOutputMapping
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:isComponentOf ;
+        rr:object <https://w3id.org/hacid/data/cs/mips/cmip5/output>
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:isSpecializedAccordingTo ;
+        rr:object geo_specialization_all:
+    ] .      
 
 :ModelMapping a rr:TriplesMap ;
 	rml:logicalSource :LogicalSource ;
-	rr:subjectMap :ModelIRI ;
-
-      rr:predicateObjectMap [
-	  rr:predicate rdfs:label ;
-	  rr:objectMap :ModelLabel
-      ] ;
-
-      rr:predicateObjectMap [
-	  rr:predicate ccso:isMaintainedBy ;
-	  rr:objectMap :InstituteIRI
-      ] .
-
-:InstituteMapping a rr:TriplesMap ;
-    rml:logicalSource :LogicalSource ;
-
-    rr:subjectMap :InstituteIRI ;
+	rr:subjectMap [
+        rr:termType rr:IRI ;
+        rr:class ccso:GlobalClimateModel, ccso:ClimateModel ;
+        fnml:functionValue [
+            rr:predicateObjectMap [
+                rr:predicate fno:executes ;
+                rr:objectMap [ rr:constant hrf:fromList ]
+            ] ;
+            rr:predicateObjectMap [
+                rr:predicate hrf:arr ;
+                rr:objectMap [ rml:reference "model" ]
+            ] ;
+            rr:predicateObjectMap [
+                rr:predicate hrf:ns ;
+                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/models/" ]
+            ] 
+        ]
+    ] ;
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:label ;
-        rr:objectMap :InstituteLabel
-    ] .
+	    rr:predicate rdfs:label ;
+	    rr:objectMap [
+            rr:language "en" ;
+            fnml:functionValue [
+                rr:predicateObjectMap [
+                    rr:predicate fno:executes ;
+                    rr:objectMap [ rr:constant hrf:eval ]
+                ] ;
+                rr:predicateObjectMap [
+                    rr:predicate hrf:str ;
+                    rr:objectMap [ rml:reference "model" ]
+                ] 
+            ]
+        ]
+    ] ;
 
-:ScenarioMapping a rr:TriplesMap ;
-    rml:logicalSource :LogicalSource ;
-    rr:subjectMap :ScenarioIRI .
+    rr:predicateObjectMap [
+	    rr:predicate ccso:isMaintainedBy ;
+	    rr:objectMap [
+            rr:termType rr:IRI ;
+            rr:class top:Organization ;
+            fnml:functionValue [
+                rr:predicateObjectMap [
+                    rr:predicate fno:executes ;
+                    rr:objectMap [ rr:constant hrf:fromList ]
+                ] ;
+                rr:predicateObjectMap [
+                    rr:predicate hrf:arr ;
+                    rr:objectMap [ rml:reference "institute" ]
+                ] ;
+                rr:predicateObjectMap [
+                    rr:predicate hrf:ns ;
+                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/organizations/" ]
+                ] 
+            ]
+        ]
+    ] .
 
 :FormatTemporalGridCall
     rr:predicate fno:executes ;
@@ -398,17 +744,12 @@
         rr:termType rr:IRI ;
         rr:class data:Variable, data:IndependentVariable, data:DimensionalSpace ;
         fnml:functionValue [
-            rr:predicateObjectMap [
-                rr:predicate fno:executes ;
-                rr:objectMap [ rr:constant hrf:cmip5SimulationIri ]
-            ] ;
-            rr:predicateObjectMap [
-                rr:predicate hrf:id ;
-                rr:objectMap [ rml:reference "id" ]
-            ] ;
-            rr:predicateObjectMap [
-                rr:predicate hrf:ns ;
-                rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/simulation-spatialgrids/" ]
+            rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                rr:predicate hrf:template ;
+                rr:objectMap [
+                    rr:constant
+                        "https://w3id.org/hacid/data/cs/simulations/cmip5.{model}.{experiment}.{ensemble}/geodetic-grid"
+                ]
             ] 
         ]
     ] ;
@@ -420,11 +761,8 @@
 
     rr:predicateObjectMap [
         rr:predicate data:hasExactBoundingRegion ;
-        rr:object <https://w3id.org/hacid/data/cs/dimensions/geodetic/all>.
+        rr:object <https://w3id.org/hacid/data/cs/dimensions/geodetic/all>
     ] .
-
-
-# FUNCTIONS #
 
 :VariableIRI
     rr:termType rr:IRI ;
@@ -443,198 +781,3 @@
             rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/variables/mip/" ]
         ] 
     ].
-
-:DatasetIRI
-    rr:termType rr:IRI ;
-    rr:class data:Variable, data:Dataset ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cmip5DatasetIri ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/datasets/" ]
-        ] 
-    ].
-
-:OutputIRI
-    rr:termType rr:IRI ;
-    rr:class data:Dataset ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cmip5OutputIri ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/datasets/" ]
-        ] 
-    ].
-
-:SimulationIRI
-    rr:termType rr:IRI ;
-    rr:class ccso:Simulation, ccso:GlobalClimateSimulation ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cmip5SimulationIri ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/simulations/" ]
-        ] 
-    ].
-
-:ModelIRI
-    rr:termType rr:IRI ;
-    rr:class ccso:GlobalClimateModel, ccso:ClimateModel ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:fromList ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:arr ;
-            rr:objectMap [ rml:reference "model" ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/models/" ]
-        ] 
-    ].
-
-:InstituteIRI
-    rr:termType rr:IRI ;
-    rr:class top:Organization ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:fromList ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:arr ;
-            rr:objectMap [ rml:reference "institute" ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:ns ;
-            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/organizations/" ]
-        ] 
-    ].
-
-
-:DatasetLabel
-    rr:language "en" ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cmip5DatasetId ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] 
-    ].
-
-:OutputLabel
-    rr:language "en" ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cmip5OutputId ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] 
-    ].
-
-:SimulationLabel
-    rr:language "en" ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:cmip5SimulationId ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:id ;
-            rr:objectMap [ rml:reference "id" ]
-        ] 
-    ].
-
-:ModelLabel
-    rr:language "en" ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:eval ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:str ;
-            rr:objectMap [ rml:reference "model" ]
-        ] 
-    ].
-
-:OutputDescription
-    rr:language "en" ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:eval ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:str ;
-            rr:objectMap [ rml:reference "description" ]
-        ] 
-    ].
-
-:InstituteLabel
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:eval ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:str ;
-            rr:objectMap [ rml:reference "institute" ]
-        ] 
-    ].
-
-:ScenarioIRI
-    rr:termType rr:IRI ;
-    rr:class ccso:GreenhouseGasConcentrationPathway ;
-    fnml:functionValue [
-        rr:predicateObjectMap [
-            rr:predicate fno:executes ;
-            rr:objectMap [ rr:constant hrf:getScenario ]
-        ] ;
-        rr:predicateObjectMap [
-            rr:predicate hrf:scenario ;
-            rr:objectMap [ 
-                fnml:functionValue [
-                    rr:predicateObjectMap [
-                        rr:predicate fno:executes ;
-                        rr:objectMap [ rr:constant hrf:eval ]
-                    ];
-                    rr:predicateObjectMap [
-                        rr:predicate hrf:str ;
-                        rr:objectMap [ 
-                            rml:reference "experiment"
-                        ]
-                    ]
-                ] 
-            ]
-        ]         
-    ] .
