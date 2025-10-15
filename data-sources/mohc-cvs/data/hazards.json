@@ -1,0 +1,417 @@
+[
+  {
+    "HazardDefinition": "A drought is a deficiency of precipitation over an extended period of time resulting in a water shortage. Drought conditions range from dry weather patterns and low water supply to impacts on crops, ecosystems, and disruptions in supply and demand for various commodities.",
+    "DefinitionSource": "https://www.drought.gov/what-is-drought/drought-basics",
+    "AssociatedIndices": [
+      "Potential Soil Moisture Deficit",
+      "SPI drought",
+      "SPEI drought",
+      "Rainfall",
+      "Low flows (2-year return period)",
+      "Low flows (10-year return period)",
+      "Low flows (likelihood of current 10-year event)",
+      "Soil moisture",
+      "River runoff",
+      "Total precipitation",
+      "Consecutive Dry Days",
+      "Meteorological Drought Duration",
+      "Meteorological Drought Magnitude",
+      "Aridity Actual",
+      "Mean Soil Moisture",
+      "River discharge",
+      "CDD",
+      "SPEI",
+      "SPI",
+      "altCDD",
+      "Potential Evapotranspiration (PET: Penman-Monteith)",
+      "Potential Evapotranspiration (PET: Makkink)",
+      "Self-calibrating Palmer Drought Severity Index (scPDSI)"
+    ],
+    "Name": "Drought",
+    "Specializations": [
+      {
+        "HazardDefinition": "Prolonged period of below-normal precipitation, causing deficiencies in water supply, as measured by below-normal streamflow, lake and reservoir levels, groundwater levels, and depleted soil moisture content.",
+        "DefinitionSource": "https://glossary.ametsoc.org/wiki/Hydrological_drought",
+        "AssociatedIndices": [
+          "Potential Soil Moisture Deficit",
+          "SPI drought",
+          "SPEI drought",
+          "Rainfall",
+          "Low flows (2-year return period)",
+          "Low flows (10-year return period)",
+          "Low flows (likelihood of current 10-year event)",
+          "Soil moisture",
+          "River runoff",
+          "Total precipitation",
+          "Consecutive Dry Days",
+          "Meteorological Drought Duration",
+          "Meteorological Drought Magnitude",
+          "Aridity Actual",
+          "Mean Soil Moisture",
+          "River discharge",
+          "CDD",
+          "SPEI",
+          "SPI",
+          "altCDD",
+          "Potential Evapotranspiration (PET: Penman-Monteith)",
+          "Potential Evapotranspiration (PET: Makkink)",
+          "Self-calibrating Palmer Drought Severity Index (scPDSI)"
+        ],
+        "Commentary": "Indices related to soil moisture, precipitation and river flow",
+        "Name": "Hydrological drought"
+      },
+      {
+        "HazardDefinition": "Conditions that result in adverse crop responses, usually because plants cannot meet potential transpiration as a result of high atmospheric demand and/or limited soil moisture.",
+        "DefinitionSource": "https://glossary.ametsoc.org/wiki/Agricultural_drought",
+        "AssociatedIndices": [
+          "Potential Soil Moisture Deficit",
+          "SPI drought",
+          "SPEI drought",
+          "Rainfall",
+          "Soil moisture",
+          "Total precipitation",
+          "Consecutive Dry Days",
+          "Meteorological Drought Duration",
+          "Meteorological Drought Magnitude",
+          "Aridity Actual",
+          "Mean Soil Moisture",
+          "CDD",
+          "SPEI",
+          "SPI",
+          "altCDD",
+          "Potential Evapotranspiration (PET: Penman-Monteith)",
+          "Potential Evapotranspiration (PET: Makkink)",
+          "Self-calibrating Palmer Drought Severity Index (scPDSI)"
+        ],
+        "Commentary": "Indices related to soil moisture, precipitation and evapotranspiration",
+        "Name": "Agricultural drought"
+      },
+      {
+        "HazardDefinition": "Snow drought occurs when there is a period of abnormally low snowpack for the time of year in question. Snow drought is described as either dry or warm, depending on whether the drought is a result of below-normal cold-season precipitation (dry) or a lack of snow accumulation despite near-normal precipitation, usually as a result of warm temperatures that cause precipitation to fall as rain rather than snow or an unusually early snowmelt (warm).",
+        "DefinitionSource": "https://glossary.ametsoc.org/wiki/Snow_drought",
+        "AssociatedIndices": [
+          "ID",
+          "total precipitation",
+          "mean temperature",
+          "minimum temperature (seasonal!)"
+        ],
+        "Commentary": "Indices related to ID, total precipitation (seasonal) is low, mean temperature and minimum temperature (seasonal) is higher than normal",
+        "Name": "Snow drought"
+      },
+      {
+        "HazardDefinition": "An unusually rapid onset drought event characterized by a multiweek period of accelerated intensification that culminates in impacts to one or more sectors (agricultural, hydrological, etc.).",
+        "DefinitionSource": "https://glossary.ametsoc.org/wiki/Flash_drought",
+        "AssociatedIndices": [
+          "Potential Soil Moisture Deficit",
+          "SPI drought",
+          "SPEI drought",
+          "Rainfall",
+          "Low flows (2-year return period)",
+          "Low flows (10-year return period)",
+          "Low flows (likelihood of current 10-year event)",
+          "Soil moisture",
+          "River runoff",
+          "Total precipitation",
+          "Consecutive Dry Days",
+          "Meteorological Drought Duration",
+          "Meteorological Drought Magnitude",
+          "Aridity Actual",
+          "Mean Soil Moisture",
+          "River discharge",
+          "CDD",
+          "SPEI",
+          "SPI",
+          "altCDD",
+          "Potential Evapotranspiration (PET: Penman-Monteith)",
+          "Potential Evapotranspiration (PET: Makkink)",
+          "Self-calibrating Palmer Drought Severity Index (scPDSI)"
+        ],
+        "Commentary": "All indices above",
+        "Name": "Flash drought"
+      },
+      {
+        "HazardDefinition": "Meteorological drought is defined usually on the basis of the degree of dryness (in comparison to some “normal” or average amount) and the duration of the dry period. Definitions of meteorological drought must be considered as region specific since the atmospheric conditions that result in deficiencies of precipitation are highly variable from region to region. For example, some definitions of meteorological drought identify periods of drought on the basis of the number of days with precipitation less than some specified threshold. This measure is only appropriate for regions characterized by a year-round precipitation regime such as a tropical rainforest, humid subtropical climate, or humid mid-latitude climate. Locations such as Manaus, Brazil; New Orleans, Louisiana (U.S.A.); and London, England, are examples. Other climatic regimes are characterized by a seasonal rainfall pattern, such as the central United States, northeast Brazil, West Africa, and northern Australia. Extended periods without rainfall are common in Omaha, Nebraska (U.S.A.); Fortaleza, Ceará (Brazil); and Darwin, Northwest Territory (Australia), and a definition based on the number of days with precipitation less than some specified threshold is unrealistic in these cases. Other definitions may relate actual precipitation departures to average amounts on monthly, seasonal, or annual time scales.",
+        "DefinitionSource": "https://drought.unl.edu/Education/DroughtIn-depth/TypesofDrought.aspx",
+        "AssociatedIndices": [
+          "SPI drought",
+          "SPEI drought",
+          "Rainfall",
+          "Total precipitation",
+          "Consecutive Dry Days",
+          "Meteorological Drought Duration",
+          "Meteorological Drought Magnitude",
+          "CDD",
+          "SPEI",
+          "SPI",
+          "altCDD"
+        ],
+        "Commentary": "Focus on precipiation amount above some threshold, according to local climatology (at monthly, seasonal, annual time scales)",
+        "Name": "Meteorological drought"
+      },
+      {
+        "HazardDefinition": "An episodic deficit in water availability that drives ecosystems beyond thresholds of vulnerability, impacts ecosystem services, and triggers feedbacks in natural and/or human systems.",
+        "DefinitionSource": "https://doi.org/10.1175/BAMS-D-16-0292.1",
+        "AssociatedIndices": [
+          "Potential Soil Moisture Deficit",
+          "SPI drought",
+          "SPEI drought",
+          "Rainfall",
+          "Low flows (2-year return period)",
+          "Low flows (10-year return period)",
+          "Low flows (likelihood of current 10-year event)",
+          "Soil moisture",
+          "River runoff",
+          "Total precipitation",
+          "Consecutive Dry Days",
+          "Meteorological Drought Duration",
+          "Meteorological Drought Magnitude",
+          "Aridity Actual",
+          "Mean Soil Moisture",
+          "River discharge",
+          "CDD",
+          "SPEI",
+          "SPI",
+          "altCDD",
+          "Potential Evapotranspiration (PET: Penman-Monteith)",
+          "Potential Evapotranspiration (PET: Makkink)",
+          "Self-calibrating Palmer Drought Severity Index (scPDSI)"
+        ],
+        "Commentary": "Could be any of the indices associated with drought (as above)",
+        "Name": "Ecological drought"
+      },
+      {
+        "HazardDefinition": "Groundwater drought is the sustained and extensive occurrence of below average availability of groundwater. Groundwater droughts are marked by lower than average water levels in aquifers, borehole and wells, and by reduced flows to groundwater-fed rivers and wetlands. Related to hydrological drought.",
+        "DefinitionSource": "https://www.bgs.ac.uk/groundwater/flooding-and-drought/groundwater-drought-research-overview/",
+        "AssociatedIndices": [
+          "Supply side: SPI drought",
+          "Potential Evapotranspiration (PET: Penman-Monteith)",
+          "Potential Evapotranspiration (PET: Makkink)"
+        ],
+        "Commentary": "A subtype of hydrological drought. In practice, SPI is the most common index to derive groundwater level indices that indicate groundwater drought like standartised groundwater level index (SGI) (Bloomfield and Marchant, 2013; https://hess.copernicus.org/articles/17/4769/2013/). In practice, some also use PET (Mustafa et al., 2017 https://link.springer.com/article/10.1007/s10040-017-1547-7)",
+        "Name": "Groundwater drought"
+      },
+      {
+        "HazardDefinition": "A period where the instantaneous power output from wind farms is continuously below a specified threshold. Alternatively, wind droughts can be defined in terms of being below a specified threshold of the moving average of the wind energy time series, which can result in identification of longer drought period.",
+        "DefinitionSource": "https://doi.org/10.1016/j.renene.2023.119847",
+        "AssociatedIndices": [
+          "Mean wind speed"
+        ],
+        "Commentary": "Index related to mean wind speed; Richardson et al. (2023) use daily mean wind speed falling below the 25th percentile (first quartile) of the 1959–2021 climatology, computed over all area of power generation. https://doi.org/10.1038/s41612-023-00507-y",
+        "Name": "Wind drought"
+      }
+    ]
+  },
+  {
+    "HazardAlias": "River flooding",
+    "HazardDefinition": "Fluvial flooding, which is also referred to as river or riverine flooding, is caused by unusually high water levels in rivers, caused by increased runoff from heavy or prolonged rainfall. Flooding occurs when the amount of water exceeds the capacity of the river channel, and overtopping of river banks occurs.",
+    "DefinitionSource": "https://handbook.climaax.eu/notebooks/workflows/FLOODS/02_River_flooding/FLOOD_RIVER_intro.html",
+    "AssociatedIndices": [
+      "River discharge",
+      "River Flood (likelihood of current 10-year event)",
+      "River Flood (2-year return period)",
+      "River Flood (5-year return period)",
+      "River Flood (10-year return period)",
+      "River runoff"
+    ],
+    "Name": "Fluvial flooding",
+    "Specializations": [
+      {
+        "HazardDefinition": "A snowmelt flood is a significant flood rise in a river caused by the melting of snowpack accumulated during the winter. In upland and high-latitude areas where extensive snow accumulates over winter, the spring thaw produces meltwater runoff. If temperature rises are rapid, the rate of melting may produce floods, which can extend to lower parts of the river systems. The severity of meltwater floods will increase if the thaw is accompanied by heavy rainfall and can be further exacerbated if the subsoil remains frozen. Although a seasonal occurrence where major snowfields exist in headwaters, which may produce beneficial flooding in downstream areas, severe effects can occur on smaller scales, especially in areas subject to changes between cold and warmer rainy winter weather.",
+        "DefinitionSource": "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0011",
+        "AssociatedIndices": [
+          "River discharge",
+          "River Flood (likelihood of current 10-year event)",
+          "River Flood (2-year return period)",
+          "River Flood (5-year return period)",
+          "River Flood (10-year return period)",
+          "River runoff + Snowfall Amount",
+          "Rainfall",
+          "Mean Temperature",
+          "Maximum Temperature"
+        ],
+        "Commentary": "Compound event of high accumulated snowfall and rainfall + high maximum temperature or high average temperature. Always also depends on fluvial indices.",
+        "Name": "Snowmelt flooding"
+      },
+      {
+        "HazardDefinition": "An ice jam flood is caused by an accumulation of ice in a river, stream or other flooding source that reduces the cross-sectional area available to carry the flow and forces an increase in water-surface elevation",
+        "DefinitionSource": "https://www.fema.gov/sites/default/files/2020-02/Ice_Jam_Guidance_Feb_2018.pdf",
+        "AssociatedIndices": [
+          "River discharge",
+          "River Flood (likelihood of current 10-year event)",
+          "River Flood (2-year return period)",
+          "River Flood (5-year return period)",
+          "River Flood (10-year return period)"
+        ],
+        "Commentary": "In general, use fluvial flooding indices. Ice-flow requires downstream application of hydraulic modelling using river discharge and river ice dynamics data",
+        "Name": "Ice-jam flooding"
+      }
+    ]
+  },
+  {
+    "HazardAlias": "Coastal flooding",
+    "HazardDefinition": "Coastal Flooding is when water inundates or covers normally dry coastal land as a result of high or rising tides or storm surges.",
+    "DefinitionSource": "https://www.fema.gov/sites/default/files/documents/fema_coastal-glossary.pdf",
+    "AssociatedIndices": [
+      "Extreme sea level"
+    ],
+    "Name": "Coastal inundation",
+    "Specializations": [
+      {
+        "HazardDefinition": "High tide flooding is the overflow or excess accumulation of water that covers typically dry coastal land and occurs during high tides (especially, perigean). As relative sea levels rise, high tide flooding is occurring more frequently, even on sunny days. By definition, a coastal storm is not necessary for high-tide flooding to occur. However, even relatively weak onshore winds can increase the level of flooding. High tide flooding creates short-term impacts like road closures, overflowing storm drains, and temporary business closures. Over the long term, recurrent high tide flooding causes more severe impacts, like damage to below-ground infrastructure and degraded wetlands.",
+        "DefinitionSource": "https://tidesandcurrents.noaa.gov/high-tide-flooding/ + https://coast.noaa.gov/stormwater-floods/understand/",
+        "AssociatedIndices": [
+          "Extreme sea level"
+        ],
+        "Name": "High tide flooding"
+      },
+      {
+        "HazardDefinition": "Storm surge is the abnormal rise in seawater level during a storm, measured as the height of the water above the normal predicted astronomical tide. The surge is caused primarily by a storm’s winds pushing water onshore. The amplitude of the storm surge at any given location depends on the orientation of the coast line with the storm track; the intensity, size, and speed of the storm; and the local bathymetry.",
+        "DefinitionSource": "https://oceanservice.noaa.gov/facts/stormsurge-stormtide.html",
+        "AssociatedIndices": [
+          "Extreme sea level"
+        ],
+        "Name": "Storm surge"
+      },
+      {
+        "HazardDefinition": "Estuaries are inlet areas of the coastline where the coastal tide meets a concentrated seaward flow of fresh water in a river. The interaction between the seaward flow of river water and landward flow of saline water during high tides may cause a build-up of water or inland-moving tidal bore. Frequently, the funnel shape characteristic of many estuaries causes an increase in high water levels in the upper, narrowing reaches of the associated river. These types of flood are mostly experienced in deltaic areas of rivers along the coasts, for example the mouths of the Ganges. They are more frequent and less severe in terms of inundated depth and area than flooding caused by storm surges",
+        "DefinitionSource": "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0005",
+        "AssociatedIndices": [
+          "Extreme sea level"
+        ],
+        "Name": "Estuarine flooding"
+      }
+    ]
+  },
+  {
+    "OverarchingType": "Flash flooding",
+    "RelatedTo": "Fluvial, pluvial, coastal flooding",
+    "HazardDefinition": "A flash flood is a flood of short duration with a relatively high peak discharge in which the time interval between the observable causative event and the flood is less than four to six hours. A flash flood is generally characterised by raging torrents after heavy rains, a dam or levee failure or a sudden release of water in a previously stopped passage (i.e., by debris or ice) that rips through riverbeds, urban streets, or mountain canyons sweeping away everything in its path. Steep terrain tends to concentrate runoff into streams very quickly and is often a contributory factor. Changes in soil properties (e.g., burn areas from wildfires), hydrophobic or impervious soils, removal of surface vegetation, and excess runoff from warm rainfall on significant snowpack can also be important contributors.",
+    "DefinitionSource": "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0006",
+    "Commentary": "Everything related to flooding can be put as associated. Flash flooding should not have direct links to indices!",
+    "Name": "Coastal inundation",
+    "Specializations": [
+      {
+        "HazardDefinition": "High tide flooding is the overflow or excess accumulation of water that covers typically dry coastal land and occurs during high tides (especially, perigean). As relative sea levels rise, high tide flooding is occurring more frequently, even on sunny days. By definition, a coastal storm is not necessary for high-tide flooding to occur. However, even relatively weak onshore winds can increase the level of flooding. High tide flooding creates short-term impacts like road closures, overflowing storm drains, and temporary business closures. Over the long term, recurrent high tide flooding causes more severe impacts, like damage to below-ground infrastructure and degraded wetlands.",
+        "DefinitionSource": "https://tidesandcurrents.noaa.gov/high-tide-flooding/ + https://coast.noaa.gov/stormwater-floods/understand/",
+        "AssociatedIndices": [
+          "Extreme sea level"
+        ],
+        "Name": "High tide flooding"
+      },
+      {
+        "HazardDefinition": "Storm surge is the abnormal rise in seawater level during a storm, measured as the height of the water above the normal predicted astronomical tide. The surge is caused primarily by a storm’s winds pushing water onshore. The amplitude of the storm surge at any given location depends on the orientation of the coast line with the storm track; the intensity, size, and speed of the storm; and the local bathymetry.",
+        "DefinitionSource": "https://oceanservice.noaa.gov/facts/stormsurge-stormtide.html",
+        "AssociatedIndices": [
+          "Extreme sea level"
+        ],
+        "Name": "Storm surge"
+      },
+      {
+        "HazardDefinition": "Estuaries are inlet areas of the coastline where the coastal tide meets a concentrated seaward flow of fresh water in a river. The interaction between the seaward flow of river water and landward flow of saline water during high tides may cause a build-up of water or inland-moving tidal bore. Frequently, the funnel shape characteristic of many estuaries causes an increase in high water levels in the upper, narrowing reaches of the associated river. These types of flood are mostly experienced in deltaic areas of rivers along the coasts, for example the mouths of the Ganges. They are more frequent and less severe in terms of inundated depth and area than flooding caused by storm surges",
+        "DefinitionSource": "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0005",
+        "AssociatedIndices": [
+          "Extreme sea level"
+        ],
+        "Name": "Estuarine flooding"
+      }
+    ]
+  },
+  {
+    "HazardDefinition": "Severe winter weather consists of winter storm events in which the main types of precipitation are snow, sleet, or freezing rain.",
+    "DefinitionSource": "https://toolkit.climate.gov/hazard/severe-winter-weather",
+    "AssociatedIndices": [
+      "Snowfall amount",
+      "High Snow Days",
+      "FD",
+      "Frost Days",
+      "ID"
+    ],
+    "Name": "Severe winter weather",
+    "Specializations": [
+      {
+        "HazardDefinition": "A snow storm is a meteorological disturbance giving rise to a heavy fall of snow, often accompanied by strong winds",
+        "DefinitionSource": "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0039",
+        "AssociatedIndices": [
+          "Snowfall amount",
+          "High Snow Days"
+        ],
+        "Name": "Snowstorms"
+      },
+      {
+        "HazardDefinition": "A blizzard is a severe snow storm characterised by poor visibility, usually occurring at high-latitude and in mountainous regions. A blizzard is defined as moderate or heavy falling snow (either continuous or in the form of frequent showers) with winds speeds of 30 mph (48 km/hr) or more and a reasonably extensive snow cover reducing visibility to 200 metres (0.13 miles) or less.",
+        "DefinitionSource": "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0034 + https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/snow/blizzard",
+        "AssociatedIndices": [
+          "Snowfall amount",
+          "High Snow Days"
+        ],
+        "Name": "Blizzard"
+      },
+      {
+        "HazardDefinition": "An ice storm is a storm characterised by a fall of freezing precipitation. The attendant formation of glaze on terrestrial objects creates many hazards. Ice storms result from the accumulation of freezing rain, which is rain that becomes supercooled and freezes upon impact with cold surfaces. Freezing rain is most commonly found in a narrow band on the cold side of a warm front, where surface temperatures are at or just below freezing.",
+        "DefinitionSource": "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0037",
+        "AssociatedIndices": [
+          "FD",
+          "Frost days",
+          "ID"
+        ],
+        "Name": "Icestorm"
+      }
+    ]
+  },
+  {
+    "HazardDefinition": "A storm in which winds (that could be damaging) are its most impactful or distinctive aspect. Windstorms may be accompanied by precipitation (e.g., during a downburst or a derecho) or not (e.g., during a duststorm or a sandstorm).",
+    "DefinitionSource": "https://glossary.ametsoc.org/wiki/Windstorm",
+    "AssociatedIndices": [
+      "Extreme Wind Days",
+      "Mean Wind Speed"
+    ],
+    "Name": "Wind storms",
+    "Specializations": [
+      {
+        "HazardDefinition": "A gale is a wind with a speed between 34 and 40 knots (62–74 km/h or 32–38 mph). Gales correspond to force 8 on the Beaufort scale (also called Beaufort wind force scale), which is an empirical measure that relates wind speed to observed conditions at sea or on land.",
+        "DefinitionSource": "https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0054",
+        "AssociatedIndices": [
+          "Extreme Wind Days",
+          "Mean Wind Speed"
+        ],
+        "Name": "Gales"
+      },
+      {
+        "HazardDefinition": "In general, a local storm, invariably produced by a cumulonimbus cloud and always accompanied by lightning and thunder, usually with strong gusts of wind, heavy rain, and sometimes with hail. It is usually of short duration, seldom over two hours for any one storm. A thunderstorm is a consequence of atmospheric instability and constitutes, loosely, an overturning of air layers in order to achieve a more stable density stratification. A strong convective updraft is a distinguishing feature of this storm in its early phases. A strong downdraft in a column of precipitation marks its dissipating stages. Thunderstorms often build to altitudes of 40 000–50 000 ft in midlatitudes and to even greater heights in the Tropics; only the great stability of the lower stratosphere limits their upward growth. A unique quality of thunderstorms is their striking electrical activity. The study of thunderstorm electricity includes not only lightning phenomena per se but all of the complexities of thunderstorm charge separation and all charge distribution within the realm of thunderstorm influence. In U.S. weather observing procedure, a thunderstorm is reported whenever thunder is heard at the station; it is reported on regularly scheduled observations if thunder is heard within 15 minutes preceding the observation.",
+        "DefinitionSource": "https://glossary.ametsoc.org/wiki/Thunderstorm",
+        "AssociatedIndices": [
+          "Extreme Wind Days",
+          "Mean Wind Speed"
+        ],
+        "Name": "Severe thunderstorms"
+      },
+      {
+        "HazardDefinition": "A tornado is a rotating column of air, extending from the base of a cumuliform cloud, and often visible as a condensation funnel in contact with the ground, and/or attendant circulating dust or debris cloud at the ground. A large tornado in which the condensation funnel is at least as wide horizontally at the ground as it is in height from the ground to the cloud base may be referred to as a wedge tornado. During the dissipation stage of a tornado, the condensation funnel will shrink and narrow in width, becoming rope-like (a rope funnel), and may also become contorted. Some tornadoes may contain secondary vortices within the main circulation (suction vortices or subvortices). The strength of a tornado can be estimated from the degree of damage caused using the Enhanced Fujita scale. Tornadoes can be classified into the following distinct formation groups: Type I (in association with supercells), Type II (in association with quasi-linear convective systems), and Type III (localised convective and shear vortices – these comprise landspouts, waterspouts and cold-air funnels). Landspout is a tornado that does not arise from organised storm-scale rotation and is therefore not associated with a wall cloud (murus) or a mesocyclone. Waterspout is a tornado occurring over water; normally a relatively small, weak rotating column of air over open water below a Cumulonimbus or Cumulus congestus cloud.",
+        "DefinitionSource": "https://www.preventionweb.net/understanding-disaster-risk/terminology/hips/mh0059",
+        "AssociatedIndices": [
+          "Extreme Wind Days",
+          "Mean Wind Speed"
+        ],
+        "Name": "Tornado"
+      },
+      {
+        "HazardDefinition": "An extra-tropical cyclone is a storm system that primarily gets its energy from the horizontal temperature contrasts that exist in the atmosphere. Extra-tropical cyclones (also known as mid-latitude or baroclinic storms) are low pressure systems with associated cold fronts, warm fronts, and occluded fronts. Extra-tropical cyclones occur in the extra-tropics (generally more than 30° latitude away from the equator). They consist of an approximately circular region of low surface pressure, of a radius of 100–2000 km. At the same time, high up in the atmosphere (around 10 km altitude) a jet stream is typically found relatively close by. In fact, the intensity of an extra-tropical cyclone is closely related to the strength of this jet stream. The strongest extra-tropical cyclones occur in the winter months when the jet stream is at its strongest. Periods when the jet stream is unusually strong can lead to two or more strong cyclones occurring within days of each other. The total lifecycle of an extra-tropical cyclone from birth (genesis) through to development and on to decay (lysis) can occasionally be more than 10 days, although somewhere in the range of 2 to 5 days is more typical.",
+        "DefinitionSource": "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0031",
+        "AssociatedIndices": [
+          "Extreme Wind Days",
+          "Mean Wind Speed"
+        ],
+        "Name": "Extratropical cyclones"
+      },
+      {
+        "HazardDefinition": "A tropical cyclone is a warm-core, non-frontal, synoptic-scale cyclone that originates over tropical or subtropical waters. It is characterized by organized deep convection and a closed surface wind circulation around a well-defined center. Tropical cyclones that form in the Northwestern Pacific Basin (between 180° and 100°E in the Northern Hemisphere) and produce sustained winds of at least 33 m/s are called typhoons. If a tropical cyclone with sustained wind speeds exceeding 33 m/s develops in the North Atlantic Ocean, the Northeast Pacific Ocean (east of the International Date Line), or the South Pacific Ocean (east of 160°E), it is referred to as a hurricane.",
+        "DefinitionSource": "https://www.undrr.org/understanding-disaster-risk/terminology/hips/mh0057 + https://gpm.nasa.gov/education/articles/what-hurricane-typhoon-or-tropical-cyclone",
+        "AssociatedIndices": [
+          "Extreme Wind Days",
+          "Mean Wind Speed"
+        ],
+        "Name": "Tropical cyclones"
+      }
+    ]
+  }
+]
