@@ -1,1301 +1,1046 @@
 [
   {
-    "Task": "Request climate information",
-    "Subtask": null,
-    "ParentTask": "Create case",
-    "TaskDescription": "The task of requesting the climate information.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
+    "Name": "Create case",
+    "Specializations": [
+      {
+        "AssociatedEntities": "Text",
+        "Range": "No",
+        "InformationType": "Obligatory",
+        "Role": [
+          "InformationRequester",
+          "CaseCreator"
+        ],
+        "Description": "The operation that provides background information such as information about the organisation and their climate information needs",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Provide background information",
+        "Specializations": [
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Obligatory",
+            "Role": [
+              "InformationRequester"
+            ],
+            "Description": "The operation that provides the name of the customer organisation.",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Provide organization name"
+          },
+          {
+            "AssociatedEntities": "Organisation Type",
+            "Range": "No",
+            "InformationType": "Obligatory",
+            "Role": [
+              "InformationRequester"
+            ],
+            "Description": "The operation that describes the type of the customer organisation.",
+            "AssociatedData": {
+              "type": "uri",
+              "cv": "OrganisationType"
+            },
+            "Name": "Describe organization type"
+          },
+          {
+            "AssociatedEntities": "Organization Size",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Role": [
+              "InformationRequester"
+            ],
+            "Description": "The operation that describes the size (e.g. small, medium, large) of the customer organisation.",
+            "AssociatedData": {
+              "type": "uri",
+              "cv": "OrganizationSize"
+            },
+            "Name": "Describe organization size"
+          },
+          {
+            "AssociatedEntities": "Sector",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Comment": "Can use sectors associated with hazards",
+            "Role": [
+              "InformationRequester"
+            ],
+            "Description": "The operation that describes the operating sector of the customer organisation.",
+            "AssociatedData": {
+              "type": "uri",
+              "cv": "Sector"
+            },
+            "Name": "Describe organization operating sector"
+          },
+          {
+            "AssociatedEntities": "Number",
+            "Range": "Yes",
+            "InformationType": "Optional",
+            "Comment": "Can be described in one of the text fields regarding the case",
+            "Role": [
+              "InformationRequester"
+            ],
+            "Description": "The operation that quantifies years of experience in using climate data",
+            "AssociatedData": {
+              "type": "range",
+              "items": {
+                "type": "number"
+              }
+            },
+            "Name": "Provide years of experience in using climate data"
+          }
+        ]
+      },
+      {
+        "AssociatedEntities": "Text",
+        "Range": "No",
+        "InformationType": "Obligatory",
+        "Role": [
+          "InformationRequester"
+        ],
+        "Description": "The operation that provides climate case information such as spatial region and planning time range.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Provide climate case information",
+        "Specializations": [
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Obligatory",
+            "Role": [
+              "InformationRequester",
+              "CaseCreator"
+            ],
+            "Description": "The operation that provides a title for the case.",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Add case title"
+          },
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Obligatory",
+            "Role": [
+              "InformationRequester"
+            ],
+            "Description": "The operation that states the climate-related challenges faced by the organisation or by its operational activities.",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Define customer needs"
+          },
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Role": [
+              "InformationRequester"
+            ],
+            "Description": "The operation that states the main goals for which the customer is seeking climate information.",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Define request goal"
+          },
+          {
+            "AssociatedEntities": "Date",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Role": [
+              "InformationRequester",
+              "CaseCreator"
+            ],
+            "Description": "The operation that sets a deadline (a date in the form MM/YYYY) for climate intelligence provision.",
+            "AssociatedData": {
+              "type": "date"
+            },
+            "Name": "Add expected deadline"
+          },
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Role": [
+              "CaseCreator"
+            ],
+            "Description": "The operation that estimates the required resources (e.g., human, computational, financial).",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Add required resources"
+          },
+          {
+            "AssociatedEntities": "Spatial region",
+            "Range": "No",
+            "Output": "Spatial region (custom or predefined cordex domain)",
+            "InformationType": "Obligatory",
+            "Role": [
+              "InformationRequester",
+              "CaseCreator"
+            ],
+            "Description": "The operation that indicates the geographic area of interest.",
+            "AssociatedData": {
+              "type": "geodetic-region"
+            },
+            "Name": "Indicate spatial region"
+          },
+          {
+            "AssociatedEntities": "Date (range)",
+            "Range": "Yes",
+            "Output": "Time range",
+            "InformationType": "Obligatory",
+            "Role": [
+              "InformationRequester",
+              "CaseCreator"
+            ],
+            "Description": "The operation that states the overall time horizon over which the climate information is required. If multiple horizons are of interest, provide the time horizon that covers them all. In case such information is not available or not explicitly defined, provide the typical time horizon for organisations' planning decisions.\n",
+            "AssociatedData": {
+              "type": "range",
+              "items": {
+                "type": "date"
+              }
+            },
+            "Name": "Define planning time horizon"
+          }
+        ]
+      },
+      {
+        "AssociatedEntities": "Text",
+        "Range": "No",
+        "InformationType": "Obligatory",
+        "Role": [
+          "InformationRequester",
+          "CaseCreator"
+        ],
+        "Description": "The operation that provides decision context information.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Provide decision context information",
+        "Specializations": [
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Obligatory",
+            "Comment": "Each case can have one or more climate questions, and that each climate question can be associated to one or more hazards.",
+            "Role": [
+              "InformationRequester"
+            ],
+            "Description": "The operation that formulates key questions related to climate information that the customer seeks to answer.",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Formulate climate questions"
+          },
+          {
+            "AssociatedEntities": "Hazard",
+            "Range": "No",
+            "Output": "Relevant Hazard",
+            "InformationType": "Obligatory",
+            "Role": [
+              "InformationRequester",
+              "CaseCreator"
+            ],
+            "Description": "The operation that identifies the climate hazards (a climate-related physical event or process) that impact the customer organisation.",
+            "AssociatedData": {
+              "type": "uri",
+              "cv": "Hazard"
+            },
+            "Name": "Identify hazards"
+          },
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "BackwardDependency": "Identify hazards",
+            "InformationType": "Optional",
+            "Role": [
+              "InformationRequester"
+            ],
+            "Description": "The operation that describes how climate hazards impact the organisation's activities and the proposed case. ",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Describe climate hazard impacts"
+          },
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Role": [
+              "InformationRequester",
+              "CaseCreator"
+            ],
+            "Description": "The operation that lists decisions or actions that could be better informed with improved climate information for the identified hazards.",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Specify decision context"
+          },
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Role": [
+              "InformationRequester",
+              "CaseCreator"
+            ],
+            "Description": "The operation that outlines the organisational standard practices regarding the identified hazards",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Provide information on organisational standards"
+          },
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Role": [
+              "InformationRequester",
+              "CaseCreator"
+            ],
+            "Description": "The operation that identifies the presence of people, assets, resources, or activities in places and settings potentially affected by the identified hazards.",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Provide information on exposure identification"
+          },
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Role": [
+              "InformationRequester",
+              "CaseCreator"
+            ],
+            "Description": "The operation that collects information regarding how susceptible a system, asset or population is to the climate hazards. It reflects lack of capacity to cope with or adapt to impacts. High vulnerability often reduces risk tolerance.",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Provide information on vulnerability identification"
+          },
+          {
+            "AssociatedEntities": "Risk rating",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Comment": "low - medium - high",
+            "Role": [
+              "InformationRequester"
+            ],
+            "Description": "The operation that rates risk tolerance, i.e. a measure of the extent to which a user is willing to accept uncertainty and potential adverse outcomes related to climate risks: for example, a low risk tolerance indicates a preference for detailed quantification of even the most extreme climate scenarios, enabling proactive planning and adaptation to minimise potential impacts.",
+            "AssociatedData": {
+              "type": "uri",
+              "cv": "RiskRating"
+            },
+            "Name": "Rate risk tolerance"
+          },
+          {
+            "AssociatedEntities": "Text",
+            "Range": "No",
+            "InformationType": "Optional",
+            "Role": [
+              "InformationRequester",
+              "CaseCreator"
+            ],
+            "Description": "The operation that specifies the climate risk framing (e.g., loss probability, combination of hazard, exposure and vulnerability: risk index, etc.)",
+            "AssociatedData": {
+              "type": "text"
+            },
+            "Name": "Specify climate risk framing"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "InformationType": "Optional",
+    "Role": [
+      "CaseSolver"
+    ],
+    "Description": "The operation that requests external expertise such as an expert or literature review.",
+    "Name": "Search additional Information",
+    "Specializations": [
+      {
+        "AssociatedEntities": "Text",
+        "Range": "No",
+        "Output": "Literature review",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that looks for additional information from existing literature.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Perform literature review"
+      },
+      {
+        "AssociatedEntities": "Text",
+        "Range": "No",
+        "Output": "Domain expert advice",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that requests external expertise from an expert.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Search for external expertise"
+      }
+    ]
+  },
+  {
     "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
     "Role": [
-      "Information requester"
+      "CaseSolver"
+    ],
+    "Description": "The operation that prepares the climate information.",
+    "Name": "Prepare climate information",
+    "Specializations": [
+      {
+        "AssociatedEntities": "Index; variable",
+        "Range": "No",
+        "Output": "Indices or variables",
+        "InformationType": "Obligatory",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that identifies the climate indices (e.g., number of tropical nights per calendar year, standardised precipitation index) or variables (e.g.,  max temperature, monthly rainfall) if no suitable indicator is found relevant to the study or decision-making context.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Index; variable"
+        },
+        "Name": "Identify indices and variables"
+      },
+      {
+        "AssociatedEntities": "Date",
+        "Range": "Yes",
+        "Output": "Time range (custom selected)",
+        "InformationType": "Optional",
+        "Comment": "Not always needed - if absolute values are used in output and no comparison to observations are made",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that chooses a historical reference period (e.g., 1850–1900 as pre-industrial baseline, 1986–2005 in IPCC AR5, 1995–2014 in IPCC AR6) to serve as a baseline for comparing future climate projections or for global warming level extraction",
+        "AssociatedData": {
+          "type": "range",
+          "items": {
+            "type": "date"
+          }
+        },
+        "Name": "Choose baseline period"
+      },
+      {
+        "AssociatedEntities": "Date",
+        "Range": "Yes",
+        "ForwardDependecy": "Define emission scenarios",
+        "Conflict": "Choose global warming level",
+        "Output": "Time range (custom selected)",
+        "InformationType": "Conditional",
+        "Condition": "Obligatory if GWL is not selected",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that chooses the future time horizons of interest (e.g., specific period in the future like 2080–2100, 2030–2080) for climate information or risk or impact assessment.",
+        "AssociatedData": {
+          "type": "range",
+          "items": {
+            "type": "date"
+          }
+        },
+        "Name": "Choose future period"
+      },
+      {
+        "AssociatedEntities": "Global warming level",
+        "Range": "Optional",
+        "ForwardDependecy": "Choose global warming level extraction method",
+        "Conflict": "Choose future period",
+        "Output": "Selected GWL (specific value or range)",
+        "InformationType": "Conditional",
+        "Condition": "Obligatory if future period is not selected",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that selects specific global warming levels (e.g., +1.5°C, +2°C).",
+        "AssociatedData": {
+          "type": "range-or-exact",
+          "items": {
+            "type": "uri",
+            "cv": "Global warming level"
+          }
+        },
+        "Name": "Choose global warming level"
+      },
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Choose global warming level",
+        "ForwardDependecy": "Filter climate simulations by global warming level exceedance",
+        "Input": "Time range (optional)",
+        "Output": "GWL extraction method",
+        "InformationType": "Conditional",
+        "Condition": "Obligatory if task \"Global warming level choice\" is selected",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that chooses a method to extract regional climate change data in relation to selected global warming levels above pre-industrial (default: 1850-1900).",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Choose global warming level extraction method"
+      },
+      {
+        "AssociatedEntities": "Emission scenario",
+        "Range": "Optional",
+        "Output": "Selected emission scenario",
+        "InformationType": "Conditional",
+        "Condition": "Obligatory if future period choice is used",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that defines appropriate representative concentration pathways (RCPs) or shared socioeconomic\npathways (SSPs) to explore a range of future climate outcomes.",
+        "AssociatedData": {
+          "type": "range-or-exact",
+          "items": {
+            "type": "uri",
+            "cv": "Emission scenario"
+          }
+        },
+        "Name": "Define emission scenarios"
+      },
+      {
+        "AssociatedEntities": "Spatial resolution",
+        "Range": "Optional",
+        "Output": "Selected spatial resolution range",
+        "InformationType": "Obligatory",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that selects the required spatial resolution (e.g., 1 km, 60 km, 0.25°) range for the output climate data.",
+        "AssociatedData": {
+          "type": "range-or-exact",
+          "items": {
+            "type": "number"
+          }
+        },
+        "Name": "Define relevant spatial resolutions"
+      },
+      {
+        "AssociatedEntities": "Temporal resolution",
+        "Range": "Optional",
+        "Output": "Selected temporal resolution range",
+        "InformationType": "Obligatory",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that selects the required temporal resolution (e.g., daily, monthly, annual, seasonal) range for the output climate data.",
+        "AssociatedData": {
+          "type": "range-or-exact",
+          "items": {
+            "type": "duration"
+          }
+        },
+        "Name": "Define relevant temporal resolutions"
+      },
+      {
+        "AssociatedEntities": "Sub-annual period",
+        "Range": "Optional",
+        "Output": "Subseasonal slice",
+        "InformationType": "Optional",
+        "Condition": "For possible values, see Table 1 of this document: https://docs.google.com/document/d/1svoQ4lW1i4nFaPWZEzIxQakPmS_sDS4uO9yy9OmeSQo/edit?tab=t.0",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that selects a sub-annual period (e.g. month, season, period in year) of interest (e.g. boreal winter (DJFM), austral spring (SON), Januarys, Julys).",
+        "AssociatedData": {
+          "type": "range-or-exact",
+          "items": {
+            "type": "uri",
+            "cv": "Sub-annual period"
+          }
+        },
+        "Name": "Define subannual selection"
+      },
+      {
+        "AssociatedEntities": "Observation type",
+        "Range": "No",
+        "Output": "Observation type",
+        "InformationType": "Obligatory",
+        "Condition": "CV would only be \"station-based\" and \"gridded\". \"station-based\" refers to observations collected at a specific geographic point, \"gridded\" refers to observations interpolated or modelled onto a regular grid of cells. I think it can be related to \"GeodeticPoint\" and \"RegularGrid\" respectively.",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that defines the preferred observation type (e.g., station-based, gridded).",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Observation type"
+        },
+        "Name": "Define observation type"
+      },
+      {
+        "AssociatedEntities": "Access point",
+        "Range": "No",
+        "Output": "Access point organisation or country of origin",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that chooses the preferred source for climate simulation data access (access point: e.g., ESGF datanodes, Copernicus CDS, OpenDAP, national portals).",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Access point"
+        },
+        "Name": "Define preferred access point"
+      },
+      {
+        "AssociatedEntities": "Text",
+        "Range": "No",
+        "Output": "Additional selection criteria for climate simulations",
+        "InformationType": "Optional",
+        "Comment": "free text to be possibly parsed and linked. In the description, added a request to provide URIs",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that provides additional constraints to the climate simulation selection like origin of source (e.g., institution, country of origin), etc. Provide information with URIs taken from the KG where possible.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Provide additional climate simulation selection criteria"
+      },
+      {
+        "AssociatedEntities": "Text",
+        "Range": "No",
+        "Output": "Additional selection criteria for observations",
+        "InformationType": "Optional",
+        "Comment": "free text to be possibly parsed and linked. In the description, added a request to provide URIs",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that provides additional constraints to the observation selection, such as the origin of the source (e.g., institution, country of origin), etc. Provide information with URIs taken from the KG where possible.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Provide additional observation selection criteria"
+      },
+      {
+        "BackwardDependency": "Identify indices and variables",
+        "Input": "All relevant filtering dimensions",
+        "Output": "List of climate simulations",
+        "InformationType": "Optional",
+        "Condition": "Obligatory if case solver decides not to manually select the climate simulations or use impact models instead",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that applies filtering criteria to the list of climate simulations and shortlisting matching entries.",
+        "Name": "Filter climate simulations by selection criteria"
+      },
+      {
+        "BackwardDependency": "Identify indices and variables",
+        "Input": "All relevant filtering dimensions",
+        "Output": "List of observation datasets",
+        "InformationType": "Optional",
+        "Condition": "Obligatory if case solver decides not to manually select the observations",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that applies filtering criteria to the list of observations and shortlisting matching entries.",
+        "Name": "Filter observations by selection criteria"
+      },
+      {
+        "AssociatedEntities": "Climate simulations",
+        "Range": "No",
+        "BackwardDependency": "Filter climate simulations by selection criteria",
+        "Output": "List of climate simulations",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that selects the climate simulations",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Climate simulations"
+        },
+        "Name": "Conduct manual selection of climate simulations"
+      },
+      {
+        "AssociatedEntities": "Observation datasets",
+        "Range": "No",
+        "BackwardDependency": "Filter observations by selection criteria",
+        "Output": "List of observation datasets",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that selects the observations",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Observation datasets"
+        },
+        "Name": "Conduct manual selection of observations"
+      },
+      {
+        "BackwardDependency": "Choose global warming level",
+        "Conflict": "Apply pattern scaling",
+        "Input": "GWL range; GWL extraction method; if scenario-based, emission scenario definition",
+        "Output": "List of climate simulations (with associated global warming exceeding selected GWL)",
+        "InformationType": "Conditional",
+        "Condition": "Obligatory if task \"Global warming level choice\" is selected and \"Global warming level extraction method\" is not \"Pattern scaling\"",
+        "Comment": "Simulations need to be retrieved at this stage to do this - but only GCMs, not RCMs",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that selects simulations exceeding the specific global warming level.",
+        "Name": "Filter climate simulations by global warming level exceedance"
+      },
+      {
+        "AssociatedEntities": "Number",
+        "Range": "Yes",
+        "BackwardDependency": "Choose global warming level",
+        "Input": "List of climate simulations (with associated global warming exceeding selected GWL)",
+        "Output": "Future period (associated with GWL exceedance)",
+        "InformationType": "Conditional",
+        "Condition": "Obligatory if \"Global warming level extraction method\" is \"Time slice\"",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that extractes the time slice centered around the point in time when the specific global warming level is exceeded.",
+        "AssociatedData": {
+          "type": "range",
+          "items": {
+            "type": "number"
+          }
+        },
+        "Name": "Extract global warming level time slice"
+      },
+      {
+        "BackwardDependency": "Conduct manual selection of climate simulations",
+        "Input": "GWL; Climate simulations; Observations",
+        "Output": "Pattern-scaled climate data",
+        "InformationType": "Conditional",
+        "Condition": "Obligatory if \"Global warming level extraction method\" is \"Pattern scaling\"",
+        "Comment": "Requires simulation (and observation, if used) retrieval",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that conducts pattern scaling of regional climate response to the global warming level.",
+        "Name": "Apply pattern scaling"
+      },
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Choose future period choice",
+        "Input": "Climate simulations",
+        "Output": "Downscaled climate simulations",
+        "InformationType": "Optional",
+        "Comment": "Requires simulation retrieval - I see an issue with I/O as \"Climate simulations\" are not defined before.",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that applies statistical or dynamical downscaling techniques to increase the spatial resolution of global or regional climate model outputs. This task is normally unnecessary if the selected data is already downscaled.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Apply additional spatial downscaling"
+      },
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Choose future period",
+        "Input": "Raw observations, raw or downscaled climate simulations, or pattern-scaled climate data",
+        "Output": "Processed climate data - processed observations, processed climate simulations",
+        "InformationType": "Optional",
+        "Comment": "Requires simulation and observation retrieval (unless downscaled or pattern-scaled data are used).\nCan apply no methods, but must be conducted to ensure consistency",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that performs data preprocessing (e.g., regridding, gap-filling, aggregation, filtering, bias correction) on raw climate model output and observations to ensure it is accurate, consistent, and suitable for analysis.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Apply data preprocessing"
+      },
+      {
+        "BackwardDependency": "Identify indices and variables",
+        "Input": "Processed climate data, selected index definitions",
+        "Output": "Calculated indices for observations and climate simulations",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that computes relevant climate indices from both observational and climate model datasets. Possibly, emulators could be used to obtain relevant information for index computation.",
+        "Name": "Compute climate indices"
+      },
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Conduct manual selection of observations",
+        "Input": "Processed observations",
+        "Output": "Observation analysis",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that analyzes observational datasets to establish historical trends and variability.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Conduct observation analysis"
+      },
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Compute climate indices",
+        "Input": "Calculated indices",
+        "Output": "Aggregated indices",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that aggregates calculated indices.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Conduct spatial aggregation"
+      },
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Filter climate simulations by selection criteria",
+        "ForwardDependecy": "Select climate simulations",
+        "Input": "Calculated or aggregated indices, or processed climate data, or observation analysis",
+        "Output": "Model performance metric",
+        "InformationType": "Conditional",
+        "Condition": "Obligatory unless case solver decides to only use impact models (like ISIMIP) without input data from climate simulations",
+        "Comment": "We require case solver to add at least some type of quality evaluation metric - regardless it is used to make the final decision or not.",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that evaluates the performance of climate simulations against observations, by comparing how well climate models reproduce historical climate conditions for selected indices or variables. This evaluation helps determine which models could be more reliable for projecting future climate changes.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Evaluate climate simulations"
+      },
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Evaluate climate simulations",
+        "Input": "Model performance metric",
+        "Output": "Processed climate simulation data (selection)",
+        "InformationType": "Conditional",
+        "Condition": "Obligatory if \"Climate simulation evaluation\" is conducted",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that rejects the climate model simulations that do not meet the evaluation criteria or the ad hoc selection by the case solver.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Select climate simulations"
+      }
     ]
   },
   {
-    "Task": "Request user background information",
-    "Subtask": null,
-    "ParentTask": "Create case",
-    "TaskDescription": "The task of requesting user background information.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case creator"
-    ]
-  },
-  {
-    "Task": "Provide background information",
-    "Subtask": null,
-    "ParentTask": "Create case",
-    "TaskDescription": "The task of providing background information such as information about the organisation and their climate information needs",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Provide organization name",
-    "ParentTask": "Provide background information",
-    "TaskDescription": "The task of providing the name of the customer organisation.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Describe organization type",
-    "ParentTask": "Provide background information",
-    "TaskDescription": "The task of describing the type of the customer organisation.",
-    "AssociatedEntities": "Organisation Type",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Describe organization size",
-    "ParentTask": "Provide background information",
-    "TaskDescription": "The task of describing the size (e.g. small, medium, large) of the customer organisation.",
-    "AssociatedEntities": "Organization Size",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Describe organization operating sector",
-    "ParentTask": "Provide background information",
-    "TaskDescription": "The task of describing the operating sector of the customer organisation.",
-    "AssociatedEntities": "Sector",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": "Can use sectors associated with hazards",
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Provide years of experience in using climate data",
-    "ParentTask": "Provide background information",
-    "TaskDescription": "Less than 1 year\n1-3 years\n4-6 years\n7-10 years\nMore than 10 years",
-    "AssociatedEntities": "Number",
-    "Range": "Yes",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": "Can be described in one of the text fields regarding the case",
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": "Provide climate case information",
-    "Subtask": null,
-    "ParentTask": "Create case",
-    "TaskDescription": "The task of providing climate case information such as spatial region and planning time range.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Add case title",
-    "ParentTask": "Provide climate case information",
-    "TaskDescription": "The task of providing a title for the case.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Define customer needs",
-    "ParentTask": "Provide climate case information",
-    "TaskDescription": "The task of stating the climate-related challenges faced by the organisation or by its operational activities.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Define request goal",
-    "ParentTask": "Provide climate case information",
-    "TaskDescription": "The task of stating the main goals for which the customer is seeking climate information.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Add expected deadline",
-    "ParentTask": "Provide climate case information",
-    "TaskDescription": "The task of setting a deadline (a date in the form MM/YYYY) for climate intelligence provision.",
-    "AssociatedEntities": "Date",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Add required resources",
-    "ParentTask": "Provide climate case information",
-    "TaskDescription": "The task of estimating the required resources (e.g., human, computational, financial).",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Indicate spatial region",
-    "ParentTask": "Provide climate case information",
-    "TaskDescription": "The task of indicating the geographic area of interest.",
-    "AssociatedEntities": "Spatial region",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Spatial region (custom or predefined cordex domain)",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Define planning time horizon",
-    "ParentTask": "Provide climate case information",
-    "TaskDescription": "The task of stating the overall time horizon over which the climate information is required. If multiple horizons are of interest, provide the time horizon that covers them all. In case such information is not available or not explicitly defined, provide the typical time horizon for organisations' planning decisions.\n",
-    "AssociatedEntities": "Date (range)",
-    "Range": "Yes",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Time range",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": "Provide decision context information",
-    "Subtask": null,
-    "ParentTask": "Create case",
-    "TaskDescription": "The task of providing decision context information.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Formulate climate questions",
-    "ParentTask": "Provide decision context information",
-    "TaskDescription": "The task of formulating key questions related to climate information that the customer seeks to answer.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": "Each case can have one or more climate questions, and that each climate question can be associated to one or more hazards.",
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Identify hazards",
-    "ParentTask": "Provide decision context information",
-    "TaskDescription": "The task of identifying the climate hazards (a climate-related physical event or process) that impact the customer organisation.",
-    "AssociatedEntities": "Hazard",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Relevant Hazard",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Describe climate hazard impacts",
-    "ParentTask": "Provide decision context information",
-    "TaskDescription": "The task of describing how climate hazards impact the organisation's activities and the proposed case. ",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "BackwardDependency": "Identify hazards",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Specify decision context",
-    "ParentTask": "Provide decision context information",
-    "TaskDescription": "The task of listing decisions or actions that could be better informed with improved climate information for the identified hazards.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Provide information on organisational standards",
-    "ParentTask": "Provide decision context information",
-    "TaskDescription": "The task of outlining the organisational standard practices regarding the identified hazards",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Provide information on exposure identification",
-    "ParentTask": "Provide decision context information",
-    "TaskDescription": "The task of identifying the presence of people, assets, resources, or activities in places and settings potentially affected by the identified hazards.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Provide information on vulnerability identification",
-    "ParentTask": "Provide decision context information",
-    "TaskDescription": "The task of collecting information regarding how susceptible a system, asset or population is to the climate hazards. It reflects lack of capacity to cope with or adapt to impacts. High vulnerability often reduces risk tolerance.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Rate risk tolerance",
-    "ParentTask": "Provide decision context information",
-    "TaskDescription": "Low Medium High. A measure of the extent to which a user is willing to accept uncertainty and potential adverse outcomes related to climate risks. For example, a low risk tolerance indicates a preference for detailed quantification of even the most extreme climate scenarios, enabling proactive planning and adaptation to minimise potential impacts. ",
-    "AssociatedEntities": "Risk rating",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": "low - medium - high",
-    "Role": [
-      "Information requester"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Specify climate risk framing",
-    "ParentTask": "Provide decision context information",
-    "TaskDescription": "The task of specifying the climate risk framing (e.g., loss probability, combination of hazard, exposure and vulnerability: risk index, etc.)",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester",
-      "Case creator"
-    ]
-  },
-  {
-    "Task": "Case creation",
-    "Subtask": null,
-    "ParentTask": null,
-    "TaskDescription": "The task of creating a case.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case creator"
-    ]
-  },
-  {
-    "Task": "Search additional Information",
-    "Subtask": null,
-    "ParentTask": null,
-    "TaskDescription": "The task of requesting external expertise such as an expert or literature review.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Perform literature review",
-    "ParentTask": "Search additional Information",
-    "TaskDescription": "The task of looking for additional information from existing literature.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Literature review",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Search for external expertise",
-    "ParentTask": "Search additional Information",
-    "TaskDescription": "The task of requesting external expertise from an expert.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Domain expert advice",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": "Prepare climate information",
-    "Subtask": null,
-    "ParentTask": null,
-    "TaskDescription": "The task of preparing the climate information.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Identify indices and variables",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of identifying the climate indices (e.g., number of tropical nights per calendar year, standardised precipitation index) or variables (e.g.,  max temperature, monthly rainfall) if no suitable indicator is found relevant to the study or decision-making context.",
-    "AssociatedEntities": "Index; variable",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Indices or variables",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Choose baseline period",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of choosing a historical reference period (e.g., 1850–1900 as pre-industrial baseline, 1986–2005 in IPCC AR5, 1995–2014 in IPCC AR6) to serve as a baseline for comparing future climate projections or for global warming level extraction",
-    "AssociatedEntities": "Date",
-    "Range": "Yes",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Time range (custom selected)",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": "Not always needed - if absolute values are used in output and no comparison to observations are made",
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Choose future period",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of choosing the future time horizons of interest (e.g., specific period in the future like 2080–2100, 2030–2080) for climate information or risk or impact assessment.",
-    "AssociatedEntities": "Date",
-    "Range": "Yes",
-    "ForwardDependecy": "Define emission scenarios",
-    "Conflict": "Choose global warming level",
-    "Input": null,
-    "Output": "Time range (custom selected)",
-    "InformationType": "Conditional",
-    "Condition": "Obligatory if GWL is not selected",
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Choose global warming level",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of selecting specific global warming levels (e.g., +1.5°C, +2°C).",
-    "AssociatedEntities": "Global warming level",
-    "Range": "Optional",
-    "ForwardDependecy": "Choose global warming level extraction method",
-    "Conflict": "Choose future period",
-    "Input": null,
-    "Output": "Selected GWL (specific value or range)",
-    "InformationType": "Conditional",
-    "Condition": "Obligatory if future period is not selected",
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Choose global warming level extraction method",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of choosing a method to extract regional climate change data in relation to selected global warming levels above pre-industrial (default: 1850-1900).",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Choose global warming level",
-    "ForwardDependecy": "Filter climate simulations by global warming level exceedance",
-    "Conflict": null,
-    "Input": "Time range (optional)",
-    "Output": "GWL extraction method",
-    "InformationType": "Conditional",
-    "Condition": "Obligatory if task \"Global warming level choice\" is selected",
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Define emission scenarios",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of defining appropriate representative concentration pathways (RCPs) or shared socioeconomic\npathways (SSPs) to explore a range of future climate outcomes.",
-    "AssociatedEntities": "Emission scenario",
-    "Range": "Optional",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Selected emission scenario",
-    "InformationType": "Conditional",
-    "Condition": "Obligatory if future period choice is used",
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Define relevant spatial resolutions",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of selecting the required spatial resolution (e.g., 1 km, 60 km, 0.25°) range for the output climate data.",
-    "AssociatedEntities": "Spatial resolution",
-    "Range": "Optional",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Selected spatial resolution range",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Define relevant temporal resolutions",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of selecting the required temporal resolution (e.g., daily, monthly, annual, seasonal) range for the output climate data.",
-    "AssociatedEntities": "Temporal resolution",
-    "Range": "Optional",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Selected temporal resolution range",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Define subannual selection",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of selecting a sub-annual period (e.g. month, season, period in year) of interest (e.g. boreal winter (DJFM), austral spring (SON), Januarys, Julys).",
-    "AssociatedEntities": "Sub-annual period",
-    "Range": "Optional",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Subseasonal slice",
-    "InformationType": "Optional",
-    "Condition": "For possible values, see Table 1 of this document: https://docs.google.com/document/d/1svoQ4lW1i4nFaPWZEzIxQakPmS_sDS4uO9yy9OmeSQo/edit?tab=t.0",
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Define observation type",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of defining the preferred observation type (e.g., station-based, gridded).",
-    "AssociatedEntities": "Observation type",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Observation type",
-    "InformationType": "Obligatory",
-    "Condition": "CV would only be \"station-based\" and \"gridded\". \"station-based\" refers to observations collected at a specific geographic point, \"gridded\" refers to observations interpolated or modelled onto a regular grid of cells. I think it can be related to \"GeodeticPoint\" and \"RegularGrid\" respectively.",
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Define preferred access point",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of choosing the preferred source for climate simulation data access (access point: e.g., ESGF datanodes, Copernicus CDS, OpenDAP, national portals).",
-    "AssociatedEntities": "Access point",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Access point organisation or country of origin",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Provide additional climate simulation selection criteria",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of providing additional constraints to the climate simulation selection like origin of source (e.g., institution, country of origin), etc. Provide information with URIs taken from the KG where possible.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Additional selection criteria for climate simulations",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": "free text to be possibly parsed and linked. In the description, added a request to provide URIs",
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Provide additional observation selection criteria",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of providing additional constraints to the observation selection, such as the origin of the source (e.g., institution, country of origin), etc. Provide information with URIs taken from the KG where possible.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Additional selection criteria for observations",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": "free text to be possibly parsed and linked. In the description, added a request to provide URIs",
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Filter climate simulations by selection criteria",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of applying filtering criteria to the list of climate simulations and shortlisting matching entries.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "BackwardDependency": "Identify indices and variables",
-    "Conflict": null,
-    "Input": "All relevant filtering dimensions",
-    "Output": "List of climate simulations",
-    "InformationType": "Optional",
-    "Condition": "Obligatory if case solver decides not to manually select the climate simulations or use impact models instead",
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Filter observations by selection criteria",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of applying filtering criteria to the list of observations and shortlisting matching entries.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "BackwardDependency": "Identify indices and variables",
-    "Conflict": null,
-    "Input": "All relevant filtering dimensions",
-    "Output": "List of observation datasets",
-    "InformationType": "Optional",
-    "Condition": "Obligatory if case solver decides not to manually select the observations",
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Conduct manual selection of climate simulations",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of manually selecting the climate simulations",
-    "AssociatedEntities": "Climate simulations",
-    "Range": "No",
-    "BackwardDependency": "Filter climate simulations by selection criteria",
-    "Conflict": null,
-    "Input": null,
-    "Output": "List of climate simulations",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Conduct manual selection of observations",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of manually selecting the observations",
-    "AssociatedEntities": "Observation datasets",
-    "Range": "No",
-    "BackwardDependency": "Filter observations by selection criteria",
-    "Conflict": null,
-    "Input": null,
-    "Output": "List of observation datasets",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Filter climate simulations by global warming level exceedance",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of selecting simulations exceeding the specific global warming level.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "BackwardDependency": "Choose global warming level",
-    "Conflict": "Apply pattern scaling",
-    "Input": "GWL range; GWL extraction method; if scenario-based, emission scenario definition",
-    "Output": "List of climate simulations (with associated global warming exceeding selected GWL)",
-    "InformationType": "Conditional",
-    "Condition": "Obligatory if task \"Global warming level choice\" is selected and \"Global warming level extraction method\" is not \"Pattern scaling\"",
-    "Comment": "Simulations need to be retrieved at this stage to do this - but only GCMs, not RCMs",
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Extract global warming level time slice",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of extracting the time slice centered around the point in time when the specific global warming level is exceeded.",
-    "AssociatedEntities": "Number",
-    "Range": "Yes",
-    "BackwardDependency": "Choose global warming level",
-    "Conflict": null,
-    "Input": "List of climate simulations (with associated global warming exceeding selected GWL)",
-    "Output": "Future period (associated with GWL exceedance)",
-    "InformationType": "Conditional",
-    "Condition": "Obligatory if \"Global warming level extraction method\" is \"Time slice\"",
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Apply pattern scaling",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of conducting pattern scaling of regional climate response to the global warming level.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "BackwardDependency": "Conduct manual selection of climate simulations",
-    "Conflict": null,
-    "Input": "GWL; Climate simulations; Observations",
-    "Output": "Pattern-scaled climate data",
-    "InformationType": "Conditional",
-    "Condition": "Obligatory if \"Global warming level extraction method\" is \"Pattern scaling\"",
-    "Comment": "Requires simulation (and observation, if used) retrieval",
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Apply additional spatial downscaling",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of applying statistical or dynamical downscaling techniques to increase the spatial resolution of global or regional climate model outputs. This task is normally unnecessary if the selected data is already downscaled.",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Choose future period choice",
-    "Conflict": null,
-    "Input": "Climate simulations",
-    "Output": "Downscaled climate simulations",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": "Requires simulation retrieval - I see an issue with I/O as \"Climate simulations\" are not defined before.",
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Apply data preprocessing",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of performing data preprocessing (e.g., regridding, gap-filling, aggregation, filtering, bias correction) on raw climate model output and observations to ensure it is accurate, consistent, and suitable for analysis.",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Choose future period",
-    "Conflict": null,
-    "Input": "Raw observations, raw or downscaled climate simulations, or pattern-scaled climate data",
-    "Output": "Processed climate data - processed observations, processed climate simulations",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": "Requires simulation and observation retrieval (unless downscaled or pattern-scaled data are used).\nCan apply no methods, but must be conducted to ensure consistency",
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Compute climate indices",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of computing relevant climate indices from both observational and climate model datasets. Possibly, emulators could be used to obtain relevant information for index computation.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "BackwardDependency": "Identify indices and variables",
-    "Conflict": null,
-    "Input": "Processed climate data, selected index definitions",
-    "Output": "Calculated indices for observations and climate simulations",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Conduct observation analysis",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of analyzing observational datasets to establish historical trends and variability.",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Conduct manual selection of observations",
-    "Conflict": null,
-    "Input": "Processed observations",
-    "Output": "Observation analysis",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Conduct spatial aggregation",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of spatially aggregating calculated indices.",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Compute climate indices",
-    "Conflict": null,
-    "Input": "Calculated indices",
-    "Output": "Aggregated indices",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Evaluate climate simulations",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of evaluating the performance of climate simulations against observations, by comparing how well climate models reproduce historical climate conditions for selected indices or variables. This evaluation helps determine which models could be more reliable for projecting future climate changes.",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Filter climate simulations by selection criteria",
-    "ForwardDependecy": "Select climate simulations",
-    "Conflict": null,
-    "Input": "Calculated or aggregated indices, or processed climate data, or observation analysis",
-    "Output": "Model performance metric",
-    "InformationType": "Conditional",
-    "Condition": "Obligatory unless case solver decides to only use impact models (like ISIMIP) without input data from climate simulations",
-    "Comment": "We require case solver to add at least some type of quality evaluation metric - regardless it is used to make the final decision or not.",
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Select climate simulations",
-    "ParentTask": "Prepare climate information",
-    "TaskDescription": "The task of rejecting the climate model simulations that do not meet the evaluation criteria or the ad hoc selection by the case solver.",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Evaluate climate simulations",
-    "Conflict": null,
-    "Input": "Model performance metric",
-    "Output": "Processed climate simulation data (selection)",
-    "InformationType": "Conditional",
-    "Condition": "Obligatory if \"Climate simulation evaluation\" is conducted",
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": "Analyse climate information",
-    "Subtask": null,
-    "ParentTask": null,
-    "TaskDescription": "The task of analysing the climate information to understand what future climatic changes are simulated and associated uncertainties.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
     "InformationType": "Conditional",
     "Condition": "If not pursued, climate impact assessment is obligatory",
-    "Comment": null,
     "Role": [
-      "Case solver"
+      "CaseSolver"
+    ],
+    "Description": "The operation that analyses the climate information to understand what future climatic changes are simulated and associated uncertainties.",
+    "Name": "Analyse climate information",
+    "Specializations": [
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Select climate simulations",
+        "Input": "Processed climate simulation data (selection)",
+        "Output": "Output metric",
+        "InformationType": "Obligatory",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that analyses and projecting the future climate by creating an output metric based on the selected climate simulations.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Quantify future climate change"
+      },
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Select climate simulations",
+        "Input": "Processed climate simulation data (selection)",
+        "Output": "Uncertainty estimate",
+        "InformationType": "Obligatory",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that quantifies the uncertainty in projections of the selected climate simulations.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Quantify uncertainty"
+      },
+      {
+        "AssociatedEntities": "Confidence level: low, medium, high",
+        "Range": "No",
+        "BackwardDependency": "Quantify future climate change",
+        "Input": "Output metric, uncertainty estimate",
+        "Output": "Confidence estimate",
+        "InformationType": "Obligatory",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that indicates the subjective level of confidence in future climate change and uncertainty quantification.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Confidence level: low, medium, high"
+        },
+        "Name": "Estimate subjective confidence"
+      },
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Quantify future climate change",
+        "Input": "Output metric, uncertainty estimate",
+        "Output": "Aggregated climate information",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that postprocesses (e.g., spatially aggregating) provided climate information",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Postprocess climate information"
+      }
     ]
   },
   {
-    "Task": null,
-    "Subtask": "Quantify future climate change",
-    "ParentTask": "Analyse climate information",
-    "TaskDescription": "The task of analysing and projecting the future climate by creating an output metric based on the selected climate simulations.",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Select climate simulations",
-    "Conflict": null,
-    "Input": "Processed climate simulation data (selection)",
-    "Output": "Output metric",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Quantify uncertainty",
-    "ParentTask": "Analyse climate information",
-    "TaskDescription": "The task of quantifying the uncertainty in projections of the selected climate simulations.",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Select climate simulations",
-    "Conflict": null,
-    "Input": "Processed climate simulation data (selection)",
-    "Output": "Uncertainty estimate",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Estimate subjective confidence",
-    "ParentTask": "Analyse climate information",
-    "TaskDescription": "The task of indicating the subjective level of confidence in future climate change and uncertainty quantification.",
-    "AssociatedEntities": "Confidence level: low, medium, high",
-    "Range": "No",
-    "BackwardDependency": "Quantify future climate change",
-    "Conflict": null,
-    "Input": "Output metric, uncertainty estimate",
-    "Output": "Confidence estimate",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Postprocess climate information",
-    "ParentTask": "Analyse climate information",
-    "TaskDescription": "The task of postprocessing (e.g., spatially aggregating) provided climate information",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Quantify future climate change",
-    "Conflict": null,
-    "Input": "Output metric, uncertainty estimate",
-    "Output": "Aggregated climate information",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": "Assess climate impacts",
-    "Subtask": null,
-    "ParentTask": null,
-    "TaskDescription": "The task of conducting the climate impact assessment to understand the impacts of each hazard",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
     "InformationType": "Conditional",
     "Condition": "Only obligatory if climate information analysis is not done.",
-    "Comment": null,
     "Role": [
-      "Case solver"
+      "CaseSolver"
+    ],
+    "Description": "The operation that conducts the climate impact assessment to understand the impacts of each hazard",
+    "Name": "Assess climate impacts",
+    "Specializations": [
+      {
+        "AssociatedEntities": "Text",
+        "Range": "No",
+        "Input": "Aggregated climate information or output metric and uncertainty estimate, impact assessment method",
+        "Output": "Impact assessment method",
+        "InformationType": "Obligatory",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that identifies models, transfer functions or datasets that can translate climate information into an impact assesment",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Select impact model"
+      },
+      {
+        "AssociatedEntities": "Text",
+        "Range": "No",
+        "BackwardDependency": "Select impact model",
+        "Input": "Aggregated climate information or output metric and uncertainty estimate, impact assessment method",
+        "Output": "Impact analysis",
+        "InformationType": "Obligatory",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that applies impact models, transfer functions or datasets to simulate, quantify, or describe the impacts",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Conduct impact analysis"
+      },
+      {
+        "AssociatedEntities": "Method",
+        "Range": "No",
+        "BackwardDependency": "Conduct impact analysis",
+        "Input": "Impact analysis",
+        "Output": "Postprocessed impact analysis",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that postprocesses the provided climate impact information (e.g., spatial aggregation, regridding) as necessary",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Postprocess impact analysis"
+      }
     ]
   },
   {
-    "Task": null,
-    "Subtask": "Select impact model",
-    "ParentTask": "Assess climate impacts",
-    "TaskDescription": "The task of identifying models, transfer functions or datasets that can translate climate information into an impact assesment",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "Conflict": null,
-    "Input": "Aggregated climate information or output metric and uncertainty estimate, impact assessment method",
-    "Output": "Impact assessment method",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Conduct impact analysis",
-    "ParentTask": "Assess climate impacts",
-    "TaskDescription": "The task of applying impact models, transfer functions or datasets to simulate, quantify, or describe the impacts",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "BackwardDependency": "Select impact model",
-    "Conflict": null,
-    "Input": "Aggregated climate information or output metric and uncertainty estimate, impact assessment method",
-    "Output": "Impact analysis",
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Postprocess impact analysis",
-    "ParentTask": "Assess climate impacts",
-    "TaskDescription": "The task of postprocessing the provided climate impact information (e.g., spatial aggregation, regridding) as necessary",
-    "AssociatedEntities": "Method",
-    "Range": "No",
-    "BackwardDependency": "Conduct impact analysis",
-    "Conflict": null,
-    "Input": "Impact analysis",
-    "Output": "Postprocessed impact analysis",
     "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
     "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": "Conduct climate risk assessment",
-    "Subtask": null,
-    "ParentTask": null,
-    "TaskDescription": "The task of conducting climate risk assessment.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Identify vulnerability",
-    "ParentTask": "Conduct climate risk assessment",
-    "TaskDescription": "The task of providing vulnerability information.",
-    "AssociatedEntities": "Text (Vulnerability)",
-    "Range": "No",
-    "ForwardDependecy": "Assess risk",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Vulnerability information",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Identify exposure",
-    "ParentTask": "Conduct climate risk assessment",
-    "TaskDescription": "The task of providing exposure information.",
-    "AssociatedEntities": "Text (Exposure)",
-    "Range": "No",
-    "ForwardDependecy": "Assess risk",
-    "Conflict": null,
-    "Input": null,
-    "Output": "Exposure information",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": null,
-    "Subtask": "Assess risk",
-    "ParentTask": "Conduct climate risk assessment",
-    "TaskDescription": "The task of conducting the climate risk assessment.",
-    "AssociatedEntities": "Text",
-    "Range": "No",
-    "BackwardDependency": "Identify vulnerability",
-    "Conflict": null,
-    "Input": "Impact analysis OR postprocessed impact analysis, vulnerability & exposure information",
-    "Output": "Risk assessment",
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": "Present climate information",
-    "Subtask": null,
-    "ParentTask": null,
-    "TaskDescription": "The task of presenting the climate or climate impact information through visual (e.g., plot, diagram, flowchart, graph, map), quantitative (e.g., table), or qualitative (e.g. narrative) formats",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Optional",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": "Send climate information",
-    "Subtask": null,
-    "ParentTask": null,
-    "TaskDescription": "The task of sending climate information.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Case solver"
-    ]
-  },
-  {
-    "Task": "Disseminate climate information",
-    "Subtask": null,
-    "ParentTask": null,
-    "TaskDescription": "The task of communicating the climate information.",
-    "AssociatedEntities": null,
-    "Range": null,
-    "Conflict": null,
-    "Input": null,
-    "Output": null,
-    "InformationType": "Obligatory",
-    "Condition": null,
-    "Comment": null,
-    "Role": [
-      "Information requester"
+      "CaseSolver"
+    ],
+    "Description": "The operation that conducts climate risk assessment.",
+    "Name": "Conduct climate risk assessment",
+    "Specializations": [
+      {
+        "AssociatedEntities": "Text (Vulnerability)",
+        "Range": "No",
+        "ForwardDependecy": "Assess risk",
+        "Output": "Vulnerability information",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that provides vulnerability information.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Identify vulnerability"
+      },
+      {
+        "AssociatedEntities": "Text (Exposure)",
+        "Range": "No",
+        "ForwardDependecy": "Assess risk",
+        "Output": "Exposure information",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that provides exposure information.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Identify exposure"
+      },
+      {
+        "AssociatedEntities": "Text",
+        "Range": "No",
+        "BackwardDependency": "Identify vulnerability",
+        "Input": "Impact analysis OR postprocessed impact analysis, vulnerability & exposure information",
+        "Output": "Risk assessment",
+        "InformationType": "Optional",
+        "Role": [
+          "CaseSolver"
+        ],
+        "Description": "The operation that conducts the climate risk assessment.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Assess risk"
+      }
     ]
   }
 ]
