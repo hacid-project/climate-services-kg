@@ -63,3 +63,4 @@
 |CWD_ECF|Coldwave duration (CWD) as defined by the Excess Cold Factor (ECF).|The length of the longest ‘coldwave’ identified by ECF_HWN.|See Appendix D and [Nairn and Fawcett (2013)](#appendixa_refs) for more information.|days|Ann|H, AFS, WRH|
 |CWM_ECF|Coldwave magnitude (CWM) as defined by the Excess Cold Factor (ECF).|The mean temperature of all ‘coldwaves’ identified by ECF_HWN.|See Appendix D and [Nairn and Fawcett (2013)](#appendixa_refs) for more information.|°C^2|Ann|H, AFS, WRH|
 |CWA_ECF|Coldwave amplitude (CWA) as defined by the Excess Cold Factor (ECF).|The minimum daily value in the coldest ‘coldwave’ (defined as the coldwave with lowest ECF_HWM).|See Appendix D and [Nairn and Fawcett (2013)](#appendixa_refs) for more information.|°C^2|Ann|H, AFS, WRH|
+|ETR|Extreme Temperature Range|Mean difference between monthly TX and monthly TN|Average range of maximum and minimum monthly temperature|°C|Mon/Ann||

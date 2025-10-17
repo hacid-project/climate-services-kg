@@ -37,8 +37,8 @@
       "@id": "data:aggregatesVariable",
       "@type": "@id"
     },
-    "suggestedAggregationGrid": {
-      "@id": "data:suggestedAggregationGrid",
+    "suggestedQuantization": {
+      "@id": "data:hasSuggestedQuantization",
       "@type": "@id"
     },
     "permitsTemporalResolution": {
@@ -76,8 +76,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:FD",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -124,8 +125,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TNlt2",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -171,8 +173,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TNltm2",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -218,8 +221,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TNltm20",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -266,8 +270,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:ID",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -314,8 +319,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:SU",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -361,8 +367,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TR",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -409,8 +416,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:GSL",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -454,8 +462,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TXx",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -501,8 +510,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TNn",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -548,8 +558,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:WSDI",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -594,14 +605,16 @@
         "dimension:time",
         {
           "@id": "parameter:minimumLength",
+          "@type": "data:IndependentVariable",
           "label": "minimum length",
           "acronym": "d"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:WSDId",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -655,8 +668,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:CSDI",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -700,14 +714,16 @@
         "dimension:time",
         {
           "@id": "parameter:minimumLength",
+          "@type": "data:IndependentVariable",
           "label": "minimum length",
           "acronym": "d"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:CSDId",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -761,8 +777,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TXgt50p",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -810,8 +827,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TX95t",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:day"
         ]
       },
@@ -856,8 +874,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TMge5",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -903,8 +922,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TMlt5",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -950,8 +970,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TMge10",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -997,8 +1018,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TMlt10",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -1044,8 +1066,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TXge30",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -1092,8 +1115,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TXge35",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -1140,14 +1164,16 @@
         "dimension:time",
         {
           "@id": "parameter:minimumLength",
+          "@type": "data:IndependentVariable",
           "label": "minimum length",
           "acronym": "d"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:TXdTNd",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -1201,14 +1227,16 @@
         "dimension:time",
         {
           "@id": "parameter:baseTemperature",
+          "@type": "data:IndependentVariable",
           "label": "base temperature",
           "acronym": "n"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:HDDheatn",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -1259,14 +1287,16 @@
         "dimension:time",
         {
           "@id": "parameter:baseTemperature",
+          "@type": "data:IndependentVariable",
           "label": "base temperature",
           "acronym": "n"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:CDDcoldn",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -1317,14 +1347,16 @@
         "dimension:time",
         {
           "@id": "parameter:baseTemperature",
+          "@type": "data:IndependentVariable",
           "label": "base temperature",
           "acronym": "n"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:GDDgrown",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -1377,8 +1409,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:CDD",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -1424,8 +1457,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:R20mm",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -1472,8 +1506,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:PRCPTOT",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -1520,8 +1555,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:R95pTOT",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -1566,8 +1602,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:R99pTOT",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -1618,14 +1655,16 @@
         "dimension:time",
         {
           "@id": "parameter:minimumLength",
+          "@type": "data:IndependentVariable",
           "label": "minimum length",
           "acronym": "d"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:RXdday",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -1684,8 +1723,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:SPI",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:3mon",
           "temporalgrid:6mon",
           "temporalgrid:yr"
@@ -1734,8 +1774,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:SPEI",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:3mon",
           "temporalgrid:6mon",
           "temporalgrid:yr"
@@ -1784,14 +1825,16 @@
         "dimension:time",
         {
           "@id": "parameter:minimumLength",
+          "@type": "data:IndependentVariable",
           "label": "minimum length",
           "acronym": "d"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:TXbdTNbd",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -1847,8 +1890,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:DTR",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -1893,8 +1937,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TNx",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -1938,8 +1983,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TXn",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -1983,8 +2029,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TMm",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -2028,8 +2075,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TXm",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -2073,8 +2121,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TNm",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -2118,8 +2167,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TX10p",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2161,8 +2211,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TX90p",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2204,8 +2255,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TN10p",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2247,8 +2299,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:TN90p",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2290,8 +2343,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:CWD",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2333,8 +2387,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:R10mm",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -2384,14 +2439,16 @@
         "dimension:time",
         {
           "@id": "parameter:minimumPrecipitation",
+          "@type": "data:IndependentVariable",
           "label": "minimum precipitation",
           "acronym": "nn"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:Rnnmm",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -2446,8 +2503,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:SDII",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2489,8 +2547,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:R95p",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2532,8 +2591,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:R99p",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2575,8 +2635,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:Rx1day",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -2620,8 +2681,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:Rx5day",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:mon",
           "temporalgrid:yr"
         ]
@@ -2676,14 +2738,16 @@
         "dimension:time",
         {
           "@id": "parameter:heatwaveMethod",
+          "@type": "data:IndependentVariable",
           "label": "heatwave identification method",
           "acronym": "m"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:HWN%28EHF%2FTx90%2FTn90%29",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2743,8 +2807,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWN_EHF",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2791,8 +2856,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWN_Tx90",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2839,8 +2905,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWN_Tn90",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2898,14 +2965,16 @@
         "dimension:time",
         {
           "@id": "parameter:heatwaveMethod",
+          "@type": "data:IndependentVariable",
           "label": "heatwave identification method",
           "acronym": "m"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:HWF%28EHF%2FTx90%2FTn90%29",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -2965,8 +3034,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWF_EHF",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3013,8 +3083,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWF_Tx90",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3061,8 +3132,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWF_Tn90",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3120,14 +3192,16 @@
         "dimension:time",
         {
           "@id": "parameter:heatwaveMethod",
+          "@type": "data:IndependentVariable",
           "label": "heatwave identification method",
           "acronym": "m"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:HWD%28EHF%2FTx90%2FTn90%29",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3187,8 +3261,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWD_EHF",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3235,8 +3310,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWD_Tx90",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3283,8 +3359,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWD_Tn90",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3342,14 +3419,16 @@
         "dimension:time",
         {
           "@id": "parameter:heatwaveMethod",
+          "@type": "data:IndependentVariable",
           "label": "heatwave identification method",
           "acronym": "m"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:HWM%28EHF%2FTx90%2FTn90%29",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3408,8 +3487,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWM_EHF",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3456,8 +3536,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWM_Tx90",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3504,8 +3585,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWM_Tn90",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3563,14 +3645,16 @@
         "dimension:time",
         {
           "@id": "parameter:heatwaveMethod",
+          "@type": "data:IndependentVariable",
           "label": "heatwave identification method",
           "acronym": "m"
         }
       ],
       "definesAggregation": {
         "@id": "aggregation:HWA%28EHF%2FTx90%2FTn90%29",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3629,8 +3713,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWA_EHF",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3677,8 +3762,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWA_Tx90",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3725,8 +3811,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:HWA_Tn90",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3773,8 +3860,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:CWN_ECF",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3820,8 +3908,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:CWF_ECF",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3867,8 +3956,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:CWD_ECF",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3914,8 +4004,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:CWM_ECF",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3961,8 +4052,9 @@
       ],
       "definesAggregation": {
         "@id": "aggregation:CWA_ECF",
+        "@type": "data:Aggregation",
         "aggregatesVariable": "dimension:time",
-        "suggestedAggregationGrid": [
+        "suggestedQuantization": [
           "temporalgrid:yr"
         ]
       },
@@ -3983,6 +4075,54 @@
         "parametric": false,
         "baseVars": [
           "TM"
+        ]
+      }
+    },
+    {
+      "@id": "index:ETR",
+      "@type": [
+        "data:Variable",
+        "data:DependentVariable"
+      ],
+      "acronym": "ETR",
+      "label": "Extreme Temperature Range (ETR)",
+      "definition": "Mean difference between monthly TX and monthly TN",
+      "comment": "Average range of maximum and minimum monthly temperature",
+      "hasUnitOfMeasure": "unit:%C2%B0C",
+      "hasValuesOn": "unit:%C2%B0C",
+      "generated": [],
+      "basedOnVariable": [
+        "variable:tasmin",
+        "variable:tasmax"
+      ],
+      "dependsOnVariable": [
+        "dimension:geodetic",
+        "dimension:time"
+      ],
+      "definesAggregation": {
+        "@id": "aggregation:ETR",
+        "@type": "data:Aggregation",
+        "aggregatesVariable": "dimension:time",
+        "suggestedQuantization": [
+          "temporalgrid:mon",
+          "temporalgrid:yr"
+        ]
+      },
+      "rest": {
+        "shortName": "ETR",
+        "longName": "Extreme Temperature Range",
+        "definition": "Mean difference between monthly TX and monthly TN",
+        "description": "Average range of maximum and minimum monthly temperature",
+        "units": "°C",
+        "timeScales": [
+          "Mon",
+          "Ann"
+        ],
+        "sectors": [],
+        "parametric": false,
+        "baseVars": [
+          "TN",
+          "TX"
         ]
       }
     }
