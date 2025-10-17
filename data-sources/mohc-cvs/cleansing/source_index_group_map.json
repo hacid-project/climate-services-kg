@@ -1,0 +1,10 @@
+{
+    "Climate-ADAPT": {
+        "Maximum Temperature (climateADAPT)": "Maximum Temperature",
+        "Minimum Temperature (climateADAPT)": "Minimum Temperature"
+    },
+    "UK CRI": {
+        "Maximum Temperature (CRI)": "Maximum Temperature",
+        "Minimum Temperature (CRI)": "Minimum Temperature"
+    }
+}

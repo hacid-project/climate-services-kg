@@ -1,0 +1,24 @@
+{
+    "Extreme Precipitation": "Extreme Precipitation Total",
+    "CWN_ECF_ECF": "CWN_ECF",
+    "Cooling Degree Days (UK)": "Cooling Degree Days",
+    "Days Over Field Capacity": "Days Above Field Capacity",
+    "HWA": "HWA(EHF/Tx90/Tn90)",
+    "HWD": "HWD(EHF/Tx90/Tn90)",
+    "HWF": "HWF(EHF/Tx90/Tn90)",
+    "HWM": "HWM(EHF/Tx90/Tn90)",
+    "HWN": "HWN(EHF/Tx90/Tn90)",
+    "Marine Heatwaves Days Index": "Marine Heatwaves Days Index (MHD)",
+    "Mean Temperature (Daily)": "Mean Temperature",
+    "Minimum Temperature (Seasonal!)": "Minimum Temperature",
+    "River Flood (ClimateADAPT)": "River Flood",
+    "River Flood (UK CRI)": [
+        "River Flood (10-Year Return Period)",
+        "River Flood (2-Year Return Period)",
+        "River Flood (5-Year Return Period)",
+        "River Flood (Likelihood of Current 10-Year Event)"
+    ],
+    "Relative Sea Level": "Relative Sea Level Rise",
+    "Supply Side: SPI Drought": "SPI Drought",
+    "Total Precipitation (Daily)": "Total Precipitation"
+}

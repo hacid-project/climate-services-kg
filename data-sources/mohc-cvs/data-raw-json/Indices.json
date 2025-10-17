@@ -7,7 +7,7 @@
     "AssociatedVariable": "tas",
     "Commentary": "Like TMm, but for seasonal instead of daily mean temperatures",
     "LinkToCLIMDEX": "TMm",
-    "CLIMDEXRelation": "relatedTo",
+    "CLIMDEXRelation": "identicalTo",
     "LinkedIndicators": "Mean temperature",
     "LinkedIndicatorRelation": "relatedTo",
     "Sector": [],
@@ -22,7 +22,7 @@
     "AssociatedVariable": "tmin",
     "Commentary": "Like TNm, but for seasonal instead of daily min temperatures",
     "LinkToCLIMDEX": "TNm",
-    "CLIMDEXRelation": "relatedTo",
+    "CLIMDEXRelation": "identicalTo",
     "LinkedIndicators": "Minimum temperature (climateADAPT)",
     "LinkedIndicatorRelation": "relatedTo",
     "Sector": [
@@ -41,7 +41,7 @@
     "AssociatedVariable": "tmax",
     "Commentary": "Like TXm, but for seasonal instead of daily max temperatures",
     "LinkToCLIMDEX": "TXm",
-    "CLIMDEXRelation": "relatedTo",
+    "CLIMDEXRelation": "identicalTo",
     "LinkedIndicators": "Maximum temperature (climateADAPT)",
     "LinkedIndicatorRelation": "relatedTo",
     "Sector": [
@@ -606,7 +606,7 @@
     "Commentary": "Described in detail in Arnell et al. (2021) https://doi.org/10.1088/1748-9326/abd9f3",
     "LinkToCLIMDEX": null,
     "CLIMDEXRelation": null,
-    "LinkedIndicators": "Met Office Fire Danger; Wildfire: FFMC 00th percentile; Fire Weather Index",
+    "LinkedIndicators": "Met Office Fire Danger; Wildfire: FFMC 99th percentile; Fire Weather Index",
     "LinkedIndicatorRelation": "relatedTo",
     "Sector": [
       "Disaster Risk Reduction",

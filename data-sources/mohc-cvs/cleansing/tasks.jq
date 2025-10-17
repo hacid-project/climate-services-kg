@@ -3,11 +3,6 @@ def trim:
     ltrimstr(" ") | ltrimstr("\t") |  ltrimstr("\n") |
     rtrimstr(" ") | rtrimstr("\t") |  rtrimstr("\n");
 
-def to_camel_case:
-    split(" ") |
-    map((.[:1] | ascii_upcase) + (.[1:] | ascii_downcase)) |
-    join("");
-
 # gerund_to_base: convert a regular gerund (string) -> base verb (string).
 # Works for most regular patterns; extend "exceptions" with irregular gerunds if needed.
 def gerund_to_base:
@@ -175,8 +170,6 @@ def get_information_type:
 [
     $all_operations | .[] | select(.Task | length > 0) |
     .Name = .Task |
-#    .Label = .Task |
-#    .Id = (.Task | to_camel_case) |
     del(.Task)
 ] as $generic_operations |
 
@@ -184,8 +177,6 @@ def get_information_type:
     [
         $all_operations | .[] | select(.Subtask | length > 0) |
         .Name = .Subtask |
-#        .Label = .Subtask |
-#        .Id = (.Subtask | to_camel_case) |
         del(.Subtask)
     ] | group_by(.ParentTask) |
     [
@@ -206,7 +197,6 @@ def get_information_type:
 [
     (.[] | select(.[0].ParentTask) | {
         Name: .[0].ParentTask,
-#        Id: (.[0].ParentTask | to_camel_case),
         Specializations: map(del(.ParentTask))
     }),
     (.[] | select(.[0].ParentTask | not) | .[])
