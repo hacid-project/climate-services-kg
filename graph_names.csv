@@ -4,6 +4,7 @@ ontologies/ccso/ccso.owl,https://w3id.org/hacid/onto/ccso,n
 ontologies/top-level/top-level.owl,https://w3id.org/hacid/onto/top-level,n
 data-sources/collections.ttl,https://w3id.org/hacid/data/cs,n
 data-sources/common-spacetime.ttl,https://w3id.org/hacid/data/cs,n
+data-sources/mips.ttl,https://w3id.org/hacid/data/cs,n
 data-sources/activities/rdf/data.ttl,https://w3id.org/hacid/data/cs/cmip6/cvs,y
 data-sources/experiments/rdf/data.ttl,https://w3id.org/hacid/data/cs/cmip6/cvs,y
 data-sources/istitutions/rdf/data.ttl,https://w3id.org/hacid/data/cs/cmip6/cvs,y
