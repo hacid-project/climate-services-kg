@@ -135,6 +135,13 @@ def fix_description:
     "Case solver": "CaseSolver"
 } as $role_map |
 
+{
+    "Search additional Information": "Search additional information"
+} as $task_name_map |
+
+def fix_tax_name:
+    $task_name_map[.] // .;
+
 def get_information_type:
     . as $task |
     if .AssociatedEntities | startswith("Text") then
@@ -169,15 +176,16 @@ def get_information_type:
 
 [
     $all_operations | .[] | select(.Task | length > 0) |
-    .Name = .Task |
+    .Name = (.Task | fix_tax_name) |
     del(.Task)
 ] as $generic_operations |
 
 (
     [
         $all_operations | .[] | select(.Subtask | length > 0) |
-        .Name = .Subtask |
-        del(.Subtask)
+        .Name = (.Subtask | fix_tax_name) |
+        del(.Subtask) |
+        .ParentTask |= fix_tax_name
     ] | group_by(.ParentTask) |
     [
         .[] | {

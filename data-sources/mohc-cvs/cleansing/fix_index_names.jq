@@ -10,7 +10,7 @@ def trim:
 def fix_index_name:
     $index_name_maps[0] as $index_name_map |
     trim |
-    string_utils::capitalize |
+    string_utils::capitalize_all |
     ($index_name_map[.]? | (.[]? // .)) // .;
 
 def group_by_group:

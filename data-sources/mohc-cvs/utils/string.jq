@@ -11,11 +11,30 @@ def to_camel_case:
 def split_by_sep:
     match("[- (),.?!;,\n\t]|[^- (),.?!;,\n\t]+"; "g") | .string;
 
-def capitalize:
+def capitalize($all):
     {of: true, the: true} as $exceptions |
+    [ split_by_sep ] |
     [
-        split_by_sep | 
-        if (.[1:] | ascii_downcase) == .[1:] and (in($exceptions) | not) then
-            (.[:1] | ascii_upcase) + .[1:]
-        end
+        (
+            .[0] |
+            if (.[1:] | ascii_downcase) == .[1:] then
+                (.[:1] | ascii_upcase) + .[1:]
+            end
+        ),
+        (
+            .[1:].[] |
+            if (.[1:] | ascii_downcase) == .[1:] then
+                if $all and (in($exceptions) | not) then
+                    (.[:1] | ascii_upcase) + .[1:]
+                else
+                    (.[:1] | ascii_downcase) + .[1:]
+                end
+            end
+        )
     ] | join("");
+
+def capitalize_first:
+    capitalize(false);
+
+def capitalize_all:
+    capitalize(true);

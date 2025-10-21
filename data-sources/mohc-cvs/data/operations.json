@@ -359,7 +359,7 @@
       "CaseSolver"
     ],
     "Description": "The operation that requests external expertise such as an expert or literature review.",
-    "Name": "Search additional Information",
+    "Name": "Search additional information",
     "Specializations": [
       {
         "AssociatedEntities": "Text",

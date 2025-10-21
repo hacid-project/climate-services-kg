@@ -1,21 +1,29 @@
 [
   {
-    "AppliedInTask": "Spatial Downscaling Application",
+    "ApplicableToOperation": [
+      "Spatial downscaling application"
+    ],
     "Name": "Spatial downscaling",
     "Methods": [
       {
-        "AppliedInTask": "Spatial Downscaling Application",
         "Definition": "When higher spatial resolution data required",
+        "ApplicableToOperation": [
+          "Spatial downscaling application"
+        ],
         "Name": "Statistical downscaling"
       },
       {
-        "AppliedInTask": "Spatial Downscaling Application",
         "Definition": "When higher spatial resolution data required",
+        "ApplicableToOperation": [
+          "Spatial downscaling application"
+        ],
         "Name": "Dynamical downscaling using climate models"
       },
       {
-        "AppliedInTask": "Spatial Downscaling Application",
         "Definition": "When computer resource requirements are too great",
+        "ApplicableToOperation": [
+          "Spatial downscaling application"
+        ],
         "Name": "AI methods (experimental)"
       }
     ]
@@ -23,189 +31,349 @@
   {
     "Alias": [
       "Bias adjustment",
-      "calibration",
-      "bias calibration",
-      "bias correction using statistical techniques"
+      "Calibration",
+      "Bias calibration",
+      "Bias correction using statistical techniques"
     ],
-    "AppliedInTask": "Data Preprocessing Application",
     "Definition": "When combining model and obs climate data",
+    "ApplicableToOperation": [
+      "Data preprocessing application"
+    ],
     "Name": "Bias correction",
     "Methods": [
       {
         "Alias": [
           "Delta change method"
         ],
-        "AppliedInTask": "Data Preprocessing Application",
+        "ApplicableToOperation": [
+          "Data preprocessing application"
+        ],
         "Name": "Delta method"
       },
       {
         "Alias": [
           "QM"
         ],
-        "AppliedInTask": "Data Preprocessing Application",
+        "ApplicableToOperation": [
+          "Data preprocessing application"
+        ],
         "Name": "Quantile mapping"
       },
       {
-        "AppliedInTask": "Data Preprocessing Application",
+        "ApplicableToOperation": [
+          "Data preprocessing application"
+        ],
         "Name": "Linear scaling"
       },
       {
         "Alias": [
           "QDM"
         ],
-        "AppliedInTask": "Data Preprocessing Application",
+        "ApplicableToOperation": [
+          "Data preprocessing application"
+        ],
         "Name": "Quantile delta mapping"
       },
       {
         "Alias": [
           "SDM"
         ],
-        "AppliedInTask": "Data Preprocessing Application",
+        "ApplicableToOperation": [
+          "Data preprocessing application"
+        ],
         "Name": "Scale distribution mapping"
       },
       {
         "Alias": [
           "CDFt",
-          "Cumulative Distribution Function transform"
+          "Cumulative distribution function transform"
         ],
-        "AppliedInTask": "Data Preprocessing Application",
+        "ApplicableToOperation": [
+          "Data preprocessing application"
+        ],
         "Name": "CDF-t"
       },
       {
-        "AppliedInTask": "Data Preprocessing Application",
+        "ApplicableToOperation": [
+          "Data preprocessing application"
+        ],
         "Name": "Equidistant CDF matching"
       },
       {
-        "AppliedInTask": "Data Preprocessing Application",
+        "ApplicableToOperation": [
+          "Data preprocessing application"
+        ],
         "Name": "ISIMIP3BASD"
       }
     ]
   },
   {
-    "AppliedInTask": "Global warming level extraction",
+    "ApplicableToOperation": [
+      "Global warming level extraction"
+    ],
     "Name": "Global warming level extraction",
     "Methods": [
       {
         "Alias": [
           "Time sampling",
-          "time slicing"
+          "Time slicing"
         ],
-        "AppliedInTask": "Global warming level extraction",
         "Definition": "Most common: almost all applications, with or without particular emissions scenario",
+        "ApplicableToOperation": [
+          "Global warming level extraction"
+        ],
         "Name": "Time slice"
       },
       {
         "Alias": [
           "Sub-selection"
         ],
-        "AppliedInTask": "Global warming level extraction",
         "Definition": "No strict future time period requirements: allows to select all models exceeding the GWL",
+        "ApplicableToOperation": [
+          "Global warming level extraction"
+        ],
         "Name": "Model sub-selection"
       },
       {
-        "AppliedInTask": "Global warming level extraction",
+        "ApplicableToOperation": [
+          "Global warming level extraction"
+        ],
         "Name": "Pattern scaling"
       }
     ]
   },
   {
-    "Name": "Statistical analyses"
-  },
-  {
-    "Name": "Statistical analyses - Descriptive statistics",
+    "Category": "Statistical analyses",
+    "Name": "Descriptive statistics",
     "Methods": [
       {
-        "AppliedInTask": "Index Computation; Data Preprocessing Application; Spatial Aggregation; Data Postprocessing Application; Impact analysis postprocessing",
         "Definition": "Spatial aggregation, temporal aggregation",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Index computation",
+          "Data preprocessing application",
+          "Spatial aggregation",
+          "Data postprocessing application",
+          "Impact analysis postprocessing"
+        ],
         "Name": "Mean"
       },
       {
-        "AppliedInTask": "Uncertainty Quantification Application",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Uncertainty quantification application"
+        ],
         "Name": "Standard deviation"
       },
       {
-        "Alias": [
-          "Variants: median",
-          "quartile",
-          "decile",
-          "percentile"
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application",
+          "Uncertainty quantification application"
         ],
-        "AppliedInTask": "Climate Change Quantification Application; Uncertainty Quantification Application",
         "Name": "Quantiles"
       },
       {
-        "AppliedInTask": "Data preprocessing Application; Data Postprocessing Application; Impact analysis postprocessing",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Data preprocessing application",
+          "Data postprocessing application",
+          "Impact analysis postprocessing"
+        ],
         "Name": "Median"
       },
       {
-        "AppliedInTask": "Index Computation",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Index computation"
+        ],
         "Name": "Maximum"
       },
       {
-        "AppliedInTask": "Index Computation",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Index computation"
+        ],
         "Name": "Minimum"
       },
       {
-        "AppliedInTask": "Index Computation",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Index computation"
+        ],
         "Name": "Duration"
       }
     ]
   },
   {
-    "AppliedInTask": "Climate Change Quantification Application",
-    "Name": "Statistical analyses - ensemble statistics",
+    "Category": "Statistical analyses",
+    "ApplicableToOperation": [
+      "Climate change quantification application"
+    ],
+    "Name": "ensemble statistics",
     "Methods": [
       {
-        "AppliedInTask": "Climate Change Quantification Application",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
         "Name": "Ensemble mean"
       },
       {
-        "AppliedInTask": "Climate Change Quantification Application",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
         "Name": "Ensemble median"
       },
       {
-        "AppliedInTask": "Uncertainty Quantification Application",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Uncertainty quantification application"
+        ],
         "Name": "Ensemble standard deviation"
       },
       {
-        "AppliedInTask": "Uncertainty Quantification Application",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Uncertainty quantification application"
+        ],
         "Name": "Ensemble range"
       },
       {
         "Alias": [
           "Weighted mean"
         ],
-        "AppliedInTask": "Climate Change Quantification Application",
         "Definition": "When multiple climate models are being used, scientists want to combine them in a way to capture how well the climate models perform.",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
         "Name": "Model weighting"
       }
     ]
   },
   {
-    "AppliedInTask": "Climate Change Quantification Application; Data Preprocessing Application; Data Postprocessing Application; Impact analysis postprocessing",
-    "Name": "Statistical analyses - Time series analysis"
+    "Category": "Statistical analyses",
+    "ApplicableToOperation": [
+      "Climate change quantification application",
+      "Data preprocessing application",
+      "Data postprocessing application",
+      "Impact analysis postprocessing"
+    ],
+    "Name": "Time series analysis",
+    "Methods": [
+      {
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
+        "Name": "Difference Quantification"
+      },
+      {
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
+        "Name": "Trend analysis"
+      },
+      {
+        "Alias": [
+          "Filtering",
+          "Smoothing"
+        ],
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Data preprocessing application",
+          "Data postprocessing application",
+          "Impact analysis postprocessing"
+        ],
+        "Name": "Temporal smoothing"
+      },
+      {
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
+        "Name": "Spectral analysis"
+      },
+      {
+        "Alias": [
+          "ARI",
+          "Recurrence interval",
+          "Average recurrence interval",
+          "Return period",
+          "Repeat interval"
+        ],
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
+        "Name": "Return period analysis"
+      },
+      {
+        "Alias": [
+          "EP"
+        ],
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
+        "Name": "Exceedance probability"
+      },
+      {
+        "Alias": [
+          "Cumulative frequency analysis"
+        ],
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
+        "Name": "Frequency analysis"
+      }
+    ]
   },
   {
     "Alias": [
       "Regridding",
-      "gap-filling [note for CNR: different applications!]"
+      "Gap-filling [note for CNR: different applications!]"
     ],
-    "AppliedInTask": "Data Preprocessing Application; Data postprocessing application; Impact analysis postprocessing",
-    "Name": "Statistical analysis - Spatial interpolation",
+    "Category": "Statistical analyses",
+    "ApplicableToOperation": [
+      "Data preprocessing application",
+      "Data postprocessing application",
+      "Impact analysis postprocessing"
+    ],
+    "Name": "Spatial interpolation",
     "Methods": [
       {
-        "AppliedInTask": "Data Preprocessing Application; Data postprocessing application; Impact analysis postprocessing",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Data preprocessing application",
+          "Data postprocessing application",
+          "Impact analysis postprocessing"
+        ],
         "Name": "Bilinear"
       },
       {
-        "AppliedInTask": "Data Preprocessing Application; Data postprocessing application; Impact analysis postprocessing",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Data preprocessing application",
+          "Data postprocessing application",
+          "Impact analysis postprocessing"
+        ],
         "Name": "Nearest neighbour"
       },
       {
         "Alias": [
           "IDW"
         ],
-        "AppliedInTask": "Data Preprocessing Application; Data postprocessing application; Impact analysis postprocessing",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Data preprocessing application",
+          "Data postprocessing application",
+          "Impact analysis postprocessing"
+        ],
         "Name": "Inverse distance weighting"
       }
     ]
@@ -214,95 +382,145 @@
     "Alias": [
       "Critical values"
     ],
-    "AppliedInTask": "Index computation; Climate Change Quantification Application",
-    "Name": "Statistical analysis - Thresholds",
+    "Category": "Statistical analyses",
+    "ApplicableToOperation": [
+      "Index computation",
+      "Climate change quantification application"
+    ],
+    "Name": "Thresholds",
     "Methods": [
       {
         "Alias": [
           "POT"
         ],
-        "AppliedInTask": "Climate Change Quantification Application",
         "Definition": "To identify extreme values for use in extreme value analysis",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
         "Name": "Peaks-over-threshold"
       },
       {
         "Alias": [
           "Thresholding"
         ],
-        "AppliedInTask": "Index computation; Climate Change Quantification Application",
         "Definition": "In cases like suitability classification. Might involve multiple thresholds and more complex logic.\nFor index computation: all indices where values exceed or are below the threshold (e.g., 1 mm, 303.15 K, etc.) as required by the inequality expression",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Index computation",
+          "Climate change quantification application"
+        ],
         "Name": "Threshold analysis"
       }
     ]
   },
   {
-    "AppliedInTask": "Model Simulation Evaluation; Climate Change Quantification Application",
     "Definition": "“downscaling” larger scale metrics to assess impacts data (case 1) or for categorisation of different conditions (case 2)",
-    "Name": "Statistical analysis -Pattern matching"
+    "Category": "Statistical analyses",
+    "ApplicableToOperation": [
+      "Model simulation evaluation",
+      "Climate change quantification application"
+    ],
+    "Name": "attern matching"
   },
   {
-    "AppliedInTask": "Climate Change Quantification Application",
-    "Name": "Statistical analysis - Inferential Statistics",
+    "Category": "Statistical analyses",
+    "ApplicableToOperation": [
+      "Climate change quantification application"
+    ],
+    "Name": "Inferential Statistics",
     "Methods": [
       {
         "Alias": [
           "Statistical testing",
-          "statistical test",
-          "hypothesis testing",
-          "statistical hypothesis test"
+          "Statistical test",
+          "Hypothesis testing",
+          "Statistical hypothesis test"
         ],
-        "AppliedInTask": "Climate Change Quantification Application",
         "Definition": "Usually used to check whether the result is showing a robust change (i.e. based on delta change analysis)",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application"
+        ],
         "Name": "Significance testing"
       }
     ]
   },
   {
-    "AppliedInTask": "Climate Change Quantification Application; Impact analysis",
-    "Name": "Statistical analyses - Transfer function",
+    "Category": "Statistical analyses",
+    "ApplicableToOperation": [
+      "Climate change quantification application",
+      "Impact analysis"
+    ],
+    "Name": "Transfer function",
     "Methods": [
       {
-        "AppliedInTask": "Climate Change Quantification Application; Impact analysis",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application",
+          "Impact analysis"
+        ],
         "Name": "Linear regression"
       },
       {
-        "AppliedInTask": "Climate Change Quantification Application; Impact analysis",
         "Definition": "Example: Haugen et al. (2019) https://doi.org/10.5194/ascmo-5-37-2019.",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Climate change quantification application",
+          "Impact analysis"
+        ],
         "Name": "Quantile regression"
       }
     ]
   },
   {
-    "Name": "Statistical analyses - Uncertainty quantification",
+    "Category": "Statistical analyses",
+    "Name": "Uncertainty quantification",
     "Methods": [
       {
         "Alias": [
           "CDF",
-          "theoretical cumulative probability",
-          "theoretical distribution function",
-          "cumulative probability distribution function"
+          "Theoretical cumulative probability",
+          "Theoretical distribution function",
+          "Cumulative probability distribution function"
         ],
-        "AppliedInTask": "Uncertainty Quantification Application",
         "Definition": "When enough sample points available",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Uncertainty quantification application"
+        ],
         "Name": "Cumulative Distribution Function"
       },
       {
         "Alias": [
           "PDF"
         ],
-        "AppliedInTask": "Uncertainty Quantification Application",
         "Definition": "When enough sample points available",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Uncertainty quantification application"
+        ],
         "Name": "Probability Density Function"
       },
       {
         "Alias": [
           "ECDF",
           "EDF",
-          "empirical cumulative distribution function"
+          "Empirical cumulative distribution function"
         ],
-        "AppliedInTask": "Uncertainty Quantification Application",
         "Definition": "When enough sample points available",
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Uncertainty quantification application"
+        ],
         "Name": "Empirical Distribution Function [notes for CNR: possibly a sub-method for CDF?]"
+      },
+      {
+        "Category": "Statistical analyses",
+        "ApplicableToOperation": [
+          "Uncertainty quantification application"
+        ],
+        "Name": "Extreme value distribution"
       }
     ]
   }
