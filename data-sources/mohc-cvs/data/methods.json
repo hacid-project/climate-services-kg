@@ -160,12 +160,12 @@
     ]
   },
   {
-    "Definition": "Wikidata: Q380344\nhttps://www.wikidata.org/wiki/Q380344",
+    "Definition": "Field of quantitative research: the process of using and analysing quantitatively described or summarised features from a collection of information (Wikidata: Q380344)\nhttps://www.wikidata.org/wiki/Q380344 + https://en.wikipedia.org/wiki/Descriptive_statistics",
     "Category": "Statistical analyses",
     "Name": "Descriptive statistics",
     "Methods": [
       {
-        "Definition": "Wikidata: Q19033\nhttps://www.wikidata.org/wiki/Q19033",
+        "Definition": "Sum of a collection of numbers divided by the number of numbers in the collection (Wikidata: Q19033)\nhttps://www.wikidata.org/wiki/Q19033",
         "Usage": "Spatial aggregation, temporal aggregation",
         "ApplicableToOperations": [
           "Compute climate indices",
@@ -177,7 +177,7 @@
         "Name": "Mean"
       },
       {
-        "Definition": "Wikidata: Q159375\nhttps://www.wikidata.org/wiki/Q159375",
+        "Definition": "Dispersion of the values ​​of a random variable around its expected value (Wikidata: Q159375)\nhttps://www.wikidata.org/wiki/Q159375",
         "ApplicableToOperations": [
           "Uncertainty quantification application"
         ],
@@ -192,7 +192,7 @@
         "Name": "Quantiles"
       },
       {
-        "Definition": "Wikidata: Q226995\nhttps://www.wikidata.org/wiki/Q226995",
+        "Definition": "Middle quantile of a data set or probability distribution (Wikidata: Q226995)\nhttps://www.wikidata.org/wiki/Q226995",
         "ApplicableToOperations": [
           "Apply data preprocessing",
           "Postprocess climate information",
@@ -201,21 +201,21 @@
         "Name": "Median"
       },
       {
-        "Definition": "Wikidata: Q10578722\nhttps://www.wikidata.org/wiki/Q10578722",
+        "Definition": "Greatest or largest value or element (Wikidata: Q10578722)\nhttps://www.wikidata.org/wiki/Q10578722",
         "ApplicableToOperations": [
           "Compute climate indices"
         ],
         "Name": "Maximum"
       },
       {
-        "Definition": "Wikidata: Q10585806\nhttps://www.wikidata.org/wiki/Q10585806",
+        "Definition": "Lowest or smallest value or item in a partially ordered set (Wikidata: Q10585806)\nhttps://www.wikidata.org/wiki/Q10585806",
         "ApplicableToOperations": [
           "Compute climate indices"
         ],
         "Name": "Minimum"
       },
       {
-        "Definition": "Wikidata: Q2199864\nhttps://www.wikidata.org/wiki/Q2199864",
+        "Definition": "Physical quantity for describing the temporal distance between events (Wikidata: Q2199864)\nhttps://www.wikidata.org/wiki/Q2199864",
         "ApplicableToOperations": [
           "Compute climate indices"
         ],
@@ -280,7 +280,7 @@
     ]
   },
   {
-    "Definition": "Wikidata: Q11850042\nhttps://www.wikidata.org/wiki/Q11850042",
+    "Definition": "Area of statistics: methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data (Wikidata: Q11850042)\nhttps://www.wikidata.org/wiki/Q11850042 + https://en.wikipedia.org/wiki/Time_series",
     "Category": "Statistical analyses",
     "ApplicableToOperations": [
       "Quantify future climate change",
@@ -416,7 +416,7 @@
     "Alias": [
       "Critical values"
     ],
-    "Definition": "Wikidata: Q3754024\nhttps://www.wikidata.org/wiki/Q3754024",
+    "Definition": "Mathematical values with different meanings by domain; a quantitative threshold (Wikidata: Q3754024)\nhttps://www.wikidata.org/wiki/Q3754024",
     "Category": "Statistical analyses",
     "ApplicableToOperations": [
       "Compute climate indices",
@@ -518,7 +518,7 @@
     ]
   },
   {
-    "Definition": "Wikidata: Q7882499\nhttps://www.wikidata.org/wiki/Q7882499",
+    "Definition": "Characterization and reduction of uncertainties in both computational and real world applications (Wikidata: Q7882499)\nhttps://www.wikidata.org/wiki/Q7882499",
     "Category": "Statistical analyses",
     "Name": "Uncertainty quantification",
     "ApplicableToOperations": [
