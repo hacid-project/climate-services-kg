@@ -56,6 +56,7 @@ def check_operation:
         .TypeOfAnalysis |= .["Statistical analyses - " | length : ] |
         if .TypeOfAnalysis == "" then empty end
     end |
+    .TypeOfAnalysis |= ((split("+") | .[0] | trim) | string_utils::capitalize_first) |
     if .AppliedInTask? then
         .ApplicableToOperations = (
             .AppliedInTask | split(";") |
@@ -81,7 +82,7 @@ def check_operation:
     [
         .[] | {
             key: .[0].TypeOfAnalysis,
-            value: map(del(.TypeOfAnalysis))
+            value: map(del(.TypeOfAnalysis) | del(.Category))
         }
     ]| from_entries
 ) as $methods |

@@ -167,7 +167,6 @@
       {
         "Definition": "Wikidata: Q19033\nhttps://www.wikidata.org/wiki/Q19033",
         "Usage": "Spatial aggregation, temporal aggregation",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Index computation",
           "Data preprocessing application",
@@ -179,7 +178,6 @@
       },
       {
         "Definition": "Wikidata: Q159375\nhttps://www.wikidata.org/wiki/Q159375",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Uncertainty quantification application"
         ],
@@ -187,7 +185,6 @@
       },
       {
         "Definition": "[Note to CNR: can also reference wikidata Q578714] \nA quantile defines a particular part of a data set, i.e., a quantile determines how many values in a distribution are above or below a certain limit. Special quantiles are the quartile (quarter), the decile (tenth), and percentiles (hundredth).\nhttps://www.statista.com/statistics-glossary/definition/356/quantile/",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application",
           "Uncertainty quantification application"
@@ -196,7 +193,6 @@
       },
       {
         "Definition": "Wikidata: Q226995\nhttps://www.wikidata.org/wiki/Q226995",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Data preprocessing application",
           "Data postprocessing application",
@@ -206,7 +202,6 @@
       },
       {
         "Definition": "Wikidata: Q10578722\nhttps://www.wikidata.org/wiki/Q10578722",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Index computation"
         ],
@@ -214,7 +209,6 @@
       },
       {
         "Definition": "Wikidata: Q10585806\nhttps://www.wikidata.org/wiki/Q10585806",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Index computation"
         ],
@@ -222,11 +216,17 @@
       },
       {
         "Definition": "Wikidata: Q2199864\nhttps://www.wikidata.org/wiki/Q2199864",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Index computation"
         ],
         "Name": "Duration"
+      },
+      {
+        "Definition": "Model bias is defined as the average of the difference between a GCM’s simulations and some baseline values. The baseline values can come from observations or a benchmark model simulation, or ensemble mean. Bias indicates a systematic difference, and bias relative to reliable observations is interpreted as “error”. [1] Bias can be quantified by a mean of differences between a simulation member and baseline (or mean absolute error, MAE, in the case of deriving absolute errors) or quantile difference (especially considering extremes).\n[1] https://glisa.umich.edu/wp-content/uploads/2021/03/Global-Climate-Model-Bias-and-Bias-Correction.pdf",
+        "ApplicableToOperations": [
+          "Climate simulation evaluation"
+        ],
+        "Name": "Bias quantification"
       }
     ]
   },
@@ -236,11 +236,10 @@
     "ApplicableToOperations": [
       "Climate change quantification application"
     ],
-    "Name": "ensemble statistics",
+    "Name": "Ensemble statistics",
     "Methods": [
       {
         "Definition": "The ensemble mean is the average of the output values of the ensemble members (i.e. the sum of the values divided by the number of ensemble members unless models are weighted).\nEach ensemble member result is the sum of a smooth forced signal and the accompanying natural variability noise. The natural variability is different for each model/ensemble member and tends to average out so that the ensemble mean estimates the smooth forced signal. The multi-model ensemble mean represents those features of projected climate change that survive ensemble averaging and so are common to models as a group. https://confluence.ecmwf.int/display/FUG/Section+8.1.2+ENS+Mean+and+Spread\nhttps://archive.ipcc.ch/ipccreports/tar/wg1/347.htm",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -248,7 +247,6 @@
       },
       {
         "Definition": "The ensemble median is the middle value of the output values of the ensemble members when sorted into a list (i.e. the same number of ensemble member values below and above the middle value). The median lies at the centre of the range of the ensemble members and can be more descriptive of the data set than the mean. https://confluence.ecmwf.int/display/FUG/Section+8.1.2+ENS+Mean+and+Spread",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -256,7 +254,6 @@
       },
       {
         "Definition": "The multi-model ensemble variance, assuming no correlation between the forced and variability components, measures the inter-model scatter of the forced component and the natural variability. The scatter of results about the ensemble mean (measured by the ensemble variance/standard deviation) is an indication of uncertainty in the results and is seen to increase with time. https://archive.ipcc.ch/ipccreports/tar/wg1/347.htm",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Uncertainty quantification application"
         ],
@@ -264,7 +261,6 @@
       },
       {
         "Definition": "The ensemble range (also known as ensemble value range) is a confidence measure that provides information about the ensemble spread of the projected climate change signals. The ensemble range indicates the range of the central half of the models, i.e. the models that group around the median of the models (i.e. the interquartile range).\nhttps://climateinformation.org/knowledge-base/how-to-interpret-ensemble-value-range/",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Uncertainty quantification application"
         ],
@@ -276,7 +272,6 @@
         ],
         "Definition": "Climate model weighting is a technique used to improve the reliability and reduce bias and spread of climate projections by giving different climate models in an ensemble different levels\nof influence. Instead of averaging all models equally, this approach assigns weights to each ensemble member.\nWeights are typically calculated based on historical model performance in several metrics as well as by their independence to all the other models in the ensemble based on their output fields in several metrics.\nBased on Knutti et al. (2017) https://doi.org/10.1002/2016GL072012\nhttps://docs.esmvaltool.org/en/latest/recipes/recipe_climwip.html",
         "Usage": "When multiple climate models are being used, scientists want to combine them in a way to capture how well the climate models perform.",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -297,7 +292,6 @@
     "Methods": [
       {
         "Definition": "The difference can be quantified either by absolute delta, relative delta (percentage change between the future climate and baseline relative to baseline, pre-processed similarly), or standardised anomaly calculation among other methods.\nAbsolute delta is the difference between the future climate and baseline of the variable. In both cases variables are annual climatological normals, i.e. averaged over the 30 years (Navarro-Racines et al., 2020).\nRelative delta is the percentage change between the future climate and baseline relative to the baseline. As previously, the variables are annual climatological normals. [1]\nThe standardised anomalies, also referred to as normalised anomalies, measure the magnitude of climate change, at local level, by quantifying the distance, measured in standard units,\nbetween a data value at a location and its corresponding mean. The metric is calculated by dividing anomalies – with anomalies being defined as the deviation observed in each time from a baseline – by the standard deviation of the interannual variability during the baseline period.\nThe Standardized local anomalies measure the degree of similarity and dissimilarity between two distinct time periods (e.g. between a baseline and future period) using the standardized Euclidean distance (SED). Higher SED scores correlate with more significant local climate change and incorporate alterations across all considered variables. [2,3]\n[1] Navarro-Racines et al. (2020) https://doi.org/10.1038/s41597-019-0343-8\n[2]Taheri et al. (2024) https://doi.org/10.1111/ecog.07176\n[3]Hubbard et al. (2025) https://doi.org/10.1111/ecog.07614",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -305,7 +299,6 @@
       },
       {
         "Definition": "Given a time series of climate variable, the trend is the rate at which the variable changes over a time period. The trend may be linear or nonlinear. However, generally, it is synonymous with the linear slope of the line fit to the time series.\nhttps://climatedataguide.ucar.edu/climate-data-tools-and-analysis/trend-analysis",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -317,7 +310,6 @@
           "Smoothing"
         ],
         "Definition": "An averaging of data in time, designed to compensate for random errors or fluctuations of a scale smaller than that presumed significant to the problem at hand.\nhttps://glossary.ametsoc.org/wiki/Smoothing",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Data preprocessing application",
           "Data postprocessing application",
@@ -327,7 +319,6 @@
       },
       {
         "Definition": "Spectral analysis is defined as a set of mathematical tools that characterise signals based on their frequency content [1]. Spectral analysis was initially developed to analyse time-dependent functions and time series, aiming to identify underlying spectral content. This typically involved identifying frequencies within the series that contain significant amplitudes. Nonparametric or parametric methods are applied to a time series, or to any sequential data with at least one independent variable such as spatial coordinates. The analysis separates out spectral content such as waves or oscillations, extracting data or filtering the data to simplify future processing [2].\n[1] https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/spectral-analysis\n[2] Silversides (2020). https://doi.org/10.1007/978-3-030-26050-7_309-1",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -342,7 +333,6 @@
           "Repeat interval"
         ],
         "Definition": "An estimate of the average time interval between occurrences of an event (e.g., flood or extreme rainfall) of (or below/above) a defined size or intensity. See also Return value. https://unterm.un.org/unterm2/en/search?searchTerm=return%20period&searchType=0&searchLanguages=en&languagesDisplay=en&acronymSearch=true&localDBSearch=true&termTitleSearch=true&phraseologySearch=false&footnoteSearch=false&fullTextSearch=false&facetedSearch=false&buildSubjectList=true",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -353,7 +343,6 @@
           "EP"
         ],
         "Definition": "For any threshold, x, the probability that during the period (e.g., a year) the random variable in question, X, will exceed some x [1]. The inverse of the return period [2].\n[1] https://glossary.ametsoc.org/wiki/Exceedance_probability\n[2] https://thefloodhub.co.uk/blog/understanding-flood-risk/#:~:text=This%20method%20is%20useful%20because%20it%20helps%20people,the%20return%20period,%20and%20is%20expressed%20as%20%E2%80%98%AEP%E2%80%99.",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -364,7 +353,6 @@
           "Cumulative frequency analysis"
         ],
         "Definition": "Procedure used to estimate the probabilities of occurrence of hydrometeorological events based on interpretation of past records of these events.\nhttps://unterm.un.org/unterm2/en/view/722911fe-712e-482b-a881-f8a42f5967df",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -388,7 +376,6 @@
     "Methods": [
       {
         "Definition": "A regridding method that uses a weighted average of the four nearest cells to determine a new cell value.\nhttps://support.esri.com/en-us/gis-dictionary/bilinear-interpolation",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Data preprocessing application",
           "Data postprocessing application",
@@ -398,7 +385,6 @@
       },
       {
         "Definition": "A regridding technique in which the new cell value is calculated using the value of the nearest cell. It is often used to resample categorical or integer data (for example, land use, soil, or forest type).\nhttps://support.esri.com/en-us/gis-dictionary/nearest-neighbor-resampling (modified to remove references to raster processing)",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Data preprocessing application",
           "Data postprocessing application",
@@ -411,7 +397,6 @@
           "IDW"
         ],
         "Definition": "An interpolation method that assigns influence or weight values to spatial features relative to a specific point—often using a power function based on distance. Nearby features have greater weight or influence on the initial point than features that are farther away.\nhttps://support.esri.com/en-us/gis-dictionary/inverse-distance-weighting",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Data preprocessing application",
           "Data postprocessing application",
@@ -439,7 +424,6 @@
         ],
         "Definition": "Peaks-over-threshold analysis is used to obtain a sample defined by all peak\nvalues that lie above a certain truncation level (usually called the threshold or base level). Together with block (typically annual) maxima, it is one of the methods to identify extreme values.\nFrom Bezek at al. (2014) https://doi.org/10.1080/02626667.2013.831174",
         "Usage": "To identify extreme values for use in extreme value analysis",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -451,7 +435,6 @@
         ],
         "Definition": "Threshold analysis refers to the selection of all values that are higher or lower than a reference bound, based on a mathematical inequality. For climatic suitability studies, values must fall between two reference (i.e., threshold) values—an upper and a lower bound—to be deemed climatically suitable for each relevant variable. This selection creates a binary mask, which can be combined with other masks according to set theory.\nMy own definition, no source",
         "Usage": "In cases like suitability classification. Might involve multiple thresholds and more complex logic.\nFor index computation: all indices where values exceed or are below the threshold (e.g., 1 mm, 303.15 K, etc.) as required by the inequality expression",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Index computation",
           "Climate change quantification application"
@@ -468,7 +451,7 @@
       "Model simulation evaluation",
       "Climate change quantification application"
     ],
-    "Name": "attern matching"
+    "Name": "Attern matching"
   },
   {
     "Definition": "Inferential statistics refers to the branch of statistics that is used to draw conclusions and make decisions about a population based on samples, often through hypothesis testing. It helps determine whether the observed differences or relationships in the data are significant and not due to chance.\nhttps://www.sciencedirect.com/topics/social-sciences/inferential-statistics",
@@ -476,7 +459,7 @@
     "ApplicableToOperations": [
       "Climate change quantification application"
     ],
-    "Name": "Inferential Statistics",
+    "Name": "Inferential statistics",
     "Methods": [
       {
         "Alias": [
@@ -487,7 +470,6 @@
         ],
         "Definition": "Significance testing is used to establish the robustness of simulated climate change driven by external forcing (the signal) relative to model internal variability (the noise). Signal in climate simulations is usually calculated as the difference between the average of a simulation with external forcing and a hypothesised value (in a one-sample test) or the average of a simulation with basis forcing (in a two-sample test). Noise in climate simulations refers to internal variability, and it is estimated from the variability information in the sample (or samples in case of a two-sample test). Decremer et al. (2014) https://doi.org/10.3402/tellusa.v66.23139",
         "Usage": "Usually used to check whether the result is showing a robust change (i.e. based on delta change analysis)",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application"
         ],
@@ -506,7 +488,6 @@
     "Methods": [
       {
         "Definition": "Simple linear regression is used to estimate the relationship between two quantitative variables.\nhttps://unterm.un.org/unterm2/en/view/8218159a-1d23-45b0-a108-fe6e49776f97",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application",
           "Impact analysis"
@@ -516,7 +497,6 @@
       {
         "Definition": "Quantile regression is defined as a statistical technique that estimates the conditional quantiles of a response variable distribution, allowing for the modeling of the effects of predictor variables on different points (quantiles) of the response distribution rather than just the mean. It is particularly useful for identifying limiting constraints by examining upper regression quantiles, which can reveal relationships not detectable by traditional linear regression.\nhttps://www.sciencedirect.com/topics/mathematics/quantile-regression",
         "Usage": "Example: Haugen et al. (2019) https://doi.org/10.5194/ascmo-5-37-2019.",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Climate change quantification application",
           "Impact analysis"
@@ -539,7 +519,6 @@
         ],
         "Definition": "Not on UNterm\nThe cumulative distribution function (CDF) is the probability that a continuous random variable has a value less than or equal to a given value. The Probability Density Function (PDF) is the first derivative of the CDF. [1]\nThe CDF is useful for those who want to know the probability of climate change being less than some \nthreshold where an impact of interest starts to occur. [2]\n[1] https://confluence.ecmwf.int/display/FUG/Section+8.1.9.1+Cumulative+Distribution+Function,+Probability+Density+Function\n[2] https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/research/ukcp/ukcp18-guidance---how-to-use-the-cdf-and-pdf-plots.pdf",
         "Usage": "When enough sample points available",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Uncertainty quantification application"
         ],
@@ -551,7 +530,6 @@
         ],
         "Definition": "A probability density function (PDF) is a function that indicates the relative chances of occurrence of different outcomes of a variable. The function integrates to unity over the domain for which it is defined and has the property that the integral over a sub-domain equals the probability that the outcome of the variable lies within that sub-domain. For example, the probability that a temperature anomaly defined in a particular way is greater than zero is obtained from its PDF by integrating the PDF over all possible temperature anomalies greater than zero. Probability density functions that describe two or more variables simultaneously are similarly defined.\nhttps://unterm.un.org/unterm2/en/view/9f18f708-7341-44e9-96f8-d29d49ba2cdb",
         "Usage": "When enough sample points available",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Uncertainty quantification application"
         ],
@@ -565,7 +543,6 @@
         ],
         "Definition": "The empirical cumulative distribution function (ECDF) is a step function estimate of the CDF of the distribution underlying a sample.\nhttps://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ecdf.html",
         "Usage": "When enough sample points available",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Uncertainty quantification application"
         ],
@@ -573,7 +550,6 @@
       },
       {
         "Definition": "Probability distribution of the largest or smallest observations in a sample.\nhttps://unterm.un.org/unterm2/en/view/1f90fcbf-c795-4d8a-9f78-21673465c159",
-        "Category": "Statistical analyses",
         "ApplicableToOperations": [
           "Uncertainty quantification application"
         ],
