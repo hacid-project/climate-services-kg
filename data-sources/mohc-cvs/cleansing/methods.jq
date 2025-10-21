@@ -57,7 +57,7 @@ def check_operation:
         if .TypeOfAnalysis == "" then empty end
     end |
     if .AppliedInTask? then
-        .ApplicableToOperation = (
+        .ApplicableToOperations = (
             .AppliedInTask | split(";") |
             map(trim | string_utils::capitalize_first | check_operation)
         ) |

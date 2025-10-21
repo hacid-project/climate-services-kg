@@ -40,16 +40,19 @@ def fix_sector:
 (
     [.[] |
         .Name |= fix_index_module::fix_index_name |
-        .AssociatedVariableSimple = [
+        .AssociatedVariables = [
             .AssociatedVariable |
             gsub("\\(.*\\)"; "") |
             split(".") | .[0] | split("or") | .[0] | split("/") | .[0] |
             split(",") | .[] | split("+") | .[] |
             trim | select(length > 0)
         ] |
+        ._AssociatedVariable = .AssociatedVariable |
+        del(.AssociatedVariable) |
         .Units |= [split(";") | .[] | split(",") | .[] | trim | fix_sector] |
         .LinkedIndicators |= [select(length > 0) | split(";") | .[] | split(",") | .[] | fix_index_module::fix_index_name] |
-        .Sector |= [.[] | fix_sector] |
+        .Sectors = [.Sector | .[] | fix_sector] |
+        del(.Sector) |
         with_entries(select(.value | length > 0) | .value |= trim)
     ] |
     group_by(.DefinitionSource) |

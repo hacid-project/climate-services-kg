@@ -14,7 +14,7 @@ def gerund_to_base:
         "listing": "list",
         "looking": "look",
         "selecting": "select",
-        "extracte": "exctract",
+        "extracting": "extract",
         "conducting": "conduct",
         "performing": "perform",
         "rejecting": "reject",
@@ -166,12 +166,35 @@ def get_information_type:
 [
     .[] |
     with_entries(select(.value | length > 0)) |
-    .BackwardDependency |= (select(length > 0) | split("\n") | .[] | trim | select(length > 0)) |
-    .ForwardDependecy |= (select(length > 0) | split("\n") | .[] | trim | select(length > 0)) |
+    .WorkflowInfo = (
+        {
+            Roles: .Role | map($role_map[.] // "unknown"),
+            InformationType: .InformationType
+        }
+        +   if .Condition then {Condition: .Condition} else {} end
+        +   if .BackwardDependency then
+                {
+                    BackwardDependencies: [
+                        .BackwardDependency
+                        | (select(length > 0) | split("\n") | .[] | trim | select(length > 0))]}
+            else
+                {}
+            end
+        +   if .ForwardDependecy then
+                {
+                    ForwardDependencies: [
+                        .ForwardDependecy
+                        | (select(length > 0) | split("\n") | .[] | trim | select(length > 0))]}
+            else
+                {}
+            end
+    ) |
+    del(.BackwardDependency) | del(.ForwardDependecy) |
+    del(.Role) | del(.InformationType) | del(.Condition) |
     .Description = (.TaskDescription | fix_description) |
-    .Role |= map($role_map[.] // "unknown") |
+    del(.TaskDescription) |
     if .AssociatedEntities then .AssociatedData = get_information_type end |
-    del(.TaskDescription)
+    del(.AssociatedEntities) | del(.Range)
 ] as $all_operations |
 
 [
