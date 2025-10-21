@@ -48,7 +48,7 @@ def check_operation:
 
 [
     .[] |
-    .Definition = ."Is this process used in specific situations? State those situations." |
+    .Usage = ."Is this process used in specific situations? State those situations." |
     del(."Is this process used in specific situations? State those situations.") |
     with_entries(select(.value | length > 0) | (.value |= trim)| (.key |= trim)) |
     if .TypeOfAnalysis | startswith("Statistical analys") then
