@@ -862,6 +862,10 @@
           ]
         },
         "Description": "The operation that computes relevant climate indices from both observational and climate model datasets. Possibly, emulators could be used to obtain relevant information for index computation.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
         "Name": "Compute climate indices"
       },
       {
