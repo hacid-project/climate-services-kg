@@ -466,8 +466,8 @@
       {
         "Name": "Clustering",
         "ApplicableToOperations": [
-          "Model simulation evaluation",
-          "Climate change quantification application"
+          "Select climate simulations",
+          "Quantify future climate change"
         ],
         "Definition": "(1) Clustering is performed to select representative simulations and thus reduce the number of members in a model ensemble (e.g. model culling). It can be accomplished by performing hierarchical cluster analysis on the patterns of climate change at a certain height k, which corresponds to the desired number of clusters.\nBased on Mendlik & Gobiet (2015) https://doi.org/10.1007/s10584-015-1582-0 and\nWilcke & Bärring (2016) https://doi.org/10.1016/j.envsoft.2016.01.002\n(2) Clustering (using nonhierarchical k-means clustering algorithm) is a method to derive weather patterns from observational data.\nPope et al. (2022) https://doi.org/10.1007/s00382-021-06031-0"
       }
