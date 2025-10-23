@@ -1,35 +1,47 @@
 [
   {
-    "Definition": "Downscaling is a method that derives local- to regional-scale (10 to 100 km) information from larger-scale models or data analyses. Two main methods exist: dynamical downscaling and empirical/statistical downscaling. The dynamical method uses the output of regional climate models, global models with variable spatial resolution or high-resolution global models. The empirical/statistical methods develop statistical relationships that link the large-scale atmospheric variables with -local/-regional climate variables. In all cases, the quality of the driving model remains an important limitation on the quality of the downscaled information.\nhttps://unterm.un.org/unterm2/en/search?searchTerm=downscaling&searchType=0&searchLanguages=en&languagesDisplay=en&acronymSearch=true&localDBSearch=true&termTitleSearch=true&phraseologySearch=false&footnoteSearch=false&fullTextSearch=false&facetedSearch=true&buildSubjectList=false",
+    "Definition": "Downscaling is a method that derives local- to regional-scale (10 to 100 km) information from larger-scale models or data analyses. Two main methods exist: dynamical downscaling and empirical/statistical downscaling. The dynamical method uses the output of regional climate models, global models with variable spatial resolution or high-resolution global models. The empirical/statistical methods develop statistical relationships that link the large-scale atmospheric variables with -local/-regional climate variables. In all cases, the quality of the driving model remains an important limitation on the quality of the downscaled information.",
     "ApplicableToOperations": [
       "Apply additional spatial downscaling"
     ],
     "Name": "Spatial downscaling",
     "Methods": [
       {
-        "Definition": "Downscaling is a method for obtaining high-resolution climate or climate change information from relatively coarse-resolution global climate models (GCMs). Typically, GCMs have a resolution of 150-300 km by 150-300 km. Many impacts models require information at scales of 50 km or less, so some method is needed to estimate the smaller-scale information. Statistical downscaling first derives statistical relationships between observed small-scale (often station level) variables and larger (GCM) scale variables, using either analogue methods (circulation typing), regression analysis, or neural network methods. Future values of the largescale variables obtained from GCM projections of future climate are then used to drive the statistical relationships and so estimate the smaller-scale details of future climate (see also weather generators). \nhttps://unfccc.int/files/adaptation/methodologies_for/vulnerability_and_adaptation/application/pdf/statistical_downscaling.pdf",
+        "Definition": "Downscaling is a method for obtaining high-resolution climate or climate change information from relatively coarse-resolution global climate models (GCMs). Typically, GCMs have a resolution of 150-300 km by 150-300 km. Many impacts models require information at scales of 50 km or less, so some method is needed to estimate the smaller-scale information. Statistical downscaling first derives statistical relationships between observed small-scale (often station level) variables and larger (GCM) scale variables, using either analogue methods (circulation typing), regression analysis, or neural network methods. Future values of the largescale variables obtained from GCM projections of future climate are then used to drive the statistical relationships and so estimate the smaller-scale details of future climate (see also weather generators).",
         "Usage": "When higher spatial resolution data required",
         "ApplicableToOperations": [
           "Apply additional spatial downscaling"
         ],
-        "Name": "Statistical downscaling"
+        "Name": "Statistical downscaling",
+        "DefinitionSources": [
+          "https://unfccc.int/files/adaptation/methodologies_for/vulnerability_and_adaptation/application/pdf/statistical_downscaling.pdf"
+        ]
       },
       {
-        "Definition": "Downscaling is a method for obtaining high-resolution climate or climate change information from relatively coarse-resolution global climate models (GCMs). Typically, GCMs have a resolution of 150-300 km by 150-300 km. Many impacts models require information at scales of 50 km or less, so some method is needed to estimate the smaller-scale information. Dynamical downscaling uses a limited-area, high-resolution model (a regional climate model, or RCM) driven by boundary conditions from a GCM to derive smaller-scale information. RCMs generally have a domain area of 106 to 107 km2 and a resolution of 20 to 60 km. \nhttps://unfccc.int/files/adaptation/methodologies_for/vulnerability_and_adaptation/application/pdf/dynamical_downscaling.pdf",
+        "Definition": "Downscaling is a method for obtaining high-resolution climate or climate change information from relatively coarse-resolution global climate models (GCMs). Typically, GCMs have a resolution of 150-300 km by 150-300 km. Many impacts models require information at scales of 50 km or less, so some method is needed to estimate the smaller-scale information. Dynamical downscaling uses a limited-area, high-resolution model (a regional climate model, or RCM) driven by boundary conditions from a GCM to derive smaller-scale information. RCMs generally have a domain area of 106 to 107 km2 and a resolution of 20 to 60 km.",
         "Usage": "When higher spatial resolution data required",
         "ApplicableToOperations": [
           "Apply additional spatial downscaling"
         ],
-        "Name": "Dynamical downscaling using climate models"
+        "Name": "Dynamical downscaling using climate models",
+        "DefinitionSources": [
+          "https://unfccc.int/files/adaptation/methodologies_for/vulnerability_and_adaptation/application/pdf/dynamical_downscaling.pdf"
+        ]
       },
       {
-        "Definition": "As for statistical downscaling, but using more complex models with multiple steps and layers that typically cannot be expressed in a single equation.\nhttps://apps.epri.com/climate-data-user-guide/en/climate-model-downscaling.html",
+        "Definition": "As for statistical downscaling, but using more complex models with multiple steps and layers that typically cannot be expressed in a single equation.",
         "Usage": "When computer resource requirements are too great",
         "ApplicableToOperations": [
           "Apply additional spatial downscaling"
         ],
-        "Name": "AI methods (experimental)"
+        "Name": "AI methods (experimental)",
+        "DefinitionSources": [
+          "https://apps.epri.com/climate-data-user-guide/en/climate-model-downscaling.html"
+        ]
       }
+    ],
+    "DefinitionSources": [
+      "https://unterm.un.org/unterm2/en/search?searchTerm=downscaling&searchType=0&searchLanguages=en&languagesDisplay=en&acronymSearch=true&localDBSearch=true&termTitleSearch=true&phraseologySearch=false&footnoteSearch=false&fullTextSearch=false&facetedSearch=true&buildSubjectList=false"
     ]
   },
   {
@@ -39,7 +51,7 @@
       "Bias calibration",
       "Bias correction using statistical techniques"
     ],
-    "Definition": "Algorithms that correct and minimise systematic differences of simulated GCM and RCM outputs relative to observational data.\nCannon et al. (2015) https://doi.org/10.1175/JCLI-D-14-00754.1",
+    "Definition": "Algorithms that correct and minimise systematic differences of simulated GCM and RCM outputs relative to observational data.",
     "Usage": "When combining model and obs climate data",
     "ApplicableToOperations": [
       "Apply data preprocessingn"
@@ -50,78 +62,106 @@
         "Alias": [
           "Delta change method"
         ],
-        "Definition": "The delta change method applies the climate change trend from the model to historical observations, therefore generating modified observations rather than a modified model output. So the output from this method has the same number of timesteps as the observations data, and not the same number as the future climate model like other debiasers.\nMultiplicative change is typically used for precipitation and additive scaling for temperature.\nhttps://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-deltachange-class",
+        "Definition": "The delta change method applies the climate change trend from the model to historical observations, therefore generating modified observations rather than a modified model output. So the output from this method has the same number of timesteps as the observations data, and not the same number as the future climate model like other debiasers.\nMultiplicative change is typically used for precipitation and additive scaling for temperature.",
         "ApplicableToOperations": [
           "Apply data preprocessing"
         ],
-        "Name": "Delta method"
+        "Name": "Delta method",
+        "DefinitionSources": [
+          "https://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-deltachange-class"
+        ]
       },
       {
         "Alias": [
           "QM"
         ],
-        "Definition": "Quantile mapping maps every quantile of the climate model distribution to the corresponding quantile in observations during the reference period. Optionally, additive or multiplicative detrending of the mean can be applied to make the method trend preserving in the mean.\nhttps://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-quantilemapping-class",
+        "Definition": "Quantile mapping maps every quantile of the climate model distribution to the corresponding quantile in observations during the reference period. Optionally, additive or multiplicative detrending of the mean can be applied to make the method trend preserving in the mean.",
         "ApplicableToOperations": [
           "Apply data preprocessing"
         ],
-        "Name": "Quantile mapping"
+        "Name": "Quantile mapping",
+        "DefinitionSources": [
+          "https://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-quantilemapping-class"
+        ]
       },
       {
-        "Definition": "Linear scaling corrects a climate model by the difference in the mean of observations and the mean of the climate model on the reference period, either additively or multiplicatively.\nThe present day model bias is calculated and then either subtracted or divided from the future climate model data.\nMultiplicative scaling is classically used for precipitation and additive scaling for temperature. Additive scaling amounts to a simple mean bias correction, whilst multiplicative one adjusts both mean and variance, but keeps their ratio constant.\nhttps://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-linearscaling-class",
+        "Definition": "Linear scaling corrects a climate model by the difference in the mean of observations and the mean of the climate model on the reference period, either additively or multiplicatively.\nThe present day model bias is calculated and then either subtracted or divided from the future climate model data.\nMultiplicative scaling is classically used for precipitation and additive scaling for temperature. Additive scaling amounts to a simple mean bias correction, whilst multiplicative one adjusts both mean and variance, but keeps their ratio constant.",
         "ApplicableToOperations": [
           "Apply data preprocessing"
         ],
-        "Name": "Linear scaling"
+        "Name": "Linear scaling",
+        "DefinitionSources": [
+          "https://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-linearscaling-class"
+        ]
       },
       {
         "Alias": [
           "QDM"
         ],
-        "Definition": "A parametric quantile mapping method that also attempts to be trend-preserving. This method bias corrects the future climate model data directly using reference period observations. This is then multiplied by the quotient of future climate model data and a quantile mapping between past and future climate model data to account for the change from past to future period in all quantiles.\nDelta Quantile Mapping is approximately trend preserving in all quantiles because the absolute or relative change is calculated and applied for each quantile individually.\nhttps://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-quantiledeltamapping-class",
+        "Definition": "A parametric quantile mapping method that also attempts to be trend-preserving. This method bias corrects the future climate model data directly using reference period observations. This is then multiplied by the quotient of future climate model data and a quantile mapping between past and future climate model data to account for the change from past to future period in all quantiles.\nDelta Quantile Mapping is approximately trend preserving in all quantiles because the absolute or relative change is calculated and applied for each quantile individually.",
         "ApplicableToOperations": [
           "Apply data preprocessing"
         ],
-        "Name": "Quantile delta mapping"
+        "Name": "Quantile delta mapping",
+        "DefinitionSources": [
+          "https://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-quantiledeltamapping-class"
+        ]
       },
       {
         "Alias": [
           "SDM"
         ],
-        "Definition": "Scale distribution mapping (SDM) is a parametric quantile mapping approach that also attempts to be trend preserving in all quantiles. In addition to the quantile mapping the method also contains an event likelihood adjustment.\nSDM scales the observed distribution by changes in magnitude and additionally likelihood of events – either multiplicatively (for precipitation) or additively (for temperature).\nhttps://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-scaleddistributionmapping-class",
+        "Definition": "Scale distribution mapping (SDM) is a parametric quantile mapping approach that also attempts to be trend preserving in all quantiles. In addition to the quantile mapping the method also contains an event likelihood adjustment.\nSDM scales the observed distribution by changes in magnitude and additionally likelihood of events – either multiplicatively (for precipitation) or additively (for temperature).",
         "ApplicableToOperations": [
           "Apply data preprocessing"
         ],
-        "Name": "Scale distribution mapping"
+        "Name": "Scale distribution mapping",
+        "DefinitionSources": [
+          "https://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-scaleddistributionmapping-class"
+        ]
       },
       {
         "Alias": [
           "CDFt",
           "Cumulative distribution function transform"
         ],
-        "Definition": "A non-parametric quantile mapping method that attempts to be trend-preserving in all quantiles. CDFt applies a concatenation between a quantile mapping of future and historical climate model data and a quantile mapping of the future climate model with historical observations. It also includes a running window over the future period to account for changes in the simulated trend.\nhttps://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-cdft-class",
+        "Definition": "A non-parametric quantile mapping method that attempts to be trend-preserving in all quantiles. CDFt applies a concatenation between a quantile mapping of future and historical climate model data and a quantile mapping of the future climate model with historical observations. It also includes a running window over the future period to account for changes in the simulated trend.",
         "ApplicableToOperations": [
           "Apply data preprocessing"
         ],
-        "Name": "CDF-t"
+        "Name": "CDF-t",
+        "DefinitionSources": [
+          "https://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-cdft-class"
+        ]
       },
       {
-        "Definition": "A parametric quantile mapping method that attempts to be trend-preserving in all quantiles. It applies quantile-wise correction by adding the difference between a quantile mapping of observations and future values and a quantile mapping of historical climate model values to the future climate model ones.\nIn essence, this method says that future climate model data can be bias-corrected directly with reference period observations, if the quantile specific difference between present-day and future climate model simulations is taken into account. This allows for changes in higher moments in the climate model, compared to standard Quantile Mapping where just the mean is assumed to change in future climate.\nhttps://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-ecdfm-class",
+        "Definition": "A parametric quantile mapping method that attempts to be trend-preserving in all quantiles. It applies quantile-wise correction by adding the difference between a quantile mapping of observations and future values and a quantile mapping of historical climate model values to the future climate model ones.\nIn essence, this method says that future climate model data can be bias-corrected directly with reference period observations, if the quantile specific difference between present-day and future climate model simulations is taken into account. This allows for changes in higher moments in the climate model, compared to standard Quantile Mapping where just the mean is assumed to change in future climate.",
         "ApplicableToOperations": [
           "Apply data preprocessing"
         ],
-        "Name": "Equidistant CDF matching"
+        "Name": "Equidistant CDF matching",
+        "DefinitionSources": [
+          "https://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-ecdfm-class"
+        ]
       },
       {
-        "Definition": "A semi-parametric quantile mapping method that attempts to be trend-preserving in all quantiles by generating ‘pseudo future observations’ and executing the quantile mapping between the future climate model and the pseudo future observations. Refer to Lange et al. (2019) for further information.\nhttps://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-isimip-class\nLange, S.: Trend-preserving bias adjustment and statistical downscaling with ISIMIP3BASD (v1.0), Geosci. Model Dev., 12, 3055–3070, https://doi.org/10.5194/gmd-12-3055-2019, 2019.",
+        "Definition": "A semi-parametric quantile mapping method that attempts to be trend-preserving in all quantiles by generating ‘pseudo future observations’ and executing the quantile mapping between the future climate model and the pseudo future observations. Refer to Lange et al. (2019) for further information.",
         "ApplicableToOperations": [
           "Apply data preprocessing"
         ],
-        "Name": "ISIMIP3BASD"
+        "Name": "ISIMIP3BASD",
+        "DefinitionSources": [
+          "https://ibicus.readthedocs.io/en/latest/reference/debias.html#ibicus-debias-isimip-class",
+          "Lange, S.: Trend-preserving bias adjustment and statistical downscaling with ISIMIP3BASD (v1.0), Geosci. Model Dev., 12, 3055–3070, https://doi.org/10.5194/gmd-12-3055-2019, 2019."
+        ]
       }
+    ],
+    "DefinitionSources": [
+      "Cannon et al. (2015) https://doi.org/10.1175/JCLI-D-14-00754.1"
     ]
   },
   {
-    "Definition": "Global warming levels (GWLs) offer a way to communicate future climate change. In this approach, the regional climate change response is shown relative to the average global warming (e.g., 0.5°C, 1.0°C, 1.5°C, 2.0°C) above a specified period, typically pre-industrial (1850-1900).\nhttps://climatedata.ca/resource/introduction-to-global-warming-levels/",
+    "Definition": "Global warming levels (GWLs) offer a way to communicate future climate change. In this approach, the regional climate change response is shown relative to the average global warming (e.g., 0.5°C, 1.0°C, 1.5°C, 2.0°C) above a specified period, typically pre-industrial (1850-1900).",
     "ApplicableToOperations": [
       "Choose global warming level extraction method"
     ],
@@ -132,40 +172,52 @@
           "Time sampling",
           "Time slicing"
         ],
-        "Definition": "The time slice method identifies the point in time when a specific global mean surface temperature increment (e.g., 1.5°C, 2°C) above pre-industrial (usually 1850–1900) is reached in each GCM simulation. A multi-year period - 10 years on either side of this central estimate - is selected (to account for uncertainty in the timing of reaching a given warming level) and extracted from each respective RCM as a 21-year time slice.\nCombined James et al. (2017) https://doi.org/10.1002/wcc.457 and Hanlon et al. (2021) https://doi.org/10.1007/s10584-021-03100-5",
+        "Definition": "The time slice method identifies the point in time when a specific global mean surface temperature increment (e.g., 1.5°C, 2°C) above pre-industrial (usually 1850–1900) is reached in each GCM simulation. A multi-year period - 10 years on either side of this central estimate - is selected (to account for uncertainty in the timing of reaching a given warming level) and extracted from each respective RCM as a 21-year time slice.",
         "Usage": "Most common: almost all applications",
         "ApplicableToOperations": [
           "Choose global warming level extraction method"
         ],
-        "Name": "Time slice"
+        "Name": "Time slice",
+        "DefinitionSources": [
+          "Combined James et al. (2017) https://doi.org/10.1002/wcc.457 and Hanlon et al. (2021) https://doi.org/10.1007/s10584-021-03100-5"
+        ]
       },
       {
         "Alias": [
           "Sub-selection"
         ],
-        "Definition": "The model sub-selection approach involves filtering climate model simulations to include only those that reach or exceed a specific global mean temperature threshold (e.g., 1.5°C, 2°C, 4°C). This method enables the analysis of regional climate impacts at distinct global warming levels by selecting subsets of underlying GCM runs based on their temperature response.\nCopilot-modified from James et al. (2017) https://doi.org/10.1002/wcc.457",
+        "Definition": "The model sub-selection approach involves filtering climate model simulations to include only those that reach or exceed a specific global mean temperature threshold (e.g., 1.5°C, 2°C, 4°C). This method enables the analysis of regional climate impacts at distinct global warming levels by selecting subsets of underlying GCM runs based on their temperature response.",
         "Usage": "No strict future time period requirements: allows to select all models exceeding the GWL",
         "ApplicableToOperations": [
           "Choose global warming level extraction method"
         ],
-        "Name": "Model sub-selection"
+        "Name": "Model sub-selection",
+        "DefinitionSources": [
+          "Copilot-modified from James et al. (2017) https://doi.org/10.1002/wcc.457"
+        ]
       },
       {
-        "Definition": "Pattern scaling is an emulation technique that takes advantage of the fact that local and seasonal changes in surface climate are often approximately linear in the rate of warming over land and across the globe. This allows interpolation away from a limited number of available GCM simulations, to assess alternative future emissions scenarios. Climate-change patterns (or “patterns”) are coefficients of the regression between areal mean warming over Earth's land regions and local changes in surface climatology. They are derived by comparison against outputs from GCMs, and presented as local monthly mean changes over land per degree of mean warming over land. Pattern scaling is a simple procedure in which these patterns are multiplied by areal mean warming over land to give local monthly changes in climatology.\nZelazowski et al. (2018) https://doi.org/10.5194/gmd-11-541-2018",
+        "Definition": "Pattern scaling is an emulation technique that takes advantage of the fact that local and seasonal changes in surface climate are often approximately linear in the rate of warming over land and across the globe. This allows interpolation away from a limited number of available GCM simulations, to assess alternative future emissions scenarios. Climate-change patterns (or “patterns”) are coefficients of the regression between areal mean warming over Earth's land regions and local changes in surface climatology. They are derived by comparison against outputs from GCMs, and presented as local monthly mean changes over land per degree of mean warming over land. Pattern scaling is a simple procedure in which these patterns are multiplied by areal mean warming over land to give local monthly changes in climatology.",
         "ApplicableToOperations": [
           "Choose global warming level extraction method"
         ],
-        "Name": "Pattern scaling"
+        "Name": "Pattern scaling",
+        "DefinitionSources": [
+          "Zelazowski et al. (2018) https://doi.org/10.5194/gmd-11-541-2018"
+        ]
       }
+    ],
+    "DefinitionSources": [
+      "https://climatedata.ca/resource/introduction-to-global-warming-levels/"
     ]
   },
   {
-    "Definition": "Field of quantitative research: the process of using and analysing quantitatively described or summarised features from a collection of information (Wikidata: Q380344)\nhttps://www.wikidata.org/wiki/Q380344 + https://en.wikipedia.org/wiki/Descriptive_statistics",
+    "Definition": "Field of quantitative research: the process of using and analysing quantitatively described or summarised features from a collection of information",
     "Category": "Statistical analyses",
     "Name": "Descriptive statistics",
     "Methods": [
       {
-        "Definition": "Sum of a collection of numbers divided by the number of numbers in the collection (Wikidata: Q19033)\nhttps://www.wikidata.org/wiki/Q19033",
+        "Definition": "Sum of a collection of numbers divided by the number of numbers in the collection",
         "Usage": "Spatial aggregation, temporal aggregation",
         "ApplicableToOperations": [
           "Compute climate indices",
@@ -174,60 +226,108 @@
           "Postprocess climate information",
           "Postprocess impact analysis"
         ],
-        "Name": "Mean"
+        "Name": "Mean",
+        "DefinitionSources": [
+          "https://www.wikidata.org/wiki/Q19033"
+        ],
+        "WikidataRefs": [
+          "Q19033"
+        ]
       },
       {
-        "Definition": "Dispersion of the values ​​of a random variable around its expected value (Wikidata: Q159375)\nhttps://www.wikidata.org/wiki/Q159375",
+        "Definition": "Dispersion of the values ​​of a random variable around its expected value",
         "ApplicableToOperations": [
           "Uncertainty quantification application"
         ],
-        "Name": "Standard deviation"
+        "Name": "Standard deviation",
+        "DefinitionSources": [
+          "https://www.wikidata.org/wiki/Q159375"
+        ],
+        "WikidataRefs": [
+          "Q159375"
+        ]
       },
       {
-        "Definition": "A quantile defines a particular part of a data set, i.e., a quantile determines how many values in a distribution are above or below a certain limit. Special quantiles are the quartile (quarter), the decile (tenth), and percentiles (hundredth).\nhttps://www.statista.com/statistics-glossary/definition/356/quantile/",
+        "Definition": "A quantile defines a particular part of a data set, i.e., a quantile determines how many values in a distribution are above or below a certain limit. Special quantiles are the quartile (quarter), the decile (tenth), and percentiles (hundredth).",
         "ApplicableToOperations": [
           "Quantify future climate change",
           "Quantify uncertainty"
         ],
-        "Name": "Quantiles"
+        "Name": "Quantiles",
+        "DefinitionSources": [
+          "https://www.statista.com/statistics-glossary/definition/356/quantile/"
+        ]
       },
       {
-        "Definition": "Middle quantile of a data set or probability distribution (Wikidata: Q226995)\nhttps://www.wikidata.org/wiki/Q226995",
+        "Definition": "Middle quantile of a data set or probability distribution",
         "ApplicableToOperations": [
           "Apply data preprocessing",
           "Postprocess climate information",
           "Postprocess impact analysis"
         ],
-        "Name": "Median"
+        "Name": "Median",
+        "DefinitionSources": [
+          "https://www.wikidata.org/wiki/Q226995"
+        ],
+        "WikidataRefs": [
+          "Q226995"
+        ]
       },
       {
-        "Definition": "Greatest or largest value or element (Wikidata: Q10578722)\nhttps://www.wikidata.org/wiki/Q10578722",
+        "Definition": "Greatest or largest value or element",
         "ApplicableToOperations": [
           "Compute climate indices"
         ],
-        "Name": "Maximum"
+        "Name": "Maximum",
+        "DefinitionSources": [
+          "https://www.wikidata.org/wiki/Q10578722"
+        ],
+        "WikidataRefs": [
+          "Q10578722"
+        ]
       },
       {
-        "Definition": "Lowest or smallest value or item in a partially ordered set (Wikidata: Q10585806)\nhttps://www.wikidata.org/wiki/Q10585806",
+        "Definition": "Lowest or smallest value or item in a partially ordered set",
         "ApplicableToOperations": [
           "Compute climate indices"
         ],
-        "Name": "Minimum"
+        "Name": "Minimum",
+        "DefinitionSources": [
+          "https://www.wikidata.org/wiki/Q10585806"
+        ],
+        "WikidataRefs": [
+          "Q10585806"
+        ]
       },
       {
-        "Definition": "Physical quantity for describing the temporal distance between events (Wikidata: Q2199864)\nhttps://www.wikidata.org/wiki/Q2199864",
+        "Definition": "Physical quantity for describing the temporal distance between events",
         "ApplicableToOperations": [
           "Compute climate indices"
         ],
-        "Name": "Duration"
+        "Name": "Duration",
+        "DefinitionSources": [
+          "https://www.wikidata.org/wiki/Q2199864"
+        ],
+        "WikidataRefs": [
+          "Q2199864"
+        ]
       },
       {
-        "Definition": "Model bias is defined as the average of the difference between a GCM’s simulations and some baseline values. The baseline values can come from observations or a benchmark model simulation, or ensemble mean. Bias indicates a systematic difference, and bias relative to reliable observations is interpreted as “error”. [1] Bias can be quantified by a mean of differences between a simulation member and baseline (or mean absolute error, MAE, in the case of deriving absolute errors) or quantile difference (especially considering extremes).\n[1] https://glisa.umich.edu/wp-content/uploads/2021/03/Global-Climate-Model-Bias-and-Bias-Correction.pdf",
+        "Definition": "Model bias is defined as the average of the difference between a GCM’s simulations and some baseline values. The baseline values can come from observations or a benchmark model simulation, or ensemble mean. Bias indicates a systematic difference, and bias relative to reliable observations is interpreted as “error”. [1] Bias can be quantified by a mean of differences between a simulation member and baseline (or mean absolute error, MAE, in the case of deriving absolute errors) or quantile difference (especially considering extremes).",
         "ApplicableToOperations": [
           "Evaluate climate simulations"
         ],
-        "Name": "Bias quantification"
+        "Name": "Bias quantification",
+        "DefinitionSources": [
+          "https://glisa.umich.edu/wp-content/uploads/2021/03/Global-Climate-Model-Bias-and-Bias-Correction.pdf"
+        ]
       }
+    ],
+    "DefinitionSources": [
+      "https://www.wikidata.org/wiki/Q380344 + https://en.wikipedia.org/wiki/Descriptive_statistics"
+    ],
+    "WikidataRefs": [
+      "Q380344"
     ]
   },
   {
@@ -239,48 +339,65 @@
     "Name": "Ensemble statistics",
     "Methods": [
       {
-        "Definition": "The ensemble mean is the average of the output values of the ensemble members (i.e. the sum of the values divided by the number of ensemble members unless models are weighted).\nEach ensemble member result is the sum of a smooth forced signal and the accompanying natural variability noise. The natural variability is different for each model/ensemble member and tends to average out so that the ensemble mean estimates the smooth forced signal. The multi-model ensemble mean represents those features of projected climate change that survive ensemble averaging and so are common to models as a group. \nhttps://confluence.ecmwf.int/display/FUG/Section+8.1.2+ENS+Mean+and+Spread\nhttps://archive.ipcc.ch/ipccreports/tar/wg1/347.htm",
+        "Definition": "The ensemble mean is the average of the output values of the ensemble members (i.e. the sum of the values divided by the number of ensemble members unless models are weighted).\nEach ensemble member result is the sum of a smooth forced signal and the accompanying natural variability noise. The natural variability is different for each model/ensemble member and tends to average out so that the ensemble mean estimates the smooth forced signal. The multi-model ensemble mean represents those features of projected climate change that survive ensemble averaging and so are common to models as a group.",
         "ApplicableToOperations": [
           "Quantify future climate change"
         ],
-        "Name": "Ensemble mean"
+        "Name": "Ensemble mean",
+        "DefinitionSources": [
+          "https://confluence.ecmwf.int/display/FUG/Section+8.1.2+ENS+Mean+and+Spread",
+          "https://archive.ipcc.ch/ipccreports/tar/wg1/347.htm"
+        ]
       },
       {
-        "Definition": "The ensemble median is the middle value of the output values of the ensemble members when sorted into a list (i.e. the same number of ensemble member values below and above the middle value). The median lies at the centre of the range of the ensemble members and can be more descriptive of the data set than the mean. \nhttps://confluence.ecmwf.int/display/FUG/Section+8.1.2+ENS+Mean+and+Spread",
+        "Definition": "The ensemble median is the middle value of the output values of the ensemble members when sorted into a list (i.e. the same number of ensemble member values below and above the middle value). The median lies at the centre of the range of the ensemble members and can be more descriptive of the data set than the mean.",
         "ApplicableToOperations": [
           "Quantify future climate change"
         ],
-        "Name": "Ensemble median"
+        "Name": "Ensemble median",
+        "DefinitionSources": [
+          "https://confluence.ecmwf.int/display/FUG/Section+8.1.2+ENS+Mean+and+Spread"
+        ]
       },
       {
-        "Definition": "The multi-model ensemble variance, assuming no correlation between the forced and variability components, measures the inter-model scatter of the forced component and the natural variability. The scatter of results about the ensemble mean (measured by the ensemble variance/standard deviation) is an indication of uncertainty in the results and is seen to increase with time. \nhttps://archive.ipcc.ch/ipccreports/tar/wg1/347.htm",
+        "Definition": "The multi-model ensemble variance, assuming no correlation between the forced and variability components, measures the inter-model scatter of the forced component and the natural variability. The scatter of results about the ensemble mean (measured by the ensemble variance/standard deviation) is an indication of uncertainty in the results and is seen to increase with time.",
         "ApplicableToOperations": [
           "Quantify uncertainty"
         ],
-        "Name": "Ensemble standard deviation"
+        "Name": "Ensemble standard deviation",
+        "DefinitionSources": [
+          "https://archive.ipcc.ch/ipccreports/tar/wg1/347.htm"
+        ]
       },
       {
-        "Definition": "The ensemble range (also known as ensemble value range) is a confidence measure that provides information about the ensemble spread of the projected climate change signals. The ensemble range indicates the range of the central half of the models, i.e. the models that group around the median of the models (i.e. the interquartile range).\nhttps://climateinformation.org/knowledge-base/how-to-interpret-ensemble-value-range/",
+        "Definition": "The ensemble range (also known as ensemble value range) is a confidence measure that provides information about the ensemble spread of the projected climate change signals. The ensemble range indicates the range of the central half of the models, i.e. the models that group around the median of the models (i.e. the interquartile range).",
         "ApplicableToOperations": [
           "Quantify uncertainty"
         ],
-        "Name": "Ensemble range"
+        "Name": "Ensemble range",
+        "DefinitionSources": [
+          "https://climateinformation.org/knowledge-base/how-to-interpret-ensemble-value-range/"
+        ]
       },
       {
         "Alias": [
           "Weighted mean"
         ],
-        "Definition": "Climate model weighting is a technique used to improve the reliability and reduce bias and spread of climate projections by giving different climate models in an ensemble different levels\nof influence. Instead of averaging all models equally, this approach assigns weights to each ensemble member.\nWeights are typically calculated based on historical model performance in several metrics as well as by their independence to all the other models in the ensemble based on their output fields in several metrics.\nBased on Knutti et al. (2017) https://doi.org/10.1002/2016GL072012\nhttps://docs.esmvaltool.org/en/latest/recipes/recipe_climwip.html",
+        "Definition": "Climate model weighting is a technique used to improve the reliability and reduce bias and spread of climate projections by giving different climate models in an ensemble different levels\nof influence. Instead of averaging all models equally, this approach assigns weights to each ensemble member.\nWeights are typically calculated based on historical model performance in several metrics as well as by their independence to all the other models in the ensemble based on their output fields in several metrics.",
         "Usage": "When multiple climate models are being used, scientists want to combine them in a way to capture how well the climate models perform.",
         "ApplicableToOperations": [
           "Quantify future climate change"
         ],
-        "Name": "Model weighting"
+        "Name": "Model weighting",
+        "DefinitionSources": [
+          "Knutti et al. (2017) https://doi.org/10.1002/2016GL072012",
+          "https://docs.esmvaltool.org/en/latest/recipes/recipe_climwip.html"
+        ]
       }
     ]
   },
   {
-    "Definition": "Area of statistics: methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data (Wikidata: Q11850042)\nhttps://www.wikidata.org/wiki/Q11850042 + https://en.wikipedia.org/wiki/Time_series",
+    "Definition": "Area of statistics: methods for analysing time series data in order to extract meaningful statistics and other characteristics of the data",
     "Category": "Statistical analyses",
     "ApplicableToOperations": [
       "Quantify future climate change",
@@ -292,40 +409,55 @@
     "Name": "Time series analysis",
     "Methods": [
       {
-        "Definition": "The difference can be quantified either by absolute delta, relative delta (percentage change between the future climate and baseline relative to baseline, pre-processed similarly), or standardised anomaly calculation among other methods.\nAbsolute delta is the difference between the future climate and baseline of the variable. In both cases variables are annual climatological normals, i.e. averaged over the 30 years (Navarro-Racines et al., 2020).\nRelative delta is the percentage change between the future climate and baseline relative to the baseline. As previously, the variables are annual climatological normals. [1]\nThe standardised anomalies, also referred to as normalised anomalies, measure the magnitude of climate change, at local level, by quantifying the distance, measured in standard units,\nbetween a data value at a location and its corresponding mean. The metric is calculated by dividing anomalies – with anomalies being defined as the deviation observed in each time from a baseline – by the standard deviation of the interannual variability during the baseline period.\nThe Standardized local anomalies measure the degree of similarity and dissimilarity between two distinct time periods (e.g. between a baseline and future period) using the standardized Euclidean distance (SED). Higher SED scores correlate with more significant local climate change and incorporate alterations across all considered variables. [2,3]\n[1] Navarro-Racines et al. (2020) https://doi.org/10.1038/s41597-019-0343-8\n[2]Taheri et al. (2024) https://doi.org/10.1111/ecog.07176\n[3]Hubbard et al. (2025) https://doi.org/10.1111/ecog.07614",
+        "Definition": "The difference can be quantified either by absolute delta, relative delta (percentage change between the future climate and baseline relative to baseline, pre-processed similarly), or standardised anomaly calculation among other methods.\nAbsolute delta is the difference between the future climate and baseline of the variable. In both cases variables are annual climatological normals, i.e. averaged over the 30 years (Navarro-Racines et al., 2020).\nRelative delta is the percentage change between the future climate and baseline relative to the baseline. As previously, the variables are annual climatological normals. [1]\nThe standardised anomalies, also referred to as normalised anomalies, measure the magnitude of climate change, at local level, by quantifying the distance, measured in standard units,\nbetween a data value at a location and its corresponding mean. The metric is calculated by dividing anomalies – with anomalies being defined as the deviation observed in each time from a baseline – by the standard deviation of the interannual variability during the baseline period.\nThe Standardized local anomalies measure the degree of similarity and dissimilarity between two distinct time periods (e.g. between a baseline and future period) using the standardized Euclidean distance (SED). Higher SED scores correlate with more significant local climate change and incorporate alterations across all considered variables. [2,3]",
         "ApplicableToOperations": [
           "Quantify future climate change"
         ],
-        "Name": "Difference Quantification"
+        "Name": "Difference Quantification",
+        "DefinitionSources": [
+          "Navarro-Racines et al. (2020) https://doi.org/10.1038/s41597-019-0343-8",
+          "Taheri et al. (2024) https://doi.org/10.1111/ecog.07176",
+          "Hubbard et al. (2025) https://doi.org/10.1111/ecog.07614"
+        ]
       },
       {
-        "Definition": "Given a time series of climate variable, the trend is the rate at which the variable changes over a time period. The trend may be linear or nonlinear. However, generally, it is synonymous with the linear slope of the line fit to the time series.\nhttps://climatedataguide.ucar.edu/climate-data-tools-and-analysis/trend-analysis",
+        "Definition": "Given a time series of climate variable, the trend is the rate at which the variable changes over a time period. The trend may be linear or nonlinear. However, generally, it is synonymous with the linear slope of the line fit to the time series.",
         "ApplicableToOperations": [
           "Conduct observation analysis",
           "Quantify future climate change"
         ],
-        "Name": "Trend analysis"
+        "Name": "Trend analysis",
+        "DefinitionSources": [
+          "https://climatedataguide.ucar.edu/climate-data-tools-and-analysis/trend-analysis"
+        ]
       },
       {
         "Alias": [
           "Filtering",
           "Smoothing"
         ],
-        "Definition": "An averaging of data in time, designed to compensate for random errors or fluctuations of a scale smaller than that presumed significant to the problem at hand.\nhttps://glossary.ametsoc.org/wiki/Smoothing",
+        "Definition": "An averaging of data in time, designed to compensate for random errors or fluctuations of a scale smaller than that presumed significant to the problem at hand.",
         "ApplicableToOperations": [
           "Apply data preprocessing",
           "Postprocess climate information",
           "Postprocess impact analysis"
         ],
-        "Name": "Temporal smoothing"
+        "Name": "Temporal smoothing",
+        "DefinitionSources": [
+          "https://glossary.ametsoc.org/wiki/Smoothing"
+        ]
       },
       {
-        "Definition": "Spectral analysis is defined as a set of mathematical tools that characterise signals based on their frequency content [1]. Spectral analysis was initially developed to analyse time-dependent functions and time series, aiming to identify underlying spectral content. This typically involved identifying frequencies within the series that contain significant amplitudes. Nonparametric or parametric methods are applied to a time series, or to any sequential data with at least one independent variable such as spatial coordinates. The analysis separates out spectral content such as waves or oscillations, extracting data or filtering the data to simplify future processing [2].\n[1] https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/spectral-analysis\n[2] Silversides (2020). https://doi.org/10.1007/978-3-030-26050-7_309-1",
+        "Definition": "Spectral analysis is defined as a set of mathematical tools that characterise signals based on their frequency content [1]. Spectral analysis was initially developed to analyse time-dependent functions and time series, aiming to identify underlying spectral content. This typically involved identifying frequencies within the series that contain significant amplitudes. Nonparametric or parametric methods are applied to a time series, or to any sequential data with at least one independent variable such as spatial coordinates. The analysis separates out spectral content such as waves or oscillations, extracting data or filtering the data to simplify future processing [2].",
         "ApplicableToOperations": [
           "Conduct observation analysis",
           "Quantify future climate change"
         ],
-        "Name": "Spectral analysis"
+        "Name": "Spectral analysis",
+        "DefinitionSources": [
+          "https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/spectral-analysis",
+          "Silversides (2020). https://doi.org/10.1007/978-3-030-26050-7_309-1"
+        ]
       },
       {
         "Alias": [
@@ -346,24 +478,37 @@
         "Alias": [
           "EP"
         ],
-        "Definition": "For any threshold, x, the probability that during the period (e.g., a year) the random variable in question, X, will exceed some x [1]. The inverse of the return period [2].\n[1] https://glossary.ametsoc.org/wiki/Exceedance_probability\n[2] https://thefloodhub.co.uk/blog/understanding-flood-risk/#:~:text=This%20method%20is%20useful%20because%20it%20helps%20people,the%20return%20period,%20and%20is%20expressed%20as%20%E2%80%98%AEP%E2%80%99.",
+        "Definition": "For any threshold, x, the probability that during the period (e.g., a year) the random variable in question, X, will exceed some x [1]. The inverse of the return period [2].",
         "ApplicableToOperations": [
           "Conduct observation analysis",
           "Quantify future climate change"
         ],
-        "Name": "Exceedance probability"
+        "Name": "Exceedance probability",
+        "DefinitionSources": [
+          "https://glossary.ametsoc.org/wiki/Exceedance_probability",
+          "https://thefloodhub.co.uk/blog/understanding-flood-risk/#:~:text=This%20method%20is%20useful%20because%20it%20helps%20people,the%20return%20period,%20and%20is%20expressed%20as%20%E2%80%98%AEP%E2%80%99."
+        ]
       },
       {
         "Alias": [
           "Cumulative frequency analysis"
         ],
-        "Definition": "Procedure used to estimate the probabilities of occurrence of hydrometeorological events based on interpretation of past records of these events.\nhttps://unterm.un.org/unterm2/en/view/722911fe-712e-482b-a881-f8a42f5967df",
+        "Definition": "Procedure used to estimate the probabilities of occurrence of hydrometeorological events based on interpretation of past records of these events.",
         "ApplicableToOperations": [
           "Conduct observation analysis",
           "Quantify future climate change"
         ],
-        "Name": "Frequency analysis"
+        "Name": "Frequency analysis",
+        "DefinitionSources": [
+          "https://unterm.un.org/unterm2/en/view/722911fe-712e-482b-a881-f8a42f5967df"
+        ]
       }
+    ],
+    "DefinitionSources": [
+      "https://www.wikidata.org/wiki/Q11850042 + https://en.wikipedia.org/wiki/Time_series"
+    ],
+    "WikidataRefs": [
+      "Q11850042"
     ]
   },
   {
@@ -371,7 +516,7 @@
       "Regridding",
       "Gap-filling"
     ],
-    "Definition": "Used for regridding and gap-filling. \nRegridding is the process of interpolating from one grid resolution to a different grid resolution. This could involve temporal, vertical or spatial ('horizontal') interpolations. However, most commonly, regridding refers to spatial interpolation. There are numerous grid interpolation methods and users should choose the method appropriate for the intended task. Using an inappropriate interpolation scheme may lead to misleading results. Further, most climate grids are georeferenced on a sphere where pole singularities and the convergence of the longitude meridians can be issues that need to be addressed.\nhttps://climatedataguide.ucar.edu/climate-tools/regridding-overview",
+    "Definition": "Used for regridding and gap-filling. \nRegridding is the process of interpolating from one grid resolution to a different grid resolution. This could involve temporal, vertical or spatial ('horizontal') interpolations. However, most commonly, regridding refers to spatial interpolation. There are numerous grid interpolation methods and users should choose the method appropriate for the intended task. Using an inappropriate interpolation scheme may lead to misleading results. Further, most climate grids are georeferenced on a sphere where pole singularities and the convergence of the longitude meridians can be issues that need to be addressed.",
     "Category": "Statistical analyses",
     "ApplicableToOperations": [
       "Apply data preprocessing",
@@ -381,42 +526,54 @@
     "Name": "Spatial interpolation",
     "Methods": [
       {
-        "Definition": "A regridding method that uses a weighted average of the four nearest cells to determine a new cell value.\nhttps://support.esri.com/en-us/gis-dictionary/bilinear-interpolation",
+        "Definition": "A regridding method that uses a weighted average of the four nearest cells to determine a new cell value.",
         "ApplicableToOperations": [
           "Apply data preprocessing",
           "Postprocess climate information",
           "Postprocess impact analysis"
         ],
-        "Name": "Bilinear"
+        "Name": "Bilinear",
+        "DefinitionSources": [
+          "https://support.esri.com/en-us/gis-dictionary/bilinear-interpolation"
+        ]
       },
       {
-        "Definition": "A regridding technique in which the new cell value is calculated using the value of the nearest cell. It is often used to resample categorical or integer data (for example, land use, soil, or forest type).\nhttps://support.esri.com/en-us/gis-dictionary/nearest-neighbor-resampling (modified to remove references to raster processing)",
+        "Definition": "A regridding technique in which the new cell value is calculated using the value of the nearest cell. It is often used to resample categorical or integer data (for example, land use, soil, or forest type).",
         "ApplicableToOperations": [
           "Apply data preprocessing",
           "Postprocess climate information",
           "Postprocess impact analysis"
         ],
-        "Name": "Nearest neighbour"
+        "Name": "Nearest neighbour",
+        "DefinitionSources": [
+          "https://support.esri.com/en-us/gis-dictionary/nearest-neighbor-resampling (modified to remove references to raster processing)"
+        ]
       },
       {
         "Alias": [
           "IDW"
         ],
-        "Definition": "An interpolation method that assigns influence or weight values to spatial features relative to a specific point—often using a power function based on distance. Nearby features have greater weight or influence on the initial point than features that are farther away.\nhttps://support.esri.com/en-us/gis-dictionary/inverse-distance-weighting",
+        "Definition": "An interpolation method that assigns influence or weight values to spatial features relative to a specific point—often using a power function based on distance. Nearby features have greater weight or influence on the initial point than features that are farther away.",
         "ApplicableToOperations": [
           "Apply data preprocessing",
           "Postprocess climate information",
           "Postprocess impact analysis"
         ],
-        "Name": "Inverse distance weighting"
+        "Name": "Inverse distance weighting",
+        "DefinitionSources": [
+          "https://support.esri.com/en-us/gis-dictionary/inverse-distance-weighting"
+        ]
       }
+    ],
+    "DefinitionSources": [
+      "https://climatedataguide.ucar.edu/climate-tools/regridding-overview"
     ]
   },
   {
     "Alias": [
       "Critical values"
     ],
-    "Definition": "Mathematical values with different meanings by domain; a quantitative threshold (Wikidata: Q3754024)\nhttps://www.wikidata.org/wiki/Q3754024",
+    "Definition": "Mathematical values with different meanings by domain; a quantitative threshold",
     "Category": "Statistical analyses",
     "ApplicableToOperations": [
       "Compute climate indices",
@@ -430,13 +587,16 @@
           "POT",
           "Peaks over threshold"
         ],
-        "Definition": "Peaks-over-threshold analysis is used to obtain a sample defined by all peak\nvalues that lie above a certain truncation level (usually called the threshold or base level). Together with block (typically annual) maxima, it is one of the methods to identify extreme values.\nFrom Bezek at al. (2014) https://doi.org/10.1080/02626667.2013.831174",
+        "Definition": "Peaks-over-threshold analysis is used to obtain a sample defined by all peak\nvalues that lie above a certain truncation level (usually called the threshold or base level). Together with block (typically annual) maxima, it is one of the methods to identify extreme values.",
         "Usage": "To identify extreme values for use in extreme value analysis",
         "ApplicableToOperations": [
           "Conduct observation analysis",
           "Quantify future climate change"
         ],
-        "Name": "Peaks-over-threshold"
+        "Name": "Peaks-over-threshold",
+        "DefinitionSources": [
+          "From Bezek at al. (2014) https://doi.org/10.1080/02626667.2013.831174"
+        ]
       },
       {
         "Alias": [
@@ -451,10 +611,16 @@
         ],
         "Name": "Threshold analysis"
       }
+    ],
+    "DefinitionSources": [
+      "https://www.wikidata.org/wiki/Q3754024"
+    ],
+    "WikidataRefs": [
+      "Q3754024"
     ]
   },
   {
-    "Definition": "A weather pattern refers to a specific daily circulation type over a defined geographical domain. \nWeather patterns are matched based on their closest distance—defined as the area-weighted sum of squares difference at each grid point of model output.\nBased on Neal et al. (2016) https://doi.org/10.1002/met.1563\nPope et al. (2022) https://doi.org/10.1007/s00382-021-06031-0",
+    "Definition": "A weather pattern refers to a specific daily circulation type over a defined geographical domain. \nWeather patterns are matched based on their closest distance—defined as the area-weighted sum of squares difference at each grid point of model output.",
     "Usage": "“downscaling” larger scale metrics to assess impacts data (case 1) or for categorisation of different conditions (case 2)",
     "Category": "Statistical analyses",
     "ApplicableToOperations": [
@@ -469,12 +635,21 @@
           "Select climate simulations",
           "Quantify future climate change"
         ],
-        "Definition": "(1) Clustering is performed to select representative simulations and thus reduce the number of members in a model ensemble (e.g. model culling). It can be accomplished by performing hierarchical cluster analysis on the patterns of climate change at a certain height k, which corresponds to the desired number of clusters.\nBased on Mendlik & Gobiet (2015) https://doi.org/10.1007/s10584-015-1582-0 and\nWilcke & Bärring (2016) https://doi.org/10.1016/j.envsoft.2016.01.002\n(2) Clustering (using nonhierarchical k-means clustering algorithm) is a method to derive weather patterns from observational data.\nPope et al. (2022) https://doi.org/10.1007/s00382-021-06031-0"
+        "Definition": "Clustering is performed to select representative simulations and thus reduce the number of members in a model ensemble (e.g. model culling). It can be accomplished by performing hierarchical cluster analysis on the patterns of climate change at a certain height k, which corresponds to the desired number of clusters [1,2].\nClustering using nonhierarchical k-means clustering algorithm is a method to derive weather patterns from observational data [3].",
+        "DefinitionSources": [
+          "Mendlik & Gobiet (2015) https://doi.org/10.1007/s10584-015-1582-0",
+          "Wilcke & Bärring (2016) https://doi.org/10.1016/j.envsoft.2016.01.002",
+          "Pope et al. (2022) https://doi.org/10.1007/s00382-021-06031-0"
+        ]
       }
+    ],
+    "DefinitionSources": [
+      "Neal et al. (2016) https://doi.org/10.1002/met.1563",
+      "Pope et al. (2022) https://doi.org/10.1007/s00382-021-06031-0"
     ]
   },
   {
-    "Definition": "Inferential statistics refers to the branch of statistics that is used to draw conclusions and make decisions about a population based on samples, often through hypothesis testing. It helps determine whether the observed differences or relationships in the data are significant and not due to chance.\nhttps://www.sciencedirect.com/topics/social-sciences/inferential-statistics",
+    "Definition": "Inferential statistics refers to the branch of statistics that is used to draw conclusions and make decisions about a population based on samples, often through hypothesis testing. It helps determine whether the observed differences or relationships in the data are significant and not due to chance.",
     "Category": "Statistical analyses",
     "ApplicableToOperations": [
       "Evaluate climate simulations",
@@ -489,18 +664,24 @@
           "Hypothesis testing",
           "Statistical hypothesis test"
         ],
-        "Definition": "Significance testing is used to establish the robustness of simulated climate change driven by external forcing (the signal) relative to model internal variability (the noise). Signal in climate simulations is usually calculated as the difference between the average of a simulation with external forcing and a hypothesised value (in a one-sample test) or the average of a simulation with basis forcing (in a two-sample test). Noise in climate simulations refers to internal variability, and it is estimated from the variability information in the sample (or samples in case of a two-sample test). \nDecremer et al. (2014) https://doi.org/10.3402/tellusa.v66.23139",
+        "Definition": "Significance testing is used to establish the robustness of simulated climate change driven by external forcing (the signal) relative to model internal variability (the noise). Signal in climate simulations is usually calculated as the difference between the average of a simulation with external forcing and a hypothesised value (in a one-sample test) or the average of a simulation with basis forcing (in a two-sample test). Noise in climate simulations refers to internal variability, and it is estimated from the variability information in the sample (or samples in case of a two-sample test).",
         "Usage": "Usually used to check whether the result is showing a robust change (i.e. based on delta change analysis)",
         "ApplicableToOperations": [
           "Evaluate climate simulations",
           "Quantify future climate change"
         ],
-        "Name": "Significance testing"
+        "Name": "Significance testing",
+        "DefinitionSources": [
+          "Decremer et al. (2014) https://doi.org/10.3402/tellusa.v66.23139"
+        ]
       }
+    ],
+    "DefinitionSources": [
+      "https://www.sciencedirect.com/topics/social-sciences/inferential-statistics"
     ]
   },
   {
-    "Definition": "Spatiotemporal modeling covers a broad spectrum of algorithms dealing with spatiotemporal data and a wide range of applications in many fields. The generic idea behind these modeling approaches is to analyse the temporal pattern of target variables within a spatial domain of interest.\nBhattacharjee et al. (2022) https://doi.org/10.1007/978-3-030-26050-7_418-1",
+    "Definition": "Spatiotemporal modeling covers a broad spectrum of algorithms dealing with spatiotemporal data and a wide range of applications in many fields. The generic idea behind these modeling approaches is to analyse the temporal pattern of target variables within a spatial domain of interest.",
     "Category": "Statistical analyses",
     "ApplicableToOperations": [
       "Quantify future climate change",
@@ -509,26 +690,35 @@
     "Name": "Transfer function",
     "Methods": [
       {
-        "Definition": "Simple linear regression is used to estimate the relationship between two quantitative variables.\nhttps://unterm.un.org/unterm2/en/view/8218159a-1d23-45b0-a108-fe6e49776f97",
+        "Definition": "Simple linear regression is used to estimate the relationship between two quantitative variables.",
         "ApplicableToOperations": [
           "Quantify future climate change",
           "Select impact model"
         ],
-        "Name": "Linear regression"
+        "Name": "Linear regression",
+        "DefinitionSources": [
+          "https://unterm.un.org/unterm2/en/view/8218159a-1d23-45b0-a108-fe6e49776f97"
+        ]
       },
       {
-        "Definition": "Quantile regression is defined as a statistical technique that estimates the conditional quantiles of a response variable distribution, allowing for the modeling of the effects of predictor variables on different points (quantiles) of the response distribution rather than just the mean. It is particularly useful for identifying limiting constraints by examining upper regression quantiles, which can reveal relationships not detectable by traditional linear regression.\nhttps://www.sciencedirect.com/topics/mathematics/quantile-regression",
+        "Definition": "Quantile regression is defined as a statistical technique that estimates the conditional quantiles of a response variable distribution, allowing for the modeling of the effects of predictor variables on different points (quantiles) of the response distribution rather than just the mean. It is particularly useful for identifying limiting constraints by examining upper regression quantiles, which can reveal relationships not detectable by traditional linear regression.",
         "Usage": "Example: Haugen et al. (2019) https://doi.org/10.5194/ascmo-5-37-2019.",
         "ApplicableToOperations": [
           "Quantify future climate change",
           "Select impact model"
         ],
-        "Name": "Quantile regression"
+        "Name": "Quantile regression",
+        "DefinitionSources": [
+          "https://www.sciencedirect.com/topics/mathematics/quantile-regression"
+        ]
       }
+    ],
+    "DefinitionSources": [
+      "Bhattacharjee et al. (2022) https://doi.org/10.1007/978-3-030-26050-7_418-1"
     ]
   },
   {
-    "Definition": "Characterization and reduction of uncertainties in both computational and real world applications (Wikidata: Q7882499)\nhttps://www.wikidata.org/wiki/Q7882499",
+    "Definition": "Characterization and reduction of uncertainties in both computational and real world applications",
     "Category": "Statistical analyses",
     "Name": "Uncertainty quantification",
     "ApplicableToOperations": [
@@ -542,23 +732,30 @@
           "Theoretical distribution function",
           "Cumulative probability distribution function"
         ],
-        "Definition": "The cumulative distribution function (CDF) is the probability that a continuous random variable has a value less than or equal to a given value. The Probability Density Function (PDF) is the first derivative of the CDF. [1]\nThe CDF is useful for those who want to know the probability of climate change being less than some \nthreshold where an impact of interest starts to occur. [2]\n[1] https://confluence.ecmwf.int/display/FUG/Section+8.1.9.1+Cumulative+Distribution+Function,+Probability+Density+Function\n[2] https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/research/ukcp/ukcp18-guidance---how-to-use-the-cdf-and-pdf-plots.pdf",
+        "Definition": "The cumulative distribution function (CDF) is the probability that a continuous random variable has a value less than or equal to a given value. The Probability Density Function (PDF) is the first derivative of the CDF. [1]\nThe CDF is useful for those who want to know the probability of climate change being less than some \nthreshold where an impact of interest starts to occur. [2]",
         "Usage": "When enough sample points available",
         "ApplicableToOperations": [
           "Quantify uncertainty"
         ],
-        "Name": "Cumulative Distribution Function"
+        "Name": "Cumulative Distribution Function",
+        "DefinitionSources": [
+          "https://confluence.ecmwf.int/display/FUG/Section+8.1.9.1+Cumulative+Distribution+Function,+Probability+Density+Function",
+          "https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/research/ukcp/ukcp18-guidance---how-to-use-the-cdf-and-pdf-plots.pdf"
+        ]
       },
       {
         "Alias": [
           "PDF"
         ],
-        "Definition": "A probability density function (PDF) is a function that indicates the relative chances of occurrence of different outcomes of a variable. The function integrates to unity over the domain for which it is defined and has the property that the integral over a sub-domain equals the probability that the outcome of the variable lies within that sub-domain. For example, the probability that a temperature anomaly defined in a particular way is greater than zero is obtained from its PDF by integrating the PDF over all possible temperature anomalies greater than zero. Probability density functions that describe two or more variables simultaneously are similarly defined.\nhttps://unterm.un.org/unterm2/en/view/9f18f708-7341-44e9-96f8-d29d49ba2cdb",
+        "Definition": "A probability density function (PDF) is a function that indicates the relative chances of occurrence of different outcomes of a variable. The function integrates to unity over the domain for which it is defined and has the property that the integral over a sub-domain equals the probability that the outcome of the variable lies within that sub-domain. For example, the probability that a temperature anomaly defined in a particular way is greater than zero is obtained from its PDF by integrating the PDF over all possible temperature anomalies greater than zero. Probability density functions that describe two or more variables simultaneously are similarly defined.",
         "Usage": "When enough sample points available",
         "ApplicableToOperations": [
           "Quantify uncertainty"
         ],
-        "Name": "Probability Density Function"
+        "Name": "Probability Density Function",
+        "DefinitionSources": [
+          "https://unterm.un.org/unterm2/en/view/9f18f708-7341-44e9-96f8-d29d49ba2cdb"
+        ]
       },
       {
         "Alias": [
@@ -566,20 +763,32 @@
           "EDF",
           "Empirical cumulative distribution function"
         ],
-        "Definition": "The empirical cumulative distribution function (ECDF) is a step function estimate of the CDF of the distribution underlying a sample.\nhttps://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ecdf.html",
+        "Definition": "The empirical cumulative distribution function (ECDF) is a step function estimate of the CDF of the distribution underlying a sample.",
         "Usage": "When enough sample points available",
         "ApplicableToOperations": [
           "Quantify uncertainty"
         ],
-        "Name": "Empirical Distribution Function"
+        "Name": "Empirical Distribution Function",
+        "DefinitionSources": [
+          "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ecdf.html"
+        ]
       },
       {
-        "Definition": "Probability distribution of the largest or smallest observations in a sample.\nhttps://unterm.un.org/unterm2/en/view/1f90fcbf-c795-4d8a-9f78-21673465c159",
+        "Definition": "Probability distribution of the largest or smallest observations in a sample.",
         "ApplicableToOperations": [
           "Quantify uncertainty"
         ],
-        "Name": "Extreme value distribution"
+        "Name": "Extreme value distribution",
+        "DefinitionSources": [
+          "https://unterm.un.org/unterm2/en/view/1f90fcbf-c795-4d8a-9f78-21673465c159"
+        ]
       }
+    ],
+    "DefinitionSources": [
+      "https://www.wikidata.org/wiki/Q7882499"
+    ],
+    "WikidataRefs": [
+      "Q7882499"
     ]
   }
 ]
