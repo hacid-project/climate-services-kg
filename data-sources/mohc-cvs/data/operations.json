@@ -10,7 +10,7 @@
           ],
           "InformationType": "Obligatory"
         },
-        "Description": "The operation that provides background information such as information about the organisation and their climate information needs",
+        "Description": "The operation that provides background information such as information about the organization and their climate information needs",
         "AssociatedData": {
           "type": "text"
         },
@@ -23,7 +23,7 @@
               ],
               "InformationType": "Obligatory"
             },
-            "Description": "The operation that provides the name of the customer organisation.",
+            "Description": "The operation that provides the name of the customer organization.",
             "AssociatedData": {
               "type": "text"
             },
@@ -36,10 +36,10 @@
               ],
               "InformationType": "Obligatory"
             },
-            "Description": "The operation that describes the type of the customer organisation.",
+            "Description": "The operation that describes the type of the customer organization.",
             "AssociatedData": {
               "type": "uri",
-              "cv": "OrganisationType"
+              "cv": "OrganizationType"
             },
             "Name": "Describe organization type"
           },
@@ -50,7 +50,7 @@
               ],
               "InformationType": "Optional"
             },
-            "Description": "The operation that describes the size (e.g. small, medium, large) of the customer organisation.",
+            "Description": "The operation that describes the size (e.g. small, medium, large) of the customer organization.",
             "AssociatedData": {
               "type": "uri",
               "cv": "OrganizationSize"
@@ -65,7 +65,7 @@
               ],
               "InformationType": "Optional"
             },
-            "Description": "The operation that describes the operating sector of the customer organisation.",
+            "Description": "The operation that describes the operating sector of the customer organization.",
             "AssociatedData": {
               "type": "uri",
               "cv": "Sector"
@@ -125,7 +125,7 @@
               ],
               "InformationType": "Obligatory"
             },
-            "Description": "The operation that states the climate-related challenges faced by the organisation or by its operational activities.",
+            "Description": "The operation that states the climate-related challenges faced by the organization or by its operational activities.",
             "AssociatedData": {
               "type": "text"
             },
@@ -195,7 +195,7 @@
               ],
               "InformationType": "Obligatory"
             },
-            "Description": "The operation that states the overall time horizon over which the climate information is required. If multiple horizons are of interest, provide the time horizon that covers them all. In case such information is not available or not explicitly defined, provide the typical time horizon for organisations' planning decisions.\n",
+            "Description": "The operation that states the overall time horizon over which the climate information is required. If multiple horizons are of interest, provide the time horizon that covers them all. In case such information is not available or not explicitly defined, provide the typical time horizon for organizations' planning decisions.\n",
             "AssociatedData": {
               "type": "range",
               "items": {
@@ -243,7 +243,7 @@
               ],
               "InformationType": "Obligatory"
             },
-            "Description": "The operation that identifies the climate hazards (a climate-related physical event or process) that impact the customer organisation.",
+            "Description": "The operation that identifies the climate hazards (a climate-related physical event or process) that impact the customer organization.",
             "AssociatedData": {
               "type": "uri",
               "cv": "Hazard"
@@ -260,7 +260,7 @@
                 "Identify hazards"
               ]
             },
-            "Description": "The operation that describes how climate hazards impact the organisation's activities and the proposed case. ",
+            "Description": "The operation that describes how climate hazards impact the organization's activities and the proposed case. ",
             "AssociatedData": {
               "type": "text"
             },
@@ -288,11 +288,11 @@
               ],
               "InformationType": "Optional"
             },
-            "Description": "The operation that outlines the organisational standard practices regarding the identified hazards",
+            "Description": "The operation that outlines the organizational standard practices regarding the identified hazards",
             "AssociatedData": {
               "type": "text"
             },
-            "Name": "Provide information on organisational standards"
+            "Name": "Provide information on organizational standards"
           },
           {
             "WorkflowInfo": {
@@ -596,7 +596,7 @@
         "Name": "Define observation type"
       },
       {
-        "Output": "Access point organisation or country of origin",
+        "Output": "Access point organization or country of origin",
         "WorkflowInfo": {
           "Roles": [
             "CaseSolver"
