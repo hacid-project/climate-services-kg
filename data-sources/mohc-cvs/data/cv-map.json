@@ -1,0 +1,71 @@
+{
+    "Organization type": null,
+    "Organization size": {
+        "scheme": {
+            "id": "OrganizationSize",
+            "members": [
+                "small",
+                "medium",
+                "large"
+            ]
+        }
+    },
+    "Sector": {
+        "scheme": "https://w3id.org/hacid/data/cs/climdex/sectors"
+    },
+    "Hazard": {
+        "class": "ccso:HazardType"
+    },
+    "Risk rating": {
+        "scheme": {
+            "id": "RiskRating",
+            "members": [
+                "low",
+                "medium",
+                "high"
+            ]
+        }
+    },
+    "Index; variable": {
+        "union": [
+            {
+                "collection": "https://w3id.org/hacid/data/cs/variables"
+            },
+            {
+                "collection": "https://w3id.org/hacid/data/cs/indices"
+            }
+        ]
+    },
+    "Global warming level": null,
+    "Method": {
+        "class": "top:Method"
+    },
+    "Emission scenario": {
+        "class": "ccso:EmissionScenario"
+    },
+    "Sub-annual period": "data:AnnuallyRecurringInterval",
+    "Observation type": {
+        "scheme": {
+            "id": "ObservationType",
+            "members": [
+                "station-based",
+                "gridded"
+            ]
+        }
+    },
+    "Access point": {
+        "scheme": {"id": "AccessPoint"}
+    },
+    "Climate simulations": "Climate simulations",
+    "Observation datasets": null,
+    "Confidence level": {
+        "scheme": {
+            "id": "ConfidenceLevel",
+            "members": [
+                "low",
+                "medium",
+                "high"
+            ]
+        }
+    }
+}

@@ -39,7 +39,7 @@
             "Description": "The operation that describes the type of the customer organization.",
             "AssociatedData": {
               "type": "uri",
-              "cv": "OrganizationType"
+              "cv": "Organization type"
             },
             "Name": "Describe organization type"
           },
@@ -53,7 +53,7 @@
             "Description": "The operation that describes the size (e.g. small, medium, large) of the customer organization.",
             "AssociatedData": {
               "type": "uri",
-              "cv": "OrganizationSize"
+              "cv": "Organization size"
             },
             "Name": "Describe organization size"
           },
@@ -333,7 +333,7 @@
             "Description": "The operation that rates risk tolerance, i.e. a measure of the extent to which a user is willing to accept uncertainty and potential adverse outcomes related to climate risks: for example, a low risk tolerance indicates a preference for detailed quantification of even the most extreme climate scenarios, enabling proactive planning and adaptation to minimise potential impacts.",
             "AssociatedData": {
               "type": "uri",
-              "cv": "RiskRating"
+              "cv": "Risk rating"
             },
             "Name": "Rate risk tolerance"
           },
@@ -1028,7 +1028,7 @@
         "Description": "The operation that indicates the subjective level of confidence in future climate change and uncertainty quantification.",
         "AssociatedData": {
           "type": "uri",
-          "cv": "Confidence level: low, medium, high"
+          "cv": "Confidence level"
         },
         "Name": "Estimate subjective confidence"
       },
