@@ -1054,35 +1054,8 @@
               "@type": "top:OperationInformationRole",
               "@id": "ops:DefineSubannualSelection/associated-data",
               "ExpectedType": {
-                "@type": "owl:Class",
-                "owl:unionOf": [
-                  {
-                    "src": {
-                      "type": "uri",
-                      "cv": "Sub-annual period"
-                    },
-                    "@type": "unknown"
-                  },
-                  {
-                    "@type": "owl:Class",
-                    "owl:intersectionOf": [
-                      {
-                        "@id": "top:Interval"
-                      },
-                      {
-                        "@type": "owl:Restriction",
-                        "owl:onProperty": "top:hasBoundaryValue",
-                        "owl:allValuesFrom": {
-                          "src": {
-                            "type": "uri",
-                            "cv": "Sub-annual period"
-                          },
-                          "@type": "unknown"
-                        }
-                      }
-                    ]
-                  }
-                ]
+                "@id": "data:AnnuallyRecurringInterval",
+                "@type": "owl:Class"
               }
             }
           ]

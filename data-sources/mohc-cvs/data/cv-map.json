@@ -36,14 +36,23 @@
             }
         ]
     },
-    "Global warming level": null,
+    "Global warming level": {
+        "scheme": {
+            "id": "GlobalWarmingLevel",
+            "range" : {
+                "min": 1.5,
+                "max": 6.0,
+                "step": 0.5
+            },
+            "labelTemplate": "GWL\\(.)"
+        }
+    },
     "Method": {
         "class": "top:Method"
     },
     "Emission scenario": {
         "class": "ccso:EmissionScenario"
     },
-    "Sub-annual period": "data:AnnuallyRecurringInterval",
     "Observation type": {
         "scheme": {
             "id": "ObservationType",
@@ -54,9 +63,13 @@
         }
     },
     "Access point": {
-        "scheme": {"id": "AccessPoint"}
+        "scheme": {
+            "id": "AccessPoint"
+        }
     },
-    "Climate simulations": "Climate simulations",
+    "Climate simulations":  {
+        "class": "ccso:ClimateSimulation"
+    },
     "Observation datasets": null,
     "Confidence level": {
         "scheme": {

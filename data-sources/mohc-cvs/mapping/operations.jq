@@ -19,6 +19,11 @@ def type_to_owl:
             "@id": "data:GeodeticRegion",
             "@type": "owl:Class"
         }
+    elif .type == "annually-recurring-interval" then
+        {
+            "@id": "data:AnnuallyRecurringInterval",
+            "@type": "owl:Class"
+        }
     elif .type == "range" then
         if .items.type == "uri" then
             {

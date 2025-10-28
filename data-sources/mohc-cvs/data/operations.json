@@ -571,11 +571,7 @@
         },
         "Description": "The operation that selects a sub-annual period (e.g. month, season, period in year) of interest (e.g. boreal winter (DJFM), austral spring (SON), Januarys, Julys).",
         "AssociatedData": {
-          "type": "range-or-exact",
-          "items": {
-            "type": "uri",
-            "cv": "Sub-annual period"
-          }
+          "type": "annually-recurring-interval"
         },
         "Name": "Define subannual selection"
       },
