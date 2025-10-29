@@ -1,5 +1,9 @@
 {
-    "Organization type": null,
+    "Organization type": {
+        "scheme": {
+            "id": "OrganizationType"
+        }
+    },
     "Organization size": {
         "scheme": {
             "id": "OrganizationSize",

@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "top": "https://w3id.org/hacid/onto/top-level/",
+    "schemes": "https://w3id.org/hacid/data/cs/wf/schemes/",
+    "members": {
+      "@reverse": "top:inScheme",
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "schemes:OrganizationType",
+      "@type": "top:ConceptScheme",
+      "id": "OrganizationType"
+    },
+    {
+      "@id": "schemes:OrganizationSize",
+      "@type": "top:ConceptScheme",
+      "members": [
+        "schemes:OrganizationSize/small",
+        "schemes:OrganizationSize/medium",
+        "schemes:OrganizationSize/large"
+      ]
+    },
+    {
+      "@id": "schemes:RiskRating",
+      "@type": "top:ConceptScheme",
+      "members": [
+        "schemes:RiskRating/low",
+        "schemes:RiskRating/medium",
+        "schemes:RiskRating/high"
+      ]
+    },
+    {
+      "@id": "schemes:GlobalWarmingLevel",
+      "@type": "top:ConceptScheme",
+      "members": [
+        "schemes:GlobalWarmingLevel/GWL1.5",
+        "schemes:GlobalWarmingLevel/GWL2",
+        "schemes:GlobalWarmingLevel/GWL2.5",
+        "schemes:GlobalWarmingLevel/GWL3",
+        "schemes:GlobalWarmingLevel/GWL3.5",
+        "schemes:GlobalWarmingLevel/GWL4",
+        "schemes:GlobalWarmingLevel/GWL4.5",
+        "schemes:GlobalWarmingLevel/GWL5",
+        "schemes:GlobalWarmingLevel/GWL5.5",
+        "schemes:GlobalWarmingLevel/GWL6"
+      ]
+    },
+    {
+      "@id": "schemes:ObservationType",
+      "@type": "top:ConceptScheme",
+      "members": [
+        "schemes:ObservationType/station-based",
+        "schemes:ObservationType/gridded"
+      ]
+    },
+    {
+      "@id": "schemes:AccessPoint",
+      "@type": "top:ConceptScheme",
+      "id": "AccessPoint"
+    },
+    {
+      "@id": "schemes:ConfidenceLevel",
+      "@type": "top:ConceptScheme",
+      "members": [
+        "schemes:ConfidenceLevel/low",
+        "schemes:ConfidenceLevel/medium",
+        "schemes:ConfidenceLevel/high"
+      ]
+    }
+  ]
+}

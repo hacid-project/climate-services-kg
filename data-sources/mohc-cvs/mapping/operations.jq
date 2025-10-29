@@ -1,19 +1,59 @@
+import "./data/cv-map" as $cv_map_inputs;
+
+$cv_map_inputs as [$cv_map_input] |
+
 def to_camel_case:
     split(" ") |
     map((.[:1] | ascii_upcase) + (.[1:] | ascii_downcase)) |
     join("");
 
+{
+    text: "xsd:string",
+    date: "xsd:date",
+    number: "xsd:decimal",
+    integer: "xsd:integer",
+    duration: "xsd:duration"
+} as $datatypes_map |
+
+def cv_to_owl:
+    if .class then
+        {
+            "@id": .class,
+            "@type": "owl:Class"
+        }
+    elif .scheme then
+        .scheme |
+        (strings, (objects | @uri "schemes:\(.id)")) as $scheme_uri |
+        {
+            "@type": "owl:Restriction",
+            onProperty: "top:inScheme",
+            "owl:hasValue": $scheme_uri
+        }
+    elif .collection then
+        .collection |
+        (strings, (objects | @uri "collections:\(.id)")) as $collection_uri |
+        {
+            "@type": "owl:Restriction",
+            onProperty: "top:isMemberOf",
+            "owl:hasValue": {
+                "@id": $collection_uri
+            }
+        }
+    elif .union then
+        {
+            "@type": "owl:Class",
+            unionOf: [.union[] | cv_to_owl]
+        }
+    else
+        {src: ., "@type": "unknown-cv"}
+    end;
+
 def type_to_owl:
-    if .type == "text" then
-        {"@id": "xsd:string"}
-    elif .type == "date" then
-        {"@id": "xsd:date"}
-    elif .type == "number" then
-        {"@id": "xsd:decimal"}
-    elif .type == "integer" then
-        {"@id": "xsd:integer"}
-    elif .type == "duration" then
-        {"@id": "xsd:duration"}
+    if .type | in($datatypes_map) then
+        {
+            "@id": $datatypes_map[.type],
+            "@type": "rdfs:Datatype"
+        }
     elif .type == "geodetic-region" then
         {
             "@id": "data:GeodeticRegion",
@@ -28,26 +68,26 @@ def type_to_owl:
         if .items.type == "uri" then
             {
                 "@type": "owl:Class",
-                "owl:intersectionOf":  [
-                    {"@id": "top:Interval"},
+                intersectionOf:  [
+                    "top:Interval",
                     {
                         "@type": "owl:Restriction",
-                        "owl:onProperty": "top:hasBoundaryValue",
+                        onProperty: "top:hasBoundaryValue",
                         "owl:allValuesFrom": (.items | type_to_owl)
                     }
                 ]
             }
         else 
             {
-                "owl:intersectionOf":  [
+                intersectionOf:  [
                     {
                         "@type": "owl:Restriction",
-                        "owl:onProperty": "owl:onDatatype",
+                        onProperty: "owl:onDatatype",
                         "owl:allValuesFrom": (.items | type_to_owl)
                     },
                     {
                         "@type": "owl:Restriction",
-                        "owl:onProperty": "owl:withRestrictions",
+                        onProperty: "owl:withRestrictions",
                         "owl:cardinality": 1
                     }
                 ]
@@ -56,16 +96,15 @@ def type_to_owl:
     elif .type == "range-or-exact" then
         {
             "@type": "owl:Class",
-            "owl:unionOf":  [
+            unionOf:  [
                 (.items | type_to_owl),
                 (.type = "range" | type_to_owl)
             ]
         }
+    elif .type == "uri" then
+        $cv_map_input[.cv] | cv_to_owl
     else
-        {src: ., "@type": "unknown"}
-    end |
-    if ."@type" | not then
-        ."@type" = "rdfs:Datatype"
+        {src: ., "@type": "unknown-type"}
     end;
 
 walk((
@@ -103,10 +142,28 @@ walk((
         aggregation: "https://w3id.org/hacid/data/cs/climdex/index-time-aggregations/",
         temporalgrid: "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/",
         ops: "https://w3id.org/hacid/data/cs/wf/ops/",
+        schemes: "https://w3id.org/hacid/data/cs/wf/schemes/",
+        collections: "https://w3id.org/hacid/data/cs/wf/collections/",
         Id: "@id",
         Label: "rdfs:label",
         Description: "rdfs:comment",
-        Specializations: "top:isSpecializedBy"
+        Specializations: "top:isSpecializedBy",
+        ExpectedType: "top:hasExpectedType",
+        InformationRoles: "top:definesRole",
+        unionOf: {
+            "@id": "owl:unionOf",
+            "@type": "@id",
+            "@container": "@list"
+        },
+        intersectionOf: {
+            "@id": "owl:intersectionOf",
+            "@type": "@id",
+            "@container": "@list"
+        },
+        onProperty: {
+            "@id": "owl:onProperty",
+            "@type": "@id"
+        }
     },
     "@graph": .
 }
