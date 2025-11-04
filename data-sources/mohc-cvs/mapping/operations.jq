@@ -165,6 +165,19 @@ walk((
             "@type": "@id"
         }
     },
-    "@graph": .
+    "@id": "ops:CaseOperation",
+    "@type": "top:Operation",
+    Label: "Case operation",
+    Specializations: [
+        (.[] | select(."@id" == "ops:CreateCase")),
+        {
+            "@id": "ops:HandleCase",
+            "@type": "top:Operation",
+            Label: "Handle case",
+            Specializations: [
+                .[] | select(."@id" != "ops:CreateCase")
+            ]
+        }
+    ]
 }
 
