@@ -9,6 +9,14 @@ walk((
     ."@type" = "ccso:HazardType" |
     .Label = .Name |
     ."@id" = @uri "hazards:\($hazard_id)" |
+    if .AssociatedIndices then
+        .AssociatedIndices |= [
+            to_entries | .[] |
+            (.key | sub(" ";"-") | if . == "Climdex" then "climdex" end) as $group_id |
+            .value[] |
+            "cs:\($group_id)/indices/\(. | to_camel_case)"
+        ]
+    end |
     del(.Name)
 ) // .) |
 
@@ -22,6 +30,7 @@ walk((
         top: "https://w3id.org/hacid/onto/top-level/",
         ccso: "https://w3id.org/hacid/onto/ccso/",
         data: "https://w3id.org/hacid/onto/data/",
+        cs: "https://w3id.org/hacid/data/cs/",
         index: "https://w3id.org/hacid/data/cs/metoffice/indices/",
         sector: "https://w3id.org/hacid/data/cs/climdex/sectors/",
         parameter: "https://w3id.org/hacid/data/cs/climdex/parameters/",
@@ -35,7 +44,11 @@ walk((
         Id: "@id",
         Label: "rdfs:label",
         Description: "rdfs:comment",
-        Specializations: "top:isSpecializedBy"
+        Specializations: "top:isSpecializedBy",
+        AssociatedIndices: {
+            "@id": "top:isRelatedToConcept",
+            "@type": "@id"
+        }
     },
     "@id": "hazards:ClimateHazardType",
     "@type": "ccso:HazardType",
