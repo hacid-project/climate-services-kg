@@ -20,3 +20,5 @@ data-sources/climdex/rdf/*.jsonld,https://w3id.org/hacid/data/cs/climdex,n
 data-sources/climdex/rdf/*.ttl,https://w3id.org/hacid/data/cs/climdex,n
 data-sources/workflow/metaWorkflow.jsonld,https://w3id.org/hacid/data/cs/wf,n
 data-sources/example-cases/*.ttl,https://w3id.org/hacid/data/cs/examples,n
+data-sources/mohc-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/mohc-cvs,n
+
