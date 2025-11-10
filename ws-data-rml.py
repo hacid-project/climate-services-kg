@@ -334,13 +334,15 @@ def round_datetime_interval(
     )
 
 _time_frequency_descr_and_value = {
-    '3hr': ['three hours', 'points', 'PT3H', None, None],
-    '6hr': ['six hours', 'regular', 'PT6H', None, None],
-    'day': ['day', 'regular', 'P1D', None, None],
-    'mon': ['month', 'regular', 'P1M', None, None],
-    'monClim': ['all time aggregated month of the year', 'periodic', None, 'P1M', 'P1Y'],
-    'yr': ['year', 'regular', 'P1Y', None, None],
-    'fx': ['all time', None, None, None, None]
+    '1hr': ['one hour', 'regular', 'PT1H', None, None, None],
+    '3hr': ['three hours', 'regular', 'PT3H', None, None, None],
+    '6hr': ['six hours', 'regular', 'PT6H', None, None, None],
+    'day': ['day', 'regular', 'P1D', None, None, None],
+    'mon': ['month', 'regular', 'P1M', None, None, None],
+    'monClim': ['all time aggregated month of the year', 'periodic', None, 'P1M', 'P1Y', None],
+    'sem': ['season', 'regular', 'P3M', None, None, 'P2M'],
+    'yr': ['year', 'regular', 'P1Y', None, None, None],
+    'fx': ['all time', None, None, None, None, None]
 }
 
 _dimensional_space_type = {
@@ -370,13 +372,14 @@ def format_temporal_grid(
         _dimensional_space_id,
         _grid_step,
         _grid_period,
-        _grid_in_period_step
+        _grid_in_period_step,
+        _grid_offset
     ] = _time_frequency_descr_and_value[_granularity]
     
     def _path(_strs: list[str]) -> str:
         return "/".join([_str for _str in _strs if _str is not None])
         
-    _grid_type_id = _dimensional_space_id and _path([_dimensional_space_id, _grid_step, _grid_period])
+    _grid_type_id = _dimensional_space_id and _path([_dimensional_space_id, _grid_step, _grid_period, _grid_in_period_step, _grid_offset])
     
     _temporal_info_dict = {
         'start_datetime': get_start_time(_start_datetime,_end_datetime,_granularity),
@@ -386,7 +389,8 @@ def format_temporal_grid(
         'dimensional_space_type': _dimensional_space_id and _dimensional_space_type[_dimensional_space_id],
         'grid_step': _grid_step,
         'grid_period': _grid_period,
-        'grid_in_period_step': _grid_in_period_step
+        'grid_in_period_step': _grid_in_period_step,
+        'grid_offset': _grid_offset
     }
     try:
         return _template.format_map(_purge_none_values(_temporal_info_dict))
@@ -496,7 +500,7 @@ if __name__ == '__main__':
     cs_mapper = CSMapper()
     
     for subfolder in subfolders:
-        # if subfolder.endswith('cmip5'):
+        if subfolder.endswith('cmip5'):
         # if subfolder.endswith('cordex') or subfolder.endswith('cordex-domains'):
         # if subfolder.endswith('cordex') or subfolder.endswith('cmip5'):
         # if subfolder.endswith('cordex-domains'):

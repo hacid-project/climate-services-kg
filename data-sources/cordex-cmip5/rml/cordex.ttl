@@ -871,6 +871,19 @@
                 ]
             ]
         ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate data:hasOffsetValue ;
+        rr:objectMap [ 
+            rr:datatype xsd:duration ;
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [ rr:constant "{grid_offset}" ]
+                ]
+            ]
+        ]
     ] .
 
 :TemporalRegionMapping a rr:TriplesMap ;
