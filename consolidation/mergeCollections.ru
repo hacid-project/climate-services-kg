@@ -29,7 +29,13 @@ INSERT {
     }
 }
 WHERE {
-    VALUES ?index_collection {<https://w3id.org/hacid/data/cs/climdex/indices>}.
+    VALUES ?index_collection {
+        <https://w3id.org/hacid/data/cs/climdex/indices>
+        <https://w3id.org/hacid/data/cs/Climate-ADAPT/indices>
+        <https://w3id.org/hacid/data/cs/Copernicus-CCS/indices>
+        <https://w3id.org/hacid/data/cs/ETCCDI/indices>
+        <https://w3id.org/hacid/data/cs/UK-CRI/indices>
+    }.
     ?index_collection top:hasMember ?index
 };
 
