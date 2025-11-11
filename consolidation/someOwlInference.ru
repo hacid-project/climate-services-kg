@@ -23,9 +23,7 @@ WHERE {
     ].
     ?range rdfs:label ?label.
   	FILTER NOT EXISTS {
-        GRAPH ?g {
-            ?o a ?range
-        }
+        ?o a ?range
     }
 };
 
@@ -45,8 +43,6 @@ WHERE {
     ].
     ?class rdfs:label ?label.
   	FILTER NOT EXISTS {
-        GRAPH ?g {
-            ?s ?property ?s
-        }
+        ?s ?property ?s
     }
 };
