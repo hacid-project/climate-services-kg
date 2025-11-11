@@ -48,6 +48,30 @@
         {
           "WorkflowInfo": {
             "Roles": [
+              "InformationRequester"
+            ],
+            "InformationType": "Obligatory"
+          },
+          "Description": "The operation that requests the climate information.",
+          "@type": "top:Operation",
+          "Label": "Request climate information",
+          "@id": "ops:RequestClimateInformation"
+        },
+        {
+          "WorkflowInfo": {
+            "Roles": [
+              "CaseCreator"
+            ],
+            "InformationType": "Obligatory"
+          },
+          "Description": "The operation that requests user background information.",
+          "@type": "top:Operation",
+          "Label": "Request user background information",
+          "@id": "ops:RequestUserBackgroundInformation"
+        },
+        {
+          "WorkflowInfo": {
+            "Roles": [
               "InformationRequester",
               "CaseCreator"
             ],
@@ -1903,6 +1927,42 @@
           "@type": "top:Operation",
           "Label": "Conduct climate risk assessment",
           "@id": "ops:ConductClimateRiskAssessment"
+        },
+        {
+          "WorkflowInfo": {
+            "Roles": [
+              "CaseSolver"
+            ],
+            "InformationType": "Optional"
+          },
+          "Description": "The operation that presents the climate or climate impact information through visual (e.g., plot, diagram, flowchart, graph, map), quantitative (e.g., table), or qualitative (e.g. narrative) formats",
+          "@type": "top:Operation",
+          "Label": "Present climate information",
+          "@id": "ops:PresentClimateInformation"
+        },
+        {
+          "WorkflowInfo": {
+            "Roles": [
+              "CaseSolver"
+            ],
+            "InformationType": "Obligatory"
+          },
+          "Description": "The operation that sends climate information.",
+          "@type": "top:Operation",
+          "Label": "Send climate information",
+          "@id": "ops:SendClimateInformation"
+        },
+        {
+          "WorkflowInfo": {
+            "Roles": [
+              "InformationRequester"
+            ],
+            "InformationType": "Obligatory"
+          },
+          "Description": "The operation that communicates the climate information.",
+          "@type": "top:Operation",
+          "Label": "Disseminate climate information",
+          "@id": "ops:DisseminateClimateInformation"
         }
       ]
     }

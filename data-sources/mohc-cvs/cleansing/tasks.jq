@@ -111,11 +111,11 @@ def fix_description:
     end;
 
 {
-    "Organisation Type": "OrganisationType",
-    "Organization Size": "OrganizationSize",
+    "Organisation Type": "Organisation type",
+    "Organization Size": "Organization size",
     "Sector": "Sector",
     "Hazard": "Hazard",
-    "Risk rating": "RiskRating",
+    "Risk rating": "Risk rating",
     "Index; variable": "Index; variable",
     "Global warming level": "Global warming level",
     "Method": "Method",
@@ -126,7 +126,7 @@ def fix_description:
     "Climate simulations": "Climate simulations",
     "Observation datasets": "Observation datasets",
     "Method": "Method",
-    "Confidence level: low, medium, high": "Confidence level: low, medium, high"
+    "Confidence level: low, medium, high": "Confidence level"
 } as $cv_map |
 
 {
@@ -165,7 +165,13 @@ def get_information_type:
 
 [
     .[] |
-    with_entries(select(.value | length > 0)) |
+    with_entries(
+        select(.value | length > 0) |
+        .value |= if type == "string" then
+            gsub("organisation"; "organization") |
+            gsub("Organisation"; "Organization")
+        end
+    ) |
     .WorkflowInfo = (
         {
             Roles: .Role | map($role_map[.] // "unknown"),
@@ -220,10 +226,9 @@ def get_information_type:
 
 [
     $generic_operations | .[] |
-    .Specializations = (
-        select(.Name | in($specific_operations)) |
-        $specific_operations[.Name]
-    )
+    if .Name | in($specific_operations) then
+        .Specializations = $specific_operations[.Name]
+    end
 ] | group_by(.ParentTask) |
 [
     (.[] | select(.[0].ParentTask) | {

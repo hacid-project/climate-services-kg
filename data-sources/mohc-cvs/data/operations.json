@@ -5,6 +5,26 @@
       {
         "WorkflowInfo": {
           "Roles": [
+            "InformationRequester"
+          ],
+          "InformationType": "Obligatory"
+        },
+        "Description": "The operation that requests the climate information.",
+        "Name": "Request climate information"
+      },
+      {
+        "WorkflowInfo": {
+          "Roles": [
+            "CaseCreator"
+          ],
+          "InformationType": "Obligatory"
+        },
+        "Description": "The operation that requests user background information.",
+        "Name": "Request user background information"
+      },
+      {
+        "WorkflowInfo": {
+          "Roles": [
             "InformationRequester",
             "CaseCreator"
           ],
@@ -1184,5 +1204,35 @@
         "Name": "Assess risk"
       }
     ]
+  },
+  {
+    "WorkflowInfo": {
+      "Roles": [
+        "CaseSolver"
+      ],
+      "InformationType": "Optional"
+    },
+    "Description": "The operation that presents the climate or climate impact information through visual (e.g., plot, diagram, flowchart, graph, map), quantitative (e.g., table), or qualitative (e.g. narrative) formats",
+    "Name": "Present climate information"
+  },
+  {
+    "WorkflowInfo": {
+      "Roles": [
+        "CaseSolver"
+      ],
+      "InformationType": "Obligatory"
+    },
+    "Description": "The operation that sends climate information.",
+    "Name": "Send climate information"
+  },
+  {
+    "WorkflowInfo": {
+      "Roles": [
+        "InformationRequester"
+      ],
+      "InformationType": "Obligatory"
+    },
+    "Description": "The operation that communicates the climate information.",
+    "Name": "Disseminate climate information"
   }
 ]
