@@ -40,34 +40,32 @@ WHERE {
             (MIN(?resolution) AS ?minResolution)
 #            (MIN(?gridPeriod) AS ?minGridPeriod)
         WHERE {
+            ?simulation a ccso:Simulation.
             GRAPH ?simulationGraph {
-                ?simulation a ccso:Simulation;
-                    ccso:hasOutput ?simulationOutput.
-                ?simulationOutput top:hasPart/data:dependsOnVariable ?temporalDS.
-                ?temporalDS
-                    data:basedOnDimensionalSpace+ dimension:time;
-                    data:hasExactBoundingRegion [
-                        data:hasStartDateTime ?startTime;
-                        data:hasEndDateTime ?endTime
-                    ];
-                    data:hasDiscretization ?quantization.
-        		?quantization a ?quantizationType.
-                OPTIONAL {?quantization data:hasResolutionValue ?resolution}.
-#                OPTIONAL {?quantization data:hasPeriodValue ?gridPeriod}.
-                VALUES (?quantizationType ?quantizationTypeId) {
-                    (data:SimpleRegularBinning 'regular')
-                    (data:SinglePeriodicBinning 'periodic')
-                    (data:RegularPeriodicBinning 'regular-periodic')
-                    (data:SingleBinBinning 'constant')
-                }.
+                ?simulation ccso:hasOutput ?simulationOutput
             }
+            ?simulationOutput top:hasPart/data:dependsOnVariable ?temporalDS.
+            ?temporalDS
+                data:basedOnDimensionalSpace+ dimension:time;
+                data:hasExactBoundingRegion [
+                    data:hasStartDateTime ?startTime;
+                    data:hasEndDateTime ?endTime
+                ];
+                data:hasDiscretization ?quantization.
+            ?quantization a ?quantizationType.
+            OPTIONAL {?quantization data:hasResolutionValue ?resolution}.
+#                OPTIONAL {?quantization data:hasPeriodValue ?gridPeriod}.
+            VALUES (?quantizationType ?quantizationTypeId) {
+                (data:SimpleRegularBinning 'regular')
+                (data:SinglePeriodicBinning 'periodic')
+                (data:RegularPeriodicBinning 'regular-periodic')
+                (data:SingleBinBinning 'constant')
+            }.
             FILTER NOT EXISTS {
-                GRAPH ?simulationGraph {
-                    ?simulationOutput data:dependsOnVariable [
-                        data:basedOnDimensionalSpace+ dimension:time;
-              			data:hasExactBoundingRegion ?simulationTemporalRegion
-          			]
-                }
+                ?simulationOutput data:dependsOnVariable [
+                    data:basedOnDimensionalSpace+ dimension:time;
+                    data:hasExactBoundingRegion ?simulationTemporalRegion
+                ]
             }
         }
         GROUP BY ?simulationGraph ?simulationOutput
