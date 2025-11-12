@@ -47,14 +47,22 @@
       "@type": "@id"
     },
     "members": {
-      "@reverse": "top:inScheme",
+      "@id": "top:hasMember",
+      "@type": "@id"
+    },
+    "inScheme": {
+      "@id": "top:inScheme",
       "@type": "@id"
     }
   },
   "@graph": [
     {
+      "@id": "cs:Climate-ADAPT",
+      "@type": "top:ConceptScheme"
+    },
+    {
       "@id": "cs:Climate-ADAPT/indices",
-      "@type": "top:ConceptScheme",
+      "@type": "top:Collection",
       "members": [
         {
           "Definition": "The highest daily mean temperature averaged over a three-day window over a period (°C). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
@@ -66,6 +74,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/WarmestThree-dayPeriod",
           "label": "Warmest Three-Day Period",
           "derivedFrom": [
@@ -82,6 +91,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/WarmestThree-dayPeriod/change-absolute/1991-2010",
           "label": "Warmest Three-Day Period (change from 1991-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/WarmestThree-dayPeriod"
@@ -95,6 +105,7 @@
             "@id": "unit:days%2Fyear",
             "label": "days/year"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ApparentTemperatureHeatwaveDays",
           "label": "Apparent Temperature Heatwave Days",
           "derivedFrom": [
@@ -112,6 +123,7 @@
             "@id": "unit:days%2Fyear",
             "label": "days/year"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ApparentTemperatureHeatwaveDays/change-absolute",
           "label": "Apparent Temperature Heatwave Days (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ApparentTemperatureHeatwaveDays"
@@ -130,6 +142,7 @@
             "@id": "unit:days%2Fyear",
             "label": "days/year"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ClimatologicalHeatwaveDays",
           "label": "Climatological Heatwave Days",
           "derivedFrom": [
@@ -153,6 +166,7 @@
             "@id": "unit:days%2Fyear",
             "label": "days/year"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ClimatologicalHeatwaveDays/change-absolute",
           "label": "Climatological Heatwave Days (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ClimatologicalHeatwaveDays"
@@ -166,6 +180,7 @@
             "@id": "unit:days%2Fyear",
             "label": "days/year"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/HighUtciDays",
           "label": "High UTCI Days",
           "derivedFrom": [
@@ -182,6 +197,7 @@
             "@id": "unit:mm%2Fperiod",
             "label": "mm/period"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/TotalPrecipitation",
           "label": "Total Precipitation",
           "derivedFrom": [
@@ -197,6 +213,7 @@
             "@id": "unit:%25",
             "label": "%"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/TotalPrecipitation/change-relative/1991-2020",
           "label": "Total Precipitation (% change from 1991-2020)",
           "derivedFrom": "cs:Climate-ADAPT/indices/TotalPrecipitation"
@@ -208,6 +225,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MeanTemperature",
           "label": "Mean Temperature",
           "derivedFrom": [
@@ -225,6 +243,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MeanTemperature/change-absolute/1991-2010",
           "label": "Mean Temperature (change from 1991-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MeanTemperature"
@@ -241,6 +260,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MaximumTemperature",
           "label": "Maximum Temperature",
           "derivedFrom": [
@@ -263,6 +283,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MaximumTemperature/change-absolute/1991-2010",
           "label": "Maximum Temperature (change from 1991-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MaximumTemperature"
@@ -279,6 +300,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MinimumTemperature",
           "label": "Minimum Temperature",
           "derivedFrom": [
@@ -301,6 +323,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MinimumTemperature/change-absolute/1991-2010",
           "label": "Minimum Temperature (change from 1991-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MinimumTemperature"
@@ -316,6 +339,7 @@
             "@id": "unit:mm",
             "label": "mm"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MaximumConsecutiveFive-dayPrecipitation",
           "label": "Maximum Consecutive Five-Day Precipitation",
           "derivedFrom": [
@@ -336,6 +360,7 @@
             "@id": "unit:mm",
             "label": "mm"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MaximumConsecutiveFive-dayPrecipitation/change-absolute",
           "label": "Maximum Consecutive Five-Day Precipitation (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MaximumConsecutiveFive-dayPrecipitation"
@@ -351,6 +376,7 @@
             "@id": "unit:mm",
             "label": "mm"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ExtremePrecipitationTotal",
           "label": "Extreme Precipitation Total",
           "derivedFrom": [
@@ -371,6 +397,7 @@
             "@id": "unit:mm",
             "label": "mm"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ExtremePrecipitationTotal/change-absolute",
           "label": "Extreme Precipitation Total (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ExtremePrecipitationTotal"
@@ -386,6 +413,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ExtremePrecipitationDays",
           "label": "Extreme Precipitation Days",
           "derivedFrom": [
@@ -406,6 +434,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ExtremePrecipitationDays/change-absolute/1981-2010",
           "label": "Extreme Precipitation Days (change from 1981-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ExtremePrecipitationDays"
@@ -421,6 +450,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ConsecutiveDryDays",
           "label": "Consecutive Dry Days",
           "derivedFrom": [
@@ -441,6 +471,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ConsecutiveDryDays/change-absolute",
           "label": "Consecutive Dry Days (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ConsecutiveDryDays"
@@ -456,6 +487,7 @@
             "@id": "unit:months",
             "label": "months"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MeteorologicalDroughtDuration",
           "label": "Meteorological Drought Duration",
           "derivedFrom": [
@@ -474,6 +506,7 @@
             "@id": "unit:months",
             "label": "months"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MeteorologicalDroughtDuration/change-absolute/1981-2010",
           "label": "Meteorological Drought Duration (change from 1981-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MeteorologicalDroughtDuration"
@@ -489,6 +522,7 @@
             "@id": "unit:dimensionless",
             "label": "dimensionless"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MeteorologicalDroughtMagnitude",
           "label": "Meteorological Drought Magnitude",
           "derivedFrom": [
@@ -509,6 +543,7 @@
             "@id": "unit:m%C2%B3%E2%8B%85s%E2%81%BB%C2%B9",
             "label": "m³⋅s⁻¹"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/RiverDischarge",
           "label": "River Discharge",
           "derivedFrom": [
@@ -532,6 +567,7 @@
             "@id": "unit:m%C2%B3%E2%8B%85s%E2%81%BB%C2%B9",
             "label": "m³⋅s⁻¹"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/RiverDischarge/change-absolute",
           "label": "River Discharge (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/RiverDischarge"
@@ -547,6 +583,7 @@
             "@id": "unit:m%C2%B3%E2%8B%85s%E2%81%BB%C2%B9",
             "label": "m³⋅s⁻¹"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/RiverFlood",
           "label": "River Flood",
           "derivedFrom": [
@@ -576,6 +613,7 @@
             "@id": "unit:m%C2%B3%E2%8B%85s%E2%81%BB%C2%B9",
             "label": "m³⋅s⁻¹"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/RiverFlood/change-absolute",
           "label": "River Flood (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/RiverFlood"
@@ -593,6 +631,7 @@
             "@id": "unit:dimensionless",
             "label": "dimensionless"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/AridityActual",
           "label": "Aridity Actual",
           "derivedFrom": [
@@ -612,6 +651,7 @@
             "@id": "unit:dimensionless",
             "label": "dimensionless"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MeanSoilMoisture",
           "label": "Mean Soil Moisture",
           "derivedFrom": [
@@ -633,6 +673,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/HighFireDangerDays",
           "label": "High Fire Danger Days",
           "derivedFrom": [
@@ -654,6 +695,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/HighFireDangerDays/change-absolute",
           "label": "High Fire Danger Days (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/HighFireDangerDays"
@@ -668,6 +710,7 @@
             "@id": "unit:dimensionless",
             "label": "dimensionless"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/FireWeatherIndex",
           "label": "Fire Weather Index",
           "derivedFrom": [
@@ -692,6 +735,7 @@
             "@id": "unit:m%20s-1",
             "label": "m s-1"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MeanWindSpeed",
           "label": "Mean Wind Speed",
           "derivedFrom": [
@@ -708,6 +752,7 @@
             "@id": "unit:m%20s-1",
             "label": "m s-1"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MeanWindSpeed/change-absolute",
           "label": "Mean Wind Speed (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MeanWindSpeed"
@@ -724,6 +769,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ExtremeWindDays",
           "label": "Extreme Wind Days",
           "derivedFrom": [
@@ -742,6 +788,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ExtremeWindDays/change-absolute/1981-2010",
           "label": "Extreme Wind Days (change from 1981-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ExtremeWindDays"
@@ -757,6 +804,7 @@
             "@id": "unit:mm",
             "label": "mm"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/SnowfallAmount",
           "label": "Snowfall Amount",
           "derivedFrom": [
@@ -774,6 +822,7 @@
             "@id": "unit:mm",
             "label": "mm"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/SnowfallAmount/change-absolute",
           "label": "Snowfall Amount (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/SnowfallAmount"
@@ -789,6 +838,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/HighSnowDays",
           "label": "High Snow Days",
           "derivedFrom": [
@@ -806,6 +856,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/HighSnowDays/change-absolute",
           "label": "High Snow Days (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/HighSnowDays"
@@ -820,6 +871,7 @@
             "@id": "unit:cm",
             "label": "cm"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/RelativeSeaLevelRise",
           "label": "Relative Sea Level Rise",
           "derivedFrom": [
@@ -840,6 +892,7 @@
             "@id": "unit:cm",
             "label": "cm"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/RelativeSeaLevelRise/change-absolute/1986-2005",
           "label": "Relative Sea Level Rise (change from 1986-2005)",
           "derivedFrom": "cs:Climate-ADAPT/indices/RelativeSeaLevelRise"
@@ -855,6 +908,7 @@
             "@id": "unit:m",
             "label": "m"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ExtremeSeaLevel",
           "label": "Extreme Sea Level",
           "derivedFrom": [
@@ -882,6 +936,7 @@
             "@id": "unit:m",
             "label": "m"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/ExtremeSeaLevel/change-absolute/1951-1980",
           "label": "Extreme Sea Level (change from 1951-1980)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ExtremeSeaLevel"
@@ -896,6 +951,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/SeaSurfaceTemperature",
           "label": "Sea Surface Temperature",
           "derivedFrom": [
@@ -912,6 +968,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/SeaSurfaceTemperature/change-absolute/1981-2010",
           "label": "Sea Surface Temperature (change from 1981-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/SeaSurfaceTemperature"
@@ -926,6 +983,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MarineHeatwavesDaysIndex(mhd)",
           "label": "Marine Heatwaves Days Index (MHD)",
           "derivedFrom": [
@@ -942,6 +1000,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/MarineHeatwavesDaysIndex(mhd)/change-absolute",
           "label": "Marine Heatwaves Days Index (MHD) (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MarineHeatwavesDaysIndex(mhd)"
@@ -957,6 +1016,7 @@
             "@id": "unit:mol%20%2F%20m%C2%B3",
             "label": "mol / m³"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/DissolvedOxygenLevel",
           "label": "Dissolved Oxygen Level",
           "derivedFrom": [
@@ -974,6 +1034,7 @@
             "@id": "unit:pH",
             "label": "pH"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/OceanPhLevel",
           "label": "Ocean pH Level",
           "derivedFrom": [
@@ -989,6 +1050,7 @@
             "@id": "unit:dimensionless",
             "label": "dimensionless"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/TigerMosquitoClimaticSuitability",
           "label": "Tiger Mosquito Climatic Suitability",
           "derivedFrom": [
@@ -1007,6 +1069,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/TigerMosquitoClimaticSeasonLength",
           "label": "Tiger Mosquito Climatic Season Length",
           "derivedFrom": [
@@ -1025,6 +1088,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Climate-ADAPT",
           "@id": "cs:Climate-ADAPT/indices/TigerMosquitoClimaticSeasonLength/change-absolute",
           "label": "Tiger Mosquito Climatic Season Length (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/TigerMosquitoClimaticSeasonLength"
@@ -1032,8 +1096,12 @@
       ]
     },
     {
+      "@id": "cs:Copernicus-CCS",
+      "@type": "top:ConceptScheme"
+    },
+    {
       "@id": "cs:Copernicus-CCS/indices",
-      "@type": "top:ConceptScheme",
+      "@type": "top:Collection",
       "members": [
         {
           "Definition": "Let TX_ij be the daily maximum temperature at day i of period j. Then counted is the largest number of consecutive days where daily maximum temperature exceeds 25 degrees Celsius (TX_ij > 25).",
@@ -1045,6 +1113,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Copernicus-CCS",
           "@id": "cs:Copernicus-CCS/indices/ConsecutiveSummerDays(csd)",
           "label": "Consecutive Summer Days (CSD)",
           "derivedFrom": [
@@ -1068,6 +1137,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:Copernicus-CCS",
           "@id": "cs:Copernicus-CCS/indices/ConsecutiveFrostDays(cfd)",
           "label": "Consecutive Frost Days (CFD)",
           "derivedFrom": [
@@ -1088,6 +1158,7 @@
             "@id": "unit:mm%2Fday",
             "label": "mm/day"
           },
+          "inScheme": "cs:Copernicus-CCS",
           "@id": "cs:Copernicus-CCS/indices/PotentialEvapotranspiration(pet:Penman-monteith)",
           "label": "Potential Evapotranspiration (PET: Penman-Monteith)",
           "derivedFrom": [
@@ -1110,6 +1181,7 @@
             "@id": "unit:mm%2Fday",
             "label": "mm/day"
           },
+          "inScheme": "cs:Copernicus-CCS",
           "@id": "cs:Copernicus-CCS/indices/PotentialEvapotranspiration(pet:Makkink)",
           "label": "Potential Evapotranspiration (PET: Makkink)",
           "derivedFrom": [
@@ -1129,6 +1201,7 @@
             "@id": "unit:dimensionless",
             "label": "dimensionless"
           },
+          "inScheme": "cs:Copernicus-CCS",
           "@id": "cs:Copernicus-CCS/indices/Self-calibratingPalmerDroughtSeverityIndex(scpdsi)",
           "label": "Self-Calibrating Palmer Drought Severity Index (scPDSI)",
           "derivedFrom": [
@@ -1145,6 +1218,7 @@
             "@id": "unit:dimensionless",
             "label": "dimensionless"
           },
+          "inScheme": "cs:Copernicus-CCS",
           "@id": "cs:Copernicus-CCS/indices/HuglinIndex",
           "label": "Huglin Index",
           "derivedFrom": [
@@ -1155,8 +1229,12 @@
       ]
     },
     {
+      "@id": "cs:ETCCDI",
+      "@type": "top:ConceptScheme"
+    },
+    {
       "@id": "cs:ETCCDI/indices",
-      "@type": "top:ConceptScheme",
+      "@type": "top:Collection",
       "members": [
         {
           "Definition": "Similar to CSDI. For CSDI, the spells cannot span years, while for altCSDI the spells can span years.",
@@ -1174,6 +1252,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:ETCCDI",
           "@id": "cs:ETCCDI/indices/Altcsdi",
           "label": "altCSDI",
           "derivedFrom": [
@@ -1201,6 +1280,7 @@
             "@id": "unit:days",
             "label": "days"
           },
+          "inScheme": "cs:ETCCDI",
           "@id": "cs:ETCCDI/indices/Altwsdi",
           "label": "altWSDI",
           "derivedFrom": [
@@ -1223,6 +1303,7 @@
             "@id": "unit:days%2Fyear",
             "label": "days/year"
           },
+          "inScheme": "cs:ETCCDI",
           "@id": "cs:ETCCDI/indices/Altcdd",
           "label": "altCDD",
           "derivedFrom": [
@@ -1241,6 +1322,7 @@
             "@id": "unit:days%2Fyear",
             "label": "days/year"
           },
+          "inScheme": "cs:ETCCDI",
           "@id": "cs:ETCCDI/indices/Altcwd",
           "label": "altCWD",
           "derivedFrom": [
@@ -1253,8 +1335,12 @@
       ]
     },
     {
+      "@id": "cs:UK-CRI",
+      "@type": "top:ConceptScheme"
+    },
+    {
       "@id": "cs:UK-CRI/indices",
-      "@type": "top:ConceptScheme",
+      "@type": "top:Collection",
       "members": [
         {
           "Definition": "Seasonal average temperature",
@@ -1265,6 +1351,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/AverageTemperature/change-absolute/1981-2010",
           "label": "Average Temperature (change from 1981-2010)",
           "derivedFrom": [
@@ -1291,6 +1378,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/MinimumTemperature/change-absolute/1981-2010",
           "label": "Minimum Temperature (change from 1981-2010)",
           "derivedFrom": [
@@ -1317,6 +1405,7 @@
             "@id": "unit:%C2%B0C",
             "label": "°C"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/MaximumTemperature/change-absolute/1981-2010",
           "label": "Maximum Temperature (change from 1981-2010)",
           "derivedFrom": [
@@ -1333,6 +1422,7 @@
           "Definition": "Seasonal total rainfall",
           "Commentary": "If using pr, requires aux data like temperature to control for solid phase",
           "SourceLink": "https://www.ecad.eu/documents/atbd.pdf",
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/Rainfall/change-relative/1981-2010",
           "label": "Rainfall (% change from 1981-2010)",
           "Unit": {
@@ -1360,6 +1450,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/Record-breakingWeather(hottestDay)",
           "label": "Record-Breaking Weather (Hottest Day)",
           "derivedFrom": [
@@ -1380,6 +1471,7 @@
             "@id": "unit:Months%2Fyear",
             "label": "Months/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/Record-breakingWeather(hottestMonth)",
           "label": "Record-Breaking Weather (Hottest Month)",
           "derivedFrom": [
@@ -1397,6 +1489,7 @@
             "@id": "unit:Months%2Fyear",
             "label": "Months/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/Record-breakingWeather(wettestMonth)",
           "label": "Record-Breaking Weather (Wettest Month)",
           "derivedFrom": [
@@ -1417,6 +1510,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/MetOfficeHeatwave",
           "label": "Met Office Heatwave",
           "derivedFrom": [
@@ -1440,6 +1534,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/MetOfficeHeatwave",
           "label": "Met Office Heatwave",
           "derivedFrom": "cs:UK-CRI/indices/MetOfficeHeatwave"
@@ -1458,6 +1553,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/MetOfficeHeatwave",
           "label": "Met Office Heatwave",
           "derivedFrom": "cs:UK-CRI/indices/MetOfficeHeatwave"
@@ -1472,6 +1568,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/AmberHeat-healthAlert",
           "label": "Amber Heat-Health Alert",
           "derivedFrom": [
@@ -1489,6 +1586,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/AmberHeat-healthAlert",
           "label": "Amber Heat-Health Alert",
           "derivedFrom": "cs:UK-CRI/indices/AmberHeat-healthAlert"
@@ -1503,6 +1601,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/AmberHeat-healthAlert",
           "label": "Amber Heat-Health Alert",
           "derivedFrom": "cs:UK-CRI/indices/AmberHeat-healthAlert"
@@ -1518,6 +1617,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/ColdWeatherAlert",
           "label": "Cold Weather Alert",
           "derivedFrom": [
@@ -1535,6 +1635,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/ColdWeatherAlert",
           "label": "Cold Weather Alert",
           "derivedFrom": "cs:UK-CRI/indices/ColdWeatherAlert"
@@ -1550,6 +1651,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/ColdWeatherAlert",
           "label": "Cold Weather Alert",
           "derivedFrom": "cs:UK-CRI/indices/ColdWeatherAlert"
@@ -1567,6 +1669,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/VeryHotDays",
           "label": "Very Hot Days",
           "derivedFrom": [
@@ -1589,6 +1692,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/VeryHotDays",
           "label": "Very Hot Days",
           "derivedFrom": "cs:UK-CRI/indices/VeryHotDays"
@@ -1605,6 +1709,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/TropicalNights",
           "label": "Tropical Nights",
           "derivedFrom": [
@@ -1626,6 +1731,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/TropicalNights",
           "label": "Tropical Nights",
           "derivedFrom": "cs:UK-CRI/indices/TropicalNights"
@@ -1641,6 +1747,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/HeatStress",
           "label": "Heat Stress",
           "derivedFrom": [
@@ -1662,6 +1769,7 @@
             "@id": "unit:Events%2Fyear",
             "label": "Events/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/HeatStress",
           "label": "Heat Stress",
           "derivedFrom": "cs:UK-CRI/indices/HeatStress"
@@ -1676,6 +1784,7 @@
             "@id": "unit:%C2%B0C-days",
             "label": "°C-days"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/HeatingDegreeDays",
           "label": "Heating Degree Days",
           "derivedFrom": [
@@ -1695,6 +1804,7 @@
             "@id": "unit:%C2%B0C-days",
             "label": "°C-days"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/CoolingDegreeDays",
           "label": "Cooling Degree Days",
           "derivedFrom": [
@@ -1713,6 +1823,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/RoadMeltRisk",
           "label": "Road Melt Risk",
           "derivedFrom": [
@@ -1731,6 +1842,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/RoadAccidentRisk",
           "label": "Road Accident Risk",
           "derivedFrom": [
@@ -1749,6 +1861,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/Rail:HighTemperatures",
           "label": "Rail: High Temperatures",
           "derivedFrom": [
@@ -1764,6 +1877,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/Rail:BadWeatherDays",
           "label": "Rail: Bad Weather Days",
           "derivedFrom": [
@@ -1782,6 +1896,7 @@
             "@id": "unit:Day%20of%20year%20%281%20%3D%20January%201st%29",
             "label": "Day of year (1 = January 1st)"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/StartOfCropGrowingSeason",
           "label": "Start of Crop Growing Season",
           "derivedFrom": [
@@ -1797,6 +1912,7 @@
             "@id": "unit:Days",
             "label": "Days"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/GrowingSeasonLength",
           "label": "Growing Season Length",
           "derivedFrom": [
@@ -1815,6 +1931,7 @@
             "@id": "unit:%C2%B0C-days",
             "label": "°C-days"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/GrowingDegreeDays",
           "label": "Growing Degree Days",
           "derivedFrom": [
@@ -1833,6 +1950,7 @@
             "@id": "unit:Days",
             "label": "Days"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/CropGrowthDuration",
           "label": "Crop Growth Duration",
           "derivedFrom": [
@@ -1849,6 +1967,7 @@
             "@id": "unit:Day%20of%20year%20%281%20%3D%20January%201st%29",
             "label": "Day of year (1 = January 1st)"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/StartOfFieldOperations(tsum200)",
           "label": "Start of Field Operations (Tsum200)",
           "derivedFrom": [
@@ -1864,6 +1983,7 @@
             "@id": "unit:%C2%B0C-days",
             "label": "°C-days"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/AccumulatedFrost",
           "label": "Accumulated Frost",
           "derivedFrom": [
@@ -1883,6 +2003,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/FrostDays",
           "label": "Frost Days",
           "derivedFrom": [
@@ -1901,6 +2022,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/DairyCattleHeatStress",
           "label": "Dairy Cattle Heat Stress",
           "derivedFrom": [
@@ -1917,6 +2039,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/WheatHeatStress",
           "label": "Wheat Heat Stress",
           "derivedFrom": [
@@ -1932,6 +2055,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/WheatHeatStress",
           "label": "Wheat Heat Stress",
           "derivedFrom": "cs:UK-CRI/indices/WheatHeatStress"
@@ -1947,6 +2071,7 @@
             "@id": "unit:mm",
             "label": "mm"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/PotentialSoilMoistureDeficit",
           "label": "Potential Soil Moisture Deficit",
           "derivedFrom": [
@@ -1965,6 +2090,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/DaysAboveFieldCapacity",
           "label": "Days Above Field Capacity",
           "derivedFrom": [
@@ -1981,6 +2107,7 @@
             "@id": "unit:Proportion%20of%20time",
             "label": "Proportion of time"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/SpiDrought",
           "label": "SPI Drought",
           "derivedFrom": [
@@ -1998,6 +2125,7 @@
             "@id": "unit:Proportion%20of%20time",
             "label": "Proportion of time"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/SpeiDrought",
           "label": "SPEI Drought",
           "derivedFrom": [
@@ -2017,6 +2145,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/MetOfficeFireDanger",
           "label": "Met Office Fire Danger",
           "derivedFrom": [
@@ -2041,6 +2170,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/MetOfficeFireDanger",
           "label": "Met Office Fire Danger",
           "derivedFrom": "cs:UK-CRI/indices/MetOfficeFireDanger"
@@ -2056,6 +2186,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/Wildfire:DailyHazardAssessment",
           "label": "Wildfire: Daily Hazard Assessment",
           "derivedFrom": [
@@ -2082,6 +2213,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/Wildfire:DailyHazardAssessment",
           "label": "Wildfire: Daily Hazard Assessment",
           "derivedFrom": "cs:UK-CRI/indices/Wildfire:DailyHazardAssessment"
@@ -2096,6 +2228,7 @@
             "@id": "unit:Days%2Fyear",
             "label": "Days/year"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/Wildfire:Ffmc99thPercentile",
           "label": "Wildfire: FFMC 99th Percentile",
           "derivedFrom": [
@@ -2117,6 +2250,7 @@
             "sector:Disaster%20Risk%20Reduction",
             "sector:Transport"
           ],
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/RiverRunoff/change-relative/1981-2010",
           "label": "River Runoff (% change from 1981-2010)",
           "Unit": {
@@ -2135,6 +2269,7 @@
             "sector:Disaster%20Risk%20Reduction",
             "sector:Transport"
           ],
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/RiverFlood(2-yearReturnPeriod)/change-relative/1981-2010",
           "label": "River Flood (2-Year Return Period) (% change from 1981-2010)",
           "Unit": {
@@ -2156,6 +2291,7 @@
             "sector:Disaster%20Risk%20Reduction",
             "sector:Transport"
           ],
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/RiverFlood(5-yearReturnPeriod)/change-relative/1981-2010",
           "label": "River Flood (5-Year Return Period) (% change from 1981-2010)",
           "Unit": {
@@ -2177,6 +2313,7 @@
             "sector:Disaster%20Risk%20Reduction",
             "sector:Transport"
           ],
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/RiverFlood(10-yearReturnPeriod)/change-relative/1981-2010",
           "label": "River Flood (10-Year Return Period) (% change from 1981-2010)",
           "Unit": {
@@ -2198,6 +2335,7 @@
             "sector:Disaster%20Risk%20Reduction",
             "sector:Transport"
           ],
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/RiverFlood(likelihoodOfCurrent10-yearEvent)",
           "label": "River Flood (Likelihood of Current 10-Year Event)",
           "derivedFrom": [
@@ -2216,6 +2354,7 @@
             "sector:Water%20Resources",
             "sector:Energy"
           ],
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/LowFlows(2-yearReturnPeriod)/change-relative/1981-2010",
           "label": "Low Flows (2-Year Return Period) (% change from 1981-2010)",
           "Unit": {
@@ -2234,6 +2373,7 @@
             "sector:Water%20Resources",
             "sector:Energy"
           ],
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/LowFlows(10-yearReturnPeriod)/change-relative/1981-2010",
           "label": "Low Flows (10-Year Return Period) (% change from 1981-2010)",
           "Unit": {
@@ -2252,6 +2392,7 @@
             "sector:Water%20Resources",
             "sector:Energy"
           ],
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/LowFlows(likelihoodOfCurrent10-yearEvent)",
           "label": "Low Flows (Likelihood of Current 10-Year Event)",
           "derivedFrom": [
@@ -2270,6 +2411,7 @@
             "@id": "unit:Proportion%20of%20time",
             "label": "Proportion of time"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/12-monthRiverDrought(extreme)",
           "label": "12-Month River Drought (Extreme)",
           "derivedFrom": [
@@ -2288,6 +2430,7 @@
             "@id": "unit:Proportion%20of%20time",
             "label": "Proportion of time"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/12-monthRiverDrought(severe)",
           "label": "12-Month River Drought (Severe)",
           "derivedFrom": [
@@ -2306,6 +2449,7 @@
             "@id": "unit:Proportion%20of%20time",
             "label": "Proportion of time"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/24-monthRiverDrought(extreme)",
           "label": "24-Month River Drought (Extreme)",
           "derivedFrom": [
@@ -2324,6 +2468,7 @@
             "@id": "unit:Proportion%20of%20time",
             "label": "Proportion of time"
           },
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/24-monthRiverDrought(severe)",
           "label": "24-Month River Drought (Severe)",
           "derivedFrom": [
@@ -2339,6 +2484,7 @@
             "sector:Water%20Resources",
             "sector:Agriculture%20and%20Food%20Security"
           ],
+          "inScheme": "cs:UK-CRI",
           "@id": "cs:UK-CRI/indices/SoilMoisture/change-relative/1981-2010",
           "label": "Soil Moisture (% change from 1981-2010)",
           "Unit": {

@@ -52,7 +52,11 @@ def to_camel_case:
             "@type": "@id"
         },
         members: {
-            "@reverse": "top:inScheme",
+            "@id": "top:hasMember",
+            "@type": "@id"
+        },
+        inScheme: {
+            "@id": "top:inScheme",
             "@type": "@id"
         }
     },
@@ -60,8 +64,12 @@ def to_camel_case:
         to_entries | .[] |
         (.key | sub(" ";"-")) as $group_id |
         {
+            "@id": @uri "cs:\($group_id)",
+            "@type": "top:ConceptScheme"
+        },
+        {
             "@id": @uri "cs:\($group_id)/indices",
-            "@type": "top:ConceptScheme",
+            "@type": "top:Collection",
             members: [
                 .value | to_entries | .[] |
                 .key as $index_name |
@@ -72,6 +80,7 @@ def to_camel_case:
                     .Type as $variant_type |
                     (.References[]? // null) as $reference |
                     $index_body |
+                    (.inScheme = @uri "cs:\($group_id)") |
                     (."@id" = "cs:\($group_id)/indices/\($index_name | to_camel_case)\(
                         if $variant_type == "absolute" then
                             ""
