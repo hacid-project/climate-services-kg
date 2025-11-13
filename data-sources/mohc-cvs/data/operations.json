@@ -809,7 +809,7 @@
             "Choose global warming level extraction method"
           ]
         },
-        "Description": "The operation that conducts pattern scaling of regional climate response to the global warming level.",
+        "Description": "The operation that conducts pattern scaling of climate response to the global warming level.",
         "Name": "Apply pattern scaling"
       },
       {
@@ -830,12 +830,12 @@
             "Filter climate simulations by global warming level exceedance"
           ]
         },
-        "Description": "The operation that applies statistical or dynamical downscaling techniques to increase the spatial resolution of global or regional climate model outputs. This task is normally unnecessary if the selected data is already downscaled.",
+        "Description": "The operation that applies statistical or dynamical downscaling techniques to increase the spatial and/or temporal resolution of global or regional climate model outputs. This task is normally unnecessary if the selected data is already downscaled.",
         "AssociatedData": {
           "type": "uri",
           "cv": "Method"
         },
-        "Name": "Apply additional spatial downscaling"
+        "Name": "Apply additional spatial and/or temporal downscaling"
       },
       {
         "Input": "Raw observations, raw or downscaled climate simulations, or pattern-scaled climate data",
@@ -858,7 +858,7 @@
             "Filter observations by selection criteria",
             "Filter climate simulations by global warming level exceedance",
             "Apply pattern scaling",
-            "Apply spatial downscaling"
+            "Apply additional spatial and/or temporal downscaling"
           ]
         },
         "Description": "The operation that performs data preprocessing (e.g., regridding, gap-filling, aggregation, filtering, bias correction) on raw climate model output and observations to ensure it is accurate, consistent, and suitable for analysis.",
@@ -887,7 +887,7 @@
             "Filter observations by selection criteria",
             "Filter climate simulations by global warming level exceedance",
             "Apply pattern scaling",
-            "Apply spatial downscaling",
+            "Apply additional spatial and/or temporal downscaling",
             "Apply data preproccesing"
           ]
         },
@@ -918,7 +918,7 @@
             "Filter observations by selection criteria",
             "Filter climate simulations by global warming level exceedance",
             "Apply pattern scaling",
-            "Apply spatial downscaling",
+            "Apply additional spatial and/or temporal downscaling",
             "Apply data preproccesing",
             "Compute climate indices"
           ]
@@ -1003,7 +1003,7 @@
             "Filter climate simulations by selection criteria",
             "Conduct manual selection of climate simulations",
             "Apply pattern scaling",
-            "Apply spatial downscaling",
+            "Apply additional spatial and/or temporal downscaling",
             "Filter observations by selection criteria",
             "Conduct manual selection of observations",
             "Apply data preproccesing",
@@ -1278,6 +1278,9 @@
       "InformationType": "Optional"
     },
     "Description": "The operation that presents the climate or climate impact information through visual (e.g., plot, diagram, flowchart, graph, map), quantitative (e.g., table), or qualitative (e.g. narrative) formats",
+    "AssociatedData": {
+          "type": "text"
+    },
     "Name": "Present climate information"
   },
   {
