@@ -147,7 +147,7 @@ SELECT ?model ?simulation ?output ?geodeticResolution
 WHERE {
     ?simulation a ccso:Simulation;
         ccso:refersToScenario rcp:RCP4.5;
-        ccso:hasOutput ?output.
+        data:hasOutput ?output.
     ?output data:holdsSpecializationOfVariable* mip:tas;
     data:dependsOnVariable ?geodeticVariable.
     ?geodeticVariable
@@ -174,7 +174,7 @@ PREFIX sim: <https://w3id.org/hacid/data/cs/simulations/>
 
 SELECT ?dataset
 WHERE {
-    sim:cmip5.HadCM3.rcp45.r10i1p1 ccso:hasOutput/top:hasPart* ?dataset.
+    sim:cmip5.HadCM3.rcp45.r10i1p1 data:hasOutput/top:hasPart* ?dataset.
     ?dataset data:holdsSpecializationOfVariable* mip:tas;
     	data:dependsOnVariable ?temporalVariable.
 	?temporalVariable
@@ -203,7 +203,7 @@ SELECT ?organization ?regional_model ?downscaling ?geodetic_region
 WHERE {
     ?downscaling ccso:isDownscalingOf sim:cmip5.HadGEM2-ES.rcp26.r1i1p1;
     	ccso:usesModel ?regional_model;
-         ccso:hasOutput/data:isSpecializedAccordingTo [
+         data:hasOutput/data:isSpecializedAccordingTo [
             data:isSpecializationOn/data:holdsSpecializationOfVariable* dimension:geodetic;
             data:hasSelectedRegion/geo:asWKT ?geodetic_region
         ].

@@ -16,6 +16,6 @@ WHERE {
         wf:SelectedVariable ?variable .
     ?simulation a ccso:Simulation;
         ccso:refersToScenario ?emissionScenario;
-        ccso:hasOutput/data:holdsSpecializationOfVariable ?variable.
+        data:hasOutput/data:holdsSpecializationOfVariable ?variable.
 }
 LIMIT 100

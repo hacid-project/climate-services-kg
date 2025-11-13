@@ -227,7 +227,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:hasOutput ;
+        rr:predicate data:hasOutput ;
         rr:objectMap :OutputIRI
     ] ;
 
@@ -282,7 +282,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:hasOutput ;
+        rr:predicate data:hasOutput ;
         rr:objectMap [
             rr:parentTriplesMap :EnsembleOutputMapping
         ]
@@ -394,7 +394,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:hasOutput ;
+        rr:predicate data:hasOutput ;
         rr:objectMap [
             rr:parentTriplesMap :ExperimentOutputMapping
         ]

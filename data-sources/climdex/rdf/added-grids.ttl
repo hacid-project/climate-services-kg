@@ -8,7 +8,7 @@
         data:Variable ;
     data:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
         <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
-    data:hasGridStep "P3M"^^xsd:duration .
+    data:hasResolutionValue "P3M"^^xsd:duration .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P6M> a data:DimensionalSpace,
         data:IndependentVariable,
@@ -16,4 +16,4 @@
         data:Variable ;
     data:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
         <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
-    data:hasGridStep "P6M"^^xsd:duration .
+    data:hasResolutionValue "P6M"^^xsd:duration .

@@ -500,7 +500,7 @@ if __name__ == '__main__':
     cs_mapper = CSMapper()
     
     for subfolder in subfolders:
-        if subfolder.endswith('cmip5'):
+        # if subfolder.endswith('cmip5'):
         # if subfolder.endswith('cordex') or subfolder.endswith('cordex-domains'):
         # if subfolder.endswith('cordex') or subfolder.endswith('cmip5'):
         # if subfolder.endswith('cordex-domains'):

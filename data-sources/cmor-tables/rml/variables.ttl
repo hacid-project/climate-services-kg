@@ -108,7 +108,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:hasRealm;
+        rr:predicate top:isMemberOf;
         rr:objectMap [ 
             rr:parentTriplesMap :RealmMapping
         ]
@@ -127,7 +127,7 @@
     
     rr:subjectMap [
         rr:template "https://w3id.org/hacid/data/cs/realms/{modeling_realm}" ;
-        rr:class ccso:Realm
+        rr:class top:Collection
     ] .
 
 :UnitMapping a rr:TriplesMap ;

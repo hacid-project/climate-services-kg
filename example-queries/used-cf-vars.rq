@@ -7,7 +7,7 @@ PREFIX dimension: <https://w3id.org/hacid/data/cs/dimensions/>
 SELECT ?var (COUNT(DISTINCT ?simulation) AS ?count)
 WHERE {
     ?simulation a ccso:ClimateSimulation;
-        ccso:hasOutput/data:holdsSpecializationOfVariable/data:holdsSpecializationOfVariable ?var
+        data:hasOutput/data:holdsSpecializationOfVariable/data:holdsSpecializationOfVariable ?var
 }
 GROUP BY ?var
 ORDER BY DESC(?count)

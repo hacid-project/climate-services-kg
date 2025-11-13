@@ -42,7 +42,7 @@ WHERE {
         WHERE {
             ?simulation a ccso:Simulation.
             GRAPH ?simulationGraph {
-                ?simulation ccso:hasOutput ?simulationOutput
+                ?simulation data:hasOutput ?simulationOutput
             }
             ?simulationOutput top:hasPart/data:dependsOnVariable ?temporalDS.
             ?temporalDS

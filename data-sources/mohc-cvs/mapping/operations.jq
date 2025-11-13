@@ -116,7 +116,7 @@ walk((
     del(.Name) |
     if .AssociatedData then
         .InformationRoles = [{
-            "@type": "top:OperationInformationRole",
+            "@type": "top:InformationRole",
             "@id": @uri "ops:\($op_id)/associated-data",
             ExpectedType: .AssociatedData | type_to_owl
         }] |

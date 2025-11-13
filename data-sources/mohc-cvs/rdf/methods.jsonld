@@ -29,14 +29,14 @@
     {
       "Definition": "Downscaling is a method that derives local- to regional-scale (10 to 100 km) information from larger-scale models or data analyses. Two main methods exist: dynamical downscaling and empirical/statistical downscaling. The dynamical method uses the output of regional climate models, global models with variable spatial resolution or high-resolution global models. The empirical/statistical methods develop statistical relationships that link the large-scale atmospheric variables with -local/-regional climate variables. In all cases, the quality of the driving model remains an important limitation on the quality of the downscaled information.",
       "ApplicableToOperations": [
-        "ops:ApplyAdditionalSpatialDownscaling"
+        "ops:ApplyAdditionalSpatialAnd%2ForTemporalDownscaling"
       ],
       "Methods": [
         {
           "Definition": "Downscaling is a method for obtaining high-resolution climate or climate change information from relatively coarse-resolution global climate models (GCMs). Typically, GCMs have a resolution of 150-300 km by 150-300 km. Many impacts models require information at scales of 50 km or less, so some method is needed to estimate the smaller-scale information. Statistical downscaling first derives statistical relationships between observed small-scale (often station level) variables and larger (GCM) scale variables, using either analogue methods (circulation typing), regression analysis, or neural network methods. Future values of the largescale variables obtained from GCM projections of future climate are then used to drive the statistical relationships and so estimate the smaller-scale details of future climate (see also weather generators).",
           "Usage": "When higher spatial resolution data required",
           "ApplicableToOperations": [
-            "ops:ApplyAdditionalSpatialDownscaling"
+            "ops:ApplyAdditionalSpatialAnd%2ForTemporalDownscaling"
           ],
           "DefinitionSources": [
             "https://unfccc.int/files/adaptation/methodologies_for/vulnerability_and_adaptation/application/pdf/statistical_downscaling.pdf"
@@ -49,7 +49,7 @@
           "Definition": "Downscaling is a method for obtaining high-resolution climate or climate change information from relatively coarse-resolution global climate models (GCMs). Typically, GCMs have a resolution of 150-300 km by 150-300 km. Many impacts models require information at scales of 50 km or less, so some method is needed to estimate the smaller-scale information. Dynamical downscaling uses a limited-area, high-resolution model (a regional climate model, or RCM) driven by boundary conditions from a GCM to derive smaller-scale information. RCMs generally have a domain area of 106 to 107 km2 and a resolution of 20 to 60 km.",
           "Usage": "When higher spatial resolution data required",
           "ApplicableToOperations": [
-            "ops:ApplyAdditionalSpatialDownscaling"
+            "ops:ApplyAdditionalSpatialAnd%2ForTemporalDownscaling"
           ],
           "DefinitionSources": [
             "https://unfccc.int/files/adaptation/methodologies_for/vulnerability_and_adaptation/application/pdf/dynamical_downscaling.pdf"
@@ -62,7 +62,7 @@
           "Definition": "As for statistical downscaling, but using more complex models with multiple steps and layers that typically cannot be expressed in a single equation.",
           "Usage": "When computer resource requirements are too great",
           "ApplicableToOperations": [
-            "ops:ApplyAdditionalSpatialDownscaling"
+            "ops:ApplyAdditionalSpatialAnd%2ForTemporalDownscaling"
           ],
           "DefinitionSources": [
             "https://apps.epri.com/climate-data-user-guide/en/climate-model-downscaling.html"
@@ -281,6 +281,7 @@
           "Usage": "Spatial aggregation, temporal aggregation",
           "ApplicableToOperations": [
             "ops:ComputeClimateIndices",
+            "ops:ComputeSliceStatistic",
             "ops:ApplyDataPreprocessing",
             "ops:ConductSpatialAggregation",
             "ops:PostprocessClimateInformation",
@@ -314,6 +315,7 @@
         {
           "Definition": "A quantile defines a particular part of a data set, i.e., a quantile determines how many values in a distribution are above or below a certain limit. Special quantiles are the quartile (quarter), the decile (tenth), and percentiles (hundredth).",
           "ApplicableToOperations": [
+            "ops:ComputeSliceStatistic",
             "ops:QuantifyFutureClimateChange",
             "ops:QuantifyUncertainty"
           ],
@@ -327,6 +329,7 @@
         {
           "Definition": "Middle quantile of a data set or probability distribution",
           "ApplicableToOperations": [
+            "ops:ComputeSliceStatistic",
             "ops:ApplyDataPreprocessing",
             "ops:PostprocessClimateInformation",
             "ops:PostprocessImpactAnalysis"
@@ -344,7 +347,8 @@
         {
           "Definition": "Greatest or largest value or element",
           "ApplicableToOperations": [
-            "ops:ComputeClimateIndices"
+            "ops:ComputeClimateIndices",
+            "ops:ComputeSliceStatistic"
           ],
           "DefinitionSources": [
             "https://www.wikidata.org/wiki/Q10578722"
@@ -359,7 +363,8 @@
         {
           "Definition": "Lowest or smallest value or item in a partially ordered set",
           "ApplicableToOperations": [
-            "ops:ComputeClimateIndices"
+            "ops:ComputeClimateIndices",
+            "ops:ComputeSliceStatistic"
           ],
           "DefinitionSources": [
             "https://www.wikidata.org/wiki/Q10585806"
@@ -501,6 +506,7 @@
         {
           "Definition": "The difference can be quantified either by absolute delta, relative delta (percentage change between the future climate and baseline relative to baseline, pre-processed similarly), or standardised anomaly calculation among other methods.\nAbsolute delta is the difference between the future climate and baseline of the variable. In both cases variables are annual climatological normals, i.e. averaged over the 30 years (Navarro-Racines et al., 2020).\nRelative delta is the percentage change between the future climate and baseline relative to the baseline. As previously, the variables are annual climatological normals. [1]\nThe standardised anomalies, also referred to as normalised anomalies, measure the magnitude of climate change, at local level, by quantifying the distance, measured in standard units,\nbetween a data value at a location and its corresponding mean. The metric is calculated by dividing anomalies – with anomalies being defined as the deviation observed in each time from a baseline – by the standard deviation of the interannual variability during the baseline period.\nThe Standardized local anomalies measure the degree of similarity and dissimilarity between two distinct time periods (e.g. between a baseline and future period) using the standardized Euclidean distance (SED). Higher SED scores correlate with more significant local climate change and incorporate alterations across all considered variables. [2,3]",
           "ApplicableToOperations": [
+            "ops:ComputeChange",
             "ops:QuantifyFutureClimateChange"
           ],
           "DefinitionSources": [

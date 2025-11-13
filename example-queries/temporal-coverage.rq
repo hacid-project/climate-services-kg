@@ -7,7 +7,7 @@ PREFIX dimension: <https://w3id.org/hacid/data/cs/dimensions/>
 SELECT *
 WHERE {
     ?simulation a ccso:ClimateSimulation;
-        ccso:hasOutput/data:isSpecializedAccordingTo [
+        data:hasOutput/data:isSpecializedAccordingTo [
             data:isSpecializationOn/data:holdsSpecializationOfVariable* dimension:time;
             data:hasSelectedRegion ?timeInterval
         ]
