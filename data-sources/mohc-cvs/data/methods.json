@@ -221,6 +221,7 @@
         "Usage": "Spatial aggregation, temporal aggregation",
         "ApplicableToOperations": [
           "Compute climate indices",
+          "Compute slice statistic",
           "Apply data preprocessing",
           "Conduct spatial aggregation",
           "Postprocess climate information",
@@ -250,6 +251,7 @@
       {
         "Definition": "A quantile defines a particular part of a data set, i.e., a quantile determines how many values in a distribution are above or below a certain limit. Special quantiles are the quartile (quarter), the decile (tenth), and percentiles (hundredth).",
         "ApplicableToOperations": [
+          "Compute slice statistic",
           "Quantify future climate change",
           "Quantify uncertainty"
         ],
@@ -261,6 +263,7 @@
       {
         "Definition": "Middle quantile of a data set or probability distribution",
         "ApplicableToOperations": [
+          "Compute slice statistic",
           "Apply data preprocessing",
           "Postprocess climate information",
           "Postprocess impact analysis"
@@ -276,7 +279,8 @@
       {
         "Definition": "Greatest or largest value or element",
         "ApplicableToOperations": [
-          "Compute climate indices"
+          "Compute climate indices",
+          "Compute slice statistic"
         ],
         "Name": "Maximum",
         "DefinitionSources": [
@@ -289,7 +293,8 @@
       {
         "Definition": "Lowest or smallest value or item in a partially ordered set",
         "ApplicableToOperations": [
-          "Compute climate indices"
+          "Compute climate indices",
+          "Compute slice statistic"
         ],
         "Name": "Minimum",
         "DefinitionSources": [
@@ -411,6 +416,7 @@
       {
         "Definition": "The difference can be quantified either by absolute delta, relative delta (percentage change between the future climate and baseline relative to baseline, pre-processed similarly), or standardised anomaly calculation among other methods.\nAbsolute delta is the difference between the future climate and baseline of the variable. In both cases variables are annual climatological normals, i.e. averaged over the 30 years (Navarro-Racines et al., 2020).\nRelative delta is the percentage change between the future climate and baseline relative to the baseline. As previously, the variables are annual climatological normals. [1]\nThe standardised anomalies, also referred to as normalised anomalies, measure the magnitude of climate change, at local level, by quantifying the distance, measured in standard units,\nbetween a data value at a location and its corresponding mean. The metric is calculated by dividing anomalies – with anomalies being defined as the deviation observed in each time from a baseline – by the standard deviation of the interannual variability during the baseline period.\nThe Standardized local anomalies measure the degree of similarity and dissimilarity between two distinct time periods (e.g. between a baseline and future period) using the standardized Euclidean distance (SED). Higher SED scores correlate with more significant local climate change and incorporate alterations across all considered variables. [2,3]",
         "ApplicableToOperations": [
+          "Compute change",
           "Quantify future climate change"
         ],
         "Name": "Difference Quantification",
