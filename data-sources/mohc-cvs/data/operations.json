@@ -412,6 +412,20 @@
           "type": "text"
         },
         "Name": "Search for external expertise"
+      },
+      {
+        "Output": "Non-climatic data description",
+        "WorkflowInfo": {
+          "Roles": [
+            "CaseSolver"
+          ],
+          "InformationType": "Optional"
+        },
+        "Description": "The task of describing the non-climatic information.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Provide non-climatic information"
       }
     ]
   },
@@ -885,6 +899,57 @@
         "Name": "Compute climate indices"
       },
       {
+        "Input": "Processed climate data or climate indices",
+        "Output": "Calculated slice statistics for observations and climate simulations",
+        "WorkflowInfo": {
+          "Roles": [
+            "CaseSolver"
+          ],
+          "InformationType": "Optional",
+          "BackwardDependencies": [
+            "Identify indices and variables",
+            "Extract global warming level time slice",
+            "Choose future period",
+            "Choose baseline period",
+            "Define subannual selection",
+            "Conduct manual selection of climate simulations",
+            "Conduct manual selection of observations",
+            "Filter climate simulations by selection criteria",
+            "Filter observations by selection criteria",
+            "Filter climate simulations by global warming level exceedance",
+            "Apply pattern scaling",
+            "Apply spatial downscaling",
+            "Apply data preproccesing",
+            "Compute climate indices"
+          ]
+        },
+        "Description": "The task of computing a statistic, for example the mean, over the time slice.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Compute slice statistic"
+      },
+      {
+        "Input": "Computed slice statistic: future and baseline",
+        "Output": "Calculated change in statistic",
+        "WorkflowInfo": {
+          "Roles": [
+            "CaseSolver"
+          ],
+          "InformationType": "Optional",
+          "BackwardDependencies": [
+            "Compute slice statistic"
+          ]
+        },
+        "Description": "The task of calculating the change of the slice statistic with respect to baseline period.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Compute change"
+      },
+      {
         "Input": "Processed observations",
         "Output": "Observation analysis",
         "WorkflowInfo": {
@@ -906,7 +971,7 @@
         "Name": "Conduct observation analysis"
       },
       {
-        "Input": "Calculated indices",
+        "Input": "Calculated indices, slice statistic, change statistic",
         "Output": "Aggregated indices",
         "WorkflowInfo": {
           "Roles": [
@@ -925,7 +990,7 @@
         "Name": "Conduct spatial aggregation"
       },
       {
-        "Input": "Calculated or aggregated indices, or processed climate data, or observation analysis",
+        "Input": "Calculated or aggregated indices, slice or change statistic, or processed climate data, or observation analysis",
         "Output": "Model performance metric",
         "Comment": "We require case solver to add at least some type of quality evaluation metric - regardless it is used to make the final decision or not.",
         "WorkflowInfo": {
