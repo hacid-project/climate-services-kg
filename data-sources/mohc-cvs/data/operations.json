@@ -412,6 +412,20 @@
           "type": "text"
         },
         "Name": "Search for external expertise"
+      },
+      {
+        "Output": "Non-climatic data description",
+        "WorkflowInfo": {
+          "Roles": [
+            "CaseSolver"
+          ],
+          "InformationType": "Optional"
+        },
+        "Description": "The task of describing the non-climatic information.",
+        "AssociatedData": {
+          "type": "text"
+        },
+        "Name": "Provide non-climatic information"
       }
     ]
   },
@@ -795,7 +809,7 @@
             "Choose global warming level extraction method"
           ]
         },
-        "Description": "The operation that conducts pattern scaling of regional climate response to the global warming level.",
+        "Description": "The operation that conducts pattern scaling of climate response to the global warming level.",
         "Name": "Apply pattern scaling"
       },
       {
@@ -816,12 +830,12 @@
             "Filter climate simulations by global warming level exceedance"
           ]
         },
-        "Description": "The operation that applies statistical or dynamical downscaling techniques to increase the spatial resolution of global or regional climate model outputs. This task is normally unnecessary if the selected data is already downscaled.",
+        "Description": "The operation that applies statistical or dynamical downscaling techniques to increase the spatial and/or temporal resolution of global or regional climate model outputs. This task is normally unnecessary if the selected data is already downscaled.",
         "AssociatedData": {
           "type": "uri",
           "cv": "Method"
         },
-        "Name": "Apply additional spatial downscaling"
+        "Name": "Apply additional spatial and/or temporal downscaling"
       },
       {
         "Input": "Raw observations, raw or downscaled climate simulations, or pattern-scaled climate data",
@@ -844,7 +858,7 @@
             "Filter observations by selection criteria",
             "Filter climate simulations by global warming level exceedance",
             "Apply pattern scaling",
-            "Apply spatial downscaling"
+            "Apply additional spatial and/or temporal downscaling"
           ]
         },
         "Description": "The operation that performs data preprocessing (e.g., regridding, gap-filling, aggregation, filtering, bias correction) on raw climate model output and observations to ensure it is accurate, consistent, and suitable for analysis.",
@@ -873,7 +887,7 @@
             "Filter observations by selection criteria",
             "Filter climate simulations by global warming level exceedance",
             "Apply pattern scaling",
-            "Apply spatial downscaling",
+            "Apply additional spatial and/or temporal downscaling",
             "Apply data preproccesing"
           ]
         },
@@ -883,6 +897,57 @@
           "cv": "Method"
         },
         "Name": "Compute climate indices"
+      },
+      {
+        "Input": "Processed climate data or climate indices",
+        "Output": "Calculated slice statistics for observations and climate simulations",
+        "WorkflowInfo": {
+          "Roles": [
+            "CaseSolver"
+          ],
+          "InformationType": "Optional",
+          "BackwardDependencies": [
+            "Identify indices and variables",
+            "Extract global warming level time slice",
+            "Choose future period",
+            "Choose baseline period",
+            "Define subannual selection",
+            "Conduct manual selection of climate simulations",
+            "Conduct manual selection of observations",
+            "Filter climate simulations by selection criteria",
+            "Filter observations by selection criteria",
+            "Filter climate simulations by global warming level exceedance",
+            "Apply pattern scaling",
+            "Apply additional spatial and/or temporal downscaling",
+            "Apply data preproccesing",
+            "Compute climate indices"
+          ]
+        },
+        "Description": "The task of computing a statistic, for example the mean, over the time slice.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Compute slice statistic"
+      },
+      {
+        "Input": "Computed slice statistic: future and baseline",
+        "Output": "Calculated change in statistic",
+        "WorkflowInfo": {
+          "Roles": [
+            "CaseSolver"
+          ],
+          "InformationType": "Optional",
+          "BackwardDependencies": [
+            "Compute slice statistic"
+          ]
+        },
+        "Description": "The task of calculating the change of the slice statistic with respect to baseline period.",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Method"
+        },
+        "Name": "Compute change"
       },
       {
         "Input": "Processed observations",
@@ -906,7 +971,7 @@
         "Name": "Conduct observation analysis"
       },
       {
-        "Input": "Calculated indices",
+        "Input": "Calculated indices, slice statistic, change statistic",
         "Output": "Aggregated indices",
         "WorkflowInfo": {
           "Roles": [
@@ -925,7 +990,7 @@
         "Name": "Conduct spatial aggregation"
       },
       {
-        "Input": "Calculated or aggregated indices, or processed climate data, or observation analysis",
+        "Input": "Calculated or aggregated indices, slice or change statistic, or processed climate data, or observation analysis",
         "Output": "Model performance metric",
         "Comment": "We require case solver to add at least some type of quality evaluation metric - regardless it is used to make the final decision or not.",
         "WorkflowInfo": {
@@ -938,7 +1003,7 @@
             "Filter climate simulations by selection criteria",
             "Conduct manual selection of climate simulations",
             "Apply pattern scaling",
-            "Apply spatial downscaling",
+            "Apply additional spatial and/or temporal downscaling",
             "Filter observations by selection criteria",
             "Conduct manual selection of observations",
             "Apply data preproccesing",
@@ -1213,6 +1278,9 @@
       "InformationType": "Optional"
     },
     "Description": "The operation that presents the climate or climate impact information through visual (e.g., plot, diagram, flowchart, graph, map), quantitative (e.g., table), or qualitative (e.g. narrative) formats",
+    "AssociatedData": {
+          "type": "text"
+    },
     "Name": "Present climate information"
   },
   {
