@@ -2,7 +2,7 @@
   {
     "Definition": "Downscaling is a method that derives local- to regional-scale (10 to 100 km) information from larger-scale models or data analyses. Two main methods exist: dynamical downscaling and empirical/statistical downscaling. The dynamical method uses the output of regional climate models, global models with variable spatial resolution or high-resolution global models. The empirical/statistical methods develop statistical relationships that link the large-scale atmospheric variables with -local/-regional climate variables. In all cases, the quality of the driving model remains an important limitation on the quality of the downscaled information.",
     "ApplicableToOperations": [
-      "Apply additional spatial downscaling"
+      "Apply additional spatial and/or temporal downscaling"
     ],
     "Name": "Spatial downscaling",
     "Methods": [
@@ -10,7 +10,7 @@
         "Definition": "Downscaling is a method for obtaining high-resolution climate or climate change information from relatively coarse-resolution global climate models (GCMs). Typically, GCMs have a resolution of 150-300 km by 150-300 km. Many impacts models require information at scales of 50 km or less, so some method is needed to estimate the smaller-scale information. Statistical downscaling first derives statistical relationships between observed small-scale (often station level) variables and larger (GCM) scale variables, using either analogue methods (circulation typing), regression analysis, or neural network methods. Future values of the largescale variables obtained from GCM projections of future climate are then used to drive the statistical relationships and so estimate the smaller-scale details of future climate (see also weather generators).",
         "Usage": "When higher spatial resolution data required",
         "ApplicableToOperations": [
-          "Apply additional spatial downscaling"
+          "Apply additional spatial and/or temporal downscaling"
         ],
         "Name": "Statistical downscaling",
         "DefinitionSources": [
@@ -21,7 +21,7 @@
         "Definition": "Downscaling is a method for obtaining high-resolution climate or climate change information from relatively coarse-resolution global climate models (GCMs). Typically, GCMs have a resolution of 150-300 km by 150-300 km. Many impacts models require information at scales of 50 km or less, so some method is needed to estimate the smaller-scale information. Dynamical downscaling uses a limited-area, high-resolution model (a regional climate model, or RCM) driven by boundary conditions from a GCM to derive smaller-scale information. RCMs generally have a domain area of 106 to 107 km2 and a resolution of 20 to 60 km.",
         "Usage": "When higher spatial resolution data required",
         "ApplicableToOperations": [
-          "Apply additional spatial downscaling"
+          "Apply additional spatial and/or temporal downscaling"
         ],
         "Name": "Dynamical downscaling using climate models",
         "DefinitionSources": [
@@ -32,7 +32,7 @@
         "Definition": "As for statistical downscaling, but using more complex models with multiple steps and layers that typically cannot be expressed in a single equation.",
         "Usage": "When computer resource requirements are too great",
         "ApplicableToOperations": [
-          "Apply additional spatial downscaling"
+          "Apply additional spatial and/or temporal downscaling"
         ],
         "Name": "AI methods (experimental)",
         "DefinitionSources": [
