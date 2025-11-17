@@ -731,11 +731,11 @@
               "Description": "The task of describing the non-climatic information.",
               "@type": "top:Operation",
               "Label": "Provide non-climatic information",
-              "@id": "ops:ProvideNon-climaticInformation",
+              "@id": "ops:ProvideNonClimaticInformation",
               "InformationRoles": [
                 {
                   "@type": "top:InformationRole",
-                  "@id": "ops:ProvideNon-climaticInformation/associated-data",
+                  "@id": "ops:ProvideNonClimaticInformation/associated-data",
                   "ExpectedType": {
                     "@id": "xsd:string",
                     "@type": "rdfs:Datatype"
@@ -1410,11 +1410,11 @@
               "Description": "The operation that applies statistical or dynamical downscaling techniques to increase the spatial and/or temporal resolution of global or regional climate model outputs. This task is normally unnecessary if the selected data is already downscaled.",
               "@type": "top:Operation",
               "Label": "Apply additional spatial and/or temporal downscaling",
-              "@id": "ops:ApplyAdditionalSpatialAnd%2ForTemporalDownscaling",
+              "@id": "ops:ApplyAdditionalSpatialAndOrTemporalDownscaling",
               "InformationRoles": [
                 {
                   "@type": "top:InformationRole",
-                  "@id": "ops:ApplyAdditionalSpatialAnd%2ForTemporalDownscaling/associated-data",
+                  "@id": "ops:ApplyAdditionalSpatialAndOrTemporalDownscaling/associated-data",
                   "ExpectedType": {
                     "@id": "top:Method",
                     "@type": "owl:Class"

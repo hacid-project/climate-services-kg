@@ -3,7 +3,7 @@ import "./data/cv-map" as $cv_map_inputs;
 $cv_map_inputs as [$cv_map_input] |
 
 def to_camel_case:
-    split(" ") |
+    split("[ -/]";"g") |
     map((.[:1] | ascii_upcase) + (.[1:] | ascii_downcase)) |
     join("");
 
