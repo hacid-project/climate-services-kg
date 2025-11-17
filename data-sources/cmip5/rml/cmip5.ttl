@@ -361,36 +361,42 @@
                 rr:predicate hrf:template ;
                 rr:objectMap [
                     rr:constant
-                        "https://w3id.org/hacid/data/cs/simulations/cmip5.{experiment}"
+#                        "https://w3id.org/hacid/data/cs/simulations/cmip5.{experiment}"
+                        "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/{experiment}"
                 ]
             ] 
         ]
     ] ;
 
-    rr:predicateObjectMap [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:language "en" ;
-            fnml:functionValue [
-                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
-                    rr:predicate hrf:template ;
-                    rr:objectMap [
-                        rr:constant
-                            "cmip5.{experiment}"
-                    ]
-                ] 
-            ]
-        ]
-    ] ;
+    # rr:predicateObjectMap [
+    #     rr:predicate rdfs:label;
+    #     rr:objectMap [
+    #         rr:language "en" ;
+    #         fnml:functionValue [
+    #             rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+    #                 rr:predicate hrf:template ;
+    #                 rr:objectMap [
+    #                     rr:constant
+    #                         "CMIP5 {experiment}"
+    #                 ]
+    #             ] 
+    #         ]
+    #     ]
+    # ] ;
 
-    rr:predicateObjectMap [
-        rr:predicate top:isComponentOf ;
-        rr:object <https://w3id.org/hacid/data/cs/mips/cmip5>
-    ] ;
+    # rr:predicateObjectMap [
+    #     rr:predicate top:isComponentOf ;
+    #     rr:object <https://w3id.org/hacid/data/cs/mips/cmip5>
+    # ] ;
 
     rr:predicateObjectMap [
         rr:predicate ccso:hasMemberSimulation ;
         rr:objectMap :SimulationIRI
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:hasPart ;
+        rr:objectMap :EnsembleIRI
     ] ;
 
     rr:predicateObjectMap [

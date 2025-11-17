@@ -24,7 +24,7 @@
                 "@type": ["ccso:EnsembleSimulation", "ccso:GlobalClimateSimulation"],
                 acronym: .id,
                 label: .description,
-                isPartOf: "https://w3id.org/hacid/data/cs/mips/cmip5",
+                isComponentOf: "https://w3id.org/hacid/data/cs/mips/cmip5",
             }
         )
     ]
