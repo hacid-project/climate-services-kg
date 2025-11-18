@@ -64,6 +64,24 @@ def type_to_owl:
             "@id": "data:AnnuallyRecurringInterval",
             "@type": "owl:Class"
         }
+    elif .type == "set" then
+        if .items.type == "uri" then
+            {
+                "@type": "owl:Restriction",
+                onProperty: "top:hasMember",
+                "owl:allValuesFrom": (.items | type_to_owl)
+            }
+        else
+            {
+                "@type": "owl:Restriction",
+                onProperty: "top:hasMember",
+                "owl:allValuesFrom": {
+                    "@type": "owl:Restriction",
+                    onProperty: "top:hasRegionDataValue",
+                    "owl:allValuesFrom": (.items | type_to_owl)
+                }
+            }
+        end
     elif .type == "range" then
         if .items.type == "uri" then
             {

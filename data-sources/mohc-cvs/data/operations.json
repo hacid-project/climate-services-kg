@@ -552,7 +552,7 @@
         },
         "Description": "The operation that defines appropriate representative concentration pathways (RCPs) or shared socioeconomic\npathways (SSPs) to explore a range of future climate outcomes.",
         "AssociatedData": {
-          "type": "range-or-exact",
+          "type": "set",
           "items": {
             "type": "uri",
             "cv": "Emission scenario"

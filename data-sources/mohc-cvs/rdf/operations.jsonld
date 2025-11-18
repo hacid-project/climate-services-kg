@@ -972,27 +972,12 @@
                   "@type": "top:InformationRole",
                   "@id": "ops:DefineEmissionScenarios/associated-data",
                   "ExpectedType": {
-                    "@type": "owl:Class",
-                    "unionOf": [
-                      {
-                        "@id": "ccso:EmissionScenario",
-                        "@type": "owl:Class"
-                      },
-                      {
-                        "@type": "owl:Class",
-                        "intersectionOf": [
-                          "top:Interval",
-                          {
-                            "@type": "owl:Restriction",
-                            "onProperty": "top:hasBoundaryValue",
-                            "owl:allValuesFrom": {
-                              "@id": "ccso:EmissionScenario",
-                              "@type": "owl:Class"
-                            }
-                          }
-                        ]
-                      }
-                    ]
+                    "@type": "owl:Restriction",
+                    "onProperty": "top:hasMember",
+                    "owl:allValuesFrom": {
+                      "@id": "ccso:EmissionScenario",
+                      "@type": "owl:Class"
+                    }
                   }
                 }
               ]
