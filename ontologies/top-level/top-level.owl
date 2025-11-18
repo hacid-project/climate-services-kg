@@ -82,30 +82,6 @@ It is declared as both transitive and symmetric, in order to reason an a maximal
         <rdfs:label xml:lang="en">at time</rdfs:label>
     </owl:ObjectProperty>
     
-    <!-- https://w3id.org/hacid/onto/top-level/hasExpectedType -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/top-level/hasExpectedType">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/top-level/isExpectedTypeOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/top-level/InformationRole"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rdfs:comment xml:lang="en">The relation holding between an information role and the expected type of the objects that will hold such role.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/top-level"/>
-        <rdfs:label xml:lang="en">has expected type</rdfs:label>
-    </owl:ObjectProperty>
-    
-    <!-- https://w3id.org/hacid/onto/top-level/isExpectedTypeOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/top-level/isExpectedTypeOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/top-level/hasExpectedType"/>
-        <rdfs:range rdf:resource="https://w3id.org/hacid/onto/top-level/InformationRole"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-        <rdfs:comment xml:lang="en">The relation holding between an class and an information role that has such class as expected type.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/top-level"/>
-        <rdfs:label xml:lang="en">is expected type of</rdfs:label>
-    </owl:ObjectProperty>
-    
 
 
     <!-- https://w3id.org/hacid/onto/top-level/classifies -->
@@ -2159,6 +2135,19 @@ In un modello semiotico non vi è alcuna ragione particolare per distinguerli, t
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/top-level"/>
         <rdfs:label xml:lang="en">Media</rdfs:label>
         <rdfs:label xml:lang="it">Media</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/hacid/onto/top-level/Method -->
+
+    <owl:Class rdf:about="https://w3id.org/hacid/onto/top-level/Method">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Description"/>
+        <rdfs:comment>A method is a Description that defines or uses concepts in order to guide carrying out actions aimed at a solution with respect to a problem. 
+It is different from a Plan, because plans could be carried out in order to follow a method, but a method can be followed by executing alternative plans.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/top-level"/>
+        <rdfs:label xml:lang="en">Method</rdfs:label>
+        <rdfs:label xml:lang="it">Metodo</rdfs:label>
     </owl:Class>
     
 
