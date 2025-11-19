@@ -27,7 +27,7 @@ def cv_to_owl:
         {
             "@type": "owl:Restriction",
             onProperty: "top:inScheme",
-            "owl:hasValue": $scheme_uri
+            hasValue: $scheme_uri
         }
     elif .collection then
         .collection |
@@ -35,9 +35,7 @@ def cv_to_owl:
         {
             "@type": "owl:Restriction",
             onProperty: "top:isMemberOf",
-            "owl:hasValue": {
-                "@id": $collection_uri
-            }
+            hasValue:  $collection_uri
         }
     elif .union then
         {
@@ -69,16 +67,16 @@ def type_to_owl:
             {
                 "@type": "owl:Restriction",
                 onProperty: "top:hasMember",
-                "owl:allValuesFrom": (.items | type_to_owl)
+                allValuesFrom: (.items | type_to_owl)
             }
         else
             {
                 "@type": "owl:Restriction",
                 onProperty: "top:hasMember",
-                "owl:allValuesFrom": {
+                allValuesFrom: {
                     "@type": "owl:Restriction",
                     onProperty: "top:hasRegionDataValue",
-                    "owl:allValuesFrom": (.items | type_to_owl)
+                    allValuesFrom: (.items | type_to_owl)
                 }
             }
         end
@@ -91,7 +89,7 @@ def type_to_owl:
                     {
                         "@type": "owl:Restriction",
                         onProperty: "top:hasBoundaryValue",
-                        "owl:allValuesFrom": (.items | type_to_owl)
+                        allValuesFrom: (.items | type_to_owl)
                     }
                 ]
             }
@@ -101,7 +99,7 @@ def type_to_owl:
                     {
                         "@type": "owl:Restriction",
                         onProperty: "owl:onDatatype",
-                        "owl:allValuesFrom": (.items | type_to_owl)
+                        allValuesFrom: (.items | type_to_owl)
                     },
                     {
                         "@type": "owl:Restriction",
@@ -180,6 +178,14 @@ walk((
         },
         onProperty: {
             "@id": "owl:onProperty",
+            "@type": "@id"
+        },
+        hasValue: {
+            "@id": "owl:hasValue",
+            "@type": "@id"
+        },
+        allValuesFrom: {
+            "@id": "owl:allValuesFrom",
             "@type": "@id"
         }
     },

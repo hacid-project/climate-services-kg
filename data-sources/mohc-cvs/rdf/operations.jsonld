@@ -37,6 +37,14 @@
     "onProperty": {
       "@id": "owl:onProperty",
       "@type": "@id"
+    },
+    "hasValue": {
+      "@id": "owl:hasValue",
+      "@type": "@id"
+    },
+    "allValuesFrom": {
+      "@id": "owl:allValuesFrom",
+      "@type": "@id"
     }
   },
   "@id": "ops:CaseOperation",
@@ -119,7 +127,7 @@
                   "ExpectedType": {
                     "@type": "owl:Restriction",
                     "onProperty": "top:inScheme",
-                    "owl:hasValue": "schemes:OrganizationType"
+                    "hasValue": "schemes:OrganizationType"
                   }
                 }
               ]
@@ -142,7 +150,7 @@
                   "ExpectedType": {
                     "@type": "owl:Restriction",
                     "onProperty": "top:inScheme",
-                    "owl:hasValue": "schemes:OrganizationSize"
+                    "hasValue": "schemes:OrganizationSize"
                   }
                 }
               ]
@@ -166,7 +174,7 @@
                   "ExpectedType": {
                     "@type": "owl:Restriction",
                     "onProperty": "top:inScheme",
-                    "owl:hasValue": "https://w3id.org/hacid/data/cs/climdex/sectors"
+                    "hasValue": "https://w3id.org/hacid/data/cs/climdex/sectors"
                   }
                 }
               ]
@@ -192,7 +200,7 @@
                       {
                         "@type": "owl:Restriction",
                         "onProperty": "owl:onDatatype",
-                        "owl:allValuesFrom": {
+                        "allValuesFrom": {
                           "@id": "xsd:decimal",
                           "@type": "rdfs:Datatype"
                         }
@@ -389,7 +397,7 @@
                       {
                         "@type": "owl:Restriction",
                         "onProperty": "owl:onDatatype",
-                        "owl:allValuesFrom": {
+                        "allValuesFrom": {
                           "@id": "xsd:date",
                           "@type": "rdfs:Datatype"
                         }
@@ -612,7 +620,7 @@
                   "ExpectedType": {
                     "@type": "owl:Restriction",
                     "onProperty": "top:inScheme",
-                    "owl:hasValue": "schemes:RiskRating"
+                    "hasValue": "schemes:RiskRating"
                   }
                 }
               ]
@@ -779,16 +787,12 @@
                       {
                         "@type": "owl:Restriction",
                         "onProperty": "top:isMemberOf",
-                        "owl:hasValue": {
-                          "@id": "https://w3id.org/hacid/data/cs/variables"
-                        }
+                        "hasValue": "https://w3id.org/hacid/data/cs/variables"
                       },
                       {
                         "@type": "owl:Restriction",
                         "onProperty": "top:isMemberOf",
-                        "owl:hasValue": {
-                          "@id": "https://w3id.org/hacid/data/cs/indices"
-                        }
+                        "hasValue": "https://w3id.org/hacid/data/cs/indices"
                       }
                     ]
                   }
@@ -817,7 +821,7 @@
                       {
                         "@type": "owl:Restriction",
                         "onProperty": "owl:onDatatype",
-                        "owl:allValuesFrom": {
+                        "allValuesFrom": {
                           "@id": "xsd:date",
                           "@type": "rdfs:Datatype"
                         }
@@ -858,7 +862,7 @@
                       {
                         "@type": "owl:Restriction",
                         "onProperty": "owl:onDatatype",
-                        "owl:allValuesFrom": {
+                        "allValuesFrom": {
                           "@id": "xsd:date",
                           "@type": "rdfs:Datatype"
                         }
@@ -900,7 +904,7 @@
                       {
                         "@type": "owl:Restriction",
                         "onProperty": "top:inScheme",
-                        "owl:hasValue": "schemes:GlobalWarmingLevel"
+                        "hasValue": "schemes:GlobalWarmingLevel"
                       },
                       {
                         "@type": "owl:Class",
@@ -909,10 +913,10 @@
                           {
                             "@type": "owl:Restriction",
                             "onProperty": "top:hasBoundaryValue",
-                            "owl:allValuesFrom": {
+                            "allValuesFrom": {
                               "@type": "owl:Restriction",
                               "onProperty": "top:inScheme",
-                              "owl:hasValue": "schemes:GlobalWarmingLevel"
+                              "hasValue": "schemes:GlobalWarmingLevel"
                             }
                           }
                         ]
@@ -974,7 +978,7 @@
                   "ExpectedType": {
                     "@type": "owl:Restriction",
                     "onProperty": "top:hasMember",
-                    "owl:allValuesFrom": {
+                    "allValuesFrom": {
                       "@id": "ccso:EmissionScenario",
                       "@type": "owl:Class"
                     }
@@ -1010,7 +1014,7 @@
                           {
                             "@type": "owl:Restriction",
                             "onProperty": "owl:onDatatype",
-                            "owl:allValuesFrom": {
+                            "allValuesFrom": {
                               "@id": "xsd:decimal",
                               "@type": "rdfs:Datatype"
                             }
@@ -1055,7 +1059,7 @@
                           {
                             "@type": "owl:Restriction",
                             "onProperty": "owl:onDatatype",
-                            "owl:allValuesFrom": {
+                            "allValuesFrom": {
                               "@id": "xsd:duration",
                               "@type": "rdfs:Datatype"
                             }
@@ -1116,7 +1120,7 @@
                   "ExpectedType": {
                     "@type": "owl:Restriction",
                     "onProperty": "top:inScheme",
-                    "owl:hasValue": "schemes:ObservationType"
+                    "hasValue": "schemes:ObservationType"
                   }
                 }
               ]
@@ -1140,7 +1144,7 @@
                   "ExpectedType": {
                     "@type": "owl:Restriction",
                     "onProperty": "top:inScheme",
-                    "owl:hasValue": "schemes:AccessPoint"
+                    "hasValue": "schemes:AccessPoint"
                   }
                 }
               ]
@@ -1284,7 +1288,11 @@
               "InformationRoles": [
                 {
                   "@type": "top:InformationRole",
-                  "@id": "ops:ConductManualSelectionOfObservations/associated-data"
+                  "@id": "ops:ConductManualSelectionOfObservations/associated-data",
+                  "ExpectedType": {
+                    "src": null,
+                    "@type": "unknown-cv"
+                  }
                 }
               ]
             },
@@ -1337,7 +1345,7 @@
                       {
                         "@type": "owl:Restriction",
                         "onProperty": "owl:onDatatype",
-                        "owl:allValuesFrom": {
+                        "allValuesFrom": {
                           "@id": "xsd:decimal",
                           "@type": "rdfs:Datatype"
                         }
@@ -1769,7 +1777,7 @@
                   "ExpectedType": {
                     "@type": "owl:Restriction",
                     "onProperty": "top:inScheme",
-                    "owl:hasValue": "schemes:ConfidenceLevel"
+                    "hasValue": "schemes:ConfidenceLevel"
                   }
                 }
               ]

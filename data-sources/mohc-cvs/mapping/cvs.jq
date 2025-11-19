@@ -15,10 +15,18 @@ def interpolate($str):
         $str_parts[-1]
     ] | join("");
 
+def member_spec($scheme_id):
+    {
+        "@id": @uri "schemes:\($scheme_id)/\(.)",
+        label: .
+    };
+
 {
     "@context": {
+        rdfs: "http://www.w3.org/2000/01/rdf-schema#",
         top: "https://w3id.org/hacid/onto/top-level/",
         schemes: "https://w3id.org/hacid/data/cs/wf/schemes/",
+        label: "rdfs:label",
         members: {
             "@reverse": "top:inScheme",
             "@type": "@id"
@@ -32,7 +40,7 @@ def interpolate($str):
             "@type": "top:ConceptScheme"
         } +
         if .members then
-            {members: .members | map(@uri "schemes:\($id)/\(.)")}
+            {members: .members | map(member_spec($id))}
         elif .range then
             {
                 members: [
@@ -40,7 +48,7 @@ def interpolate($str):
                     .range |
                     range(.min // 0; .max + (.step // 1); .step // 1) |
                     interpolate($ctxt.labelTemplate // "\\(.)") | 
-                    @uri "schemes:\($id)/\(.)"
+                    member_spec($id)
                 ]
             }
         end
