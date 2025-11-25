@@ -1,0 +1,26 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/> 
+
+select ?role ?item_class (COUNT(DISTINCT ?instance) AS ?num_instances) where {
+    <https://w3id.org/hacid/data/cs/wf/ops/HandleCase> top:isSpecializedBy ?op.
+    ?op top:definesRole $role.
+    OPTIONAL{
+        $role top:hasExpectedType ?expected_type.
+        ?expected_type (((owl:unionOf|owl:intersectionOf)/rdf:rest*/rdf:first)|owl:allValuesFrom)* ?item_class.
+        FILTER(?item_class NOT IN (top:Interval)).
+        {
+            ?instance a ?item_class
+        } UNION {
+            ?item_class
+                a owl:Restriction;
+                owl:onProperty ?p;
+                owl:hasValue ?o.
+            ?instance ?p ?o.
+        }.
+        ?instance rdfs:label ?instance_label
+    }.
+}
+GROUP BY ?role ?item_class
+limit 100
