@@ -174,7 +174,7 @@
 
 :SimulationIRI
     rr:termType rr:IRI ;
-    rr:class ccso:Simulation, ccso:DynamicalDownscaling ;
+    rr:class ccso:SingleSimulation, ccso:DynamicalDownscaling ;
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;

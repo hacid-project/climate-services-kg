@@ -195,7 +195,7 @@
 
 :SimulationIRI
     rr:termType rr:IRI ;
-    rr:class ccso:Simulation, ccso:GlobalClimateSimulation ;
+    rr:class ccso:SingleSimulation, ccso:GlobalClimateSimulation ;
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;
