@@ -1288,11 +1288,7 @@
               "InformationRoles": [
                 {
                   "@type": "top:InformationRole",
-                  "@id": "ops:ConductManualSelectionOfObservations/associated-data",
-                  "ExpectedType": {
-                    "src": null,
-                    "@type": "unknown-cv"
-                  }
+                  "@id": "ops:ConductManualSelectionOfObservations/associated-data"
                 }
               ]
             },
