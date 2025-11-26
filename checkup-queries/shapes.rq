@@ -1,0 +1,89 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?signature (COUNT(1) AS ?num)
+WHERE {
+
+SELECT
+	?s
+	(CONCAT(
+		?s_type_sig, ';',
+		GROUP_CONCAT(
+			CONCAT(
+				?p_o_type_sig,
+				' (',
+				IF(?p_o_type_sig_count > 5, 'n', STR(?p_o_type_sig_count)),
+				')'
+			);
+			separator=";"
+		)
+	) AS ?signature)
+WHERE {
+	SELECT
+		?s ?s_type_sig ?p_o_type_sig
+		(COUNT(DISTINCT ?o) AS ?p_o_type_sig_count)
+  	WHERE {
+		SELECT
+			?s ?s_type_sig ?o ?p_o_type_sig
+		WHERE {
+			SELECT
+				?s ?s_type_sig ?o
+				(CONCAT(?p_sig, ' [a ', GROUP_CONCAT(CONCAT('<',STR(?o_type),'>'); separator=","),']') AS ?p_o_type_sig)
+			WHERE {
+				SELECT ?s ?s_type_sig ?p_sig ?o ?o_type
+				WHERE {
+					{
+						SELECT
+							?s ?s_type_sig ?o
+							(GROUP_CONCAT(CONCAT('<',STR(?p),'>'); separator="|") AS ?p_sig)
+						WHERE {
+							SELECT ?s ?s_type_sig ?o ?p
+							WHERE {
+								{
+									SELECT
+										?s
+										(CONCAT('a ', GROUP_CONCAT(CONCAT('<',STR(?s_type),'>'); separator=",")) AS ?s_type_sig)
+									WHERE {
+										SELECT ?s ?s_type
+										WHERE {
+											?s a ?s_type.
+											# FILTER NOT EXISTS {
+											# 	?s rdf:type/rdfs:subClassOf+ ?s_type
+											# }
+										}
+										ORDER BY ?s ?s_type
+									}
+									GROUP BY ?s
+								}
+								?s ?p ?o.
+								FILTER(?p != rdf:type).
+								# FILTER NOT EXISTS {
+								# 	?s ?p_spec ?o.
+								# 	?p_spec rdfs:subPropertyOf+ ?p.
+								# }
+							}
+							ORDER BY ?s ?o ?p
+						}
+						GROUP BY ?s ?s_type_sig ?o
+					}
+					?o a ?o_type.
+					# FILTER NOT EXISTS {
+					# 	?o rdf:type/rdfs:subClassOf+ ?o_type
+					# }
+				}
+				ORDER BY ?s ?o ?o_type
+			}
+			GROUP BY ?s ?s_type_sig ?o ?p_sig
+		}
+	}
+  	GROUP BY ?s ?s_type_sig ?p_o_type_sig
+    ORDER BY ?s ?p_o_type_sig
+}
+GROUP BY ?s ?s_type_sig
+
+}
+GROUP BY ?signature 
+ORDER BY DESC(?num)
+LIMIT 100
+
