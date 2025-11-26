@@ -471,7 +471,7 @@
 	rml:logicalSource :LogicalSource ;
 	rr:subjectMap [
         rr:termType rr:IRI ;
-        rr:class ccso:GlobalClimateModel, ccso:ClimateModel ;
+        rr:class ccso:GlobalClimateModel ;
         fnml:functionValue [
             rr:predicateObjectMap [
                 rr:predicate fno:executes ;
@@ -576,7 +576,7 @@
 
     rr:subjectMap [
         rr:termType rr:IRI ;
-        rr:class data:Variable, data:IndependentVariable, data:DimensionalSpace ;
+        rr:class data:DimensionalSpace ;
         fnml:functionValue [
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
@@ -593,7 +593,7 @@
     ] ; 
 
     rr:predicateObjectMap [
-        rr:predicate data:basedOnDimensionalSpace, data:hasDiscretization ;
+        rr:predicate data:hasDiscretization ;
         rr:objectMap [ 
             rr:parentTriplesMap :TimeQuantizationMapping
         ]
@@ -611,7 +611,7 @@
 
     rr:subjectMap [
         rr:termType rr:IRI ;
-        rr:class data:Quantization ;
+#        rr:class data:Quantization ;
         fnml:functionValue [
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
@@ -761,7 +761,7 @@
 
     rr:subjectMap [
         rr:termType rr:IRI ;
-        rr:class data:Variable, data:IndependentVariable, data:DimensionalSpace ;
+        rr:class data:DimensionalSpace ;
         fnml:functionValue [
             rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
                 rr:predicate hrf:template ;

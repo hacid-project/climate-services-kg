@@ -56,10 +56,7 @@
   "@graph": [
     {
       "@id": "index:FD",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "FD",
       "label": "Frost Days (FD)",
       "definition": "Number of days when TN < 0 °C",
@@ -105,10 +102,7 @@
     },
     {
       "@id": "index:TNlt2",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TNlt2",
       "label": "TN below 2°C (TNlt2)",
       "definition": "Number of days when TN < 2 °C",
@@ -153,10 +147,7 @@
     },
     {
       "@id": "index:TNltm2",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TNltm2",
       "label": "TN below -2°C (TNltm2)",
       "definition": "Number of days when TN < -2 °C",
@@ -201,10 +192,7 @@
     },
     {
       "@id": "index:TNltm20",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TNltm20",
       "label": "TN below -20°C (TNltm20)",
       "definition": "Number of days when TN < -20 °C",
@@ -250,10 +238,7 @@
     },
     {
       "@id": "index:ID",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "ID",
       "label": "Ice Days (ID)",
       "definition": "Number of days when TX < 0 °C",
@@ -299,10 +284,7 @@
     },
     {
       "@id": "index:SU",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "SU",
       "label": "Summer days (SU)",
       "definition": "Number of days when TX > 25 °C",
@@ -347,10 +329,7 @@
     },
     {
       "@id": "index:TR",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TR",
       "label": "Tropical nights (TR)",
       "definition": "Number of days when TN > 20 °C",
@@ -396,10 +375,7 @@
     },
     {
       "@id": "index:GSL",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "GSL",
       "label": "Growing Season Length (GSL)",
       "definition": "Annual number of days between the first occurrence of 6 consecutive days with TM > 5 °C and the first occurrence of 6 consecutive days with TM < 5 °C",
@@ -442,10 +418,7 @@
     },
     {
       "@id": "index:TXx",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TXx",
       "label": "Max TX (TXx)",
       "definition": "Warmest daily TX",
@@ -490,10 +463,7 @@
     },
     {
       "@id": "index:TNn",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TNn",
       "label": "Min TN (TNn)",
       "definition": "Coldest daily TN",
@@ -538,10 +508,7 @@
     },
     {
       "@id": "index:WSDI",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "WSDI",
       "label": "Warm spell duration indicator (WSDI)",
       "definition": "Annual number of days contributing to events where 6 or more consecutive days experience TX > 90th percentile",
@@ -586,10 +553,7 @@
     },
     {
       "@id": "index:WSDId",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "WSDId",
       "label": "User-defined WSDI (WSDId)",
       "definition": "Annual number of days contributing to events where d or more consecutive days experience TX > 90th percentile",
@@ -648,10 +612,7 @@
     },
     {
       "@id": "index:CSDI",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "CSDI",
       "label": "Cold spell duration indicator (CSDI)",
       "definition": "Annual number of days contributing to events where 6 or more consecutive days experience TN < 10th percentile",
@@ -695,10 +656,7 @@
     },
     {
       "@id": "index:CSDId",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "CSDId",
       "label": "User-defined CSDI (CSDId)",
       "definition": "Annual number of days contributing to events where d or more consecutive days experience TN < 10th percentile",
@@ -757,10 +715,7 @@
     },
     {
       "@id": "index:TXgt50p",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TXgt50p",
       "label": "Fraction of days with temperatures above the median (TXgt50p)",
       "definition": "Percentage of days where TX > 50th percentile",
@@ -807,10 +762,7 @@
     },
     {
       "@id": "index:TX95t",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TX95t",
       "label": "Very warm day threshold (TX95t)",
       "definition": "Value of 95th percentile of TX",
@@ -854,10 +806,7 @@
     },
     {
       "@id": "index:TMge5",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TMge5",
       "label": "TM of at least 5°C (TMge5)",
       "definition": "Number of days when TM >= 5 °C",
@@ -902,10 +851,7 @@
     },
     {
       "@id": "index:TMlt5",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TMlt5",
       "label": "TM below 5°C (TMlt5)",
       "definition": "Number of days when TM < 5 °C",
@@ -950,10 +896,7 @@
     },
     {
       "@id": "index:TMge10",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TMge10",
       "label": "TM of at least 10°C (TMge10)",
       "definition": "Number of days when TM >= 10 °C",
@@ -998,10 +941,7 @@
     },
     {
       "@id": "index:TMlt10",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TMlt10",
       "label": "TM below 10°C (TMlt10)",
       "definition": "Number of days when TM < 10 °C",
@@ -1046,10 +986,7 @@
     },
     {
       "@id": "index:TXge30",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TXge30",
       "label": "TX of at least 30°C (TXge30)",
       "definition": "Number of days when TX >= 30 °C",
@@ -1095,10 +1032,7 @@
     },
     {
       "@id": "index:TXge35",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TXge35",
       "label": "TX of at least 35°C (TXge35)",
       "definition": "Number of days when TX >= 35 °C",
@@ -1144,10 +1078,7 @@
     },
     {
       "@id": "index:TXdTNd",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TXdTNd",
       "label": "User-defined consecutive number of hot days and nights (TXdTNd)",
       "definition": "Annual count of d consecutive days where both TX > 95th percentile and TN > 95th percentile, where 10 >= d >= 2",
@@ -1208,10 +1139,7 @@
     },
     {
       "@id": "index:HDDheatn",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HDDheatn",
       "label": "Heating Degree Days (HDDheatn)",
       "definition": "Annual sum of n - TM (where n is a user-defined location-specific base temperature and TM < n)",
@@ -1268,10 +1196,7 @@
     },
     {
       "@id": "index:CDDcoldn",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "CDDcoldn",
       "label": "Cooling Degree Days (CDDcoldn)",
       "definition": "Annual sum of TM - n (where n is a user-defined location-specific base temperature and TM > n)",
@@ -1328,10 +1253,7 @@
     },
     {
       "@id": "index:GDDgrown",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "GDDgrown",
       "label": "Growing Degree Days (GDDgrown)",
       "definition": "Annual sum of TM - n (where n is a user-defined location-specific base temperature and TM > n)",
@@ -1389,10 +1311,7 @@
     },
     {
       "@id": "index:CDD",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "CDD",
       "label": "Consecutive Dry Days (CDD)",
       "definition": "Maximum number of consecutive dry days (when PR < 1.0 mm)",
@@ -1437,10 +1356,7 @@
     },
     {
       "@id": "index:R20mm",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "R20mm",
       "label": "Number of very heavy rain days (R20mm)",
       "definition": "Number of days when PR >= 20 mm",
@@ -1486,10 +1402,7 @@
     },
     {
       "@id": "index:PRCPTOT",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "PRCPTOT",
       "label": "Annual total wet-day PR (PRCPTOT)",
       "definition": "Sum of daily PR >= 1.0 mm",
@@ -1535,10 +1448,7 @@
     },
     {
       "@id": "index:R95pTOT",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "R95pTOT",
       "label": "Contribution from very wet days (R95pTOT)",
       "definition": "100*r95p / PRCPTOT",
@@ -1582,10 +1492,7 @@
     },
     {
       "@id": "index:R99pTOT",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "R99pTOT",
       "label": "Contribution from extremely wet days (R99pTOT)",
       "definition": "100*r99p / PRCPTOT",
@@ -1629,10 +1536,7 @@
     },
     {
       "@id": "index:RXdday",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "RXdday",
       "label": "User-defined consecutive days PR amount (RXdday)",
       "definition": "Maximum d-day PR total",
@@ -1703,10 +1607,7 @@
     },
     {
       "@id": "index:SPI",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "SPI",
       "label": "Standardised Precipitation Index (SPI)",
       "definition": "Measure of “drought” using the Standardised Precipitation Index on time scales of 3, 6 and 12 months. See [McKee et al. (1993)](#appendixa_refs) and the [WMO SPI User guide (World Meteorological Organization, 2012)](#appendixa_refs) for details.<br>Calculated using the [SPEI R package](https://cran.r-project.org/web/packages/SPEI/index.html).",
@@ -1753,10 +1654,7 @@
     },
     {
       "@id": "index:SPEI",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "SPEI",
       "label": "Standardised Precipitation Evapotranspiration Index (SPEI)",
       "definition": "Measure of “drought” using the Standardised Precipitation Evapotranspiration Index on time scales of 3, 6 and 12 months. See [Vicente-Serrano et al. (2010)](#appendixa_refs) for details.<br>Calculated using the [SPEI R package](https://cran.r-project.org/web/packages/SPEI/index.html).",
@@ -1805,10 +1703,7 @@
     },
     {
       "@id": "index:TXbdTNbd",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TXbdTNbd",
       "label": "User-defined consecutive number of cold days and nights (TXbdTNbd)",
       "definition": "Annual number of d consecutive days where both TX < 5th percentile and TN < 5th percentile, where 10 >= d >=2",
@@ -1869,10 +1764,7 @@
     },
     {
       "@id": "index:DTR",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "DTR",
       "label": "Daily Temperature Range (DTR)",
       "definition": "Mean difference between daily TX and daily TN",
@@ -1917,10 +1809,7 @@
     },
     {
       "@id": "index:TNx",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TNx",
       "label": "Max TN (TNx)",
       "definition": "Warmest daily TN",
@@ -1963,10 +1852,7 @@
     },
     {
       "@id": "index:TXn",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TXn",
       "label": "Min TX (TXn)",
       "definition": "Coldest daily TX",
@@ -2009,10 +1895,7 @@
     },
     {
       "@id": "index:TMm",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TMm",
       "label": "Mean TM (TMm)",
       "definition": "Mean daily mean temperature",
@@ -2055,10 +1938,7 @@
     },
     {
       "@id": "index:TXm",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TXm",
       "label": "Mean TX (TXm)",
       "definition": "Mean daily maximum temperature",
@@ -2101,10 +1981,7 @@
     },
     {
       "@id": "index:TNm",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TNm",
       "label": "Mean TN (TNm)",
       "definition": "Mean daily minimum temperature",
@@ -2147,10 +2024,7 @@
     },
     {
       "@id": "index:TX10p",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TX10p",
       "label": "Amount of cool days (TX10p)",
       "definition": "Percentage of days when TX < 10th percentile",
@@ -2191,10 +2065,7 @@
     },
     {
       "@id": "index:TX90p",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TX90p",
       "label": "Amount of hot days (TX90p)",
       "definition": "Percentage of days when TX > 90th percentile",
@@ -2235,10 +2106,7 @@
     },
     {
       "@id": "index:TN10p",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TN10p",
       "label": "Amount of cold nights (TN10p)",
       "definition": "Percentage of days when TN < 10th percentile",
@@ -2279,10 +2147,7 @@
     },
     {
       "@id": "index:TN90p",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "TN90p",
       "label": "Amount of warm nights (TN90p)",
       "definition": "Percentage of days when TN > 90th percentile",
@@ -2323,10 +2188,7 @@
     },
     {
       "@id": "index:CWD",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "CWD",
       "label": "Consecutive Wet Days (CWD)",
       "definition": "Maximum annual number of consecutive wet days (when PR >= 1.0 mm)",
@@ -2367,10 +2229,7 @@
     },
     {
       "@id": "index:R10mm",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "R10mm",
       "label": "Number of heavy rain days (R10mm)",
       "definition": "Number of days when PR >= 10 mm",
@@ -2413,10 +2272,7 @@
     },
     {
       "@id": "index:Rnnmm",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "Rnnmm",
       "label": "Number of customised rain days (Rnnmm)",
       "definition": "Number of days when PR >= nn",
@@ -2483,10 +2339,7 @@
     },
     {
       "@id": "index:SDII",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "SDII",
       "label": "Daily PR intensity (SDII)",
       "definition": "Annual total PR divided by the number of wet days (when total PR >= 1.0 mm)",
@@ -2527,10 +2380,7 @@
     },
     {
       "@id": "index:R95p",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "R95p",
       "label": "Total annual PR from heavy rain days (R95p)",
       "definition": "Annual sum of daily PR > 95th percentile",
@@ -2571,10 +2421,7 @@
     },
     {
       "@id": "index:R99p",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "R99p",
       "label": "Total annual PR from very heavy rain days (R99p)",
       "definition": "Annual sum of daily PR > 99th percentile",
@@ -2615,10 +2462,7 @@
     },
     {
       "@id": "index:Rx1day",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "Rx1day",
       "label": "Max 1-day PR (Rx1day)",
       "definition": "Maximum 1-day PR total",
@@ -2661,10 +2505,7 @@
     },
     {
       "@id": "index:Rx5day",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "Rx5day",
       "label": "Max 5-day PR (Rx5day)",
       "definition": "Maximum 5-day PR total",
@@ -2707,10 +2548,7 @@
     },
     {
       "@id": "index:HWN%28EHF%2FTx90%2FTn90%29",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWN(EHF/Tx90/Tn90)",
       "label": "Heatwave number (HWN) as defined by either the Excess Heat Factor (EHF), 90th percentile of TX or the 90th percentile of TN (HWN(EHF/Tx90/Tn90))",
       "definition": "The number of individual heatwaves that occur each summer (Nov – Mar in southern hemisphere and May – Sep in northern hemisphere). A heatwave is defined as 3 or more days where either the EHF is positive, TX > 90th percentile of TX or where TN > 90th percentile of TN. Where percentiles are calculated from base period specified by user.",
@@ -2787,10 +2625,7 @@
     },
     {
       "@id": "index:HWN_EHF",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWN_EHF",
       "label": "Heatwave number (HWN) as defined by the Excess Heat Factor (EHF) (HWN_EHF)",
       "definition": "The number of individual heatwaves that occur each summer (Nov – Mar in southern hemisphere and May – Sep in northern hemisphere). A heatwave is defined as 3 or more days where the EHF is positive. Where percentiles are calculated from base period specified by user.",
@@ -2836,10 +2671,7 @@
     },
     {
       "@id": "index:HWN_Tx90",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWN_Tx90",
       "label": "Heatwave number (HWN) as defined by the 90th percentile of TX (HWN_Tx90)",
       "definition": "The number of individual heatwaves that occur each summer (Nov – Mar in southern hemisphere and May – Sep in northern hemisphere). A heatwave is defined as 3 or more days where TX > 90th percentile of TX. Where percentiles are calculated from base period specified by user.",
@@ -2885,10 +2717,7 @@
     },
     {
       "@id": "index:HWN_Tn90",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWN_Tn90",
       "label": "Heatwave number (HWN) as defined by the 90th percentile of TN (HWN_Tn90)",
       "definition": "The number of individual heatwaves that occur each summer (Nov – Mar in southern hemisphere and May – Sep in northern hemisphere). A heatwave is defined as 3 or more days where TN > 90th percentile of TN. Where percentiles are calculated from base period specified by user.",
@@ -2934,10 +2763,7 @@
     },
     {
       "@id": "index:HWF%28EHF%2FTx90%2FTn90%29",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWF(EHF/Tx90/Tn90)",
       "label": "Heatwave frequency (HWF) as defined by either the Excess Heat Factor (EHF), 90th percentile of TX or the 90th percentile of TN (HWF(EHF/Tx90/Tn90))",
       "definition": "The number of days that contribute to heatwaves as identified by HWN.",
@@ -3014,10 +2840,7 @@
     },
     {
       "@id": "index:HWF_EHF",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWF_EHF",
       "label": "Heatwave frequency (HWF) as defined by the Excess Heat Factor (EHF) (HWF_EHF)",
       "definition": "The number of days that contribute to heatwaves as identified by HWN.",
@@ -3063,10 +2886,7 @@
     },
     {
       "@id": "index:HWF_Tx90",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWF_Tx90",
       "label": "Heatwave frequency (HWF) as defined by the 90th percentile of TX (HWF_Tx90)",
       "definition": "The number of days that contribute to heatwaves as identified by HWN.",
@@ -3112,10 +2932,7 @@
     },
     {
       "@id": "index:HWF_Tn90",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWF_Tn90",
       "label": "Heatwave frequency (HWF) as defined by the 90th percentile of TN (HWF_Tn90)",
       "definition": "The number of days that contribute to heatwaves as identified by HWN.",
@@ -3161,10 +2978,7 @@
     },
     {
       "@id": "index:HWD%28EHF%2FTx90%2FTn90%29",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWD(EHF/Tx90/Tn90)",
       "label": "Heatwave duration (HWD) as defined by either the Excess Heat Factor (EHF), 90th percentile of TX or the 90th percentile of TN (HWD(EHF/Tx90/Tn90))",
       "definition": "The length of the longest heatwave identified by HWN.",
@@ -3241,10 +3055,7 @@
     },
     {
       "@id": "index:HWD_EHF",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWD_EHF",
       "label": "Heatwave duration (HWD) as defined by the Excess Heat Factor (EHF) (HWD_EHF)",
       "definition": "The length of the longest heatwave identified by HWN.",
@@ -3290,10 +3101,7 @@
     },
     {
       "@id": "index:HWD_Tx90",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWD_Tx90",
       "label": "Heatwave duration (HWD) as defined by the 90th percentile of TX (HWD_Tx90)",
       "definition": "The length of the longest heatwave identified by HWN.",
@@ -3339,10 +3147,7 @@
     },
     {
       "@id": "index:HWD_Tn90",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWD_Tn90",
       "label": "Heatwave duration (HWD) as defined by the 90th percentile of TN (HWD_Tn90)",
       "definition": "The length of the longest heatwave identified by HWN.",
@@ -3388,10 +3193,7 @@
     },
     {
       "@id": "index:HWM%28EHF%2FTx90%2FTn90%29",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWM(EHF/Tx90/Tn90)",
       "label": "Heatwave magnitude (HWM) as defined by either the Excess Heat Factor (EHF), 90th percentile of TX or the 90th percentile of TN (HWM(EHF/Tx90/Tn90))",
       "definition": "The mean temperature of all heatwaves identified by HWN.",
@@ -3467,10 +3269,7 @@
     },
     {
       "@id": "index:HWM_EHF",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWM_EHF",
       "label": "Heatwave magnitude (HWM) as defined by the Excess Heat Factor (EHF) (HWM_EHF)",
       "definition": "The mean temperature of all heatwaves identified by HWN.",
@@ -3516,10 +3315,7 @@
     },
     {
       "@id": "index:HWM_Tx90",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWM_Tx90",
       "label": "Heatwave magnitude (HWM) as defined by the 90th percentile of TX (HWM_Tx90)",
       "definition": "The mean temperature of all heatwaves identified by HWN.",
@@ -3565,10 +3361,7 @@
     },
     {
       "@id": "index:HWM_Tn90",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWM_Tn90",
       "label": "Heatwave magnitude (HWM) as defined by the 90th percentile of TN (HWM_Tn90)",
       "definition": "The mean temperature of all heatwaves identified by HWN.",
@@ -3614,10 +3407,7 @@
     },
     {
       "@id": "index:HWA%28EHF%2FTx90%2FTn90%29",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWA(EHF/Tx90/Tn90)",
       "label": "Heatwave amplitude (HWA) as defined by either the Excess Heat Factor (EHF), 90th percentile of TX or the 90th percentile of TN (HWA(EHF/Tx90/Tn90))",
       "definition": "The peak daily value in the hottest heatwave (defined as the heatwave with highest HWM).",
@@ -3693,10 +3483,7 @@
     },
     {
       "@id": "index:HWA_EHF",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWA_EHF",
       "label": "Heatwave amplitude (HWA) as defined by the Excess Heat Factor (EHF) (HWA_EHF)",
       "definition": "The peak daily value in the hottest heatwave (defined as the heatwave with highest HWM).",
@@ -3742,10 +3529,7 @@
     },
     {
       "@id": "index:HWA_Tx90",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWA_Tx90",
       "label": "Heatwave amplitude (HWA) as defined by the 90th percentile of TX (HWA_Tx90)",
       "definition": "The peak daily value in the hottest heatwave (defined as the heatwave with highest HWM).",
@@ -3791,10 +3575,7 @@
     },
     {
       "@id": "index:HWA_Tn90",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "HWA_Tn90",
       "label": "Heatwave amplitude (HWA) as defined by the 90th percentile of TN (HWA_Tn90)",
       "definition": "The peak daily value in the hottest heatwave (defined as the heatwave with highest HWM).",
@@ -3840,10 +3621,7 @@
     },
     {
       "@id": "index:CWN_ECF",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "CWN_ECF",
       "label": "Coldwave number (CWN) as defined by the Excess Cold Factor (ECF). (CWN_ECF)",
       "definition": "The number of individual ‘coldwaves’ that occur each year.",
@@ -3888,10 +3666,7 @@
     },
     {
       "@id": "index:CWF_ECF",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "CWF_ECF",
       "label": "Coldwave frequency (CWF) as defined by the Excess Cold Factor (ECF). (CWF_ECF)",
       "definition": "The number of days that contribute to ‘coldwaves’ as identified by ECF_HWN.",
@@ -3936,10 +3711,7 @@
     },
     {
       "@id": "index:CWD_ECF",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "CWD_ECF",
       "label": "Coldwave duration (CWD) as defined by the Excess Cold Factor (ECF). (CWD_ECF)",
       "definition": "The length of the longest ‘coldwave’ identified by ECF_HWN.",
@@ -3984,10 +3756,7 @@
     },
     {
       "@id": "index:CWM_ECF",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "CWM_ECF",
       "label": "Coldwave magnitude (CWM) as defined by the Excess Cold Factor (ECF). (CWM_ECF)",
       "definition": "The mean temperature of all ‘coldwaves’ identified by ECF_HWN.",
@@ -4032,10 +3801,7 @@
     },
     {
       "@id": "index:CWA_ECF",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "CWA_ECF",
       "label": "Coldwave amplitude (CWA) as defined by the Excess Cold Factor (ECF). (CWA_ECF)",
       "definition": "The minimum daily value in the coldest ‘coldwave’ (defined as the coldwave with lowest ECF_HWM).",
@@ -4080,10 +3846,7 @@
     },
     {
       "@id": "index:ETR",
-      "@type": [
-        "data:Variable",
-        "data:DependentVariable"
-      ],
+      "@type": "data:DependentVariable",
       "acronym": "ETR",
       "label": "Extreme Temperature Range (ETR)",
       "definition": "Mean difference between monthly TX and monthly TN",

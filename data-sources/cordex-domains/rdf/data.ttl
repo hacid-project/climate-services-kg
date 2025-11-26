@@ -1,6 +1,6 @@
 @prefix ns1: <https://w3id.org/hacid/onto/data/> .
-@prefix ns2: <http://www.opengis.net/ont/geosparql#> .
-@prefix ns3: <https://w3id.org/hacid/onto/top-level/> .
+@prefix ns2: <https://w3id.org/hacid/onto/top-level/> .
+@prefix ns3: <http://www.opengis.net/ont/geosparql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -10,7 +10,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.805,-45.925:60.445,42.405> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AFR> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AFR> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/AFR-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.805,-45.925:60.445,42.405> ;
@@ -22,7 +22,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.75,-45.87:60.39,42.35> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AFR> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AFR> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/AFR-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.75,-45.87:60.39,42.35> ;
@@ -34,7 +34,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.64,-45.76:60.28,42.24> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AFR> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AFR> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/AFR-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.64,-45.76:60.28,42.24> ;
@@ -46,7 +46,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-25.25,-46.25:60.75,42.75> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AFR> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AFR> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/AFR-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-25.25,-46.25:60.75,42.75> ;
@@ -58,7 +58,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08/regions/rectangle/152.555,-27.885:207.445,14.685> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ANT> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ANT> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/ANT-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08/regions/rectangle/152.555,-27.885:207.445,14.685> ;
@@ -70,7 +70,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08/regions/rectangle/152.72,-27.72:207.28,14.52> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ANT> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ANT> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/ANT-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08/regions/rectangle/152.72,-27.72:207.28,14.52> ;
@@ -82,7 +82,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-179.75,-89.75:179.75,-55.25> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ANT> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ANT> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/ANT-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-179.75,-89.75:179.75,-55.25> ;
@@ -94,7 +94,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55/regions/rectangle/-23.045,-24.365:27.885,34.045> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ARC> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ARC> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/ARC-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55/regions/rectangle/-23.045,-24.365:27.885,34.045> ;
@@ -106,7 +106,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55/regions/rectangle/-22.88,-24.2:27.72,33.88> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ARC> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ARC> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/ARC-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55/regions/rectangle/-22.88,-24.2:27.72,33.88> ;
@@ -118,7 +118,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-179.75,48.75:179.75,89.75> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ARC> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/ARC> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/ARC-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-179.75,48.75:179.75,89.75> ;
@@ -130,7 +130,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/141.995,-23.045:229.885,33.605> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AUS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AUS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/AUS-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/141.995,-23.045:229.885,33.605> ;
@@ -142,7 +142,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/142.05,-22.99:229.83,33.55> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AUS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AUS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/AUS-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/142.05,-22.99:229.83,33.55> ;
@@ -154,7 +154,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/142.16,-22.88:229.72,33.44> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AUS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AUS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/AUS-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/142.16,-22.88:229.72,33.44> ;
@@ -166,7 +166,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/88.75,-53.25:207.25,12.75> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AUS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/AUS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/AUS-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/88.75,-53.25:207.25,12.75> ;
@@ -178,7 +178,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.965,-28.765:39.325,20.845> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/CAM-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.965,-28.765:39.325,20.845> ;
@@ -190,7 +190,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.91,-28.71:39.27,20.79> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/CAM-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.91,-28.71:39.27,20.79> ;
@@ -202,7 +202,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.8,-28.6:39.16,20.68> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/CAM-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.8,-28.6:39.16,20.68> ;
@@ -214,7 +214,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-124.75,-19.75:-21.75,35.25> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/CAM-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-124.75,-19.75:-21.75,35.25> ;
@@ -226,7 +226,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.485,-20.845:32.725,23.045> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/CAS-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.485,-20.845:32.725,23.045> ;
@@ -238,7 +238,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.43,-20.79:32.67,22.99> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/CAS-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.43,-20.79:32.67,22.99> ;
@@ -250,7 +250,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.32,-20.68:32.56,22.88> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/CAS-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.32,-20.68:32.56,22.88> ;
@@ -262,7 +262,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/10.75,17.75:140.25,69.75> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/CAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/CAS-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/10.75,17.75:140.25,69.75> ;
@@ -274,7 +274,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-41.085,-27.005:48.125,46.365> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/EAS-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-41.085,-27.005:48.125,46.365> ;
@@ -286,7 +286,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-43.23,-22.1:43.67,32.9> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/EAS-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-43.23,-22.1:43.67,32.9> ;
@@ -298,7 +298,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-40.92,-26.84:47.96,46.2> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/EAS-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-40.92,-26.84:47.96,46.2> ;
@@ -310,7 +310,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/62.75,-18.75:175.75,59.25> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/EAS-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/62.75,-18.75:175.75,59.25> ;
@@ -322,7 +322,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.375,-23.375:18.155,21.835> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EUR> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EUR> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/EUR-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.375,-23.375:18.155,21.835> ;
@@ -334,7 +334,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.125> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-44.8125,21.8125:65.1875,72.6875> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EUR> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EUR> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/EUR-11i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-44.8125,21.8125:65.1875,72.6875> ;
@@ -346,7 +346,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.32,-23.32:18.1,21.78> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EUR> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EUR> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/EUR-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.32,-23.32:18.1,21.78> ;
@@ -358,7 +358,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.21,-23.21:17.99,21.67> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EUR> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EUR> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/EUR-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.21,-23.21:17.99,21.67> ;
@@ -370,7 +370,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-44.75,21.75:65.25,72.75> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EUR> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/EUR> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/EUR-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-44.75,21.75:65.25,72.75> ;
@@ -382,7 +382,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25/regions/rectangle/-23.385,-21.505:19.625,6.105> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MED> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MED> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/MED-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25/regions/rectangle/-23.385,-21.505:19.625,6.105> ;
@@ -394,7 +394,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25/regions/rectangle/-23.22,-21.34:19.46,5.94> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MED> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MED> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/MED-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25/regions/rectangle/-23.22,-21.34:19.46,5.94> ;
@@ -406,7 +406,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-20.75,25.25:51.75,57.25> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MED> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MED> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/MED-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-20.75,25.25:51.75,57.25> ;
@@ -418,7 +418,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.565,-6.765:75.405,45.045> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MNA> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MNA> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/MNA-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.565,-6.765:75.405,45.045> ;
@@ -430,7 +430,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.51,-6.71:75.35,44.99> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MNA> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MNA> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/MNA-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.51,-6.71:75.35,44.99> ;
@@ -442,7 +442,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.25> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.625,-6.875:75.625,45.125> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MNA> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MNA> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/MNA-22i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.625,-6.875:75.625,45.125> ;
@@ -454,7 +454,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.4,-6.6:75.24,44.88> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MNA> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MNA> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/MNA-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.4,-6.6:75.24,44.88> ;
@@ -466,7 +466,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.75,-7.25:75.75,45.25> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MNA> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/MNA> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/MNA-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.75,-7.25:75.75,45.25> ;
@@ -478,7 +478,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-34.045,-28.565:34.045,28.525> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/NAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/NAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/NAM-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-34.045,-28.565:34.045,28.525> ;
@@ -490,7 +490,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-33.99,-28.51:33.99,28.47> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/NAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/NAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/NAM-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-33.99,-28.51:33.99,28.47> ;
@@ -502,7 +502,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-33.88,-28.4:33.88,28.36> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/NAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/NAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/NAM-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-33.88,-28.4:33.88,28.36> ;
@@ -514,7 +514,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-171.75,12.25:-22.25,76.25> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/NAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/NAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/NAM-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-171.75,12.25:-22.25,76.25> ;
@@ -526,7 +526,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.755,-38.445:207.885,34.925> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/SAM-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.755,-38.445:207.885,34.925> ;
@@ -538,7 +538,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.81,-38.39:207.83,34.87> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/SAM-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.81,-38.39:207.83,34.87> ;
@@ -550,7 +550,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.92,-38.28:207.72,34.76> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/SAM-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.92,-38.28:207.72,34.76> ;
@@ -562,7 +562,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-106.25,-58.25:-16.25,18.75> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SAM> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SAM> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/SAM-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-106.25,-58.25:-16.25,18.75> ;
@@ -574,7 +574,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/89.26,-15.18:147.12,27.28> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SEA> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SEA> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/SEA-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/89.26,-15.18:147.12,27.28> ;
@@ -586,7 +586,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.25> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/89.125,-15.375:147.125,27.375> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SEA> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/SEA> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/SEA-22i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/89.125,-15.375:147.125,27.375> ;
@@ -598,7 +598,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.285,-21.725:52.525,35.365> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/WAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/WAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/WAS-11/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.285,-21.725:52.525,35.365> ;
@@ -610,7 +610,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.23,-21.67:52.47,35.31> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/WAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/WAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/WAS-22/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.23,-21.67:52.47,35.31> ;
@@ -622,7 +622,7 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.12,-21.56:52.36,35.2> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/WAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/WAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/WAS-44/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.12,-21.56:52.36,35.2> ;
@@ -634,799 +634,695 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/19.25,-15.75:116.25,45.75> ;
-    ns3:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/WAS> .
+    ns2:isConstituentOf <https://w3id.org/hacid/data/cs/cordex/domains/WAS> .
 
 <https://w3id.org/hacid/data/cs/cordex/grids/WAS-44i/specialization> a ns1:VariableSpecialization ;
     ns1:hasSelectedRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/19.25,-15.75:116.25,45.75> ;
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/geodetic> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-22.88,-24.2:27.72,33.88> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-22.88,-24.2:27.72,33.88> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -22.88° -24.2° : 27.72° 33.88°"@en ;
-    ns2:asWKT "POLYGON((-22.88 -24.2,-22.88 33.88,27.72 33.88,27.72 -24.2))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-22.88 -24.2,-22.88 33.88,27.72 33.88,27.72 -24.2))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -22.88° -24.2° and upper right coordinates 27.72° 33.88°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-23.045,-24.365:27.885,34.045> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-23.045,-24.365:27.885,34.045> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -23.045° -24.365° : 27.885° 34.045°"@en ;
-    ns2:asWKT "POLYGON((-23.045 -24.365,-23.045 34.045,27.885 34.045,27.885 -24.365))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-23.045 -24.365,-23.045 34.045,27.885 34.045,27.885 -24.365))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -23.045° -24.365° and upper right coordinates 27.885° 34.045°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-23.22,-21.34:19.46,5.94> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-23.22,-21.34:19.46,5.94> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -23.22° -21.34° : 19.46° 5.94°"@en ;
-    ns2:asWKT "POLYGON((-23.22 -21.34,-23.22 5.94,19.46 5.94,19.46 -21.34))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-23.22 -21.34,-23.22 5.94,19.46 5.94,19.46 -21.34))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -23.22° -21.34° and upper right coordinates 19.46° 5.94°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-23.385,-21.505:19.625,6.105> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-23.385,-21.505:19.625,6.105> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -23.385° -21.505° : 19.625° 6.105°"@en ;
-    ns2:asWKT "POLYGON((-23.385 -21.505,-23.385 6.105,19.625 6.105,19.625 -21.505))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-23.385 -21.505,-23.385 6.105,19.625 6.105,19.625 -21.505))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -23.385° -21.505° and upper right coordinates 19.625° 6.105°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-24.64,-45.76:60.28,42.24> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-24.64,-45.76:60.28,42.24> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -24.64° -45.76° : 60.28° 42.24°"@en ;
-    ns2:asWKT "POLYGON((-24.64 -45.76,-24.64 42.24,60.28 42.24,60.28 -45.76))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-24.64 -45.76,-24.64 42.24,60.28 42.24,60.28 -45.76))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -24.64° -45.76° and upper right coordinates 60.28° 42.24°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-24.75,-45.87:60.39,42.35> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-24.75,-45.87:60.39,42.35> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -24.75° -45.87° : 60.39° 42.35°"@en ;
-    ns2:asWKT "POLYGON((-24.75 -45.87,-24.75 42.35,60.39 42.35,60.39 -45.87))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-24.75 -45.87,-24.75 42.35,60.39 42.35,60.39 -45.87))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -24.75° -45.87° and upper right coordinates 60.39° 42.35°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-24.805,-45.925:60.445,42.405> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-24.805,-45.925:60.445,42.405> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -24.805° -45.925° : 60.445° 42.405°"@en ;
-    ns2:asWKT "POLYGON((-24.805 -45.925,-24.805 42.405,60.445 42.405,60.445 -45.925))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-24.805 -45.925,-24.805 42.405,60.445 42.405,60.445 -45.925))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -24.805° -45.925° and upper right coordinates 60.445° 42.405°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.4,-6.6:75.24,44.88> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.4,-6.6:75.24,44.88> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -26.4° -6.6° : 75.24° 44.88°"@en ;
-    ns2:asWKT "POLYGON((-26.4 -6.6,-26.4 44.88,75.24 44.88,75.24 -6.6))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-26.4 -6.6,-26.4 44.88,75.24 44.88,75.24 -6.6))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -26.4° -6.6° and upper right coordinates 75.24° 44.88°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.51,-6.71:75.35,44.99> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.51,-6.71:75.35,44.99> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -26.51° -6.71° : 75.35° 44.99°"@en ;
-    ns2:asWKT "POLYGON((-26.51 -6.71,-26.51 44.99,75.35 44.99,75.35 -6.71))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-26.51 -6.71,-26.51 44.99,75.35 44.99,75.35 -6.71))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -26.51° -6.71° and upper right coordinates 75.35° 44.99°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.565,-6.765:75.405,45.045> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.565,-6.765:75.405,45.045> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -26.565° -6.765° : 75.405° 45.045°"@en ;
-    ns2:asWKT "POLYGON((-26.565 -6.765,-26.565 45.045,75.405 45.045,75.405 -6.765))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-26.565 -6.765,-26.565 45.045,75.405 45.045,75.405 -6.765))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -26.565° -6.765° and upper right coordinates 75.405° 45.045°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-28.21,-23.21:17.99,21.67> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-28.21,-23.21:17.99,21.67> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -28.21° -23.21° : 17.99° 21.67°"@en ;
-    ns2:asWKT "POLYGON((-28.21 -23.21,-28.21 21.67,17.99 21.67,17.99 -23.21))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-28.21 -23.21,-28.21 21.67,17.99 21.67,17.99 -23.21))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -28.21° -23.21° and upper right coordinates 17.99° 21.67°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-28.32,-23.32:18.1,21.78> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-28.32,-23.32:18.1,21.78> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -28.32° -23.32° : 18.1° 21.78°"@en ;
-    ns2:asWKT "POLYGON((-28.32 -23.32,-28.32 21.78,18.1 21.78,18.1 -23.32))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-28.32 -23.32,-28.32 21.78,18.1 21.78,18.1 -23.32))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -28.32° -23.32° and upper right coordinates 18.1° 21.78°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-28.375,-23.375:18.155,21.835> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-28.375,-23.375:18.155,21.835> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -28.375° -23.375° : 18.155° 21.835°"@en ;
-    ns2:asWKT "POLYGON((-28.375 -23.375,-28.375 21.835,18.155 21.835,18.155 -23.375))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-28.375 -23.375,-28.375 21.835,18.155 21.835,18.155 -23.375))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -28.375° -23.375° and upper right coordinates 18.155° 21.835°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-32.12,-21.56:52.36,35.2> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-32.12,-21.56:52.36,35.2> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -32.12° -21.56° : 52.36° 35.2°"@en ;
-    ns2:asWKT "POLYGON((-32.12 -21.56,-32.12 35.2,52.36 35.2,52.36 -21.56))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-32.12 -21.56,-32.12 35.2,52.36 35.2,52.36 -21.56))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -32.12° -21.56° and upper right coordinates 52.36° 35.2°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-32.23,-21.67:52.47,35.31> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-32.23,-21.67:52.47,35.31> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -32.23° -21.67° : 52.47° 35.31°"@en ;
-    ns2:asWKT "POLYGON((-32.23 -21.67,-32.23 35.31,52.47 35.31,52.47 -21.67))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-32.23 -21.67,-32.23 35.31,52.47 35.31,52.47 -21.67))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -32.23° -21.67° and upper right coordinates 52.47° 35.31°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-32.285,-21.725:52.525,35.365> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-32.285,-21.725:52.525,35.365> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -32.285° -21.725° : 52.525° 35.365°"@en ;
-    ns2:asWKT "POLYGON((-32.285 -21.725,-32.285 35.365,52.525 35.365,52.525 -21.725))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-32.285 -21.725,-32.285 35.365,52.525 35.365,52.525 -21.725))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -32.285° -21.725° and upper right coordinates 52.525° 35.365°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-33.88,-28.4:33.88,28.36> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-33.88,-28.4:33.88,28.36> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -33.88° -28.4° : 33.88° 28.36°"@en ;
-    ns2:asWKT "POLYGON((-33.88 -28.4,-33.88 28.36,33.88 28.36,33.88 -28.4))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-33.88 -28.4,-33.88 28.36,33.88 28.36,33.88 -28.4))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -33.88° -28.4° and upper right coordinates 33.88° 28.36°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-33.99,-28.51:33.99,28.47> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-33.99,-28.51:33.99,28.47> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -33.99° -28.51° : 33.99° 28.47°"@en ;
-    ns2:asWKT "POLYGON((-33.99 -28.51,-33.99 28.47,33.99 28.47,33.99 -28.51))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-33.99 -28.51,-33.99 28.47,33.99 28.47,33.99 -28.51))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -33.99° -28.51° and upper right coordinates 33.99° 28.47°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-34.045,-28.565:34.045,28.525> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-34.045,-28.565:34.045,28.525> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -34.045° -28.565° : 34.045° 28.525°"@en ;
-    ns2:asWKT "POLYGON((-34.045 -28.565,-34.045 28.525,34.045 28.525,34.045 -28.565))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-34.045 -28.565,-34.045 28.525,34.045 28.525,34.045 -28.565))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -34.045° -28.565° and upper right coordinates 34.045° 28.525°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-34.32,-20.68:32.56,22.88> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-34.32,-20.68:32.56,22.88> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -34.32° -20.68° : 32.56° 22.88°"@en ;
-    ns2:asWKT "POLYGON((-34.32 -20.68,-34.32 22.88,32.56 22.88,32.56 -20.68))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-34.32 -20.68,-34.32 22.88,32.56 22.88,32.56 -20.68))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -34.32° -20.68° and upper right coordinates 32.56° 22.88°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-34.43,-20.79:32.67,22.99> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-34.43,-20.79:32.67,22.99> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -34.43° -20.79° : 32.67° 22.99°"@en ;
-    ns2:asWKT "POLYGON((-34.43 -20.79,-34.43 22.99,32.67 22.99,32.67 -20.79))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-34.43 -20.79,-34.43 22.99,32.67 22.99,32.67 -20.79))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -34.43° -20.79° and upper right coordinates 32.67° 22.99°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-34.485,-20.845:32.725,23.045> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-34.485,-20.845:32.725,23.045> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -34.485° -20.845° : 32.725° 23.045°"@en ;
-    ns2:asWKT "POLYGON((-34.485 -20.845,-34.485 23.045,32.725 23.045,32.725 -20.845))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-34.485 -20.845,-34.485 23.045,32.725 23.045,32.725 -20.845))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -34.485° -20.845° and upper right coordinates 32.725° 23.045°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-40.92,-26.84:47.96,46.2> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-40.92,-26.84:47.96,46.2> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -40.92° -26.84° : 47.96° 46.2°"@en ;
-    ns2:asWKT "POLYGON((-40.92 -26.84,-40.92 46.2,47.96 46.2,47.96 -26.84))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-40.92 -26.84,-40.92 46.2,47.96 46.2,47.96 -26.84))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -40.92° -26.84° and upper right coordinates 47.96° 46.2°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-41.085,-27.005:48.125,46.365> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-41.085,-27.005:48.125,46.365> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -41.085° -27.005° : 48.125° 46.365°"@en ;
-    ns2:asWKT "POLYGON((-41.085 -27.005,-41.085 46.365,48.125 46.365,48.125 -27.005))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-41.085 -27.005,-41.085 46.365,48.125 46.365,48.125 -27.005))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -41.085° -27.005° and upper right coordinates 48.125° 46.365°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-43.23,-22.1:43.67,32.9> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-43.23,-22.1:43.67,32.9> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -43.23° -22.1° : 43.67° 32.9°"@en ;
-    ns2:asWKT "POLYGON((-43.23 -22.1,-43.23 32.9,43.67 32.9,43.67 -22.1))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-43.23 -22.1,-43.23 32.9,43.67 32.9,43.67 -22.1))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -43.23° -22.1° and upper right coordinates 43.67° 32.9°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-52.8,-28.6:39.16,20.68> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-52.8,-28.6:39.16,20.68> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -52.8° -28.6° : 39.16° 20.68°"@en ;
-    ns2:asWKT "POLYGON((-52.8 -28.6,-52.8 20.68,39.16 20.68,39.16 -28.6))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-52.8 -28.6,-52.8 20.68,39.16 20.68,39.16 -28.6))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -52.8° -28.6° and upper right coordinates 39.16° 20.68°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-52.91,-28.71:39.27,20.79> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-52.91,-28.71:39.27,20.79> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -52.91° -28.71° : 39.27° 20.79°"@en ;
-    ns2:asWKT "POLYGON((-52.91 -28.71,-52.91 20.79,39.27 20.79,39.27 -28.71))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-52.91 -28.71,-52.91 20.79,39.27 20.79,39.27 -28.71))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -52.91° -28.71° and upper right coordinates 39.27° 20.79°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-52.965,-28.765:39.325,20.845> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-52.965,-28.765:39.325,20.845> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -52.965° -28.765° : 39.325° 20.845°"@en ;
-    ns2:asWKT "POLYGON((-52.965 -28.765,-52.965 20.845,39.325 20.845,39.325 -28.765))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-52.965 -28.765,-52.965 20.845,39.325 20.845,39.325 -28.765))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -52.965° -28.765° and upper right coordinates 39.325° 20.845°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/141.995,-23.045:229.885,33.605> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/141.995,-23.045:229.885,33.605> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 141.995° -23.045° : 229.885° 33.605°"@en ;
-    ns2:asWKT "POLYGON((141.995 -23.045,141.995 33.605,229.885 33.605,229.885 -23.045))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((141.995 -23.045,141.995 33.605,229.885 33.605,229.885 -23.045))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 141.995° -23.045° and upper right coordinates 229.885° 33.605°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/142.05,-22.99:229.83,33.55> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/142.05,-22.99:229.83,33.55> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 142.05° -22.99° : 229.83° 33.55°"@en ;
-    ns2:asWKT "POLYGON((142.05 -22.99,142.05 33.55,229.83 33.55,229.83 -22.99))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((142.05 -22.99,142.05 33.55,229.83 33.55,229.83 -22.99))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 142.05° -22.99° and upper right coordinates 229.83° 33.55°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/142.16,-22.88:229.72,33.44> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/142.16,-22.88:229.72,33.44> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 142.16° -22.88° : 229.72° 33.44°"@en ;
-    ns2:asWKT "POLYGON((142.16 -22.88,142.16 33.44,229.72 33.44,229.72 -22.88))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((142.16 -22.88,142.16 33.44,229.72 33.44,229.72 -22.88))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 142.16° -22.88° and upper right coordinates 229.72° 33.44°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/143.755,-38.445:207.885,34.925> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/143.755,-38.445:207.885,34.925> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 143.755° -38.445° : 207.885° 34.925°"@en ;
-    ns2:asWKT "POLYGON((143.755 -38.445,143.755 34.925,207.885 34.925,207.885 -38.445))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((143.755 -38.445,143.755 34.925,207.885 34.925,207.885 -38.445))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 143.755° -38.445° and upper right coordinates 207.885° 34.925°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/143.81,-38.39:207.83,34.87> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/143.81,-38.39:207.83,34.87> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 143.81° -38.39° : 207.83° 34.87°"@en ;
-    ns2:asWKT "POLYGON((143.81 -38.39,143.81 34.87,207.83 34.87,207.83 -38.39))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((143.81 -38.39,143.81 34.87,207.83 34.87,207.83 -38.39))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 143.81° -38.39° and upper right coordinates 207.83° 34.87°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/143.92,-38.28:207.72,34.76> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/143.92,-38.28:207.72,34.76> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 143.92° -38.28° : 207.72° 34.76°"@en ;
-    ns2:asWKT "POLYGON((143.92 -38.28,143.92 34.76,207.72 34.76,207.72 -38.28))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((143.92 -38.28,143.92 34.76,207.72 34.76,207.72 -38.28))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 143.92° -38.28° and upper right coordinates 207.72° 34.76°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/152.555,-27.885:207.445,14.685> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/152.555,-27.885:207.445,14.685> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 152.555° -27.885° : 207.445° 14.685°"@en ;
-    ns2:asWKT "POLYGON((152.555 -27.885,152.555 14.685,207.445 14.685,207.445 -27.885))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((152.555 -27.885,152.555 14.685,207.445 14.685,207.445 -27.885))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 152.555° -27.885° and upper right coordinates 207.445° 14.685°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/152.72,-27.72:207.28,14.52> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/152.72,-27.72:207.28,14.52> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 152.72° -27.72° : 207.28° 14.52°"@en ;
-    ns2:asWKT "POLYGON((152.72 -27.72,152.72 14.52,207.28 14.52,207.28 -27.72))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((152.72 -27.72,152.72 14.52,207.28 14.52,207.28 -27.72))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 152.72° -27.72° and upper right coordinates 207.28° 14.52°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/89.26,-15.18:147.12,27.28> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/89.26,-15.18:147.12,27.28> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 89.26° -15.18° : 147.12° 27.28°"@en ;
-    ns2:asWKT "POLYGON((89.26 -15.18,89.26 27.28,147.12 27.28,147.12 -15.18))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((89.26 -15.18,89.26 27.28,147.12 27.28,147.12 -15.18))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 89.26° -15.18° and upper right coordinates 147.12° 27.28°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.125> a ns1:Quantization,
-        ns1:SimpleRegularBinning ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.125> a ns1:SimpleRegularBinning ;
     rdfs:label "0.125° geodetic grid"@en ;
     rdfs:comment "Geodetic grid composed of regions encompassing 0.125 degrees on both angular axes."@en ;
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic> ;
     ns1:hasResolutionValue "0.125"^^xsd:float .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-103.39,43.48> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-103.39,43.48> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point -103.39° 43.48°"@en ;
-    ns2:asWKT "POINT(-103.39 43.48)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(-103.39 43.48)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude -103.39° and latitude 43.48°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-123.34,79.95> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-123.34,79.95> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point -123.34° 79.95°"@en ;
-    ns2:asWKT "POINT(-123.34 79.95)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(-123.34 79.95)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude -123.34° and latitude 79.95°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-162.0,39.25> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-162.0,39.25> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point -162.0° 39.25°"@en ;
-    ns2:asWKT "POINT(-162.0 39.25)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(-162.0 39.25)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude -162.0° and latitude 39.25°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-166.92,6.08> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-166.92,6.08> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point -166.92° 6.08°"@en ;
-    ns2:asWKT "POINT(-166.92 6.08)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(-166.92 6.08)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude -166.92° and latitude 6.08°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-56.06,70.6> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-56.06,70.6> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point -56.06° 70.6°"@en ;
-    ns2:asWKT "POINT(-56.06 70.6)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(-56.06 70.6)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude -56.06° and latitude 70.6°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-64.78,77.61> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/-64.78,77.61> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point -64.78° 77.61°"@en ;
-    ns2:asWKT "POINT(-64.78 77.61)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(-64.78 77.61)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude -64.78° and latitude 77.61°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/0.0,6.55> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/0.0,6.55> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point 0.0° 6.55°"@en ;
-    ns2:asWKT "POINT(0.0 6.55)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(0.0 6.55)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude 0.0° and latitude 6.55°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/113.98,75.74> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/113.98,75.74> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point 113.98° 75.74°"@en ;
-    ns2:asWKT "POINT(113.98 75.74)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(113.98 75.74)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude 113.98° and latitude 75.74°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/141.38,60.31> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/141.38,60.31> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point 141.38° 60.31°"@en ;
-    ns2:asWKT "POINT(141.38 60.31)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(141.38 60.31)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude 141.38° and latitude 60.31°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/180.0,90.0> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/180.0,90.0> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point 180.0° 90.0°"@en ;
-    ns2:asWKT "POINT(180.0 90.0)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(180.0 90.0)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude 180.0° and latitude 90.0°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/198.0,39.25> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/198.0,39.25> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point 198.0° 39.25°"@en ;
-    ns2:asWKT "POINT(198.0 39.25)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(198.0 39.25)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude 198.0° and latitude 39.25°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/83.0,42.5> a ns2:Geometry,
-        ns1:GeodeticPoint ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/83.0,42.5> a ns1:GeodeticPoint ;
     rdfs:label "Geodetic point 83.0° 42.5°"@en ;
-    ns2:asWKT "POINT(83.0 42.5)"^^<geo:wktLiteral> ;
+    ns3:asWKT "POINT(83.0 42.5)"^^<geo:wktLiteral> ;
     rdfs:comment "Geodetic point with longitude 83.0° and latitude 42.5°, in reference to the World Geodetic System 1984 (WGS84)."@en ;
     ns1:isPointOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/SEA> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/SEA> a ns2:Concept ;
     rdfs:label "CORDEX:SEA"@en ;
     rdfs:comment "CORDEX geographic domain for South East Asia (SEA)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.25> a ns1:Quantization,
-        ns1:SimpleRegularBinning ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.25> a ns1:SimpleRegularBinning ;
     rdfs:label "0.25° geodetic grid"@en ;
     rdfs:comment "Geodetic grid composed of regions encompassing 0.25 degrees on both angular axes."@en ;
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic> ;
     ns1:hasResolutionValue "0.25"^^xsd:float .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-106.25,-58.25:-16.25,18.75> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-106.25,-58.25:-16.25,18.75> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -106.25° -58.25° : -16.25° 18.75°"@en ;
-    ns2:asWKT "POLYGON((-106.25 -58.25,-106.25 18.75,-16.25 18.75,-16.25 -58.25))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-106.25 -58.25,-106.25 18.75,-16.25 18.75,-16.25 -58.25))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -106.25° -58.25° and upper right coordinates -16.25° 18.75°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-124.75,-19.75:-21.75,35.25> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-124.75,-19.75:-21.75,35.25> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -124.75° -19.75° : -21.75° 35.25°"@en ;
-    ns2:asWKT "POLYGON((-124.75 -19.75,-124.75 35.25,-21.75 35.25,-21.75 -19.75))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-124.75 -19.75,-124.75 35.25,-21.75 35.25,-21.75 -19.75))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -124.75° -19.75° and upper right coordinates -21.75° 35.25°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-171.75,12.25:-22.25,76.25> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-171.75,12.25:-22.25,76.25> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -171.75° 12.25° : -22.25° 76.25°"@en ;
-    ns2:asWKT "POLYGON((-171.75 12.25,-171.75 76.25,-22.25 76.25,-22.25 12.25))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-171.75 12.25,-171.75 76.25,-22.25 76.25,-22.25 12.25))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -171.75° 12.25° and upper right coordinates -22.25° 76.25°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-179.75,-89.75:179.75,-55.25> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-179.75,-89.75:179.75,-55.25> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -179.75° -89.75° : 179.75° -55.25°"@en ;
-    ns2:asWKT "POLYGON((-179.75 -89.75,-179.75 -55.25,179.75 -55.25,179.75 -89.75))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-179.75 -89.75,-179.75 -55.25,179.75 -55.25,179.75 -89.75))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -179.75° -89.75° and upper right coordinates 179.75° -55.25°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-179.75,48.75:179.75,89.75> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-179.75,48.75:179.75,89.75> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -179.75° 48.75° : 179.75° 89.75°"@en ;
-    ns2:asWKT "POLYGON((-179.75 48.75,-179.75 89.75,179.75 89.75,179.75 48.75))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-179.75 48.75,-179.75 89.75,179.75 89.75,179.75 48.75))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -179.75° 48.75° and upper right coordinates 179.75° 89.75°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-20.75,25.25:51.75,57.25> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-20.75,25.25:51.75,57.25> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -20.75° 25.25° : 51.75° 57.25°"@en ;
-    ns2:asWKT "POLYGON((-20.75 25.25,-20.75 57.25,51.75 57.25,51.75 25.25))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-20.75 25.25,-20.75 57.25,51.75 57.25,51.75 25.25))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -20.75° 25.25° and upper right coordinates 51.75° 57.25°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-25.25,-46.25:60.75,42.75> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-25.25,-46.25:60.75,42.75> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -25.25° -46.25° : 60.75° 42.75°"@en ;
-    ns2:asWKT "POLYGON((-25.25 -46.25,-25.25 42.75,60.75 42.75,60.75 -46.25))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-25.25 -46.25,-25.25 42.75,60.75 42.75,60.75 -46.25))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -25.25° -46.25° and upper right coordinates 60.75° 42.75°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.625,-6.875:75.625,45.125> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.625,-6.875:75.625,45.125> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -26.625° -6.875° : 75.625° 45.125°"@en ;
-    ns2:asWKT "POLYGON((-26.625 -6.875,-26.625 45.125,75.625 45.125,75.625 -6.875))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-26.625 -6.875,-26.625 45.125,75.625 45.125,75.625 -6.875))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -26.625° -6.875° and upper right coordinates 75.625° 45.125°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.75,-7.25:75.75,45.25> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-26.75,-7.25:75.75,45.25> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -26.75° -7.25° : 75.75° 45.25°"@en ;
-    ns2:asWKT "POLYGON((-26.75 -7.25,-26.75 45.25,75.75 45.25,75.75 -7.25))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-26.75 -7.25,-26.75 45.25,75.75 45.25,75.75 -7.25))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -26.75° -7.25° and upper right coordinates 75.75° 45.25°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-44.75,21.75:65.25,72.75> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-44.75,21.75:65.25,72.75> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -44.75° 21.75° : 65.25° 72.75°"@en ;
-    ns2:asWKT "POLYGON((-44.75 21.75,-44.75 72.75,65.25 72.75,65.25 21.75))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-44.75 21.75,-44.75 72.75,65.25 72.75,65.25 21.75))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -44.75° 21.75° and upper right coordinates 65.25° 72.75°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-44.8125,21.8125:65.1875,72.6875> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/-44.8125,21.8125:65.1875,72.6875> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -44.8125° 21.8125° : 65.1875° 72.6875°"@en ;
-    ns2:asWKT "POLYGON((-44.8125 21.8125,-44.8125 72.6875,65.1875 72.6875,65.1875 21.8125))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((-44.8125 21.8125,-44.8125 72.6875,65.1875 72.6875,65.1875 21.8125))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -44.8125° 21.8125° and upper right coordinates 65.1875° 72.6875°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/10.75,17.75:140.25,69.75> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/10.75,17.75:140.25,69.75> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 10.75° 17.75° : 140.25° 69.75°"@en ;
-    ns2:asWKT "POLYGON((10.75 17.75,10.75 69.75,140.25 69.75,140.25 17.75))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((10.75 17.75,10.75 69.75,140.25 69.75,140.25 17.75))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 10.75° 17.75° and upper right coordinates 140.25° 69.75°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/19.25,-15.75:116.25,45.75> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/19.25,-15.75:116.25,45.75> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 19.25° -15.75° : 116.25° 45.75°"@en ;
-    ns2:asWKT "POLYGON((19.25 -15.75,19.25 45.75,116.25 45.75,116.25 -15.75))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((19.25 -15.75,19.25 45.75,116.25 45.75,116.25 -15.75))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 19.25° -15.75° and upper right coordinates 116.25° 45.75°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/62.75,-18.75:175.75,59.25> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/62.75,-18.75:175.75,59.25> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 62.75° -18.75° : 175.75° 59.25°"@en ;
-    ns2:asWKT "POLYGON((62.75 -18.75,62.75 59.25,175.75 59.25,175.75 -18.75))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((62.75 -18.75,62.75 59.25,175.75 59.25,175.75 -18.75))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 62.75° -18.75° and upper right coordinates 175.75° 59.25°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/88.75,-53.25:207.25,12.75> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/88.75,-53.25:207.25,12.75> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 88.75° -53.25° : 207.25° 12.75°"@en ;
-    ns2:asWKT "POLYGON((88.75 -53.25,88.75 12.75,207.25 12.75,207.25 -53.25))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((88.75 -53.25,88.75 12.75,207.25 12.75,207.25 -53.25))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 88.75° -53.25° and upper right coordinates 207.25° 12.75°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/89.125,-15.375:147.125,27.375> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/89.125,-15.375:147.125,27.375> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 89.125° -15.375° : 147.125° 27.375°"@en ;
-    ns2:asWKT "POLYGON((89.125 -15.375,89.125 27.375,147.125 27.375,147.125 -15.375))"^^<geo:wktLiteral> ;
+    ns3:asWKT "POLYGON((89.125 -15.375,89.125 27.375,147.125 27.375,147.125 -15.375))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 89.125° -15.375° and upper right coordinates 147.125° 27.375°, based on WGS84."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.32,-20.68:32.56,22.88> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.32,-20.68:32.56,22.88> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -34.32° -20.68° : 32.56° 22.88° on rotated coordinates (pole: -103.39° 43.48°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-103.39 43.48;POLYGON((-34.32 -20.68,-34.32 22.88,32.56 22.88,32.56 -20.68))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-103.39 43.48;POLYGON((-34.32 -20.68,-34.32 22.88,32.56 22.88,32.56 -20.68))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -34.32° -20.68° and upper right coordinates 32.56° 22.88°, based on rotated coordinates from WGS84 (pole has coordinates -103.39° 43.48°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.43,-20.79:32.67,22.99> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.43,-20.79:32.67,22.99> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -34.43° -20.79° : 32.67° 22.99° on rotated coordinates (pole: -103.39° 43.48°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-103.39 43.48;POLYGON((-34.43 -20.79,-34.43 22.99,32.67 22.99,32.67 -20.79))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-103.39 43.48;POLYGON((-34.43 -20.79,-34.43 22.99,32.67 22.99,32.67 -20.79))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -34.43° -20.79° and upper right coordinates 32.67° 22.99°, based on rotated coordinates from WGS84 (pole has coordinates -103.39° 43.48°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.485,-20.845:32.725,23.045> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48/regions/rectangle/-34.485,-20.845:32.725,23.045> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -34.485° -20.845° : 32.725° 23.045° on rotated coordinates (pole: -103.39° 43.48°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-103.39 43.48;POLYGON((-34.485 -20.845,-34.485 23.045,32.725 23.045,32.725 -20.845))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-103.39 43.48;POLYGON((-34.485 -20.845,-34.485 23.045,32.725 23.045,32.725 -20.845))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -34.485° -20.845° and upper right coordinates 32.725° 23.045°, based on rotated coordinates from WGS84 (pole has coordinates -103.39° 43.48°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.12,-21.56:52.36,35.2> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.12,-21.56:52.36,35.2> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -32.12° -21.56° : 52.36° 35.2° on rotated coordinates (pole: -123.34° 79.95°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-123.34 79.95;POLYGON((-32.12 -21.56,-32.12 35.2,52.36 35.2,52.36 -21.56))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-123.34 79.95;POLYGON((-32.12 -21.56,-32.12 35.2,52.36 35.2,52.36 -21.56))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -32.12° -21.56° and upper right coordinates 52.36° 35.2°, based on rotated coordinates from WGS84 (pole has coordinates -123.34° 79.95°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.23,-21.67:52.47,35.31> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.23,-21.67:52.47,35.31> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -32.23° -21.67° : 52.47° 35.31° on rotated coordinates (pole: -123.34° 79.95°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-123.34 79.95;POLYGON((-32.23 -21.67,-32.23 35.31,52.47 35.31,52.47 -21.67))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-123.34 79.95;POLYGON((-32.23 -21.67,-32.23 35.31,52.47 35.31,52.47 -21.67))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -32.23° -21.67° and upper right coordinates 52.47° 35.31°, based on rotated coordinates from WGS84 (pole has coordinates -123.34° 79.95°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.285,-21.725:52.525,35.365> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95/regions/rectangle/-32.285,-21.725:52.525,35.365> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -32.285° -21.725° : 52.525° 35.365° on rotated coordinates (pole: -123.34° 79.95°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-123.34 79.95;POLYGON((-32.285 -21.725,-32.285 35.365,52.525 35.365,52.525 -21.725))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-123.34 79.95;POLYGON((-32.285 -21.725,-32.285 35.365,52.525 35.365,52.525 -21.725))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -32.285° -21.725° and upper right coordinates 52.525° 35.365°, based on rotated coordinates from WGS84 (pole has coordinates -123.34° 79.95°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-123.34,79.95> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.21,-23.21:17.99,21.67> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.21,-23.21:17.99,21.67> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -28.21° -23.21° : 17.99° 21.67° on rotated coordinates (pole: -162.0° 39.25°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-162.0 39.25;POLYGON((-28.21 -23.21,-28.21 21.67,17.99 21.67,17.99 -23.21))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-162.0 39.25;POLYGON((-28.21 -23.21,-28.21 21.67,17.99 21.67,17.99 -23.21))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -28.21° -23.21° and upper right coordinates 17.99° 21.67°, based on rotated coordinates from WGS84 (pole has coordinates -162.0° 39.25°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.32,-23.32:18.1,21.78> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.32,-23.32:18.1,21.78> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -28.32° -23.32° : 18.1° 21.78° on rotated coordinates (pole: -162.0° 39.25°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-162.0 39.25;POLYGON((-28.32 -23.32,-28.32 21.78,18.1 21.78,18.1 -23.32))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-162.0 39.25;POLYGON((-28.32 -23.32,-28.32 21.78,18.1 21.78,18.1 -23.32))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -28.32° -23.32° and upper right coordinates 18.1° 21.78°, based on rotated coordinates from WGS84 (pole has coordinates -162.0° 39.25°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.375,-23.375:18.155,21.835> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25/regions/rectangle/-28.375,-23.375:18.155,21.835> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -28.375° -23.375° : 18.155° 21.835° on rotated coordinates (pole: -162.0° 39.25°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-162.0 39.25;POLYGON((-28.375 -23.375,-28.375 21.835,18.155 21.835,18.155 -23.375))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-162.0 39.25;POLYGON((-28.375 -23.375,-28.375 21.835,18.155 21.835,18.155 -23.375))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -28.375° -23.375° and upper right coordinates 18.155° 21.835°, based on rotated coordinates from WGS84 (pole has coordinates -162.0° 39.25°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-162.0,39.25> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08/regions/rectangle/152.555,-27.885:207.445,14.685> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08/regions/rectangle/152.555,-27.885:207.445,14.685> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 152.555° -27.885° : 207.445° 14.685° on rotated coordinates (pole: -166.92° 6.08°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-166.92 6.08;POLYGON((152.555 -27.885,152.555 14.685,207.445 14.685,207.445 -27.885))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-166.92 6.08;POLYGON((152.555 -27.885,152.555 14.685,207.445 14.685,207.445 -27.885))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 152.555° -27.885° and upper right coordinates 207.445° 14.685°, based on rotated coordinates from WGS84 (pole has coordinates -166.92° 6.08°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08/regions/rectangle/152.72,-27.72:207.28,14.52> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08/regions/rectangle/152.72,-27.72:207.28,14.52> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 152.72° -27.72° : 207.28° 14.52° on rotated coordinates (pole: -166.92° 6.08°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-166.92 6.08;POLYGON((152.72 -27.72,152.72 14.52,207.28 14.52,207.28 -27.72))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-166.92 6.08;POLYGON((152.72 -27.72,152.72 14.52,207.28 14.52,207.28 -27.72))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 152.72° -27.72° and upper right coordinates 207.28° 14.52°, based on rotated coordinates from WGS84 (pole has coordinates -166.92° 6.08°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.755,-38.445:207.885,34.925> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.755,-38.445:207.885,34.925> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 143.755° -38.445° : 207.885° 34.925° on rotated coordinates (pole: -56.06° 70.6°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-56.06 70.6;POLYGON((143.755 -38.445,143.755 34.925,207.885 34.925,207.885 -38.445))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-56.06 70.6;POLYGON((143.755 -38.445,143.755 34.925,207.885 34.925,207.885 -38.445))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 143.755° -38.445° and upper right coordinates 207.885° 34.925°, based on rotated coordinates from WGS84 (pole has coordinates -56.06° 70.6°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.81,-38.39:207.83,34.87> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.81,-38.39:207.83,34.87> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 143.81° -38.39° : 207.83° 34.87° on rotated coordinates (pole: -56.06° 70.6°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-56.06 70.6;POLYGON((143.81 -38.39,143.81 34.87,207.83 34.87,207.83 -38.39))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-56.06 70.6;POLYGON((143.81 -38.39,143.81 34.87,207.83 34.87,207.83 -38.39))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 143.81° -38.39° and upper right coordinates 207.83° 34.87°, based on rotated coordinates from WGS84 (pole has coordinates -56.06° 70.6°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.92,-38.28:207.72,34.76> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6/regions/rectangle/143.92,-38.28:207.72,34.76> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 143.92° -38.28° : 207.72° 34.76° on rotated coordinates (pole: -56.06° 70.6°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-56.06 70.6;POLYGON((143.92 -38.28,143.92 34.76,207.72 34.76,207.72 -38.28))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-56.06 70.6;POLYGON((143.92 -38.28,143.92 34.76,207.72 34.76,207.72 -38.28))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 143.92° -38.28° and upper right coordinates 207.72° 34.76°, based on rotated coordinates from WGS84 (pole has coordinates -56.06° 70.6°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-56.06,70.6> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-40.92,-26.84:47.96,46.2> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-40.92,-26.84:47.96,46.2> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -40.92° -26.84° : 47.96° 46.2° on rotated coordinates (pole: -64.78° 77.61°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-64.78 77.61;POLYGON((-40.92 -26.84,-40.92 46.2,47.96 46.2,47.96 -26.84))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-64.78 77.61;POLYGON((-40.92 -26.84,-40.92 46.2,47.96 46.2,47.96 -26.84))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -40.92° -26.84° and upper right coordinates 47.96° 46.2°, based on rotated coordinates from WGS84 (pole has coordinates -64.78° 77.61°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-41.085,-27.005:48.125,46.365> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-41.085,-27.005:48.125,46.365> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -41.085° -27.005° : 48.125° 46.365° on rotated coordinates (pole: -64.78° 77.61°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-64.78 77.61;POLYGON((-41.085 -27.005,-41.085 46.365,48.125 46.365,48.125 -27.005))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-64.78 77.61;POLYGON((-41.085 -27.005,-41.085 46.365,48.125 46.365,48.125 -27.005))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -41.085° -27.005° and upper right coordinates 48.125° 46.365°, based on rotated coordinates from WGS84 (pole has coordinates -64.78° 77.61°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-43.23,-22.1:43.67,32.9> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61/regions/rectangle/-43.23,-22.1:43.67,32.9> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -43.23° -22.1° : 43.67° 32.9° on rotated coordinates (pole: -64.78° 77.61°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:-64.78 77.61;POLYGON((-43.23 -22.1,-43.23 32.9,43.67 32.9,43.67 -22.1))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:-64.78 77.61;POLYGON((-43.23 -22.1,-43.23 32.9,43.67 32.9,43.67 -22.1))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -43.23° -22.1° and upper right coordinates 43.67° 32.9°, based on rotated coordinates from WGS84 (pole has coordinates -64.78° 77.61°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-64.78,77.61> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55/regions/rectangle/-22.88,-24.2:27.72,33.88> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55/regions/rectangle/-22.88,-24.2:27.72,33.88> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -22.88° -24.2° : 27.72° 33.88° on rotated coordinates (pole: 0.0° 6.55°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:0.0 6.55;POLYGON((-22.88 -24.2,-22.88 33.88,27.72 33.88,27.72 -24.2))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:0.0 6.55;POLYGON((-22.88 -24.2,-22.88 33.88,27.72 33.88,27.72 -24.2))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -22.88° -24.2° and upper right coordinates 27.72° 33.88°, based on rotated coordinates from WGS84 (pole has coordinates 0.0° 6.55°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55/regions/rectangle/-23.045,-24.365:27.885,34.045> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55/regions/rectangle/-23.045,-24.365:27.885,34.045> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -23.045° -24.365° : 27.885° 34.045° on rotated coordinates (pole: 0.0° 6.55°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:0.0 6.55;POLYGON((-23.045 -24.365,-23.045 34.045,27.885 34.045,27.885 -24.365))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:0.0 6.55;POLYGON((-23.045 -24.365,-23.045 34.045,27.885 34.045,27.885 -24.365))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -23.045° -24.365° and upper right coordinates 27.885° 34.045°, based on rotated coordinates from WGS84 (pole has coordinates 0.0° 6.55°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/0.0,6.55> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.8,-28.6:39.16,20.68> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.8,-28.6:39.16,20.68> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -52.8° -28.6° : 39.16° 20.68° on rotated coordinates (pole: 113.98° 75.74°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:113.98 75.74;POLYGON((-52.8 -28.6,-52.8 20.68,39.16 20.68,39.16 -28.6))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:113.98 75.74;POLYGON((-52.8 -28.6,-52.8 20.68,39.16 20.68,39.16 -28.6))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -52.8° -28.6° and upper right coordinates 39.16° 20.68°, based on rotated coordinates from WGS84 (pole has coordinates 113.98° 75.74°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.91,-28.71:39.27,20.79> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.91,-28.71:39.27,20.79> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -52.91° -28.71° : 39.27° 20.79° on rotated coordinates (pole: 113.98° 75.74°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:113.98 75.74;POLYGON((-52.91 -28.71,-52.91 20.79,39.27 20.79,39.27 -28.71))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:113.98 75.74;POLYGON((-52.91 -28.71,-52.91 20.79,39.27 20.79,39.27 -28.71))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -52.91° -28.71° and upper right coordinates 39.27° 20.79°, based on rotated coordinates from WGS84 (pole has coordinates 113.98° 75.74°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.965,-28.765:39.325,20.845> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74/regions/rectangle/-52.965,-28.765:39.325,20.845> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -52.965° -28.765° : 39.325° 20.845° on rotated coordinates (pole: 113.98° 75.74°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:113.98 75.74;POLYGON((-52.965 -28.765,-52.965 20.845,39.325 20.845,39.325 -28.765))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:113.98 75.74;POLYGON((-52.965 -28.765,-52.965 20.845,39.325 20.845,39.325 -28.765))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -52.965° -28.765° and upper right coordinates 39.325° 20.845°, based on rotated coordinates from WGS84 (pole has coordinates 113.98° 75.74°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/113.98,75.74> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/141.995,-23.045:229.885,33.605> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/141.995,-23.045:229.885,33.605> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 141.995° -23.045° : 229.885° 33.605° on rotated coordinates (pole: 141.38° 60.31°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:141.38 60.31;POLYGON((141.995 -23.045,141.995 33.605,229.885 33.605,229.885 -23.045))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:141.38 60.31;POLYGON((141.995 -23.045,141.995 33.605,229.885 33.605,229.885 -23.045))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 141.995° -23.045° and upper right coordinates 229.885° 33.605°, based on rotated coordinates from WGS84 (pole has coordinates 141.38° 60.31°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/142.05,-22.99:229.83,33.55> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/142.05,-22.99:229.83,33.55> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 142.05° -22.99° : 229.83° 33.55° on rotated coordinates (pole: 141.38° 60.31°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:141.38 60.31;POLYGON((142.05 -22.99,142.05 33.55,229.83 33.55,229.83 -22.99))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:141.38 60.31;POLYGON((142.05 -22.99,142.05 33.55,229.83 33.55,229.83 -22.99))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 142.05° -22.99° and upper right coordinates 229.83° 33.55°, based on rotated coordinates from WGS84 (pole has coordinates 141.38° 60.31°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/142.16,-22.88:229.72,33.44> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31/regions/rectangle/142.16,-22.88:229.72,33.44> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 142.16° -22.88° : 229.72° 33.44° on rotated coordinates (pole: 141.38° 60.31°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:141.38 60.31;POLYGON((142.16 -22.88,142.16 33.44,229.72 33.44,229.72 -22.88))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:141.38 60.31;POLYGON((142.16 -22.88,142.16 33.44,229.72 33.44,229.72 -22.88))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 142.16° -22.88° and upper right coordinates 229.72° 33.44°, based on rotated coordinates from WGS84 (pole has coordinates 141.38° 60.31°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/141.38,60.31> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.64,-45.76:60.28,42.24> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.64,-45.76:60.28,42.24> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -24.64° -45.76° : 60.28° 42.24° on rotated coordinates (pole: 180.0° 90.0°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-24.64 -45.76,-24.64 42.24,60.28 42.24,60.28 -45.76))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-24.64 -45.76,-24.64 42.24,60.28 42.24,60.28 -45.76))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -24.64° -45.76° and upper right coordinates 60.28° 42.24°, based on rotated coordinates from WGS84 (pole has coordinates 180.0° 90.0°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.75,-45.87:60.39,42.35> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.75,-45.87:60.39,42.35> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -24.75° -45.87° : 60.39° 42.35° on rotated coordinates (pole: 180.0° 90.0°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-24.75 -45.87,-24.75 42.35,60.39 42.35,60.39 -45.87))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-24.75 -45.87,-24.75 42.35,60.39 42.35,60.39 -45.87))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -24.75° -45.87° and upper right coordinates 60.39° 42.35°, based on rotated coordinates from WGS84 (pole has coordinates 180.0° 90.0°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.805,-45.925:60.445,42.405> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-24.805,-45.925:60.445,42.405> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -24.805° -45.925° : 60.445° 42.405° on rotated coordinates (pole: 180.0° 90.0°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-24.805 -45.925,-24.805 42.405,60.445 42.405,60.445 -45.925))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-24.805 -45.925,-24.805 42.405,60.445 42.405,60.445 -45.925))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -24.805° -45.925° and upper right coordinates 60.445° 42.405°, based on rotated coordinates from WGS84 (pole has coordinates 180.0° 90.0°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.4,-6.6:75.24,44.88> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.4,-6.6:75.24,44.88> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -26.4° -6.6° : 75.24° 44.88° on rotated coordinates (pole: 180.0° 90.0°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-26.4 -6.6,-26.4 44.88,75.24 44.88,75.24 -6.6))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-26.4 -6.6,-26.4 44.88,75.24 44.88,75.24 -6.6))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -26.4° -6.6° and upper right coordinates 75.24° 44.88°, based on rotated coordinates from WGS84 (pole has coordinates 180.0° 90.0°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.51,-6.71:75.35,44.99> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.51,-6.71:75.35,44.99> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -26.51° -6.71° : 75.35° 44.99° on rotated coordinates (pole: 180.0° 90.0°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-26.51 -6.71,-26.51 44.99,75.35 44.99,75.35 -6.71))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-26.51 -6.71,-26.51 44.99,75.35 44.99,75.35 -6.71))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -26.51° -6.71° and upper right coordinates 75.35° 44.99°, based on rotated coordinates from WGS84 (pole has coordinates 180.0° 90.0°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.565,-6.765:75.405,45.045> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/-26.565,-6.765:75.405,45.045> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -26.565° -6.765° : 75.405° 45.045° on rotated coordinates (pole: 180.0° 90.0°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-26.565 -6.765,-26.565 45.045,75.405 45.045,75.405 -6.765))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((-26.565 -6.765,-26.565 45.045,75.405 45.045,75.405 -6.765))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -26.565° -6.765° and upper right coordinates 75.405° 45.045°, based on rotated coordinates from WGS84 (pole has coordinates 180.0° 90.0°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/89.26,-15.18:147.12,27.28> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0/regions/rectangle/89.26,-15.18:147.12,27.28> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region 89.26° -15.18° : 147.12° 27.28° on rotated coordinates (pole: 180.0° 90.0°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((89.26 -15.18,89.26 27.28,147.12 27.28,147.12 -15.18))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:180.0 90.0;POLYGON((89.26 -15.18,89.26 27.28,147.12 27.28,147.12 -15.18))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates 89.26° -15.18° and upper right coordinates 147.12° 27.28°, based on rotated coordinates from WGS84 (pole has coordinates 180.0° 90.0°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/180.0,90.0> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25/regions/rectangle/-23.22,-21.34:19.46,5.94> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25/regions/rectangle/-23.22,-21.34:19.46,5.94> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -23.22° -21.34° : 19.46° 5.94° on rotated coordinates (pole: 198.0° 39.25°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:198.0 39.25;POLYGON((-23.22 -21.34,-23.22 5.94,19.46 5.94,19.46 -21.34))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:198.0 39.25;POLYGON((-23.22 -21.34,-23.22 5.94,19.46 5.94,19.46 -21.34))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -23.22° -21.34° and upper right coordinates 19.46° 5.94°, based on rotated coordinates from WGS84 (pole has coordinates 198.0° 39.25°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25/regions/rectangle/-23.385,-21.505:19.625,6.105> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25/regions/rectangle/-23.385,-21.505:19.625,6.105> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -23.385° -21.505° : 19.625° 6.105° on rotated coordinates (pole: 198.0° 39.25°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:198.0 39.25;POLYGON((-23.385 -21.505,-23.385 6.105,19.625 6.105,19.625 -21.505))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:198.0 39.25;POLYGON((-23.385 -21.505,-23.385 6.105,19.625 6.105,19.625 -21.505))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -23.385° -21.505° and upper right coordinates 19.625° 6.105°, based on rotated coordinates from WGS84 (pole has coordinates 198.0° 39.25°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/198.0,39.25> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-33.88,-28.4:33.88,28.36> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-33.88,-28.4:33.88,28.36> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -33.88° -28.4° : 33.88° 28.36° on rotated coordinates (pole: 83.0° 42.5°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:83.0 42.5;POLYGON((-33.88 -28.4,-33.88 28.36,33.88 28.36,33.88 -28.4))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:83.0 42.5;POLYGON((-33.88 -28.4,-33.88 28.36,33.88 28.36,33.88 -28.4))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -33.88° -28.4° and upper right coordinates 33.88° 28.36°, based on rotated coordinates from WGS84 (pole has coordinates 83.0° 42.5°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-33.99,-28.51:33.99,28.47> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-33.99,-28.51:33.99,28.47> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -33.99° -28.51° : 33.99° 28.47° on rotated coordinates (pole: 83.0° 42.5°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:83.0 42.5;POLYGON((-33.99 -28.51,-33.99 28.47,33.99 28.47,33.99 -28.51))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:83.0 42.5;POLYGON((-33.99 -28.51,-33.99 28.47,33.99 28.47,33.99 -28.51))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -33.99° -28.51° and upper right coordinates 33.99° 28.47°, based on rotated coordinates from WGS84 (pole has coordinates 83.0° 42.5°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-34.045,-28.565:34.045,28.525> a ns2:Geometry,
-        ns1:GeodeticRegion ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5/regions/rectangle/-34.045,-28.565:34.045,28.525> a ns1:GeodeticRegion ;
     rdfs:label "Rectangular geodetic region -34.045° -28.565° : 34.045° 28.525° on rotated coordinates (pole: 83.0° 42.5°)"@en ;
-    ns2:asWKT "SRID=ROTATED_POLAR:83.0 42.5;POLYGON((-34.045 -28.565,-34.045 28.525,34.045 28.525,34.045 -28.565))"^^<geo:wktLiteral> ;
+    ns3:asWKT "SRID=ROTATED_POLAR:83.0 42.5;POLYGON((-34.045 -28.565,-34.045 28.525,34.045 28.525,34.045 -28.565))"^^<geo:wktLiteral> ;
     rdfs:comment "Rectangular geodetic region comprised between lower left coordinates -34.045° -28.565° and upper right coordinates 34.045° 28.525°, based on rotated coordinates from WGS84 (pole has coordinates 83.0° 42.5°)."@en ;
     ns1:isRegionOf <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/83.0,42.5> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/ANT> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/ANT> a ns2:Concept ;
     rdfs:label "CORDEX:ANT"@en ;
     rdfs:comment "CORDEX geographic domain for Antarctica (ANT)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/ARC> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/ARC> a ns2:Concept ;
     rdfs:label "CORDEX:ARC"@en ;
     rdfs:comment "CORDEX geographic domain for Arctic (ARC)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/MED> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/MED> a ns2:Concept ;
     rdfs:label "CORDEX:MED"@en ;
     rdfs:comment "CORDEX geographic domain for Mediterranean (MED)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/AFR> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/AFR> a ns2:Concept ;
     rdfs:label "CORDEX:AFR"@en ;
     rdfs:comment "CORDEX geographic domain for Africa (AFR)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/AUS> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/AUS> a ns2:Concept ;
     rdfs:label "CORDEX:AUS"@en ;
     rdfs:comment "CORDEX geographic domain for Australasia (AUS)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/CAM> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/CAM> a ns2:Concept ;
     rdfs:label "CORDEX:CAM"@en ;
     rdfs:comment "CORDEX geographic domain for Central America (CAM)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/CAS> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/CAS> a ns2:Concept ;
     rdfs:label "CORDEX:CAS"@en ;
     rdfs:comment "CORDEX geographic domain for Central Asia (CAS)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/EAS> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/EAS> a ns2:Concept ;
     rdfs:label "CORDEX:EAS"@en ;
     rdfs:comment "CORDEX geographic domain for East Asia (EAS)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/NAM> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/NAM> a ns2:Concept ;
     rdfs:label "CORDEX:NAM"@en ;
     rdfs:comment "CORDEX geographic domain for North America (NAM)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/SAM> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/SAM> a ns2:Concept ;
     rdfs:label "CORDEX:SAM"@en ;
     rdfs:comment "CORDEX geographic domain for South America (SAM)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/WAS> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/WAS> a ns2:Concept ;
     rdfs:label "CORDEX:WAS"@en ;
     rdfs:comment "CORDEX geographic domain for South Asia (WAS)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
 <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-166.92,6.08> a ns1:Continuum ;
     rdfs:label "Rotated geodetic: pole -166.92° 6.08°"@en ;
@@ -1446,17 +1342,17 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasReferencePoint <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/198.0,39.25> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/EUR> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/EUR> a ns2:Concept ;
     rdfs:label "CORDEX:EUR"@en ;
     rdfs:comment "CORDEX geographic domain for Europe (EUR)."@en,
         "CORDEX geographic domain for Europe high res. (EUR)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
-<https://w3id.org/hacid/data/cs/cordex/domains/MNA> a ns3:Concept ;
+<https://w3id.org/hacid/data/cs/cordex/domains/MNA> a ns2:Concept ;
     rdfs:label "CORDEX:MNA"@en ;
     rdfs:comment "CORDEX geographic domain for Middle East and North Africa  high res. (MNA)."@en,
         "CORDEX geographic domain for Middle East and North Africa (MNA)."@en ;
-    ns3:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
+    ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
 <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48> a ns1:Continuum ;
     rdfs:label "Rotated geodetic: pole -103.39° 43.48°"@en ;
@@ -1506,29 +1402,25 @@
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84> ;
     ns1:hasReferencePoint <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/83.0,42.5> .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> a ns1:Quantization,
-        ns1:SimpleRegularBinning ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.22> a ns1:SimpleRegularBinning ;
     rdfs:label "0.22° geodetic grid"@en ;
     rdfs:comment "Geodetic grid composed of regions encompassing 0.22 degrees on both angular axes."@en ;
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic> ;
     ns1:hasResolutionValue "0.22"^^xsd:float .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> a ns1:Quantization,
-        ns1:SimpleRegularBinning ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.11> a ns1:SimpleRegularBinning ;
     rdfs:label "0.11° geodetic grid"@en ;
     rdfs:comment "Geodetic grid composed of regions encompassing 0.11 degrees on both angular axes."@en ;
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic> ;
     ns1:hasResolutionValue "0.11"^^xsd:float .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> a ns1:Quantization,
-        ns1:SimpleRegularBinning ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.44> a ns1:SimpleRegularBinning ;
     rdfs:label "0.44° geodetic grid"@en ;
     rdfs:comment "Geodetic grid composed of regions encompassing 0.44 degrees on both angular axes."@en ;
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic> ;
     ns1:hasResolutionValue "0.44"^^xsd:float .
 
-<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> a ns1:Quantization,
-        ns1:SimpleRegularBinning ;
+<https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/0.5> a ns1:SimpleRegularBinning ;
     rdfs:label "0.5° geodetic grid"@en ;
     rdfs:comment "Geodetic grid composed of regions encompassing 0.5 degrees on both angular axes."@en ;
     ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/geodetic> ;

@@ -241,7 +241,7 @@ def convert_parameter:
     {
         "@id": @uri "index:\(.shortName)",
 #        "@type": [(if (.parametric | not) then ["ccso:Index"] else [] end).[] , "ccso:ParametricIndex" ],
-        "@type": ["data:Variable", "data:DependentVariable"],
+        "@type": "data:DependentVariable",
         acronym: .shortName,
         label: (.longName + " (" + .shortName + ")"),
         definition: .definition,

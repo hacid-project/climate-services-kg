@@ -256,7 +256,7 @@
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
-        rr:class data:Quantization, data:SimpleRegularBinning;
+        rr:class data:SimpleRegularBinning;
         rr:template "https://w3id.org/hacid/data/cs/dimensions/geodetic/quantizations/regular-angle/{dlon}"
     ] ;
 	
@@ -293,7 +293,7 @@
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
-        rr:class data:GeodeticPoint, geo:Geometry ;
+        rr:class data:GeodeticPoint ;
         rr:template "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/points/{pollon},{pollat}"
     ] ;
 	
@@ -331,7 +331,7 @@
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
-        rr:class data:GeodeticRegion, geo:Geometry ;
+        rr:class data:GeodeticRegion ;
         rr:template "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/WGS84/regions/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
     ] ;
 	
@@ -368,7 +368,7 @@
     rml:logicalSource :LogicalSource ;
     
 	rr:subjectMap [ 
-        rr:class data:GeodeticRegion, geo:Geometry ;
+        rr:class data:GeodeticRegion ;
         rr:template "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/{pollon},{pollat}/regions/rectangle/{ll_lon},{ll_lat}:{ur_lon},{ur_lat}" 
     ] ;
 	

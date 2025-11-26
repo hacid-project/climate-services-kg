@@ -97,7 +97,6 @@
 
 :GeodeticVariableIRI
     rr:termType rr:IRI ;
-    rr:class data:Dataset ; 
     fnml:functionValue [
         rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
             rr:predicate hrf:template ;
@@ -107,7 +106,6 @@
 
 :GeodeticSpecializationIRI
     rr:termType rr:IRI ;
-    rr:class data:Dataset ; 
     fnml:functionValue [
         rr:predicateObjectMap :FormatCordexDomainCall, :ParamDomain, [
             rr:predicate hrf:template ;
@@ -209,7 +207,7 @@
         rr:predicate ccso:isDownscalingOf ;
         rr:objectMap [
             rr:termType rr:IRI ;
-            rr:class ccso:Simulation ;
+#            rr:class ccso:Simulation ;
             fnml:functionValue [
                 rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
                     rr:predicate hrf:template ;
@@ -774,7 +772,7 @@
 
     rr:subjectMap [
         rr:termType rr:IRI ;
-        rr:class data:Variable, data:IndependentVariable, data:DimensionalSpace ;
+        rr:class data:DimensionalSpace ;
         fnml:functionValue [
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
@@ -807,7 +805,7 @@
 
     rr:subjectMap [
         rr:termType rr:IRI ;
-        rr:class data:Variable, data:IndependentVariable, data:DimensionalSpace ;
+#        rr:class data:Quantization;
         fnml:functionValue [
             rr:predicateObjectMap :FormatTemporalGridCall, :ParamDatetimeStart, :ParamDatetimeStop, :ParamGranularity, [
                 rr:predicate hrf:template ;
@@ -982,7 +980,7 @@
 
 :ModelIRI
     rr:termType rr:IRI ;
-    rr:class ccso:ClimateModel, ccso:RegionalClimateModel ;
+    rr:class ccso:RegionalClimateModel ;
     fnml:functionValue [
         rr:predicateObjectMap [
             rr:predicate fno:executes ;

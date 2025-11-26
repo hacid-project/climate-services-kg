@@ -947,7 +947,7 @@
       }
     },
     {
-      "@id": "index:HWN%20%28EHF%2FTX90%2FTN90%29",
+      "@id": "index:HWN%28EHF%2FTX90%2FTN90%29",
       "isClassifiedBy": [
         {
           "@id": "sector:Agriculture%20and%20food%20security"
@@ -982,7 +982,7 @@
       }
     },
     {
-      "@id": "index:HWF%20%28EHF%2FTX90%2FTN90%29",
+      "@id": "index:HWF%28EHF%2FTX90%2FTN90%29",
       "isClassifiedBy": [
         {
           "@id": "sector:Agriculture%20and%20food%20security"
@@ -1017,7 +1017,7 @@
       }
     },
     {
-      "@id": "index:HWD%20%28EHF%2FTX90%2FTN90%29",
+      "@id": "index:HWD%28EHF%2FTX90%2FTN90%29",
       "isClassifiedBy": [
         {
           "@id": "sector:Agriculture%20and%20food%20security"
@@ -1052,7 +1052,7 @@
       }
     },
     {
-      "@id": "index:HWM%20%28EHF%2FTX90%2FTN90%29",
+      "@id": "index:HWM%28EHF%2FTX90%2FTN90%29",
       "isClassifiedBy": [
         {
           "@id": "sector:Agriculture%20and%20food%20security"
@@ -1087,7 +1087,7 @@
       }
     },
     {
-      "@id": "index:HWA%20%28EHF%2FTX90%2FTN90%29",
+      "@id": "index:HWA%28EHF%2FTX90%2FTN90%29",
       "isClassifiedBy": [
         {
           "@id": "sector:Agriculture%20and%20food%20security"

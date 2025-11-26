@@ -71,7 +71,7 @@
         rr:predicate data:dependsOnVariable;
         rr:objectMap [ 
             rr:termType rr:IRI;
-            rr:class data:Variable, data:IndependentVariable;
+            rr:class data:IndependentVariable;
             fnml:functionValue [
                 rr:predicateObjectMap [
                     rr:predicate fno:executes ;
