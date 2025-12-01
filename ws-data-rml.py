@@ -405,7 +405,7 @@ _dim_var_mapping = {
     'time1': ['time'],
     'time2': ['time'],
     'time3': ['time'],
-    'gridlatitude': ['geodetic_lat'],
+    'gridlatitude': ['geodetic-lat'],
     'alevel': ['elevation'],
     'alevhalf': ['elevation'],
     'olevel': ['elevation']
