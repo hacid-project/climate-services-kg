@@ -1288,7 +1288,11 @@
               "InformationRoles": [
                 {
                   "@type": "top:InformationRole",
-                  "@id": "ops:ConductManualSelectionOfObservations/associated-data"
+                  "@id": "ops:ConductManualSelectionOfObservations/associated-data",
+                  "ExpectedType": {
+                    "@id": "data:Dataset",
+                    "@type": "owl:Class"
+                  }
                 }
               ]
             },

@@ -18,6 +18,7 @@ def interpolate($str):
 def member_spec($scheme_id):
     {
         "@id": @uri "schemes:\($scheme_id)/\(.)",
+        "@type": "top:Concept",
         label: .
     };
 

@@ -8,7 +8,7 @@
       ],
       "_AssociatedVariable": "tasmax",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Agriculture and Food Security"
       ],
       "Variants": [
@@ -34,7 +34,7 @@
       ],
       "_AssociatedVariable": "tas, tasmin, hurs",
       "Sectors": [
-        "Human Health"
+        "Health"
       ],
       "Variants": [
         {
@@ -64,7 +64,7 @@
         "Agriculture and Food Security",
         "Transport",
         "Energy",
-        "Forestry/GHG",
+        "Forestry/GHGs",
         "Disaster Risk Reduction"
       ],
       "Variants": [
@@ -89,7 +89,7 @@
       ],
       "_AssociatedVariable": "tas, sfcWind, hurs, rss, rls",
       "Sectors": [
-        "Human Health"
+        "Health"
       ],
       "Variants": [
         {
@@ -170,7 +170,7 @@
       ],
       "_AssociatedVariable": "tasmax",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Agriculture and Food Security",
         "Biodiversity/Ecosystems"
       ],
@@ -204,7 +204,7 @@
       ],
       "_AssociatedVariable": "tasmin",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Agriculture and Food Security",
         "Biodiversity/Ecosystems"
       ],
@@ -231,7 +231,7 @@
       ],
       "_AssociatedVariable": "pr",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Agriculture and Food Security",
         "Transport"
       ],
@@ -255,7 +255,7 @@
       ],
       "_AssociatedVariable": "pr",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Agriculture and Food Security",
         "Transport"
       ],
@@ -283,7 +283,7 @@
       ],
       "_AssociatedVariable": "pr",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Agriculture and Food Security",
         "Transport"
       ],
@@ -311,8 +311,8 @@
       "_AssociatedVariable": "pr",
       "Sectors": [
         "Agriculture and Food Security",
-        "Water Resources",
-        "Forestry/GHG"
+        "Water Resources and Food Security",
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
@@ -335,8 +335,8 @@
       "_AssociatedVariable": "pr",
       "Sectors": [
         "Agriculture and Food Security",
-        "Water Resources",
-        "Forestry/GHG"
+        "Water Resources and Food Security",
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
@@ -362,15 +362,15 @@
       "_AssociatedVariable": "pr",
       "Sectors": [
         "Agriculture and Food Security",
-        "Water Resources",
-        "Forestry/GHG"
+        "Water Resources and Food Security",
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
           "Type": "absolute"
         }
       ],
-      "Unit": "dimensionless"
+      "Unit": "1"
     },
     "River Discharge": {
       "Definition": "The River Discharge index is defined as the annual mean daily river discharge (m³⋅s⁻¹).",
@@ -448,8 +448,8 @@
       "_AssociatedVariable": "pr, evspsbl / pr, tas + sfcWind, huss, psl, rss, rsl",
       "Sectors": [
         "Agriculture and Food Security",
-        "Water Resources",
-        "Forestry/GHG",
+        "Water Resources and Food Security",
+        "Forestry/GHGs",
         "Biodiversity/Ecosystems"
       ],
       "Variants": [
@@ -457,7 +457,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "dimensionless"
+      "Unit": "1"
     },
     "Mean Soil Moisture": {
       "Definition": "The soil moisture is defined as the monthly mean values of soil moisture in the root zone as the fraction of the field capacity volume over a 30 year period.",
@@ -475,8 +475,8 @@
       ],
       "_AssociatedVariable": "rzwc (Mass Content Of Water In Soil Layer Defined By Root Depth), mrsofc / pr, tas + sfcWind, rss, rls, psl, huss",
       "Sectors": [
-        "Forestry/GHG",
-        "Water Resources",
+        "Forestry/GHGs",
+        "Water Resources and Food Security",
         "Agriculture and Food Security"
       ],
       "Variants": [
@@ -484,7 +484,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "dimensionless"
+      "Unit": "1"
     },
     "High Fire Danger Days": {
       "Definition": "The count of days in a period with a FWI value greater than 30 (Number of days) based upon the European Forest Fire Information System (EFFIS) classification. The Fire Weather Index (FWI) is a meteorologically based index used worldwide to estimate fire danger. It is developed by the Canadian Forestry Service to estimate forest fire ignition and spread conditions based on several weather variables (temperature, precipitation, relative humidity, and wind speed).",
@@ -503,7 +503,7 @@
       ],
       "_AssociatedVariable": "tas, pr, hurs, sfcWind",
       "Sectors": [
-        "Forestry/GHG",
+        "Forestry/GHGs",
         "Transport",
         "Energy"
       ],
@@ -536,7 +536,7 @@
       ],
       "_AssociatedVariable": "tas, pr, hurs, sfcWind",
       "Sectors": [
-        "Forestry/GHG",
+        "Forestry/GHGs",
         "Disaster Risk Reduction"
       ],
       "Variants": [
@@ -544,7 +544,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "dimensionless"
+      "Unit": "1"
     },
     "Mean Wind Speed": {
       "Definition": "The mean daily 10m wind speed over a period (m s-1).",
@@ -577,7 +577,7 @@
       "Sectors": [
         "Energy",
         "Transport",
-        "Forestry/GHG",
+        "Forestry/GHGs",
         "Disaster Risk Reduction"
       ],
       "Variants": [
@@ -601,7 +601,7 @@
       ],
       "_AssociatedVariable": "prsn",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Tourism",
         "Cryosphere"
       ],
@@ -623,7 +623,7 @@
       ],
       "_AssociatedVariable": "prsn",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Tourism",
         "Cryosphere"
       ],
@@ -794,14 +794,14 @@
       ],
       "_AssociatedVariable": "tas, tasmax, tasmin, pr",
       "Sectors": [
-        "Human Health"
+        "Health"
       ],
       "Variants": [
         {
           "Type": "absolute"
         }
       ],
-      "Unit": "dimensionless"
+      "Unit": "1"
     },
     "Tiger Mosquito Climatic Season Length": {
       "Definition": "The season length of the climatic suitability of tiger mosquito presence (Days). The Tiger mosquito's climatic suitability seasonal presence is determined by temperature thresholds and hours of sunlight (photoperiod) during spring (when egg hatching occurs) and autumn (a period of suspended development or diapause). In spring the temperature should be above 10.5°C and the photoperiod above 11.25 hours and in autumn the temperature should be below 9.5°C and the photoperiod below 13.5 hours. The latter is conditioned by the ability of the mosquito to survive the winter combined with a threshold on annual rainfall. Survival conditions are considered as unsuitable for January temperatures below 0°C and annual rainfall below 500 mm.",
@@ -814,7 +814,7 @@
       ],
       "_AssociatedVariable": "tas, tasmax, tasmin, pr",
       "Sectors": [
-        "Human Health"
+        "Health"
       ],
       "Variants": [
         {
@@ -838,7 +838,7 @@
       ],
       "_AssociatedVariable": "tasmax",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Disaster Risk Reduction"
       ],
       "Variants": [
@@ -858,10 +858,10 @@
       ],
       "_AssociatedVariable": "tasmax",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Disaster Risk Reduction",
         "Agriculture and Food Security",
-        "Forestry/GHG",
+        "Forestry/GHGs",
         "Transport",
         "Energy"
       ],
@@ -886,8 +886,8 @@
       "_AssociatedVariable": "tas, hurs, psl, rss, rls, sfcWind",
       "Sectors": [
         "Agriculture and Food Security",
-        "Water Resources",
-        "Forestry/GHG"
+        "Water Resources and Food Security",
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
@@ -907,8 +907,8 @@
       "_AssociatedVariable": "tas, rsd, psl",
       "Sectors": [
         "Agriculture and Food Security",
-        "Water Resources",
-        "Forestry/GHG"
+        "Water Resources and Food Security",
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
@@ -928,14 +928,14 @@
       "Sectors": [
         "Agriculture and Food Security",
         "Disaster Risk Reduction",
-        "Water Resources"
+        "Water Resources and Food Security"
       ],
       "Variants": [
         {
           "Type": "absolute"
         }
       ],
-      "Unit": "dimensionless"
+      "Unit": "1"
     },
     "Huglin Index": {
       "Definition": "The Huglin Index is an index specifically aimed at grap growth and defined using daily averaged temperature TG_i and the daily maximum temperature TX_i for day i in the period 1 April to 30 September: K/2 * SUM((TG_i - 10) + (TX_i - 10)), where K is a daylength coefficient. The daylight coefficient is a function of the latitude of the station but a clear definition is absent. The value of K is 1 (<= 40°N) or 1.02 (40-42°N), increasing at increment of 0.01 for each 2 degrees of latitude until 50°N and reaching 1.06.",
@@ -953,7 +953,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "dimensionless"
+      "Unit": "1"
     }
   },
   "ETCCDI": {
@@ -971,7 +971,7 @@
         "Agriculture and Food Security",
         "Transport",
         "Energy",
-        "Forestry/GHG",
+        "Forestry/GHGs",
         "Disaster Risk Reduction",
         "Fisheries",
         "Cryosphere"
@@ -994,11 +994,11 @@
       "_AssociatedVariable": "tasmax",
       "Sectors": [
         "Health",
-        "Water Resources",
+        "Water Resources and Food Security",
         "Agriculture and Food Security",
         "Transport",
         "Energy",
-        "Forestry/GHG",
+        "Forestry/GHGs",
         "Disaster Risk Reduction",
         "Fisheries",
         "Cryosphere",
@@ -1023,8 +1023,8 @@
       "Sectors": [
         "Health",
         "Agriculture and Food Security",
-        "Water Resources",
-        "Forestry/GHG",
+        "Water Resources and Food Security",
+        "Forestry/GHGs",
         "Disaster Risk Reduction"
       ],
       "Variants": [
@@ -1102,7 +1102,7 @@
       ],
       "_AssociatedVariable": "tmin",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Agriculture and Food Security",
         "Biodiversity/Ecosystems"
       ],
@@ -1135,7 +1135,7 @@
       ],
       "_AssociatedVariable": "tmax",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Agriculture and Food Security",
         "Biodiversity/Ecosystems"
       ],
@@ -1184,18 +1184,18 @@
       ],
       "_AssociatedVariable": "tasmax",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Disaster Risk Reduction",
         "Energy",
         "Agriculture and Food Security",
-        "Forestry/GHG"
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "Record-Breaking Weather (Hottest Month)": {
       "Definition": "Number of months per year at least as hot as the hottest month (Tmax) between 1981 and 2010",
@@ -1205,18 +1205,18 @@
       ],
       "_AssociatedVariable": "tasmax",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Disaster Risk Reduction",
         "Energy",
         "Agriculture and Food Security",
-        "Forestry/GHG"
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
           "Type": "absolute"
         }
       ],
-      "Unit": "Months/year"
+      "Unit": "months/year"
     },
     "Record-Breaking Weather (Wettest Month)": {
       "Definition": "Number of months per year at least as wet as the wettest month between 1981 and 2010",
@@ -1228,14 +1228,14 @@
       "Sectors": [
         "Disaster Risk Reduction",
         "Agriculture and Food Security",
-        "Forestry/GHG"
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
           "Type": "absolute"
         }
       ],
-      "Unit": "Months/year"
+      "Unit": "months/year"
     },
     "Met Office Heatwave": {
       "Definition": "Occurrence of heatwave following Met Office definition: heatwave threshold is met when a location records a period of at least three consecutive days with daily maximum temperatures meeting or exceeding the heatwave temperature threshold [set between 25 (most of the country) and 28 (London and certain surrounding counties)]. Definitions valid only for the UK.",
@@ -1251,11 +1251,11 @@
       ],
       "_AssociatedVariable": "tasmax",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Agriculture and Food Security",
         "Transport",
         "Energy",
-        "Forestry/GHG",
+        "Forestry/GHGs",
         "Disaster Risk Reduction"
       ],
       "Variants": [
@@ -1269,7 +1269,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Events/year"
+      "Unit": "events/year"
     },
     "Amber Heat-Health Alert": {
       "Definition": "Occurrence of a public health heat-health alert: potential warning if medium heat-health alert thresholds reached for maximum daytime temperature (32.0°C to 39.9°C for London, 30.0°C to 37.0°C for other areas) and night-time temperature (95th percentile or higher of summer \"nights\"). Definitions valid only for the UK.",
@@ -1280,7 +1280,7 @@
       ],
       "_AssociatedVariable": "tasmax, tasmin",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Disaster Risk Reduction"
       ],
       "Variants": [
@@ -1294,7 +1294,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Events/year"
+      "Unit": "events/year"
     },
     "Cold Weather Alert": {
       "Definition": "Occurrence of a public health cold weather alert: potential warning if daily mean temperature below 2.0°C for 5 days AND below 0.0°C for 48hrs or more. Definitions valid only for the UK.",
@@ -1304,7 +1304,7 @@
       ],
       "_AssociatedVariable": "tas",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Energy",
         "Disaster Risk Reduction"
       ],
@@ -1319,7 +1319,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Events/year"
+      "Unit": "events/year"
     },
     "Very Hot Days": {
       "Definition": "Days with maximum temperature above 35°C",
@@ -1334,7 +1334,7 @@
         "Health",
         "Disaster Risk Reduction",
         "Agriculture and Food Security",
-        "Forestry/GHG",
+        "Forestry/GHGs",
         "Energy"
       ],
       "Variants": [
@@ -1345,7 +1345,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Events/year"
+      "Unit": "events/year"
     },
     "Tropical Nights": {
       "Definition": "Days with minimum temperature above 20°C",
@@ -1360,7 +1360,7 @@
         "Health",
         "Disaster Risk Reduction",
         "Agriculture and Food Security",
-        "Forestry/GHG"
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
@@ -1370,7 +1370,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Events/year"
+      "Unit": "events/year"
     },
     "Heat Stress": {
       "Definition": "Days with shade Wet Bulb Globe Temperature (WBGT) above 25",
@@ -1385,7 +1385,7 @@
       ],
       "_AssociatedVariable": "tas, sfcWind, huss, rss, psl (air temperature at surface, surface wind, specific humidity, net surface shortwave flux, surface pressure at sea level)",
       "Sectors": [
-        "Human Health",
+        "Health",
         "Disaster Risk Reduction"
       ],
       "Variants": [
@@ -1396,7 +1396,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Events/year"
+      "Unit": "events/year"
     },
     "Heating Degree Days": {
       "Definition": "Average annual heating degree days: relative to 15.5°C and 18°C",
@@ -1409,7 +1409,7 @@
       "_AssociatedVariable": "tas",
       "Sectors": [
         "Energy",
-        "Human Health"
+        "Health"
       ],
       "Variants": [
         {
@@ -1429,7 +1429,7 @@
       "_AssociatedVariable": "tas",
       "Sectors": [
         "Energy",
-        "Human Health"
+        "Health"
       ],
       "Variants": [
         {
@@ -1455,7 +1455,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "Road Accident Risk": {
       "Definition": "Days with Tmin below 0°C",
@@ -1474,7 +1474,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "Rail: High Temperatures": {
       "Definition": "Days with Tmax above thresholds (>21, 24, 26, 30°C)",
@@ -1491,7 +1491,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "Rail: Bad Weather Days": {
       "Definition": "Days with temperature, rainfall and/or windspeed beyond thresholds (not defined)",
@@ -1511,7 +1511,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "Start of Crop Growing Season": {
       "Definition": "First day of first five-day period with average temperature above 5.6°C",
@@ -1528,7 +1528,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Day of year (1 = January 1st)"
+      "Unit": "day of year (1 = January 1st)"
     },
     "Growing Season Length": {
       "Definition": "Length between start and end of growing season",
@@ -1547,7 +1547,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days"
+      "Unit": "days"
     },
     "Growing Degree Days": {
       "Definition": "Accumulated degree-days relative to 5.6°C",
@@ -1589,7 +1589,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days"
+      "Unit": "days"
     },
     "Start of Field Operations (Tsum200)": {
       "Definition": "Day when accumulated temperatures above 0°C reach 200°C",
@@ -1606,7 +1606,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Day of year (1 = January 1st)"
+      "Unit": "day of year (1 = January 1st)"
     },
     "Accumulated Frost": {
       "Definition": "Sum of minimum temperatures below 0°C",
@@ -1638,7 +1638,7 @@
         "Agriculture and Food Security",
         "Health",
         "Cryosphere",
-        "Forestry/GHG",
+        "Forestry/GHGs",
         "Disaster Risk Reduction"
       ],
       "Variants": [
@@ -1646,7 +1646,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "Dairy Cattle Heat Stress": {
       "Definition": "Days with a Temperature Humidity Index above 70.",
@@ -1664,7 +1664,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "Wheat Heat Stress": {
       "Definition": "Days between 1 May and 15 June with maximum temperature above 32°C",
@@ -1684,7 +1684,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "Potential Soil Moisture Deficit": {
       "Definition": "Average annual maximum cumulative difference between rainfall and potential evaporation",
@@ -1697,7 +1697,7 @@
       "_AssociatedVariable": "pr, evspsblpot (potential evaporation/CF: water_potential_evaporation_flux). Potential evaporation can be calculated using huss, rls, rss, sfcWind, tas, psl, pr",
       "Sectors": [
         "Agriculture and Food Security",
-        "Water Resources"
+        "Water Resources and Food Security"
       ],
       "Variants": [
         {
@@ -1716,14 +1716,14 @@
       "_AssociatedVariable": "mrso (mass_content_of_water_in_soil), mrsofc (soil_moisture_content_at_field_capacity) or calculate using land surface model: pr, tas, huss, rls, rss, sfcWind, psl",
       "Sectors": [
         "Agriculture and Food Security",
-        "Water Resources"
+        "Water Resources and Food Security"
       ],
       "Variants": [
         {
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "SPI Drought": {
       "Definition": "Number of months with a Standardised Precipitation Index (calculated from 3-month accumulated rainfall) less than -1.5.",
@@ -1736,14 +1736,14 @@
       "_AssociatedVariable": "pr",
       "Sectors": [
         "Agriculture and Food Security",
-        "Water Resources"
+        "Water Resources and Food Security"
       ],
       "Variants": [
         {
           "Type": "absolute"
         }
       ],
-      "Unit": "Proportion of time"
+      "Unit": "proportion of time"
     },
     "SPEI Drought": {
       "Definition": "Number of months with a Standardised Precipitation Evaporation Index (calculated from 6-month accumulated rainfall minus potential evaporation) less than -1.5.",
@@ -1757,14 +1757,14 @@
       "_AssociatedVariable": "pr, evspsblpot",
       "Sectors": [
         "Agriculture and Food Security",
-        "Water Resources"
+        "Water Resources and Food Security"
       ],
       "Variants": [
         {
           "Type": "absolute"
         }
       ],
-      "Unit": "Proportion of time"
+      "Unit": "proportion of time"
     },
     "Met Office Fire Danger": {
       "Definition": "Days with the MOFSI index above specific thresholds: >17.35 for very high, >52.538 for exception. Definitions valid only for the UK.",
@@ -1786,7 +1786,7 @@
       "_AssociatedVariable": "tas, hurs, sfcWind, pr, evspsblpot",
       "Sectors": [
         "Disaster Risk Reduction",
-        "Forestry/GHG"
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
@@ -1796,7 +1796,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "Wildfire: Daily Hazard Assessment": {
       "Definition": "Days with MOFSI components above specific thresholds. Components are FFMC (Fine Fuel Moisture Code), ISI (Initial Spread Index), DMC (Duff Moisture Code), DC (Drought Code) and FWI (Fire Weather Index). Thresholds are season-specific and available for FFMC, ISI, and FWI. Relates to amber and red warning conditions. An ‘amber’ warning level means that severe wildfire conditions are forecast with a likelihood of difficult-to-control wildfires. The ‘red’ level means extreme wildfire conditions are forecast, and occurs when the amber thresholds are passed and other weather conditions are conducive to fire (persistent high temperatures, low humidity and high windspeeds).",
@@ -1822,7 +1822,7 @@
       "_AssociatedVariable": "tas, hurs, sfcWind, pr, evspsblpot",
       "Sectors": [
         "Disaster Risk Reduction",
-        "Forestry/GHG"
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
@@ -1832,7 +1832,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "Wildfire: FFMC 99th Percentile": {
       "Definition": "Days with Fine Fuel Moisture Code component of MOFSI above the 99th percentile over the period 1981-2010, calculated by season. FFMC index represents the availability of dry ‘tinder’ material in and around the vegetation susceptible to ignition.",
@@ -1856,14 +1856,14 @@
       ],
       "_AssociatedVariable": "tas, hurs, sfcWind, pr",
       "Sectors": [
-        "Forestry/GHG"
+        "Forestry/GHGs"
       ],
       "Variants": [
         {
           "Type": "absolute"
         }
       ],
-      "Unit": "Days/year"
+      "Unit": "days/year"
     },
     "River Runoff": {
       "Definition": "Annual and seasonal river runoff",
@@ -2009,7 +2009,7 @@
       ],
       "_AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Energy"
       ],
       "Variants": [
@@ -2031,7 +2031,7 @@
       ],
       "_AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Energy"
       ],
       "Variants": [
@@ -2053,7 +2053,7 @@
       ],
       "_AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Energy"
       ],
       "Variants": [
@@ -2072,7 +2072,7 @@
       ],
       "_AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Energy"
       ],
       "Variants": [
@@ -2080,7 +2080,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Proportion of time"
+      "Unit": "proportion of time"
     },
     "12-Month River Drought (Severe)": {
       "Definition": "Number of months with a Standardised Streamflow Index (calculated from 12-month accumulated river flow) less than-2.0.",
@@ -2092,7 +2092,7 @@
       ],
       "_AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Energy"
       ],
       "Variants": [
@@ -2100,7 +2100,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Proportion of time"
+      "Unit": "proportion of time"
     },
     "24-Month River Drought (Extreme)": {
       "Definition": "Number of months with a Standardised Streamflow Index (calculated from 24-month accumulated river flow) less than -1.5.",
@@ -2112,7 +2112,7 @@
       ],
       "_AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Energy"
       ],
       "Variants": [
@@ -2120,7 +2120,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Proportion of time"
+      "Unit": "proportion of time"
     },
     "24-Month River Drought (Severe)": {
       "Definition": "Number of months with a Standardised Streamflow Index (calculated from 24-month accumulated river flow) less than -2.0.",
@@ -2132,7 +2132,7 @@
       ],
       "_AssociatedVariable": "pr, evspsblpot / huss, rls, rss, sfcWind, tas, psl, pr",
       "Sectors": [
-        "Water Resources",
+        "Water Resources and Food Security",
         "Energy"
       ],
       "Variants": [
@@ -2140,7 +2140,7 @@
           "Type": "absolute"
         }
       ],
-      "Unit": "Proportion of time"
+      "Unit": "proportion of time"
     },
     "Soil Moisture": {
       "Definition": "Average seasonal soil moisture content",
@@ -2157,8 +2157,8 @@
       ],
       "_AssociatedVariable": "mrso (Mass Content Of Water In Soil) or calculate using land surface model: pr, tas, huss, rls, rss, sfcWind, psl",
       "Sectors": [
-        "Forestry/GHG",
-        "Water Resources",
+        "Forestry/GHGs",
+        "Water Resources and Food Security",
         "Agriculture and Food Security"
       ],
       "Variants": [

@@ -12,9 +12,13 @@ walk((
     if .AssociatedIndices then
         .AssociatedIndices |= [
             to_entries | .[] |
-            (.key | sub(" ";"-") | if . == "Climdex" then "climdex" end) as $group_id |
+            (.key | sub(" ";"-")) as $group_id |
             .value[] |
-            "cs:\($group_id)/indices/\(. | to_camel_case)"
+            if $group_id == "Climdex" then
+                @uri "cs:climdex/indices/\(.)"
+            else
+                "cs:\($group_id)/indices/\(. | to_camel_case)"
+            end
         ]
     end |
     del(.Name)

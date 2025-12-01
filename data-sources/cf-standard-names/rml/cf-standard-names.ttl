@@ -50,10 +50,9 @@
     ] ;
 	
     rr:predicateObjectMap [
-        rr:predicate data:hasValuesOn;
+        rr:predicate top:hasUnitOfMeasure, data:hasValuesOn;
         rr:objectMap [ 
-            rr:template "https://w3id.org/hacid/data/cs/unitsofmeasure/{canonical_units}" ; 
-            rr:termType rr:IRI 
+            rr:parentTriplesMap :UnitMapping
         ]
     ] ;
 	
@@ -69,6 +68,22 @@
         rr:predicate rdfs:comment;
         rr:objectMap [ 
             rml:reference "description" ; 
+            rr:language "en" 
+        ]
+    ] .
+
+:UnitMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+    rr:subjectMap [
+        rr:template "https://w3id.org/hacid/data/cs/unitsofmeasure/{canonical_units}" ;
+        rr:class top:UnitOfMeasure, data:DimensionalSpace
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [ 
+            rml:reference "canonical_units" ; 
             rr:language "en" 
         ]
     ] .

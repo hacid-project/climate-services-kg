@@ -132,10 +132,10 @@ def convert_unit:
 
 # Conversion to temporalgrids standard names
 {
-    "Daily": ["day"],
-    "Mon": ["mon"],
-    "Ann": ["yr"],
-    "Custom": ["3mon", "6mon", "yr"]
+    "Daily": ["P1D"],
+    "Mon": ["P1M"],
+    "Ann": ["P1Y"],
+    "Custom": ["P3M", "P6M", "P1Y"]
 } as $timescales_to_temporalgrids |
 
 def convert_timescales:
@@ -255,7 +255,7 @@ def convert_parameter:
             "@id": @uri "aggregation:\(.shortName)",
             "@type": "data:Aggregation",
             aggregatesVariable: "dimension:time",
-            suggestedQuantization: [ .timeScales | convert_timescales | .[] | @uri "temporalgrid:\(.)" ]
+            suggestedQuantization: [ .timeScales | convert_timescales | .[] | "temporalgrid:\(.)" ]
         },
 #        isClassifiedBy: [.sectors | ("sector:" + .)],
         rest: .
@@ -276,7 +276,7 @@ def convert_parameter:
         unit: "https://w3id.org/hacid/data/cs/unitsofmeasure/",
         dimension: "https://w3id.org/hacid/data/cs/dimensions/",
         aggregation: "https://w3id.org/hacid/data/cs/climdex/index-time-aggregations/",
-        temporalgrid: "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/",
+        temporalgrid: "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/",
         label: "rdfs:label",
         comment: "rdfs:comment",
         acronym: "top:acronym",

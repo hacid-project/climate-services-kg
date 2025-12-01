@@ -22,6 +22,7 @@
             label: .model_id,
             isMaintainedBy: {
                 "@id": @uri "https://w3id.org/hacid/data/cs/organizations/\(.institute_id)",
+                "@type": "top:Organization",
                 acronym: .institute_id,
                 label: .institute_name
             }

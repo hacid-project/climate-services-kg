@@ -22,7 +22,7 @@
       "@id": "index:FD",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Cryosphere"
@@ -45,7 +45,7 @@
       "@id": "index:TNlt2",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Cryosphere"
@@ -62,7 +62,7 @@
       "@id": "index:TNltm2",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Cryosphere"
@@ -79,7 +79,7 @@
       "@id": "index:TNltm20",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Cryosphere"
@@ -99,7 +99,7 @@
       "@id": "index:ID",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Cryosphere"
@@ -133,7 +133,7 @@
       "@id": "index:TR",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Disaster%20Risk%20Reduction"
@@ -153,7 +153,7 @@
       "@id": "index:GSL",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Disaster%20Risk%20Reduction"
@@ -170,7 +170,7 @@
       "@id": "index:TXx",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Cryosphere"
@@ -190,7 +190,7 @@
       "@id": "index:TNn",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Cryosphere"
@@ -210,7 +210,7 @@
       "@id": "index:WSDI",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -234,7 +234,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -245,7 +245,7 @@
       "@id": "index:WSDId",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -269,7 +269,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -280,7 +280,7 @@
       "@id": "index:CSDI",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -312,7 +312,7 @@
       "@id": "index:CSDId",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -336,7 +336,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -347,7 +347,7 @@
       "@id": "index:TXgt50p",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
@@ -356,7 +356,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -367,7 +367,7 @@
       "@id": "index:TX95t",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Health"
@@ -381,7 +381,7 @@
       "@id": "index:TMge5",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
@@ -395,7 +395,7 @@
       "@id": "index:TMlt5",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
@@ -409,7 +409,7 @@
       "@id": "index:TMge10",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
@@ -423,7 +423,7 @@
       "@id": "index:TMlt10",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
@@ -437,7 +437,7 @@
       "@id": "index:TXge30",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
@@ -454,7 +454,7 @@
       "@id": "index:TXge35",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Disaster%20Risk%20Reduction"
@@ -477,7 +477,7 @@
       "@id": "index:TXdTNd",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Disaster%20Risk%20Reduction"
@@ -489,7 +489,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -528,7 +528,7 @@
       "@id": "index:GDDgrown",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
@@ -545,7 +545,7 @@
       "@id": "index:CDD",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Disaster%20Risk%20Reduction"
@@ -557,7 +557,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -568,13 +568,13 @@
       "@id": "index:R20mm",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -585,13 +585,13 @@
       "@id": "index:PRCPTOT",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -602,13 +602,13 @@
       "@id": "index:R95pTOT",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -619,13 +619,13 @@
       "@id": "index:R99pTOT",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -636,7 +636,7 @@
       "@id": "index:RXdday",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Disaster%20Risk%20Reduction"
@@ -648,7 +648,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -659,7 +659,7 @@
       "@id": "index:SPI",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Disaster%20Risk%20Reduction"
@@ -671,7 +671,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -682,7 +682,7 @@
       "@id": "index:SPEI",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Disaster%20Risk%20Reduction"
@@ -694,7 +694,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -705,7 +705,7 @@
       "@id": "index:TXbdTNbd",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Forestry%2FGHGs"
@@ -714,7 +714,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -761,7 +761,7 @@
           "@id": "sector:Cryosphere"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -775,7 +775,7 @@
           "@id": "sector:Cryosphere"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -877,7 +877,7 @@
           "@id": "sector:Forestry%2FGHGs"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -910,7 +910,7 @@
       "@id": "index:Rx1day",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -930,7 +930,7 @@
       "@id": "index:Rx5day",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -950,7 +950,7 @@
       "@id": "index:HWN%28EHF%2FTx90%2FTn90%29",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -974,7 +974,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -985,7 +985,7 @@
       "@id": "index:HWF%28EHF%2FTx90%2FTn90%29",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -1009,7 +1009,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -1020,7 +1020,7 @@
       "@id": "index:HWD%28EHF%2FTx90%2FTn90%29",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -1044,7 +1044,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -1055,7 +1055,7 @@
       "@id": "index:HWM%28EHF%2FTx90%2FTn90%29",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -1079,7 +1079,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -1090,7 +1090,7 @@
       "@id": "index:HWA%28EHF%2FTx90%2FTn90%29",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -1114,7 +1114,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -1125,7 +1125,7 @@
       "@id": "index:CWN_ECF",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -1143,7 +1143,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -1154,7 +1154,7 @@
       "@id": "index:CWF_ECF",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -1172,7 +1172,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -1183,7 +1183,7 @@
       "@id": "index:CWD_ECF",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -1201,7 +1201,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -1212,7 +1212,7 @@
       "@id": "index:CWM_ECF",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -1230,7 +1230,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -1241,7 +1241,7 @@
       "@id": "index:CWA_ECF",
       "isClassifiedBy": [
         {
-          "@id": "sector:Agriculture%20and%20food%20security"
+          "@id": "sector:Agriculture%20and%20Food%20Security"
         },
         {
           "@id": "sector:Coasts"
@@ -1259,7 +1259,7 @@
           "@id": "sector:Health"
         },
         {
-          "@id": "sector:Water%20resources%20and%20food%20security"
+          "@id": "sector:Water%20Resources%20and%20Food%20Security"
         }
       ],
       "isMemberOf": {
@@ -1267,9 +1267,9 @@
       }
     },
     {
-      "@id": "sector:Agriculture%20and%20food%20security",
+      "@id": "sector:Agriculture%20and%20Food%20Security",
       "@type": "top:Concept",
-      "label": "Agriculture and food security",
+      "label": "Agriculture and Food Security",
       "isDefinedIn": {
         "@id": "https://w3id.org/hacid/data/cs/climdex/sectors"
       }
@@ -1331,9 +1331,9 @@
       }
     },
     {
-      "@id": "sector:Water%20resources%20and%20food%20security",
+      "@id": "sector:Water%20Resources%20and%20Food%20Security",
       "@type": "top:Concept",
-      "label": "Water resources and food security",
+      "label": "Water Resources and Food Security",
       "isDefinedIn": {
         "@id": "https://w3id.org/hacid/data/cs/climdex/sectors"
       }

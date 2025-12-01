@@ -2,33 +2,33 @@
     {
         "Index": "FD",
         "Health": true,
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true,
         "Cryosphere": true
     },
     {
         "Index": "TNlt2",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Forestry/GHGs": true,
         "Cryosphere": true
     },
     {
         "Index": "TNltm2",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Forestry/GHGs": true,
         "Cryosphere": true
     },
     {
         "Index": "TNltm20",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true,
         "Cryosphere": true
     },
     {
         "Index": "ID",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true,
         "Cryosphere": true
@@ -41,26 +41,26 @@
     {
         "Index": "TR",
         "Health": true,
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "GSL",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "TXx",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Energy": true,
         "Forestry/GHGs": true,
         "Cryosphere": true
     },
     {
         "Index": "TNn",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Energy": true,
         "Forestry/GHGs": true,
         "Cryosphere": true
@@ -68,8 +68,8 @@
     {
         "Index": "WSDI",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Energy": true,
@@ -80,8 +80,8 @@
     {
         "Index": "WSDId",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Energy": true,
@@ -92,7 +92,7 @@
     {
         "Index": "CSDI",
         "Health": true,
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Energy": true,
@@ -103,8 +103,8 @@
     {
         "Index": "CSDId",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Energy": true,
@@ -115,45 +115,45 @@
     {
         "Index": "TXgt50p",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "TX95t",
         "Health": true,
-        "Agriculture and food security": true
+        "Agriculture and Food Security": true
     },
     {
         "Index": "TMge5",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "TMlt5",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "TMge10",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "TMlt10",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "TXge30",
         "Health": true,
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "TXge35",
         "Health": true,
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Disaster Risk Reduction": true,
         "Energy": true,
         "Forestry/GHGs": true
@@ -161,8 +161,8 @@
     {
         "Index": "TXdTNd",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true
     },
@@ -179,70 +179,70 @@
     {
         "Index": "GDDgrown",
         "Health": true,
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "CDD",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "R20mm",
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "PRCPTOT",
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "R95pTOT",
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "R99pTOT",
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "RXdday",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "SPI",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "SPEI",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "TXbdTNbd",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Forestry/GHGs": true
     },
     {
@@ -259,12 +259,12 @@
     },
     {
         "Index": "TMm",
-        "Water resources and food security": true,
+        "Water Resources and Food Security": true,
         "Cryosphere": true
     },
     {
         "Index": "TXm",
-        "Water resources and food security": true,
+        "Water Resources and Food Security": true,
         "Cryosphere": true
     },
     {
@@ -301,7 +301,7 @@
     },
     {
         "Index": "SDII",
-        "Water resources and food security": true,
+        "Water Resources and Food Security": true,
         "Forestry/GHGs": true
     },
     {
@@ -314,14 +314,14 @@
     },
     {
         "Index": "Rx1day",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true
     },
     {
         "Index": "Rx5day",
-        "Agriculture and food security": true,
+        "Agriculture and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Forestry/GHGs": true
@@ -329,8 +329,8 @@
     {
         "Index": "HWN(EHF/Tx90/Tn90)",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Energy": true,
@@ -341,8 +341,8 @@
     {
         "Index": "HWF(EHF/Tx90/Tn90)",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Energy": true,
@@ -353,8 +353,8 @@
     {
         "Index": "HWD(EHF/Tx90/Tn90)",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Energy": true,
@@ -365,8 +365,8 @@
     {
         "Index": "HWM(EHF/Tx90/Tn90)",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Energy": true,
@@ -377,8 +377,8 @@
     {
         "Index": "HWA(EHF/Tx90/Tn90)",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Disaster Risk Reduction": true,
         "Energy": true,
@@ -389,8 +389,8 @@
     {
         "Index": "CWN_ECF",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Fisheries": true,
         "Forestry/GHGs": true,
@@ -399,8 +399,8 @@
     {
         "Index": "CWF_ECF",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Fisheries": true,
         "Forestry/GHGs": true,
@@ -409,8 +409,8 @@
     {
         "Index": "CWD_ECF",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Fisheries": true,
         "Forestry/GHGs": true,
@@ -419,8 +419,8 @@
     {
         "Index": "CWM_ECF",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Fisheries": true,
         "Forestry/GHGs": true,
@@ -429,8 +429,8 @@
     {
         "Index": "CWA_ECF",
         "Health": true,
-        "Agriculture and food security": true,
-        "Water resources and food security": true,
+        "Agriculture and Food Security": true,
+        "Water Resources and Food Security": true,
         "Coasts": true,
         "Fisheries": true,
         "Forestry/GHGs": true,

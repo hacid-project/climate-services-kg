@@ -21,14 +21,17 @@
       "members": [
         {
           "@id": "schemes:OrganizationSize/small",
+          "@type": "top:Concept",
           "label": "small"
         },
         {
           "@id": "schemes:OrganizationSize/medium",
+          "@type": "top:Concept",
           "label": "medium"
         },
         {
           "@id": "schemes:OrganizationSize/large",
+          "@type": "top:Concept",
           "label": "large"
         }
       ]
@@ -39,14 +42,17 @@
       "members": [
         {
           "@id": "schemes:RiskRating/low",
+          "@type": "top:Concept",
           "label": "low"
         },
         {
           "@id": "schemes:RiskRating/medium",
+          "@type": "top:Concept",
           "label": "medium"
         },
         {
           "@id": "schemes:RiskRating/high",
+          "@type": "top:Concept",
           "label": "high"
         }
       ]
@@ -57,42 +63,52 @@
       "members": [
         {
           "@id": "schemes:GlobalWarmingLevel/GWL1.5",
+          "@type": "top:Concept",
           "label": "GWL1.5"
         },
         {
           "@id": "schemes:GlobalWarmingLevel/GWL2",
+          "@type": "top:Concept",
           "label": "GWL2"
         },
         {
           "@id": "schemes:GlobalWarmingLevel/GWL2.5",
+          "@type": "top:Concept",
           "label": "GWL2.5"
         },
         {
           "@id": "schemes:GlobalWarmingLevel/GWL3",
+          "@type": "top:Concept",
           "label": "GWL3"
         },
         {
           "@id": "schemes:GlobalWarmingLevel/GWL3.5",
+          "@type": "top:Concept",
           "label": "GWL3.5"
         },
         {
           "@id": "schemes:GlobalWarmingLevel/GWL4",
+          "@type": "top:Concept",
           "label": "GWL4"
         },
         {
           "@id": "schemes:GlobalWarmingLevel/GWL4.5",
+          "@type": "top:Concept",
           "label": "GWL4.5"
         },
         {
           "@id": "schemes:GlobalWarmingLevel/GWL5",
+          "@type": "top:Concept",
           "label": "GWL5"
         },
         {
           "@id": "schemes:GlobalWarmingLevel/GWL5.5",
+          "@type": "top:Concept",
           "label": "GWL5.5"
         },
         {
           "@id": "schemes:GlobalWarmingLevel/GWL6",
+          "@type": "top:Concept",
           "label": "GWL6"
         }
       ]
@@ -103,10 +119,12 @@
       "members": [
         {
           "@id": "schemes:ObservationType/station-based",
+          "@type": "top:Concept",
           "label": "station-based"
         },
         {
           "@id": "schemes:ObservationType/gridded",
+          "@type": "top:Concept",
           "label": "gridded"
         }
       ]
@@ -122,14 +140,17 @@
       "members": [
         {
           "@id": "schemes:ConfidenceLevel/low",
+          "@type": "top:Concept",
           "label": "low"
         },
         {
           "@id": "schemes:ConfidenceLevel/medium",
+          "@type": "top:Concept",
           "label": "medium"
         },
         {
           "@id": "schemes:ConfidenceLevel/high",
+          "@type": "top:Concept",
           "label": "high"
         }
       ]

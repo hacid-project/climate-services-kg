@@ -6,7 +6,9 @@
     "ccso": "https://w3id.org/hacid/onto/ccso/",
     "data": "https://w3id.org/hacid/onto/data/",
     "cs": "https://w3id.org/hacid/data/cs/",
+    "mohcsector": "https://w3id.org/hacid/data/cs/mohc/sectors/",
     "sector": "https://w3id.org/hacid/data/cs/climdex/sectors/",
+    "climdex": "https://w3id.org/hacid/data/cs/climdex/indices/",
     "variable": "https://w3id.org/hacid/data/cs/variables/mip/",
     "unit": "https://w3id.org/hacid/data/cs/unitsofmeasure/",
     "dimension": "https://w3id.org/hacid/data/cs/dimensions/",
@@ -53,9 +55,49 @@
     "inScheme": {
       "@id": "top:inScheme",
       "@type": "@id"
+    },
+    "isDefinedIn": {
+      "@reverse": "top:defines"
     }
   },
   "@graph": [
+    {
+      "@id": "https://w3id.org/hacid/data/cs/mohc/sectors",
+      "@type": "top:ConceptScheme",
+      "label": "MOHC index sectors"
+    },
+    {
+      "@id": "mohcsector:Transport",
+      "@type": "top:Concept",
+      "label": "Transport",
+      "isDefinedIn": {
+        "@id": "https://w3id.org/hacid/data/cs/mohc/sectors"
+      }
+    },
+    {
+      "@id": "mohcsector:Biodiversity%2FEcosystems",
+      "@type": "top:Concept",
+      "label": "Biodiversity/Ecosystems",
+      "isDefinedIn": {
+        "@id": "https://w3id.org/hacid/data/cs/mohc/sectors"
+      }
+    },
+    {
+      "@id": "mohcsector:Marine%20Ecosystems",
+      "@type": "top:Concept",
+      "label": "Marine Ecosystems",
+      "isDefinedIn": {
+        "@id": "https://w3id.org/hacid/data/cs/mohc/sectors"
+      }
+    },
+    {
+      "@id": "mohcsector:Tourism",
+      "@type": "top:Concept",
+      "label": "Tourism",
+      "isDefinedIn": {
+        "@id": "https://w3id.org/hacid/data/cs/mohc/sectors"
+      }
+    },
     {
       "@id": "cs:Climate-ADAPT",
       "@type": "top:ConceptScheme"
@@ -67,14 +109,19 @@
         {
           "Definition": "The highest daily mean temperature averaged over a three-day window over a period (°C). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/WarmestThree-dayPeriod",
           "label": "Warmest Three-Day Period",
           "derivedFrom": [
@@ -84,14 +131,19 @@
         {
           "Definition": "The highest daily mean temperature averaged over a three-day window over a period (°C). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/WarmestThree-dayPeriod/change-absolute/1991-2010",
           "label": "Warmest Three-Day Period (change from 1991-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/WarmestThree-dayPeriod"
@@ -99,13 +151,18 @@
         {
           "Definition": "The Apparent Temperature Heatwave Days Index (Number of Days) is defined as a period of at least two consecutive days during the summer months (June, July, August) in which both the daily apparent temperature and the daily minimum temperature exceed their monthly 90th percentiles defined over a reference period. Apparent temperature is a linear function of temperature and dew point temperature to account for humidity conditions.",
           "Sectors": [
-            "sector:Human%20Health"
+            "sector:Health"
           ],
           "Unit": {
             "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days/year"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ApparentTemperatureHeatwaveDays",
           "label": "Apparent Temperature Heatwave Days",
           "derivedFrom": [
@@ -117,13 +174,18 @@
         {
           "Definition": "The Apparent Temperature Heatwave Days Index (Number of Days) is defined as a period of at least two consecutive days during the summer months (June, July, August) in which both the daily apparent temperature and the daily minimum temperature exceed their monthly 90th percentiles defined over a reference period. Apparent temperature is a linear function of temperature and dew point temperature to account for humidity conditions.",
           "Sectors": [
-            "sector:Human%20Health"
+            "sector:Health"
           ],
           "Unit": {
             "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days/year"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ApparentTemperatureHeatwaveDays/change-absolute",
           "label": "Apparent Temperature Heatwave Days (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ApparentTemperatureHeatwaveDays"
@@ -133,16 +195,21 @@
           "Sectors": [
             "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport",
+            "mohcsector:Transport",
             "sector:Energy",
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
             "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days/year"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ClimatologicalHeatwaveDays",
           "label": "Climatological Heatwave Days",
           "derivedFrom": [
@@ -157,16 +224,21 @@
           "Sectors": [
             "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport",
+            "mohcsector:Transport",
             "sector:Energy",
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
             "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days/year"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ClimatologicalHeatwaveDays/change-absolute",
           "label": "Climatological Heatwave Days (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ClimatologicalHeatwaveDays"
@@ -174,13 +246,18 @@
         {
           "Definition": "The UTCI is an equivalent temperature (°C) and is a measure of the human physiological response to meteorological conditions that also takes into consideration the clothing adaptation of the population in response to outdoor temperature. It is based on four surface variables: air temperature, relative humidity, wind speed and mean radiant temperature. UTCI values are divided in 5 classes of heat stress: no thermal stress (9°C-26°C), moderate heat stress (26°C-32°C), strong heat stress (32°C-38°C), very strong heat stress (38C°-46C°), and extreme heat stress (>46°C). The index refers to the number of days in the category of strong heat stress or stronger (>32°C).",
           "Sectors": [
-            "sector:Human%20Health"
+            "sector:Health"
           ],
           "Unit": {
             "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days/year"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/HighUtciDays",
           "label": "High UTCI Days",
           "derivedFrom": [
@@ -195,9 +272,14 @@
           "Definition": "The cumulated precipitation over a period (mm/period). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg⋅m⁻²⋅sec⁻² and converted to mm/day). This Index is usually presented as annual, seasonal or monthly cumulated values over the considered period.",
           "Unit": {
             "@id": "unit:mm%2Fperiod",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mm/period"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/TotalPrecipitation",
           "label": "Total Precipitation",
           "derivedFrom": [
@@ -211,9 +293,14 @@
           "Definition": "The cumulated precipitation over a period (mm/period). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg⋅m⁻²⋅sec⁻² and converted to mm/day). This Index is usually presented as annual, seasonal or monthly cumulated values over the considered period.",
           "Unit": {
             "@id": "unit:%25",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "%"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/TotalPrecipitation/change-relative/1991-2020",
           "label": "Total Precipitation (% change from 1991-2020)",
           "derivedFrom": "cs:Climate-ADAPT/indices/TotalPrecipitation"
@@ -223,9 +310,14 @@
           "Commentary": "Like TMm, but for monthly, seasonal, annual instead of daily mean temperatures",
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MeanTemperature",
           "label": "Mean Temperature",
           "derivedFrom": [
@@ -241,9 +333,14 @@
           "Commentary": "Like TMm, but for monthly, seasonal, annual instead of daily mean temperatures",
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MeanTemperature/change-absolute/1991-2010",
           "label": "Mean Temperature (change from 1991-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MeanTemperature"
@@ -252,15 +349,20 @@
           "Definition": "The maximum value of daily maximum temperature over a period (°C). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
           "Commentary": "Like TXm, but for monthly, seasonal, annual instead of daily max temperatures",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Biodiversity%2FEcosystems"
+            "mohcsector:Biodiversity%2FEcosystems"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MaximumTemperature",
           "label": "Maximum Temperature",
           "derivedFrom": [
@@ -275,15 +377,20 @@
           "Definition": "The maximum value of daily maximum temperature over a period (°C). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
           "Commentary": "Like TXm, but for monthly, seasonal, annual instead of daily max temperatures",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Biodiversity%2FEcosystems"
+            "mohcsector:Biodiversity%2FEcosystems"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MaximumTemperature/change-absolute/1991-2010",
           "label": "Maximum Temperature (change from 1991-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MaximumTemperature"
@@ -292,15 +399,20 @@
           "Definition": "The minimum value of daily minimum temperature over a period (°C). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
           "Commentary": "Like TNm, but for monthly, seasonal, annual instead of daily min temperatures",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Biodiversity%2FEcosystems"
+            "mohcsector:Biodiversity%2FEcosystems"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MinimumTemperature",
           "label": "Minimum Temperature",
           "derivedFrom": [
@@ -315,15 +427,20 @@
           "Definition": "The minimum value of daily minimum temperature over a period (°C). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
           "Commentary": "Like TNm, but for monthly, seasonal, annual instead of daily min temperatures",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Biodiversity%2FEcosystems"
+            "mohcsector:Biodiversity%2FEcosystems"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MinimumTemperature/change-absolute/1991-2010",
           "label": "Minimum Temperature (change from 1991-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MinimumTemperature"
@@ -331,15 +448,20 @@
         {
           "Definition": "Maximum five days cumulated precipitation (mm). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg.m-2.sec-2 and converted to mm/day). Precipitation is usually presented as annual, seasonal or monthly cumulated values over the considered period but extremes are cumulated on shorter periods (eg daily, 3-Day, or 5-days maximums).",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
             "@id": "unit:mm",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mm"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MaximumConsecutiveFive-dayPrecipitation",
           "label": "Maximum Consecutive Five-Day Precipitation",
           "derivedFrom": [
@@ -352,15 +474,20 @@
         {
           "Definition": "Maximum five days cumulated precipitation (mm). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg.m-2.sec-2 and converted to mm/day). Precipitation is usually presented as annual, seasonal or monthly cumulated values over the considered period but extremes are cumulated on shorter periods (eg daily, 3-Day, or 5-days maximums).",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
             "@id": "unit:mm",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mm"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MaximumConsecutiveFive-dayPrecipitation/change-absolute",
           "label": "Maximum Consecutive Five-Day Precipitation (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MaximumConsecutiveFive-dayPrecipitation"
@@ -368,15 +495,20 @@
         {
           "Definition": "The total sum in a year of daily precipitation values exceeding the 95th percentile of the reference period (mm). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg.m-2.sec-2 and converted to mm/day). Precipitation is usually presented as annual, seasonal or monthly cumulated values over the considered period but extremes are cumulated on shorter periods (eg daily, 3-Days, or 5-Days maximums).",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
             "@id": "unit:mm",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mm"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ExtremePrecipitationTotal",
           "label": "Extreme Precipitation Total",
           "derivedFrom": [
@@ -389,15 +521,20 @@
         {
           "Definition": "The total sum in a year of daily precipitation values exceeding the 95th percentile of the reference period (mm). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg.m-2.sec-2 and converted to mm/day). Precipitation is usually presented as annual, seasonal or monthly cumulated values over the considered period but extremes are cumulated on shorter periods (eg daily, 3-Days, or 5-Days maximums).",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
             "@id": "unit:mm",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mm"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ExtremePrecipitationTotal/change-absolute",
           "label": "Extreme Precipitation Total (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ExtremePrecipitationTotal"
@@ -405,15 +542,20 @@
         {
           "Definition": "The count of days in a year with daily precipitation exceeding the 95th percentile threshold of rainy days over a reference period, here the 1981-2010 period (day). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg.m-2.sec-2 and converted to mm day-1). This Index is usually presented as annual, seasonal or monthly cumulated values over the considered period.",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ExtremePrecipitationDays",
           "label": "Extreme Precipitation Days",
           "derivedFrom": [
@@ -426,15 +568,20 @@
         {
           "Definition": "The count of days in a year with daily precipitation exceeding the 95th percentile threshold of rainy days over a reference period, here the 1981-2010 period (day). In weather and climate models total precipitation is the flux of water equivalent (rain or snow) reaching the land surface (expressed as kg.m-2.sec-2 and converted to mm day-1). This Index is usually presented as annual, seasonal or monthly cumulated values over the considered period.",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ExtremePrecipitationDays/change-absolute/1981-2010",
           "label": "Extreme Precipitation Days (change from 1981-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ExtremePrecipitationDays"
@@ -443,14 +590,19 @@
           "Definition": "The longest period of consecutive days with daily precipitation below 1 mm in a year (day). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources",
-            "sector:Forestry%2FGHG"
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ConsecutiveDryDays",
           "label": "Consecutive Dry Days",
           "derivedFrom": [
@@ -464,14 +616,19 @@
           "Definition": "The longest period of consecutive days with daily precipitation below 1 mm in a year (day). In weather and climate models temperature is the variable simulating atmospheric air temperature at 2m above the surface. This Index is usually presented as annual, seasonal or monthly values over a reference period.",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources",
-            "sector:Forestry%2FGHG"
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ConsecutiveDryDays/change-absolute",
           "label": "Consecutive Dry Days (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ConsecutiveDryDays"
@@ -480,14 +637,19 @@
           "Definition": "The count of months in a year with anomalously low precipitation conditions based on the 3-month Standardised Precipitation Index (SPI-3) relative to a reference period, here 1981-2010 (month). A drought event starts when SPI-3 values fall below -1 for at least two consecutive months and ends when the index returns positive.",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources",
-            "sector:Forestry%2FGHG"
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
             "@id": "unit:months",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "months"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MeteorologicalDroughtDuration",
           "label": "Meteorological Drought Duration",
           "derivedFrom": [
@@ -499,14 +661,19 @@
           "Definition": "The count of months in a year with anomalously low precipitation conditions based on the 3-month Standardised Precipitation Index (SPI-3) relative to a reference period, here 1981-2010 (month). A drought event starts when SPI-3 values fall below -1 for at least two consecutive months and ends when the index returns positive.",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources",
-            "sector:Forestry%2FGHG"
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
             "@id": "unit:months",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "months"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MeteorologicalDroughtDuration/change-absolute/1981-2010",
           "label": "Meteorological Drought Duration (change from 1981-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MeteorologicalDroughtDuration"
@@ -515,14 +682,19 @@
           "Definition": "The cumulative severity of drought events in a year based on the 3-month Standardised Precipitation Index (SPI-3) relative to a reference period, here 1981-2010 (dimensionless). A drought event starts when SPI-3 values fall below -1 for at least two consecutive months and ends when the index returns positive. The magnitude of the event is defined as the sum of SPI-3 absolute values in the months of the drought episode.",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources",
-            "sector:Forestry%2FGHG"
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:dimensionless",
-            "label": "dimensionless"
+            "@id": "unit:1",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "1"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MeteorologicalDroughtMagnitude",
           "label": "Meteorological Drought Magnitude",
           "derivedFrom": [
@@ -537,13 +709,18 @@
           "Commentary": "Output of a hydrological model; climate model variables used to drive the model are mentioned here: https://confluence.ecmwf.int/pages/viewpage.action?pageId=283549812#Hydrologyrelatedclimateimpactindicatorsfrom1970to2100derivedfrombiasadjustedEuropeanclimateprojections:ProductUserGuide,SpecificationandWorkflow-3.4InputdataInputdata",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
             "@id": "unit:m%C2%B3%E2%8B%85s%E2%81%BB%C2%B9",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "m³⋅s⁻¹"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/RiverDischarge",
           "label": "River Discharge",
           "derivedFrom": [
@@ -561,13 +738,18 @@
           "Commentary": "Output of a hydrological model; climate model variables used to drive the model are mentioned here: https://confluence.ecmwf.int/pages/viewpage.action?pageId=283549812#Hydrologyrelatedclimateimpactindicatorsfrom1970to2100derivedfrombiasadjustedEuropeanclimateprojections:ProductUserGuide,SpecificationandWorkflow-3.4InputdataInputdata",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
             "@id": "unit:m%C2%B3%E2%8B%85s%E2%81%BB%C2%B9",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "m³⋅s⁻¹"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/RiverDischarge/change-absolute",
           "label": "River Discharge (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/RiverDischarge"
@@ -577,13 +759,18 @@
           "Commentary": "Output of a hydrological model; climate model variables used to drive the model are mentioned here: https://confluence.ecmwf.int/pages/viewpage.action?pageId=283549812#Hydrologyrelatedclimateimpactindicatorsfrom1970to2100derivedfrombiasadjustedEuropeanclimateprojections:ProductUserGuide,SpecificationandWorkflow-3.4InputdataInputdata",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
             "@id": "unit:m%C2%B3%E2%8B%85s%E2%81%BB%C2%B9",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "m³⋅s⁻¹"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/RiverFlood",
           "label": "River Flood",
           "derivedFrom": [
@@ -607,13 +794,18 @@
           "Commentary": "Output of a hydrological model; climate model variables used to drive the model are mentioned here: https://confluence.ecmwf.int/pages/viewpage.action?pageId=283549812#Hydrologyrelatedclimateimpactindicatorsfrom1970to2100derivedfrombiasadjustedEuropeanclimateprojections:ProductUserGuide,SpecificationandWorkflow-3.4InputdataInputdata",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
             "@id": "unit:m%C2%B3%E2%8B%85s%E2%81%BB%C2%B9",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "m³⋅s⁻¹"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/RiverFlood/change-absolute",
           "label": "River Flood (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/RiverFlood"
@@ -623,15 +815,20 @@
           "Commentary": "Output of a hydrological model; climate model variables used to drive the model are mentioned here: https://confluence.ecmwf.int/pages/viewpage.action?pageId=283549812#Hydrologyrelatedclimateimpactindicatorsfrom1970to2100derivedfrombiasadjustedEuropeanclimateprojections:ProductUserGuide,SpecificationandWorkflow-3.4InputdataInputdata",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources",
-            "sector:Forestry%2FGHG",
-            "sector:Biodiversity%2FEcosystems"
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "sector:Forestry%2FGHGs",
+            "mohcsector:Biodiversity%2FEcosystems"
           ],
           "Unit": {
-            "@id": "unit:dimensionless",
-            "label": "dimensionless"
+            "@id": "unit:1",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "1"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/AridityActual",
           "label": "Aridity Actual",
           "derivedFrom": [
@@ -643,15 +840,20 @@
           "Definition": "The soil moisture is defined as the monthly mean values of soil moisture in the root zone as the fraction of the field capacity volume over a 30 year period.",
           "Commentary": "Output of a hydrological model; climate model variables used to drive the model are mentioned here: https://confluence.ecmwf.int/pages/viewpage.action?pageId=283549812#Hydrologyrelatedclimateimpactindicatorsfrom1970to2100derivedfrombiasadjustedEuropeanclimateprojections:ProductUserGuide,SpecificationandWorkflow-3.4InputdataInputdata",
           "Sectors": [
-            "sector:Forestry%2FGHG",
-            "sector:Water%20Resources",
+            "sector:Forestry%2FGHGs",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:dimensionless",
-            "label": "dimensionless"
+            "@id": "unit:1",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "1"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MeanSoilMoisture",
           "label": "Mean Soil Moisture",
           "derivedFrom": [
@@ -665,15 +867,20 @@
         {
           "Definition": "The count of days in a period with a FWI value greater than 30 (Number of days) based upon the European Forest Fire Information System (EFFIS) classification. The Fire Weather Index (FWI) is a meteorologically based index used worldwide to estimate fire danger. It is developed by the Canadian Forestry Service to estimate forest fire ignition and spread conditions based on several weather variables (temperature, precipitation, relative humidity, and wind speed).",
           "Sectors": [
-            "sector:Forestry%2FGHG",
-            "sector:Transport",
+            "sector:Forestry%2FGHGs",
+            "mohcsector:Transport",
             "sector:Energy"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/HighFireDangerDays",
           "label": "High Fire Danger Days",
           "derivedFrom": [
@@ -687,15 +894,20 @@
         {
           "Definition": "The count of days in a period with a FWI value greater than 30 (Number of days) based upon the European Forest Fire Information System (EFFIS) classification. The Fire Weather Index (FWI) is a meteorologically based index used worldwide to estimate fire danger. It is developed by the Canadian Forestry Service to estimate forest fire ignition and spread conditions based on several weather variables (temperature, precipitation, relative humidity, and wind speed).",
           "Sectors": [
-            "sector:Forestry%2FGHG",
-            "sector:Transport",
+            "sector:Forestry%2FGHGs",
+            "mohcsector:Transport",
             "sector:Energy"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/HighFireDangerDays/change-absolute",
           "label": "High Fire Danger Days (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/HighFireDangerDays"
@@ -703,14 +915,19 @@
         {
           "Definition": "The Fire Weather Index (FWI) is a meteorologically based index used worldwide to estimate fire danger. It is developed by the Canadian Forestry Service to estimate forest fire ignition and spread conditions based on several weather variables (temperature, precipitation, relative humidity, and wind speed).",
           "Sectors": [
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:dimensionless",
-            "label": "dimensionless"
+            "@id": "unit:1",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "1"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/FireWeatherIndex",
           "label": "Fire Weather Index",
           "derivedFrom": [
@@ -733,9 +950,14 @@
           ],
           "Unit": {
             "@id": "unit:m%20s-1",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "m s-1"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MeanWindSpeed",
           "label": "Mean Wind Speed",
           "derivedFrom": [
@@ -750,9 +972,14 @@
           ],
           "Unit": {
             "@id": "unit:m%20s-1",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "m s-1"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MeanWindSpeed/change-absolute",
           "label": "Mean Wind Speed (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MeanWindSpeed"
@@ -761,15 +988,20 @@
           "Definition": "The count of days in a year with daily 10m wind speed exceeding the 98th percentile threshold over a reference period, here the 1981-2010 period (days).",
           "Sectors": [
             "sector:Energy",
-            "sector:Transport",
-            "sector:Forestry%2FGHG",
+            "mohcsector:Transport",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ExtremeWindDays",
           "label": "Extreme Wind Days",
           "derivedFrom": [
@@ -780,15 +1012,20 @@
           "Definition": "The count of days in a year with daily 10m wind speed exceeding the 98th percentile threshold over a reference period, here the 1981-2010 period (days).",
           "Sectors": [
             "sector:Energy",
-            "sector:Transport",
-            "sector:Forestry%2FGHG",
+            "mohcsector:Transport",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ExtremeWindDays/change-absolute/1981-2010",
           "label": "Extreme Wind Days (change from 1981-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ExtremeWindDays"
@@ -796,15 +1033,20 @@
         {
           "Definition": "The Snowfall Amount index (mm) corresponds to the cumulative value of snowfall precipitation over the winter season from November to April.",
           "Sectors": [
-            "sector:Water%20Resources",
-            "sector:Tourism",
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "mohcsector:Tourism",
             "sector:Cryosphere"
           ],
           "Unit": {
             "@id": "unit:mm",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mm"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/SnowfallAmount",
           "label": "Snowfall Amount",
           "derivedFrom": [
@@ -814,15 +1056,20 @@
         {
           "Definition": "The Snowfall Amount index (mm) corresponds to the cumulative value of snowfall precipitation over the winter season from November to April.",
           "Sectors": [
-            "sector:Water%20Resources",
-            "sector:Tourism",
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "mohcsector:Tourism",
             "sector:Cryosphere"
           ],
           "Unit": {
             "@id": "unit:mm",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mm"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/SnowfallAmount/change-absolute",
           "label": "Snowfall Amount (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/SnowfallAmount"
@@ -830,15 +1077,20 @@
         {
           "Definition": "The High Snow Days index (days) counts the number of days where the water equivalent of natural snow is above a given threshold (here 120 kg m-2) from august to july of the following year.",
           "Sectors": [
-            "sector:Water%20Resources",
-            "sector:Tourism",
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "mohcsector:Tourism",
             "sector:Cryosphere"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/HighSnowDays",
           "label": "High Snow Days",
           "derivedFrom": [
@@ -848,15 +1100,20 @@
         {
           "Definition": "The High Snow Days index (days) counts the number of days where the water equivalent of natural snow is above a given threshold (here 120 kg m-2) from august to july of the following year.",
           "Sectors": [
-            "sector:Water%20Resources",
-            "sector:Tourism",
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "mohcsector:Tourism",
             "sector:Cryosphere"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/HighSnowDays/change-absolute",
           "label": "High Snow Days (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/HighSnowDays"
@@ -869,9 +1126,14 @@
           ],
           "Unit": {
             "@id": "unit:cm",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "cm"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/RelativeSeaLevelRise",
           "label": "Relative Sea Level Rise",
           "derivedFrom": [
@@ -890,9 +1152,14 @@
           ],
           "Unit": {
             "@id": "unit:cm",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "cm"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/RelativeSeaLevelRise/change-absolute/1986-2005",
           "label": "Relative Sea Level Rise (change from 1986-2005)",
           "derivedFrom": "cs:Climate-ADAPT/indices/RelativeSeaLevelRise"
@@ -906,9 +1173,14 @@
           ],
           "Unit": {
             "@id": "unit:m",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "m"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ExtremeSeaLevel",
           "label": "Extreme Sea Level",
           "derivedFrom": [
@@ -934,9 +1206,14 @@
           ],
           "Unit": {
             "@id": "unit:m",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "m"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/ExtremeSeaLevel/change-absolute/1951-1980",
           "label": "Extreme Sea Level (change from 1951-1980)",
           "derivedFrom": "cs:Climate-ADAPT/indices/ExtremeSeaLevel"
@@ -945,13 +1222,18 @@
           "Definition": "The Sea Surface Temperature index represents the mean sea surface temperature over different timescales (°C).",
           "Sectors": [
             "sector:Fisheries",
-            "sector:Marine%20Ecosystems"
+            "mohcsector:Marine%20Ecosystems"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/SeaSurfaceTemperature",
           "label": "Sea Surface Temperature",
           "derivedFrom": [
@@ -962,13 +1244,18 @@
           "Definition": "The Sea Surface Temperature index represents the mean sea surface temperature over different timescales (°C).",
           "Sectors": [
             "sector:Fisheries",
-            "sector:Marine%20Ecosystems"
+            "mohcsector:Marine%20Ecosystems"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/SeaSurfaceTemperature/change-absolute/1981-2010",
           "label": "Sea Surface Temperature (change from 1981-2010)",
           "derivedFrom": "cs:Climate-ADAPT/indices/SeaSurfaceTemperature"
@@ -977,13 +1264,18 @@
           "Definition": "The Marine Heatwaves Days index (MHD) is defined as the count of days under marine heatwaves conditions (days). A Marine Heatwave day is a day exceeding the daily climatological 90th percentile of SST during the May to September season and a reference period.",
           "Sectors": [
             "sector:Fisheries",
-            "sector:Marine%20Ecosystems"
+            "mohcsector:Marine%20Ecosystems"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MarineHeatwavesDaysIndex(mhd)",
           "label": "Marine Heatwaves Days Index (MHD)",
           "derivedFrom": [
@@ -994,13 +1286,18 @@
           "Definition": "The Marine Heatwaves Days index (MHD) is defined as the count of days under marine heatwaves conditions (days). A Marine Heatwave day is a day exceeding the daily climatological 90th percentile of SST during the May to September season and a reference period.",
           "Sectors": [
             "sector:Fisheries",
-            "sector:Marine%20Ecosystems"
+            "mohcsector:Marine%20Ecosystems"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/MarineHeatwavesDaysIndex(mhd)/change-absolute",
           "label": "Marine Heatwaves Days Index (MHD) (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/MarineHeatwavesDaysIndex(mhd)"
@@ -1010,13 +1307,18 @@
           "Commentary": "Output of ecosystem model: might require solar radiation and ocean absorption, wind, partial CO2 in air, nutrients and inflow of freshwater into ocean and other parameters to run",
           "Sectors": [
             "sector:Fisheries",
-            "sector:Marine%20Ecosystems"
+            "mohcsector:Marine%20Ecosystems"
           ],
           "Unit": {
             "@id": "unit:mol%20%2F%20m%C2%B3",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mol / m³"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/DissolvedOxygenLevel",
           "label": "Dissolved Oxygen Level",
           "derivedFrom": [
@@ -1028,13 +1330,18 @@
           "Commentary": "Output of ecosystem model",
           "Sectors": [
             "sector:Fisheries",
-            "sector:Marine%20Ecosystems"
+            "mohcsector:Marine%20Ecosystems"
           ],
           "Unit": {
             "@id": "unit:pH",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "pH"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/OceanPhLevel",
           "label": "Ocean pH Level",
           "derivedFrom": [
@@ -1044,13 +1351,18 @@
         {
           "Definition": "The Climatic Suitability index of Tiger mosquito (Aedes albopictus) presence (Dimensionless, from 0 to 100). The Tiger Mosquito Climatic Suitability index is relevant to human health. The tiger mosquito is an invasive species from south-east Asia favoured by a warmer climate and represents a serious threat as it transmits vector-borne diseases such as dengue and chikungunya. Environmental factors, among which weather conditions, affect both the potential presence and seasonal activity of the tiger mosquito. The Tiger mosquito's climatic suitability is determined by summer temperatures, January temperatures and annual rainfall. The suitability is null for summer temperatures lower than 15°C or higher than 30°C, with a maximum between 20°C and 25°C. It is null for January temperatures lower than - 1°C and annual rainfall lower than 450 mm, and maximal for January temperatures above 3°C and annual rainfall above 800 mm.",
           "Sectors": [
-            "sector:Human%20Health"
+            "sector:Health"
           ],
           "Unit": {
-            "@id": "unit:dimensionless",
-            "label": "dimensionless"
+            "@id": "unit:1",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "1"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/TigerMosquitoClimaticSuitability",
           "label": "Tiger Mosquito Climatic Suitability",
           "derivedFrom": [
@@ -1063,13 +1375,18 @@
         {
           "Definition": "The season length of the climatic suitability of tiger mosquito presence (Days). The Tiger mosquito's climatic suitability seasonal presence is determined by temperature thresholds and hours of sunlight (photoperiod) during spring (when egg hatching occurs) and autumn (a period of suspended development or diapause). In spring the temperature should be above 10.5°C and the photoperiod above 11.25 hours and in autumn the temperature should be below 9.5°C and the photoperiod below 13.5 hours. The latter is conditioned by the ability of the mosquito to survive the winter combined with a threshold on annual rainfall. Survival conditions are considered as unsuitable for January temperatures below 0°C and annual rainfall below 500 mm.",
           "Sectors": [
-            "sector:Human%20Health"
+            "sector:Health"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/TigerMosquitoClimaticSeasonLength",
           "label": "Tiger Mosquito Climatic Season Length",
           "derivedFrom": [
@@ -1082,13 +1399,18 @@
         {
           "Definition": "The season length of the climatic suitability of tiger mosquito presence (Days). The Tiger mosquito's climatic suitability seasonal presence is determined by temperature thresholds and hours of sunlight (photoperiod) during spring (when egg hatching occurs) and autumn (a period of suspended development or diapause). In spring the temperature should be above 10.5°C and the photoperiod above 11.25 hours and in autumn the temperature should be below 9.5°C and the photoperiod below 13.5 hours. The latter is conditioned by the ability of the mosquito to survive the winter combined with a threshold on annual rainfall. Survival conditions are considered as unsuitable for January temperatures below 0°C and annual rainfall below 500 mm.",
           "Sectors": [
-            "sector:Human%20Health"
+            "sector:Health"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Climate-ADAPT",
+          "@type": "data:DependentVariable",
           "@id": "cs:Climate-ADAPT/indices/TigerMosquitoClimaticSeasonLength/change-absolute",
           "label": "Tiger Mosquito Climatic Season Length (change)",
           "derivedFrom": "cs:Climate-ADAPT/indices/TigerMosquitoClimaticSeasonLength"
@@ -1106,14 +1428,19 @@
         {
           "Definition": "Let TX_ij be the daily maximum temperature at day i of period j. Then counted is the largest number of consecutive days where daily maximum temperature exceeds 25 degrees Celsius (TX_ij > 25).",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Copernicus-CCS",
+          "@type": "data:DependentVariable",
           "@id": "cs:Copernicus-CCS/indices/ConsecutiveSummerDays(csd)",
           "label": "Consecutive Summer Days (CSD)",
           "derivedFrom": [
@@ -1126,18 +1453,23 @@
         {
           "Definition": "Let TX_ij be the daily maximum temperature at day i of period j. Then counted is the largest number of consecutive days where daily maximum temperature is less than 0 degrees Celsius (TX_ij < 0).",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Disaster%20Risk%20Reduction",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Forestry%2FGHG",
-            "sector:Transport",
+            "sector:Forestry%2FGHGs",
+            "mohcsector:Transport",
             "sector:Energy"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:Copernicus-CCS",
+          "@type": "data:DependentVariable",
           "@id": "cs:Copernicus-CCS/indices/ConsecutiveFrostDays(cfd)",
           "label": "Consecutive Frost Days (CFD)",
           "derivedFrom": [
@@ -1151,14 +1483,19 @@
           "Definition": "PET is an index which gives the FAO-endorsed potential evapotranspiration as calculated by the Penman-Monteith parametrization. Here reference crop evapotranspiration is a measure for potential evapotranspiration. Reference crop evaporation is defined as the rate of evaporation from an idealized grass reference crop with a fixed crop height of 0.12 m, an albedo of 0.23, and a surface resistance of 70 s m−1 . In terms of of its evaporation rate, such a crop closely resembles the reference crop of an extensive surface of short green grass cover of uniform height, actively growing, completely shading the ground, and not short of water.",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources",
-            "sector:Forestry%2FGHG"
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
             "@id": "unit:mm%2Fday",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mm/day"
           },
           "inScheme": "cs:Copernicus-CCS",
+          "@type": "data:DependentVariable",
           "@id": "cs:Copernicus-CCS/indices/PotentialEvapotranspiration(pet:Penman-monteith)",
           "label": "Potential Evapotranspiration (PET: Penman-Monteith)",
           "derivedFrom": [
@@ -1174,14 +1511,19 @@
           "Definition": "This formulation of Reference Evapotranspiration is a simplification of the more comprehensive Penman-Monteith parameterization and recognizes that evapotranspiration is determined primarily by the radiation and the ambient air temperature. A further simplification is that Global Radiation is used rather than the net radiation which is used in more comprehensive formulas.",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources",
-            "sector:Forestry%2FGHG"
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
             "@id": "unit:mm%2Fday",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mm/day"
           },
           "inScheme": "cs:Copernicus-CCS",
+          "@type": "data:DependentVariable",
           "@id": "cs:Copernicus-CCS/indices/PotentialEvapotranspiration(pet:Makkink)",
           "label": "Potential Evapotranspiration (PET: Makkink)",
           "derivedFrom": [
@@ -1195,13 +1537,18 @@
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Water%20Resources"
+            "sector:Water%20Resources%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:dimensionless",
-            "label": "dimensionless"
+            "@id": "unit:1",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "1"
           },
           "inScheme": "cs:Copernicus-CCS",
+          "@type": "data:DependentVariable",
           "@id": "cs:Copernicus-CCS/indices/Self-calibratingPalmerDroughtSeverityIndex(scpdsi)",
           "label": "Self-Calibrating Palmer Drought Severity Index (scPDSI)",
           "derivedFrom": [
@@ -1215,10 +1562,15 @@
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:dimensionless",
-            "label": "dimensionless"
+            "@id": "unit:1",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "1"
           },
           "inScheme": "cs:Copernicus-CCS",
+          "@type": "data:DependentVariable",
           "@id": "cs:Copernicus-CCS/indices/HuglinIndex",
           "label": "Huglin Index",
           "derivedFrom": [
@@ -1241,18 +1593,23 @@
           "Sectors": [
             "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport",
+            "mohcsector:Transport",
             "sector:Energy",
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction",
             "sector:Fisheries",
             "sector:Cryosphere"
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:ETCCDI",
+          "@type": "data:DependentVariable",
           "@id": "cs:ETCCDI/indices/Altcsdi",
           "label": "altCSDI",
           "derivedFrom": [
@@ -1266,11 +1623,11 @@
           "Definition": "Similar to WSDI. For WSDI, the spells cannot span years, while for altWSDI the spells can span years.",
           "Sectors": [
             "sector:Health",
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport",
+            "mohcsector:Transport",
             "sector:Energy",
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction",
             "sector:Fisheries",
             "sector:Cryosphere",
@@ -1278,9 +1635,14 @@
           ],
           "Unit": {
             "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days"
           },
           "inScheme": "cs:ETCCDI",
+          "@type": "data:DependentVariable",
           "@id": "cs:ETCCDI/indices/Altwsdi",
           "label": "altWSDI",
           "derivedFrom": [
@@ -1295,15 +1657,20 @@
           "Sectors": [
             "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources",
-            "sector:Forestry%2FGHG",
+            "sector:Water%20Resources%20and%20Food%20Security",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
             "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days/year"
           },
           "inScheme": "cs:ETCCDI",
+          "@type": "data:DependentVariable",
           "@id": "cs:ETCCDI/indices/Altcdd",
           "label": "altCDD",
           "derivedFrom": [
@@ -1320,9 +1687,14 @@
           ],
           "Unit": {
             "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "days/year"
           },
           "inScheme": "cs:ETCCDI",
+          "@type": "data:DependentVariable",
           "@id": "cs:ETCCDI/indices/Altcwd",
           "label": "altCWD",
           "derivedFrom": [
@@ -1349,10 +1721,15 @@
           "SourceLink": "https://uk-cri.org/",
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/AverageTemperature/change-absolute/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/AverageTemperature",
           "label": "Average Temperature (change from 1981-2010)",
           "derivedFrom": [
             "variable:tas"
@@ -1370,16 +1747,21 @@
           "Source": "Climate ADAPT",
           "SourceLink": "https://climate-adapt.eea.europa.eu/en/knowledge/european-climate-data-explorer/overview-list",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Biodiversity%2FEcosystems"
+            "mohcsector:Biodiversity%2FEcosystems"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/MinimumTemperature/change-absolute/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/MinimumTemperature",
           "label": "Minimum Temperature (change from 1981-2010)",
           "derivedFrom": [
             "variable:tmin"
@@ -1397,16 +1779,21 @@
           "Source": "Copernicus CCS",
           "SourceLink": "https://surfobs.climate.copernicus.eu/userguidance/indicesdictionary.php",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Biodiversity%2FEcosystems"
+            "mohcsector:Biodiversity%2FEcosystems"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C"
           },
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/MaximumTemperature/change-absolute/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/MaximumTemperature",
           "label": "Maximum Temperature (change from 1981-2010)",
           "derivedFrom": [
             "variable:tmax"
@@ -1423,10 +1810,15 @@
           "Commentary": "If using pr, requires aux data like temperature to control for solid phase",
           "SourceLink": "https://www.ecad.eu/documents/atbd.pdf",
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/Rainfall/change-relative/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/Rainfall",
           "label": "Rainfall (% change from 1981-2010)",
           "Unit": {
             "@id": "unit:%25",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "%"
           },
           "derivedFrom": [
@@ -1440,17 +1832,22 @@
           "Definition": "Number of days per year at least as hot as the hottest day (Tmax) between 1981 and 2010",
           "Commentary": "In relation to max(TXx over 1981-2010)",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Disaster%20Risk%20Reduction",
             "sector:Energy",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Forestry%2FGHG"
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/Record-breakingWeather(hottestDay)",
           "label": "Record-Breaking Weather (Hottest Day)",
           "derivedFrom": [
@@ -1461,17 +1858,22 @@
         {
           "Definition": "Number of months per year at least as hot as the hottest month (Tmax) between 1981 and 2010",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Disaster%20Risk%20Reduction",
             "sector:Energy",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Forestry%2FGHG"
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:Months%2Fyear",
-            "label": "Months/year"
+            "@id": "unit:months%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "months/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/Record-breakingWeather(hottestMonth)",
           "label": "Record-Breaking Weather (Hottest Month)",
           "derivedFrom": [
@@ -1483,13 +1885,18 @@
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Forestry%2FGHG"
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:Months%2Fyear",
-            "label": "Months/year"
+            "@id": "unit:months%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "months/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/Record-breakingWeather(wettestMonth)",
           "label": "Record-Breaking Weather (Wettest Month)",
           "derivedFrom": [
@@ -1499,18 +1906,23 @@
         {
           "Definition": "Occurrence of heatwave following Met Office definition: heatwave threshold is met when a location records a period of at least three consecutive days with daily maximum temperatures meeting or exceeding the heatwave temperature threshold [set between 25 (most of the country) and 28 (London and certain surrounding counties)]. Definitions valid only for the UK.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport",
+            "mohcsector:Transport",
             "sector:Energy",
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/MetOfficeHeatwave",
           "label": "Met Office Heatwave",
           "derivedFrom": [
@@ -1523,18 +1935,23 @@
         {
           "Definition": "Occurrence of heatwave following Met Office definition: heatwave threshold is met when a location records a period of at least three consecutive days with daily maximum temperatures meeting or exceeding the heatwave temperature threshold [set between 25 (most of the country) and 28 (London and certain surrounding counties)]. Definitions valid only for the UK.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport",
+            "mohcsector:Transport",
             "sector:Energy",
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/MetOfficeHeatwave",
           "label": "Met Office Heatwave",
           "derivedFrom": "cs:UK-CRI/indices/MetOfficeHeatwave"
@@ -1542,18 +1959,23 @@
         {
           "Definition": "Occurrence of heatwave following Met Office definition: heatwave threshold is met when a location records a period of at least three consecutive days with daily maximum temperatures meeting or exceeding the heatwave temperature threshold [set between 25 (most of the country) and 28 (London and certain surrounding counties)]. Definitions valid only for the UK.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Transport",
+            "mohcsector:Transport",
             "sector:Energy",
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/MetOfficeHeatwave",
           "label": "Met Office Heatwave",
           "derivedFrom": "cs:UK-CRI/indices/MetOfficeHeatwave"
@@ -1561,14 +1983,19 @@
         {
           "Definition": "Occurrence of a public health heat-health alert: potential warning if medium heat-health alert thresholds reached for maximum daytime temperature (32.0°C to 39.9°C for London, 30.0°C to 37.0°C for other areas) and night-time temperature (95th percentile or higher of summer \"nights\"). Definitions valid only for the UK.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/AmberHeat-healthAlert",
           "label": "Amber Heat-Health Alert",
           "derivedFrom": [
@@ -1579,14 +2006,19 @@
         {
           "Definition": "Occurrence of a public health heat-health alert: potential warning if medium heat-health alert thresholds reached for maximum daytime temperature (32.0°C to 39.9°C for London, 30.0°C to 37.0°C for other areas) and night-time temperature (95th percentile or higher of summer \"nights\"). Definitions valid only for the UK.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/AmberHeat-healthAlert",
           "label": "Amber Heat-Health Alert",
           "derivedFrom": "cs:UK-CRI/indices/AmberHeat-healthAlert"
@@ -1594,14 +2026,19 @@
         {
           "Definition": "Occurrence of a public health heat-health alert: potential warning if medium heat-health alert thresholds reached for maximum daytime temperature (32.0°C to 39.9°C for London, 30.0°C to 37.0°C for other areas) and night-time temperature (95th percentile or higher of summer \"nights\"). Definitions valid only for the UK.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/AmberHeat-healthAlert",
           "label": "Amber Heat-Health Alert",
           "derivedFrom": "cs:UK-CRI/indices/AmberHeat-healthAlert"
@@ -1609,15 +2046,20 @@
         {
           "Definition": "Occurrence of a public health cold weather alert: potential warning if daily mean temperature below 2.0°C for 5 days AND below 0.0°C for 48hrs or more. Definitions valid only for the UK.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Energy",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/ColdWeatherAlert",
           "label": "Cold Weather Alert",
           "derivedFrom": [
@@ -1627,15 +2069,20 @@
         {
           "Definition": "Occurrence of a public health cold weather alert: potential warning if daily mean temperature below 2.0°C for 5 days AND below 0.0°C for 48hrs or more. Definitions valid only for the UK.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Energy",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/ColdWeatherAlert",
           "label": "Cold Weather Alert",
           "derivedFrom": "cs:UK-CRI/indices/ColdWeatherAlert"
@@ -1643,15 +2090,20 @@
         {
           "Definition": "Occurrence of a public health cold weather alert: potential warning if daily mean temperature below 2.0°C for 5 days AND below 0.0°C for 48hrs or more. Definitions valid only for the UK.",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Energy",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/ColdWeatherAlert",
           "label": "Cold Weather Alert",
           "derivedFrom": "cs:UK-CRI/indices/ColdWeatherAlert"
@@ -1662,14 +2114,19 @@
             "sector:Health",
             "sector:Disaster%20Risk%20Reduction",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Energy"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/VeryHotDays",
           "label": "Very Hot Days",
           "derivedFrom": [
@@ -1685,14 +2142,19 @@
             "sector:Health",
             "sector:Disaster%20Risk%20Reduction",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Energy"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/VeryHotDays",
           "label": "Very Hot Days",
           "derivedFrom": "cs:UK-CRI/indices/VeryHotDays"
@@ -1703,13 +2165,18 @@
             "sector:Health",
             "sector:Disaster%20Risk%20Reduction",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Forestry%2FGHG"
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/TropicalNights",
           "label": "Tropical Nights",
           "derivedFrom": [
@@ -1725,13 +2192,18 @@
             "sector:Health",
             "sector:Disaster%20Risk%20Reduction",
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Forestry%2FGHG"
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/TropicalNights",
           "label": "Tropical Nights",
           "derivedFrom": "cs:UK-CRI/indices/TropicalNights"
@@ -1740,14 +2212,19 @@
           "Definition": "Days with shade Wet Bulb Globe Temperature (WBGT) above 25",
           "Commentary": "This paper describes similar derivation of WBGT for climate projections: https://doi.org/10.1007/s00484-024-02776-5",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/HeatStress",
           "label": "Heat Stress",
           "derivedFrom": [
@@ -1762,14 +2239,19 @@
           "Definition": "Days with shade Wet Bulb Globe Temperature (WBGT) above 25",
           "Commentary": "This paper describes similar derivation of WBGT for climate projections: https://doi.org/10.1007/s00484-024-02776-5",
           "Sectors": [
-            "sector:Human%20Health",
+            "sector:Health",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Events%2Fyear",
-            "label": "Events/year"
+            "@id": "unit:events%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "events/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/HeatStress",
           "label": "Heat Stress",
           "derivedFrom": "cs:UK-CRI/indices/HeatStress"
@@ -1778,13 +2260,18 @@
           "Definition": "Average annual heating degree days: relative to 15.5°C and 18°C",
           "Sectors": [
             "sector:Energy",
-            "sector:Human%20Health"
+            "sector:Health"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C-days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C-days"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/HeatingDegreeDays",
           "label": "Heating Degree Days",
           "derivedFrom": [
@@ -1798,13 +2285,18 @@
           "Definition": "Average annual cooling degree days: relative to 18°C and 22°C",
           "Sectors": [
             "sector:Energy",
-            "sector:Human%20Health"
+            "sector:Health"
           ],
           "Unit": {
             "@id": "unit:%C2%B0C-days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C-days"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/CoolingDegreeDays",
           "label": "Cooling Degree Days",
           "derivedFrom": [
@@ -1817,13 +2309,18 @@
         {
           "Definition": "Days with Tmax above 25°C",
           "Sectors": [
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/RoadMeltRisk",
           "label": "Road Melt Risk",
           "derivedFrom": [
@@ -1836,13 +2333,18 @@
         {
           "Definition": "Days with Tmin below 0°C",
           "Sectors": [
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/RoadAccidentRisk",
           "label": "Road Accident Risk",
           "derivedFrom": [
@@ -1855,13 +2357,18 @@
         {
           "Definition": "Days with Tmax above thresholds (>21, 24, 26, 30°C)",
           "Sectors": [
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/Rail:HighTemperatures",
           "label": "Rail: High Temperatures",
           "derivedFrom": [
@@ -1871,13 +2378,18 @@
         {
           "Definition": "Days with temperature, rainfall and/or windspeed beyond thresholds (not defined)",
           "Sectors": [
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/Rail:BadWeatherDays",
           "label": "Rail: Bad Weather Days",
           "derivedFrom": [
@@ -1893,10 +2405,15 @@
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:Day%20of%20year%20%281%20%3D%20January%201st%29",
-            "label": "Day of year (1 = January 1st)"
+            "@id": "unit:day%20of%20year%20%281%20%3D%20January%201st%29",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "day of year (1 = January 1st)"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/StartOfCropGrowingSeason",
           "label": "Start of Crop Growing Season",
           "derivedFrom": [
@@ -1909,10 +2426,15 @@
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:Days",
-            "label": "Days"
+            "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/GrowingSeasonLength",
           "label": "Growing Season Length",
           "derivedFrom": [
@@ -1929,9 +2451,14 @@
           ],
           "Unit": {
             "@id": "unit:%C2%B0C-days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C-days"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/GrowingDegreeDays",
           "label": "Growing Degree Days",
           "derivedFrom": [
@@ -1947,10 +2474,15 @@
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:Days",
-            "label": "Days"
+            "@id": "unit:days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/CropGrowthDuration",
           "label": "Crop Growth Duration",
           "derivedFrom": [
@@ -1964,10 +2496,15 @@
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:Day%20of%20year%20%281%20%3D%20January%201st%29",
-            "label": "Day of year (1 = January 1st)"
+            "@id": "unit:day%20of%20year%20%281%20%3D%20January%201st%29",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "day of year (1 = January 1st)"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/StartOfFieldOperations(tsum200)",
           "label": "Start of Field Operations (Tsum200)",
           "derivedFrom": [
@@ -1981,9 +2518,14 @@
           ],
           "Unit": {
             "@id": "unit:%C2%B0C-days",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "°C-days"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/AccumulatedFrost",
           "label": "Accumulated Frost",
           "derivedFrom": [
@@ -1996,14 +2538,19 @@
             "sector:Agriculture%20and%20Food%20Security",
             "sector:Health",
             "sector:Cryosphere",
-            "sector:Forestry%2FGHG",
+            "sector:Forestry%2FGHGs",
             "sector:Disaster%20Risk%20Reduction"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/FrostDays",
           "label": "Frost Days",
           "derivedFrom": [
@@ -2019,10 +2566,15 @@
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/DairyCattleHeatStress",
           "label": "Dairy Cattle Heat Stress",
           "derivedFrom": [
@@ -2036,10 +2588,15 @@
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/WheatHeatStress",
           "label": "Wheat Heat Stress",
           "derivedFrom": [
@@ -2052,10 +2609,15 @@
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/WheatHeatStress",
           "label": "Wheat Heat Stress",
           "derivedFrom": "cs:UK-CRI/indices/WheatHeatStress"
@@ -2065,13 +2627,18 @@
           "Commentary": "Based on Hannaford et al. (2023): https://doi.org/10.5194/essd-15-2391-2023",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources"
+            "sector:Water%20Resources%20and%20Food%20Security"
           ],
           "Unit": {
             "@id": "unit:mm",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "mm"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/PotentialSoilMoistureDeficit",
           "label": "Potential Soil Moisture Deficit",
           "derivedFrom": [
@@ -2084,13 +2651,18 @@
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources"
+            "sector:Water%20Resources%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/DaysAboveFieldCapacity",
           "label": "Days Above Field Capacity",
           "derivedFrom": [
@@ -2101,13 +2673,18 @@
           "Definition": "Number of months with a Standardised Precipitation Index (calculated from 3-month accumulated rainfall) less than -1.5.",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources"
+            "sector:Water%20Resources%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:Proportion%20of%20time",
-            "label": "Proportion of time"
+            "@id": "unit:proportion%20of%20time",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "proportion of time"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/SpiDrought",
           "label": "SPI Drought",
           "derivedFrom": [
@@ -2119,13 +2696,18 @@
           "Definition": "Number of months with a Standardised Precipitation Evaporation Index (calculated from 6-month accumulated rainfall minus potential evaporation) less than -1.5.",
           "Sectors": [
             "sector:Agriculture%20and%20Food%20Security",
-            "sector:Water%20Resources"
+            "sector:Water%20Resources%20and%20Food%20Security"
           ],
           "Unit": {
-            "@id": "unit:Proportion%20of%20time",
-            "label": "Proportion of time"
+            "@id": "unit:proportion%20of%20time",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "proportion of time"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/SpeiDrought",
           "label": "SPEI Drought",
           "derivedFrom": [
@@ -2139,13 +2721,18 @@
           "Commentary": "Calculation based on Canadian Forest Fire Weather Index and described in detail in: Arnell et al. (2021) https://doi.org/10.1088/1748-9326/abd9f2",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Forestry%2FGHG"
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/MetOfficeFireDanger",
           "label": "Met Office Fire Danger",
           "derivedFrom": [
@@ -2164,13 +2751,18 @@
           "Commentary": "Calculation based on Canadian Forest Fire Weather Index and described in detail in: Arnell et al. (2021) https://doi.org/10.1088/1748-9326/abd9f2",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Forestry%2FGHG"
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/MetOfficeFireDanger",
           "label": "Met Office Fire Danger",
           "derivedFrom": "cs:UK-CRI/indices/MetOfficeFireDanger"
@@ -2180,13 +2772,18 @@
           "Commentary": "Described in detail in Arnell et al. (2021) https://doi.org/10.1088/1748-9326/abd9f3",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Forestry%2FGHG"
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/Wildfire:DailyHazardAssessment",
           "label": "Wildfire: Daily Hazard Assessment",
           "derivedFrom": [
@@ -2207,13 +2804,18 @@
           "Commentary": "Described in detail in Arnell et al. (2021) https://doi.org/10.1088/1748-9326/abd9f3",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Forestry%2FGHG"
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/Wildfire:DailyHazardAssessment",
           "label": "Wildfire: Daily Hazard Assessment",
           "derivedFrom": "cs:UK-CRI/indices/Wildfire:DailyHazardAssessment"
@@ -2222,13 +2824,18 @@
           "Definition": "Days with Fine Fuel Moisture Code component of MOFSI above the 99th percentile over the period 1981-2010, calculated by season. FFMC index represents the availability of dry ‘tinder’ material in and around the vegetation susceptible to ignition.",
           "Commentary": "Described in detail in Arnell et al. (2021) https://doi.org/10.1088/1748-9326/abd9f4",
           "Sectors": [
-            "sector:Forestry%2FGHG"
+            "sector:Forestry%2FGHGs"
           ],
           "Unit": {
-            "@id": "unit:Days%2Fyear",
-            "label": "Days/year"
+            "@id": "unit:days%2Fyear",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "days/year"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/Wildfire:Ffmc99thPercentile",
           "label": "Wildfire: FFMC 99th Percentile",
           "derivedFrom": [
@@ -2248,13 +2855,18 @@
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/RiverRunoff/change-relative/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/RiverRunoff",
           "label": "River Runoff (% change from 1981-2010)",
           "Unit": {
             "@id": "unit:%25",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "%"
           },
           "derivedFrom": [
@@ -2267,13 +2879,18 @@
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/RiverFlood(2-yearReturnPeriod)/change-relative/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/RiverFlood(2-yearReturnPeriod)",
           "label": "River Flood (2-Year Return Period) (% change from 1981-2010)",
           "Unit": {
             "@id": "unit:%25",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "%"
           },
           "derivedFrom": [
@@ -2289,13 +2906,18 @@
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/RiverFlood(5-yearReturnPeriod)/change-relative/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/RiverFlood(5-yearReturnPeriod)",
           "label": "River Flood (5-Year Return Period) (% change from 1981-2010)",
           "Unit": {
             "@id": "unit:%25",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "%"
           },
           "derivedFrom": [
@@ -2311,13 +2933,18 @@
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/RiverFlood(10-yearReturnPeriod)/change-relative/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/RiverFlood(10-yearReturnPeriod)",
           "label": "River Flood (10-Year Return Period) (% change from 1981-2010)",
           "Unit": {
             "@id": "unit:%25",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "%"
           },
           "derivedFrom": [
@@ -2333,9 +2960,10 @@
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
             "sector:Disaster%20Risk%20Reduction",
-            "sector:Transport"
+            "mohcsector:Transport"
           ],
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/RiverFlood(likelihoodOfCurrent10-yearEvent)",
           "label": "River Flood (Likelihood of Current 10-Year Event)",
           "derivedFrom": [
@@ -2351,14 +2979,19 @@
           "Definition": "Change in the 2-year lowest 7-day average river flow",
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Energy"
           ],
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/LowFlows(2-yearReturnPeriod)/change-relative/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/LowFlows(2-yearReturnPeriod)",
           "label": "Low Flows (2-Year Return Period) (% change from 1981-2010)",
           "Unit": {
             "@id": "unit:%25",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "%"
           },
           "derivedFrom": [
@@ -2370,14 +3003,19 @@
           "Definition": "Change in the 10-year lowest 7-day average river flow",
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Energy"
           ],
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/LowFlows(10-yearReturnPeriod)/change-relative/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/LowFlows(10-yearReturnPeriod)",
           "label": "Low Flows (10-Year Return Period) (% change from 1981-2010)",
           "Unit": {
             "@id": "unit:%25",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "%"
           },
           "derivedFrom": [
@@ -2389,10 +3027,11 @@
           "Definition": "Likelihood of 20-year low river flows",
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Energy"
           ],
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/LowFlows(likelihoodOfCurrent10-yearEvent)",
           "label": "Low Flows (Likelihood of Current 10-Year Event)",
           "derivedFrom": [
@@ -2404,14 +3043,19 @@
           "Definition": "Number of months with a Standardised Streamflow Index (calculated from 12-month accumulated river flow) less than -1.5.",
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Energy"
           ],
           "Unit": {
-            "@id": "unit:Proportion%20of%20time",
-            "label": "Proportion of time"
+            "@id": "unit:proportion%20of%20time",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "proportion of time"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/12-monthRiverDrought(extreme)",
           "label": "12-Month River Drought (Extreme)",
           "derivedFrom": [
@@ -2423,14 +3067,19 @@
           "Definition": "Number of months with a Standardised Streamflow Index (calculated from 12-month accumulated river flow) less than-2.0.",
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Energy"
           ],
           "Unit": {
-            "@id": "unit:Proportion%20of%20time",
-            "label": "Proportion of time"
+            "@id": "unit:proportion%20of%20time",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "proportion of time"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/12-monthRiverDrought(severe)",
           "label": "12-Month River Drought (Severe)",
           "derivedFrom": [
@@ -2442,14 +3091,19 @@
           "Definition": "Number of months with a Standardised Streamflow Index (calculated from 24-month accumulated river flow) less than -1.5.",
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Energy"
           ],
           "Unit": {
-            "@id": "unit:Proportion%20of%20time",
-            "label": "Proportion of time"
+            "@id": "unit:proportion%20of%20time",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "proportion of time"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/24-monthRiverDrought(extreme)",
           "label": "24-Month River Drought (Extreme)",
           "derivedFrom": [
@@ -2461,14 +3115,19 @@
           "Definition": "Number of months with a Standardised Streamflow Index (calculated from 24-month accumulated river flow) less than -2.0.",
           "Commentary": "Calculated using hydrological model",
           "Sectors": [
-            "sector:Water%20Resources",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Energy"
           ],
           "Unit": {
-            "@id": "unit:Proportion%20of%20time",
-            "label": "Proportion of time"
+            "@id": "unit:proportion%20of%20time",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
+            "label": "proportion of time"
           },
           "inScheme": "cs:UK-CRI",
+          "@type": "data:DependentVariable",
           "@id": "cs:UK-CRI/indices/24-monthRiverDrought(severe)",
           "label": "24-Month River Drought (Severe)",
           "derivedFrom": [
@@ -2480,15 +3139,20 @@
           "Definition": "Average seasonal soil moisture content",
           "Commentary": "Can be calculated by land surface model like in Szczykulska et al. (2024) https://doi.org/10.1088/1748-9326/ad7045",
           "Sectors": [
-            "sector:Forestry%2FGHG",
-            "sector:Water%20Resources",
+            "sector:Forestry%2FGHGs",
+            "sector:Water%20Resources%20and%20Food%20Security",
             "sector:Agriculture%20and%20Food%20Security"
           ],
           "inScheme": "cs:UK-CRI",
-          "@id": "cs:UK-CRI/indices/SoilMoisture/change-relative/1981-2010",
+          "@type": "data:DependentVariable",
+          "@id": "cs:UK-CRI/indices/SoilMoisture",
           "label": "Soil Moisture (% change from 1981-2010)",
           "Unit": {
             "@id": "unit:%25",
+            "@type": [
+              "top:UnitOfMeasure",
+              "data:DimensionalSpace"
+            ],
             "label": "%"
           },
           "derivedFrom": [

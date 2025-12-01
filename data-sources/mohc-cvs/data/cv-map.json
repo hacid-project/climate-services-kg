@@ -74,7 +74,9 @@
     "Climate simulations":  {
         "class": "ccso:ClimateSimulation"
     },
-    "Observation datasets": null,
+    "Observation datasets": {
+        "class": "data:Dataset"
+    },
     "Confidence level": {
         "scheme": {
             "id": "ConfidenceLevel",

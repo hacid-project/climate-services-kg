@@ -213,7 +213,7 @@
                     rr:predicate hrf:template ;
                     rr:objectMap [
                         rr:constant
-                            "cmip5.{driving_model}.{experiment}.{ensemble}"
+                            "https://w3id.org/hacid/data/cs/simulations/cmip5.{driving_model}.{experiment}.{ensemble}"
                     ]
                 ] 
             ]

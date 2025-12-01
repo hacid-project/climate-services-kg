@@ -12,7 +12,7 @@ INSERT {
             data:dependsOnVariable ?simulationTemporalGrid;
             data:isSpecializedAccordingTo ?simulationTemporalSpecialization.
         ?simulationTemporalGrid a data:DimensionalSpace;
-            data:basedOnDimensionalSpace dimension:time, time:gregorian;
+            data:basedOnDimensionalSpace time:gregorian;
             data:hasExactBoundingRegion ?simulationTemporalRegion;
             data:hasDiscretization ?simulationQuantization.
         ?simulationTemporalSpecialization a data:VariableSpecialization;

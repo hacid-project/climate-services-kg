@@ -22,6 +22,7 @@
       "label": "AUTH-MC-WRF371M",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/AUTH-MC",
+        "@type": "top:Organization",
         "acronym": "AUTH-MC",
         "label": "Aristotle University of Thessaloniki, Department of Meteorology & Climatology"
       }
@@ -32,6 +33,7 @@
       "label": "AWI-HIRHAM5",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/AWI",
+        "@type": "top:Organization",
         "acronym": "AWI",
         "label": "Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research"
       }
@@ -42,6 +44,7 @@
       "label": "BCCR-WRF331",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/BCCR",
+        "@type": "top:Organization",
         "acronym": "BCCR",
         "label": "Uni Research and the Bjerknes Centre for Climate Research"
       }
@@ -52,6 +55,7 @@
       "label": "BCCR-WRF331C",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/BCCR",
+        "@type": "top:Organization",
         "acronym": "BCCR",
         "label": "Uni Research and the Bjerknes Centre for Climate Research"
       }
@@ -62,6 +66,7 @@
       "label": "BCCR-WRF361",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/BCCR",
+        "@type": "top:Organization",
         "acronym": "BCCR",
         "label": "Uni Research and the Bjerknes Centre for Climate Research"
       }
@@ -72,6 +77,7 @@
       "label": "BOUN-RegCM4-3",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/BOUN",
+        "@type": "top:Organization",
         "acronym": "BOUN",
         "label": "Bogazici University, Turkey"
       }
@@ -82,6 +88,7 @@
       "label": "CCCma-CanRCM4",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CCCma",
+        "@type": "top:Organization",
         "acronym": "CCCma",
         "label": "CCCma (Canadian Centre for Climate Modelling and Analysis, Victoria, BC, Canada)"
       }
@@ -92,6 +99,7 @@
       "label": "CHMI-ALADIN53",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CHMI",
+        "@type": "top:Organization",
         "acronym": "CHMI",
         "label": "Czech Hydrometeorological Institute"
       }
@@ -102,6 +110,7 @@
       "label": "CLMcom-BTU-CCLM5-0-14",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-BTU",
+        "@type": "top:Organization",
         "acronym": "CLMcom-BTU",
         "label": "BTU, Cottbus, Germany,in collaboration with the CLM-Community"
       }
@@ -112,6 +121,7 @@
       "label": "CLMcom-CCLM4-8-17",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom",
+        "@type": "top:Organization",
         "acronym": "CLMcom",
         "label": "Climate Limited-area Modelling Community (CLM-Community)"
       }
@@ -122,6 +132,7 @@
       "label": "CLMcom-CCLM4-8-17-CLM3-5",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom",
+        "@type": "top:Organization",
         "acronym": "CLMcom",
         "label": "Climate Limited-area Modelling Community (CLM-Community)"
       }
@@ -132,6 +143,7 @@
       "label": "CLMcom-CCLM5-0-0",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom",
+        "@type": "top:Organization",
         "acronym": "CLMcom",
         "label": "Climate Limited-area Modelling Community (CLM-Community)"
       }
@@ -142,6 +154,7 @@
       "label": "CLMcom-CCLM5-0-2",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom",
+        "@type": "top:Organization",
         "acronym": "CLMcom",
         "label": "Climate Limited-area Modelling Community (CLM-Community)"
       }
@@ -152,6 +165,7 @@
       "label": "CLMcom-CCLM5-0-6",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom",
+        "@type": "top:Organization",
         "acronym": "CLMcom",
         "label": "Climate Limited-area Modelling Community (CLM-Community)"
       }
@@ -162,6 +176,7 @@
       "label": "CLMcom-CMCC-CCLM4-21-2",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-CMCC",
+        "@type": "top:Organization",
         "acronym": "CLMcom-CMCC",
         "label": "CMCC, REMHI division, Italy in collaboration with the CLM-Community"
       }
@@ -172,6 +187,7 @@
       "label": "CLMcom-CMCC-CCLM5-0-9",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-CMCC",
+        "@type": "top:Organization",
         "acronym": "CLMcom-CMCC",
         "label": "CMCC, REMHI division, Italy in collaboration with the CLM-Community"
       }
@@ -182,6 +198,7 @@
       "label": "CLMcom-DWD-CCLM5-0-15",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-DWD",
+        "@type": "top:Organization",
         "acronym": "CLMcom-DWD",
         "label": "DWD, Offenbach, Germany in collaboration with the CLM-Community"
       }
@@ -192,6 +209,7 @@
       "label": "CLMcom-ETH-COSMO-crCLIM-v1-1",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-ETH",
+        "@type": "top:Organization",
         "acronym": "CLMcom-ETH",
         "label": "ETH Zurich, Zurich, Switzerland in collaboration with the CLM-Community"
       }
@@ -202,6 +220,7 @@
       "label": "CLMcom-GUF-CCLM5-0-9",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-GUF",
+        "@type": "top:Organization",
         "acronym": "CLMcom-GUF",
         "label": "Institute for Atmospheric and Environmental Sciences, Goethe University Frankfurt"
       }
@@ -212,6 +231,7 @@
       "label": "CLMcom-GUF-CCLM5-0-9-NEMOMED12-3-6",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-GUF",
+        "@type": "top:Organization",
         "acronym": "CLMcom-GUF",
         "label": "Institute for Atmospheric and Environmental Sciences, Goethe University Frankfurt"
       }
@@ -222,6 +242,7 @@
       "label": "CLMcom-GUF-CCLM5-0-9-NEMOMED12-3-6-NEMONORDIC3-3",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-GUF",
+        "@type": "top:Organization",
         "acronym": "CLMcom-GUF",
         "label": "Institute for Atmospheric and Environmental Sciences, Goethe University Frankfurt"
       }
@@ -232,6 +253,7 @@
       "label": "CLMcom-HZG-CCLM5-0-15",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-HZG",
+        "@type": "top:Organization",
         "acronym": "CLMcom-HZG",
         "label": "HZG, Geesthacht, Germany in collaboration with the CLM-Community"
       }
@@ -242,6 +264,7 @@
       "label": "CLMcom-JLU-CCLM5-0-15",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-JLU",
+        "@type": "top:Organization",
         "acronym": "CLMcom-JLU",
         "label": "JLU, Giessen, Germany in collaboration with the CLM-Community"
       }
@@ -252,6 +275,7 @@
       "label": "CLMcom-KIT-CCLM5-0-10",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-KIT",
+        "@type": "top:Organization",
         "acronym": "CLMcom-KIT",
         "label": "KIT, Karlsruhe, Germany in collaboration with the CLM-Community"
       }
@@ -262,6 +286,7 @@
       "label": "CLMcom-KIT-CCLM5-0-14",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-KIT",
+        "@type": "top:Organization",
         "acronym": "CLMcom-KIT",
         "label": "KIT, Karlsruhe, Germany in collaboration with the CLM-Community"
       }
@@ -272,6 +297,7 @@
       "label": "CLMcom-KIT-CCLM5-0-15",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-KIT",
+        "@type": "top:Organization",
         "acronym": "CLMcom-KIT",
         "label": "KIT, Karlsruhe, Germany in collaboration with the CLM-Community"
       }
@@ -282,6 +308,7 @@
       "label": "CLMcom-KIT-CCLM5-0-9",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-KIT",
+        "@type": "top:Organization",
         "acronym": "CLMcom-KIT",
         "label": "KIT, Karlsruhe, Germany in collaboration with the CLM-Community"
       }
@@ -292,6 +319,7 @@
       "label": "CLMcom-WEGC-CCLM5-0-9",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-WEGC",
+        "@type": "top:Organization",
         "acronym": "CLMcom-WEGC",
         "label": "WEGC, Graz, Austria in collaboration with the CLM-Community"
       }
@@ -302,6 +330,7 @@
       "label": "CLMcom-ZAMG-CCLM5-0-14",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CLMcom-ZAMG",
+        "@type": "top:Organization",
         "acronym": "CLMcom-ZAMG",
         "label": "ZAMG, Vienna, Austria, in collaboration with the CLM-Community"
       }
@@ -312,6 +341,7 @@
       "label": "CMCC-REMHI",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CMCC",
+        "@type": "top:Organization",
         "acronym": "CMCC",
         "label": "Centro Euromediterraneo sui Cambiamenti Climatici"
       }
@@ -322,6 +352,7 @@
       "label": "CNRM-ALADIN52",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "@type": "top:Organization",
         "acronym": "CNRM",
         "label": "Météo-France / Centre National de Recherches Météorologiques"
       }
@@ -332,6 +363,7 @@
       "label": "CNRM-ALADIN53",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "@type": "top:Organization",
         "acronym": "CNRM",
         "label": "Météo-France / Centre National de Recherches Météorologiques"
       }
@@ -342,6 +374,7 @@
       "label": "CNRM-ALADIN63",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "@type": "top:Organization",
         "acronym": "CNRM",
         "label": "Météo-France / Centre National de Recherches Météorologiques"
       }
@@ -352,6 +385,7 @@
       "label": "CNRM-ALADIN64",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "@type": "top:Organization",
         "acronym": "CNRM",
         "label": "Météo-France / Centre National de Recherches Météorologiques"
       }
@@ -362,6 +396,7 @@
       "label": "CNRM-AROME41t1",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "@type": "top:Organization",
         "acronym": "CNRM",
         "label": "Météo-France / Centre National de Recherches Météorologiques"
       }
@@ -372,6 +407,7 @@
       "label": "CNRM-ARPEGE52",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "@type": "top:Organization",
         "acronym": "CNRM",
         "label": "Météo-France / Centre National de Recherches Météorologiques"
       }
@@ -382,6 +418,7 @@
       "label": "CNRM-RCSM4",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "@type": "top:Organization",
         "acronym": "CNRM",
         "label": "Météo-France / Centre National de Recherches Météorologiques"
       }
@@ -392,6 +429,7 @@
       "label": "CNRM-RCSM6",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CNRM",
+        "@type": "top:Organization",
         "acronym": "CNRM",
         "label": "Météo-France / Centre National de Recherches Météorologiques"
       }
@@ -402,6 +440,7 @@
       "label": "CRC-BGS-WRF381",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CRC-BGS",
+        "@type": "top:Organization",
         "acronym": "CRC-BGS",
         "label": "Centre de Recherches de Climatologie, Biogéoscience, Université de Bourgogne Franche-Comté"
       }
@@ -412,6 +451,7 @@
       "label": "CRP-GL-WRF331A",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CRP-GL",
+        "@type": "top:Organization",
         "acronym": "CRP-GL",
         "label": "Public Research Centre - Gabriel Lippmann, Luxembourg"
       }
@@ -422,6 +462,7 @@
       "label": "CSIRO-CCAM",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CSIRO",
+        "@type": "top:Organization",
         "acronym": "CSIRO",
         "label": "Commonwealth Scientific and Industrial Research Organisation"
       }
@@ -432,6 +473,7 @@
       "label": "CSIRO-CCAM-1704",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CSIRO",
+        "@type": "top:Organization",
         "acronym": "CSIRO",
         "label": "Commonwealth Scientific and Industrial Research Organisation"
       }
@@ -442,6 +484,7 @@
       "label": "CSIRO-CCAM-2008",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CSIRO",
+        "@type": "top:Organization",
         "acronym": "CSIRO",
         "label": "Commonwealth Scientific and Industrial Research Organisation"
       }
@@ -452,6 +495,7 @@
       "label": "CUNI-RegCM4-2",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/CUNI",
+        "@type": "top:Organization",
         "acronym": "CUNI",
         "label": "Charles University"
       }
@@ -462,6 +506,7 @@
       "label": "DHMZ-RegCM4-2",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/DHMZ",
+        "@type": "top:Organization",
         "acronym": "DHMZ",
         "label": "Meteorological and Hydrological Service of Croatia"
       }
@@ -472,6 +517,7 @@
       "label": "DMI-HIRHAM5",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/DMI",
+        "@type": "top:Organization",
         "acronym": "DMI",
         "label": "Danish Meteorological Institute"
       }
@@ -482,6 +528,7 @@
       "label": "ENEA-RegCM4-3",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/ENEA",
+        "@type": "top:Organization",
         "acronym": "ENEA",
         "label": "Italian National Agency for New Technologies, Energy and Sustainable Economic Development"
       }
@@ -492,6 +539,7 @@
       "label": "GERICS-AWI-REMO2009",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/GERICS-AWI",
+        "@type": "top:Organization",
         "acronym": "GERICS-AWI",
         "label": "Helmholtz-Zentrum Geesthacht, Climate Service Center Germany, Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research"
       }
@@ -502,6 +550,7 @@
       "label": "GERICS-AWI-ROM1.1",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/GERICS-AWI",
+        "@type": "top:Organization",
         "acronym": "GERICS-AWI",
         "label": "Helmholtz-Zentrum Geesthacht, Climate Service Center Germany, Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research"
       }
@@ -512,6 +561,7 @@
       "label": "GERICS-REMO2009",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/GERICS",
+        "@type": "top:Organization",
         "acronym": "GERICS",
         "label": "Helmholtz-Zentrum Geesthacht, Climate Service Center Germany"
       }
@@ -522,6 +572,7 @@
       "label": "GERICS-REMO2015",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/GERICS",
+        "@type": "top:Organization",
         "acronym": "GERICS",
         "label": "Climate Service Center Germany"
       }
@@ -532,6 +583,7 @@
       "label": "HMS-ALADIN52",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/HMS",
+        "@type": "top:Organization",
         "acronym": "HMS",
         "label": "Hungarian Meteorological Service"
       }
@@ -542,6 +594,7 @@
       "label": "ICTP-RegCM4-3",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/ICTP",
+        "@type": "top:Organization",
         "acronym": "ICTP",
         "label": "Abdus Salam International Centre for Theoretical Physics"
       }
@@ -552,6 +605,7 @@
       "label": "ICTP-RegCM4-4",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/ICTP",
+        "@type": "top:Organization",
         "acronym": "ICTP",
         "label": "Abdus Salam International Centre for Theoretical Physics"
       }
@@ -562,6 +616,7 @@
       "label": "ICTP-RegCM4-6",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/ICTP",
+        "@type": "top:Organization",
         "acronym": "ICTP",
         "label": "Abdus Salam International Centre for Theoretical Physics"
       }
@@ -572,6 +627,7 @@
       "label": "ICTP-RegCM4-7",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/ICTP",
+        "@type": "top:Organization",
         "acronym": "ICTP",
         "label": "Abdus Salam International Centre for Theoretical Physics"
       }
@@ -582,6 +638,7 @@
       "label": "IDL-WRF350D",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/IDL",
+        "@type": "top:Organization",
         "acronym": "IDL",
         "label": "Instituto Dom Luiz, University of Lisbon"
       }
@@ -592,6 +649,7 @@
       "label": "IITM-RegCM4-1",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/IITM",
+        "@type": "top:Organization",
         "acronym": "IITM",
         "label": "Indian Institute of Tropical Meteorology"
       }
@@ -602,6 +660,7 @@
       "label": "IITM-RegCM4-4",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/IITM",
+        "@type": "top:Organization",
         "acronym": "IITM",
         "label": "Centre for Climate Change Research. Indian Institute for Tropical Meteorology"
       }
@@ -612,6 +671,7 @@
       "label": "INPE-ETA",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/INPE",
+        "@type": "top:Organization",
         "acronym": "INPE",
         "label": "National Institute for Space Research, Brazil"
       }
@@ -622,6 +682,7 @@
       "label": "IPSL-INERIS-WRF331F",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/IPSL-INERIS",
+        "@type": "top:Organization",
         "acronym": "IPSL-INERIS",
         "label": "Institut Pierre-Simon Laplace"
       }
@@ -632,6 +693,7 @@
       "label": "IPSL-INERIS-WRF361F",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/IPSL-INERIS",
+        "@type": "top:Organization",
         "acronym": "IPSL-INERIS",
         "label": "Institut Pierre-Simon Laplace"
       }
@@ -642,6 +704,7 @@
       "label": "IPSL-WRF311",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/IPSL",
+        "@type": "top:Organization",
         "acronym": "IPSL",
         "label": "Institut Pierre-Simon Laplace"
       }
@@ -652,6 +715,7 @@
       "label": "IPSL-WRF311NEMO",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/IPSL",
+        "@type": "top:Organization",
         "acronym": "IPSL",
         "label": "Institut Pierre-Simon Laplace"
       }
@@ -662,6 +726,7 @@
       "label": "KNMI-RACMO21P",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/KNMI",
+        "@type": "top:Organization",
         "acronym": "KNMI",
         "label": "Royal Netherlands Meteorological Institute, De Bilt, The Netherlands"
       }
@@ -672,6 +737,7 @@
       "label": "KNMI-RACMO22E",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/KNMI",
+        "@type": "top:Organization",
         "acronym": "KNMI",
         "label": "Royal Netherlands Meteorological Institute, De Bilt, The Netherlands"
       }
@@ -682,6 +748,7 @@
       "label": "KNMI-RACMO22T",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/KNMI",
+        "@type": "top:Organization",
         "acronym": "KNMI",
         "label": "Royal Netherlands Meteorological Institute, De Bilt, The Netherlands"
       }
@@ -692,6 +759,7 @@
       "label": "KNU-RegCM4-0",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/KNU",
+        "@type": "top:Organization",
         "acronym": "KNU",
         "label": "Kongju National University, S. Korea"
       }
@@ -702,6 +770,7 @@
       "label": "MGO-RRCM",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/MGO",
+        "@type": "top:Organization",
         "acronym": "MGO",
         "label": "Main Geophysical Observatory, St. Petersburg"
       }
@@ -712,6 +781,7 @@
       "label": "MIUB-WRF331A",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/MIUB",
+        "@type": "top:Organization",
         "acronym": "MIUB",
         "label": "Meteorological Institute, Bonn University"
       }
@@ -722,6 +792,7 @@
       "label": "MOHC-HadGEM3-RA",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/MOHC",
+        "@type": "top:Organization",
         "acronym": "MOHC",
         "label": "Met Office Hadley Centre"
       }
@@ -732,6 +803,7 @@
       "label": "MOHC-HadREM3-GA7-05",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/MOHC",
+        "@type": "top:Organization",
         "acronym": "MOHC",
         "label": "Met Office Hadley Centre"
       }
@@ -742,6 +814,7 @@
       "label": "MOHC-HadRM3P",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/MOHC",
+        "@type": "top:Organization",
         "acronym": "MOHC",
         "label": "Met Office Hadley Centre"
       }
@@ -752,6 +825,7 @@
       "label": "MPI-CSC-REMO2009",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/MPI-CSC",
+        "@type": "top:Organization",
         "acronym": "MPI-CSC",
         "label": "Helmholtz-Zentrum Geesthacht, Climate Service Center, Max Planck Institute for Meteorology"
       }
@@ -762,6 +836,7 @@
       "label": "MU-WRF360M",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/MU",
+        "@type": "top:Organization",
         "acronym": "MU",
         "label": "Murdoch University"
       }
@@ -772,6 +847,7 @@
       "label": "NIMS-KMA-HadGEM3-RA",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/NIMS-KMA",
+        "@type": "top:Organization",
         "acronym": "NIMS-KMA",
         "label": "National Institute of Meteorological Sciences-Korea Meteorological Administration"
       }
@@ -782,6 +858,7 @@
       "label": "NUIM-WRF341E",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/NUIM",
+        "@type": "top:Organization",
         "acronym": "NUIM",
         "label": "National University of Ireland Maynooth"
       }
@@ -792,6 +869,7 @@
       "label": "OURANOS-CRCM5",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/OURANOS",
+        "@type": "top:Organization",
         "acronym": "OURANOS",
         "label": "Ouranos Consortium on climate change"
       }
@@ -802,6 +880,7 @@
       "label": "PNU-WRF370",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/PNU",
+        "@type": "top:Organization",
         "acronym": "PNU",
         "label": "Pusan National University, S. Korea"
       }
@@ -812,6 +891,7 @@
       "label": "POSTECH-CCLM5-0-9",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/POSTECH",
+        "@type": "top:Organization",
         "acronym": "POSTECH",
         "label": "Pohang University of Science and Technology, S. Korea"
       }
@@ -822,6 +902,7 @@
       "label": "RMIB-UGent-ALARO-0",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/RMIB-UGent",
+        "@type": "top:Organization",
         "acronym": "RMIB-UGent",
         "label": "Royal Meteorological Institute of Belgium and Ghent University"
       }
@@ -832,6 +913,7 @@
       "label": "SMHI-RCA4",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/SMHI",
+        "@type": "top:Organization",
         "acronym": "SMHI",
         "label": "Swedish Meteorological and Hydrological Institute, Rossby Centre"
       }
@@ -842,6 +924,7 @@
       "label": "SMHI-RCA4-SN",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/SMHI",
+        "@type": "top:Organization",
         "acronym": "SMHI",
         "label": "Swedish Meteorological and Hydrological Institute, Rossby Centre"
       }
@@ -852,6 +935,7 @@
       "label": "SMHI-RCAO",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/SMHI",
+        "@type": "top:Organization",
         "acronym": "SMHI",
         "label": "Swedish Meteorological and Hydrological Institute, Rossby Centre"
       }
@@ -862,6 +946,7 @@
       "label": "SMHI-RCAO-SN",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/SMHI",
+        "@type": "top:Organization",
         "acronym": "SMHI",
         "label": "Swedish Meteorological and Hydrological Institute, Rossby Centre"
       }
@@ -872,6 +957,7 @@
       "label": "UCAN-WRF331G",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UCAN",
+        "@type": "top:Organization",
         "acronym": "UCAN",
         "label": "University of Cantabria"
       }
@@ -882,6 +968,7 @@
       "label": "UCAN-WRF341I",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UCAN",
+        "@type": "top:Organization",
         "acronym": "UCAN",
         "label": "University of Cantabria"
       }
@@ -892,6 +979,7 @@
       "label": "UCLM-PROMES",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UCLM",
+        "@type": "top:Organization",
         "acronym": "UCLM",
         "label": "University of Castilla-La Mancha, Toledo, Spain"
       }
@@ -902,6 +990,7 @@
       "label": "UHOH-WRF361H",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UHOH",
+        "@type": "top:Organization",
         "acronym": "UHOH",
         "label": "University of Hohenheim"
       }
@@ -912,6 +1001,7 @@
       "label": "ULg-MAR36",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/ULg",
+        "@type": "top:Organization",
         "acronym": "ULg",
         "label": "Dpt. Of Geography, University of Liège, Belgium"
       }
@@ -922,6 +1012,7 @@
       "label": "UM-RegCM4-3",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UM",
+        "@type": "top:Organization",
         "acronym": "UM",
         "label": "University of Michigan"
       }
@@ -932,6 +1023,7 @@
       "label": "UM-WRF331",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UM",
+        "@type": "top:Organization",
         "acronym": "UM",
         "label": "Universidad de Murcia"
       }
@@ -942,6 +1034,7 @@
       "label": "UNIBELGRADE-EBU1",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UNIBELGRADE",
+        "@type": "top:Organization",
         "acronym": "UNIBELGRADE",
         "label": "University of Belgrade, South East European Virtual Climate Change Center and University of Novi Sad"
       }
@@ -952,6 +1045,7 @@
       "label": "UNIBELGRADE-EBUPOM2c1",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UNIBELGRADE",
+        "@type": "top:Organization",
         "acronym": "UNIBELGRADE",
         "label": "University of Belgrade, South East European Virtual Climate Change Center and University of Novi Sad"
       }
@@ -962,6 +1056,7 @@
       "label": "UNIST-SNURCM",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UNIST",
+        "@type": "top:Organization",
         "acronym": "UNIST",
         "label": "Ulsan National Institute of Science and Technology, S. Korea"
       }
@@ -972,6 +1067,7 @@
       "label": "UNSW-WRF360J",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UNSW",
+        "@type": "top:Organization",
         "acronym": "UNSW",
         "label": "University of New South Wales"
       }
@@ -982,6 +1078,7 @@
       "label": "UNSW-WRF360K",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UNSW",
+        "@type": "top:Organization",
         "acronym": "UNSW",
         "label": "University of New South Wales"
       }
@@ -992,6 +1089,7 @@
       "label": "UNSW-WRF360L",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UNSW",
+        "@type": "top:Organization",
         "acronym": "UNSW",
         "label": "University of New South Wales"
       }
@@ -1002,6 +1100,7 @@
       "label": "UQAM-CRCM5",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UQAM",
+        "@type": "top:Organization",
         "acronym": "UQAM",
         "label": "Universite du Quebec a Montreal"
       }
@@ -1012,6 +1111,7 @@
       "label": "UQAM-CRCM5-SN",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/UQAM",
+        "@type": "top:Organization",
         "acronym": "UQAM",
         "label": "Universite du Quebec a Montreal"
       }
@@ -1022,6 +1122,7 @@
       "label": "WEGC-WRF371O",
       "isMaintainedBy": {
         "@id": "https://w3id.org/hacid/data/cs/organizations/WEGC",
+        "@type": "top:Organization",
         "acronym": "WEGC",
         "label": "Wegener Center for Climate and Global Change, University of Graz"
       }
