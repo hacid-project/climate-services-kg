@@ -1,0 +1,19 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT *
+WHERE {
+  ?s ?p ?o.
+  FILTER NOT EXISTS {
+    ?o a []
+  }
+  FILTER(isIRI(?o)).
+  FILTER(!STRSTARTS(STR(?o),"http://www.w3.org/1999/02/22-rdf-syntax-ns#")).
+  FILTER(!STRSTARTS(STR(?o),"http://www.w3.org/2002/07/owl#")).
+  FILTER(!STRSTARTS(STR(?o),"http://www.w3.org/2000/01/rdf-schema#")).
+  FILTER(!STRSTARTS(STR(?o),"http://www.w3.org/2001/XMLSchema#")).
+}
+ORDER BY ?s ?p ?o
+LIMIT 100
+
