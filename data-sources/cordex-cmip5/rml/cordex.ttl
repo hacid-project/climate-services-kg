@@ -261,7 +261,7 @@
                     rr:predicate hrf:template ;
                     rr:objectMap [
                         rr:constant
-                            "cmip5.{domain}.{driving_model}.{experiment}.{model}.{model_version}"
+                            "cordex.{domain}.{driving_model}.{experiment}.{model}.{model_version}"
                     ]
                 ] 
             ]

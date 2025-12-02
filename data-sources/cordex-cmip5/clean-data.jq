@@ -66,6 +66,9 @@ def replace(pos; new_value):
     [.[0:pos].[], new_value, .[pos+1:].[]] |
     join(".");
 
+def fix_id($fixed_driving_models):
+    replace(4; $fixed_driving_models | join(";"));
+
 .response.docs = [
     .response.docs.[] |
 #    with_entries(
@@ -77,7 +80,10 @@ def replace(pos; new_value):
     [.driving_model.[] | get_model_id] as $fixed_driving_models |
     .driving_model_institution = [.driving_model.[] | get_institution_id] |
     .driving_model = $fixed_driving_models |
-    .id = (.id | replace(4; $fixed_driving_models | join(";")))
+    .id |= fix_id($fixed_driving_models) |
+    .instance_id |= fix_id($fixed_driving_models) |
+    .master_id |= fix_id($fixed_driving_models) |
+    .title |= fix_id($fixed_driving_models)
 ]
 
 
