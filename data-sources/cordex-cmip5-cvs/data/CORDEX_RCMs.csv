@@ -28,7 +28,7 @@ CLMcom-KIT-CCLM5-0-15,CLMcom-KIT,"KIT, Karlsruhe, Germany in collaboration with 
 CLMcom-KIT-CCLM5-0-9,CLMcom-KIT,"KIT, Karlsruhe, Germany in collaboration with the CLM-Community",unrestricted
 CLMcom-WEGC-CCLM5-0-9,CLMcom-WEGC,"WEGC, Graz, Austria in collaboration with the CLM-Community",unrestricted
 CLMcom-ZAMG-CCLM5-0-14,CLMcom-ZAMG,"ZAMG, Vienna, Austria, in collaboration with the CLM-Community",unrestricted
-CMCC-REMHI,CMCC,Centro Euromediterraneo sui Cambiamenti Climatici,non-commercial
+CMCC-REMHI,CMCC,Centro Euro-Mediterraneo per I Cambiamenti Climatici,non-commercial
 CNRM-ALADIN52,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
 CNRM-ALADIN53,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
 CNRM-ALADIN63,CNRM,Météo-France / Centre National de Recherches Météorologiques,unrestricted
@@ -49,7 +49,7 @@ ENEA-RegCM4-3,ENEA,"Italian National Agency for New Technologies, Energy and Sus
 GERICS-AWI-REMO2009,GERICS-AWI,"Helmholtz-Zentrum Geesthacht, Climate Service Center Germany, Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research",unrestricted
 GERICS-AWI-ROM1.1,GERICS-AWI,"Helmholtz-Zentrum Geesthacht, Climate Service Center Germany, Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research",unrestricted
 GERICS-REMO2009,GERICS,"Helmholtz-Zentrum Geesthacht, Climate Service Center Germany",unrestricted
-GERICS-REMO2015,GERICS,Climate Service Center Germany,unrestricted
+GERICS-REMO2015,GERICS,"Helmholtz-Zentrum Geesthacht, Climate Service Center Germany",unrestricted
 HMS-ALADIN52,HMS,Hungarian Meteorological Service,non-commercial
 ICTP-RegCM4-3,ICTP,Abdus Salam International Centre for Theoretical Physics,unrestricted
 ICTP-RegCM4-4,ICTP,Abdus Salam International Centre for Theoretical Physics,unrestricted
@@ -57,7 +57,7 @@ ICTP-RegCM4-6,ICTP,Abdus Salam International Centre for Theoretical Physics,unre
 ICTP-RegCM4-7,ICTP,Abdus Salam International Centre for Theoretical Physics,unrestricted
 IDL-WRF350D,IDL,"Instituto Dom Luiz, University of Lisbon",non-commercial
 IITM-RegCM4-1,IITM,Indian Institute of Tropical Meteorology,non-commercial
-IITM-RegCM4-4,IITM,Centre for Climate Change Research. Indian Institute for Tropical Meteorology,non-commercial
+IITM-RegCM4-4,IITM,Indian Institute of Tropical Meteorology,non-commercial
 INPE-ETA,INPE,"National Institute for Space Research, Brazil",unrestricted
 IPSL-INERIS-WRF331F,IPSL-INERIS,Institut Pierre-Simon Laplace,unrestricted
 IPSL-INERIS-WRF361F,IPSL-INERIS,Institut Pierre-Simon Laplace,unrestricted
@@ -89,7 +89,7 @@ UCAN-WRF341I,UCAN,University of Cantabria,unrestricted
 UCLM-PROMES,UCLM,"University of Castilla-La Mancha, Toledo, Spain",unrestricted
 UHOH-WRF361H,UHOH,University of Hohenheim,non-commercial
 ULg-MAR36,ULg,"Dpt. Of Geography, University of Liège, Belgium",unrestricted
-UM-RegCM4-3,UM,University of Michigan,unrestricted
+UM-RegCM4-3,UMICH,University of Michigan,unrestricted
 UM-WRF331,UM,Universidad de Murcia,unrestricted
 UNIBELGRADE-EBU1,UNIBELGRADE,"University of Belgrade, South East European Virtual Climate Change Center and University of Novi Sad",non-commercial
 UNIBELGRADE-EBUPOM2c1,UNIBELGRADE,"University of Belgrade, South East European Virtual Climate Change Center and University of Novi Sad",non-commercial

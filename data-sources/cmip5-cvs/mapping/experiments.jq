@@ -6,8 +6,9 @@
         label: "rdfs:label",
         comment: "rdfs:comment",
         acronym: "top:acronym",
-        isPartOf: {
-            "@id": "top:isPartOf",
+        experimentId: "ccso:experimentId",
+        isComponentOf: {
+            "@id": "top:isComponentOf",
             "@type": "@id"
         }
     },
@@ -23,6 +24,7 @@
                 "@id": @uri "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/\(.id)",
                 "@type": ["ccso:EnsembleSimulation", "ccso:GlobalClimateSimulation"],
                 acronym: .id,
+                experimentId: .id,
                 label: .description,
                 isComponentOf: "https://w3id.org/hacid/data/cs/mips/cmip5",
             }

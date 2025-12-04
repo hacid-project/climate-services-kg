@@ -343,7 +343,7 @@
         "@id": "https://w3id.org/hacid/data/cs/organizations/CMCC",
         "@type": "top:Organization",
         "acronym": "CMCC",
-        "label": "Centro Euromediterraneo sui Cambiamenti Climatici"
+        "label": "Centro Euro-Mediterraneo per I Cambiamenti Climatici"
       }
     },
     {
@@ -574,7 +574,7 @@
         "@id": "https://w3id.org/hacid/data/cs/organizations/GERICS",
         "@type": "top:Organization",
         "acronym": "GERICS",
-        "label": "Climate Service Center Germany"
+        "label": "Helmholtz-Zentrum Geesthacht, Climate Service Center Germany"
       }
     },
     {
@@ -662,7 +662,7 @@
         "@id": "https://w3id.org/hacid/data/cs/organizations/IITM",
         "@type": "top:Organization",
         "acronym": "IITM",
-        "label": "Centre for Climate Change Research. Indian Institute for Tropical Meteorology"
+        "label": "Indian Institute of Tropical Meteorology"
       }
     },
     {
@@ -1011,9 +1011,9 @@
       "@type": "ccso:RegionalClimateModel",
       "label": "UM-RegCM4-3",
       "isMaintainedBy": {
-        "@id": "https://w3id.org/hacid/data/cs/organizations/UM",
+        "@id": "https://w3id.org/hacid/data/cs/organizations/UMICH",
         "@type": "top:Organization",
-        "acronym": "UM",
+        "acronym": "UMICH",
         "label": "University of Michigan"
       }
     },

@@ -126,6 +126,18 @@
     ] ;
 
     rr:predicateObjectMap [
+        rr:predicate ccso:outputId;
+        rr:objectMap [
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [rr:constant "{product}"]
+                ] 
+            ]
+        ]
+    ] ;
+
+   rr:predicateObjectMap [
         rr:predicate rdfs:comment ;
         rr:objectMap [
             rr:language "en" ;
@@ -221,6 +233,18 @@
                         rr:constant
                             "cmip5.{model}.{experiment}.{ensemble}"
                     ]
+                ] 
+            ]
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
+        rr:predicate ccso:simulationConfigurationId;
+        rr:objectMap [
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:object "{ensemble}"
                 ] 
             ]
         ]
@@ -507,25 +531,48 @@
 
     rr:predicateObjectMap [
 	    rr:predicate ccso:isMaintainedBy ;
-	    rr:objectMap [
-            rr:termType rr:IRI ;
-            rr:class top:Organization ;
-            fnml:functionValue [
-                rr:predicateObjectMap [
-                    rr:predicate fno:executes ;
-                    rr:objectMap [ rr:constant hrf:fromList ]
-                ] ;
-                rr:predicateObjectMap [
-                    rr:predicate hrf:arr ;
-                    rr:objectMap [ rml:reference "institute" ]
-                ] ;
-                rr:predicateObjectMap [
-                    rr:predicate hrf:ns ;
-                    rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/organizations/" ]
-                ] 
-            ]
-        ]
+	    rr:objectMap :InstituteIRI
     ] .
+
+:InstituteIRI
+    rr:termType rr:IRI ;
+    rr:class top:Organization ;
+    fnml:functionValue [
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ rr:constant hrf:fromList ]
+        ] ;
+        rr:predicateObjectMap [
+            rr:predicate hrf:arr ;
+            rr:objectMap [ rml:reference "institute" ]
+        ] ;
+        rr:predicateObjectMap [
+            rr:predicate hrf:ns ;
+            rr:objectMap [ rr:constant "https://w3id.org/hacid/data/cs/organizations/" ]
+        ] 
+    ].
+
+:InstituteMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+
+    rr:subjectMap :InstituteIRI ;
+
+    rr:predicateObjectMap [
+        rr:predicate top:acronym ;
+        rr:objectMap :InstituteAcronym
+    ] .
+
+:InstituteAcronym
+    fnml:functionValue [
+        rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ rr:constant hrf:eval ]
+        ] ;
+        rr:predicateObjectMap [
+            rr:predicate hrf:str ;
+            rr:objectMap [ rml:reference "institute" ]
+        ] 
+    ].
 
 :FormatTemporalGridCall
     rr:predicate fno:executes ;

@@ -148,6 +148,18 @@
     ] ;
 
     rr:predicateObjectMap [
+        rr:predicate ccso:outputId;
+        rr:objectMap [
+            fnml:functionValue [
+                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+                    rr:predicate hrf:template ;
+                    rr:objectMap [rr:constant "{product}"]
+                ] 
+            ]
+        ]
+    ] ;
+
+    rr:predicateObjectMap [
         rr:predicate data:holdsSpecializationOfVariable;
         rr:objectMap :VariableIRI
     ] ;
@@ -508,11 +520,6 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate top:isComponentOf ;
-        rr:object <https://w3id.org/hacid/data/cs/mips/cordex-cmip5>
-    ] ;
-
-    rr:predicateObjectMap [
         rr:predicate ccso:hasMemberSimulation ;
         rr:objectMap :SimulationIRI
     ] ;
@@ -704,13 +711,13 @@
 	rr:subjectMap :ModelIRI ;
 
       rr:predicateObjectMap [
-	  rr:predicate rdfs:label ;
-	  rr:objectMap :ModelLabel
+        rr:predicate rdfs:label ;
+        rr:objectMap :ModelLabel
       ] ;
 
       rr:predicateObjectMap [
-	  rr:predicate ccso:isMaintainedBy ;
-	  rr:objectMap :InstituteIRI
+        rr:predicate ccso:isMaintainedBy ;
+        rr:objectMap :InstituteIRI
       ] .
 
 :InstituteMapping a rr:TriplesMap ;
@@ -719,8 +726,8 @@
     rr:subjectMap :InstituteIRI ;
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:label ;
-        rr:objectMap :InstituteLabel
+        rr:predicate top:acronym ;
+        rr:objectMap :InstituteAcronym
     ] .
 
 :FormatTemporalGridCall
@@ -1045,7 +1052,7 @@
         ] 
     ].
 
-:InstituteLabel
+:InstituteAcronym
     fnml:functionValue [
         rr:predicateObjectMap [
             rr:predicate fno:executes ;

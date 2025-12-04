@@ -6,8 +6,9 @@
     "label": "rdfs:label",
     "comment": "rdfs:comment",
     "acronym": "top:acronym",
-    "isPartOf": {
-      "@id": "top:isPartOf",
+    "experimentId": "ccso:experimentId",
+    "isComponentOf": {
+      "@id": "top:isComponentOf",
       "@type": "@id"
     }
   },
@@ -25,8 +26,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "1pctCO2",
+      "experimentId": "1pctCO2",
       "label": "1 percent per year CO2",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/abrupt4xCO2",
@@ -35,8 +37,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "abrupt4xCO2",
+      "experimentId": "abrupt4xCO2",
       "label": "abrupt 4XCO2",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/amip",
@@ -45,8 +48,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "amip",
+      "experimentId": "amip",
       "label": "AMIP",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/amip4K",
@@ -55,8 +59,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "amip4K",
+      "experimentId": "amip4K",
       "label": "AMIP plus 4K anomaly",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/amip4xCO2",
@@ -65,8 +70,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "amip4xCO2",
+      "experimentId": "amip4xCO2",
       "label": "4xCO2 AMIP",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/amipFuture",
@@ -75,8 +81,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "amipFuture",
+      "experimentId": "amipFuture",
       "label": "AMIP plus patterned anomaly",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/aqua4K",
@@ -85,8 +92,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "aqua4K",
+      "experimentId": "aqua4K",
       "label": "aqua planet plus 4K anomaly",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/aqua4xCO2",
@@ -95,8 +103,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "aqua4xCO2",
+      "experimentId": "aqua4xCO2",
       "label": "4xCO2 aqua planet",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/aquaControl",
@@ -105,8 +114,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "aquaControl",
+      "experimentId": "aquaControl",
       "label": "aqua planet control",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1960",
@@ -115,8 +125,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1960",
+      "experimentId": "decadal1960",
       "label": "10- or 30-year run initialized in year 1960",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1961",
@@ -125,8 +136,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1961",
+      "experimentId": "decadal1961",
       "label": "10- or 30-year run initialized in year 1961",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1962",
@@ -135,8 +147,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1962",
+      "experimentId": "decadal1962",
       "label": "10- or 30-year run initialized in year 1962",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1963",
@@ -145,8 +158,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1963",
+      "experimentId": "decadal1963",
       "label": "10- or 30-year run initialized in year 1963",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1964",
@@ -155,8 +169,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1964",
+      "experimentId": "decadal1964",
       "label": "10- or 30-year run initialized in year 1964",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1965",
@@ -165,8 +180,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1965",
+      "experimentId": "decadal1965",
       "label": "10- or 30-year run initialized in year 1965",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1966",
@@ -175,8 +191,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1966",
+      "experimentId": "decadal1966",
       "label": "10- or 30-year run initialized in year 1966",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1967",
@@ -185,8 +202,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1967",
+      "experimentId": "decadal1967",
       "label": "10- or 30-year run initialized in year 1967",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1968",
@@ -195,8 +213,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1968",
+      "experimentId": "decadal1968",
       "label": "10- or 30-year run initialized in year 1968",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1969",
@@ -205,8 +224,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1969",
+      "experimentId": "decadal1969",
       "label": "10- or 30-year run initialized in year 1969",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1970",
@@ -215,8 +235,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1970",
+      "experimentId": "decadal1970",
       "label": "10- or 30-year run initialized in year 1970",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1971",
@@ -225,8 +246,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1971",
+      "experimentId": "decadal1971",
       "label": "10- or 30-year run initialized in year 1971",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1972",
@@ -235,8 +257,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1972",
+      "experimentId": "decadal1972",
       "label": "10- or 30-year run initialized in year 1972",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1973",
@@ -245,8 +268,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1973",
+      "experimentId": "decadal1973",
       "label": "10- or 30-year run initialized in year 1973",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1974",
@@ -255,8 +279,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1974",
+      "experimentId": "decadal1974",
       "label": "10- or 30-year run initialized in year 1974",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1975",
@@ -265,8 +290,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1975",
+      "experimentId": "decadal1975",
       "label": "10- or 30-year run initialized in year 1975",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1976",
@@ -275,8 +301,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1976",
+      "experimentId": "decadal1976",
       "label": "10- or 30-year run initialized in year 1976",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1977",
@@ -285,8 +312,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1977",
+      "experimentId": "decadal1977",
       "label": "10- or 30-year run initialized in year 1977",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1978",
@@ -295,8 +323,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1978",
+      "experimentId": "decadal1978",
       "label": "10- or 30-year run initialized in year 1978",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1979",
@@ -305,8 +334,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1979",
+      "experimentId": "decadal1979",
       "label": "10- or 30-year run initialized in year 1979",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1980",
@@ -315,8 +345,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1980",
+      "experimentId": "decadal1980",
       "label": "10- or 30-year run initialized in year 1980",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1981",
@@ -325,8 +356,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1981",
+      "experimentId": "decadal1981",
       "label": "10- or 30-year run initialized in year 1981",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1982",
@@ -335,8 +367,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1982",
+      "experimentId": "decadal1982",
       "label": "10- or 30-year run initialized in year 1982",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1983",
@@ -345,8 +378,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1983",
+      "experimentId": "decadal1983",
       "label": "10- or 30-year run initialized in year 1983",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1984",
@@ -355,8 +389,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1984",
+      "experimentId": "decadal1984",
       "label": "10- or 30-year run initialized in year 1984",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1985",
@@ -365,8 +400,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1985",
+      "experimentId": "decadal1985",
       "label": "10- or 30-year run initialized in year 1985",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1986",
@@ -375,8 +411,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1986",
+      "experimentId": "decadal1986",
       "label": "10- or 30-year run initialized in year 1986",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1987",
@@ -385,8 +422,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1987",
+      "experimentId": "decadal1987",
       "label": "10- or 30-year run initialized in year 1987",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1988",
@@ -395,8 +433,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1988",
+      "experimentId": "decadal1988",
       "label": "10- or 30-year run initialized in year 1988",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1989",
@@ -405,8 +444,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1989",
+      "experimentId": "decadal1989",
       "label": "10- or 30-year run initialized in year 1989",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1990",
@@ -415,8 +455,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1990",
+      "experimentId": "decadal1990",
       "label": "10- or 30-year run initialized in year 1990",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1991",
@@ -425,8 +466,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1991",
+      "experimentId": "decadal1991",
       "label": "10- or 30-year run initialized in year 1991",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1992",
@@ -435,8 +477,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1992",
+      "experimentId": "decadal1992",
       "label": "10- or 30-year run initialized in year 1992",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1993",
@@ -445,8 +488,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1993",
+      "experimentId": "decadal1993",
       "label": "10- or 30-year run initialized in year 1993",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1994",
@@ -455,8 +499,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1994",
+      "experimentId": "decadal1994",
       "label": "10- or 30-year run initialized in year 1994",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1995",
@@ -465,8 +510,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1995",
+      "experimentId": "decadal1995",
       "label": "10- or 30-year run initialized in year 1995",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1996",
@@ -475,8 +521,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1996",
+      "experimentId": "decadal1996",
       "label": "10- or 30-year run initialized in year 1996",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1997",
@@ -485,8 +532,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1997",
+      "experimentId": "decadal1997",
       "label": "10- or 30-year run initialized in year 1997",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1998",
@@ -495,8 +543,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1998",
+      "experimentId": "decadal1998",
       "label": "10- or 30-year run initialized in year 1998",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1999",
@@ -505,8 +554,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal1999",
+      "experimentId": "decadal1999",
       "label": "10- or 30-year run initialized in year 1999",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2000",
@@ -515,8 +565,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2000",
+      "experimentId": "decadal2000",
       "label": "10- or 30-year run initialized in year 2000",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2001",
@@ -525,8 +576,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2001",
+      "experimentId": "decadal2001",
       "label": "10- or 30-year run initialized in year 2001",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2002",
@@ -535,8 +587,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2002",
+      "experimentId": "decadal2002",
       "label": "10- or 30-year run initialized in year 2002",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2003",
@@ -545,8 +598,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2003",
+      "experimentId": "decadal2003",
       "label": "10- or 30-year run initialized in year 2003",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2004",
@@ -555,8 +609,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2004",
+      "experimentId": "decadal2004",
       "label": "10- or 30-year run initialized in year 2004",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2005",
@@ -565,8 +620,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2005",
+      "experimentId": "decadal2005",
       "label": "10- or 30-year run initialized in year 2005",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2006",
@@ -575,8 +631,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2006",
+      "experimentId": "decadal2006",
       "label": "10- or 30-year run initialized in year 2006",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2007",
@@ -585,8 +642,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2007",
+      "experimentId": "decadal2007",
       "label": "10- or 30-year run initialized in year 2007",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2008",
@@ -595,8 +653,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2008",
+      "experimentId": "decadal2008",
       "label": "10- or 30-year run initialized in year 2008",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2009",
@@ -605,8 +664,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2009",
+      "experimentId": "decadal2009",
       "label": "10- or 30-year run initialized in year 2009",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2010",
@@ -615,8 +675,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2010",
+      "experimentId": "decadal2010",
       "label": "10- or 30-year run initialized in year 2010",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2011",
@@ -625,8 +686,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2011",
+      "experimentId": "decadal2011",
       "label": "10- or 30-year run initialized in year 2011",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2012",
@@ -635,8 +697,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "decadal2012",
+      "experimentId": "decadal2012",
       "label": "10- or 30-year run initialized in year 2012",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmControl",
@@ -645,8 +708,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "esmControl",
+      "experimentId": "esmControl",
       "label": "ESM pre-industrial control",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmFdbk1",
@@ -655,8 +719,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "esmFdbk1",
+      "experimentId": "esmFdbk1",
       "label": "ESM feedback 1",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmFdbk2",
@@ -665,8 +730,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "esmFdbk2",
+      "experimentId": "esmFdbk2",
       "label": "ESM feedback 2",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmFixClim1",
@@ -675,8 +741,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "esmFixClim1",
+      "experimentId": "esmFixClim1",
       "label": "ESM fixed climate 1",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmFixClim2",
@@ -685,8 +752,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "esmFixClim2",
+      "experimentId": "esmFixClim2",
       "label": "ESM fixed climate 2",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmHistorical",
@@ -695,8 +763,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "esmHistorical",
+      "experimentId": "esmHistorical",
       "label": "ESM historical",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmrcp85",
@@ -705,8 +774,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "esmrcp85",
+      "experimentId": "esmrcp85",
       "label": "ESM RCP8.5",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/historical",
@@ -715,8 +785,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "historical",
+      "experimentId": "historical",
       "label": "historical",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/historicalExt",
@@ -725,8 +796,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "historicalExt",
+      "experimentId": "historicalExt",
       "label": "historical simulation extended through year 2012",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/historicalGHG",
@@ -735,8 +807,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "historicalGHG",
+      "experimentId": "historicalGHG",
       "label": "historical, well-mixed greenhouse gases only",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/historicalMisc",
@@ -745,8 +818,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "historicalMisc",
+      "experimentId": "historicalMisc",
       "label": "historical simulation but with other individual forcing agents or combinations of forcings",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/historicalNat",
@@ -755,8 +829,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "historicalNat",
+      "experimentId": "historicalNat",
       "label": "historical, natural forcing only",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/lgm",
@@ -765,8 +840,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "lgm",
+      "experimentId": "lgm",
       "label": "last glacial maximum",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/midHolocene",
@@ -775,8 +851,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "midHolocene",
+      "experimentId": "midHolocene",
       "label": "mid-Holocene",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/noVolc1960",
@@ -785,8 +862,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "noVolc1960",
+      "experimentId": "noVolc1960",
       "label": "volcano-free hindcasts initiated in 1960",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/noVolc1975",
@@ -795,8 +873,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "noVolc1975",
+      "experimentId": "noVolc1975",
       "label": "volcano-free hindcasts initiated in 1975",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/noVolc1980",
@@ -805,8 +884,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "noVolc1980",
+      "experimentId": "noVolc1980",
       "label": "volcano-free hindcasts initiated in 1980",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/noVolc1985",
@@ -815,8 +895,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "noVolc1985",
+      "experimentId": "noVolc1985",
       "label": "volcano-free hindcasts initiated in 1985",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/noVolc1990",
@@ -825,8 +906,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "noVolc1990",
+      "experimentId": "noVolc1990",
       "label": "volcano-free hindcasts initiated in 1990",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/past1000",
@@ -835,8 +917,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "past1000",
+      "experimentId": "past1000",
       "label": "last millennium",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/piControl",
@@ -845,8 +928,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "piControl",
+      "experimentId": "piControl",
       "label": "pre-industrial control",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/rcp26",
@@ -855,8 +939,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "rcp26",
+      "experimentId": "rcp26",
       "label": "RCP2.6",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/rcp45",
@@ -865,8 +950,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "rcp45",
+      "experimentId": "rcp45",
       "label": "RCP4.5",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/rcp60",
@@ -875,8 +961,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "rcp60",
+      "experimentId": "rcp60",
       "label": "RCP6",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/rcp85",
@@ -885,8 +972,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "rcp85",
+      "experimentId": "rcp85",
       "label": "RCP8.5",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/sst2030",
@@ -895,8 +983,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "sst2030",
+      "experimentId": "sst2030",
       "label": "2030 time-slice",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/sstClim",
@@ -905,8 +994,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "sstClim",
+      "experimentId": "sstClim",
       "label": "control SST climatology",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/sstClim4xCO2",
@@ -915,8 +1005,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "sstClim4xCO2",
+      "experimentId": "sstClim4xCO2",
       "label": "CO2 forcing",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/sstClimAerosol",
@@ -925,8 +1016,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "sstClimAerosol",
+      "experimentId": "sstClimAerosol",
       "label": "all aerosol forcing",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/sstClimSulfate",
@@ -935,8 +1027,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "sstClimSulfate",
+      "experimentId": "sstClimSulfate",
       "label": "sulfate aerosol forcing",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/volcIn2010",
@@ -945,8 +1038,9 @@
         "ccso:GlobalClimateSimulation"
       ],
       "acronym": "volcIn2010",
+      "experimentId": "volcIn2010",
       "label": "prediction with 2010 volcano",
-      "isPartOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
     }
   ]
 }

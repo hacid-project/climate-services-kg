@@ -1344,14 +1344,12 @@
 
 <https://w3id.org/hacid/data/cs/cordex/domains/EUR> a ns2:Concept ;
     rdfs:label "CORDEX:EUR"@en ;
-    rdfs:comment "CORDEX geographic domain for Europe (EUR)."@en,
-        "CORDEX geographic domain for Europe high res. (EUR)."@en ;
+    rdfs:comment "CORDEX geographic domain for Europe (EUR)."@en ;
     ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
 <https://w3id.org/hacid/data/cs/cordex/domains/MNA> a ns2:Concept ;
     rdfs:label "CORDEX:MNA"@en ;
-    rdfs:comment "CORDEX geographic domain for Middle East and North Africa  high res. (MNA)."@en,
-        "CORDEX geographic domain for Middle East and North Africa (MNA)."@en ;
+    rdfs:comment "CORDEX geographic domain for Middle East and North Africa (MNA)."@en ;
     ns2:isMemberOf <https://w3id.org/hacid/data/cs/cordex/domains> .
 
 <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/rotated-WGS84/-103.39,43.48> a ns1:Continuum ;
