@@ -1,67 +1,56 @@
+PREFIX to: <http://purl.obolibrary.org/obo/TO_>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
 PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX mips: <https://w3id.org/hacid/data/cs/mips/>
 
-INSERT  { ?s rdfs:comment ?comment. }
+INSERT  { ?gcm_simulation rdfs:comment ?gcm_simulation_descr }
 WHERE {
-  # Any single GCM simulation
-  ?s a ccso:GlobalClimateSimulation, ccso:SingleSimulation ;
-     rdfs:label ?label .
+    SELECT
+        ?gcm_simulation
+        (
+            CONCAT(
+                "GCM simulation from CMIP5. ",
+                "Experiment: ", ?experiment_label, ". ",
+                ?gcm_descr,
+                "Ensemble member: ",
+                ?gcm_simulation_member_id,
+                "."
+            ) AS ?gcm_simulation_descr
+        )
+    WHERE {
+        {
+            SELECT
+                ?experiment
+                ?gcm_simulation
+                (
+                    CONCAT(
+                        "The GCM used is ", ?gcm_label,
+                        " (",
+                        GROUP_CONCAT(COALESCE(?gcm_inst_label, ?gcm_inst_code); SEPARATOR="; ") ,
+                        "). "
+                    ) AS ?gcm_descr
+                )
+            WHERE {
+                ?experiment top:isComponentOf mips:cmip5;
+                    ccso:hasMemberSimulation ?gcm_simulation.
+                ?gcm_simulation a ccso:GlobalClimateSimulation, ccso:SingleSimulation ;
+                    ccso:usesModel ?gcm.
+                ?gcm rdfs:label ?gcm_label;
+                    ccso:isMaintainedBy ?gcm_inst .
+                ?gcm_inst top:acronym ?gcm_inst_code .
+                OPTIONAL {
+                    ?gcm_inst rdfs:label ?gcm_inst_label .
+                }
 
-  FILTER(STRSTARTS(LCASE(STR(?label)), "cmip5."))
-  FILTER NOT EXISTS { ?s rdfs:comment ?_already }
+                FILTER NOT EXISTS { ?gcm_simulation rdfs:comment ?_already }
+            }
+            GROUP BY ?experiment ?gcm_simulation ?gcm_label
+        }
 
-  # --- parse cmip5.<gcmCode>.<scenCode>.<rip> from the label ---
+        ?experiment rdfs:label ?experiment_label.
 
-  BIND(STR(?label) AS ?L)
-  BIND(STRAFTER(?L, "cmip5.") AS ?rest1)
-  BIND(STRBEFORE(?rest1, ".") AS ?gcmCode)
-  BIND(STRAFTER(?rest1, CONCAT(?gcmCode, ".")) AS ?rest2)
-  BIND(STRBEFORE(?rest2, ".") AS ?scenCode)
-  BIND(STRAFTER(?rest2, CONCAT(?scenCode, ".")) AS ?rip)
-
-  # scenario label (RCP names)
-  BIND(LCASE(STR(?scenCode)) AS ?scenLower)
-  BIND(
-    IF(?scenLower = "rcp26", "RCP2.6",
-    IF(?scenLower = "rcp45", "RCP4.5",
-    IF(?scenLower = "rcp60", "RCP6.0",
-    IF(?scenLower = "rcp85", "RCP8.5",
-       STR(?scenCode))))) AS ?scenarioName
-  )
-
-  # --- OPTIONAL model + institution from the KG ---
-
-  OPTIONAL {
-    ?s ccso:usesModel ?gcmRes .
-
-    OPTIONAL {
-      ?gcmRes rdf:type ?gcmType .
-      ?gcmType rdfs:subClassOf* ccso:ClimateModel .
+        ?gcm_simulation ccso:simulationConfigurationId ?gcm_simulation_member_id.
     }
-
-    OPTIONAL { ?gcmRes rdfs:label ?gcmLabel . }
-
-    OPTIONAL {
-      ?gcmRes ccso:isMaintainedBy ?inst .
-      OPTIONAL { ?inst rdfs:label ?instLabel . }
-    }
-  }
-
-  # --- build comment even if some bits are missing ---
-
-  BIND(
-    CONCAT(
-      "GCM simulation from CMIP5. ",
-      "Scenario: ", COALESCE(?scenarioName, "unknown"), ". ",
-      "The GCM used is ",
-         COALESCE(STR(?gcmLabel), STR(?gcmCode), "unknown"),
-      IF(BOUND(?instLabel),
-         CONCAT(" (", STR(?instLabel), ")"),
-         ""),
-      ". Ensemble member: ",
-         COALESCE(STR(?rip), "unknown"),
-      "."
-    ) AS ?comment
-  )
 }

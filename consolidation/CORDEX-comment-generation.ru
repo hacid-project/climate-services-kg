@@ -1,249 +1,118 @@
-PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
+PREFIX mips: <https://w3id.org/hacid/data/cs/mips/>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX dimension: <https://w3id.org/hacid/data/cs/dimensions/>
+PREFIX georeference: <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/>
 
-INSERT  { ?s rdfs:comment ?comment. }
+INSERT  { ?rcm_simulation rdfs:comment ?rcm_simulation_descr }
 WHERE {
-  # Any CORDEX simulation (Simulation or subclass) without a comment
-  ?s a ccso:DynamicalDownscaling, ccso:SingleSimulation ; ;
-     rdfs:label ?label .
+    SELECT
+        ?rcm_simulation
+        (
+            CONCAT(
+                "RCM simulation from CORDEX, ",
+                "covering the ", ?cordex_domain_descr,
+                IF(BOUND(?geodetic_resolution),
+                    CONCAT(
+                        " Resolution: ", STR(?geodetic_resolution), " degrees",
+                        " or ~", STR(?geodetic_resolution_km), " km",
+                        IF(?geodetic_reference_frame = georeference:WGS84, " (regular grid)", ""),
+                    "."
+                    ),
+                    ""
+                ),
+                " Experiment: ", ?experiment_label, ". ",
+                ?gcm_descr,
+                ?rcm_descr,
+                "Ensemble member: ", ?gcm_simulation_member_id, "."
+            ) AS ?rcm_simulation_descr
+        )
+    WHERE {
+        {
+            SELECT
+                ?rcm_simulation ?rcm_descr
+                ?gcm_simulation
+                (
+                    CONCAT(
+                        "The GCM used is ", ?gcm_label,
+                        " (",
+                        GROUP_CONCAT(COALESCE(?gcm_inst_label, ?gcm_inst_code); SEPARATOR="; ") ,
+                        "). "
+                    ) AS ?gcm_descr
+                )
+            WHERE {
+                {
+                    SELECT
+                        ?rcm_simulation
+                        (
+                            CONCAT(
+                                "The RCM used is ", ?rcm_label,
+                                " (",
+                                GROUP_CONCAT(COALESCE(?rcm_inst_label, ?rcm_inst_code); SEPARATOR="; ") ,
+                                "). "
+                            ) AS ?rcm_descr
+                        )
+                    WHERE {
+                        ?rcm_simulation a ccso:DynamicalDownscaling, ccso:SingleSimulation ;
+                            ^ccso:hasMemberSimulation/^top:hasComponent/top:isComponentOf mips:cordex-cmip5;
+                            ccso:usesModel ?rcm.
+                    
+                        ?rcm rdfs:label ?rcm_label;
+                            ccso:isMaintainedBy ?rcm_inst .
+                        ?rcm_inst top:acronym ?rcm_inst_code .
+                        OPTIONAL {
+                        ?rcm_inst rdfs:label ?rcm_inst_label .
+                        }
+                    
+                        FILTER NOT EXISTS { ?rcm_simulation rdfs:comment ?_already }
 
-  FILTER(STRSTARTS(LCASE(STR(?label)), "cordex."))
-  FILTER NOT EXISTS { ?s rdfs:comment ?_already }
+                    }
+                    GROUP BY ?rcm_simulation ?rcm_label
+                }
 
-  BIND(STR(?label) AS ?L)
+                ?rcm_simulation ccso:isDownscalingOf ?gcm_simulation.
+            
+                ?gcm_simulation a ccso:GlobalClimateSimulation, ccso:SingleSimulation ;
+                    ccso:usesModel ?gcm.
+                ?gcm rdfs:label ?gcm_label;
+                    ccso:isMaintainedBy ?gcm_inst .
+                ?gcm_inst top:acronym ?gcm_inst_code .
+                OPTIONAL {
+                    ?gcm_inst rdfs:label ?gcm_inst_label .
+                }
 
-  # Strip "cordex."
-  BIND(STRAFTER(?L, "cordex.") AS ?afterCordex)
+            }
+            GROUP BY ?rcm_simulation ?rcm_descr ?gcm_simulation ?gcm_label
+        }
 
-  # {domain}-{res} part
-  BIND(STRBEFORE(?afterCordex, ".") AS ?domRes)              # e.g. "EUR-44"
-  BIND(STRBEFORE(?domRes, "-") AS ?domainCode)               # "EUR"
-  BIND(STRAFTER(?domRes, CONCAT(?domainCode, "-")) AS ?res)  # "44" or "44i"
+        ?experiment top:isComponentOf mips:cmip5;
+            rdfs:label ?experiment_label;
+            ccso:hasMemberSimulation ?gcm_simulation.
 
-  # Tail after domain-resolution
-  BIND(STRAFTER(?afterCordex, CONCAT(?domRes, ".")) AS ?tail)
+        ?gcm_simulation ccso:simulationConfigurationId ?gcm_simulation_member_id.
 
-  # First two segments after domRes
-  BIND(STRBEFORE(?tail, ".") AS ?seg1)
-  BIND(STRAFTER(?tail, CONCAT(?seg1, ".")) AS ?afterSeg1)
-  BIND(STRBEFORE(?afterSeg1, ".") AS ?seg2)
+        ?rcm_simulation data:hasOutput/data:dependsOnVariable ?geodetic_variable.
 
-  # Is seg1 actually a scenario? (short pattern: no GCM in label)
-  BIND(LCASE(STR(?seg1)) AS ?seg1Lower)
-  BIND(
-    IF(
-      ?seg1Lower = "historical" ||
-      ?seg1Lower = "rcp26" ||
-      ?seg1Lower = "rcp45" ||
-      ?seg1Lower = "rcp60" ||
-      ?seg1Lower = "rcp85",
-      true,
-      false
-    ) AS ?seg1IsScenario
-  )
+        ?geodetic_variable
+            data:basedOnDimensionalSpace ?geodetic_reference_frame;
+            top:isConstituentOf ?cordex_domain;
+            data:hasDiscretization/data:hasResolutionValue ?geodetic_resolution.
+    
+        ?geodetic_reference_frame data:basedOnDimensionalSpace* dimension:geodetic.
 
-  # Scenario code
-  BIND(
-    IF(?seg1IsScenario,
-       ?seg1,        # cordex.DOM-RES.SCEN.RCM.vVER
-       ?seg2         # cordex.DOM-RES.GCM.SCEN.RCM.vVER.RIP
-    ) AS ?scen
-  )
+        VALUES (?geodetic_resolution ?geodetic_resolution_km) {
+            ("0.125"^^xsd:float 12.5)
+            ("0.25"^^xsd:float 25.0)
+            ("0.5"^^xsd:float 50.0)
+            ("0.11"^^xsd:float 12.5)
+            ("0.22"^^xsd:float 25.0)
+            ("0.44"^^xsd:float 50.0)
+        }
 
-  # GCM code (empty string if not present in label)
-  BIND(
-    IF(?seg1IsScenario,
-       "",
-       STR(?seg1)
-    ) AS ?gcmCode
-  )
-
-  # RCM code
-  BIND(
-    IF(?seg1IsScenario,
-       STR(?seg2),   # short pattern: seg2 is RCM
-       STRBEFORE(
-         STRAFTER(?afterSeg1, CONCAT(?seg2, ".")),
-         "."
-       )             # full pattern: 3rd segment is RCM
-    ) AS ?rcmCode
-  )
-
-  # Version + optional ensemble: everything after ".v"
-  BIND(
-    IF(
-      ?seg1IsScenario,
-      STRAFTER(
-        ?L,
-        CONCAT("cordex.", ?domRes, ".", ?scen, ".", ?rcmCode, ".v")
-      ),
-      STRAFTER(
-        ?L,
-        CONCAT("cordex.", ?domRes, ".", ?gcmCode, ".", ?scen, ".", ?rcmCode, ".v")
-      )
-    ) AS ?verRip
-  )
-
-  # Version: if there's a ".", take part before it, else entire verRip
-  BIND(
-    IF(CONTAINS(?verRip, "."),
-       STRBEFORE(?verRip, "."),
-       ?verRip
-    ) AS ?ver
-  )
-
-  # Ensemble member (may be absent in short pattern)
-  BIND(
-    IF(CONTAINS(?verRip, "."),
-       STRAFTER(?verRip, CONCAT(?ver, ".")),
-       ""
-    ) AS ?rip
-  )
-
-  # Scenario name mapping
-  BIND(LCASE(STR(?scen)) AS ?scenLower)
-  BIND(
-    IF(?scenLower = "rcp26", "RCP2.6",
-    IF(?scenLower = "rcp45", "RCP4.5",
-    IF(?scenLower = "rcp60", "RCP6.0",
-    IF(?scenLower = "rcp85", "RCP8.5",
-    IF(?scenLower = "historical", "Historical",
-       STR(?scen))))))
-    AS ?scenarioName
-  )
-
-  # Resolution → degrees & km; detect 'i' suffix (regular grid)
-  BIND(IF(REGEX(?res, "i$"), REPLACE(?res, "i$", ""), ?res) AS ?resCode)
-  BIND(CONCAT("0.", ?resCode) AS ?deg)
-
-  VALUES (?resCode ?km) {
-    ("44" "50")
-    ("22" "25")
-    ("11" "12.5")
-  }
-  BIND(IF(BOUND(?km), ?km, "") AS ?kmApprox)
-  BIND(IF(REGEX(?res, "i$"), " (regular grid)", "") AS ?regularNote)
-
-  # Domain code → name
-  VALUES (?domainCode ?domainName) {
-    ("EUR" "Europe")
-    ("AFR" "Africa")
-    ("ANT" "Antarctica")
-    ("ARC" "Arctic")
-    ("AUS" "Australasia")
-    ("EAS" "East Asia")
-    ("NAM" "North America")
-    ("SAM" "South America")
-    ("SEA" "South-East Asia")
-    ("WAS" "West Asia")
-    ("CAM" "Central America")
-    ("CAS" "Central Asia")
-    ("MED" "Mediterranean")
-    ("MNA" "Middle East and North Africa")
-  }
-
-  # --- Use KG to get GCM (GlobalClimateModel) & RCM (RegionalClimateModel) ---
-
-  # GCM: only if we actually have a non-empty gcmCode
-  # GCM: any subclass of ClimateModel whose label matches (loosely) gcmCode
-  OPTIONAL {
-    FILTER(STRLEN(?gcmCode) > 0)
-
-    ?gcmRes rdf:type ?gcmType ;
-            rdfs:label ?gcmLabel .
-    # allow GlobalClimateModel or any other subclass of ClimateModel
-    ?gcmType rdfs:subClassOf* ccso:ClimateModel .
-
-    OPTIONAL {
-      ?gcmRes ccso:isMaintainedBy ?gcmInst .
-      OPTIONAL { ?gcmInst rdfs:label ?gcmInstLabel . }
+        ?cordex_domain rdfs:comment ?cordex_domain_descr.
     }
-
-    # be tolerant to prefixes / small differences:
-    FILTER(
-      CONTAINS(LCASE(STR(?gcmLabel)), LCASE(?gcmCode)) ||
-      CONTAINS(LCASE(?gcmCode), LCASE(STR(?gcmLabel)))
-    )
-  }
-
-  # RCM
-  OPTIONAL {
-    ?rcmRes rdf:type ?rcmType ;
-            rdfs:label ?rcmLabel .
-    ?rcmType rdfs:subClassOf* ccso:ClimateModel .
-
-    OPTIONAL {
-      ?rcmRes ccso:isMaintainedBy ?rcmInst .
-      OPTIONAL { ?rcmInst rdfs:label ?rcmInstLabel . }
-    }
-
-    FILTER(LCASE(STR(?rcmLabel)) = LCASE(?rcmCode))
-  }
-
-  # GCM sentence (only if we have some GCM info)
-  BIND(
-    IF(
-      (BOUND(?gcmLabel) && STRLEN(STR(?gcmLabel)) > 0) ||
-      STRLEN(?gcmCode) > 0,
-      CONCAT(
-        "The GCM used is ",
-        COALESCE(
-          IF(BOUND(?gcmLabel) && STRLEN(STR(?gcmLabel)) > 0, STR(?gcmLabel), ""),
-          IF(STRLEN(?gcmCode) > 0, STR(?gcmCode), ""),
-          "unknown GCM"
-        ),
-        IF(BOUND(?gcmInstLabel),
-           CONCAT(" (", STR(?gcmInstLabel), ")"),
-           ""),
-        ". "
-      ),
-      ""   # no GCM sentence at all
-    )
-    AS ?gcmSentence
-  )
-
-  # RCM sentence (only if we have some RCM info)
-  BIND(
-    IF(
-      (BOUND(?rcmLabel) && STRLEN(STR(?rcmLabel)) > 0) ||
-      STRLEN(?rcmCode) > 0,
-      CONCAT(
-        "The RCM used is ",
-        COALESCE(
-          IF(BOUND(?rcmLabel) && STRLEN(STR(?rcmLabel)) > 0, STR(?rcmLabel), ""),
-          IF(STRLEN(?rcmCode) > 0, STR(?rcmCode), ""),
-          "unknown RCM"
-        ),
-        IF(BOUND(?rcmInstLabel),
-           CONCAT(" (", STR(?rcmInstLabel), ")"),
-           ""),
-        ". "
-      ),
-      ""   # no RCM sentence
-    )
-    AS ?rcmSentence
-  )
-
-  # Final comment 
-  BIND(CONCAT(
-    "RCM simulation from CORDEX, covering the ", ?domainCode, " domain",
-    IF(BOUND(?domainName), CONCAT(" (", ?domainName, ")"), ""), ". ",
-    "Resolution: ", ?deg, " degrees",
-    IF(BOUND(?kmApprox) && STRLEN(?kmApprox) > 0,
-       CONCAT(" or ", ?kmApprox, " km"),
-       ""),
-    ?regularNote, ". ",
-    "Scenario: ",
-       COALESCE(STR(?scenarioName), "unknown"),
-    ". ",
-    ?gcmSentence,
-    ?rcmSentence,
-    "Version number: ",
-       IF(STRLEN(?ver) > 0, STR(?ver), "unknown"),
-    ". ",
-    "Ensemble member: ",
-       IF(STRLEN(?rip) > 0, STR(?rip), "unknown"),
-    "."
-  ) AS ?comment)
 }
