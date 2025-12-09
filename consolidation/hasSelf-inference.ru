@@ -4,26 +4,6 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 INSERT {
     GRAPH ?g {
-        ?o a ?range
-    }
-}
-WHERE {
-    GRAPH ?g {
-        ?s ?property ?o
-    }
-    ?s rdf:type/rdfs:subClassOf+ [
-        a owl:Restriction;
-        owl:onProperty ?property;
-        owl:allValuesFrom ?range
-    ].
-    ?range rdfs:label ?label.
-  	FILTER NOT EXISTS {
-        ?o a ?range
-    }
-};
-
-INSERT {
-    GRAPH ?g {
         ?s ?property ?s
     }
 }

@@ -2,4 +2,3 @@
 
 ./reset_kg.sh
 ./upload_kg.sh
-./consolidate.sh

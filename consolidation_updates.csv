@@ -1,7 +1,7 @@
 path,skip
-consolidation/rdfsInference.ru,n
-consolidation/pruneRegionsAndPoints.ru,n
-consolidation/simTimeCoverage.ru,n
-consolidation/rdfsInference.ru,n
-consolidation/variablesCoherence.ru,n
-consolidation/rdfsInference.ru,n
+consolidation/mergeCollections.ru,n
+consolidation/hasSelf-inference.ru,n
+consolidation/simTimeCoverage-local.ru,n
+consolidation/CMIP5-comment-generation.ru,n
+consolidation/CORDEX-comment-generation.ru,n
+consolidation/unify-labels.ru,n

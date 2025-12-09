@@ -3,8 +3,6 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
 PREFIX data: <https://w3id.org/hacid/onto/data/>
 PREFIX top: <https://w3id.org/hacid/onto/top-level/> 
-PREFIX dimension: <https://w3id.org/hacid/data/cs/dimensions/>
-PREFIX time: <https://w3id.org/hacid/data/cs/metric-space/time/>
 
 DELETE {
     GRAPH ?g {

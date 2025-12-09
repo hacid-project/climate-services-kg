@@ -40,11 +40,11 @@ WHERE {
             (MIN(?resolution) AS ?minResolution)
 #            (MIN(?gridPeriod) AS ?minGridPeriod)
         WHERE {
-            ?simulation a ccso:Simulation.
+	        ?simulation rdf:type/rdfs:subClassOf ccso:Simulation.
             GRAPH ?simulationGraph {
                 ?simulation data:hasOutput ?simulationOutput
             }
-            ?simulationOutput top:hasPart/data:dependsOnVariable ?temporalDS.
+            ?simulationOutput top:hasComponent+/data:dependsOnVariable ?temporalDS.
             ?temporalDS
                 data:basedOnDimensionalSpace+ dimension:time;
                 data:hasExactBoundingRegion [
