@@ -636,7 +636,7 @@
 
     rr:predicateObjectMap [
         rr:predicate data:basedOnDimensionalSpace ;
-        rr:object dimension:time, time:gregorian
+        rr:object time:gregorian
     ] ; 
 
     rr:predicateObjectMap [

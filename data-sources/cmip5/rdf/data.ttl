@@ -142769,8 +142769,7 @@
         <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z/specialization> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/0620-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/0620-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -142779,8 +142778,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1840-01-01T00:00:00Z-2000-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1840-01-01T00:00:00Z-2000-01-01T00:00:00Z> .
 
@@ -142789,8 +142787,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1946-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1946-01-01T00:00:00Z> .
 
@@ -142799,26 +142796,22 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2005-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2005-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2005-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2005-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2007-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2007-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2009-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2009-01-01T00:00:00Z> .
 
@@ -142827,20 +142820,17 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2009-12-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2009-12-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2010-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2010-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
@@ -142849,8 +142839,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-1852-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-1852-01-01T00:00:00Z> .
 
@@ -142859,14 +142848,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-1949-12-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-1949-12-01T00:00:00Z> .
 
@@ -142875,8 +142862,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1900-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1900-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -142885,8 +142871,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1900-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1900-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
@@ -142895,8 +142880,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1946-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1946-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -142905,8 +142889,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-1983-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-1983-01-01T00:00:00Z> .
 
@@ -142915,8 +142898,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2005-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2005-01-01T00:00:00Z> .
 
@@ -142925,8 +142907,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2009-12-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2009-12-01T00:00:00Z> .
 
@@ -142935,8 +142916,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1951-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1951-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -142945,8 +142925,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1956-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1956-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -142955,8 +142934,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1956-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1956-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
@@ -142965,8 +142943,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-1959-12-31T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-1959-12-31T00:00:00Z> .
 
@@ -142975,14 +142952,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-1965-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-1965-01-01T00:00:00Z> .
 
@@ -142991,20 +142966,17 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1980-12-01T00:00:00Z-2005-12-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1980-12-01T00:00:00Z-2005-12-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1980-12-01T00:00:00Z-2005-12-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1980-12-01T00:00:00Z-2005-12-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2000-01-01T00:00:00Z-2096-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2000-01-01T00:00:00Z-2096-01-01T00:00:00Z> .
 
@@ -143013,14 +142985,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2000-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2000-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-01-01T00:00:00Z-2080-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-01-01T00:00:00Z-2080-01-01T00:00:00Z> .
 
@@ -143029,32 +142999,27 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-01-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-01-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-01-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-01-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2099-12-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2099-12-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2009-12-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2009-12-01T00:00:00Z> .
 
@@ -143063,8 +143028,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
@@ -143073,20 +143037,17 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-16T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-16T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-04-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-04-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2111-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2111-01-01T00:00:00Z> .
 
@@ -143095,8 +143056,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2121-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2121-01-01T00:00:00Z> .
 
@@ -143105,26 +143065,22 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2140-01-06T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2140-01-06T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2204-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2204-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2276-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2276-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-02T00:00:00Z-2103-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-02T00:00:00Z-2103-01-01T00:00:00Z> .
 
@@ -143133,8 +143089,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-02T00:00:00Z-2301-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-02T00:00:00Z-2301-01-01T00:00:00Z> .
 
@@ -143143,8 +143098,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2010-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2010-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
@@ -143153,8 +143107,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2020-01-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2020-01-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
@@ -143163,8 +143116,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2076-01-01T00:00:00Z-2081-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2076-01-01T00:00:00Z-2081-01-01T00:00:00Z> .
 
@@ -143173,8 +143125,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2081-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2081-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
@@ -267208,8 +267159,7 @@
     ns1:hasStartDateTime "1850-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2009-12-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2009-12-01T00:00:00Z> .
 
@@ -267220,8 +267170,7 @@
     ns1:hasStartDateTime "1850-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2012-11-22T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2012-11-22T00:00:00Z> .
 
@@ -267236,8 +267185,7 @@
     ns1:hasStartDateTime "1850-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2021-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2021-01-01T00:00:00Z> .
 
@@ -267294,8 +267242,7 @@
     ns1:hasStartDateTime "1860-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1861-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1861-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -267336,8 +267283,7 @@
     ns1:hasStartDateTime "1949-12-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1949-12-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1949-12-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -267424,8 +267370,7 @@
     ns1:hasStartDateTime "1959-12-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-2005-12-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-2005-12-01T00:00:00Z> .
 
@@ -267440,8 +267385,7 @@
     ns1:hasStartDateTime "1959-12-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -267458,8 +267402,7 @@
     ns1:hasStartDateTime "1960-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-2004-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-2004-01-01T00:00:00Z> .
 
@@ -267468,8 +267411,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -267480,8 +267422,7 @@
     ns1:hasStartDateTime "1960-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-2009-12-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-2009-12-01T00:00:00Z> .
 
@@ -267496,8 +267437,7 @@
     ns1:hasStartDateTime "1960-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-2010-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-2010-01-01T00:00:00Z> .
 
@@ -267512,8 +267452,7 @@
     ns1:hasStartDateTime "1961-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1961-01-01T00:00:00Z-2005-12-31T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1961-01-01T00:00:00Z-2005-12-31T00:00:00Z> .
 
@@ -267556,8 +267495,7 @@
     ns1:hasStartDateTime "2000-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2000-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2000-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
@@ -267674,26 +267612,22 @@
     ns1:hasStartDateTime "2006-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-16T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-16T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-04-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-04-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2103-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2103-01-01T00:00:00Z> .
 
@@ -267716,8 +267650,7 @@
     ns1:hasStartDateTime "2006-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2140-01-06T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2140-01-06T00:00:00Z> .
 
@@ -267728,8 +267661,7 @@
     ns1:hasStartDateTime "2006-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2201-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2201-01-01T00:00:00Z> .
 
@@ -267738,14 +267670,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2204-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2204-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2204-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2204-01-01T00:00:00Z> .
 
@@ -267780,8 +267710,7 @@
     ns1:hasStartDateTime "2007-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2007-01-01T00:00:00Z-2081-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2007-01-01T00:00:00Z-2081-01-01T00:00:00Z> .
 
@@ -267808,8 +267737,7 @@
     ns1:hasStartDateTime "2011-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2011-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2011-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
@@ -267854,8 +267782,7 @@
     ns1:hasStartDateTime "2026-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2026-01-01T00:00:00Z-2099-12-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2026-01-01T00:00:00Z-2099-12-01T00:00:00Z> .
 
@@ -267924,8 +267851,7 @@
     ns1:hasStartDateTime "2131-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2131-01-01T00:00:00Z-2301-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2131-01-01T00:00:00Z-2301-01-01T00:00:00Z> .
 
@@ -273215,8 +273141,7 @@
         <https://w3id.org/hacid/data/cs/datasets/cmip5.inmcm4.rcp85.r1i1p1.output2> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1849-12-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1849-12-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
@@ -273265,8 +273190,7 @@
     ns1:hasStartDateTime "1851-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
@@ -273277,14 +273201,12 @@
     ns1:hasStartDateTime "1859-12-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1861-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1861-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1900-01-01T00:00:00Z-2010-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1900-01-01T00:00:00Z-2010-01-01T00:00:00Z> .
 
@@ -273299,14 +273221,12 @@
     ns1:hasStartDateTime "1949-12-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1949-12-01T00:00:00Z-2005-12-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1949-12-01T00:00:00Z-2005-12-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
@@ -273327,8 +273247,7 @@
     ns1:hasStartDateTime "1961-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1971-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1971-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -273377,8 +273296,7 @@
     ns1:hasStartDateTime "2005-12-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2066-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2066-01-01T00:00:00Z> .
 
@@ -273387,8 +273305,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
@@ -273435,8 +273352,7 @@
     ns1:hasStartDateTime "2006-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-02T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-02T00:00:00Z-2101-01-01T00:00:00Z> .
 
@@ -273445,8 +273361,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2010-01-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2010-01-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
@@ -273455,8 +273370,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2021-01-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2021-01-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
@@ -273465,8 +273379,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2026-01-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2026-01-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
@@ -273475,8 +273388,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2101-01-01T00:00:00Z-2280-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2101-01-01T00:00:00Z-2280-01-01T00:00:00Z> .
 
@@ -273485,8 +273397,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2101-01-01T00:00:00Z-2281-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2101-01-01T00:00:00Z-2281-01-01T00:00:00Z> .
 
@@ -273495,8 +273406,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2101-01-01T00:00:00Z-2301-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2101-01-01T00:00:00Z-2301-01-01T00:00:00Z> .
 
@@ -273609,14 +273519,12 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2007-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2007-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2011-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2011-01-01T00:00:00Z> .
 
@@ -273627,8 +273535,7 @@
     ns1:hasStartDateTime "1850-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-02T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-02T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -273649,14 +273556,12 @@
     ns1:hasStartDateTime "1860-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1861-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1861-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1941-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1941-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -273665,8 +273570,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2005-12-31T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2005-12-31T00:00:00Z> .
 
@@ -273675,8 +273579,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1955-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1955-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
@@ -273691,8 +273594,7 @@
     ns1:hasStartDateTime "1959-12-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1976-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1976-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -273707,8 +273609,7 @@
     ns1:hasStartDateTime "2005-12-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2299-12-31T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2299-12-31T00:00:00Z> .
 
@@ -273717,8 +273618,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-21T00:00:00Z-2100-12-21T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-21T00:00:00Z-2100-12-21T00:00:00Z> .
 
@@ -273733,8 +273633,7 @@
     ns1:hasStartDateTime "2006-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2099-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2099-01-01T00:00:00Z> .
 
@@ -273743,14 +273642,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2100-12-31T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2100-12-31T00:00:00Z> .
 
@@ -273759,14 +273656,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-01T00:00:00Z> .
 
@@ -273777,8 +273672,7 @@
     ns1:hasStartDateTime "2006-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2300-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2300-01-01T00:00:00Z> .
 
@@ -274144,8 +274038,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1860-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1860-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
@@ -274160,8 +274053,7 @@
     ns1:hasStartDateTime "1950-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2099-12-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2099-12-01T00:00:00Z> .
 
@@ -274176,20 +274068,17 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2276-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2276-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2301-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2301-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2025-12-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2025-12-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
@@ -274274,14 +274163,12 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-2005-12-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-2005-12-01T00:00:00Z> .
 
@@ -274292,14 +274179,12 @@
     ns1:hasStartDateTime "1861-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1949-12-01T00:00:00Z-2005-12-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1949-12-01T00:00:00Z-2005-12-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
@@ -274316,14 +274201,12 @@
     ns1:hasStartDateTime "2006-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2106-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2106-01-01T00:00:00Z> .
 
@@ -274342,8 +274225,7 @@
     ns1:hasStartDateTime "2006-01-01T00:00:00+00:00"^^xsd:dateTime .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2106-01-01T00:00:00Z-2301-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2106-01-01T00:00:00Z-2301-01-01T00:00:00Z> .
 
@@ -274560,8 +274442,7 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1995-01-01T00:00:00Z-1996-01-01T00:00:00Z/quantized/periodic/P1M/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/periodic/P1M/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1995-01-01T00:00:00Z-1996-01-01T00:00:00Z> .
 
@@ -274570,8 +274451,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2071-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2071-01-01T00:00:00Z> .
 
@@ -274704,8 +274584,7 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1960-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1960-01-01T00:00:00Z> .
 
@@ -274714,8 +274593,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-2005-12-31T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-2005-12-31T00:00:00Z> .
 
@@ -274724,20 +274602,17 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1979-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1979-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1979-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1979-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1986-01-01T00:00:00Z-1987-01-01T00:00:00Z/quantized/periodic/P1M/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/periodic/P1M/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1986-01-01T00:00:00Z-1987-01-01T00:00:00Z> .
 
@@ -274746,14 +274621,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2103-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2103-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2026-01-01T00:00:00Z-2301-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2026-01-01T00:00:00Z-2301-01-01T00:00:00Z> .
 
@@ -274934,20 +274807,17 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1950-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1950-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2010-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2010-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
@@ -274956,8 +274826,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1861-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1861-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -274966,8 +274835,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2301-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2301-01-01T00:00:00Z> .
 
@@ -275292,14 +275160,12 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1950-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1950-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -275308,8 +275174,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-1934-12-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-1934-12-01T00:00:00Z> .
 
@@ -275318,20 +275183,17 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1860-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1860-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1961-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1961-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2061-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2061-01-01T00:00:00Z> .
 
@@ -275340,8 +275202,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2076-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2076-01-01T00:00:00Z> .
 
@@ -275546,8 +275407,7 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
@@ -275652,14 +275512,12 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2011-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2011-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2099-12-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2099-12-01T00:00:00Z> .
 
@@ -275780,14 +275638,12 @@
     ns1:hasResolutionValue "P1Y"^^xsd:duration .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
@@ -275880,8 +275736,7 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2010-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2010-01-01T00:00:00Z> .
 
@@ -275970,14 +275825,12 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1950-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1950-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1959-12-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -276102,8 +275955,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2301-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2301-01-01T00:00:00Z> .
 
@@ -276156,14 +276008,12 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2099-12-31T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2099-12-31T00:00:00Z> .
 
@@ -276172,8 +276022,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2036-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2036-01-01T00:00:00Z> .
 
@@ -276226,8 +276075,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2300-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2300-01-01T00:00:00Z> .
 
@@ -276308,8 +276156,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2035-12-31T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2035-12-31T00:00:00Z> .
 
@@ -276426,8 +276273,7 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-1960-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-1960-01-01T00:00:00Z> .
 
@@ -276436,8 +276282,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2021-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2021-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
@@ -276542,8 +276387,7 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2100-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2100-01-01T00:00:00Z> .
 
@@ -276764,8 +276608,7 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-2005-12-31T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-2005-12-31T00:00:00Z> .
 
@@ -276790,8 +276633,7 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1860-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1860-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -276800,8 +276642,7 @@
     ns3:isMaintainedBy <https://w3id.org/hacid/data/cs/organizations/CNRM-CERFACS> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2102-01-01T00:00:00Z> .
 
@@ -276846,8 +276687,7 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2026-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2026-01-01T00:00:00Z> .
 
@@ -276856,8 +276696,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2026-01-01T00:00:00Z-2036-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2026-01-01T00:00:00Z-2036-01-01T00:00:00Z> .
 
@@ -276882,20 +276721,17 @@
     ns3:isMaintainedBy <https://w3id.org/hacid/data/cs/organizations/IPSL> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-2005-12-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-2005-12-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1860-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1860-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -276920,8 +276756,7 @@
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2100-12-31T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2100-12-31T00:00:00Z> .
 
@@ -276930,8 +276765,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
@@ -276948,14 +276782,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2013-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2013-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1961-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1961-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -276964,8 +276796,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -276982,8 +276813,7 @@
     ns1:hasResolutionValue "P1M"^^xsd:duration .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -276992,8 +276822,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1950-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-1950-01-01T00:00:00Z> .
 
@@ -277006,8 +276835,7 @@
     ns1:hasResolutionValue "P1D"^^xsd:duration .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2041-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2041-01-01T00:00:00Z> .
 
@@ -277020,14 +276848,12 @@
     ns3:isMaintainedBy <https://w3id.org/hacid/data/cs/organizations/CSIRO-QCCCE> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2036-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2036-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2081-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2081-01-01T00:00:00Z> .
 
@@ -277044,14 +276870,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1960-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1851-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -277060,8 +276884,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1859-12-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -277078,8 +276901,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1861-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1861-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -277088,14 +276910,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2301-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2301-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -277104,14 +276924,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1950-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2005-12-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
@@ -277120,8 +276938,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2026-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/PT3H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT3H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2026-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
@@ -277130,26 +276947,22 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/P1Y> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1Y> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/PT6H> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/PT6H> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2036-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2036-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -277162,8 +276975,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2301-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2301-01-01T00:00:00Z> .
 
@@ -277172,14 +276984,12 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/P1D> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1D> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2006-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/1850-01-01T00:00:00Z-2006-01-01T00:00:00Z> .
 
@@ -277188,8 +276998,7 @@
     ns1:isSpecializationOn <https://w3id.org/hacid/data/cs/dimensions/time> .
 
 <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z/quantized/regular/P1M> a ns1:DimensionalSpace ;
-    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time>,
-        <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
+    ns1:basedOnDimensionalSpace <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian> ;
     ns1:hasDiscretization <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/regular/P1M> ;
     ns1:hasExactBoundingRegion <https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/2006-01-01T00:00:00Z-2101-01-01T00:00:00Z> .
 
