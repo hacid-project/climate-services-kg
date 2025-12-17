@@ -1,0 +1,30 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX sector: <https://w3id.org/hacid/data/cs/climdex/sectors/>
+
+SELECT ?h_1 ?h_2 (COUNT(1) AS ?items) (COUNT(DISTINCT ?h_3) AS ?subsubdivisions)
+WHERE {
+    {
+        SELECT ?h_1 (COUNT(DISTINCT ?h_2) AS ?subdivisions)
+        WHERE {
+            ?s ?p ?o.
+            FILTER(STRSTARTS(STR(?s),"https://w3id.org/hacid/data/cs/"))
+            BIND(STRAFTER(STR(?s),"https://w3id.org/hacid/data/cs/") AS ?hacid_uri)
+            BIND(STRBEFORE(STR(?hacid_uri),"/") AS ?h_1)
+            BIND(STRAFTER(STR(?hacid_uri),"/") AS ?t_1)
+            BIND(STRBEFORE(STR(?t_1),"/") AS ?h_2)
+        }
+        GROUP BY ?h_1
+    }
+    FILTER(?subdivisions > 1 && ?subdivisions < 50)
+    ?s ?p ?o.
+    FILTER(STRSTARTS(STR(?s),CONCAT("https://w3id.org/hacid/data/cs/", ?h_1, "/"))).
+    BIND(STRAFTER(STR(?s),CONCAT("https://w3id.org/hacid/data/cs/", ?h_1, "/")) AS ?local_uri)
+    BIND(STRBEFORE(STR(?local_uri),"/") AS ?h_2)
+    BIND(STRAFTER(STR(?local_uri),"/") AS ?t_2)
+    BIND(STRBEFORE(STR(?t_1),"/") AS ?h_3)
+}
+GROUP BY ?h_1 ?h_2
+ORDER BY ?h_1 ?h_2
+LIMIT 100

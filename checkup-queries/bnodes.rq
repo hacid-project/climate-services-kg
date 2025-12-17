@@ -1,0 +1,18 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT #DISTINCT
+	?t ?s ?p ?o
+WHERE {
+    ?s ?p ?o.
+  FILTER(isBlank(?s))
+  FILTER NOT EXISTS {?s a owl:Restriction}
+  FILTER NOT EXISTS {?s a rdfs:Datatype}
+  FILTER NOT EXISTS {?s owl:unionOf _:u}
+  FILTER NOT EXISTS {?s owl:intersectionOf _:i}
+  FILTER NOT EXISTS {?s rdf:first _:f}
+  OPTIONAL {?s a ?t}
+}
+ORDER BY ?t ?s ?p ?o
+LIMIT 1000
