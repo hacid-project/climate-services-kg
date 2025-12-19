@@ -1,27 +1,15 @@
 BASE <https://w3id.org/hacid/data/cs/wf/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX top: <https://w3id.org/hacid/onto/top-level/>
-PREFIX method_role: <app-profile/roles/Method>
-PREFIX ops: <ops/>
+PREFIX methods: <https://w3id.org/hacid/data/cs/wf/methods/>
 
 SELECT 
-	?label ?method
+	?method ?method_label
 WHERE {
-    {
-  	    ?op top:isRealizedByMethod ?method
-    } UNION {
-        ?op top:isSpecializedBy ?method.
-        FILTER(?op != ops:FilterClimateProjections)
-    } UNION {
- 	    ?op top:isRealizedByPlan/top:definesTask/top:executedThroughOperation ?method
-        FILTER NOT EXISTS {?other_op1 top:isRealizedByMethod|top:isSpecializedBy ?method}
-        FILTER NOT EXISTS {?method top:isRealizedByMethod|top:isSpecializedBy|(top:isRealizedByPlan/top:definesTask/top:executedThroughOperation) ?other_op2}
-        FILTER (?op != ops:ClimateDataCollection)
-        FILTER (?op != ops:ClimateProjectionSelection)
-        FILTER (?op != ops:ClimateServiceCaseResolution)
-    }
-  	?op rdfs:label ?op_label.
-	?method rdfs:label ?method_label.
-  	BIND(CONCAT(?op_label, ' - ', ?method_label) AS ?label)
+  	?general_method top:specializes methods:ClimateCaseMethod;
+		rdfs:label ?general_method_label.
+ 	?method top:specializes ?general_method;
+        rdfs:label ?specific_method_label.
+ 	BIND(CONCAT(?general_method_label, ' - ', ?specific_method_label) AS ?method_label)
 }
-ORDER BY ?label
+ORDER BY ?method_label
