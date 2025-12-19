@@ -18,9 +18,22 @@
     "ops": "https://w3id.org/hacid/data/cs/wf/ops/",
     "methods": "https://w3id.org/hacid/data/cs/wf/methods/",
     "Id": "@id",
-    "Label": "rdfs:label",
-    "Description": "rdfs:comment",
-    "Methods": "top:isSpecializedBy"
+    "Label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "Description": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "Alias": {
+      "@id": "top:altLabel",
+      "@language": "en"
+    },
+    "Methods": {
+      "@id": "top:isSpecializedBy",
+      "@type": "@id"
+    }
   },
   "@id": "methods:ClimateCaseMethod",
   "@type": "top:Method",
