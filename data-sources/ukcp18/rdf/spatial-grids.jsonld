@@ -1,0 +1,257 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "top": "https://w3id.org/hacid/onto/top-level/",
+    "data": "https://w3id.org/hacid/onto/data/",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "dimension": "https://w3id.org/hacid/data/cs/dimensions/",
+    "georef": "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/",
+    "based_on_ds": {
+      "@id": "data:basedOnDimensionalSpace",
+      "@type": "@id"
+    },
+    "discretization": {
+      "@id": "data:hasDiscretization",
+      "@type": "@id"
+    },
+    "resolution": {
+      "@id": "data:hasResolution",
+      "@type": "@id"
+    },
+    "exact_bounding_region": {
+      "@id": "data:hasExactBoundingRegion",
+      "@type": "@id"
+    },
+    "pole": {
+      "@id": "data:hasReferencePoint",
+      "@type": "@id"
+    },
+    "point_of": {
+      "@id": "data:isPointOf",
+      "@type": "@id"
+    },
+    "wkt": {
+      "@id": "geo:asWKT",
+      "@type": "geo:wktLiteral"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "georef:OSGB36",
+      "@type": "data:Continuum",
+      "label": "Ordnance Survey of Great Britain (OSGB)",
+      "comment": "OSGB is a coordinate reference system for Great Britain.",
+      "based_on_ds": "dimension:geodetic",
+      "exact_bounding_region": {
+        "@id": "georef:OSGB36/coverage"
+      }
+    },
+    [
+      {
+        "@id": "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/OSGB36/grids/60km",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "60km geodetic grid based on OSGB",
+        "comment": "A geodetic grid of resolution 60km x 60km, based on Ordnance Survey of Great Britain (OSGB).",
+        "based_on_ds": "georef:OSGB36",
+        "discretization": {
+          "@id": "https://w3id.org/hacid/data/cs/geodeticgrid/km/60",
+          "based_on_ds": "dimension:geodetic",
+          "@type": "data:SimpleRegularBinning",
+          "resolution": {
+            "@id": "https://w3id.org/hacid/data/cs/value/m/60000",
+            "@type": "top:Amount",
+            "value": "60000",
+            "uom": "https://w3id.org/hacid/data/cs/unitsofmeasure/m"
+          }
+        },
+        "exact_bounding_region": "georef:OSGB36/coverage"
+      },
+      {
+        "@id": "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/OSGB36/grids/25km",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "25km geodetic grid based on OSGB",
+        "comment": "A geodetic grid of resolution 25km x 25km, based on Ordnance Survey of Great Britain (OSGB).",
+        "based_on_ds": "georef:OSGB36",
+        "discretization": {
+          "@id": "https://w3id.org/hacid/data/cs/geodeticgrid/km/25",
+          "based_on_ds": "dimension:geodetic",
+          "@type": "data:SimpleRegularBinning",
+          "resolution": {
+            "@id": "https://w3id.org/hacid/data/cs/value/m/25000",
+            "@type": "top:Amount",
+            "value": "25000",
+            "uom": "https://w3id.org/hacid/data/cs/unitsofmeasure/m"
+          }
+        },
+        "exact_bounding_region": "georef:OSGB36/coverage"
+      },
+      {
+        "@id": "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/OSGB36/grids/12km",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "12km geodetic grid based on OSGB",
+        "comment": "A geodetic grid of resolution 12km x 12km, based on Ordnance Survey of Great Britain (OSGB).",
+        "based_on_ds": "georef:OSGB36",
+        "discretization": {
+          "@id": "https://w3id.org/hacid/data/cs/geodeticgrid/km/12",
+          "based_on_ds": "dimension:geodetic",
+          "@type": "data:SimpleRegularBinning",
+          "resolution": {
+            "@id": "https://w3id.org/hacid/data/cs/value/m/12000",
+            "@type": "top:Amount",
+            "value": "12000",
+            "uom": "https://w3id.org/hacid/data/cs/unitsofmeasure/m"
+          }
+        },
+        "exact_bounding_region": "georef:OSGB36/coverage"
+      },
+      {
+        "@id": "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/OSGB36/grids/5km",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "5km geodetic grid based on OSGB",
+        "comment": "A geodetic grid of resolution 5km x 5km, based on Ordnance Survey of Great Britain (OSGB).",
+        "based_on_ds": "georef:OSGB36",
+        "discretization": {
+          "@id": "https://w3id.org/hacid/data/cs/geodeticgrid/km/5",
+          "based_on_ds": "dimension:geodetic",
+          "@type": "data:SimpleRegularBinning",
+          "resolution": {
+            "@id": "https://w3id.org/hacid/data/cs/value/m/5000",
+            "@type": "top:Amount",
+            "value": "5000",
+            "uom": "https://w3id.org/hacid/data/cs/unitsofmeasure/m"
+          }
+        },
+        "exact_bounding_region": "georef:OSGB36/coverage"
+      },
+      {
+        "@id": "https://w3id.org/hacid/data/cs/ukcp18/grids/N216",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "N216 geodetic grid",
+        "comment": "A global geodetic grid of approximate resolution 60km x 60km, developed by the UK Met Office.",
+        "based_on_ds": "dimension:geodetic",
+        "discretization": "https://w3id.org/hacid/data/cs/geodeticgrid/km/60",
+        "exact_bounding_region": "dimension:geodetic/all"
+      },
+      {
+        "@id": "https://w3id.org/hacid/data/cs/ukcp18/grids/WGS84/60km",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "UKCP18 global geodetic grid",
+        "comment": "A global geodetic grid of approximate resolution 60km x 60km, based on WGS84.",
+        "based_on_ds": "georef:WGS84",
+        "discretization": "https://w3id.org/hacid/data/cs/geodeticgrid/km/60",
+        "exact_bounding_region": "dimension:geodetic/all"
+      },
+      {
+        "@id": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/12km",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "UKCP18 12km grid on rotated pole coordinates",
+        "comment": "A geodetic grid of approximate resolution 12km x 12km, based on a rotated pole coordinate system.",
+        "based_on_ds": {
+          "@id": "georef:rotated-WGS84/198.0,39.25",
+          "label": "Rotated geodetic: pole 198.0° 39.25°",
+          "comment": "Rotated geodetic dimensional space, with polar coordinates 198.0° 39.25°, in reference to the World Geodetic System 1984 (WGS84).",
+          "based_on_ds": "georef:WGS84",
+          "pole": {
+            "@id": "georef:WGS84/points/198.0,39.25",
+            "point_of": "georef:WGS84",
+            "label": "Geodetic point 198.0° 39.25°",
+            "comment": "Geodetic point with longitude 198.0° and latitude 39.25°, in reference to the World Geodetic System 1984 (WGS84).",
+            "wkt": "POINT(198.0 39.25)"
+          }
+        },
+        "discretization": {
+          "@id": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/12km/discretization",
+          "based_on_ds": "dimension:geodetic",
+          "@type": "data:SimpleRegularBinning",
+          "resolution": {
+            "@id": "https://w3id.org/hacid/data/cs/value/m/12000",
+            "@type": "top:Amount",
+            "value": "12000",
+            "uom": "https://w3id.org/hacid/data/cs/unitsofmeasure/m"
+          }
+        },
+        "exact_bounding_region": "dimension:geodetic/all"
+      },
+      {
+        "@id": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/2.2km",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "UKCP18 2.2km grid on rotated pole coordinates",
+        "comment": "A geodetic grid of approximate resolution 2.2km x 2.2km, based on a rotated pole coordinate system.",
+        "based_on_ds": {
+          "@id": "georef:rotated-WGS84/177.5,37.5",
+          "label": "Rotated geodetic: pole 177.5° 37.5°",
+          "comment": "Rotated geodetic dimensional space, with polar coordinates 177.5° 37.5°, in reference to the World Geodetic System 1984 (WGS84).",
+          "based_on_ds": "georef:WGS84",
+          "pole": {
+            "@id": "georef:WGS84/points/177.5,37.5",
+            "point_of": "georef:WGS84",
+            "label": "Geodetic point 177.5° 37.5°",
+            "comment": "Geodetic point with longitude 177.5° and latitude 37.5°, in reference to the World Geodetic System 1984 (WGS84).",
+            "wkt": "POINT(177.5 37.5)"
+          }
+        },
+        "discretization": {
+          "@id": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/2.2km/discretization",
+          "based_on_ds": "dimension:geodetic",
+          "@type": "data:SimpleRegularBinning",
+          "resolution": {
+            "@id": "https://w3id.org/hacid/data/cs/value/m/2200",
+            "@type": "top:Amount",
+            "value": "2200",
+            "uom": "https://w3id.org/hacid/data/cs/unitsofmeasure/m"
+          }
+        },
+        "exact_bounding_region": "dimension:geodetic/all"
+      },
+      {
+        "@id": "https://w3id.org/hacid/data/cs/ukcp18/regional-splits/country",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "UKCP18 countries",
+        "comment": "Subdivision of UK by countries as adopted in UKCP18.",
+        "based_on_ds": "dimension:geodetic"
+      },
+      {
+        "@id": "https://w3id.org/hacid/data/cs/ukcp18/regional-splits/region",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "UKCP18 administrative regions",
+        "comment": "Subdivision of UK by administrative regions as adopted in UKCP18.",
+        "based_on_ds": "dimension:geodetic"
+      },
+      {
+        "@id": "https://w3id.org/hacid/data/cs/ukcp18/regional-splits/river",
+        "@type": "data:DiscreteDimensionalSpace",
+        "label": "UKCP18 river basin regions",
+        "comment": "Subdivision of UK by river basin regions as adopted in UKCP18.",
+        "based_on_ds": "dimension:geodetic"
+      }
+    ]
+  ],
+  "grid_map": {
+    "eur": {
+      "12km": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/12km"
+    },
+    "global": {
+      "60km": "https://w3id.org/hacid/data/cs/ukcp18/grids/WGS84/60km"
+    },
+    "uk": {
+      "12km": "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/OSGB36/grids/12km",
+      "2.2km": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/2.2km",
+      "25km": "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/OSGB36/grids/25km",
+      "5km": "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/OSGB36/grids/5km",
+      "60km": "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/OSGB36/grids/60km",
+      "country": "https://w3id.org/hacid/data/cs/ukcp18/regional-splits/country",
+      "n216": "https://w3id.org/hacid/data/cs/ukcp18/grids/N216",
+      "region": "https://w3id.org/hacid/data/cs/ukcp18/regional-splits/region",
+      "river": "https://w3id.org/hacid/data/cs/ukcp18/regional-splits/river"
+    }
+  }
+}

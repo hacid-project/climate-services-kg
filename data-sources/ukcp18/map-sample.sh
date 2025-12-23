@@ -4,5 +4,5 @@
 #jq -f 'mapping/map.jq' <data/sample.json >rdf/sample.jsonld
 
 jq --library-path 'mapping' -f 'mapping/spatial-grids.jq' --null-input | tee >(jq '.grid_map' >'data/spatial-grid-map.json') >rdf/spatial-grids.jsonld
-jq --library-path 'mapping' -f 'mapping/datasets.jq' <data/ceda_ukcp18_metadata_merged.json >rdf/ceda_ukcp18_metadata_merged.jsonld 2>data/issues.log
+jq --library-path 'mapping' -f 'mapping/datasets.jq' <data/sample-by-kind.json >rdf/sample-by-kind.jsonld 2>data/issues.log
 

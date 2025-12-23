@@ -1,112 +1,20 @@
 import "./data/spatial-grid-map" as $spatial_grid_maps;
 import "./mapping/utils" as UTILS;
+import "./mapping/time" as TIME;
+import "./mapping/ukcp18-time" as UKCP18_TIME;
+import "./mapping/simulations" as SIMULATIONS;
 
 $spatial_grid_maps as [$spatial_grid_map] |
 
 (
-    {
-        "HadGEM3-GC3.05": {
-            "01": "r1i1p1",
-            "02": "r1i1p0605",
-            "03": "r1i1p0834",
-            "04": "r1i1p1113",
-            "05": "r1i1p1554",
-            "06": "r1i1p1649",
-            "07": "r1i1p1843",
-            "08": "r1i1p1935",
-            "09": "r1i1p2123",
-            "10": "r1i1p2242",
-            "11": "r1i1p2305",
-            "12": "r1i1p2335",
-            "13": "r1i1p2491",
-            "14": "r1i1p2832",
-            "15": "r1i1p2868"
-        },
-        "ACCESS1.3": {
-            "23": "r1i1p1"
-        },
-        "IPSL-CM5A-MR": {
-            "25": "r1i1p1"
-        },
-        "MRI-CGCM3": {
-            "27": "r1i1p1"
-        },
-        "MPI-ESM-LR": {
-            "29": "r1i1p1"
-        }
-    } | to_entries | [
-        .[] |
-        .key as $model |
-        .value |
-        to_entries |
-        .[] |
-        .value = {model: $model, variant: .value}
-    ] | from_entries
-) as $model_variant_from_id |
-
-{
-    "rcp45": "RCP4.5",
-    "rcp85": "RCP8.5",
-    "rcp26": "RCP2.6",
-    "rcp60": "RCP6"
-} as $scenario_map |
-
-(
-    {
-        regular: {
-            type: "RegularBinning",
-            instances: {
-                "1hr": "PT1H",
-                "3hr": "PT3H",
-                day: "P1D",
-                mon: "P1M",
-                seas: "P3M",
-                ann: "P1Y",
-                "ann-20y": "P20Y",
-                "ann-30y": "P30Y"
-            }
-        },
-        "regular-periodic": {
-            type: "PeriodicRegularBinning",
-            instances: {
-                "mon-20y": {
-                    in_period_step: "P1M",
-                    period: "P1Y",
-                    step: "P20Y"
-                },
-                "mon-30y":  {
-                    in_period_step: "P1M",
-                    period: "P1Y",
-                    step: "P30Y"
-                },
-                "seas-20y":  {
-                    in_period_step: "P3M",
-                    period: "P1Y",
-                    step: "P20Y"
-                },
-                "seas-30y":  {
-                    in_period_step: "P3M",
-                    period: "P1Y",
-                    step: "P30Y"
-                }
-            }
-        }
-    } |
-    to_entries | [
-        .[] |
-        .key as $grid_type | .value |
-        .type as $class | .instances | to_entries | .[] |
-        .value |=
-            if isempty(. | strings) | not then {
-                step: .,
-                period: null,
-                in_period_step: null
-            } end + {
-                $grid_type,
-                $class
-            }
-    ] | from_entries
-) as $frequency_map |
+    $spatial_grid_map |
+    with_entries(
+        .value |= with_entries(
+            select(.value | contains("WGS84") | not) |
+            .value |= ltrimstr("https://w3id.org/hacid/data/cs/")
+        )
+    )
+) as $rescale_map |
 
 [
     {
@@ -232,49 +140,13 @@ def decompose_id($collection):
             $issues | debug | empty
         end |
 
+        UKCP18_TIME::dataset_to_interval($id_comp_struct) as $time_interval |
+
         if $id_comp_struct.date_interval then
-            ($id_comp_struct.date_interval | split("-")) as $dates |
-            ($dates[0] | UTILS::normalize_date(false)) as $start_datetime |
-            ($dates[1] | UTILS::normalize_date(true)) as $end_datetime |
-            {
-                gwl: null,
-                temporal_region: {
-                    "@id": "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/regions/\($start_datetime)-\($end_datetime)",
-                    "@type": "data:TemporalRegion",
-                    $start_datetime,
-                    $end_datetime,
-                    label: "Time interval \($start_datetime) - \($end_datetime)",
-                    coment: "Time interval starting at date time \($start_datetime) and ending at date time \($end_datetime)."
-                }
-            }
+            null
         else
-            {
-                "1y": {duration: "P1Y", end_datetime: "0001-01-01T00:00:00Z"},
-                "20y": {duration: "P20Y", end_datetime: "0020-01-01T00:00:00Z"},
-                "30y": {duration: "P30Y", end_datetime: "0030-01-01T00:00:00Z"}
-            }[.time_slice_type] as {$duration, $end_datetime} |
-            {
-                gwl: $id_comp_struct.timeslice_or_gwl,
-                temporal_region: {
-                    "@id": "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/mobile-regions/\($duration)",
-                    "@type": "data:TemporalRegion",
-                    "0000-01-01T00:00:00Z",
-                    $end_datetime,
-                    label: "Mobile temporal interval with duration \($duration)",
-                    coment: "Time interval with no fixed starting date time and a duration of \($duration)."
-                }
-            }
-        end as {$gwl, $temporal_region} |
-
-
-        $frequency_map[.frequency] as $grid |
-        (
-            [
-                $grid.grid_type, $grid.step, $grid.period, $grid.in_period_step |
-                strings
-            ] |
-            join("/")
-        ) as $grid_type_id |
+            $id_comp_struct.timeslice_or_gwl
+        end as $gwl |
 
         (
             {
@@ -283,156 +155,44 @@ def decompose_id($collection):
                 label: .id[:-3],
                 dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
                 independent_variable: [
-                    {
-                        "@id": "\($temporal_region."@id")/quantized/\($grid_type_id)",
-                        "@type": "data:DimensionalSpace",
-                        based_on_ds: {
-                            "@id": "time:gregorian"
-                        },
-                        discretization: {
-                            grid: $grid,
-                            "@id": "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/\($grid_type_id)",
-                            based_on_ds: {
-                                "@id": "dimension:time" # xsd:duration
-                            },
-                            "@type":  @uri "https://w3id.org/hacid/onto/data/\($grid.class)",
-                            resolution_value: "\($grid.step)",
-                            period_value: "\($grid.period)",
-                            in_period_resolution_value: "\($grid.in_period_step)"
-                        },
-                        exact_bounding_region: $temporal_region."@id"
-                    },
+                    UKCP18_TIME::dataset_to_variable($time_interval),
                     $spatial_grid_map[.domain][.resolution]
                 ],
-                specialization_criterion: {
-                    "@id": "\($temporal_region."@id")/specialization",
-                    "@type": "data:VariableSpecialization",
-                    specialization_on: {
-                        "@id": "dimension:time"
-                    },
-                    selected_region: $temporal_region
-                }
+                specialization_criterion: [
+                    $time_interval | TIME::specialization
+                ]
             },
             if $collection != "land-prob" then
                 $id_comp_struct.model_variant_id as $model_variant_id |
-                $model_variant_from_id[$model_variant_id] as {model: $model, variant: $variant} |
+                
+                if $collection == "land_cpm" then
+                    SIMULATIONS::dataset_to_cpm_simulation($model_variant_id)
+                elif $collection == "land_rcm" then
+                    SIMULATIONS::dataset_to_rcm_simulation($model_variant_id)
+                elif $collection == "land_gcm" then
+                    SIMULATIONS::dataset_to_gcm_simulation($model_variant_id)
+                end as $simulation |
 
-                if $model == "HadGEM3-GC3.05" then 
+                $rescale_map[.domain]?[.resolution]? as $rescale |
+                if $rescale then
+                    ($simulation | debug) |
                     {
-                        gcm_id: @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.global.\(.scenario)/\($model_variant_id)",
-                        gcm_output_id: @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.global.\(.scenario)/\($model_variant_id)/output"
+                        "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
+                        is_rescaled_version_of: $simulation.has_output."@id",
+                        is_part_of: {
+                            "@id": ($simulation.ensemble.has_output."@id" + $rescale),
+                            "@type": "data:Dataset",
+                            is_rescaled_version_of: $simulation.ensemble.has_output."@id"
+                        }
                     }
                 else
+                    $simulation,
                     {
-                        gcm_id: @uri "https://w3id.org/hacid/data/cs/simulations/cmip5.\($model).\(.scenario).\($variant)",
-#                        gcm_output_id: @uri "https://w3id.org/hacid/data/cs/datasets/cmip5.\($model).\(.scenario).\($variant).output"
-                        gcm_output_id: @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.global.\(.scenario)/\($model_variant_id)/output"
-                    }
-                end as {$gcm_id, $gcm_output_id} |
-
-                if $collection == "land_cpm" then
-                    {
-                        "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.local.\(.scenario).\($model_variant_id)",
-                        "@type": ["ccso:DynamicalDownscaling", "ccso:SingleSimulation"],
-                        model: "https://w3id.org/hacid/data/cs/models/HadREM3-RA11M",
-                        scenario: @uri "https://w3id.org/hacid/data/cs/scenarios/RCP/\($scenario_map[.scenario])",
-                        component_label: "\($model).\($variant)",
-                        ensemble: {
-                            "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.local.\(.scenario)",
-                            "@type": ["ccso:EnsembleSimulation","ccso:DynamicalDownscaling"],
-                            scenario: @uri "https://w3id.org/hacid/data/cs/scenarios/RCP/\($scenario_map[.scenario])",
-                            downscaling_of: @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.regional.\(.scenario)",
-                            has_output: {
-                                "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/land_cpm/datasets/\(.scenario)/output",
-                                "@type": "data:Dataset",
-                                variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
-                                has_part: {
-                                    "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/land_cpm/datasets/\(.scenario)/\($model_variant_id)/output",
-                                }
-                            }
-                        },
-                        downscaling_of: @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.regional.\(.scenario).\($model_variant_id)",
-                        has_output: {
-                            "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/land_cpm/datasets/\(.scenario)/\($model_variant_id)/output",
-                            "@type": "data:Dataset",
-                            variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
-                            has_part: {
-                                "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
-                            }
+                        "@id": $simulation.has_output."@id",
+                        has_part: {
+                            "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
                         }
                     }
-                elif $collection == "land_rcm" then
-                    {
-                        "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.regional.\(.scenario).\($model_variant_id)",
-                        "@type": ["ccso:DynamicalDownscaling", "ccso:SingleSimulation"],
-                        model: "https://w3id.org/hacid/data/cs/models/HadREM3-GA705",
-                        scenario: @uri "https://w3id.org/hacid/data/cs/scenarios/RCP/\($scenario_map[.scenario])",
-                        ensemble: {
-                            "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.regional.\(.scenario)",
-                            "@type": ["ccso:EnsembleSimulation","ccso:DynamicalDownscaling"],
-                            scenario: @uri "https://w3id.org/hacid/data/cs/scenarios/RCP/\($scenario_map[.scenario])",
-                            downscaling_of: @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.global.\(.scenario)",
-                            has_output: {
-                                "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/land_rcm/datasets/\(.scenario)/output",
-                                "@type": "data:Dataset",
-                                variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
-                                has_part: {
-                                    "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/land_rcm/datasets/\(.scenario)/\($model_variant_id)/output",
-                                }
-                            },
-                        },
-                        downscaling_of: $gcm_id,
-                        has_output: {
-                            "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/land_cpm/datasets/\(.scenario)/\($model_variant_id)/output",
-                            "@type": "data:Dataset",
-                            variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
-                            has_part: {
-                                "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
-                            }
-                        }
-                    }
-                elif $collection == "land_gcm" then
-                    {
-                        "@id": $gcm_id,
-                        ensemble: {
-                            "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.global.\(.scenario)",
-                            "@type": ["ccso:EnsembleSimulation","ccso:GlobalClimateSimulation"],
-                            scenario: @uri "https://w3id.org/hacid/data/cs/scenarios/RCP/\($scenario_map[.scenario])",
-                            has_output: {
-                                "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.global.\(.scenario)/output",
-                                "@type": "data:Dataset",
-                                variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
-                                has_part: $gcm_output_id
-                            },
-                        },
-                        has_output: {
-                            "@id": $gcm_output_id,
-                            "@type": "data:Dataset",
-                            variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
-                            has_part: {
-                                "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)"
-                            }
-                        }
-                        # "@included": {
-                        #     "@id": $gcm_output_id,
-                        #     has_part: {
-                        #         "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
-                        #     }
-                        # }
-                    } +
-                    if $model == "HadGEM3-GC3.05" then
-                        {
-                            "@type": ["ccso:GlobalClimateSimulation", "ccso:SingleSimulation"],
-                            model: @uri "https://w3id.org/hacid/data/cs/models/\($model)",
-                            scenario: @uri "https://w3id.org/hacid/data/cs/scenarios/RCP/\($scenario_map[.scenario])"
-                            # has_output: {
-                            #     "@id": $gcm_output_id,
-                            #     "@type": "data:Dataset",
-                            #     variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)"
-                            # }
-                        }
-                    else {}
-                    end
                 end
             end
         )
@@ -491,9 +251,7 @@ def decompose_id($collection):
         "@type": "http://www.w3.org/2001/XMLSchema#duration"
     },
     ensemble: {
-        "@reverse": {
-            "@id": "ccso:hasMemberSimulation"
-        }
+        "@reverse": "ccso:hasMemberSimulation"
     }
 } as $context |
 
