@@ -19,3 +19,6 @@ def mix_in($new_data):
     group_by(.key) |
     map({key:.[0].key, value: map(.value)}) |
     from_entries;
+
+def split_by(filter):
+    group_by(filter) | map({key: .[0] | filter, value: map(del(filter))}) | from_entries;

@@ -3,6 +3,7 @@ import "./mapping/utils" as UTILS;
 import "./mapping/time" as TIME;
 import "./mapping/ukcp18-time" as UKCP18_TIME;
 import "./mapping/simulations" as SIMULATIONS;
+import "./mapping/jsonld" as JSONLD;
 
 $spatial_grid_maps as [$spatial_grid_map] |
 
@@ -30,9 +31,7 @@ $spatial_grid_maps as [$spatial_grid_map] |
         "@type": "ccso:ConvectionPermittingClimateModel"
     } |
     ."@id" = @uri "https://w3id.org/hacid/data/cs/models/\(.label)" |
-    .maintained_by |= {
-        "@id": "https://w3id.org/hacid/data/cs/organizations/MOHC"
-    }
+    .maintained_by =  "https://w3id.org/hacid/data/cs/organizations/MOHC"
 ] as $mohc_models |
 
 [
@@ -100,7 +99,7 @@ def decompose_id($collection):
 #    "marine-sim": 811
 
 
-#    There are collections where the id is different because they are created in a different way. For "land_gcm", "land_eurocordex", "land_rcm", "land_cpm", "and "land_derived", the original id structure is preserved:
+#    There are collections where the id is different because they are created in a different way. For "land-gcm", "land-eurocordex", "land-rcm", "land-cpm", "and "land-derived", the original id structure is preserved:
 #    <variable>_<scenario>_<collection>_<domain>_<resolution>_<ensemble_member>_<frequency>_<startDate>-<endDate>.nc
 #
 #    For others, it differs.
@@ -151,7 +150,11 @@ def decompose_id($collection):
         (
             {
                 "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
-                "@type": "data:Dataset",
+                "@type":
+                    if $collection == "land-prob"
+                        then "ccso:ProbabilisticProjection"
+                        else "ccso:SingleProjection"
+                    end,
                 label: .id[:-3],
                 dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
                 independent_variable: [
@@ -164,31 +167,45 @@ def decompose_id($collection):
             },
             if $collection != "land-prob" then
                 $id_comp_struct.model_variant_id as $model_variant_id |
-                
-                if $collection == "land_cpm" then
+                debug |
+                if $collection == "land-cpm" then
                     SIMULATIONS::dataset_to_cpm_simulation($model_variant_id)
-                elif $collection == "land_rcm" then
+                elif $collection == "land-rcm" then
                     SIMULATIONS::dataset_to_rcm_simulation($model_variant_id)
-                elif $collection == "land_gcm" then
+                elif $collection == "land-gcm" then
                     SIMULATIONS::dataset_to_gcm_simulation($model_variant_id)
+                elif $collection == "EuroCORDEX" then
+                    SIMULATIONS::dataset_to_cordex_simulation
+                elif $collection == "land-derived" then
+                    SIMULATIONS::dataset_to_gcm_derived_projection($model_variant_id)
+                elif $collection == "land-prob" then
+                    SIMULATIONS::dataset_to_probabilistic_projection
+                elif $collection == "land-indices" then
+                    SIMULATIONS::dataset_to_gcm_indices($model_variant_id)
+                else
+                    {}
                 end as $simulation |
 
                 $rescale_map[.domain]?[.resolution]? as $rescale |
                 if $rescale then
-                    ($simulation | debug) |
+                    $simulation,
                     {
                         "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
-                        is_rescaled_version_of: $simulation.has_output."@id",
-                        is_part_of: {
-                            "@id": ($simulation.ensemble.has_output."@id" + $rescale),
-                            "@type": "data:Dataset",
-                            is_rescaled_version_of: $simulation.ensemble.has_output."@id"
-                        }
+                        is_rescaled_version_of: ($simulation.has_output | JSONLD::id),
+                        is_part_of: (
+                            $simulation.ensemble?.has_output | 
+                            if . then {
+                                "@id": (JSONLD::id + $rescale),
+                                "@type": "data:Dataset",
+                                is_rescaled_version_of: JSONLD::id
+                            }
+                            end
+                        )
                     }
                 else
                     $simulation,
                     {
-                        "@id": $simulation.has_output."@id",
+                        "@id": ($simulation.has_output | JSONLD::id),
                         has_part: {
                             "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
                         }
@@ -199,61 +216,63 @@ def decompose_id($collection):
     )   
 ] as $resources |
 
-{
-    rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    rdfs: "http://www.w3.org/2000/01/rdf-schema#",
-    top: "https://w3id.org/hacid/onto/top-level/",
-    ccso: "https://w3id.org/hacid/onto/ccso/",
-    data: "https://w3id.org/hacid/onto/data/",
-    index: "https://w3id.org/hacid/data/cs/climdex/indices/",
-    sector: "https://w3id.org/hacid/data/cs/climdex/sectors/",
-    parameter: "https://w3id.org/hacid/data/cs/climdex/parameters/",
-    variable: "https://w3id.org/hacid/data/cs/variables/mip/",
-    unit: "https://w3id.org/hacid/data/cs/unitsofmeasure/",
-    dimension: "https://w3id.org/hacid/data/cs/dimensions/",
-    aggregation: "https://w3id.org/hacid/data/cs/climdex/index-time-aggregations/",
-    temporalgrid: "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/",
-    time: "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/",
-    geodetic: "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/",
-    label: {
-        "@id": "rdfs:label",
-        "@language": "en"
-    },
-    comment: {
-        "@id": "rdfs:comment",
-        "@language": "en"
-    },
-    has_output: "data:hasOutput",
-    has_part: "top:hasPart",
-    variable: "data:holdsSpecializationOfVariable",
-    downscaling_of: "ccso:isDownscalingOf", 
-    model: "ccso:usesModel", 
-    scenario: "ccso:refersToScenario", 
-    maintained_by: "ccso:isMaintainedBy",
-    specialization_criterion: "data:isSpecializedAccordingTo",
-    specialization_on: "data:isSpecializationOn",
-    selected_region: "data:hasSelectedRegion",
-    start_datetime: "data:hasStartDateTime",
-    end_datetime: "data:hasEndDateTime",
-    based_on_ds: "data:basedOnDimensionalSpace",
-    discretization: "data:hasDiscretization",
-    exact_bounding_region: "data:hasExactBoundingRegion",
-    resolution_value: {
-        "@id": "data:hasResolutionValue",
-        "@type": "http://www.w3.org/2001/XMLSchema#duration"
-    },
-    period_value: {
-        "@id": "data:hasPeriodValue",
-        "@type": "http://www.w3.org/2001/XMLSchema#duration"
-    },
-    in_period_resolution_value: {
-        "@id": "data:hasInPeriodResolutionValue",
-        "@type": "http://www.w3.org/2001/XMLSchema#duration"
-    },
-    ensemble: {
-        "@reverse": "ccso:hasMemberSimulation"
-    }
-} as $context |
+(
+    {
+        rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        rdfs: "http://www.w3.org/2000/01/rdf-schema#",
+        top: "https://w3id.org/hacid/onto/top-level/",
+        ccso: "https://w3id.org/hacid/onto/ccso/",
+        data: "https://w3id.org/hacid/onto/data/",
+        index: "https://w3id.org/hacid/data/cs/climdex/indices/",
+        sector: "https://w3id.org/hacid/data/cs/climdex/sectors/",
+        parameter: "https://w3id.org/hacid/data/cs/climdex/parameters/",
+        variable: "https://w3id.org/hacid/data/cs/variables/mip/",
+        unit: "https://w3id.org/hacid/data/cs/unitsofmeasure/",
+        dimension: "https://w3id.org/hacid/data/cs/dimensions/",
+        aggregation: "https://w3id.org/hacid/data/cs/climdex/index-time-aggregations/",
+        temporalgrid: "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/quantizations/",
+        time: "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/",
+        geodetic: "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/",
+        ensemble: {
+            "@reverse": "ccso:hasMemberSimulation"
+        }
+    } +
+    (
+        {
+            "@type": {
+                "@id": {
+                    has_output: "data:hasOutput",
+                    has_part: "top:hasPart",
+                    variable: "data:holdsSpecializationOfVariable",
+                    downscaling_of: "ccso:isDownscalingOf", 
+                    model: "ccso:usesModel", 
+                    scenario: "ccso:refersToScenario", 
+                    maintained_by: "ccso:isMaintainedBy",
+                    specialization_criterion: "data:isSpecializedAccordingTo",
+                    specialization_on: "data:isSpecializationOn",
+                    selected_region: "data:hasSelectedRegion",
+                    start_datetime: "data:hasStartDateTime",
+                    end_datetime: "data:hasEndDateTime",
+                    based_on_ds: "data:basedOnDimensionalSpace",
+                    discretization: "data:hasDiscretization",
+                    exact_bounding_region: "data:hasExactBoundingRegion",
+                },
+                "http://www.w3.org/2001/XMLSchema#duration": {
+                    resolution_value: "data:hasResolutionValue",
+                    period_value: "data:hasPeriodValue",
+                    in_period_resolution_value: "data:hasInPeriodResolutionValue"
+                }
+            },
+            "@language": {
+                en: {
+                    label: "rdfs:label",
+                    comment: "rdfs:comment"
+                }
+            }
+
+        } | JSONLD::unpack
+    )
+) as $context |
 
 {
     "@context": $context,

@@ -1,3 +1,6 @@
+import "./mapping/utils" as UTILS;
+import "./mapping/jsonld" as JSONLD;
+
 # For each resolution available in UKCP18, this script generates a corresponding grids (dimensional space)
 # and possibly the corresponding general discretizatyion specification.
 
@@ -15,9 +18,6 @@
 #   - country,
 #   - region,
 #   - river
-
-def split_by(filter):
-    group_by(filter) | map({key: .[0] | filter, value: map(del(filter))}) | from_entries;
 
 {
     "@type": {
@@ -168,15 +168,7 @@ def split_by(filter):
         dimension: "https://w3id.org/hacid/data/cs/dimensions/",
         georef: "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/"
     } + 
-    (
-        [
-            $properties | to_entries | .[] |
-            .key as $key | .value | to_entries | .[] |
-            .key as $value | .value | to_entries | .[] |
-            .value |= {"@id": ., $key: $value}
-        ] |
-        from_entries
-    ),
+    ($properties | JSONLD::unpack),
     "@graph": [
         # OSGB
         {
@@ -193,10 +185,10 @@ def split_by(filter):
         ($grids | map(del(.resolution_id) | del(.for_domain)))
     ],
     grid_map: (
-        $grids | split_by(.for_domain) |
+        $grids | UTILS::split_by(.for_domain) |
         with_entries(
             .value |= (
-                split_by(.resolution_id) |
+                UTILS::split_by(.resolution_id) |
                 with_entries(
                     .value |= (
                         map(."@id") |
