@@ -48,7 +48,7 @@
     
 	rr:subjectMap [
         rr:termType rr:IRI ;
-        rr:class data:Dataset ;
+        rr:class ccso:SingleProjection, ccso:ScenarioBasedProjection ;
     	rr:template "https://w3id.org/hacid/data/cs/datasets/{master_id}"
     ] ;
 	
@@ -60,7 +60,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate data:holdsSpecializationOfVariable;
+        rr:predicate data:iSpecializationOfVariable;
         rr:objectMap :VariableIRI
     ] ;
 
@@ -86,6 +86,11 @@
         rr:objectMap [
             rr:parentTriplesMap :TemporalSpecializationMapping
         ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
     ] .
 
     # rr:predicateObjectMap [
@@ -115,7 +120,7 @@
 
 :OutputIRI
     rr:termType rr:IRI ;
-    rr:class data:Dataset ; 
+    rr:class ccso:SingleProjection, ccso:ScenarioBasedProjection ; 
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;
@@ -180,6 +185,11 @@
         rr:objectMap [
             rr:parentTriplesMap :DatasetMapping
         ]
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
     ] .
 
 :SimulationIRI
@@ -313,7 +323,7 @@
 
 :DrivingEnsembleOutputIRI
     rr:termType rr:IRI ;
-    rr:class data:Dataset ; 
+    rr:class ccso:EnsembleProjection, ccso:ScenarioBasedProjection ; 
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;
@@ -365,11 +375,16 @@
     rr:predicateObjectMap [
         rr:predicate data:isSpecializedAccordingTo ;
         rr:objectMap :GeodeticSpecializationIRI
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
     ] .      
 
 :EnsembleIRI
     rr:termType rr:IRI ;
-    rr:class ccso:EnsembleSimulation, ccso:DynamicalDownscaling ;
+    rr:class ccso:ClimateModelIntercomparisonExperiment, ccso:DynamicalDownscaling ;
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;
@@ -433,7 +448,7 @@
 
 :EnsembleOutputIRI
     rr:termType rr:IRI ;
-    rr:class data:Dataset ; 
+    rr:class ccso:EnsembleProjection, ccso:ScenarioBasedProjection ; 
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;
@@ -485,13 +500,18 @@
     rr:predicateObjectMap [
         rr:predicate data:isSpecializedAccordingTo ;
         rr:objectMap :GeodeticSpecializationIRI
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
     ] .      
 
 :ExperimentMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     rr:subjectMap [
         rr:termType rr:IRI ;
-        rr:class ccso:EnsembleSimulation ;
+        rr:class ccso:ClimateModelIntercomparisonExperiment, ccso:DynamicalDownscaling ;
         fnml:functionValue [
             rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
                 rr:predicate hrf:template ;
@@ -545,7 +565,7 @@
 
 :ExperimentOutputIRI
     rr:termType rr:IRI ;
-    rr:class data:Dataset ; 
+    rr:class ccso:EnsembleProjection, ccso:ScenarioBasedProjection ; 
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;
@@ -597,6 +617,11 @@
     rr:predicateObjectMap [
         rr:predicate data:isSpecializedAccordingTo ;
         rr:objectMap :GeodeticSpecializationIRI
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
     ] .      
 
 :DomainMapping a rr:TriplesMap ;
@@ -652,7 +677,7 @@
 
 :DomainOutputIRI
     rr:termType rr:IRI ;
-    rr:class data:Dataset ; 
+    rr:class ccso:EnsembleProjection, ccso:ScenarioBasedProjection ; 
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;

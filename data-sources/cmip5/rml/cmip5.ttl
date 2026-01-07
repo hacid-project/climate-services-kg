@@ -49,7 +49,7 @@
     
 	rr:subjectMap [
         rr:termType rr:IRI ;
-        rr:class data:Dataset ;
+        rr:class ccso:SingleProjection, ccso:ScenarioBasedProjection ;
     	rr:template "https://w3id.org/hacid/data/cs/datasets/{master_id}"
     ] ;
 	
@@ -61,7 +61,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate data:holdsSpecializationOfVariable;
+        rr:predicate data:isSpecializationOfVariable;
         rr:objectMap :VariableIRI
     ] ;
 
@@ -89,11 +89,16 @@
     rr:predicateObjectMap [
         rr:predicate data:isSpecializedAccordingTo ;
         rr:object geo_specialization_all:
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
     ] .      
 
 :OutputIRI
     rr:termType rr:IRI ;
-    rr:class data:Dataset ; 
+    rr:class ccso:SingleProjection, ccso:ScenarioBasedProjection ; 
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;
@@ -176,6 +181,11 @@
     rr:predicateObjectMap [
         rr:predicate data:isSpecializedAccordingTo ;
         rr:object geo_specialization_all:
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
     ] .      
 
 :EmissionScenarioIRI
@@ -269,7 +279,7 @@
 
 :EnsembleIRI
     rr:termType rr:IRI ;
-    rr:class ccso:EnsembleSimulation, ccso:GlobalClimateSimulation ;
+    rr:class ccso:PerturbedParameterClimateEnsembleSimulation, ccso:GlobalClimateSimulation ;
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;
@@ -326,7 +336,7 @@
 
 :EnsembleOutputIRI
     rr:termType rr:IRI ;
-    rr:class data:Dataset ; 
+    rr:class ccso:EnsembleProjection, ccso:ScenarioBasedProjection ; 
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;
@@ -373,13 +383,18 @@
     rr:predicateObjectMap [
         rr:predicate data:isSpecializedAccordingTo ;
         rr:object geo_specialization_all:
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
     ] .      
 
 :ExperimentMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     rr:subjectMap [
         rr:termType rr:IRI ;
-        rr:class ccso:EnsembleSimulation ;
+        rr:class ccso:ClimateModelIntercomparisonExperiment, ccso:GlobalClimateSimulation ;
         fnml:functionValue [
             rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
                 rr:predicate hrf:template ;
@@ -437,7 +452,7 @@
 
 :ExperimentOutputIRI
     rr:termType rr:IRI ;
-    rr:class data:Dataset ; 
+    rr:class ccso:EnsembleProjection, ccso:ScenarioBasedProjection ; 
     fnml:functionValue [
         rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
             rr:predicate hrf:template ;
@@ -489,6 +504,11 @@
     rr:predicateObjectMap [
         rr:predicate data:isSpecializedAccordingTo ;
         rr:object geo_specialization_all:
+    ] ;
+    
+    rr:predicateObjectMap [
+        rr:predicate ccso:refersToScenario ;
+        rr:objectMap :EmissionScenarioIRI
     ] .      
 
 :ModelMapping a rr:TriplesMap ;
