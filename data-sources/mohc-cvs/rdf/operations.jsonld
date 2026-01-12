@@ -1271,6 +1271,29 @@
               ]
             },
             {
+              "Output": "List of climate projections",
+              "WorkflowInfo": {
+                "Roles": [
+                  "CaseSolver"
+                ],
+                "InformationType": "Optional"
+              },
+              "Description": "The operation that selects the climate projections",
+              "@type": "top:Operation",
+              "Label": "Conduct manual selection of climate projections",
+              "@id": "ops:ConductManualSelectionOfClimateProjections",
+              "InformationRoles": [
+                {
+                  "@type": "top:InformationRole",
+                  "@id": "ops:ConductManualSelectionOfClimateProjections/associated-data",
+                  "ExpectedType": {
+                    "@id": "ccso:Projection",
+                    "@type": "owl:Class"
+                  }
+                }
+              ]
+            },
+            {
               "Output": "List of observation datasets",
               "WorkflowInfo": {
                 "Roles": [

@@ -732,6 +732,21 @@
         "Name": "Conduct manual selection of climate simulations"
       },
       {
+        "Output": "List of climate projections",
+        "WorkflowInfo": {
+          "Roles": [
+            "CaseSolver"
+          ],
+          "InformationType": "Optional"
+        },
+        "Description": "The operation that selects the climate projections",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Climate projections"
+        },
+        "Name": "Conduct manual selection of climate projections"
+      },
+      {
         "Output": "List of observation datasets",
         "WorkflowInfo": {
           "Roles": [

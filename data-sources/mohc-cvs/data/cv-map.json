@@ -74,6 +74,9 @@
     "Climate simulations":  {
         "class": "ccso:ClimateSimulation"
     },
+    "Climate projections":  {
+        "class": "ccso:Projection"
+    },
     "Observation datasets": {
         "class": "data:Dataset"
     },
