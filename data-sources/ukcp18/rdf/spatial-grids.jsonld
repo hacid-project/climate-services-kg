@@ -151,35 +151,7 @@
         "exact_bounding_region": "dimension:geodetic/all"
       },
       {
-        "@id": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/12km",
-        "@type": "data:DiscreteDimensionalSpace",
-        "label": "UKCP18 12km grid on rotated pole coordinates",
-        "comment": "A geodetic grid of approximate resolution 12km x 12km, based on a rotated pole coordinate system.",
-        "based_on_ds": {
-          "@id": "georef:rotated-WGS84/198.0,39.25",
-          "label": "Rotated geodetic: pole 198.0° 39.25°",
-          "comment": "Rotated geodetic dimensional space, with polar coordinates 198.0° 39.25°, in reference to the World Geodetic System 1984 (WGS84).",
-          "based_on_ds": "georef:WGS84",
-          "pole": {
-            "@id": "georef:WGS84/points/198.0,39.25",
-            "point_of": "georef:WGS84",
-            "label": "Geodetic point 198.0° 39.25°",
-            "comment": "Geodetic point with longitude 198.0° and latitude 39.25°, in reference to the World Geodetic System 1984 (WGS84).",
-            "wkt": "POINT(198.0 39.25)"
-          }
-        },
-        "discretization": {
-          "@id": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/12km/discretization",
-          "based_on_ds": "dimension:geodetic",
-          "@type": "data:SimpleRegularBinning",
-          "resolution": {
-            "@id": "https://w3id.org/hacid/data/cs/value/m/12000",
-            "@type": "top:Amount",
-            "value": "12000",
-            "uom": "https://w3id.org/hacid/data/cs/unitsofmeasure/m"
-          }
-        },
-        "exact_bounding_region": "dimension:geodetic/all"
+        "@id": "https://w3id.org/hacid/data/cs/cordex/grids/EUR-11/ds"
       },
       {
         "@id": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/2.2km",
@@ -209,8 +181,7 @@
             "value": "2200",
             "uom": "https://w3id.org/hacid/data/cs/unitsofmeasure/m"
           }
-        },
-        "exact_bounding_region": "dimension:geodetic/all"
+        }
       },
       {
         "@id": "https://w3id.org/hacid/data/cs/ukcp18/regional-splits/country",
@@ -237,7 +208,7 @@
   ],
   "grid_map": {
     "eur": {
-      "12km": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/12km"
+      "12km": "https://w3id.org/hacid/data/cs/cordex/grids/EUR-11/ds"
     },
     "global": {
       "60km": "https://w3id.org/hacid/data/cs/ukcp18/grids/WGS84/60km"

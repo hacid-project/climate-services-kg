@@ -98,12 +98,20 @@ import "./mapping/jsonld" as JSONLD;
         exact_bounding_region: "dimension:geodetic/all"
     },
 
+    # CORDEX EUR-11 grid, fully defined among CORDEX domains
+    {
+        resolution_id: "12km",
+        for_domain: "eur",
+        "@id": "https://w3id.org/hacid/data/cs/cordex/grids/EUR-11/ds"
+    },
+
     # Rotated pole coordinates grids
     (
-        ( {km: 12, pole:{lat:39.25, long: 198.0}}, {km: 2.2, pole:{lat:37.5, long: 177.5}}) |
+        # ( {km: 12, pole:{lat:39.25, long: 198.0}}, {km: 2.2, pole:{lat:37.5, long: 177.5}}) |
+        {km: 2.2, pole:{lat:37.5, long: 177.5}} |
         {
             resolution_id: "\(.km)km",
-            for_domain: if .km == 12 then "eur" else "uk" end,
+            for_domain: "uk", #if .km == 12 then "eur" else "uk" end,
             "@id": "https://w3id.org/hacid/data/cs/ukcp18/grids/rotated-WGS84/\(.km)km",
             "@type": "data:DiscreteDimensionalSpace",
             label: "UKCP18 \(.km)km grid on rotated pole coordinates",
@@ -134,8 +142,8 @@ import "./mapping/jsonld" as JSONLD;
                         uom: "https://w3id.org/hacid/data/cs/unitsofmeasure/m"
                     }
                 )
-            },
-            exact_bounding_region: "dimension:geodetic/all"
+            }
+            # exact_bounding_region: "dimension:geodetic/all"
         }
     ),
 
@@ -181,7 +189,6 @@ import "./mapping/jsonld" as JSONLD;
                 "@id": "georef:OSGB36/coverage"
             }
         },
-
         ($grids | map(del(.resolution_id) | del(.for_domain)))
     ],
     grid_map: (

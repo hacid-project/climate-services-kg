@@ -138,14 +138,18 @@ def decompose_id($collection):
         if $issues | any then
             $issues | debug | empty
         end |
-
-        UKCP18_TIME::dataset_to_interval($id_comp_struct) as $time_interval |
+        
+        if $id_comp_struct.model_variant_id then
+            .model_variant_id = $id_comp_struct.model_variant_id
+        end |
 
         if $id_comp_struct.date_interval then
-            null
+            .date_interval = $id_comp_struct.date_interval
         else
-            $id_comp_struct.timeslice_or_gwl
-        end as $gwl |
+            .gwl = $id_comp_struct.timeslice_or_gwl
+        end |
+
+        UKCP18_TIME::dataset_to_interval as $time_interval |
 
         (
             {
@@ -156,7 +160,7 @@ def decompose_id($collection):
                         else "ccso:SingleProjection"
                     end,
                 label: .id[:-3],
-                dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
+                single_dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
                 independent_variable: [
                     UKCP18_TIME::dataset_to_variable($time_interval),
                     $spatial_grid_map[.domain][.resolution]
@@ -166,22 +170,20 @@ def decompose_id($collection):
                 ]
             },
             if $collection != "land-prob" then
-                $id_comp_struct.model_variant_id as $model_variant_id |
-                debug |
                 if $collection == "land-cpm" then
-                    SIMULATIONS::dataset_to_cpm_simulation($model_variant_id)
+                    SIMULATIONS::dataset_to_cpm_simulation
                 elif $collection == "land-rcm" then
-                    SIMULATIONS::dataset_to_rcm_simulation($model_variant_id)
+                    SIMULATIONS::dataset_to_rcm_simulation
                 elif $collection == "land-gcm" then
-                    SIMULATIONS::dataset_to_gcm_simulation($model_variant_id)
+                    SIMULATIONS::dataset_to_gcm_simulation
                 elif $collection == "EuroCORDEX" then
                     SIMULATIONS::dataset_to_cordex_simulation
                 elif $collection == "land-derived" then
-                    SIMULATIONS::dataset_to_gcm_derived_projection($model_variant_id)
+                    SIMULATIONS::dataset_to_gcm_derived_projection
                 elif $collection == "land-prob" then
                     SIMULATIONS::dataset_to_probabilistic_projection
                 elif $collection == "land-indices" then
-                    SIMULATIONS::dataset_to_gcm_indices($model_variant_id)
+                    SIMULATIONS::dataset_to_gcm_indices
                 else
                     {}
                 end as $simulation |
@@ -243,7 +245,9 @@ def decompose_id($collection):
                 "@id": {
                     has_output: "data:hasOutput",
                     has_part: "top:hasPart",
-                    variable: "data:holdsSpecializationOfVariable",
+                    dependent_variable: "data:holdsSpecializationOfVariable",
+                    single_dependent_variable: "data:isSpecializationOfVariable",
+                    independent_variable: "data:dependsOnVariable",
                     downscaling_of: "ccso:isDownscalingOf", 
                     model: "ccso:usesModel", 
                     scenario: "ccso:refersToScenario", 

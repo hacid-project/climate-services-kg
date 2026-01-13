@@ -15,9 +15,9 @@ def str_to_mobile_interval:
     }[.] as $duration |
     TIME::mobile_interval($duration);
 
-def dataset_to_interval($id_comp_struct):
-    if $id_comp_struct.date_interval then
-        $id_comp_struct.date_interval | str_to_interval
+def dataset_to_interval:
+    if .date_interval then
+        .date_interval | str_to_interval
     else
         .time_slice_type | str_to_mobile_interval
     end;
