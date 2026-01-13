@@ -54,6 +54,7 @@
         rr:predicate rdfs:label;
         rr:objectMap [ 
             rml:reference "long_name" ; 
+            rr:template "{long_name} ({out_name})";
             rr:language "en" 
         ]
     ] ;
