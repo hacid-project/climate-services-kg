@@ -3,13 +3,29 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX top: <https://w3id.org/hacid/onto/top-level/>
 PREFIX methods: <https://w3id.org/hacid/data/cs/wf/methods/>
 
-SELECT 
-	?method ?method_label
+SELECT ?method ?method_label
 WHERE {
-  	?general_method top:specializes methods:ClimateCaseMethod;
-		rdfs:label ?general_method_label.
- 	?method top:specializes ?general_method;
-        rdfs:label ?specific_method_label.
- 	BIND(CONCAT(?general_method_label, ' - ', ?specific_method_label) AS ?method_label)
+  	{
+      SELECT 
+          ?method 
+          (CONCAT(?general_method_label, ' - ', ?specific_method_label) AS ?base_method_label)
+          (GROUP_CONCAT(DISTINCT ?specific_method_altLabel; separator=", ") AS ?alt_method_labels)
+      WHERE {
+          ?general_method top:specializes methods:ClimateCaseMethod;
+              rdfs:label ?general_method_label.
+          ?method top:specializes ?general_method;
+              rdfs:label ?specific_method_label.
+          OPTIONAL {
+              ?method top:altLabel ?specific_method_altLabel
+          }
+      }
+      GROUP BY ?method ?general_method_label ?specific_method_label
+  	}
+  	BIND(CONCAT(?base_method_label,IF(?alt_method_labels, CONCAT(' (',?alt_method_labels,')'),'')) AS ?method_label).
+
+	# Change/generate filter as needed
+  	FILTER(CONTAINS(LCASE(?method_label), LCASE('')))
+
 }
 ORDER BY ?method_label
+ 
