@@ -5,10 +5,15 @@ PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX mips: <https://w3id.org/hacid/data/cs/mips/>
 
-INSERT  { ?gcm_simulation rdfs:comment ?gcm_simulation_descr }
+INSERT {
+    GRAPH ?gcm_simulation_graph {
+        ?gcm_simulation rdfs:comment ?gcm_simulation_descr
+    }
+}
 WHERE {
     SELECT
         ?gcm_simulation
+        ?gcm_simulation_graph
         (
             CONCAT(
                 "GCM simulation from CMIP5. ",
@@ -24,6 +29,7 @@ WHERE {
             SELECT
                 ?experiment
                 ?gcm_simulation
+                ?gcm_simulation_graph
                 (
                     CONCAT(
                         "The GCM used is ", ?gcm_label,
@@ -35,8 +41,10 @@ WHERE {
             WHERE {
                 ?experiment top:isComponentOf mips:cmip5;
                     ccso:hasMemberSimulation ?gcm_simulation.
-                ?gcm_simulation a ccso:GlobalClimateSimulation, ccso:SingleSimulation ;
-                    ccso:usesModel ?gcm.
+                GRAPH ?gcm_simulation_graph {
+                    ?gcm_simulation a ccso:GlobalClimateSimulation, ccso:SingleSimulation
+                }.
+                ?gcm_simulation ccso:usesModel ?gcm.
                 ?gcm rdfs:label ?gcm_label;
                     ccso:isMaintainedBy ?gcm_inst .
                 ?gcm_inst top:acronym ?gcm_inst_code .
@@ -46,7 +54,7 @@ WHERE {
 
                 FILTER NOT EXISTS { ?gcm_simulation rdfs:comment ?_already }
             }
-            GROUP BY ?experiment ?gcm_simulation ?gcm_label
+            GROUP BY ?experiment ?gcm_simulation_graph ?gcm_simulation ?gcm_label
         }
 
         ?experiment rdfs:label ?experiment_label.

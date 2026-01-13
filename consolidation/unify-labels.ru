@@ -18,8 +18,7 @@ WHERE {
     	?s rdfs:label ?common_label.
     	FILTER NOT EXISTS {
       		?s rdfs:label ?non_derived_label.
-      		FILTER(!STRSTARTS(?non_derived_label, ?common_label))
-      		FILTER(!STRENDS(?non_derived_label, ?common_label))
+      		FILTER(!CONTAINS(?non_derived_label, ?common_label))
     	}
         GRAPH ?g {?s rdfs:label ?other_label}.
     	FILTER(?other_label != ?common_label)

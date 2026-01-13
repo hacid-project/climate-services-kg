@@ -8,10 +8,15 @@ PREFIX data: <https://w3id.org/hacid/onto/data/>
 PREFIX dimension: <https://w3id.org/hacid/data/cs/dimensions/>
 PREFIX georeference: <https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/>
 
-INSERT  { ?rcm_simulation rdfs:comment ?rcm_simulation_descr }
+INSERT {    
+    GRAPH ?rcm_simulation_graph {
+        ?rcm_simulation rdfs:comment ?rcm_simulation_descr
+    }
+}
 WHERE {
     SELECT
         ?rcm_simulation
+        ?rcm_simulation_graph
         (
             CONCAT(
                 "RCM simulation from CORDEX, ",
@@ -36,6 +41,7 @@ WHERE {
             SELECT
                 ?rcm_simulation ?rcm_descr
                 ?gcm_simulation
+                ?rcm_simulation_graph
                 (
                     CONCAT(
                         "The GCM used is ", ?gcm_label,
@@ -48,6 +54,7 @@ WHERE {
                 {
                     SELECT
                         ?rcm_simulation
+                        ?rcm_simulation_graph
                         (
                             CONCAT(
                                 "The RCM used is ", ?rcm_label,
@@ -57,8 +64,10 @@ WHERE {
                             ) AS ?rcm_descr
                         )
                     WHERE {
-                        ?rcm_simulation a ccso:DynamicalDownscaling, ccso:SingleSimulation ;
-                            ^ccso:hasMemberSimulation/^top:hasComponent/top:isComponentOf mips:cordex-cmip5;
+                        GRAPH ?rcm_simulation_graph {
+                            ?rcm_simulation a ccso:DynamicalDownscaling, ccso:SingleSimulation
+                        }
+                        ?rcm_simulation ^ccso:hasMemberSimulation/^top:hasComponent/top:isComponentOf mips:cordex-cmip5;
                             ccso:usesModel ?rcm.
                     
                         ?rcm rdfs:label ?rcm_label;
@@ -71,7 +80,7 @@ WHERE {
                         FILTER NOT EXISTS { ?rcm_simulation rdfs:comment ?_already }
 
                     }
-                    GROUP BY ?rcm_simulation ?rcm_label
+                    GROUP BY ?rcm_simulation_graph ?rcm_simulation ?rcm_label
                 }
 
                 ?rcm_simulation ccso:isDownscalingOf ?gcm_simulation.
@@ -86,7 +95,7 @@ WHERE {
                 }
 
             }
-            GROUP BY ?rcm_simulation ?rcm_descr ?gcm_simulation ?gcm_label
+            GROUP BY ?rcm_simulation_graph ?rcm_simulation ?rcm_descr ?gcm_simulation ?gcm_label
         }
 
         ?experiment top:isComponentOf mips:cmip5;
