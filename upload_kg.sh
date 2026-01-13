@@ -5,6 +5,8 @@ TDB2_CONF_PATH="/opt/homebrew/var/fuseki/configuration/hacid-kg-integrate.ttl"
 
 brew services stop fuseki
 
+export JVM_ARGS="-Xmx16G"
+
 tail -n +2 $MAP_FILE_PATH | awk -F "," '{
         if ($3 != "y") {
             system("ls -l " $1 " | awk '\''{ print \"" $2 "\", $9 }'\''")
