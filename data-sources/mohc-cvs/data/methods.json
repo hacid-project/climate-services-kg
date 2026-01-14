@@ -630,7 +630,7 @@
     "Usage": "“downscaling” larger scale metrics to assess impacts data (case 1) or for categorisation of different conditions (case 2)",
     "Category": "Statistical analyses",
     "ApplicableToOperations": [
-      "Select climate simulations",
+      "Choose the criteria for selecting or rejecting climate simulations",
       "Quantify future climate change"
     ],
     "Name": "Pattern matching",
@@ -638,7 +638,7 @@
       {
         "Name": "Clustering",
         "ApplicableToOperations": [
-          "Select climate simulations",
+          "Choose the criteria for selecting or rejecting climate simulations",
           "Quantify future climate change"
         ],
         "Definition": "Clustering is performed to select representative simulations and thus reduce the number of members in a model ensemble (e.g. model culling). It can be accomplished by performing hierarchical cluster analysis on the patterns of climate change at a certain height k, which corresponds to the desired number of clusters [1,2].\nClustering using nonhierarchical k-means clustering algorithm is a method to derive weather patterns from observational data [3].",
