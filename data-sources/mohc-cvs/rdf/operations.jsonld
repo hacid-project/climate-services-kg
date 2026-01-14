@@ -1215,7 +1215,7 @@
                   "Provide additional climate simulation selection criteria"
                 ]
               },
-              "Description": "The operation that applies filtering criteria to the list of climate simulations and shortlisting matching entries.",
+              "Description": "The operation that applies filtering criteria to the list of climate simulations and shortlisting matching entries. The case solver may add reasoning for choosing particular filtering criteria.",
               "@type": "top:Operation",
               "Label": "Filter climate simulations by selection criteria",
               "@id": "ops:FilterClimateSimulationsBySelectionCriteria"
@@ -1239,7 +1239,7 @@
                   "Provide additional observation selection criteria"
                 ]
               },
-              "Description": "The operation that applies filtering criteria to the list of observations and shortlisting matching entries.",
+              "Description": "The operation that applies filtering criteria to the list of observations and shortlisting matching entries. The case solver may add reasoning for choosing particular filtering criteria.",
               "@type": "top:Operation",
               "Label": "Filter observations by selection criteria",
               "@id": "ops:FilterObservationsBySelectionCriteria"
@@ -1255,7 +1255,7 @@
                   "Filter climate simulations by selection criteria"
                 ]
               },
-              "Description": "The operation that selects the climate simulations",
+              "Description": "The operation that selects the climate simulations. If all ensemble members are selected, choose the parent simulation (those without an ensemble identifier in the name).",
               "@type": "top:Operation",
               "Label": "Conduct manual selection of climate simulations",
               "@id": "ops:ConductManualSelectionOfClimateSimulations",
@@ -1288,6 +1288,29 @@
                   "@id": "ops:ConductManualSelectionOfClimateProjections/associated-data",
                   "ExpectedType": {
                     "@id": "ccso:Projection",
+                    "@type": "owl:Class"
+                  }
+                }
+              ]
+            },
+            {
+              "Output": "List of climate models",
+              "WorkflowInfo": {
+                "Roles": [
+                  "CaseSolver"
+                ],
+                "InformationType": "Optional"
+              },
+              "Description": "The operation that selects the climate models",
+              "@type": "top:Operation",
+              "Label": "Conduct manual selection of climate models",
+              "@id": "ops:ConductManualSelectionOfClimateModels",
+              "InformationRoles": [
+                {
+                  "@type": "top:InformationRole",
+                  "@id": "ops:ConductManualSelectionOfClimateModels/associated-data",
+                  "ExpectedType": {
+                    "@id": "ccso:ClimateModel",
                     "@type": "owl:Class"
                   }
                 }
@@ -1335,7 +1358,7 @@
                   "Choose global warming level extraction method"
                 ]
               },
-              "Description": "The operation that selects simulations exceeding the specific global warming level.",
+              "Description": "The operation that selects simulations exceeding the specific global warming level. This operation relates to providing information about climate simulations that reach the relevant global warming level within the period of interest (usually by 2100), based on previous studies or work.",
               "@type": "top:Operation",
               "Label": "Filter climate simulations by global warming level exceedance",
               "@id": "ops:FilterClimateSimulationsByGlobalWarmingLevelExceedance"
@@ -1355,7 +1378,7 @@
                   "Filter climate simulations by global warming level exceedance"
                 ]
               },
-              "Description": "The operation that extracts the time slice centered around the point in time when the specific global warming level is exceeded.",
+              "Description": "The operation that extracts the time slice centered around the point in time when the specific global warming level is exceeded. This operation requires defining the duration of the time slice. The case solver may also provide information—based on dataset guidance or previous studies—regarding the relevant start and end dates of the time slices.",
               "@type": "top:Operation",
               "Label": "Extract global warming level time slice",
               "@id": "ops:ExtractGlobalWarmingLevelTimeSlice",
@@ -1694,12 +1717,12 @@
               },
               "Description": "The operation that rejects the climate model simulations that do not meet the evaluation criteria or the ad hoc selection by the case solver.",
               "@type": "top:Operation",
-              "Label": "Select climate simulations",
-              "@id": "ops:SelectClimateSimulations",
+              "Label": "Choose the criteria for selecting or rejecting climate simulations",
+              "@id": "ops:ChooseTheCriteriaForSelectingOrRejectingClimateSimulations",
               "InformationRoles": [
                 {
                   "@type": "top:InformationRole",
-                  "@id": "ops:SelectClimateSimulations/associated-data",
+                  "@id": "ops:ChooseTheCriteriaForSelectingOrRejectingClimateSimulations/associated-data",
                   "ExpectedType": {
                     "@id": "top:Method",
                     "@type": "owl:Class"
@@ -1731,7 +1754,7 @@
                 ],
                 "InformationType": "Obligatory",
                 "BackwardDependencies": [
-                  "Select climate simulations"
+                  "Choose the criteria for selecting or rejecting climate simulations"
                 ]
               },
               "Description": "The operation that analyses and projecting the future climate by creating an output metric based on the selected climate simulations.",
@@ -1758,7 +1781,7 @@
                 ],
                 "InformationType": "Obligatory",
                 "BackwardDependencies": [
-                  "Select climate simulations"
+                  "Choose the criteria for selecting or rejecting climate simulations"
                 ]
               },
               "Description": "The operation that quantifies the uncertainty in projections of the selected climate simulations.",
@@ -2037,14 +2060,14 @@
             ],
             "InformationType": "Optional"
           },
-          "Description": "The operation that presents the climate or climate impact information through visual (e.g., plot, diagram, flowchart, graph, map), quantitative (e.g., table), or qualitative (e.g. narrative) formats",
+          "Description": "The operation that selects how to communicate the climate or climate‑impact information to the customer through visual (e.g., plot, diagram, flowchart, graph, map), quantitative (e.g., table), or qualitative (e.g., narrative) formats.",
           "@type": "top:Operation",
-          "Label": "Present climate information",
-          "@id": "ops:PresentClimateInformation",
+          "Label": "Select the preferred way to communicate climate information",
+          "@id": "ops:SelectThePreferredWayToCommunicateClimateInformation",
           "InformationRoles": [
             {
               "@type": "top:InformationRole",
-              "@id": "ops:PresentClimateInformation/associated-data",
+              "@id": "ops:SelectThePreferredWayToCommunicateClimateInformation/associated-data",
               "ExpectedType": {
                 "@id": "xsd:string",
                 "@type": "rdfs:Datatype"
