@@ -159,7 +159,7 @@ def decompose_id($collection):
                         then "ccso:ProbabilisticProjection"
                         else "ccso:SingleProjection"
                     end,
-                label: .id[:-3],
+                label: "ukcp18.\(.id[:-3])",
                 single_dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
                 independent_variable: [
                     UKCP18_TIME::dataset_to_variable($time_interval),
