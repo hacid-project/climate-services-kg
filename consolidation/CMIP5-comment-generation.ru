@@ -1,4 +1,3 @@
-PREFIX to: <http://purl.obolibrary.org/obo/TO_>
 PREFIX top: <https://w3id.org/hacid/onto/top-level/>
 PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
 PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
