@@ -688,7 +688,7 @@
             "Provide additional climate simulation selection criteria"
           ]
         },
-        "Description": "The operation that applies filtering criteria to the list of climate simulations and shortlisting matching entries.",
+        "Description": "The operation that applies filtering criteria to the list of climate simulations and shortlisting matching entries. The case solver may add reasoning for choosing particular filtering criteria.",
         "Name": "Filter climate simulations by selection criteria"
       },
       {
@@ -710,7 +710,7 @@
             "Provide additional observation selection criteria"
           ]
         },
-        "Description": "The operation that applies filtering criteria to the list of observations and shortlisting matching entries.",
+        "Description": "The operation that applies filtering criteria to the list of observations and shortlisting matching entries. The case solver may add reasoning for choosing particular filtering criteria.",
         "Name": "Filter observations by selection criteria"
       },
       {
@@ -724,7 +724,7 @@
             "Filter climate simulations by selection criteria"
           ]
         },
-        "Description": "The operation that selects the climate simulations",
+        "Description": "The operation that selects the climate simulations. If all ensemble members are selected, choose the parent simulation (those without an ensemble identifier in the name).",
         "AssociatedData": {
           "type": "uri",
           "cv": "Climate simulations"
@@ -780,7 +780,7 @@
             "Choose global warming level extraction method"
           ]
         },
-        "Description": "The operation that selects simulations exceeding the specific global warming level.",
+        "Description": "The operation that selects simulations exceeding the specific global warming level. This operation relates to providing information about climate simulations that reach the relevant global warming level within the period of interest (usually by 2100), based on previous studies or work.",
         "Name": "Filter climate simulations by global warming level exceedance"
       },
       {
@@ -798,7 +798,7 @@
             "Filter climate simulations by global warming level exceedance"
           ]
         },
-        "Description": "The operation that extracts the time slice centered around the point in time when the specific global warming level is exceeded.",
+        "Description": "The operation that extracts the time slice centered around the point in time when the specific global warming level is exceeded. This operation requires defining the duration of the time slice. The case solver may also provide information—based on dataset guidance or previous studies—regarding the relevant start and end dates of the time slices.",
         "AssociatedData": {
           "type": "range",
           "items": {
@@ -1055,7 +1055,7 @@
           "type": "uri",
           "cv": "Method"
         },
-        "Name": "Select climate simulations"
+        "Name": "Choose the criteria for selecting or rejecting climate simulations"
       }
     ]
   },
@@ -1079,7 +1079,7 @@
           ],
           "InformationType": "Obligatory",
           "BackwardDependencies": [
-            "Select climate simulations"
+            "Choose the criteria for selecting or rejecting climate simulations"
           ]
         },
         "Description": "The operation that analyses and projecting the future climate by creating an output metric based on the selected climate simulations.",
@@ -1098,7 +1098,7 @@
           ],
           "InformationType": "Obligatory",
           "BackwardDependencies": [
-            "Select climate simulations"
+            "Choose the criteria for selecting or rejecting climate simulations"
           ]
         },
         "Description": "The operation that quantifies the uncertainty in projections of the selected climate simulations.",
@@ -1292,11 +1292,11 @@
       ],
       "InformationType": "Optional"
     },
-    "Description": "The operation that presents the climate or climate impact information through visual (e.g., plot, diagram, flowchart, graph, map), quantitative (e.g., table), or qualitative (e.g. narrative) formats",
+    "Description": "The operation that selects how to communicate the climate or climate‑impact information to the customer through visual (e.g., plot, diagram, flowchart, graph, map), quantitative (e.g., table), or qualitative (e.g., narrative) formats.",
     "AssociatedData": {
           "type": "text"
     },
-    "Name": "Present climate information"
+    "Name": "Select the preferred way to communicate climate information"
   },
   {
     "WorkflowInfo": {
