@@ -1,0 +1,213 @@
+{
+  "Identify indices and variables": {
+    "gui_label": "Select variable or index",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Choose baseline period": {
+    "gui_start_label": "Start date",
+    "gui_end_label": "End date",
+    "data_type": "date_range"
+  },
+  "Choose future period": {
+    "gui_start_label": "Start date",
+    "gui_end_label": "End date",
+    "data_type": "date_range"
+  },
+  "Choose global warming level": {
+    "gui_label": "Select global warming level",
+    "gui_start_label": "Minimum warming level",
+    "gui_end_label": "Maximum warming level",
+    "gui_single_label": "Warming level",
+    "data_source": "task-data",
+    "entity_type": true,
+    "optional_single": true,
+    "data_type": "entity_range"
+  },
+  "Choose global warming level extraction method": {
+    "gui_label": "Select extraction method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Define emission scenarios": {
+    "gui_label": "Select emission scenario",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": true,
+    "data_type": "single_entity"
+  },
+  "Choose climate models": {
+    "gui_label": "Select climate model",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": true,
+    "data_type": "single_entity"
+  },
+  "Define relevant spatial resolutions": {
+    "gui_label": "Select spatial resolution",
+    "gui_start_label": "Minimum spatial resolution",
+    "gui_end_label": "Maximum spatial resolution",
+    "gui_single_label": "Spatial resolution",
+    "optional_single": true,
+    "data_type": "number_range"
+  },
+  "Define relevant temporal resolutions": {
+    "gui_label": "Select temporal resolution",
+    "gui_start_label": "Minimum temporal resolution",
+    "gui_end_label": "Maximum temporal resolution",
+    "gui_single_label": "Temporal resolution",
+    "optional_single": true,
+    "data_type": "duration_range"
+  },
+  "Define subannual selection": {
+    "gui_day_range_start": "Start day",
+    "gui_day_range_end": "End day",
+    "gui_single_month_label": "Single month",
+    "gui_month_range_start": "Start month",
+    "gui_month_range_end": "End month",
+    "gui_months_block_label": "Months block",
+    "gui_season_label": "Season",
+    "data_type": "subannual_period"
+  },
+  "Define observation type": {
+    "gui_label": "Select observation type",
+    "data_source": "task-data",
+    "entity_type": true,
+    "data_type": "single_entity"
+  },
+  "Choose climate simulations": {
+    "gui_label": "Select climate simulations",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Conduct manual selection of climate simulations": {
+    "gui_label": "Select climate simulations",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Conduct manual selection of climate projections": {
+    "gui_label": "Select climate projections",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Conduct manual selection of observations": {
+    "gui_label": "Select observations",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Extract global warming level time slice": {
+    "gui_start_label": "Select minimum duration",
+    "gui_end_label": "Select maximum duration",
+    "data_type": "duration_range"
+  },
+  "Apply additional spatial and/or temporal downscaling": {
+    "gui_label": "Select downscaling method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Apply data preprocessing": {
+    "gui_label": "Select preprocessing method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Compute climate indices": {
+    "gui_label": "Select computation method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Compute slice statistic": {
+    "gui_label": "Select computation method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Compute change": {
+    "gui_label": "Select computation method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Conduct observation analysis": {
+    "gui_label": "Select observation dataset",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Conduct spatial aggregation": {
+    "gui_label": "Select spatial aggregation method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Evaluate climate simulations": {
+    "gui_label": "Select evaluation method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Select climate simulations": {
+    "gui_label": "Select climate simulations",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Quantify future climate change": {
+    "gui_label": "Select future climate change metric",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Quantify uncertainty": {
+    "gui_label": "Select uncertainty quantification method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Estimate subjective confidence": {
+    "gui_label": "Select subjective confidence level",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Postprocess climate information": {
+    "gui_label": "Select postprocessing method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  },
+  "Postprocess impact analysis": {
+    "gui_label": "Select postprocessing method",
+    "data_source": "task-data",
+    "entity_type": true,
+    "multiple_selection": false,
+    "data_type": "single_entity"
+  }
+}
