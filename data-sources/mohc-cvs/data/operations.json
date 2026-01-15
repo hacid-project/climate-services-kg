@@ -561,6 +561,21 @@
         "Name": "Define emission scenarios"
       },
       {
+        "Output": "List of climate models",
+        "WorkflowInfo": {
+          "Roles": [
+            "CaseSolver"
+          ],
+          "InformationType": "Optional"
+        },
+        "Description": "The operation that selects the climate models",
+        "AssociatedData": {
+          "type": "uri",
+          "cv": "Climate models"
+        },
+        "Name": "Choose climate models"
+      },
+      {
         "Output": "Selected spatial resolution range",
         "WorkflowInfo": {
           "Roles": [
@@ -745,21 +760,6 @@
           "cv": "Climate projections"
         },
         "Name": "Conduct manual selection of climate projections"
-      },
-      {
-        "Output": "List of climate models",
-        "WorkflowInfo": {
-          "Roles": [
-            "CaseSolver"
-          ],
-          "InformationType": "Optional"
-        },
-        "Description": "The operation that selects the climate models",
-        "AssociatedData": {
-          "type": "uri",
-          "cv": "Climate models"
-        },
-        "Name": "Conduct manual selection of climate models"
       },
       {
         "Output": "List of observation datasets",

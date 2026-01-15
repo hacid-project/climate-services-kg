@@ -987,6 +987,29 @@
               ]
             },
             {
+              "Output": "List of climate models",
+              "WorkflowInfo": {
+                "Roles": [
+                  "CaseSolver"
+                ],
+                "InformationType": "Optional"
+              },
+              "Description": "The operation that selects the climate models",
+              "@type": "top:Operation",
+              "Label": "Choose climate models",
+              "@id": "ops:ChooseClimateModels",
+              "InformationRoles": [
+                {
+                  "@type": "top:InformationRole",
+                  "@id": "ops:ChooseClimateModels/associated-data",
+                  "ExpectedType": {
+                    "@id": "ccso:ClimateModel",
+                    "@type": "owl:Class"
+                  }
+                }
+              ]
+            },
+            {
               "Output": "Selected spatial resolution range",
               "WorkflowInfo": {
                 "Roles": [
@@ -1288,29 +1311,6 @@
                   "@id": "ops:ConductManualSelectionOfClimateProjections/associated-data",
                   "ExpectedType": {
                     "@id": "ccso:Projection",
-                    "@type": "owl:Class"
-                  }
-                }
-              ]
-            },
-            {
-              "Output": "List of climate models",
-              "WorkflowInfo": {
-                "Roles": [
-                  "CaseSolver"
-                ],
-                "InformationType": "Optional"
-              },
-              "Description": "The operation that selects the climate models",
-              "@type": "top:Operation",
-              "Label": "Conduct manual selection of climate models",
-              "@id": "ops:ConductManualSelectionOfClimateModels",
-              "InformationRoles": [
-                {
-                  "@type": "top:InformationRole",
-                  "@id": "ops:ConductManualSelectionOfClimateModels/associated-data",
-                  "ExpectedType": {
-                    "@id": "ccso:ClimateModel",
                     "@type": "owl:Class"
                   }
                 }
