@@ -30,7 +30,9 @@
         comment: "rdfs:comment",
         acronym: "top:acronym",
         definition: "top:definition",
-        isMemberOf: "top:isMemberOf",
+        isMemberOf:  {
+            "@reverse": "top:hasMember"
+        },
         isClassifiedBy: {
             "@reverse": "top:classifies"
         },

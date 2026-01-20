@@ -196,8 +196,8 @@ def convert_parameter:
         then (
             (.shortName | .[0:rindex($heatwave_suffix)]) as $shortName_prefix |
             (.longName | .[0:index("either")] | (. + "the ")) as $longName_prefix |
-            (.definition | if contains("either") then .[0:(index("either") - 4)] else null end) as $definition_prefix |
-            (.definition | if contains(". ") then .[(rindex(". ") - 4):] else null end) as $definition_suffix |
+            (.definition | if contains("either") then .[0:index("either")] else null end) as $definition_prefix |
+            (.definition | if contains(". ") then .[rindex(". "):] else null end) as $definition_suffix |
             (
                 (
                     (.parametric = true) |
