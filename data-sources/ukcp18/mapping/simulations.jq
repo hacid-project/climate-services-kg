@@ -202,12 +202,12 @@ def dataset_to_gcm_derived_projection:
     } as $output |
     {
         "@id": @uri "https://w3id.org/hacid/data/cs/derivations/ukcp18.derived.\(.scenario).\(.model_variant_id)",
-        "@type": "ccso:StatisticalDerivation",
+        "@type": "ccso:StatisticalProjectionTransformation",
         label: "ukcp18.derived.\(.scenario).\(.model_variant_id)",
         scenario: (.scenario | scenario_uri),
         ensemble: {
             "@id": @uri "https://w3id.org/hacid/data/cs/derivations/ukcp18.derived.\(.scenario)",
-            "@type": "ccso:StatisticalDerivation",
+            "@type": "ccso:StatisticalProjectionTransformation",
             label: "ukcp18.derived.\(.scenario)",
             scenario: (.scenario | scenario_uri),
             input: ($gcm_simulation.ensemble | JSONLD::id),
