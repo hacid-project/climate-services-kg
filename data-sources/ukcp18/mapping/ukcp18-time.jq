@@ -40,7 +40,7 @@ def dataset_to_variable($interval):
                 }
             },
             "regular-periodic": {
-                type: "PeriodicRegularBinning",
+                type: "RegularPeriodicBinning",
                 instances: {
                     "mon-20y": {
                         in_period_step: "P1M",
