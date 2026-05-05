@@ -1,0 +1,14 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX jdg: <https://w3id.org/hacid/onto/core/judgement/>
+PREFIX contribs: <https://w3id.org/hacid/data/cs/dss/contributions/>
+PREFIX rating: <https://w3id.org/hacid/data/cs/dss/contributions/40/ratings/2>
+
+SELECT * WHERE {
+  	rating: top:hasComponent ?rating_component.
+  	?rating_component
+    	top:classifiedBy/top:value ?category;
+     	top:hasValue/top:value ?value
+}
+ORDER BY ?category

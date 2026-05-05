@@ -1,0 +1,22 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX contribs: <https://w3id.org/hacid/data/cs/dss/contributions/>
+
+select * where {
+  	contribs:69 top:hasComponent/top:definesTask ?task.
+  	?task top:orderValue ?task_order;
+        	top:executedThroughOperation ?op.
+	SERVICE <repository:hacid-cs> {
+    	  ?op rdfs:label ?op_label
+	}
+  	OPTIONAL {
+    	?task top:hasCostantDefaultInput ?res
+    	OPTIONAL {
+          SERVICE <repository:hacid-cs> {
+                ?res rdfs:label ?res_label
+          }
+    	}
+  	}
+}
+ORDER BY ?task_order

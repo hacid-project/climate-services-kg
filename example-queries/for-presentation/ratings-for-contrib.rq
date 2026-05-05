@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX jdg: <https://w3id.org/hacid/onto/core/judgement/>
+PREFIX contribs: <https://w3id.org/hacid/data/cs/dss/contributions/>
+
+select * where {
+  	?rating jdg:isJudgementOn contribs:40;
+        jdg:hasJudge ?user;
+        top:hasValue/top:value ?value;
+        top:isObservableAt ?time.
+}
+ORDER BY DESC(?time)

@@ -1,0 +1,13 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/> 
+PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
+
+select * where {
+    ?case a ccso:Request;
+  	    rdfs:label ?case_label.
+    FILTER NOT EXISTS {
+	    ?parent_case a ccso:Request;
+   		    top:hasComponent ?case
+    }
+}
+ORDER BY ?case

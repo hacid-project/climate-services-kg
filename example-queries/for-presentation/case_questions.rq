@@ -1,0 +1,19 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX jdg: <https://w3id.org/hacid/onto/core/judgement/>
+PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
+PREFIX cases: <https://w3id.org/hacid/data/cs/dss/cases/>
+
+SELECT
+    ?question ?question_label ?question_author (COUNT(?contrib) AS ?num_contribs)
+WHERE {
+  	cases:5 top:hasComponent ?question.
+  	?question rdfs:label ?question_label;
+             ccso:isMaintainedBy ?question_author.
+  	OPTIONAL {
+        ?contrib jdg:isJudgementOn ?question
+    }
+}
+GROUP BY ?question ?question_label ?question_author
+ORDER BY ?question

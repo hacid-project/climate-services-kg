@@ -1,0 +1,21 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX jdg: <https://w3id.org/hacid/onto/core/judgement/>
+PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
+PREFIX questions: <https://w3id.org/hacid/data/cs/dss/questions/>
+
+SELECT
+    ?contrib ?contrib_author (COUNT(?task) AS ?num_tasks)
+WHERE {
+  	?contrib jdg:isJudgementOn questions:3;
+        jdg:hasJudge ?contrib_author.
+  	OPTIONAL {
+        ?contrib top:hasComponent [
+        	a top:Workflow;
+            top:definesTask ?task
+        ]
+  	}
+}
+GROUP BY ?contrib ?contrib_author
+ORDER BY ?contrib
