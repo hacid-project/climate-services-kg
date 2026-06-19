@@ -251,6 +251,7 @@ def decompose_id($collection):
                     downscaling_of: "ccso:isDownscalingOf", 
                     model: "ccso:usesModel", 
                     scenario: "ccso:refersToScenario", 
+                    gwl: "ccso:refersToGlobalWarmingLevel", 
                     maintained_by: "ccso:isMaintainedBy",
                     specialization_criterion: "data:isSpecializedAccordingTo",
                     specialization_on: "data:isSpecializationOn",

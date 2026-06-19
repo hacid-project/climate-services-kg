@@ -11,7 +11,20 @@ def scenario_uri:
         "rcp26": "RCP2.6",
         "rcp60": "RCP6"
     } as $scenario_map |
-    @uri "https://w3id.org/hacid/data/cs/scenarios/RCP/\($scenario_map[.])";
+    if . and $scenario_map[.] then
+        @uri "https://w3id.org/hacid/data/cs/scenarios/RCP/\($scenario_map[.])"
+    else null
+    end;
+
+def gwl_uri:
+    {
+        "gwl2": "GWL2",
+        "gwl4": "GWL4"
+    } as $gwl_map |
+    if . and $gwl_map[.] then
+        @uri "https://w3id.org/hacid/data/cs/GWLs/\($gwl_map[.])"
+    else null
+    end;
 
 def get_model_variant_from_id:
     (
@@ -197,25 +210,35 @@ def dataset_to_gcm_derived_projection:
         "@type": "ccso:SingleProjection",
         label: "ukcp18.derived.\(.scenario).\(.model_variant_id)",
         scenario: (.scenario | scenario_uri),
+        gwl: (.scenario | gwl_uri),
         derived_from: ($gcm_simulation.has_output | JSONLD::id),
         dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)"
     } as $output |
     {
         "@id": @uri "https://w3id.org/hacid/data/cs/derivations/ukcp18.derived.\(.scenario).\(.model_variant_id)",
-        "@type": "ccso:StatisticalProjectionTransformation",
+        "@type": [
+            "ccso:StatisticalProjectionTransformation",
+            "ccso:SingleProjectionProduction"
+        ],
         label: "ukcp18.derived.\(.scenario).\(.model_variant_id)",
         scenario: (.scenario | scenario_uri),
+        gwl: (.scenario | gwl_uri),
         ensemble: {
             "@id": @uri "https://w3id.org/hacid/data/cs/derivations/ukcp18.derived.\(.scenario)",
-            "@type": "ccso:StatisticalProjectionTransformation",
+            "@type": [
+                "ccso:StatisticalProjectionTransformation",
+                "ccso:EnsembleProjectionProduction"
+            ],
             label: "ukcp18.derived.\(.scenario)",
             scenario: (.scenario | scenario_uri),
+            gwl: (.scenario | gwl_uri),
             input: ($gcm_simulation.ensemble | JSONLD::id),
             has_output: {
                 "@id": @uri "https://w3id.org/hacid/data/cs/derivations/ukcp18.derived.\(.scenario)/output",
                 "@type": "ccso:EnsembleProjection",
                 label: "ukcp18.derived.\(.scenario)",
                 scenario: (.scenario | scenario_uri),
+                gwl: (.scenario | gwl_uri),
                 dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
                 derived_from: ($gcm_simulation.ensemble | JSONLD::id),
                 has_part: ($output | JSONLD::id)
