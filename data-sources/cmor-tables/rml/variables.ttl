@@ -59,7 +59,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate data:holdsSpecializationOfVariable;
+        rr:predicate data:isSpecializationOfVariable;
         rr:objectMap [ 
             rr:termType rr:IRI;
             rr:template "https://w3id.org/hacid/data/cs/variables/cf/{standard_name}";
