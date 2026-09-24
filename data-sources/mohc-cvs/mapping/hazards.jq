@@ -50,7 +50,7 @@ walk((
         Description: "rdfs:comment",
         Specializations: "top:isSpecializedBy",
         AssociatedIndices: {
-            "@id": "top:isRelatedToConcept",
+            "@id": "ccso:hasIndicator",
             "@type": "@id"
         }
     },
