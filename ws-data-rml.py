@@ -28,6 +28,12 @@ def _purge_none_values(dictionary: dict) -> dict:
         for k, v in dictionary.items()
         if v is not None
     }
+
+def _safe_format_map(template: str, values: dict):
+    try:
+        return template.format_map(values)
+    except KeyError:
+        return None    
     
 @rml_function(fun_id='https://w3id.org/hacid/rml-functions/dictKeys',
               arr='https://w3id.org/hacid/rml-functions/str')
@@ -171,7 +177,7 @@ def format_cordex_cmip5_dataset(_master_id: str, _template: str) -> str:
 @rml_function(fun_id='https://w3id.org/hacid/rml-functions/formatCordexDomain',
               _domains='https://w3id.org/hacid/rml-functions/domain',
               _template='https://w3id.org/hacid/rml-functions/template')
-def format_cordex_domain(_domains: str, _template: str) -> str:
+def format_cordex_domain(_domains: str, _template: str) -> str | None:
     _domain = eval(_domains)[0] if _domains[0] == "[" else _domains
     _domain_parts = _domain.split('-')
     _area_id = _domain_parts[0]
@@ -179,7 +185,7 @@ def format_cordex_domain(_domains: str, _template: str) -> str:
     _is_rotated = not (_resolution_id[-1] == 'i')
     # _rotated_area_id = _area_id if _is_rotated else None
     # _regular_area_id = None if _is_rotated else _area_id
-    return _template.format_map(_purge_none_values({
+    return _safe_format_map(_template,_purge_none_values({
         'grid_id': _domain,
         'area_id': _area_id,
         'resolution_id': _resolution_id,
@@ -362,7 +368,7 @@ def format_temporal_grid(
     _end_datetime: str,
     _granularity: str,
     _template: str
-) -> str:
+) -> str | None:
     _granularity = eval(_granularity)[0]
     if _start_datetime is None or _end_datetime is None:
         return None
@@ -392,10 +398,7 @@ def format_temporal_grid(
         'grid_in_period_step': _grid_in_period_step,
         'grid_offset': _grid_offset
     }
-    try:
-        return _template.format_map(_purge_none_values(_temporal_info_dict))
-    except Exception:
-        return None
+    return _safe_format_map(_template,_purge_none_values(_temporal_info_dict))
     
 _dim_var_mapping = {
     'longitude': ['geodetic'],
