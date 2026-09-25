@@ -322,7 +322,7 @@
         rr:predicate geo:asWKT ;
         rr:objectMap [ 
             rr:template "POINT({pollon} {pollat})" ;
-            rr:datatype "geo:wktLiteral"
+            rr:datatype geo:wktLiteral
         ]
     ] .
 
@@ -360,7 +360,7 @@
         rr:predicate geo:asWKT ;
         rr:objectMap [ 
             rr:template "POLYGON(({ll_lon} {ll_lat},{ll_lon} {ur_lat},{ur_lon} {ur_lat},{ur_lon} {ll_lat}))" ;
-            rr:datatype "geo:wktLiteral"
+            rr:datatype geo:wktLiteral
         ]
     ] .
 
@@ -399,6 +399,6 @@
         rr:predicate geo:asWKT ;
         rr:objectMap [ 
             rr:template "SRID=ROTATED_POLAR:{pollon} {pollat};POLYGON(({ll_lon} {ll_lat},{ll_lon} {ur_lat},{ur_lon} {ur_lat},{ur_lon} {ll_lat}))" ;
-            rr:datatype "geo:wktLiteral"
+            rr:datatype geo:wktLiteral
         ]
     ] .

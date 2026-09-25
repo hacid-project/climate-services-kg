@@ -65,7 +65,7 @@ time:gregorian a data:Continuum;
 
 <https://w3id.org/hacid/data/cs/dimensions/geodetic/all> a data:GeodeticRegion;
     rdfs:label "World"@en;
-    geo:asWKT "POLYGON((-180 -90,-180 90,180 90,180 -90))"^^<geo:wktLiteral>;
+    geo:asWKT "POLYGON((-180 -90,-180 90,180 90,180 -90))"^^geo:wktLiteral;
     rdfs:comment "Geographic region covering the whole Earth surface, as reference for global simulations."@en.
 
 <https://w3id.org/hacid/data/cs/dimensions/geodetic/all/specialization> a data:VariableSpecialization;
