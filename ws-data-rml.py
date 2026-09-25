@@ -29,6 +29,10 @@ def _purge_none_values(dictionary: dict) -> dict:
         if v is not None
     }
 
+def _is_missing(value) -> bool:
+    # Missing values (empty cells) in the input data are passed as 'nan'
+    return value is None or str(value) == 'nan'
+
 def _safe_format_map(template: str, values: dict):
     try:
         return template.format_map(values)
@@ -97,6 +101,8 @@ def dict_to_uuid(d: dict):
               ns='https://w3id.org/hacid/rml-functions/ns')
 
 def uri_from_list(arr: str, ns: str) -> List:
+    if _is_missing(arr):
+        return None
     arr = eval(arr)
     i = 0
     for s in arr:
@@ -109,6 +115,8 @@ def uri_from_list(arr: str, ns: str) -> List:
 @rml_function(fun_id='https://w3id.org/hacid/rml-functions/eval',
               _str='https://w3id.org/hacid/rml-functions/str')
 def _eval(_str: str) -> object:
+    if _is_missing(_str):
+        return None
     return eval(_str)
 
 @rml_function(fun_id='http://users.ugent.be/~bjdmeest/function/grel.ttl#array_get',
@@ -332,7 +340,7 @@ def round_datetime_interval(
     _template: str
 ) -> str:
     _granularity = eval(_granularity)[0]
-    if _start_datetime is None or _end_datetime is None:
+    if _is_missing(_start_datetime) or _is_missing(_end_datetime):
         return None
     return _template.format(
         start_datetime=get_start_time(_start_datetime,_end_datetime,_granularity),
@@ -370,7 +378,7 @@ def format_temporal_grid(
     _template: str
 ) -> str | None:
     _granularity = eval(_granularity)[0]
-    if _start_datetime is None or _end_datetime is None:
+    if _is_missing(_start_datetime) or _is_missing(_end_datetime):
         return None
     
     [
