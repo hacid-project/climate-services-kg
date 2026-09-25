@@ -503,7 +503,7 @@ if __name__ == '__main__':
         # if subfolder.endswith('cmip5'):
         # if subfolder.endswith('cordex') or subfolder.endswith('cordex-domains'):
         # if subfolder.endswith('cordex') or subfolder.endswith('cmip5'):
-        if subfolder.endswith('cordex-domains'):
+        # if subfolder.endswith('cordex-domains'):
         # if subfolder.endswith('cmor-tables'):
         # if subfolder.endswith('cf-standard-names'):
             print(f'Loading data from subfolder {subfolder} ...')
