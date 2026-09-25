@@ -1,1 +1,1 @@
-pyrml @ git+https://github.com/miguel76/pyrml.git@claude/epic-wright-3rmphq
+pyrml-lib @ git+https://github.com/miguel76/pyrml.git@claude/epic-wright-3rmphq

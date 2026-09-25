@@ -1,6 +1,8 @@
 import re
 import string
-from pyrml import Framework, rml_function
+from pyrml import PyRML, rml_function, CSVSource, FunctionMap, PredicateObjectMap
+import pyrml.rml_vocab as rml_vocab
+import pyrml.pyrml_core as pyrml_core
 import json
 from jsonpath_ng import parse
 import pandas as pd
@@ -21,6 +23,49 @@ scenario_map = {
     'rcp26': 'https://w3id.org/hacid/data/cs/scenarios/RCP/RCP2.6',
     'rcp60': 'https://w3id.org/hacid/data/cs/scenarios/RCP/RCP6'
     }
+
+# Workaround for pyrml-lib bugs with csvw:Table sources: CSVSource.from_rdf
+# passes the url positionally (TypeError) and CSVSource exposes no `url`
+# property, which LogicalSource.apply relies on.
+def _csv_source_from_rdf(g, parent):
+    csvw = rml_vocab.CSVW_NS
+    url = g.value(parent, csvw.url)
+    if url is None:
+        return None
+    dialect = g.value(parent, csvw.dialect)
+    delimiter = dialect is not None and g.value(dialect, csvw.delimiter)
+    encoding = dialect is not None and g.value(dialect, csvw.encoding)
+    return CSVSource(
+        parent,
+        url=url.value,
+        delimiter=delimiter.value if delimiter else ',',
+        encoding=encoding.value if encoding else 'UTF-8'
+    )
+
+CSVSource.from_rdf = staticmethod(_csv_source_from_rdf)
+if not hasattr(CSVSource, 'url'):
+    CSVSource.url = property(lambda self: self._CSVSource__url)
+
+# Workaround for a pyrml-lib bug in FunctionMap.from_rdf: it looks up each
+# predicate-object map without restricting to the current function map, so a
+# named POM shared by several function maps (e.g. a common fno:executes or
+# parameter declaration) is repeated once per function map using it, and the
+# function then receives lists instead of single values.
+def _function_map_from_rdf(g, parent=None):
+    return [FunctionMap(parent, PredicateObjectMap.from_rdf(g, parent))]
+
+FunctionMap.from_rdf = staticmethod(_function_map_from_rdf)
+
+# Workaround for a pyrml-lib bug with typed literals: the lexical value is
+# round-tripped through rdflib's Python conversion, which yields None for
+# datatypes unknown to rdflib (e.g. geo:wktLiteral), producing "None" values.
+_cast_lexical_to_python = pyrml_core._castLexicalToPython
+
+def _cast_lexical_to_python_or_keep(lexical, datatype):
+    value = _cast_lexical_to_python(lexical, datatype)
+    return lexical if value is None else value
+
+pyrml_core._castLexicalToPython = _cast_lexical_to_python_or_keep
     
 def _purge_none_values(dictionary: dict) -> dict:
     return {
@@ -442,7 +487,7 @@ class CSMapper(object):
         
         def map_csv_file_to_rdf(input_csv_filename: str, filename_suffix: str =''):
             
-            mapper = Framework.get_mapper()
+            mapper = PyRML.get_mapper()
             
             vars = {'CSV': input_csv_filename}
             
@@ -452,7 +497,7 @@ class CSMapper(object):
             rml_path = glob.glob(f'{homepath}/rml/*.ttl')[0]
             
             rdf_path = f'{homepath}/rdf/data{filename_suffix}.ttl'
-            out = mapper.convert(rml_path, False, vars)
+            out = mapper.convert(rml_path, template_vars=vars)
             out.serialize(rdf_path, format='text/turtle')
             
             mapper.reset()
