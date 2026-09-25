@@ -200,12 +200,12 @@
 <https://w3id.org/hacid/data/cs/models/E3SM-2-0-NARRM> a ns1:GlobalClimateModel ;
     rdfs:label "E3SM 2.0 NARRM"@en ;
     rdfs:comment "E3SM 2.0 NARRM (Energy Exascale Earth System Model version 2.0 North American Regionally Refined Model)"@en ;
-    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/MAM4%20w/%20new%20resuspension%2C%20marine%20organics%2C%20secondary%20organics%2C%20and%20dust%20%28atmos%20grid%29> .
+    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/MAM4%20w%2F%20new%20resuspension%2C%20marine%20organics%2C%20secondary%20organics%2C%20and%20dust%20%28atmos%20grid%29> .
 
 <https://w3id.org/hacid/data/cs/models/E3SM-2-1> a ns1:GlobalClimateModel ;
     rdfs:label "E3SM 2.1"@en ;
     rdfs:comment "E3SM 2.1 (Energy Exascale Earth System Model)"@en ;
-    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/MAM4%20w/%20new%20resuspension%2C%20marine%20organics%2C%20secondary%20organics%2C%20and%20dust%20%28atmos%20physics%20grid%29> .
+    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/MAM4%20w%2F%20new%20resuspension%2C%20marine%20organics%2C%20secondary%20organics%2C%20and%20dust%20%28atmos%20physics%20grid%29> .
 
 <https://w3id.org/hacid/data/cs/models/EC-Earth3> a ns1:GlobalClimateModel ;
     rdfs:label "EC-Earth3"@en ;
@@ -214,7 +214,7 @@
 <https://w3id.org/hacid/data/cs/models/EC-Earth3-AerChem> a ns1:GlobalClimateModel ;
     rdfs:label "EC-Earth3-AerChem"@en ;
     rdfs:comment "EC-Earth3-AerChem"@en ;
-    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/TM5%20%283%20x%202%20degrees%3B%20120%20x%2090%20longitude/latitude%3B%2034%20levels%3B%20top%20level%3A%200.1%20hPa%29> .
+    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/TM5%20%283%20x%202%20degrees%3B%20120%20x%2090%20longitude%2Flatitude%3B%2034%20levels%3B%20top%20level%3A%200.1%20hPa%29> .
 
 <https://w3id.org/hacid/data/cs/models/EC-Earth3-CC> a ns1:GlobalClimateModel ;
     rdfs:label "EC-Earth3-CC"@en ;
@@ -443,7 +443,7 @@
 <https://w3id.org/hacid/data/cs/models/IPSL-CM6A-ATM-LR-REPROBUS> a ns1:GlobalClimateModel ;
     rdfs:label "IPSL-CM6A-ATM-LR-REPROBUS"@en ;
     rdfs:comment "IPSL-CM6A-ATM-LR-REPROBUS"@en ;
-    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/LMDZ%20%28NPv6%20%3B%20144%20x%20143%20longitude/latitude%3B%2079%20levels%3B%20top%20level%2080000%20m%29> .
+    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/LMDZ%20%28NPv6%20%3B%20144%20x%20143%20longitude%2Flatitude%3B%2079%20levels%3B%20top%20level%2080000%20m%29> .
 
 <https://w3id.org/hacid/data/cs/models/IPSL-CM6A-LR> a ns1:GlobalClimateModel ;
     rdfs:label "IPSL-CM6A-LR"@en ;
@@ -474,7 +474,7 @@
 <https://w3id.org/hacid/data/cs/models/MCM-UA-1-0> a ns1:GlobalClimateModel ;
     rdfs:label "MCM-UA-1-0"@en ;
     rdfs:comment "Manabe Climate Model v1.0 - University of Arizona"@en ;
-    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/Modifies%20surface%20albedoes%20%28Haywood%20et%20al.%201997%2C%20doi%3A%2010.1175/1520-0442%281997%29010%26lt%3B1562%3AGCMCOT%26gt%3B2.0.CO%3B2%29> .
+    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/Modifies%20surface%20albedoes%20%28Haywood%20et%20al.%201997%2C%20doi%3A%2010.1175%2F1520-0442%281997%29010%26lt%3B1562%3AGCMCOT%26gt%3B2.0.CO%3B2%29> .
 
 <https://w3id.org/hacid/data/cs/models/MIROC-ES2H> a ns1:GlobalClimateModel ;
     rdfs:label "MIROC-ES2H"@en ;
@@ -529,7 +529,7 @@
 <https://w3id.org/hacid/data/cs/models/MRI-ESM2-0> a ns1:GlobalClimateModel ;
     rdfs:label "MRI-ESM2.0"@en ;
     rdfs:comment "MRI-ESM2.0"@en ;
-    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/MASINGAR%20mk2r4%20%28TL95%3B%20192%20x%2096%20longitude/latitude%3B%2080%20levels%3B%20top%20level%200.01%20hPa%29> .
+    ns1:hasModelComponent <https://w3id.org/hacid/data/cs/models/MASINGAR%20mk2r4%20%28TL95%3B%20192%20x%2096%20longitude%2Flatitude%3B%2080%20levels%3B%20top%20level%200.01%20hPa%29> .
 
 <https://w3id.org/hacid/data/cs/models/NESM3> a ns1:GlobalClimateModel ;
     rdfs:label "NESM v3"@en ;
