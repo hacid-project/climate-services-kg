@@ -60,7 +60,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate data:iSpecializationOfVariable;
+        rr:predicate data:isSpecializationOfVariable;
         rr:objectMap :VariableIRI
     ] ;
 

@@ -169,50 +169,48 @@ def decompose_id($collection):
                     $time_interval | TIME::specialization
                 ]
             },
-            if $collection != "land-prob" then
-                if $collection == "land-cpm" then
-                    SIMULATIONS::dataset_to_cpm_simulation
-                elif $collection == "land-rcm" then
-                    SIMULATIONS::dataset_to_rcm_simulation
-                elif $collection == "land-gcm" then
-                    SIMULATIONS::dataset_to_gcm_simulation
-                elif $collection == "EuroCORDEX" then
-                    SIMULATIONS::dataset_to_cordex_simulation
-                elif $collection == "land-derived" then
-                    SIMULATIONS::dataset_to_gcm_derived_projection
-                elif $collection == "land-prob" then
-                    SIMULATIONS::dataset_to_probabilistic_projection
-                elif $collection == "land-indices" then
-                    SIMULATIONS::dataset_to_gcm_indices
-                else
-                    {}
-                end as $simulation |
+            if $collection == "land-cpm" then
+                SIMULATIONS::dataset_to_cpm_simulation
+            elif $collection == "land-rcm" then
+                SIMULATIONS::dataset_to_rcm_simulation
+            elif $collection == "land-gcm" then
+                SIMULATIONS::dataset_to_gcm_simulation
+            elif $collection == "EuroCORDEX" then
+                SIMULATIONS::dataset_to_cordex_simulation
+            elif $collection == "land-derived" then
+                SIMULATIONS::dataset_to_gcm_derived_projection
+            elif $collection == "land-prob" then
+                SIMULATIONS::dataset_to_probabilistic_projection
+            elif $collection == "land-indices" then
+                SIMULATIONS::dataset_to_gcm_indices
+            else
+                {}
+            end as $simulation |
 
-                $rescale_map[.domain]?[.resolution]? as $rescale |
-                if $rescale then
-                    $simulation,
-                    {
-                        "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
-                        is_rescaled_version_of: ($simulation.has_output | JSONLD::id),
-                        is_part_of: (
-                            $simulation.ensemble?.has_output | 
-                            if . then {
-                                "@id": (JSONLD::id + $rescale),
-                                "@type": "data:Dataset",
-                                is_rescaled_version_of: JSONLD::id
-                            }
-                            end
-                        )
-                    }
-                else
-                    $simulation,
-                    {
-                        "@id": ($simulation.has_output | JSONLD::id),
-                        has_part: {
-                            "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
+            $rescale_map[.domain]?[.resolution]? as $rescale |
+            if $rescale then
+                $simulation,
+                {
+                    "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
+                    is_rescaled_version_of: ($simulation.has_output | JSONLD::id),
+                    is_part_of: (
+                        $simulation.ensemble?.has_output | 
+                        if . then {
+                            "@id": (JSONLD::id + $rescale),
+                            "@type": "data:Dataset",
+                            is_rescaled_version_of: JSONLD::id
                         }
+                        end
+                    )
+                }
+            else
+                $simulation,
+                {
+                    "@id": ($simulation.has_output | JSONLD::id),
+                    has_part: {
+                        "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
                     }
-                end
+                }
             end
         )
     )   
@@ -256,11 +254,13 @@ def decompose_id($collection):
                     specialization_criterion: "data:isSpecializedAccordingTo",
                     specialization_on: "data:isSpecializationOn",
                     selected_region: "data:hasSelectedRegion",
-                    start_datetime: "data:hasStartDateTime",
-                    end_datetime: "data:hasEndDateTime",
                     based_on_ds: "data:basedOnDimensionalSpace",
                     discretization: "data:hasDiscretization",
                     exact_bounding_region: "data:hasExactBoundingRegion",
+                },
+                "http://www.w3.org/2001/XMLSchema#dateTime": {
+                    start_datetime: "data:hasStartDateTime",
+                    end_datetime: "data:hasEndDateTime"
                 },
                 "http://www.w3.org/2001/XMLSchema#duration": {
                     resolution_value: "data:hasResolutionValue",
@@ -282,4 +282,5 @@ def decompose_id($collection):
 {
     "@context": $context,
     "@graph": $resources
-}
+} |
+walk( if type == "object" or type =="array" then map_values( select(values) ) end )
