@@ -183,7 +183,7 @@ def dataset_to_cpm_simulation:
     };
 
 def dataset_to_cordex_simulation:
-    @uri "cordex.output.EUR-11.\(.institution_id).\(.driving_model_id).\(.scenario).\(.driving_model_ensemble_member).\(.model_id).\(.rcm_version_id).\(.frequency).\(.variable)" as $output |
+    @uri "https://w3id.org/hacid/data/cs/datasets/cordex.output.EUR-11.\(.institution_id).\(.driving_model_id).\(.scenario).\(.driving_model_ensemble_member).\(.model_id).\(.rcm_version_id).\(.frequency).\(.variable)" as $output |
     {
         "@id": @uri "https://w3id.org/hacid/data/cs/simulations/cordex.EUR-11.\(.driving_model_id).\(.scenario).\(.model_id).\(.rcm_version_id).\(.driving_model_ensemble_member)",
         has_output: $output,
