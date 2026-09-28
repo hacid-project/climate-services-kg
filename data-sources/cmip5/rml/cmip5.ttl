@@ -131,7 +131,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:outputId;
+        rr:predicate ccso:productId;
         rr:objectMap [
             fnml:functionValue [
                 rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [

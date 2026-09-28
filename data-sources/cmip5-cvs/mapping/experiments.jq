@@ -22,7 +22,7 @@
         (
             .[] | {
                 "@id": @uri "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/\(.id)",
-                "@type": ["ccso:EnsembleSimulation", "ccso:GlobalClimateSimulation"],
+                "@type": ["ccso:ClimateModelIntercomparisonExperiment", "ccso:GlobalClimateSimulation"],
                 acronym: .id,
                 experimentId: .id,
                 label: .description,

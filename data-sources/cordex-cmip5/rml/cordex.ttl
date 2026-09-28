@@ -153,18 +153,6 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:outputId;
-        rr:objectMap [
-            fnml:functionValue [
-                rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
-                    rr:predicate hrf:template ;
-                    rr:objectMap [rr:constant "{product}"]
-                ] 
-            ]
-        ]
-    ] ;
-
-    rr:predicateObjectMap [
         rr:predicate data:holdsSpecializationOfVariable;
         rr:objectMap :VariableIRI
     ] ;
