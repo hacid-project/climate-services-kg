@@ -5,8 +5,8 @@ def is_leap_year:
 
 def days_in_month($year):
     [31,28,31,30,31,30,31,31,30,31,30,31] as $days_by_month |
-    if . == 2 and ($year | is_leap_year) then 29
-    else $days_by_month[.]
+    if . == 1 and ($year | is_leap_year) then 29
+    else $days_by_month[. - 1]
     end;
 
 def date_add_day:
@@ -33,23 +33,26 @@ def normalize_date($roundUp):
     (.[0:4] | tonumber) as $year |
     (
         if length > 4 then
-            .[4:6] | tonumber
-        elif $roundUp then
-            12
-        else 
-            1
-        end
-    ) as $month |
-    (
-        if length > 6 then 
-            .[6:8] | tonumber
-        elif $roundUp then
-            $month | days_in_month($year)
+            (.[4:6] | tonumber) as $month |
+            if length > 6 then 
+                (.[6:8] | tonumber) as $day |
+                {$year, $month, $day} |
+                if $roundUp then date_add_day end
+            else
+                {
+                    year: $year | if $roundUp and $month == 12 then . + 1 end,
+                    month: $month | if $roundUp and $month < 12 then . + 1 end,
+                    day: 1
+                }
+            end
         else
-            1
+            {
+                year: $year | if $roundUp then . + 1 end,
+                month: 1,
+                day: 1
+            }
         end
-    ) as $day |
-    {$year, $month, $day} | date_add_day |
+    ) |
     datetime_string;
 
 def variable($interval; $grid):
@@ -96,7 +99,8 @@ def mobile_interval($duration):
         $duration |
         capture("P((?<years>[0-9]+)Y)?((?<months>[0-9]+)M)?((?<days>[0-9]+)D)?") |
         with_entries(.value |= if . then tonumber else 0 end) |
-        "\(.years | UTILS::lpad(4; "0"))\((.months + 1) | UTILS::lpad(2; "0"))\((.days + 1) | UTILS::lpad(2; "0"))T00:00:00Z"
+        { year: .years, month: .months + 1, day: .days + 1 } |
+        datetime_string
     ) as $end_datetime |
     {
         "@id": "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/gregorian/mobile-regions/\($duration)",
