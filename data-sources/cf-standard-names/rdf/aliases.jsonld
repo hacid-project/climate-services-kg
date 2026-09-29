@@ -1,0 +1,4013 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "cf": "https://w3id.org/hacid/data/cs/variables/cf/",
+    "top": "https://w3id.org/hacid/onto/top-level/"
+  },
+  "@graph": [
+    {
+      "@id": "cf:chlorophyll_concentration_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_chlorophyll_in_sea_water",
+        "top:altLabel": "chlorophyll_concentration_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:concentration_of_chlorophyll_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_chlorophyll_in_sea_water",
+        "top:altLabel": "concentration_of_chlorophyll_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:leaf_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:leaf_mass_content_of_carbon",
+        "top:altLabel": "leaf_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_surface_drag_coefficient_of_heat",
+      "owl:sameAs": {
+        "@id": "cf:surface_drag_coefficient_for_heat_in_air",
+        "top:altLabel": "atmosphere_surface_drag_coefficient_of_heat"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_surface_drag_coefficient_of_momentum",
+      "owl:sameAs": {
+        "@id": "cf:surface_drag_coefficient_for_momentum_in_air",
+        "top:altLabel": "atmosphere_surface_drag_coefficient_of_momentum"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_methyl_chloride_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_methyl_chloride",
+        "top:altLabel": "tendency_of_moles_of_methyl_chloride_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_of_carbon_monoxide_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_carbon_monoxide",
+        "top:altLabel": "moles_of_carbon_monoxide_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_molecular_hydrogen_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_molecular_hydrogen",
+        "top:altLabel": "tendency_of_moles_of_molecular_hydrogen_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:land_ice_lwe_surface_specific_mass_balance",
+      "owl:sameAs": {
+        "@id": "cf:land_ice_lwe_surface_specific_mass_balance_rate",
+        "top:altLabel": "land_ice_lwe_surface_specific_mass_balance"
+      }
+    },
+    {
+      "@id": "cf:land_ice_surface_specific_mass_balance",
+      "owl:sameAs": {
+        "@id": "cf:land_ice_surface_specific_mass_balance_rate",
+        "top:altLabel": "land_ice_surface_specific_mass_balance"
+      }
+    },
+    {
+      "@id": "cf:moles_of_methyl_chloride_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_methyl_chloride",
+        "top:altLabel": "moles_of_methyl_chloride_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:net_primary_productivity_of_carbon_accumulated_in_roots",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_productivity_of_biomass_expressed_as_carbon_accumulated_in_roots",
+        "top:altLabel": "net_primary_productivity_of_carbon_accumulated_in_roots"
+      }
+    },
+    {
+      "@id": "cf:moles_of_molecular_hydrogen_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_molecular_hydrogen",
+        "top:altLabel": "moles_of_molecular_hydrogen_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_of_nitrous_oxide_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_nitrous_oxide",
+        "top:altLabel": "moles_of_nitrous_oxide_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:isotropic_spectral_radiance_in_air",
+      "owl:sameAs": {
+        "@id": "cf:isotropic_radiance_per_unit_wavelength_in_air",
+        "top:altLabel": "isotropic_spectral_radiance_in_air"
+      }
+    },
+    {
+      "@id": "cf:spectral_radiance",
+      "owl:sameAs": {
+        "@id": "cf:isotropic_radiance_per_unit_wavelength_in_air",
+        "top:altLabel": "spectral_radiance"
+      }
+    },
+    {
+      "@id": "cf:grid_eastward_wind",
+      "owl:sameAs": {
+        "@id": "cf:x_wind",
+        "top:altLabel": "grid_eastward_wind"
+      }
+    },
+    {
+      "@id": "cf:concentration_of_suspended_matter_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_suspended_matter_in_sea_water",
+        "top:altLabel": "concentration_of_suspended_matter_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:dissipation_in_atmosphere_boundary_layer",
+      "owl:sameAs": {
+        "@id": "cf:kinetic_energy_dissipation_in_atmosphere_boundary_layer",
+        "top:altLabel": "dissipation_in_atmosphere_boundary_layer"
+      }
+    },
+    {
+      "@id": "cf:grid_northward_wind",
+      "owl:sameAs": {
+        "@id": "cf:y_wind",
+        "top:altLabel": "grid_northward_wind"
+      }
+    },
+    {
+      "@id": "cf:mole_concentration_of_organic_detritus_in_sea_water_expressed_as_nitrogen",
+      "owl:sameAs": {
+        "@id": "cf:mole_concentration_of_organic_detritus_expressed_as_nitrogen_in_sea_water",
+        "top:altLabel": "mole_concentration_of_organic_detritus_in_sea_water_expressed_as_nitrogen"
+      }
+    },
+    {
+      "@id": "cf:mole_concentration_of_organic_detritus_in_sea_water_expressed_as_silicon",
+      "owl:sameAs": {
+        "@id": "cf:mole_concentration_of_organic_detritus_expressed_as_silicon_in_sea_water",
+        "top:altLabel": "mole_concentration_of_organic_detritus_in_sea_water_expressed_as_silicon"
+      }
+    },
+    {
+      "@id": "cf:cloud_condensed_water_content_of_atmosphere_layer",
+      "owl:sameAs": {
+        "@id": "cf:mass_content_of_cloud_condensed_water_in_atmosphere_layer",
+        "top:altLabel": "cloud_condensed_water_content_of_atmosphere_layer"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_water_content_due_to_advection",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_water_due_to_advection",
+        "top:altLabel": "tendency_of_atmosphere_water_content_due_to_advection"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_methane_in_troposphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_troposphere_moles_of_methane",
+        "top:altLabel": "tendency_of_moles_of_methane_in_troposphere"
+      }
+    },
+    {
+      "@id": "cf:electromagnetic_wavelength",
+      "owl:sameAs": {
+        "@id": "cf:radiation_wavelength",
+        "top:altLabel": "electromagnetic_wavelength"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_water_vapor_content_due_to_shallow_convection",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_water_vapor_due_to_shallow_convection",
+        "top:altLabel": "tendency_of_atmosphere_water_vapor_content_due_to_shallow_convection"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_water_vapor_content_of_atmosphere_layer_due_to_convection",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mass_content_of_water_vapor_in_atmosphere_layer_due_to_convection",
+        "top:altLabel": "tendency_of_water_vapor_content_of_atmosphere_layer_due_to_convection"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_methyl_bromide_in_troposphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_troposphere_moles_of_methyl_bromide",
+        "top:altLabel": "tendency_of_moles_of_methyl_bromide_in_troposphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_water_vapor_content_of_atmosphere_layer_due_to_deep_convection",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mass_content_of_water_vapor_in_atmosphere_layer_due_to_deep_convection",
+        "top:altLabel": "tendency_of_water_vapor_content_of_atmosphere_layer_due_to_deep_convection"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_water_vapor_content_of_atmosphere_layer_due_to_turbulence",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mass_content_of_water_vapor_in_atmosphere_layer_due_to_turbulence",
+        "top:altLabel": "tendency_of_water_vapor_content_of_atmosphere_layer_due_to_turbulence"
+      }
+    },
+    {
+      "@id": "cf:water_content_of_atmosphere_layer",
+      "owl:sameAs": {
+        "@id": "cf:mass_content_of_water_in_atmosphere_layer",
+        "top:altLabel": "water_content_of_atmosphere_layer"
+      }
+    },
+    {
+      "@id": "cf:water_vapor_content_of_atmosphere_layer",
+      "owl:sameAs": {
+        "@id": "cf:mass_content_of_water_vapor_in_atmosphere_layer",
+        "top:altLabel": "water_vapor_content_of_atmosphere_layer"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_methyl_chloride_in_troposphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_troposphere_moles_of_methyl_chloride",
+        "top:altLabel": "tendency_of_moles_of_methyl_chloride_in_troposphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_molecular_hydrogen_in_troposphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_troposphere_moles_of_molecular_hydrogen",
+        "top:altLabel": "tendency_of_moles_of_molecular_hydrogen_in_troposphere"
+      }
+    },
+    {
+      "@id": "cf:longwave_radiance",
+      "owl:sameAs": {
+        "@id": "cf:isotropic_longwave_radiance_in_air",
+        "top:altLabel": "longwave_radiance"
+      }
+    },
+    {
+      "@id": "cf:shortwave_radiance",
+      "owl:sameAs": {
+        "@id": "cf:isotropic_shortwave_radiance_in_air",
+        "top:altLabel": "shortwave_radiance"
+      }
+    },
+    {
+      "@id": "cf:x_sea_water_velocity",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_x_velocity",
+        "top:altLabel": "x_sea_water_velocity"
+      }
+    },
+    {
+      "@id": "cf:y_sea_water_velocity",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_y_velocity",
+        "top:altLabel": "y_sea_water_velocity"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_methane_in_middle_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_middle_atmosphere_moles_of_methane",
+        "top:altLabel": "tendency_of_moles_of_methane_in_middle_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_methyl_chloride_in_middle_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_middle_atmosphere_moles_of_methyl_chloride",
+        "top:altLabel": "tendency_of_moles_of_methyl_chloride_in_middle_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_molecular_hydrogen_in_middle_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_middle_atmosphere_moles_of_molecular_hydrogen",
+        "top:altLabel": "tendency_of_moles_of_molecular_hydrogen_in_middle_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:omnidirectional_spectral_spherical_irradiance_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:omnidirectional_spherical_irradiance_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "omnidirectional_spectral_spherical_irradiance_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:wind_wave_period",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_wind_wave_period",
+        "top:altLabel": "wind_wave_period"
+      }
+    },
+    {
+      "@id": "cf:ocean_volume",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_volume",
+        "top:altLabel": "ocean_volume"
+      }
+    },
+    {
+      "@id": "cf:thickness_of_large_scale_rainfall_amount",
+      "owl:sameAs": {
+        "@id": "cf:thickness_of_stratiform_rainfall_amount",
+        "top:altLabel": "thickness_of_large_scale_rainfall_amount"
+      }
+    },
+    {
+      "@id": "cf:large_scale_snowfall_flux",
+      "owl:sameAs": {
+        "@id": "cf:stratiform_snowfall_flux",
+        "top:altLabel": "large_scale_snowfall_flux"
+      }
+    },
+    {
+      "@id": "cf:mole_fraction_of_o3_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mole_fraction_of_ozone_in_air",
+        "top:altLabel": "mole_fraction_of_o3_in_air"
+      }
+    },
+    {
+      "@id": "cf:product_of_northward_wind_and_specific_humdity",
+      "owl:sameAs": {
+        "@id": "cf:product_of_northward_wind_and_specific_humidity",
+        "top:altLabel": "product_of_northward_wind_and_specific_humdity"
+      }
+    },
+    {
+      "@id": "cf:specific_potential_energy",
+      "owl:sameAs": {
+        "@id": "cf:specific_gravitational_potential_energy",
+        "top:altLabel": "specific_potential_energy"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_surface_drag_coefficient",
+      "owl:sameAs": {
+        "@id": "cf:surface_drag_coefficient_in_air",
+        "top:altLabel": "atmosphere_surface_drag_coefficient"
+      }
+    },
+    {
+      "@id": "cf:swell_wave_period",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_swell_wave_period",
+        "top:altLabel": "swell_wave_period"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_convective_condensed_water_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_convective_cloud_condensed_water_in_air",
+        "top:altLabel": "mass_fraction_of_convective_condensed_water_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_o3_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_ozone_in_air",
+        "top:altLabel": "mass_fraction_of_o3_in_air"
+      }
+    },
+    {
+      "@id": "cf:upward_flux_of_eastward_momentum_due_to_nonorographic_westward_gravity_waves",
+      "owl:sameAs": {
+        "@id": "cf:upward_eastward_momentum_flux_in_air_due_to_nonorographic_westward_gravity_waves",
+        "top:altLabel": "upward_flux_of_eastward_momentum_due_to_nonorographic_westward_gravity_waves"
+      }
+    },
+    {
+      "@id": "cf:upward_flux_of_eastward_momentum_due_to_orographic_gravity_waves",
+      "owl:sameAs": {
+        "@id": "cf:upward_eastward_momentum_flux_in_air_due_to_orographic_gravity_waves",
+        "top:altLabel": "upward_flux_of_eastward_momentum_due_to_orographic_gravity_waves"
+      }
+    },
+    {
+      "@id": "cf:upward_eliassen_palm_flux",
+      "owl:sameAs": {
+        "@id": "cf:upward_eliassen_palm_flux_in_air",
+        "top:altLabel": "upward_eliassen_palm_flux"
+      }
+    },
+    {
+      "@id": "cf:water_flux_into_ocean",
+      "owl:sameAs": {
+        "@id": "cf:water_flux_into_sea_water",
+        "top:altLabel": "water_flux_into_ocean"
+      }
+    },
+    {
+      "@id": "cf:wind_mixing_energy_flux_into_ocean",
+      "owl:sameAs": {
+        "@id": "cf:wind_mixing_energy_flux_into_sea_water",
+        "top:altLabel": "wind_mixing_energy_flux_into_ocean"
+      }
+    },
+    {
+      "@id": "cf:surface_net_downward_radiative_flux_where_land",
+      "owl:sameAs": {
+        "@id": "cf:surface_net_downward_radiative_flux",
+        "top:altLabel": "surface_net_downward_radiative_flux_where_land"
+      }
+    },
+    {
+      "@id": "cf:surface_upward_sensible_heat_flux_where_sea",
+      "owl:sameAs": {
+        "@id": "cf:surface_upward_sensible_heat_flux",
+        "top:altLabel": "surface_upward_sensible_heat_flux_where_sea"
+      }
+    },
+    {
+      "@id": "cf:large_scale_rainfall_amount",
+      "owl:sameAs": {
+        "@id": "cf:stratiform_rainfall_amount",
+        "top:altLabel": "large_scale_rainfall_amount"
+      }
+    },
+    {
+      "@id": "cf:large_scale_rainfall_flux",
+      "owl:sameAs": {
+        "@id": "cf:stratiform_rainfall_flux",
+        "top:altLabel": "large_scale_rainfall_flux"
+      }
+    },
+    {
+      "@id": "cf:large_scale_rainfall_rate",
+      "owl:sameAs": {
+        "@id": "cf:stratiform_rainfall_rate",
+        "top:altLabel": "large_scale_rainfall_rate"
+      }
+    },
+    {
+      "@id": "cf:large_scale_snowfall_amount",
+      "owl:sameAs": {
+        "@id": "cf:stratiform_snowfall_amount",
+        "top:altLabel": "large_scale_snowfall_amount"
+      }
+    },
+    {
+      "@id": "cf:lwe_large_scale_snowfall_rate",
+      "owl:sameAs": {
+        "@id": "cf:lwe_stratiform_snowfall_rate",
+        "top:altLabel": "lwe_large_scale_snowfall_rate"
+      }
+    },
+    {
+      "@id": "cf:northward_water_vapor_flux",
+      "owl:sameAs": {
+        "@id": "cf:northward_water_vapor_flux_in_air",
+        "top:altLabel": "northward_water_vapor_flux"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_cloud_condensed_water_content",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_cloud_condensed_water",
+        "top:altLabel": "atmosphere_cloud_condensed_water_content"
+      }
+    },
+    {
+      "@id": "cf:surface_carbon_dioxide_mole_flux",
+      "owl:sameAs": {
+        "@id": "cf:surface_downward_mole_flux_of_carbon_dioxide",
+        "top:altLabel": "surface_carbon_dioxide_mole_flux"
+      }
+    },
+    {
+      "@id": "cf:surface_carbon_dioxide_mole_flux",
+      "owl:sameAs": {
+        "@id": "cf:surface_upward_mole_flux_of_carbon_dioxide",
+        "top:altLabel": "surface_carbon_dioxide_mole_flux"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_water_vapor_content_due_to_turbulence",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_water_vapor_due_to_turbulence",
+        "top:altLabel": "tendency_of_atmosphere_water_vapor_content_due_to_turbulence"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_sulfate_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_sulfate_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_sulfate_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_absorption_optical_thickness_due_to_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_absorption_optical_thickness_due_to_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_absorption_optical_thickness_due_to_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_dust_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_dust_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_dust_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_sulfate_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_sulfate_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_sulfate_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_content_of_sulfate_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_sulfate_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_content_of_sulfate_aerosol"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_ammonium_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_ammonium_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_ammonium_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_particulate_organic_matter_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_particulate_organic_matter_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_particulate_organic_matter_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_nitrate_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_nitrate_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_nitrate_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_water_in_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_water_in_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_water_in_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_dust_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_dust_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_dust_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mole_fraction_of_nitric_acid_trihydrate_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mole_fraction_of_nitric_acid_trihydrate_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mole_fraction_of_nitric_acid_trihydrate_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:number_concentration_of_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:number_concentration_of_ambient_aerosol_particles_in_air",
+        "top:altLabel": "number_concentration_of_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:number_concentration_of_nucleation_mode_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:number_concentration_of_nucleation_mode_ambient_aerosol_particles_in_air",
+        "top:altLabel": "number_concentration_of_nucleation_mode_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_moles_of_nitric_acid_trihydrate_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_nitric_acid_trihydrate_ambient_aerosol_particles",
+        "top:altLabel": "tendency_of_atmosphere_moles_of_nitric_acid_trihydrate_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:significant_height_of_wind_and_swell_waves",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_wave_significant_height",
+        "top:altLabel": "significant_height_of_wind_and_swell_waves"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_ammonium_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_ammonium_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_ammonium_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_primary_particulate_organic_matter_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_primary_particulate_organic_matter_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_primary_particulate_organic_matter_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:number_concentration_of_coarse_mode_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:number_concentration_of_coarse_mode_ambient_aerosol_particles_in_air",
+        "top:altLabel": "number_concentration_of_coarse_mode_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_particulate_organic_matter_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_particulate_organic_matter_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_particulate_organic_matter_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_primary_particulate_organic_matter_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_primary_particulate_organic_matter_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_primary_particulate_organic_matter_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_due_to_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_particles_due_to_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_due_to_emission"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_dust_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_dust_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_dust_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_sulfate_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_sulfate_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_sulfate_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_sulfate_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_sulfate_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_sulfate_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_energy_production_and_distribution",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_expressed_as_carbon_due_to_emission_from_energy_production_and_distribution",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_energy_production_and_distribution"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_industrial_processes_and_combustion",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_expressed_as_carbon_due_to_emission_from_industrial_processes_and_combustion",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_industrial_processes_and_combustion"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_secondary_particulate_organic_matter_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_secondary_particulate_organic_matter_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_secondary_particulate_organic_matter_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_water_in_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_water_in_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_water_in_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_sulfate_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_sulfate_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_sulfate_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_nitrate_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_nitrate_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_nitrate_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_mercury_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_mercury_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_mercury_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_mercury_dry_aerosol_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_mercury_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_mercury_dry_aerosol_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_residential_and_commercial_combustion",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_expressed_as_carbon_due_to_emission_from_residential_and_commercial_combustion",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_residential_and_commercial_combustion"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_water_in_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_water_in_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_water_in_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_nitric_acid_trihydrate_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_nitric_acid_trihydrate_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_nitric_acid_trihydrate_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_particulate_organic_matter_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_particulate_organic_matter_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_particulate_organic_matter_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_due_to_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_due_to_emission"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_expressed_as_sulfur_due_to_turbulent_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_expressed_as_sulfur_due_to_turbulent_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_expressed_as_sulfur_due_to_turbulent_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol_due_to_turbulent_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_expressed_as_sulfur_due_to_turbulent_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol_due_to_turbulent_deposition"
+      }
+    },
+    {
+      "@id": "cf:significant_height_of_swell_waves",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_swell_wave_significant_height",
+        "top:altLabel": "significant_height_of_swell_waves"
+      }
+    },
+    {
+      "@id": "cf:significant_height_of_wind_waves",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_wind_wave_significant_height",
+        "top:altLabel": "significant_height_of_wind_waves"
+      }
+    },
+    {
+      "@id": "cf:soil_moisture_content",
+      "owl:sameAs": {
+        "@id": "cf:mass_content_of_water_in_soil",
+        "top:altLabel": "soil_moisture_content"
+      }
+    },
+    {
+      "@id": "cf:moisture_content_of_soil_layer",
+      "owl:sameAs": {
+        "@id": "cf:mass_content_of_water_in_soil_layer",
+        "top:altLabel": "moisture_content_of_soil_layer"
+      }
+    },
+    {
+      "@id": "cf:direction_of_swell_wave_velocity",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_swell_wave_to_direction",
+        "top:altLabel": "direction_of_swell_wave_velocity"
+      }
+    },
+    {
+      "@id": "cf:direction_of_wind_wave_velocity",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_wind_wave_to_direction",
+        "top:altLabel": "direction_of_wind_wave_velocity"
+      }
+    },
+    {
+      "@id": "cf:sea_surface_swell_wave_zero_upcrossing_period",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_swell_wave_mean_period",
+        "top:altLabel": "sea_surface_swell_wave_zero_upcrossing_period"
+      }
+    },
+    {
+      "@id": "cf:sea_surface_wave_zero_upcrossing_period",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_wave_mean_period",
+        "top:altLabel": "sea_surface_wave_zero_upcrossing_period"
+      }
+    },
+    {
+      "@id": "cf:sea_surface_wind_wave_zero_upcrossing_period",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_wind_wave_mean_period",
+        "top:altLabel": "sea_surface_wind_wave_zero_upcrossing_period"
+      }
+    },
+    {
+      "@id": "cf:ocean_mixed_layer_thickness_defined_by_vertical_tracer_diffusivity",
+      "owl:sameAs": {
+        "@id": "cf:ocean_mixed_layer_thickness_defined_by_vertical_tracer_diffusivity_deficit",
+        "top:altLabel": "ocean_mixed_layer_thickness_defined_by_vertical_tracer_diffusivity"
+      }
+    },
+    {
+      "@id": "cf:sea_floor_depth_below_sea_level",
+      "owl:sameAs": {
+        "@id": "cf:sea_floor_depth_below_mean_sea_level",
+        "top:altLabel": "sea_floor_depth_below_sea_level"
+      }
+    },
+    {
+      "@id": "cf:air_pressure_at_sea_level",
+      "owl:sameAs": {
+        "@id": "cf:air_pressure_at_mean_sea_level",
+        "top:altLabel": "air_pressure_at_sea_level"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_seasalt_dry_aerosol_particles",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_sea_salt_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_seasalt_dry_aerosol_particles"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_seasalt_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_sea_salt_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_seasalt_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_seasalt_ambient_aerosol_particles",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_sea_salt_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_seasalt_ambient_aerosol_particles"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_seasalt_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_sea_salt_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_seasalt_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_seasalt_dry_aerosol_particles_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_sea_salt_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_seasalt_dry_aerosol_particles_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_seasalt_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_sea_salt_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_seasalt_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_seasalt_dry_aerosol_particles_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_sea_salt_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_seasalt_dry_aerosol_particles_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_seasalt_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_sea_salt_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_seasalt_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_pm10_seasalt_dry_aerosol_particles_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_pm10_sea_salt_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_pm10_seasalt_dry_aerosol_particles_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_pm10_seasalt_dry_aerosol_particles_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_pm10_sea_salt_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_pm10_seasalt_dry_aerosol_particles_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_pm2p5_seasalt_dry_aerosol_particles_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_pm2p5_sea_salt_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_pm2p5_seasalt_dry_aerosol_particles_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_pm1_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_pm1_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_pm1_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_pm1_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_pm1_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_pm1_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_turbulent_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_turbulent_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_turbulent_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_turbulent_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_turbulent_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_turbulent_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_gravitational_settling",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_gravitational_settling",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_gravitational_settling"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_gravitational_settling",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_gravitational_settling",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_gravitational_settling"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_pm1_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_pm1_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_pm1_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_pm1_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_pm1_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_pm1_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_pm2p5_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_pm2p5_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_pm2p5_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_pm2p5_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_pm2p5_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_pm2p5_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_pm2p5_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_pm2p5_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_pm2p5_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_pm2p5_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_pm2p5_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_pm2p5_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:surface_eastward_geostrophic_sea_water_velocity",
+      "owl:sameAs": {
+        "@id": "cf:surface_geostrophic_eastward_sea_water_velocity",
+        "top:altLabel": "surface_eastward_geostrophic_sea_water_velocity"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_pm10_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_pm10_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_pm10_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_pm10_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_pm10_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_pm10_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_pm10_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_pm10_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_pm10_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_pm10_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_pm10_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_pm10_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_sea_surface_height_above_sea_level",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_sea_surface_height_above_mean_sea_level",
+        "top:altLabel": "tendency_of_sea_surface_height_above_sea_level"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_pm2p5_seasalt_dry_aerosol_particles_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_pm2p5_sea_salt_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_pm2p5_seasalt_dry_aerosol_particles_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_pm2p5_seasalt_dry_aerosol_particles_due_to_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_pm2p5_sea_salt_dry_aerosol_particles_due_to_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_pm2p5_seasalt_dry_aerosol_particles_due_to_emission"
+      }
+    },
+    {
+      "@id": "cf:surface_geostrophic_sea_water_x_velocity_assuming_sea_level_for_geoid",
+      "owl:sameAs": {
+        "@id": "cf:surface_geostrophic_sea_water_x_velocity_assuming_mean_sea_level_for_geoid",
+        "top:altLabel": "surface_geostrophic_sea_water_x_velocity_assuming_sea_level_for_geoid"
+      }
+    },
+    {
+      "@id": "cf:surface_northward_geostrophic_sea_water_velocity",
+      "owl:sameAs": {
+        "@id": "cf:surface_geostrophic_northward_sea_water_velocity",
+        "top:altLabel": "surface_northward_geostrophic_sea_water_velocity"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_nitrogen_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_nitrogen_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_nitrogen_due_to_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_nitrogen_due_to_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_pm10_seasalt_dry_aerosol_particles_due_to_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_pm10_sea_salt_dry_aerosol_particles_due_to_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_pm10_seasalt_dry_aerosol_particles_due_to_emission"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_absorption_optical_thickness_due_to_seasalt_ambient_aerosol_particles",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_absorption_optical_thickness_due_to_sea_salt_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_absorption_optical_thickness_due_to_seasalt_ambient_aerosol_particles"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_absorption_optical_thickness_due_to_seasalt_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_absorption_optical_thickness_due_to_sea_salt_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_absorption_optical_thickness_due_to_seasalt_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_emission"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_emission"
+      }
+    },
+    {
+      "@id": "cf:sea_floor_depth",
+      "owl:sameAs": {
+        "@id": "cf:sea_floor_depth_below_geoid",
+        "top:altLabel": "sea_floor_depth"
+      }
+    },
+    {
+      "@id": "cf:surface_geostrophic_sea_water_y_velocity_assuming_sea_level_for_geoid",
+      "owl:sameAs": {
+        "@id": "cf:surface_geostrophic_sea_water_y_velocity_assuming_mean_sea_level_for_geoid",
+        "top:altLabel": "surface_geostrophic_sea_water_y_velocity_assuming_sea_level_for_geoid"
+      }
+    },
+    {
+      "@id": "cf:surface_geostrophic_northward_sea_water_velocity_assuming_sea_level_for_geoid",
+      "owl:sameAs": {
+        "@id": "cf:surface_geostrophic_northward_sea_water_velocity_assuming_mean_sea_level_for_geoid",
+        "top:altLabel": "surface_geostrophic_northward_sea_water_velocity_assuming_sea_level_for_geoid"
+      }
+    },
+    {
+      "@id": "cf:surface_northward_geostrophic_sea_water_velocity_assuming_sea_level_for_geoid",
+      "owl:sameAs": {
+        "@id": "cf:surface_geostrophic_northward_sea_water_velocity_assuming_mean_sea_level_for_geoid",
+        "top:altLabel": "surface_northward_geostrophic_sea_water_velocity_assuming_sea_level_for_geoid"
+      }
+    },
+    {
+      "@id": "cf:sea_surface_height_above_sea_level",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_height_above_mean_sea_level",
+        "top:altLabel": "sea_surface_height_above_sea_level"
+      }
+    },
+    {
+      "@id": "cf:sea_surface_height",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_height_above_mean_sea_level",
+        "top:altLabel": "sea_surface_height"
+      }
+    },
+    {
+      "@id": "cf:surface_geostrophic_eastward_sea_water_velocity_assuming_sea_level_for_geoid",
+      "owl:sameAs": {
+        "@id": "cf:surface_geostrophic_eastward_sea_water_velocity_assuming_mean_sea_level_for_geoid",
+        "top:altLabel": "surface_geostrophic_eastward_sea_water_velocity_assuming_sea_level_for_geoid"
+      }
+    },
+    {
+      "@id": "cf:surface_eastward_geostrophic_sea_water_velocity_assuming_sea_level_for_geoid",
+      "owl:sameAs": {
+        "@id": "cf:surface_geostrophic_eastward_sea_water_velocity_assuming_mean_sea_level_for_geoid",
+        "top:altLabel": "surface_eastward_geostrophic_sea_water_velocity_assuming_sea_level_for_geoid"
+      }
+    },
+    {
+      "@id": "cf:sea_surface_elevation_anomaly",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_height_above_geoid",
+        "top:altLabel": "sea_surface_elevation_anomaly"
+      }
+    },
+    {
+      "@id": "cf:sea_surface_elevation",
+      "owl:sameAs": {
+        "@id": "cf:sea_surface_height_above_geoid",
+        "top:altLabel": "sea_surface_elevation"
+      }
+    },
+    {
+      "@id": "cf:omega",
+      "owl:sameAs": {
+        "@id": "cf:lagrangian_tendency_of_air_pressure",
+        "top:altLabel": "omega"
+      }
+    },
+    {
+      "@id": "cf:vertical_air_velocity_expressed_as_tendency_of_pressure",
+      "owl:sameAs": {
+        "@id": "cf:lagrangian_tendency_of_air_pressure",
+        "top:altLabel": "vertical_air_velocity_expressed_as_tendency_of_pressure"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_black_carbon_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_elemental_carbon_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_black_carbon_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_black_carbon_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_black_carbon_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_black_carbon_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_elemental_carbon_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_black_carbon_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_energy_production_and_distribution",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_emission_from_energy_production_and_distribution",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_energy_production_and_distribution"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_forest_fires",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_emission_from_forest_fires",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_forest_fires"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_industrial_processes_and_combustion",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_emission_from_industrial_processes_and_combustion",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_industrial_processes_and_combustion"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_land_transport",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_emission_from_land_transport",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_land_transport"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_maritime_transport",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_emission_from_maritime_transport",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_maritime_transport"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_residential_and_commercial_combustion",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_emission_from_residential_and_commercial_combustion",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_residential_and_commercial_combustion"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_savanna_and_grassland_fires",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_emission_from_savanna_and_grassland_fires",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_savanna_and_grassland_fires"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_waste_treatment_and_disposal",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_emission_from_waste_treatment_and_disposal",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_waste_treatment_and_disposal"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_gravitational_settling",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_gravitational_settling",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_gravitational_settling"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_turbulent_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_turbulent_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_turbulent_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_mass_concentration_of_black_carbon_dry_aerosol_in_air_due_to_emission_from_aviation",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mass_concentration_of_elemental_carbon_dry_aerosol_particles_in_air_due_to_emission_from_aviation",
+        "top:altLabel": "tendency_of_mass_concentration_of_black_carbon_dry_aerosol_in_air_due_to_emission_from_aviation"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_specific_convective_available_potential_energy",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_convective_available_potential_energy",
+        "top:altLabel": "atmosphere_specific_convective_available_potential_energy"
+      }
+    },
+    {
+      "@id": "cf:specific_convective_available_potential_energy",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_convective_available_potential_energy",
+        "top:altLabel": "specific_convective_available_potential_energy"
+      }
+    },
+    {
+      "@id": "cf:aerosol_angstrom_exponent",
+      "owl:sameAs": {
+        "@id": "cf:angstrom_exponent_of_ambient_aerosol_in_air",
+        "top:altLabel": "aerosol_angstrom_exponent"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_absorption_optical_thickness_due_to_dust_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_absorption_optical_thickness_due_to_dust_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_absorption_optical_thickness_due_to_dust_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_absorption_optical_thickness_due_to_particulate_organic_matter_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_absorption_optical_thickness_due_to_particulate_organic_matter_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_absorption_optical_thickness_due_to_particulate_organic_matter_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_absorption_optical_thickness_due_to_sulfate_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_absorption_optical_thickness_due_to_sulfate_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_absorption_optical_thickness_due_to_sulfate_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:integral_of_surface_downward_latent_heat_flux_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_surface_downward_latent_heat_flux",
+        "top:altLabel": "integral_of_surface_downward_latent_heat_flux_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:integral_of_surface_downward_sensible_heat_flux_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_surface_downward_sensible_heat_flux",
+        "top:altLabel": "integral_of_surface_downward_sensible_heat_flux_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:integral_of_surface_net_downward_longwave_flux_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_surface_net_downward_longwave_flux",
+        "top:altLabel": "integral_of_surface_net_downward_longwave_flux_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:northward_ocean_freshwater_transport_due_to_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:northward_ocean_freshwater_transport_due_to_parameterized_eddy_advection",
+        "top:altLabel": "northward_ocean_freshwater_transport_due_to_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:integral_of_toa_net_downward_shortwave_flux_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_toa_net_downward_shortwave_flux",
+        "top:altLabel": "integral_of_toa_net_downward_shortwave_flux_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:integral_of_toa_outgoing_longwave_flux_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_toa_outgoing_longwave_flux",
+        "top:altLabel": "integral_of_toa_outgoing_longwave_flux_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:northward_ocean_salt_transport_due_to_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:northward_ocean_salt_transport_due_to_parameterized_eddy_advection",
+        "top:altLabel": "northward_ocean_salt_transport_due_to_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:ocean_heat_x_transport_due_to_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:ocean_heat_x_transport_due_to_parameterized_eddy_advection",
+        "top:altLabel": "ocean_heat_x_transport_due_to_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:ocean_mass_x_transport_due_to_advection_and_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:ocean_mass_x_transport_due_to_advection_and_parameterized_eddy_advection",
+        "top:altLabel": "ocean_mass_x_transport_due_to_advection_and_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:ocean_mass_y_transport_due_to_advection_and_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:ocean_mass_y_transport_due_to_advection_and_parameterized_eddy_advection",
+        "top:altLabel": "ocean_mass_y_transport_due_to_advection_and_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:ocean_meridional_overturning_mass_streamfunction_due_to_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_eddy_advection",
+        "top:altLabel": "ocean_meridional_overturning_mass_streamfunction_due_to_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:ocean_heat_y_transport_due_to_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:ocean_heat_y_transport_due_to_parameterized_eddy_advection",
+        "top:altLabel": "ocean_heat_y_transport_due_to_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:bolus_northward_sea_water_velocity",
+      "owl:sameAs": {
+        "@id": "cf:northward_sea_water_velocity_due_to_parameterized_mesoscale_eddies",
+        "top:altLabel": "bolus_northward_sea_water_velocity"
+      }
+    },
+    {
+      "@id": "cf:bolus_eastward_sea_water_velocity",
+      "owl:sameAs": {
+        "@id": "cf:eastward_sea_water_velocity_due_to_parameterized_mesoscale_eddies",
+        "top:altLabel": "bolus_eastward_sea_water_velocity"
+      }
+    },
+    {
+      "@id": "cf:ocean_tracer_bolus_biharmonic_diffusivity",
+      "owl:sameAs": {
+        "@id": "cf:ocean_tracer_biharmonic_diffusivity_due_to_parameterized_mesoscale_eddy_advection",
+        "top:altLabel": "ocean_tracer_bolus_biharmonic_diffusivity"
+      }
+    },
+    {
+      "@id": "cf:bolus_sea_water_y_velocity",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_y_velocity_due_to_parameterized_mesoscale_eddies",
+        "top:altLabel": "bolus_sea_water_y_velocity"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_ocean_eddy_kinetic_energy_content_due_to_bolus_transport",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_ocean_eddy_kinetic_energy_content_due_to_parameterized_eddy_advection",
+        "top:altLabel": "tendency_of_ocean_eddy_kinetic_energy_content_due_to_bolus_transport"
+      }
+    },
+    {
+      "@id": "cf:integral_of_surface_net_downward_shortwave_flux_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_surface_net_downward_shortwave_flux",
+        "top:altLabel": "integral_of_surface_net_downward_shortwave_flux_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_sea_water_salinity_due_to_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_sea_water_salinity_due_to_parameterized_eddy_advection",
+        "top:altLabel": "tendency_of_sea_water_salinity_due_to_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:bolus_upward_sea_water_velocity",
+      "owl:sameAs": {
+        "@id": "cf:upward_sea_water_velocity_due_to_parameterized_mesoscale_eddies",
+        "top:altLabel": "bolus_upward_sea_water_velocity"
+      }
+    },
+    {
+      "@id": "cf:northward_ocean_heat_transport_due_to_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:northward_ocean_heat_transport_due_to_parameterized_eddy_advection",
+        "top:altLabel": "northward_ocean_heat_transport_due_to_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:bolus_sea_water_x_velocity",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_x_velocity_due_to_parameterized_mesoscale_eddies",
+        "top:altLabel": "bolus_sea_water_x_velocity"
+      }
+    },
+    {
+      "@id": "cf:ocean_tracer_bolus_laplacian_diffusivity",
+      "owl:sameAs": {
+        "@id": "cf:ocean_tracer_laplacian_diffusivity_due_to_parameterized_mesoscale_eddy_advection",
+        "top:altLabel": "ocean_tracer_bolus_laplacian_diffusivity"
+      }
+    },
+    {
+      "@id": "cf:ocean_y_overturning_mass_streamfunction_due_to_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:ocean_y_overturning_mass_streamfunction_due_to_parameterized_eddy_advection",
+        "top:altLabel": "ocean_y_overturning_mass_streamfunction_due_to_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:lwe_large_scale_precipitation_rate",
+      "owl:sameAs": {
+        "@id": "cf:lwe_stratiform_precipitation_rate",
+        "top:altLabel": "lwe_large_scale_precipitation_rate"
+      }
+    },
+    {
+      "@id": "cf:litter_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:litter_mass_content_of_carbon",
+        "top:altLabel": "litter_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:large_scale_precipitation_flux",
+      "owl:sameAs": {
+        "@id": "cf:stratiform_precipitation_flux",
+        "top:altLabel": "large_scale_precipitation_flux"
+      }
+    },
+    {
+      "@id": "cf:surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13",
+      "owl:sameAs": {
+        "@id": "cf:surface_downward_mass_flux_of_13C_dioxide_abiotic_analogue_expressed_as_13C",
+        "top:altLabel": "surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13"
+      }
+    },
+    {
+      "@id": "cf:moles_of_carbon_tetrachloride_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_carbon_tetrachloride",
+        "top:altLabel": "moles_of_carbon_tetrachloride_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:mole_concentration_of_dissolved_inorganic_carbon14_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:mole_concentration_of_dissolved_inorganic_14C_in_sea_water",
+        "top:altLabel": "mole_concentration_of_dissolved_inorganic_carbon14_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:wood_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:stem_mass_content_of_carbon",
+        "top:altLabel": "wood_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:subsurface_litter_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:subsurface_litter_mass_content_of_carbon",
+        "top:altLabel": "subsurface_litter_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:litter_carbon_flux",
+      "owl:sameAs": {
+        "@id": "cf:mass_flux_of_carbon_into_litter_from_vegetation",
+        "top:altLabel": "litter_carbon_flux"
+      }
+    },
+    {
+      "@id": "cf:eastward_transformed_eulerian_mean_velocity",
+      "owl:sameAs": {
+        "@id": "cf:eastward_transformed_eulerian_mean_air_velocity",
+        "top:altLabel": "eastward_transformed_eulerian_mean_velocity"
+      }
+    },
+    {
+      "@id": "cf:northward_transformed_eulerian_mean_velocity",
+      "owl:sameAs": {
+        "@id": "cf:northward_transformed_eulerian_mean_air_velocity",
+        "top:altLabel": "northward_transformed_eulerian_mean_velocity"
+      }
+    },
+    {
+      "@id": "cf:soil_respiration_carbon_flux",
+      "owl:sameAs": {
+        "@id": "cf:surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_respiration_in_soil",
+        "top:altLabel": "soil_respiration_carbon_flux"
+      }
+    },
+    {
+      "@id": "cf:surface_litter_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:surface_litter_mass_content_of_carbon",
+        "top:altLabel": "surface_litter_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:surface_upward_carbon_mass_flux_due_to_plant_respiration_for_biomass_growth",
+      "owl:sameAs": {
+        "@id": "cf:surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration_for_biomass_growth",
+        "top:altLabel": "surface_upward_carbon_mass_flux_due_to_plant_respiration_for_biomass_growth"
+      }
+    },
+    {
+      "@id": "cf:surface_upward_carbon_mass_flux_due_to_plant_respiration_for_biomass_maintenance",
+      "owl:sameAs": {
+        "@id": "cf:surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration_for_biomass_maintenance",
+        "top:altLabel": "surface_upward_carbon_mass_flux_due_to_plant_respiration_for_biomass_maintenance"
+      }
+    },
+    {
+      "@id": "cf:carbon_content_of_forestry_and_agricultural_products",
+      "owl:sameAs": {
+        "@id": "cf:carbon_mass_content_of_forestry_and_agricultural_products",
+        "top:altLabel": "carbon_content_of_forestry_and_agricultural_products"
+      }
+    },
+    {
+      "@id": "cf:carbon_content_of_products_of_anthropogenic_land_use_change",
+      "owl:sameAs": {
+        "@id": "cf:carbon_mass_content_of_forestry_and_agricultural_products",
+        "top:altLabel": "carbon_content_of_products_of_anthropogenic_land_use_change"
+      }
+    },
+    {
+      "@id": "cf:miscellaneous_living_matter_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:miscellaneous_living_matter_mass_content_of_carbon",
+        "top:altLabel": "miscellaneous_living_matter_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:root_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:root_mass_content_of_carbon",
+        "top:altLabel": "root_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:slow_soil_pool_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:slow_soil_pool_mass_content_of_carbon",
+        "top:altLabel": "slow_soil_pool_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:soil_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:soil_mass_content_of_carbon",
+        "top:altLabel": "soil_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:fast_soil_pool_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:fast_soil_pool_mass_content_of_carbon",
+        "top:altLabel": "fast_soil_pool_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:heterotrophic_respiration_carbon_flux",
+      "owl:sameAs": {
+        "@id": "cf:surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_heterotrophic_respiration",
+        "top:altLabel": "heterotrophic_respiration_carbon_flux"
+      }
+    },
+    {
+      "@id": "cf:mole_concentration_of_dissolved_inorganic_carbon13_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:mole_concentration_of_dissolved_inorganic_13C_in_sea_water",
+        "top:altLabel": "mole_concentration_of_dissolved_inorganic_carbon13_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_downward_mass_flux_of_carbon14_dioxide_abiotic_analogue_expressed_as_carbon",
+      "owl:sameAs": {
+        "@id": "cf:surface_downward_mass_flux_of_14C_dioxide_abiotic_analogue_expressed_as_carbon",
+        "top:altLabel": "surface_downward_mass_flux_of_carbon14_dioxide_abiotic_analogue_expressed_as_carbon"
+      }
+    },
+    {
+      "@id": "cf:plant_respiration_carbon_flux",
+      "owl:sameAs": {
+        "@id": "cf:surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration",
+        "top:altLabel": "plant_respiration_carbon_flux"
+      }
+    },
+    {
+      "@id": "cf:medium_soil_pool_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:medium_soil_pool_mass_content_of_carbon",
+        "top:altLabel": "medium_soil_pool_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:integral_of_product_of_eastward_wind_and_specific_humidity_wrt_height",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_height_of_product_of_eastward_wind_and_specific_humidity",
+        "top:altLabel": "integral_of_product_of_eastward_wind_and_specific_humidity_wrt_height"
+      }
+    },
+    {
+      "@id": "cf:integral_of_sea_water_practical_salinity_wrt_depth",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_depth_of_sea_water_practical_salinity",
+        "top:altLabel": "integral_of_sea_water_practical_salinity_wrt_depth"
+      }
+    },
+    {
+      "@id": "cf:integral_of_product_of_northward_wind_and_specific_humidity_wrt_height",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_height_of_product_of_northward_wind_and_specific_humidity",
+        "top:altLabel": "integral_of_product_of_northward_wind_and_specific_humidity_wrt_height"
+      }
+    },
+    {
+      "@id": "cf:volume_scattering_coefficient_in_air_due_to_dried_aerosol_particles",
+      "owl:sameAs": {
+        "@id": "cf:volume_scattering_coefficient_of_radiative_flux_in_air_due_to_dried_aerosol_particles",
+        "top:altLabel": "volume_scattering_coefficient_in_air_due_to_dried_aerosol_particles"
+      }
+    },
+    {
+      "@id": "cf:volume_scattering_coefficient_in_air_due_to_ambient_aerosol_particles",
+      "owl:sameAs": {
+        "@id": "cf:volume_scattering_coefficient_of_radiative_flux_in_air_due_to_ambient_aerosol_particles",
+        "top:altLabel": "volume_scattering_coefficient_in_air_due_to_ambient_aerosol_particles"
+      }
+    },
+    {
+      "@id": "cf:water_flux_into_ocean_from_rivers",
+      "owl:sameAs": {
+        "@id": "cf:water_flux_into_sea_water_from_rivers",
+        "top:altLabel": "water_flux_into_ocean_from_rivers"
+      }
+    },
+    {
+      "@id": "cf:wood_debris_carbon_content",
+      "owl:sameAs": {
+        "@id": "cf:wood_debris_mass_content_of_carbon",
+        "top:altLabel": "wood_debris_carbon_content"
+      }
+    },
+    {
+      "@id": "cf:toa_outgoing_shortwave_flux_assuming_clean_clear_sky",
+      "owl:sameAs": {
+        "@id": "cf:toa_outgoing_shortwave_flux_assuming_clear_sky_and_no_aerosol",
+        "top:altLabel": "toa_outgoing_shortwave_flux_assuming_clean_clear_sky"
+      }
+    },
+    {
+      "@id": "cf:large_scale_graupel_flux",
+      "owl:sameAs": {
+        "@id": "cf:stratiform_graupel_flux",
+        "top:altLabel": "large_scale_graupel_flux"
+      }
+    },
+    {
+      "@id": "cf:water_evaporation_flux_where_sea_ice",
+      "owl:sameAs": {
+        "@id": "cf:surface_water_evaporation_flux",
+        "top:altLabel": "water_evaporation_flux_where_sea_ice"
+      }
+    },
+    {
+      "@id": "cf:water_volume_transport_into_ocean_from_rivers",
+      "owl:sameAs": {
+        "@id": "cf:water_volume_transport_into_sea_water_from_rivers",
+        "top:altLabel": "water_volume_transport_into_ocean_from_rivers"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_spectral_radiance_in_air_reflected_by_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_radiance_per_unit_wavelength_in_air_reflected_by_sea_water",
+        "top:altLabel": "surface_upwelling_spectral_radiance_in_air_reflected_by_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_spectral_radiance_in_air",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_radiance_per_unit_wavelength_in_air",
+        "top:altLabel": "surface_upwelling_spectral_radiance_in_air"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_spectral_radiative_flux_in_air",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_radiative_flux_per_unit_wavelength_in_air",
+        "top:altLabel": "surface_upwelling_spectral_radiative_flux_in_air"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_spectral_radiance_in_air_emerging_from_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_radiance_per_unit_wavelength_in_air_emerging_from_sea_water",
+        "top:altLabel": "surface_upwelling_spectral_radiance_in_air_emerging_from_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_longwave_flux",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_longwave_flux_in_air",
+        "top:altLabel": "surface_upwelling_longwave_flux"
+      }
+    },
+    {
+      "@id": "cf:river_water_volume_transport_into_cell",
+      "owl:sameAs": {
+        "@id": "cf:incoming_water_volume_transport_along_river_channel",
+        "top:altLabel": "river_water_volume_transport_into_cell"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_spectral_radiance_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_radiance_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "surface_upwelling_spectral_radiance_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_shortwave_flux",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_shortwave_flux_in_air",
+        "top:altLabel": "surface_upwelling_shortwave_flux"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_shortwave_flux_in_air_assuming_clean_clear_sky",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_shortwave_flux_in_air_assuming_clear_sky_and_no_aerosol",
+        "top:altLabel": "surface_upwelling_shortwave_flux_in_air_assuming_clean_clear_sky"
+      }
+    },
+    {
+      "@id": "cf:upwelling_spectral_radiance_in_air",
+      "owl:sameAs": {
+        "@id": "cf:upwelling_radiance_per_unit_wavelength_in_air",
+        "top:altLabel": "upwelling_spectral_radiance_in_air"
+      }
+    },
+    {
+      "@id": "cf:upwelling_spectral_radiative_flux_in_air",
+      "owl:sameAs": {
+        "@id": "cf:upwelling_radiative_flux_per_unit_wavelength_in_air",
+        "top:altLabel": "upwelling_spectral_radiative_flux_in_air"
+      }
+    },
+    {
+      "@id": "cf:upwelling_shortwave_flux_in_air_assuming_clean_clear_sky",
+      "owl:sameAs": {
+        "@id": "cf:upwelling_shortwave_flux_in_air_assuming_clear_sky_and_no_aerosol",
+        "top:altLabel": "upwelling_shortwave_flux_in_air_assuming_clean_clear_sky"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_longwave_flux_assuming_clear_sky",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_longwave_flux_in_air_assuming_clear_sky",
+        "top:altLabel": "surface_upwelling_longwave_flux_assuming_clear_sky"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_shortwave_flux_assuming_clear_sky",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_shortwave_flux_in_air_assuming_clear_sky",
+        "top:altLabel": "surface_upwelling_shortwave_flux_assuming_clear_sky"
+      }
+    },
+    {
+      "@id": "cf:downwelling_spectral_photon_radiance_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:downwelling_photon_radiance_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "downwelling_spectral_photon_radiance_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:downwelling_spectral_radiance_in_air",
+      "owl:sameAs": {
+        "@id": "cf:downwelling_radiance_per_unit_wavelength_in_air",
+        "top:altLabel": "downwelling_spectral_radiance_in_air"
+      }
+    },
+    {
+      "@id": "cf:downwelling_spectral_photon_spherical_irradiance_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:downwelling_photon_spherical_irradiance_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "downwelling_spectral_photon_spherical_irradiance_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:downwelling_shortwave_flux_in_air_assuming_clean_clear_sky",
+      "owl:sameAs": {
+        "@id": "cf:downwelling_shortwave_flux_in_air_assuming_clear_sky_and_no_aerosol",
+        "top:altLabel": "downwelling_shortwave_flux_in_air_assuming_clean_clear_sky"
+      }
+    },
+    {
+      "@id": "cf:downwelling_spectral_radiative_flux_in_air",
+      "owl:sameAs": {
+        "@id": "cf:downwelling_radiative_flux_per_unit_wavelength_in_air",
+        "top:altLabel": "downwelling_spectral_radiative_flux_in_air"
+      }
+    },
+    {
+      "@id": "cf:downwelling_spectral_radiative_flux_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:downwelling_radiative_flux_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "downwelling_spectral_radiative_flux_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:downwelling_spectral_spherical_irradiance_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:downwelling_spherical_irradiance_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "downwelling_spectral_spherical_irradiance_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_longwave_flux",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_longwave_flux_in_air",
+        "top:altLabel": "surface_downwelling_longwave_flux"
+      }
+    },
+    {
+      "@id": "cf:integral_of_surface_downwelling_longwave_flux_in_air_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_surface_downwelling_longwave_flux_in_air",
+        "top:altLabel": "integral_of_surface_downwelling_longwave_flux_in_air_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:integral_of_surface_downwelling_shortwave_flux_in_air_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_surface_downwelling_shortwave_flux_in_air",
+        "top:altLabel": "integral_of_surface_downwelling_shortwave_flux_in_air_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_spectral_photon_flux_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_photon_flux_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "surface_downwelling_spectral_photon_flux_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_spectral_photon_spherical_irradiance_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_photon_spherical_irradiance_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "surface_downwelling_spectral_photon_spherical_irradiance_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_shortwave_flux_in_air_assuming_clean_clear_sky",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_shortwave_flux_in_air_assuming_clear_sky_and_no_aerosol",
+        "top:altLabel": "surface_downwelling_shortwave_flux_in_air_assuming_clean_clear_sky"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_spectral_radiative_flux_in_air",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_radiative_flux_per_unit_wavelength_in_air",
+        "top:altLabel": "surface_downwelling_spectral_radiative_flux_in_air"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_spectral_radiative_flux_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_radiative_flux_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "surface_downwelling_spectral_radiative_flux_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:sea_ice_displacement",
+      "owl:sameAs": {
+        "@id": "cf:magnitude_of_sea_ice_displacement",
+        "top:altLabel": "sea_ice_displacement"
+      }
+    },
+    {
+      "@id": "cf:lwe_thickness_of_large_scale_precipitation_amount",
+      "owl:sameAs": {
+        "@id": "cf:lwe_thickness_of_stratiform_precipitation_amount",
+        "top:altLabel": "lwe_thickness_of_large_scale_precipitation_amount"
+      }
+    },
+    {
+      "@id": "cf:river_water_volume_transport_out_of_cell",
+      "owl:sameAs": {
+        "@id": "cf:outgoing_water_volume_transport_along_river_channel",
+        "top:altLabel": "river_water_volume_transport_out_of_cell"
+      }
+    },
+    {
+      "@id": "cf:integral_wrt_depth_of_sea_ice_temperature_expressed_as_heat_content",
+      "owl:sameAs": {
+        "@id": "cf:sea_ice_temperature_expressed_as_heat_content",
+        "top:altLabel": "integral_wrt_depth_of_sea_ice_temperature_expressed_as_heat_content"
+      }
+    },
+    {
+      "@id": "cf:integral_of_sea_ice_temperature_wrt_depth_expressed_as_heat_content",
+      "owl:sameAs": {
+        "@id": "cf:sea_ice_temperature_expressed_as_heat_content",
+        "top:altLabel": "integral_of_sea_ice_temperature_wrt_depth_expressed_as_heat_content"
+      }
+    },
+    {
+      "@id": "cf:integral_wrt_depth_of_sea_water_potential_temperature_expressed_as_heat_content",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_potential_temperature_expressed_as_heat_content",
+        "top:altLabel": "integral_wrt_depth_of_sea_water_potential_temperature_expressed_as_heat_content"
+      }
+    },
+    {
+      "@id": "cf:integral_of_sea_water_potential_temperature_wrt_depth_expressed_as_heat_content",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_potential_temperature_expressed_as_heat_content",
+        "top:altLabel": "integral_of_sea_water_potential_temperature_wrt_depth_expressed_as_heat_content"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_sea_ice_amount_due_to_snow_conversion",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_sea_ice_amount_due_to_conversion_of_snow_to_sea_ice",
+        "top:altLabel": "tendency_of_sea_ice_amount_due_to_snow_conversion"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_shortwave_flux",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_shortwave_flux_in_air",
+        "top:altLabel": "surface_downwelling_shortwave_flux"
+      }
+    },
+    {
+      "@id": "cf:surface_upwelling_spectral_radiative_flux_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:surface_upwelling_radiative_flux_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "surface_upwelling_spectral_radiative_flux_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_spectral_spherical_irradiance_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_spherical_irradiance_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "surface_downwelling_spectral_spherical_irradiance_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_spectral_photon_radiance_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_photon_radiance_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "surface_downwelling_spectral_photon_radiance_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:downwelling_spectral_radiance_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:downwelling_radiance_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "downwelling_spectral_radiance_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:downwelling_spectral_photon_flux_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:downwelling_photon_flux_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "downwelling_spectral_photon_flux_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:upwelling_spectral_radiative_flux_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:upwelling_radiative_flux_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "upwelling_spectral_radiative_flux_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_spectral_radiance_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_radiance_per_unit_wavelength_in_sea_water",
+        "top:altLabel": "surface_downwelling_spectral_radiance_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:surface_downwelling_shortwave_flux_assuming_clear_sky",
+      "owl:sameAs": {
+        "@id": "cf:surface_downwelling_shortwave_flux_in_air_assuming_clear_sky",
+        "top:altLabel": "surface_downwelling_shortwave_flux_assuming_clear_sky"
+      }
+    },
+    {
+      "@id": "cf:precipitation_flux_onto_canopy_where_land",
+      "owl:sameAs": {
+        "@id": "cf:precipitation_flux_onto_canopy",
+        "top:altLabel": "precipitation_flux_onto_canopy_where_land"
+      }
+    },
+    {
+      "@id": "cf:water_evaporation_flux_from_canopy_where_land",
+      "owl:sameAs": {
+        "@id": "cf:water_evaporation_flux_from_canopy",
+        "top:altLabel": "water_evaporation_flux_from_canopy_where_land"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_convective_cloud_condensed_water_content",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_convective_cloud_condensed_water",
+        "top:altLabel": "atmosphere_convective_cloud_condensed_water_content"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_nitrous_oxide_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_nitrous_oxide",
+        "top:altLabel": "tendency_of_moles_of_nitrous_oxide_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:convective_precipitation_rate",
+      "owl:sameAs": {
+        "@id": "cf:lwe_convective_precipitation_rate",
+        "top:altLabel": "convective_precipitation_rate"
+      }
+    },
+    {
+      "@id": "cf:large_scale_precipitation_amount",
+      "owl:sameAs": {
+        "@id": "cf:stratiform_precipitation_amount",
+        "top:altLabel": "large_scale_precipitation_amount"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_cloud_ice_content",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_cloud_ice",
+        "top:altLabel": "atmosphere_cloud_ice_content"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_emission"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_gravitational_settling",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_gravitational_settling",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_gravitational_settling"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_turbulent_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_turbulent_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_turbulent_deposition"
+      }
+    },
+    {
+      "@id": "cf:water_evaporation_amount_from_canopy_where_land",
+      "owl:sameAs": {
+        "@id": "cf:water_evaporation_amount_from_canopy",
+        "top:altLabel": "water_evaporation_amount_from_canopy_where_land"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_specific_humidity_due_to_large_scale_precipitation",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_specific_humidity_due_to_stratiform_precipitation",
+        "top:altLabel": "tendency_of_specific_humidity_due_to_large_scale_precipitation"
+      }
+    },
+    {
+      "@id": "cf:platform_pitch_angle",
+      "owl:sameAs": {
+        "@id": "cf:platform_pitch",
+        "top:altLabel": "platform_pitch_angle"
+      }
+    },
+    {
+      "@id": "cf:station_wmo_id",
+      "owl:sameAs": {
+        "@id": "cf:platform_id",
+        "top:altLabel": "station_wmo_id"
+      }
+    },
+    {
+      "@id": "cf:station_description",
+      "owl:sameAs": {
+        "@id": "cf:platform_name",
+        "top:altLabel": "station_description"
+      }
+    },
+    {
+      "@id": "cf:water_vapor_pressure",
+      "owl:sameAs": {
+        "@id": "cf:water_vapor_partial_pressure_in_air",
+        "top:altLabel": "water_vapor_pressure"
+      }
+    },
+    {
+      "@id": "cf:platform_roll_angle",
+      "owl:sameAs": {
+        "@id": "cf:platform_roll",
+        "top:altLabel": "platform_roll_angle"
+      }
+    },
+    {
+      "@id": "cf:platform_yaw_angle",
+      "owl:sameAs": {
+        "@id": "cf:platform_yaw",
+        "top:altLabel": "platform_yaw_angle"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_of_mole_concentration_of_carbon_monoxide_due_to_chemical_destruction",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mole_concentration_of_carbon_monoxide_due_to_chemical_destruction",
+        "top:altLabel": "tendency_of_atmosphere_of_mole_concentration_of_carbon_monoxide_due_to_chemical_destruction"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_mole_concentration_of_dissolved_inorganic_silicate_in_sea_water_due_to_biological_processes",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mole_concentration_of_dissolved_inorganic_silicon_in_sea_water_due_to_biological_processes",
+        "top:altLabel": "tendency_of_mole_concentration_of_dissolved_inorganic_silicate_in_sea_water_due_to_biological_processes"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_mole_concentration_of_dissolved_inorganic_phosphate_in_sea_water_due_to_biological_processes",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water_due_to_biological_processes",
+        "top:altLabel": "tendency_of_mole_concentration_of_dissolved_inorganic_phosphate_in_sea_water_due_to_biological_processes"
+      }
+    },
+    {
+      "@id": "cf:mole_concentration_of_diatoms_in_sea_water_expressed_as_nitrogen",
+      "owl:sameAs": {
+        "@id": "cf:mole_concentration_of_diatoms_expressed_as_nitrogen_in_sea_water",
+        "top:altLabel": "mole_concentration_of_diatoms_in_sea_water_expressed_as_nitrogen"
+      }
+    },
+    {
+      "@id": "cf:net_primary_mole_productivity_of_carbon_by_calcareous_phytoplankton",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_mole_productivity_of_biomass_expressed_as_carbon_by_calcareous_phytoplankton",
+        "top:altLabel": "net_primary_mole_productivity_of_carbon_by_calcareous_phytoplankton"
+      }
+    },
+    {
+      "@id": "cf:net_primary_mole_productivity_of_carbon_by_diatoms",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_mole_productivity_of_biomass_expressed_as_carbon_by_diatoms",
+        "top:altLabel": "net_primary_mole_productivity_of_carbon_by_diatoms"
+      }
+    },
+    {
+      "@id": "cf:net_primary_mole_productivity_of_carbon_by_phytoplankton",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_mole_productivity_of_biomass_expressed_as_carbon_by_phytoplankton",
+        "top:altLabel": "net_primary_mole_productivity_of_carbon_by_phytoplankton"
+      }
+    },
+    {
+      "@id": "cf:net_primary_mole_productivity_of_carbon_by_picophytoplankton",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_mole_productivity_of_biomass_expressed_as_carbon_by_picophytoplankton",
+        "top:altLabel": "net_primary_mole_productivity_of_carbon_by_picophytoplankton"
+      }
+    },
+    {
+      "@id": "cf:net_primary_mole_productivity_of_carbon_due_to_nitrate_utilization",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_mole_productivity_of_biomass_expressed_as_carbon_due_to_nitrate_utilization",
+        "top:altLabel": "net_primary_mole_productivity_of_carbon_due_to_nitrate_utilization"
+      }
+    },
+    {
+      "@id": "cf:mole_concentration_of_phytoplankton_in_sea_water_expressed_as_nitrogen",
+      "owl:sameAs": {
+        "@id": "cf:mole_concentration_of_phytoplankton_expressed_as_nitrogen_in_sea_water",
+        "top:altLabel": "mole_concentration_of_phytoplankton_in_sea_water_expressed_as_nitrogen"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_nitrogen_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_nitrogen_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_carbon_monoxide_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_carbon_monoxide",
+        "top:altLabel": "tendency_of_moles_of_carbon_monoxide_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_carbon_tetrachloride_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_carbon_tetrachloride",
+        "top:altLabel": "tendency_of_moles_of_carbon_tetrachloride_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_agricultural_waste_burning",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_emission_from_agricultural_waste_burning",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_emission_from_agricultural_waste_burning"
+      }
+    },
+    {
+      "@id": "cf:water_vapor_saturation_deficit",
+      "owl:sameAs": {
+        "@id": "cf:water_vapor_saturation_deficit_in_air",
+        "top:altLabel": "water_vapor_saturation_deficit"
+      }
+    },
+    {
+      "@id": "cf:mole_fraction_of_total_inorganic_bromine_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mole_fraction_of_inorganic_bromine_in_air",
+        "top:altLabel": "mole_fraction_of_total_inorganic_bromine_in_air"
+      }
+    },
+    {
+      "@id": "cf:net_primary_mole_productivity_of_carbon_by_miscellaneous_phytoplankton",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_mole_productivity_of_biomass_expressed_as_carbon_by_miscellaneous_phytoplankton",
+        "top:altLabel": "net_primary_mole_productivity_of_carbon_by_miscellaneous_phytoplankton"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_methane_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_methane",
+        "top:altLabel": "tendency_of_moles_of_methane_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:mole_fraction_of_total_reactive_nitrogen_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mole_fraction_of_noy_expressed_as_nitrogen_in_air",
+        "top:altLabel": "mole_fraction_of_total_reactive_nitrogen_in_air"
+      }
+    },
+    {
+      "@id": "cf:mole_fraction_of_methlyglyoxal_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mole_fraction_of_methylglyoxal_in_air",
+        "top:altLabel": "mole_fraction_of_methlyglyoxal_in_air"
+      }
+    },
+    {
+      "@id": "cf:moles_of_hcc140a_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_hcc140a",
+        "top:altLabel": "moles_of_hcc140a_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_mercury_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_mercury_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_mercury_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:carbon_mass_flux_into_soil_and_litter_due_to_anthropogenic_land_use_or_land_cover_change",
+      "owl:sameAs": {
+        "@id": "cf:carbon_mass_flux_into_litter_and_soil_due_to_anthropogenic_land_use_or_land_cover_change",
+        "top:altLabel": "carbon_mass_flux_into_soil_and_litter_due_to_anthropogenic_land_use_or_land_cover_change"
+      }
+    },
+    {
+      "@id": "cf:product_of_eastward_wind_and_omega",
+      "owl:sameAs": {
+        "@id": "cf:product_of_eastward_wind_and_lagrangian_tendency_of_air_pressure",
+        "top:altLabel": "product_of_eastward_wind_and_omega"
+      }
+    },
+    {
+      "@id": "cf:moles_of_halon2402_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_halon2402",
+        "top:altLabel": "moles_of_halon2402_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_convective_cloud_snow_particle",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_convective_cloud_snow_particles",
+        "top:altLabel": "effective_radius_of_convective_cloud_snow_particle"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_stratiform_cloud_rain_particle",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_stratiform_cloud_rain_particles",
+        "top:altLabel": "effective_radius_of_stratiform_cloud_rain_particle"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_stratiform_cloud_graupel_particle",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_stratiform_cloud_graupel_particles",
+        "top:altLabel": "effective_radius_of_stratiform_cloud_graupel_particle"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_convective_cloud_ice_particle",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_convective_cloud_ice_particles",
+        "top:altLabel": "effective_radius_of_convective_cloud_ice_particle"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_stratiform_cloud_ice_particle",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_stratiform_cloud_ice_particles",
+        "top:altLabel": "effective_radius_of_stratiform_cloud_ice_particle"
+      }
+    },
+    {
+      "@id": "cf:ambient_aerosol_particle_diameter",
+      "owl:sameAs": {
+        "@id": "cf:diameter_of_ambient_aerosol_particles",
+        "top:altLabel": "ambient_aerosol_particle_diameter"
+      }
+    },
+    {
+      "@id": "cf:upward_air_velocity_expressed_as_tendency_of_sigma",
+      "owl:sameAs": {
+        "@id": "cf:lagrangian_tendency_of_atmosphere_sigma_coordinate",
+        "top:altLabel": "upward_air_velocity_expressed_as_tendency_of_sigma"
+      }
+    },
+    {
+      "@id": "cf:vertical_air_velocity_expressed_as_tendency_of_sigma",
+      "owl:sameAs": {
+        "@id": "cf:lagrangian_tendency_of_atmosphere_sigma_coordinate",
+        "top:altLabel": "vertical_air_velocity_expressed_as_tendency_of_sigma"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_number_content_of_aerosol_particles_due_to_turbulent_depostion",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_number_content_of_aerosol_particles_due_to_turbulent_deposition",
+        "top:altLabel": "tendency_of_atmosphere_number_content_of_aerosol_particles_due_to_turbulent_depostion"
+      }
+    },
+    {
+      "@id": "cf:moles_of_hcfc22_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_hcfc22",
+        "top:altLabel": "moles_of_hcfc22_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_hcfc22_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_hcfc22",
+        "top:altLabel": "tendency_of_moles_of_hcfc22_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_hcfc22_in_troposphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_troposphere_moles_of_hcfc22",
+        "top:altLabel": "tendency_of_moles_of_hcfc22_in_troposphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_hcc140a_in_middle_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_middle_atmosphere_moles_of_hcc140a",
+        "top:altLabel": "tendency_of_moles_of_hcc140a_in_middle_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_hcc140a_in_troposphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_troposphere_moles_of_hcc140a",
+        "top:altLabel": "tendency_of_moles_of_hcc140a_in_troposphere"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_convective_cloud_rain_particle",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_convective_cloud_rain_particles",
+        "top:altLabel": "effective_radius_of_convective_cloud_rain_particle"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_hcc140a_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_hcc140a",
+        "top:altLabel": "tendency_of_moles_of_hcc140a_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_halon2402_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_halon2402",
+        "top:altLabel": "tendency_of_moles_of_halon2402_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_of_halon1301_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_halon1301",
+        "top:altLabel": "moles_of_halon1301_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_of_cfc115_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_cfc115",
+        "top:altLabel": "moles_of_cfc115_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_halon1301_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_halon1301",
+        "top:altLabel": "tendency_of_moles_of_halon1301_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_of_halon1211_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_halon1211",
+        "top:altLabel": "moles_of_halon1211_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_halon1211_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_halon1211",
+        "top:altLabel": "tendency_of_moles_of_halon1211_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_of_halon1202_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_halon1202",
+        "top:altLabel": "moles_of_halon1202_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_halon1202_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_halon1202",
+        "top:altLabel": "tendency_of_moles_of_halon1202_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_of_cfc12_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_cfc12",
+        "top:altLabel": "moles_of_cfc12_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_cfc12_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_cfc12",
+        "top:altLabel": "tendency_of_moles_of_cfc12_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_cfc115_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_cfc115",
+        "top:altLabel": "tendency_of_moles_of_cfc115_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_of_cfc114_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_cfc114",
+        "top:altLabel": "moles_of_cfc114_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_cfc114_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_cfc114",
+        "top:altLabel": "tendency_of_moles_of_cfc114_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_of_cfc113_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_cfc113",
+        "top:altLabel": "moles_of_cfc113_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_cfc113_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_cfc113",
+        "top:altLabel": "tendency_of_moles_of_cfc113_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_of_cfc11_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_cfc11",
+        "top:altLabel": "moles_of_cfc11_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:moles_per_unit_mass_of_cfc11_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:moles_of_cfc11_per_unit_mass_in_sea_water",
+        "top:altLabel": "moles_per_unit_mass_of_cfc11_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_cfc11_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_cfc11",
+        "top:altLabel": "tendency_of_moles_of_cfc11_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_expressed_as_sulfur_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_expressed_as_sulfur_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_expressed_as_sulfur_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_expressed_as_sulfur_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:product_of_northward_wind_and_omega",
+      "owl:sameAs": {
+        "@id": "cf:product_of_northward_wind_and_lagrangian_tendency_of_air_pressure",
+        "top:altLabel": "product_of_northward_wind_and_omega"
+      }
+    },
+    {
+      "@id": "cf:backscattering_ratio",
+      "owl:sameAs": {
+        "@id": "cf:backscattering_ratio_in_air",
+        "top:altLabel": "backscattering_ratio"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_mercury_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_mercury_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_mercury_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_nitrate_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_nitrate_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_nitrate_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_nitric_acid_trihydrate_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_nitric_acid_trihydrate_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_nitric_acid_trihydrate_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_biomass_burning_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_biomass_burning_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_biomass_burning_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_stratiform_cloud_snow_particle",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_stratiform_cloud_snow_particles",
+        "top:altLabel": "effective_radius_of_stratiform_cloud_snow_particle"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_mercury_dry_aerosol_due_to_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_mercury_dry_aerosol_particles_due_to_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_mercury_dry_aerosol_due_to_emission"
+      }
+    },
+    {
+      "@id": "cf:histogram_of_backscattering_ratio_over_height_above_reference_ellipsoid",
+      "owl:sameAs": {
+        "@id": "cf:histogram_of_backscattering_ratio_in_air_over_height_above_reference_ellipsoid",
+        "top:altLabel": "histogram_of_backscattering_ratio_over_height_above_reference_ellipsoid"
+      }
+    },
+    {
+      "@id": "cf:electrical_mobility_particle_diameter",
+      "owl:sameAs": {
+        "@id": "cf:electrical_mobility_diameter_of_ambient_aerosol_particles",
+        "top:altLabel": "electrical_mobility_particle_diameter"
+      }
+    },
+    {
+      "@id": "cf:moles_of_methane_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_methane",
+        "top:altLabel": "moles_of_methane_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_eddy_dianeutral_mixing",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_dianeutral_mixing",
+        "top:altLabel": "tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_eddy_dianeutral_mixing"
+      }
+    },
+    {
+      "@id": "cf:product_of_geopotential_height_and_omega",
+      "owl:sameAs": {
+        "@id": "cf:product_of_lagrangian_tendency_of_air_pressure_and_geopotential_height",
+        "top:altLabel": "product_of_geopotential_height_and_omega"
+      }
+    },
+    {
+      "@id": "cf:volume_fraction_of_water_in_soil",
+      "owl:sameAs": {
+        "@id": "cf:volume_fraction_of_condensed_water_in_soil",
+        "top:altLabel": "volume_fraction_of_water_in_soil"
+      }
+    },
+    {
+      "@id": "cf:volume_fraction_of_water_in_soil_at_critical_point",
+      "owl:sameAs": {
+        "@id": "cf:volume_fraction_of_condensed_water_in_soil_at_critical_point",
+        "top:altLabel": "volume_fraction_of_water_in_soil_at_critical_point"
+      }
+    },
+    {
+      "@id": "cf:volume_fraction_of_water_in_soil_at_field_capacity",
+      "owl:sameAs": {
+        "@id": "cf:volume_fraction_of_condensed_water_in_soil_at_field_capacity",
+        "top:altLabel": "volume_fraction_of_water_in_soil_at_field_capacity"
+      }
+    },
+    {
+      "@id": "cf:volume_fraction_of_water_in_soil_at_wilting_point",
+      "owl:sameAs": {
+        "@id": "cf:volume_fraction_of_condensed_water_in_soil_at_wilting_point",
+        "top:altLabel": "volume_fraction_of_water_in_soil_at_wilting_point"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_eddy_dianeutral_mixing",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_dianeutral_mixing",
+        "top:altLabel": "tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_eddy_dianeutral_mixing"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_eddy_dianeutral_mixing",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_dianeutral_mixing",
+        "top:altLabel": "tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_eddy_dianeutral_mixing"
+      }
+    },
+    {
+      "@id": "cf:product_of_omega_and_specific_humidity",
+      "owl:sameAs": {
+        "@id": "cf:product_of_lagrangian_tendency_of_air_pressure_and_specific_humidity",
+        "top:altLabel": "product_of_omega_and_specific_humidity"
+      }
+    },
+    {
+      "@id": "cf:product_of_specific_humidity_and_omega",
+      "owl:sameAs": {
+        "@id": "cf:product_of_lagrangian_tendency_of_air_pressure_and_specific_humidity",
+        "top:altLabel": "product_of_specific_humidity_and_omega"
+      }
+    },
+    {
+      "@id": "cf:moles_of_methyl_bromide_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_methyl_bromide",
+        "top:altLabel": "moles_of_methyl_bromide_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_methyl_bromide_in_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_methyl_bromide",
+        "top:altLabel": "tendency_of_moles_of_methyl_bromide_in_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:integral_wrt_depth_of_product_of_sea_water_density_and_salinity",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_depth_of_product_of_salinity_and_sea_water_density",
+        "top:altLabel": "integral_wrt_depth_of_product_of_sea_water_density_and_salinity"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_gravitational_settling",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_gravitational_settling",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_gravitational_settling"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_net_chemical_production_and_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_net_chemical_production_and_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_net_chemical_production_and_emission"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_net_production_and_emission",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_net_chemical_production_and_emission",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_net_production_and_emission"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_turbulent_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_turbulent_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_turbulent_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_expressed_as_sulfur_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_expressed_as_sulfur_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_expressed_as_sulfur_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_expressed_as_sulfur_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_agricultural_waste_burning",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_expressed_as_carbon_due_to_emission_from_agricultural_waste_burning",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_agricultural_waste_burning"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_forest_fires",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_expressed_as_carbon_due_to_emission_from_forest_fires",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_forest_fires"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_land_transport",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_expressed_as_carbon_due_to_emission_from_land_transport",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_land_transport"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_maritime_transport",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_expressed_as_carbon_due_to_emission_from_maritime_transport",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_maritime_transport"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_savanna_and_grassland_fires",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_expressed_as_carbon_due_to_emission_from_savanna_and_grassland_fires",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_savanna_and_grassland_fires"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_waste_treatment_and_disposal",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_expressed_as_carbon_due_to_emission_from_waste_treatment_and_disposal",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_expressed_as_carbon_due_to_emission_from_waste_treatment_and_disposal"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_primary_particulate_organic_matter_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_water_vapor_content_due_to_convection",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_water_vapor_due_to_convection",
+        "top:altLabel": "tendency_of_atmosphere_water_vapor_content_due_to_convection"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_water_vapor_content_due_to_deep_convection",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_water_vapor_due_to_deep_convection",
+        "top:altLabel": "tendency_of_atmosphere_water_vapor_content_due_to_deep_convection"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_net_chemical_production",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_particles_due_to_net_chemical_production",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_net_chemical_production"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_net_production",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_particles_due_to_net_chemical_production",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_net_production"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_wet_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_particles_due_to_wet_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_secondary_particulate_organic_matter_dry_aerosol_due_to_wet_deposition"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_so4_content",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_sulfate",
+        "top:altLabel": "atmosphere_so4_content"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_sulfate_content",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_sulfate",
+        "top:altLabel": "atmosphere_sulfate_content"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_sulfate_dry_aerosol_expressed_as_sulfur",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_sulfate_dry_aerosol_particles_expressed_as_sulfur",
+        "top:altLabel": "atmosphere_mass_content_of_sulfate_dry_aerosol_expressed_as_sulfur"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_sulfate_dry_aerosol_particles_expressed_as_sulfur",
+        "top:altLabel": "atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_methyl_bromide_in_middle_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_middle_atmosphere_moles_of_methyl_bromide",
+        "top:altLabel": "tendency_of_moles_of_methyl_bromide_in_middle_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_expressed_as_sulfur_due_to_gravitational_settling",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_expressed_as_sulfur_due_to_gravitational_settling",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_expressed_as_sulfur_due_to_gravitational_settling"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol_due_to_gravitational_settling",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_expressed_as_sulfur_due_to_gravitational_settling",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol_due_to_gravitational_settling"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_water_vapor_content",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_water_vapor",
+        "top:altLabel": "atmosphere_water_vapor_content"
+      }
+    },
+    {
+      "@id": "cf:change_over_time_in_atmosphere_water_content_due_to_advection",
+      "owl:sameAs": {
+        "@id": "cf:change_over_time_in_atmosphere_mass_content_of_water_due_to_advection",
+        "top:altLabel": "change_over_time_in_atmosphere_water_content_due_to_advection"
+      }
+    },
+    {
+      "@id": "cf:change_over_time_in_atmospheric_water_content_due_to_advection",
+      "owl:sameAs": {
+        "@id": "cf:change_over_time_in_atmosphere_mass_content_of_water_due_to_advection",
+        "top:altLabel": "change_over_time_in_atmospheric_water_content_due_to_advection"
+      }
+    },
+    {
+      "@id": "cf:lwe_thickness_of_atmosphere_water_vapor_content",
+      "owl:sameAs": {
+        "@id": "cf:lwe_thickness_of_atmosphere_mass_content_of_water_vapor",
+        "top:altLabel": "lwe_thickness_of_atmosphere_water_vapor_content"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_water_vapor_content",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_water_vapor",
+        "top:altLabel": "tendency_of_atmosphere_water_vapor_content"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_water_vapor_content_due_to_advection",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_water_vapor_due_to_advection",
+        "top:altLabel": "tendency_of_atmosphere_water_vapor_content_due_to_advection"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_carbon_monoxide_in_middle_atmosphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_middle_atmosphere_moles_of_carbon_monoxide",
+        "top:altLabel": "tendency_of_moles_of_carbon_monoxide_in_middle_atmosphere"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_moles_of_nitric_acid_trihydrate_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_moles_of_nitric_acid_trihydrate_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_moles_of_nitric_acid_trihydrate_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_convective_mass_flux",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_net_upward_convective_mass_flux",
+        "top:altLabel": "atmosphere_convective_mass_flux"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_dust_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_dust_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_dust_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_dust_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_dust_dry_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_dust_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:equivalent_thickness_at_stp_of_atmosphere_o3_content",
+      "owl:sameAs": {
+        "@id": "cf:equivalent_thickness_at_stp_of_atmosphere_ozone_content",
+        "top:altLabel": "equivalent_thickness_at_stp_of_atmosphere_o3_content"
+      }
+    },
+    {
+      "@id": "cf:lwe_thickness_of_large_scale_snowfall_amount",
+      "owl:sameAs": {
+        "@id": "cf:lwe_thickness_of_stratiform_snowfall_amount",
+        "top:altLabel": "lwe_thickness_of_large_scale_snowfall_amount"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_optical_thickness_due_to_water_in_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_optical_thickness_due_to_water_in_ambient_aerosol_particles",
+        "top:altLabel": "atmosphere_optical_thickness_due_to_water_in_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:optical_thickness_of_atmosphere_layer_due_to_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:optical_thickness_of_atmosphere_layer_due_to_ambient_aerosol_particles",
+        "top:altLabel": "optical_thickness_of_atmosphere_layer_due_to_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:optical_thickness_of_atmosphere_layer_due_to_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:optical_thickness_of_atmosphere_layer_due_to_ambient_aerosol_particles",
+        "top:altLabel": "optical_thickness_of_atmosphere_layer_due_to_aerosol"
+      }
+    },
+    {
+      "@id": "cf:thickness_of_large_scale_snowfall_amount",
+      "owl:sameAs": {
+        "@id": "cf:thickness_of_stratiform_snowfall_amount",
+        "top:altLabel": "thickness_of_large_scale_snowfall_amount"
+      }
+    },
+    {
+      "@id": "cf:sea_water_from_direction",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_velocity_from_direction",
+        "top:altLabel": "sea_water_from_direction"
+      }
+    },
+    {
+      "@id": "cf:eastward_water_vapor_flux",
+      "owl:sameAs": {
+        "@id": "cf:eastward_water_vapor_flux_in_air",
+        "top:altLabel": "eastward_water_vapor_flux"
+      }
+    },
+    {
+      "@id": "cf:gross_primary_productivity_of_carbon",
+      "owl:sameAs": {
+        "@id": "cf:gross_primary_productivity_of_biomass_expressed_as_carbon",
+        "top:altLabel": "gross_primary_productivity_of_carbon"
+      }
+    },
+    {
+      "@id": "cf:sea_water_to_direction",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_velocity_to_direction",
+        "top:altLabel": "sea_water_to_direction"
+      }
+    },
+    {
+      "@id": "cf:direction_of_sea_water_velocity",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_velocity_to_direction",
+        "top:altLabel": "direction_of_sea_water_velocity"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_coarse_mode_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_coarse_mode_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_coarse_mode_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_mercury_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_mercury_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_mercury_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_secondary_particulate_organic_matter_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_secondary_particulate_organic_matter_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_concentration_of_secondary_particulate_organic_matter_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:cloud_ice_content_of_atmosphere_layer",
+      "owl:sameAs": {
+        "@id": "cf:mass_content_of_cloud_ice_in_atmosphere_layer",
+        "top:altLabel": "cloud_ice_content_of_atmosphere_layer"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_water_vapor_content_of_atmosphere_layer",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mass_content_of_water_vapor_in_atmosphere_layer",
+        "top:altLabel": "tendency_of_water_vapor_content_of_atmosphere_layer"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_water_vapor_content_of_atmosphere_layer_due_to_shallow_convection",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mass_content_of_water_vapor_in_atmosphere_layer_due_to_shallow_convection",
+        "top:altLabel": "tendency_of_water_vapor_content_of_atmosphere_layer_due_to_shallow_convection"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_ammonium_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_ammonium_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_ammonium_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_nitric_acid_trihydrate_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_nitric_acid_trihydrate_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_nitric_acid_trihydrate_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_sulfate_dry_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_sulfate_dry_aerosol_particles_in_air",
+        "top:altLabel": "mass_fraction_of_sulfate_dry_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_cloud_liquid_water_content",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_cloud_liquid_water",
+        "top:altLabel": "atmosphere_cloud_liquid_water_content"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_stratiform_cloud_liquid_water_particle",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_stratiform_cloud_liquid_water_particles",
+        "top:altLabel": "effective_radius_of_stratiform_cloud_liquid_water_particle"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_cloud_liquid_water_particle",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_cloud_liquid_water_particles",
+        "top:altLabel": "effective_radius_of_cloud_liquid_water_particle"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_convective_cloud_liquid_water_particle",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_convective_cloud_liquid_water_particles",
+        "top:altLabel": "effective_radius_of_convective_cloud_liquid_water_particle"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_convective_cloud_liquid_water_particle_at_convective_liquid_water_cloud_top",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_convective_cloud_liquid_water_particles_at_convective_liquid_water_cloud_top",
+        "top:altLabel": "effective_radius_of_convective_cloud_liquid_water_particle_at_convective_liquid_water_cloud_top"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_stratiform_cloud_liquid_water_particle_at_stratiform_liquid_water_cloud_top",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_stratiform_cloud_liquid_water_particles_at_stratiform_liquid_water_cloud_top",
+        "top:altLabel": "effective_radius_of_stratiform_cloud_liquid_water_particle_at_stratiform_liquid_water_cloud_top"
+      }
+    },
+    {
+      "@id": "cf:mole_concentration_of_mesozooplankton_in_sea_water_expressed_as_nitrogen",
+      "owl:sameAs": {
+        "@id": "cf:mole_concentration_of_mesozooplankton_expressed_as_nitrogen_in_sea_water",
+        "top:altLabel": "mole_concentration_of_mesozooplankton_in_sea_water_expressed_as_nitrogen"
+      }
+    },
+    {
+      "@id": "cf:mole_concentration_of_microzooplankton_in_sea_water_expressed_as_nitrogen",
+      "owl:sameAs": {
+        "@id": "cf:mole_concentration_of_microzooplankton_expressed_as_nitrogen_in_sea_water",
+        "top:altLabel": "mole_concentration_of_microzooplankton_in_sea_water_expressed_as_nitrogen"
+      }
+    },
+    {
+      "@id": "cf:mole_concentration_of_nitric_acid_trihydrate_ambient_aerosol_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mole_concentration_of_nitric_acid_trihydrate_ambient_aerosol_particles_in_air",
+        "top:altLabel": "mole_concentration_of_nitric_acid_trihydrate_ambient_aerosol_in_air"
+      }
+    },
+    {
+      "@id": "cf:net_primary_productivity_of_carbon",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_productivity_of_biomass_expressed_as_carbon",
+        "top:altLabel": "net_primary_productivity_of_carbon"
+      }
+    },
+    {
+      "@id": "cf:net_primary_productivity_of_carbon_accumulated_in_leaves",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_productivity_of_biomass_expressed_as_carbon_accumulated_in_leaves",
+        "top:altLabel": "net_primary_productivity_of_carbon_accumulated_in_leaves"
+      }
+    },
+    {
+      "@id": "cf:net_primary_productivity_of_carbon_accumulated_in_wood",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_productivity_of_biomass_expressed_as_carbon_accumulated_in_wood",
+        "top:altLabel": "net_primary_productivity_of_carbon_accumulated_in_wood"
+      }
+    },
+    {
+      "@id": "cf:northward_eliassen_palm_flux",
+      "owl:sameAs": {
+        "@id": "cf:northward_eliassen_palm_flux_in_air",
+        "top:altLabel": "northward_eliassen_palm_flux"
+      }
+    },
+    {
+      "@id": "cf:northward_heat_flux_due_to_eddy_advection",
+      "owl:sameAs": {
+        "@id": "cf:northward_heat_flux_in_air_due_to_eddy_advection",
+        "top:altLabel": "northward_heat_flux_due_to_eddy_advection"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_mass_content_of_nitrate_dry_aerosol_due_to_dry_deposition",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_nitrate_dry_aerosol_particles_due_to_dry_deposition",
+        "top:altLabel": "tendency_of_atmosphere_mass_content_of_nitrate_dry_aerosol_due_to_dry_deposition"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_atmosphere_moles_of_sulfate_dry_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_moles_of_sulfate_dry_aerosol_particles",
+        "top:altLabel": "tendency_of_atmosphere_moles_of_sulfate_dry_aerosol"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_moles_of_carbon_monoxide_in_troposphere",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_troposphere_moles_of_carbon_monoxide",
+        "top:altLabel": "tendency_of_moles_of_carbon_monoxide_in_troposphere"
+      }
+    },
+    {
+      "@id": "cf:upward_flux_of_eastward_momentum_due_to_nonorographic_eastward_gravity_waves",
+      "owl:sameAs": {
+        "@id": "cf:upward_eastward_momentum_flux_in_air_due_to_nonorographic_eastward_gravity_waves",
+        "top:altLabel": "upward_flux_of_eastward_momentum_due_to_nonorographic_eastward_gravity_waves"
+      }
+    },
+    {
+      "@id": "cf:sea_surface_wave_frequency",
+      "owl:sameAs": {
+        "@id": "cf:wave_frequency",
+        "top:altLabel": "sea_surface_wave_frequency"
+      }
+    },
+    {
+      "@id": "cf:number_concentration_of_convective_cloud_liquid_water_particle_at_convective_liquid_water_cloud_top",
+      "owl:sameAs": {
+        "@id": "cf:number_concentration_of_convective_cloud_liquid_water_particles_at_convective_liquid_water_cloud_top",
+        "top:altLabel": "number_concentration_of_convective_cloud_liquid_water_particle_at_convective_liquid_water_cloud_top"
+      }
+    },
+    {
+      "@id": "cf:number_concentration_of_stratiform_cloud_liquid_water_particle_at_stratiform_liquid_water_cloud_top",
+      "owl:sameAs": {
+        "@id": "cf:number_concentration_of_stratiform_cloud_liquid_water_particles_at_stratiform_liquid_water_cloud_top",
+        "top:altLabel": "number_concentration_of_stratiform_cloud_liquid_water_particle_at_stratiform_liquid_water_cloud_top"
+      }
+    },
+    {
+      "@id": "cf:biological_taxon_identifier",
+      "owl:sameAs": {
+        "@id": "cf:biological_taxon_lsid",
+        "top:altLabel": "biological_taxon_identifier"
+      }
+    },
+    {
+      "@id": "cf:cloud_liquid_water_content_of_atmosphere_layer",
+      "owl:sameAs": {
+        "@id": "cf:mass_content_of_cloud_liquid_water_in_atmosphere_layer",
+        "top:altLabel": "cloud_liquid_water_content_of_atmosphere_layer"
+      }
+    },
+    {
+      "@id": "cf:effective_radius_of_cloud_liquid_water_particle_at_liquid_water_cloud_top",
+      "owl:sameAs": {
+        "@id": "cf:effective_radius_of_cloud_liquid_water_particles_at_liquid_water_cloud_top",
+        "top:altLabel": "effective_radius_of_cloud_liquid_water_particle_at_liquid_water_cloud_top"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_convective_cloud_liquid_water_content",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_mass_content_of_convective_cloud_liquid_water",
+        "top:altLabel": "atmosphere_convective_cloud_liquid_water_content"
+      }
+    },
+    {
+      "@id": "cf:net_primary_mole_productivity_of_biomass_expressed_as_carbon_by_diazotrophs",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_mole_productivity_of_biomass_expressed_as_carbon_by_diazotrophic_phytoplankton",
+        "top:altLabel": "net_primary_mole_productivity_of_biomass_expressed_as_carbon_by_diazotrophs"
+      }
+    },
+    {
+      "@id": "cf:net_primary_mole_productivity_of_carbon_by_diazotrophs",
+      "owl:sameAs": {
+        "@id": "cf:net_primary_mole_productivity_of_biomass_expressed_as_carbon_by_diazotrophic_phytoplankton",
+        "top:altLabel": "net_primary_mole_productivity_of_carbon_by_diazotrophs"
+      }
+    },
+    {
+      "@id": "cf:nitrogen_growth_limitation_of_diazotrophs",
+      "owl:sameAs": {
+        "@id": "cf:nitrogen_growth_limitation_of_diazotrophic_phytoplankton",
+        "top:altLabel": "nitrogen_growth_limitation_of_diazotrophs"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_mass_fraction_of_stratiform_cloud_ice_in_air_due_to_riming_from_cloud_liquid",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mass_fraction_of_stratiform_cloud_ice_in_air_due_to_riming_from_cloud_liquid_water",
+        "top:altLabel": "tendency_of_mass_fraction_of_stratiform_cloud_ice_in_air_due_to_riming_from_cloud_liquid"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_mass_fraction_of_stratiform_cloud_ice_in_air_due_to_heterogeneous_nucleation_from_cloud_liquid",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mass_fraction_of_stratiform_cloud_ice_in_air_due_to_heterogeneous_nucleation_from_cloud_liquid_water",
+        "top:altLabel": "tendency_of_mass_fraction_of_stratiform_cloud_ice_in_air_due_to_heterogeneous_nucleation_from_cloud_liquid"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_mass_fraction_of_stratiform_cloud_ice_in_air_due_to_melting_to_cloud_liquid",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mass_fraction_of_stratiform_cloud_ice_in_air_due_to_melting_to_cloud_liquid_water",
+        "top:altLabel": "tendency_of_mass_fraction_of_stratiform_cloud_ice_in_air_due_to_melting_to_cloud_liquid"
+      }
+    },
+    {
+      "@id": "cf:mass_concentration_of_diazotrophs_expressed_as_chlorophyll_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:mass_concentration_of_diazotrophic_phytoplankton_expressed_as_chlorophyll_in_sea_water",
+        "top:altLabel": "mass_concentration_of_diazotrophs_expressed_as_chlorophyll_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_rain_and_drizzle_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_liquid_precipitation_in_air",
+        "top:altLabel": "mass_fraction_of_rain_and_drizzle_in_air"
+      }
+    },
+    {
+      "@id": "cf:mass_fraction_of_rain_in_air",
+      "owl:sameAs": {
+        "@id": "cf:mass_fraction_of_liquid_precipitation_in_air",
+        "top:altLabel": "mass_fraction_of_rain_in_air"
+      }
+    },
+    {
+      "@id": "cf:mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:mole_concentration_of_diazotrophic_phytoplankton_expressed_as_carbon_in_sea_water",
+        "top:altLabel": "mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_water"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diazotrophs",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diazotrophic_phytoplankton",
+        "top:altLabel": "tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diazotrophs"
+      }
+    },
+    {
+      "@id": "cf:growth_limitation_of_diazotrophs_due_to_solar_irradiance",
+      "owl:sameAs": {
+        "@id": "cf:growth_limitation_of_diazotrophic_phytoplankton_due_to_solar_irradiance",
+        "top:altLabel": "growth_limitation_of_diazotrophs_due_to_solar_irradiance"
+      }
+    },
+    {
+      "@id": "cf:iron_growth_limitation_of_diazotrophs",
+      "owl:sameAs": {
+        "@id": "cf:iron_growth_limitation_of_diazotrophic_phytoplankton",
+        "top:altLabel": "iron_growth_limitation_of_diazotrophs"
+      }
+    },
+    {
+      "@id": "cf:land_cover",
+      "owl:sameAs": {
+        "@id": "cf:area_type",
+        "top:altLabel": "land_cover"
+      }
+    },
+    {
+      "@id": "cf:surface_cover",
+      "owl:sameAs": {
+        "@id": "cf:area_type",
+        "top:altLabel": "surface_cover"
+      }
+    },
+    {
+      "@id": "cf:northward_wind_shear",
+      "owl:sameAs": {
+        "@id": "cf:upward_derivative_of_northward_wind",
+        "top:altLabel": "northward_wind_shear"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_relative_vorticity",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_upward_relative_vorticity",
+        "top:altLabel": "atmosphere_relative_vorticity"
+      }
+    },
+    {
+      "@id": "cf:atmosphere_absolute_vorticity",
+      "owl:sameAs": {
+        "@id": "cf:atmosphere_upward_absolute_vorticity",
+        "top:altLabel": "atmosphere_absolute_vorticity"
+      }
+    },
+    {
+      "@id": "cf:eastward_wind_shear",
+      "owl:sameAs": {
+        "@id": "cf:upward_derivative_of_eastward_wind",
+        "top:altLabel": "eastward_wind_shear"
+      }
+    },
+    {
+      "@id": "cf:surface_snow_and_ice_sublimation_flux",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_atmosphere_mass_content_of_water_vapor_due_to_sublimation_of_surface_snow_and_ice",
+        "top:altLabel": "surface_snow_and_ice_sublimation_flux"
+      }
+    },
+    {
+      "@id": "cf:integral_of_surface_downward_northward_stress_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_surface_downward_northward_stress",
+        "top:altLabel": "integral_of_surface_downward_northward_stress_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:integral_of_surface_downward_eastward_stress_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_surface_downward_eastward_stress",
+        "top:altLabel": "integral_of_surface_downward_eastward_stress_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:snow_thermal_energy_content",
+      "owl:sameAs": {
+        "@id": "cf:thermal_energy_content_of_surface_snow",
+        "top:altLabel": "snow_thermal_energy_content"
+      }
+    },
+    {
+      "@id": "cf:surface_snow_thickness_where_sea_ice",
+      "owl:sameAs": {
+        "@id": "cf:surface_snow_thickness",
+        "top:altLabel": "surface_snow_thickness_where_sea_ice"
+      }
+    },
+    {
+      "@id": "cf:liquid_water_content_of_snow_layer",
+      "owl:sameAs": {
+        "@id": "cf:liquid_water_content_of_surface_snow",
+        "top:altLabel": "liquid_water_content_of_snow_layer"
+      }
+    },
+    {
+      "@id": "cf:snow_soot_content",
+      "owl:sameAs": {
+        "@id": "cf:soot_content_of_surface_snow",
+        "top:altLabel": "snow_soot_content"
+      }
+    },
+    {
+      "@id": "cf:snow_density",
+      "owl:sameAs": {
+        "@id": "cf:surface_snow_density",
+        "top:altLabel": "snow_density"
+      }
+    },
+    {
+      "@id": "cf:water_evaporation_flux",
+      "owl:sameAs": {
+        "@id": "cf:water_evapotranspiration_flux",
+        "top:altLabel": "water_evaporation_flux"
+      }
+    },
+    {
+      "@id": "cf:moles_of_particulate_inorganic_carbon_per_unit_mass_of_sea_water",
+      "owl:sameAs": {
+        "@id": "cf:moles_of_particulate_inorganic_carbon_per_unit_mass_in_sea_water",
+        "top:altLabel": "moles_of_particulate_inorganic_carbon_per_unit_mass_of_sea_water"
+      }
+    },
+    {
+      "@id": "cf:vertical_drainage_amount_in_soil",
+      "owl:sameAs": {
+        "@id": "cf:drainage_amount_through_base_of_soil_model",
+        "top:altLabel": "vertical_drainage_amount_in_soil"
+      }
+    },
+    {
+      "@id": "cf:heat_flux_correction",
+      "owl:sameAs": {
+        "@id": "cf:heat_flux_into_sea_water_due_to_flux_adjustment",
+        "top:altLabel": "heat_flux_correction"
+      }
+    },
+    {
+      "@id": "cf:water_flux_correction",
+      "owl:sameAs": {
+        "@id": "cf:water_flux_into_sea_water_due_to_flux_adjustment",
+        "top:altLabel": "water_flux_correction"
+      }
+    },
+    {
+      "@id": "cf:volume_extinction_coefficient_in_air_due_to_ambient_aerosol_particles",
+      "owl:sameAs": {
+        "@id": "cf:volume_extinction_coefficient_of_radiative_flux_in_air_due_to_ambient_aerosol_particles",
+        "top:altLabel": "volume_extinction_coefficient_in_air_due_to_ambient_aerosol_particles"
+      }
+    },
+    {
+      "@id": "cf:volume_extinction_coefficient_in_air_due_to_ambient_aerosol",
+      "owl:sameAs": {
+        "@id": "cf:volume_extinction_coefficient_of_radiative_flux_in_air_due_to_ambient_aerosol_particles",
+        "top:altLabel": "volume_extinction_coefficient_in_air_due_to_ambient_aerosol"
+      }
+    },
+    {
+      "@id": "cf:volume_extinction_coefficient_in_air_due_to_cloud_particles",
+      "owl:sameAs": {
+        "@id": "cf:volume_extinction_coefficient_of_radiative_flux_in_air_due_to_cloud_particles",
+        "top:altLabel": "volume_extinction_coefficient_in_air_due_to_cloud_particles"
+      }
+    },
+    {
+      "@id": "cf:volume_backwards_scattering_coefficient_in_air_due_to_dried_aerosol_particles",
+      "owl:sameAs": {
+        "@id": "cf:volume_backwards_scattering_coefficient_of_radiative_flux_in_air_due_to_dried_aerosol_particles",
+        "top:altLabel": "volume_backwards_scattering_coefficient_in_air_due_to_dried_aerosol_particles"
+      }
+    },
+    {
+      "@id": "cf:volume_attenuated_backwards_scattering_function_in_air",
+      "owl:sameAs": {
+        "@id": "cf:volume_attenuated_backwards_scattering_coefficient_of_radiative_flux_in_air",
+        "top:altLabel": "volume_attenuated_backwards_scattering_function_in_air"
+      }
+    },
+    {
+      "@id": "cf:volume_absorption_coefficient_in_air_due_to_dried_aerosol_particles",
+      "owl:sameAs": {
+        "@id": "cf:volume_absorption_coefficient_of_radiative_flux_in_air_due_to_dried_aerosol_particles",
+        "top:altLabel": "volume_absorption_coefficient_in_air_due_to_dried_aerosol_particles"
+      }
+    },
+    {
+      "@id": "cf:volume_attenuated_backwards_scattering_function_in_air_assuming_no_aerosol_or_cloud",
+      "owl:sameAs": {
+        "@id": "cf:volume_attenuated_backwards_scattering_coefficient_of_radiative_flux_in_air_assuming_no_aerosol_or_cloud",
+        "top:altLabel": "volume_attenuated_backwards_scattering_function_in_air_assuming_no_aerosol_or_cloud"
+      }
+    },
+    {
+      "@id": "cf:equivalent_temperature",
+      "owl:sameAs": {
+        "@id": "cf:air_equivalent_temperature",
+        "top:altLabel": "equivalent_temperature"
+      }
+    },
+    {
+      "@id": "cf:equivalent_potential_temperature",
+      "owl:sameAs": {
+        "@id": "cf:air_equivalent_potential_temperature",
+        "top:altLabel": "equivalent_potential_temperature"
+      }
+    },
+    {
+      "@id": "cf:pseudo_equivalent_potential_temperature",
+      "owl:sameAs": {
+        "@id": "cf:air_pseudo_equivalent_potential_temperature",
+        "top:altLabel": "pseudo_equivalent_potential_temperature"
+      }
+    },
+    {
+      "@id": "cf:pseudo_equivalent_temperature",
+      "owl:sameAs": {
+        "@id": "cf:air_pseudo_equivalent_temperature",
+        "top:altLabel": "pseudo_equivalent_temperature"
+      }
+    },
+    {
+      "@id": "cf:surface_temperature_where_land",
+      "owl:sameAs": {
+        "@id": "cf:surface_temperature",
+        "top:altLabel": "surface_temperature_where_land"
+      }
+    },
+    {
+      "@id": "cf:surface_temperature_where_open_sea",
+      "owl:sameAs": {
+        "@id": "cf:surface_temperature",
+        "top:altLabel": "surface_temperature_where_open_sea"
+      }
+    },
+    {
+      "@id": "cf:surface_temperature_where_snow",
+      "owl:sameAs": {
+        "@id": "cf:surface_temperature",
+        "top:altLabel": "surface_temperature_where_snow"
+      }
+    },
+    {
+      "@id": "cf:solid_earth_subsurface_temperature",
+      "owl:sameAs": {
+        "@id": "cf:temperature_in_ground",
+        "top:altLabel": "solid_earth_subsurface_temperature"
+      }
+    },
+    {
+      "@id": "cf:snow_temperature",
+      "owl:sameAs": {
+        "@id": "cf:temperature_in_surface_snow",
+        "top:altLabel": "snow_temperature"
+      }
+    },
+    {
+      "@id": "cf:integral_wrt_depth_of_product_of_sea_water_density_and_conservative_temperature",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_depth_of_product_of_conservative_temperature_and_sea_water_density",
+        "top:altLabel": "integral_wrt_depth_of_product_of_sea_water_density_and_conservative_temperature"
+      }
+    },
+    {
+      "@id": "cf:integral_wrt_depth_of_product_of_sea_water_density_and_potential_temperature",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_depth_of_product_of_potential_temperature_and_sea_water_density",
+        "top:altLabel": "integral_wrt_depth_of_product_of_sea_water_density_and_potential_temperature"
+      }
+    },
+    {
+      "@id": "cf:integral_wrt_depth_of_sea_water_temperature_in_ocean_layer",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_depth_of_sea_water_temperature",
+        "top:altLabel": "integral_wrt_depth_of_sea_water_temperature_in_ocean_layer"
+      }
+    },
+    {
+      "@id": "cf:ocean_integral_wrt_depth_of_sea_water_temperature",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_depth_of_sea_water_temperature",
+        "top:altLabel": "ocean_integral_wrt_depth_of_sea_water_temperature"
+      }
+    },
+    {
+      "@id": "cf:integral_of_sea_water_temperature_wrt_depth_in_ocean_layer",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_depth_of_sea_water_temperature",
+        "top:altLabel": "integral_of_sea_water_temperature_wrt_depth_in_ocean_layer"
+      }
+    },
+    {
+      "@id": "cf:ocean_integral_of_sea_water_temperature_wrt_depth",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_depth_of_sea_water_temperature",
+        "top:altLabel": "ocean_integral_of_sea_water_temperature_wrt_depth"
+      }
+    },
+    {
+      "@id": "cf:universal_thermal_climate_index",
+      "owl:sameAs": {
+        "@id": "cf:universal_thermal_comfort_index",
+        "top:altLabel": "universal_thermal_climate_index"
+      }
+    },
+    {
+      "@id": "cf:product_of_omega_and_air_temperature",
+      "owl:sameAs": {
+        "@id": "cf:product_of_lagrangian_tendency_of_air_pressure_and_air_temperature",
+        "top:altLabel": "product_of_omega_and_air_temperature"
+      }
+    },
+    {
+      "@id": "cf:product_of_air_temperature_and_omega",
+      "owl:sameAs": {
+        "@id": "cf:product_of_lagrangian_tendency_of_air_pressure_and_air_temperature",
+        "top:altLabel": "product_of_air_temperature_and_omega"
+      }
+    },
+    {
+      "@id": "cf:integral_of_air_temperature_deficit_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_air_temperature_deficit",
+        "top:altLabel": "integral_of_air_temperature_deficit_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:integral_of_air_temperature_excess_wrt_time",
+      "owl:sameAs": {
+        "@id": "cf:integral_wrt_time_of_air_temperature_excess",
+        "top:altLabel": "integral_of_air_temperature_excess_wrt_time"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_air_temperature_due_to_large_scale_precipitation",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_air_temperature_due_to_stratiform_precipitation",
+        "top:altLabel": "tendency_of_air_temperature_due_to_large_scale_precipitation"
+      }
+    },
+    {
+      "@id": "cf:tendency_of_sea_water_temperature_due_to_bolus_advection",
+      "owl:sameAs": {
+        "@id": "cf:tendency_of_sea_water_temperature_due_to_parameterized_eddy_advection",
+        "top:altLabel": "tendency_of_sea_water_temperature_due_to_bolus_advection"
+      }
+    },
+    {
+      "@id": "cf:upward_geothermal_heat_flux_at_ground_level_in_land_ice",
+      "owl:sameAs": {
+        "@id": "cf:upward_heat_flux_at_base_of_grounded_ice_sheet",
+        "top:altLabel": "upward_geothermal_heat_flux_at_ground_level_in_land_ice"
+      }
+    },
+    {
+      "@id": "cf:ocean_volume_fraction",
+      "owl:sameAs": {
+        "@id": "cf:sea_water_volume_fraction",
+        "top:altLabel": "ocean_volume_fraction"
+      }
+    },
+    {
+      "@id": "cf:floating_ice_sheet_area_fraction",
+      "owl:sameAs": {
+        "@id": "cf:floating_ice_shelf_area_fraction",
+        "top:altLabel": "floating_ice_sheet_area_fraction"
+      }
+    },
+    {
+      "@id": "cf:large_scale_cloud_area_fraction",
+      "owl:sameAs": {
+        "@id": "cf:stratiform_cloud_area_fraction",
+        "top:altLabel": "large_scale_cloud_area_fraction"
+      }
+    }
+  ]
+}

@@ -11,6 +11,7 @@ data-sources/istitutions/rdf/data.ttl,https://w3id.org/hacid/data/cs/cmip6/cvs,y
 data-sources/sources/rdf/data.ttl,https://w3id.org/hacid/data/cs/cmip6/cvs,y
 data-sources/cmor-tables/rdf/*.ttl,https://w3id.org/hacid/data/cs/cmip6/cmor-tables,n
 data-sources/cf-standard-names/rdf/*.ttl,https://w3id.org/hacid/data/cs/cf,n
+data-sources/cf-standard-names/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cf,n
 data-sources/cmip5/rdf/data.ttl,https://w3id.org/hacid/data/cs/cmip5/datasets,n
 data-sources/cmip5-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cmip5/cvs,n
 data-sources/cordex-domains/rdf/data.ttl,https://w3id.org/hacid/data/cs/cordex/cvs,n
