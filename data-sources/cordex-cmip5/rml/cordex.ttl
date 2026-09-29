@@ -982,7 +982,6 @@
 
 :VariableIRI
     rr:termType rr:IRI ;
-    rr:class data:Variable, data:DependentVariable ;
     fnml:functionValue [
         rr:predicateObjectMap [
             rr:predicate fno:executes ;
