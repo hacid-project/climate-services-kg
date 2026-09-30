@@ -29,8 +29,7 @@ def member_spec($scheme_id):
         schemes: "https://w3id.org/hacid/data/cs/wf/schemes/",
         label: "rdfs:label",
         members: {
-            "@reverse": "top:inScheme",
-            "@type": "@id"
+            "@reverse": "top:inScheme"
         }
     },
     "@graph": [

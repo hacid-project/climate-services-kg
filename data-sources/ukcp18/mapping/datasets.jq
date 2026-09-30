@@ -207,7 +207,7 @@ def decompose_id($collection):
                 $simulation,
                 {
                     "@id": ($simulation.has_output | JSONLD::id),
-                    has_part: {
+                    sub_dataset: {
                         "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
                     }
                 }
@@ -234,7 +234,7 @@ def decompose_id($collection):
         time: "https://w3id.org/hacid/data/cs/dimensions/time/reference-frames/",
         geodetic: "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/",
         ensemble: {
-            "@reverse": "ccso:hasMemberSimulation"
+            "@reverse": "top:hasComponent"
         }
     } +
     (
@@ -242,7 +242,7 @@ def decompose_id($collection):
             "@type": {
                 "@id": {
                     has_output: "data:hasOutput",
-                    has_part: "top:hasPart",
+                    sub_dataset: "top:hasComponent",
                     dependent_variable: "data:holdsSpecializationOfVariable",
                     single_dependent_variable: "data:isSpecializationOfVariable",
                     independent_variable: "data:dependsOnVariable",

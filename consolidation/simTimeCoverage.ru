@@ -44,7 +44,7 @@ WHERE {
             GRAPH ?simulationGraph {
                 ?simulation data:hasOutput ?simulationOutput
             }
-            ?simulationOutput top:hasPart/data:dependsOnVariable ?temporalDS.
+            ?simulationOutput top:hasComponent+/data:dependsOnVariable ?temporalDS.
             ?temporalDS
                 data:basedOnDimensionalSpace+ dimension:time;
                 data:hasExactBoundingRegion [

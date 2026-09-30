@@ -110,7 +110,7 @@ def dataset_to_gcm_simulation:
                 label: "ukcp18.global.\(.scenario)",
                 "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
                 dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
-                has_part: ($simulation_with_output | .has_output | JSONLD::id) #$output_id
+                sub_dataset: ($simulation_with_output | .has_output | JSONLD::id) #$output_id
             }
         }
     };
@@ -140,7 +140,7 @@ def dataset_to_rcm_simulation:
                 "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/land-rcm/datasets/\(.scenario)/output",
                 "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
                 dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
-                has_part: ($output | JSONLD::id)
+                sub_dataset: ($output | JSONLD::id)
             }
         },
         downscaling_of: ($gcm_simulation | JSONLD::id),
@@ -175,7 +175,7 @@ def dataset_to_cpm_simulation:
                 label: "ukcp18.local.\(.scenario)",
                 scenario: (.scenario | scenario_uri),
                 dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
-                has_part: ($output | JSONLD::id)
+                sub_dataset: ($output | JSONLD::id)
             }
         },
         downscaling_of: ($rcm_simulation | JSONLD::id),
@@ -198,7 +198,7 @@ def dataset_to_cordex_simulation:
                 label: "ukcp18.eurocordex.\(.scenario)",
                 scenario: (.scenario | scenario_uri),
                 dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
-                has_part: $output
+                sub_dataset: $output
             }
         }
     };
@@ -241,7 +241,7 @@ def dataset_to_gcm_derived_projection:
                 gwl: (.scenario | gwl_uri),
                 dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
                 derived_from: ($gcm_simulation.ensemble | JSONLD::id),
-                has_part: ($output | JSONLD::id)
+                sub_dataset: ($output | JSONLD::id)
             }
         },
         input: ($gcm_simulation | JSONLD::id),
@@ -292,7 +292,7 @@ def dataset_to_gcm_indices:
                 scenario: (.scenario | scenario_uri),
                 dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
                 derived_from: ($gcm_simulation.ensemble | JSONLD::id),
-                has_part: ($output | JSONLD::id)
+                sub_dataset: ($output | JSONLD::id)
             }
         },
         input: ($gcm_simulation | JSONLD::id),

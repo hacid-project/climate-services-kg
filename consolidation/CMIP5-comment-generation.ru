@@ -38,8 +38,8 @@ WHERE {
                     ) AS ?gcm_descr
                 )
             WHERE {
-                ?experiment top:isComponentOf mips:cmip5;
-                    ccso:hasMemberSimulation ?gcm_simulation.
+                mips:cmip5 top:hasComponent ?experiment.
+                ?experiment top:hasComponent+ ?gcm_simulation.
                 GRAPH ?gcm_simulation_graph {
                     ?gcm_simulation a ccso:GlobalClimateSimulation, ccso:SingleSimulation
                 }.
@@ -58,6 +58,6 @@ WHERE {
 
         ?experiment rdfs:label ?experiment_label.
 
-        ?gcm_simulation ccso:simulationConfigurationId ?gcm_simulation_member_id.
+        ?gcm_simulation top:componentIdentifier ?gcm_simulation_member_id.
     }
 }

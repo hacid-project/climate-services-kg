@@ -67,7 +67,7 @@ WHERE {
                         GRAPH ?rcm_simulation_graph {
                             ?rcm_simulation a ccso:DynamicalDownscaling, ccso:SingleSimulation
                         }
-                        ?rcm_simulation ^ccso:hasMemberSimulation/^top:hasComponent/top:isComponentOf mips:cordex-cmip5;
+                        ?rcm_simulation ^top:hasComponent+ mips:cordex-cmip5;
                             ccso:usesModel ?rcm.
                     
                         ?rcm rdfs:label ?rcm_label;
@@ -98,11 +98,12 @@ WHERE {
             GROUP BY ?rcm_simulation_graph ?rcm_simulation ?rcm_descr ?gcm_simulation ?gcm_label
         }
 
-        ?experiment top:isComponentOf mips:cmip5;
-            rdfs:label ?experiment_label;
-            ccso:hasMemberSimulation ?gcm_simulation.
+        mips:cmip5 top:hasComponent ?experiment.
+        ?experiment rdfs:label ?experiment_label;
+            top:hasComponent+ ?gcm_simulation.
 
-        ?gcm_simulation ccso:simulationConfigurationId ?gcm_simulation_member_id.
+        ?gcm_simulation a ccso:GlobalClimateSimulation, ccso:SingleSimulation;
+            top:componentIdentifier ?gcm_simulation_member_id.
 
         ?rcm_simulation data:hasOutput/data:dependsOnVariable ?geodetic_variable.
 

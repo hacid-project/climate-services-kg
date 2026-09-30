@@ -14,12 +14,12 @@
 
 <mips/cmip> a top:Action ;
     rdfs:label "CMIP";
-    rdfs:comment "Coupled Model Intercomparison Project (CMIP)."@en .
+    rdfs:comment "Coupled Model Intercomparison Project (CMIP)."@en ;
+    top:hasComponent <mips/cmip5>.
 
 <mips/cmip5> a top:Action, data:DataGeneratingProcess ;
     rdfs:label "CMIP5";
     rdfs:comment "5th phase of the Coupled Model Intercomparison Project (CMIP)."@en ;
-    top:isComponentOf <mips/cmip> ;
     data:hasOutput <mips/cmip5/output> .
 
 <mips/cmip5/output> a data:Dataset ;
@@ -28,12 +28,12 @@
 
 <mips/cordex> a top:Action ;
     rdfs:label "CORDEX";
-    rdfs:comment "Coordinated Regional Climate Downscaling Experiment (CORDEX)."@en .
+    rdfs:comment "Coordinated Regional Climate Downscaling Experiment (CORDEX)."@en;
+    top:hasComponent <mips/cordex-cmip5>.
 
 <mips/cordex-cmip5> a top:Action, data:DataGeneratingProcess ;
     rdfs:label "CORDEX-CMIP5";
     rdfs:comment "1st Edition of the Coordinated Regional Climate Downscaling Experiment (CORDEX), using as input CMIP5."@en ;
-    top:isComponentOf <mips/cordex> ;
     data:hasOutput <mips/cordex-cmip5/output> .
 
 <mips/cordex-cmip5/output> a data:Dataset ;

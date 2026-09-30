@@ -9,10 +9,6 @@
     "isMaintainedBy": {
       "@id": "ccso:isMaintainedBy",
       "@type": "@id"
-    },
-    "isPartOf": {
-      "@id": "top:isPartOf",
-      "@type": "@id"
     }
   },
   "@graph": [

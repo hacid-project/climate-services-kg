@@ -9,7 +9,7 @@ INSERT {
             a top:Collection;
             rdfs:label "Standard variables"@en;
             rdfs:comment "Collection of all the standard variables represented in this knowledge graph."@en;
-            top:hasPart ?var_collection;
+            top:hasComponent ?var_collection;
             top:hasMember ?var.
     }
 }
@@ -24,7 +24,7 @@ INSERT {
             a top:Collection;
             rdfs:label "Standard indices"@en;
             rdfs:comment "Collection of all the standard indices represented in this knowledge graph."@en;
-            top:hasPart ?index_collection;
+            top:hasComponent ?index_collection;
             top:hasMember ?index.
     }
 }

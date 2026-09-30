@@ -6,10 +6,9 @@
     "label": "rdfs:label",
     "comment": "rdfs:comment",
     "acronym": "top:acronym",
-    "experimentId": "ccso:experimentId",
+    "experimentId": "top:componentIdentifier",
     "isComponentOf": {
-      "@id": "top:isComponentOf",
-      "@type": "@id"
+      "@reverse": "top:hasComponent"
     }
   },
   "@graph": [
@@ -28,7 +27,9 @@
       "acronym": "1pctCO2",
       "experimentId": "1pctCO2",
       "label": "1 percent per year CO2",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/abrupt4xCO2",
@@ -39,7 +40,9 @@
       "acronym": "abrupt4xCO2",
       "experimentId": "abrupt4xCO2",
       "label": "abrupt 4XCO2",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/amip",
@@ -50,7 +53,9 @@
       "acronym": "amip",
       "experimentId": "amip",
       "label": "AMIP",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/amip4K",
@@ -61,7 +66,9 @@
       "acronym": "amip4K",
       "experimentId": "amip4K",
       "label": "AMIP plus 4K anomaly",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/amip4xCO2",
@@ -72,7 +79,9 @@
       "acronym": "amip4xCO2",
       "experimentId": "amip4xCO2",
       "label": "4xCO2 AMIP",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/amipFuture",
@@ -83,7 +92,9 @@
       "acronym": "amipFuture",
       "experimentId": "amipFuture",
       "label": "AMIP plus patterned anomaly",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/aqua4K",
@@ -94,7 +105,9 @@
       "acronym": "aqua4K",
       "experimentId": "aqua4K",
       "label": "aqua planet plus 4K anomaly",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/aqua4xCO2",
@@ -105,7 +118,9 @@
       "acronym": "aqua4xCO2",
       "experimentId": "aqua4xCO2",
       "label": "4xCO2 aqua planet",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/aquaControl",
@@ -116,7 +131,9 @@
       "acronym": "aquaControl",
       "experimentId": "aquaControl",
       "label": "aqua planet control",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1960",
@@ -127,7 +144,9 @@
       "acronym": "decadal1960",
       "experimentId": "decadal1960",
       "label": "10- or 30-year run initialized in year 1960",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1961",
@@ -138,7 +157,9 @@
       "acronym": "decadal1961",
       "experimentId": "decadal1961",
       "label": "10- or 30-year run initialized in year 1961",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1962",
@@ -149,7 +170,9 @@
       "acronym": "decadal1962",
       "experimentId": "decadal1962",
       "label": "10- or 30-year run initialized in year 1962",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1963",
@@ -160,7 +183,9 @@
       "acronym": "decadal1963",
       "experimentId": "decadal1963",
       "label": "10- or 30-year run initialized in year 1963",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1964",
@@ -171,7 +196,9 @@
       "acronym": "decadal1964",
       "experimentId": "decadal1964",
       "label": "10- or 30-year run initialized in year 1964",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1965",
@@ -182,7 +209,9 @@
       "acronym": "decadal1965",
       "experimentId": "decadal1965",
       "label": "10- or 30-year run initialized in year 1965",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1966",
@@ -193,7 +222,9 @@
       "acronym": "decadal1966",
       "experimentId": "decadal1966",
       "label": "10- or 30-year run initialized in year 1966",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1967",
@@ -204,7 +235,9 @@
       "acronym": "decadal1967",
       "experimentId": "decadal1967",
       "label": "10- or 30-year run initialized in year 1967",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1968",
@@ -215,7 +248,9 @@
       "acronym": "decadal1968",
       "experimentId": "decadal1968",
       "label": "10- or 30-year run initialized in year 1968",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1969",
@@ -226,7 +261,9 @@
       "acronym": "decadal1969",
       "experimentId": "decadal1969",
       "label": "10- or 30-year run initialized in year 1969",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1970",
@@ -237,7 +274,9 @@
       "acronym": "decadal1970",
       "experimentId": "decadal1970",
       "label": "10- or 30-year run initialized in year 1970",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1971",
@@ -248,7 +287,9 @@
       "acronym": "decadal1971",
       "experimentId": "decadal1971",
       "label": "10- or 30-year run initialized in year 1971",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1972",
@@ -259,7 +300,9 @@
       "acronym": "decadal1972",
       "experimentId": "decadal1972",
       "label": "10- or 30-year run initialized in year 1972",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1973",
@@ -270,7 +313,9 @@
       "acronym": "decadal1973",
       "experimentId": "decadal1973",
       "label": "10- or 30-year run initialized in year 1973",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1974",
@@ -281,7 +326,9 @@
       "acronym": "decadal1974",
       "experimentId": "decadal1974",
       "label": "10- or 30-year run initialized in year 1974",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1975",
@@ -292,7 +339,9 @@
       "acronym": "decadal1975",
       "experimentId": "decadal1975",
       "label": "10- or 30-year run initialized in year 1975",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1976",
@@ -303,7 +352,9 @@
       "acronym": "decadal1976",
       "experimentId": "decadal1976",
       "label": "10- or 30-year run initialized in year 1976",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1977",
@@ -314,7 +365,9 @@
       "acronym": "decadal1977",
       "experimentId": "decadal1977",
       "label": "10- or 30-year run initialized in year 1977",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1978",
@@ -325,7 +378,9 @@
       "acronym": "decadal1978",
       "experimentId": "decadal1978",
       "label": "10- or 30-year run initialized in year 1978",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1979",
@@ -336,7 +391,9 @@
       "acronym": "decadal1979",
       "experimentId": "decadal1979",
       "label": "10- or 30-year run initialized in year 1979",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1980",
@@ -347,7 +404,9 @@
       "acronym": "decadal1980",
       "experimentId": "decadal1980",
       "label": "10- or 30-year run initialized in year 1980",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1981",
@@ -358,7 +417,9 @@
       "acronym": "decadal1981",
       "experimentId": "decadal1981",
       "label": "10- or 30-year run initialized in year 1981",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1982",
@@ -369,7 +430,9 @@
       "acronym": "decadal1982",
       "experimentId": "decadal1982",
       "label": "10- or 30-year run initialized in year 1982",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1983",
@@ -380,7 +443,9 @@
       "acronym": "decadal1983",
       "experimentId": "decadal1983",
       "label": "10- or 30-year run initialized in year 1983",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1984",
@@ -391,7 +456,9 @@
       "acronym": "decadal1984",
       "experimentId": "decadal1984",
       "label": "10- or 30-year run initialized in year 1984",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1985",
@@ -402,7 +469,9 @@
       "acronym": "decadal1985",
       "experimentId": "decadal1985",
       "label": "10- or 30-year run initialized in year 1985",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1986",
@@ -413,7 +482,9 @@
       "acronym": "decadal1986",
       "experimentId": "decadal1986",
       "label": "10- or 30-year run initialized in year 1986",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1987",
@@ -424,7 +495,9 @@
       "acronym": "decadal1987",
       "experimentId": "decadal1987",
       "label": "10- or 30-year run initialized in year 1987",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1988",
@@ -435,7 +508,9 @@
       "acronym": "decadal1988",
       "experimentId": "decadal1988",
       "label": "10- or 30-year run initialized in year 1988",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1989",
@@ -446,7 +521,9 @@
       "acronym": "decadal1989",
       "experimentId": "decadal1989",
       "label": "10- or 30-year run initialized in year 1989",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1990",
@@ -457,7 +534,9 @@
       "acronym": "decadal1990",
       "experimentId": "decadal1990",
       "label": "10- or 30-year run initialized in year 1990",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1991",
@@ -468,7 +547,9 @@
       "acronym": "decadal1991",
       "experimentId": "decadal1991",
       "label": "10- or 30-year run initialized in year 1991",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1992",
@@ -479,7 +560,9 @@
       "acronym": "decadal1992",
       "experimentId": "decadal1992",
       "label": "10- or 30-year run initialized in year 1992",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1993",
@@ -490,7 +573,9 @@
       "acronym": "decadal1993",
       "experimentId": "decadal1993",
       "label": "10- or 30-year run initialized in year 1993",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1994",
@@ -501,7 +586,9 @@
       "acronym": "decadal1994",
       "experimentId": "decadal1994",
       "label": "10- or 30-year run initialized in year 1994",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1995",
@@ -512,7 +599,9 @@
       "acronym": "decadal1995",
       "experimentId": "decadal1995",
       "label": "10- or 30-year run initialized in year 1995",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1996",
@@ -523,7 +612,9 @@
       "acronym": "decadal1996",
       "experimentId": "decadal1996",
       "label": "10- or 30-year run initialized in year 1996",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1997",
@@ -534,7 +625,9 @@
       "acronym": "decadal1997",
       "experimentId": "decadal1997",
       "label": "10- or 30-year run initialized in year 1997",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1998",
@@ -545,7 +638,9 @@
       "acronym": "decadal1998",
       "experimentId": "decadal1998",
       "label": "10- or 30-year run initialized in year 1998",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal1999",
@@ -556,7 +651,9 @@
       "acronym": "decadal1999",
       "experimentId": "decadal1999",
       "label": "10- or 30-year run initialized in year 1999",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2000",
@@ -567,7 +664,9 @@
       "acronym": "decadal2000",
       "experimentId": "decadal2000",
       "label": "10- or 30-year run initialized in year 2000",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2001",
@@ -578,7 +677,9 @@
       "acronym": "decadal2001",
       "experimentId": "decadal2001",
       "label": "10- or 30-year run initialized in year 2001",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2002",
@@ -589,7 +690,9 @@
       "acronym": "decadal2002",
       "experimentId": "decadal2002",
       "label": "10- or 30-year run initialized in year 2002",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2003",
@@ -600,7 +703,9 @@
       "acronym": "decadal2003",
       "experimentId": "decadal2003",
       "label": "10- or 30-year run initialized in year 2003",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2004",
@@ -611,7 +716,9 @@
       "acronym": "decadal2004",
       "experimentId": "decadal2004",
       "label": "10- or 30-year run initialized in year 2004",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2005",
@@ -622,7 +729,9 @@
       "acronym": "decadal2005",
       "experimentId": "decadal2005",
       "label": "10- or 30-year run initialized in year 2005",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2006",
@@ -633,7 +742,9 @@
       "acronym": "decadal2006",
       "experimentId": "decadal2006",
       "label": "10- or 30-year run initialized in year 2006",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2007",
@@ -644,7 +755,9 @@
       "acronym": "decadal2007",
       "experimentId": "decadal2007",
       "label": "10- or 30-year run initialized in year 2007",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2008",
@@ -655,7 +768,9 @@
       "acronym": "decadal2008",
       "experimentId": "decadal2008",
       "label": "10- or 30-year run initialized in year 2008",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2009",
@@ -666,7 +781,9 @@
       "acronym": "decadal2009",
       "experimentId": "decadal2009",
       "label": "10- or 30-year run initialized in year 2009",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2010",
@@ -677,7 +794,9 @@
       "acronym": "decadal2010",
       "experimentId": "decadal2010",
       "label": "10- or 30-year run initialized in year 2010",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2011",
@@ -688,7 +807,9 @@
       "acronym": "decadal2011",
       "experimentId": "decadal2011",
       "label": "10- or 30-year run initialized in year 2011",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/decadal2012",
@@ -699,7 +820,9 @@
       "acronym": "decadal2012",
       "experimentId": "decadal2012",
       "label": "10- or 30-year run initialized in year 2012",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmControl",
@@ -710,7 +833,9 @@
       "acronym": "esmControl",
       "experimentId": "esmControl",
       "label": "ESM pre-industrial control",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmFdbk1",
@@ -721,7 +846,9 @@
       "acronym": "esmFdbk1",
       "experimentId": "esmFdbk1",
       "label": "ESM feedback 1",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmFdbk2",
@@ -732,7 +859,9 @@
       "acronym": "esmFdbk2",
       "experimentId": "esmFdbk2",
       "label": "ESM feedback 2",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmFixClim1",
@@ -743,7 +872,9 @@
       "acronym": "esmFixClim1",
       "experimentId": "esmFixClim1",
       "label": "ESM fixed climate 1",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmFixClim2",
@@ -754,7 +885,9 @@
       "acronym": "esmFixClim2",
       "experimentId": "esmFixClim2",
       "label": "ESM fixed climate 2",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmHistorical",
@@ -765,7 +898,9 @@
       "acronym": "esmHistorical",
       "experimentId": "esmHistorical",
       "label": "ESM historical",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/esmrcp85",
@@ -776,7 +911,9 @@
       "acronym": "esmrcp85",
       "experimentId": "esmrcp85",
       "label": "ESM RCP8.5",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/historical",
@@ -787,7 +924,9 @@
       "acronym": "historical",
       "experimentId": "historical",
       "label": "historical",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/historicalExt",
@@ -798,7 +937,9 @@
       "acronym": "historicalExt",
       "experimentId": "historicalExt",
       "label": "historical simulation extended through year 2012",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/historicalGHG",
@@ -809,7 +950,9 @@
       "acronym": "historicalGHG",
       "experimentId": "historicalGHG",
       "label": "historical, well-mixed greenhouse gases only",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/historicalMisc",
@@ -820,7 +963,9 @@
       "acronym": "historicalMisc",
       "experimentId": "historicalMisc",
       "label": "historical simulation but with other individual forcing agents or combinations of forcings",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/historicalNat",
@@ -831,7 +976,9 @@
       "acronym": "historicalNat",
       "experimentId": "historicalNat",
       "label": "historical, natural forcing only",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/lgm",
@@ -842,7 +989,9 @@
       "acronym": "lgm",
       "experimentId": "lgm",
       "label": "last glacial maximum",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/midHolocene",
@@ -853,7 +1002,9 @@
       "acronym": "midHolocene",
       "experimentId": "midHolocene",
       "label": "mid-Holocene",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/noVolc1960",
@@ -864,7 +1015,9 @@
       "acronym": "noVolc1960",
       "experimentId": "noVolc1960",
       "label": "volcano-free hindcasts initiated in 1960",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/noVolc1975",
@@ -875,7 +1028,9 @@
       "acronym": "noVolc1975",
       "experimentId": "noVolc1975",
       "label": "volcano-free hindcasts initiated in 1975",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/noVolc1980",
@@ -886,7 +1041,9 @@
       "acronym": "noVolc1980",
       "experimentId": "noVolc1980",
       "label": "volcano-free hindcasts initiated in 1980",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/noVolc1985",
@@ -897,7 +1054,9 @@
       "acronym": "noVolc1985",
       "experimentId": "noVolc1985",
       "label": "volcano-free hindcasts initiated in 1985",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/noVolc1990",
@@ -908,7 +1067,9 @@
       "acronym": "noVolc1990",
       "experimentId": "noVolc1990",
       "label": "volcano-free hindcasts initiated in 1990",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/past1000",
@@ -919,7 +1080,9 @@
       "acronym": "past1000",
       "experimentId": "past1000",
       "label": "last millennium",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/piControl",
@@ -930,7 +1093,9 @@
       "acronym": "piControl",
       "experimentId": "piControl",
       "label": "pre-industrial control",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/rcp26",
@@ -941,7 +1106,9 @@
       "acronym": "rcp26",
       "experimentId": "rcp26",
       "label": "RCP2.6",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/rcp45",
@@ -952,7 +1119,9 @@
       "acronym": "rcp45",
       "experimentId": "rcp45",
       "label": "RCP4.5",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/rcp60",
@@ -963,7 +1132,9 @@
       "acronym": "rcp60",
       "experimentId": "rcp60",
       "label": "RCP6",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/rcp85",
@@ -974,7 +1145,9 @@
       "acronym": "rcp85",
       "experimentId": "rcp85",
       "label": "RCP8.5",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/sst2030",
@@ -985,7 +1158,9 @@
       "acronym": "sst2030",
       "experimentId": "sst2030",
       "label": "2030 time-slice",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/sstClim",
@@ -996,7 +1171,9 @@
       "acronym": "sstClim",
       "experimentId": "sstClim",
       "label": "control SST climatology",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/sstClim4xCO2",
@@ -1007,7 +1184,9 @@
       "acronym": "sstClim4xCO2",
       "experimentId": "sstClim4xCO2",
       "label": "CO2 forcing",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/sstClimAerosol",
@@ -1018,7 +1197,9 @@
       "acronym": "sstClimAerosol",
       "experimentId": "sstClimAerosol",
       "label": "all aerosol forcing",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/sstClimSulfate",
@@ -1029,7 +1210,9 @@
       "acronym": "sstClimSulfate",
       "experimentId": "sstClimSulfate",
       "label": "sulfate aerosol forcing",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     },
     {
       "@id": "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/volcIn2010",
@@ -1040,7 +1223,9 @@
       "acronym": "volcIn2010",
       "experimentId": "volcIn2010",
       "label": "prediction with 2010 volcano",
-      "isComponentOf": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      "isComponentOf": {
+        "@id": "https://w3id.org/hacid/data/cs/mips/cmip5"
+      }
     }
   ]
 }

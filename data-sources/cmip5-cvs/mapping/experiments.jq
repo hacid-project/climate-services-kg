@@ -6,10 +6,9 @@
         label: "rdfs:label",
         comment: "rdfs:comment",
         acronym: "top:acronym",
-        experimentId: "ccso:experimentId",
+        experimentId: "top:componentIdentifier",
         isComponentOf: {
-            "@id": "top:isComponentOf",
-            "@type": "@id"
+            "@reverse": "top:hasComponent"
         }
     },
     "@graph": [
@@ -26,7 +25,7 @@
                 acronym: .id,
                 experimentId: .id,
                 label: .description,
-                isComponentOf: "https://w3id.org/hacid/data/cs/mips/cmip5",
+                isComponentOf: {"@id": "https://w3id.org/hacid/data/cs/mips/cmip5"},
             }
         )
     ]

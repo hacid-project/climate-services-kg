@@ -93,13 +93,6 @@
         rr:objectMap :EmissionScenarioIRI
     ] .
 
-    # rr:predicateObjectMap [
-    #     rr:predicate data:isSpecializedAccordingTo ;
-    #     rr:objectMap [
-    #         rr:parentTriplesMap :SpatialSpecializationMapping
-    #     ]
-    # ] .      
-
 :GeodeticVariableIRI
     rr:termType rr:IRI ;
     fnml:functionValue [
@@ -217,7 +210,6 @@
         rr:predicate ccso:isDownscalingOf ;
         rr:objectMap [
             rr:termType rr:IRI ;
-#            rr:class ccso:Simulation ;
             fnml:functionValue [
                 rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
                     rr:predicate hrf:template ;
@@ -276,11 +268,6 @@
                 ] 
             ]
         ]
-    ] ;
-
-    rr:predicateObjectMap [
-        rr:predicate ccso:hasMemberSimulation ;
-        rr:objectMap :SimulationIRI
     ] ;
 
     rr:predicateObjectMap [
@@ -404,11 +391,6 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:hasMemberSimulation ;
-        rr:objectMap :SimulationIRI
-    ] ;
-
-    rr:predicateObjectMap [
         rr:predicate top:hasComponent ;
         rr:objectMap [
             rr:parentTriplesMap :DrivingEnsembleMapping
@@ -528,11 +510,6 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:hasMemberSimulation ;
-        rr:objectMap :SimulationIRI
-    ] ;
-
-    rr:predicateObjectMap [
         rr:predicate top:hasComponent ;
         rr:objectMap [
             rr:parentTriplesMap :EnsembleMapping
@@ -612,21 +589,22 @@
         rr:objectMap :EmissionScenarioIRI
     ] .      
 
+:DomainIRI
+    rr:termType rr:IRI ;
+    rr:class top:Action ;
+    fnml:functionValue [
+        rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
+            rr:predicate hrf:template ;
+            rr:objectMap [
+                rr:constant
+                    "https://w3id.org/hacid/data/cs/simulations/cordex.{domain}"
+            ]
+        ] 
+    ].
+
 :DomainMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
-    rr:subjectMap [
-        rr:termType rr:IRI ;
-        rr:class top:Action ;
-        fnml:functionValue [
-            rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
-                rr:predicate hrf:template ;
-                rr:objectMap [
-                    rr:constant
-                        "https://w3id.org/hacid/data/cs/simulations/cordex.{domain}"
-                ]
-            ] 
-        ]
-    ] ;
+    rr:subjectMap :DomainIRI ;
 
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
@@ -652,16 +630,21 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate top:isComponentOf ;
-        rr:object <https://w3id.org/hacid/data/cs/mips/cordex-cmip5>
-    ] ;
-
-    rr:predicateObjectMap [
         rr:predicate data:hasOutput ;
         rr:objectMap [
             rr:parentTriplesMap :DomainOutputMapping
         ]
     ] .    
+
+:ProjectMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subject <https://w3id.org/hacid/data/cs/mips/cordex-cmip5> ;
+	
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap :DomainIRI
+    ].
 
 :DomainOutputIRI
     rr:termType rr:IRI ;
@@ -705,11 +688,6 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate top:isComponentOf ;
-        rr:object <https://w3id.org/hacid/data/cs/mips/cordex-cmip5/output>
-    ] ;
-
-    rr:predicateObjectMap [
         rr:predicate data:dependsOnVariable ;
         rr:objectMap :GeodeticVariableIRI
     ] ;
@@ -718,6 +696,16 @@
         rr:predicate data:isSpecializedAccordingTo ;
         rr:objectMap :GeodeticSpecializationIRI
     ] .      
+
+:ProjectOutputMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subject <https://w3id.org/hacid/data/cs/mips/cordex-cmip5/output> ;
+	
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap :DomainOutputIRI
+    ].
 
 :ModelMapping a rr:TriplesMap ;
 	rml:logicalSource :LogicalSource ;

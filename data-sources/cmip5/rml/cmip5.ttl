@@ -249,7 +249,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:simulationConfigurationId;
+        rr:predicate top:componentIdentifier;
         rr:objectMap [
             fnml:functionValue [
                 rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
@@ -311,7 +311,7 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate ccso:hasMemberSimulation ;
+        rr:predicate top:hasComponent ;
         rr:objectMap :SimulationIRI
     ] ;
 
@@ -400,41 +400,14 @@
                 rr:predicate hrf:template ;
                 rr:objectMap [
                     rr:constant
-#                        "https://w3id.org/hacid/data/cs/simulations/cmip5.{experiment}"
                         "https://w3id.org/hacid/data/cs/mips/cmip5/experiments/{experiment}"
                 ]
             ] 
         ]
     ] ;
 
-    # rr:predicateObjectMap [
-    #     rr:predicate rdfs:label;
-    #     rr:objectMap [
-    #         rr:language "en" ;
-    #         fnml:functionValue [
-    #             rr:predicateObjectMap :FormatDatasetCall, :ParamMasterId, [
-    #                 rr:predicate hrf:template ;
-    #                 rr:objectMap [
-    #                     rr:constant
-    #                         "CMIP5 {experiment}"
-    #                 ]
-    #             ] 
-    #         ]
-    #     ]
-    # ] ;
-
-    # rr:predicateObjectMap [
-    #     rr:predicate top:isComponentOf ;
-    #     rr:object <https://w3id.org/hacid/data/cs/mips/cmip5>
-    # ] ;
-
     rr:predicateObjectMap [
-        rr:predicate ccso:hasMemberSimulation ;
-        rr:objectMap :SimulationIRI
-    ] ;
-
-    rr:predicateObjectMap [
-        rr:predicate top:hasPart ;
+        rr:predicate top:hasComponent ;
         rr:objectMap :EnsembleIRI
     ] ;
 
@@ -497,11 +470,6 @@
     ] ;
 
     rr:predicateObjectMap [
-        rr:predicate top:isComponentOf ;
-        rr:object <https://w3id.org/hacid/data/cs/mips/cmip5/output>
-    ] ;
-
-    rr:predicateObjectMap [
         rr:predicate data:isSpecializedAccordingTo ;
         rr:object geo_specialization_all:
     ] ;
@@ -510,6 +478,16 @@
         rr:predicate ccso:refersToScenario ;
         rr:objectMap :EmissionScenarioIRI
     ] .      
+
+:ProjectOutputMapping a rr:TriplesMap ;
+    rml:logicalSource :LogicalSource ;
+    
+	rr:subject <https://w3id.org/hacid/data/cs/mips/cmip5/output> ;
+	
+    rr:predicateObjectMap [
+        rr:predicate top:hasComponent ;
+        rr:objectMap :ExperimentOutputIRI
+    ].
 
 :ModelMapping a rr:TriplesMap ;
 	rml:logicalSource :LogicalSource ;
