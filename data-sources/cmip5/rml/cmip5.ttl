@@ -482,7 +482,9 @@
 :ProjectOutputMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     
-	rr:subject <https://w3id.org/hacid/data/cs/mips/cmip5/output> ;
+    rr:subjectMap [
+        rr:constant "https://w3id.org/hacid/data/cs/mips/cmip5/output"
+    ] ;
 	
     rr:predicateObjectMap [
         rr:predicate top:hasComponent ;

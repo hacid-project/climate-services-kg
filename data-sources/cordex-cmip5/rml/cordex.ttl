@@ -639,7 +639,9 @@
 :ProjectMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     
-	rr:subject <https://w3id.org/hacid/data/cs/mips/cordex-cmip5> ;
+    rr:subjectMap [
+        rr:constant "https://w3id.org/hacid/data/cs/mips/cordex-cmip5"
+    ] ;
 	
     rr:predicateObjectMap [
         rr:predicate top:hasComponent ;
@@ -700,7 +702,9 @@
 :ProjectOutputMapping a rr:TriplesMap ;
     rml:logicalSource :LogicalSource ;
     
-	rr:subject <https://w3id.org/hacid/data/cs/mips/cordex-cmip5/output> ;
+    rr:subjectMap [
+        rr:constant "https://w3id.org/hacid/data/cs/mips/cordex-cmip5/output"
+    ] ;
 	
     rr:predicateObjectMap [
         rr:predicate top:hasComponent ;
