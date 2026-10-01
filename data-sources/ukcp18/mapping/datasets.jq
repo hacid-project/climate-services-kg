@@ -87,7 +87,7 @@ def decompose_id($collection):
 
 [
     $mohc_models.[],
-    ( .[] | #range(length) as $entry_index | .[$entry_index] |
+    ( .[] |
 
 #    "EuroCORDEX": 68255,
 #    "land-cpm": 225435,
@@ -150,6 +150,9 @@ def decompose_id($collection):
         end |
 
         UKCP18_TIME::dataset_to_interval as $time_interval |
+
+        .scenario |= if . == "a1b" then "sres-a1b" end |
+        .id |= sub("_a1b_"; "_sres-a1b_") |
 
         (
             {

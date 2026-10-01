@@ -10,9 +10,14 @@ def scenario_uri:
         "rcp85": "RCP8.5",
         "rcp26": "RCP2.6",
         "rcp60": "RCP6"
-    } as $scenario_map |
-    if . and $scenario_map[.] then
-        @uri "https://w3id.org/hacid/data/cs/scenarios/RCP/\($scenario_map[.])"
+    } as $rcp_scenario_map |
+    {
+        "sres-a1b": "A1B"
+    } as $sres_scenario_map |
+    if . and $rcp_scenario_map[.] then
+        @uri "https://w3id.org/hacid/data/cs/scenarios/RCP/\($rcp_scenario_map[.])"
+    elif . and $sres_scenario_map[.] then
+        @uri "https://w3id.org/hacid/data/cs/scenarios/SRES/\($sres_scenario_map[.])"
     else null
     end;
 
