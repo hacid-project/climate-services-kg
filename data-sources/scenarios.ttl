@@ -41,8 +41,8 @@
 
 <scenarios/SSP/SSP1> a ccso:SharedSocioeconomicPathway ;
     rdfs:label "Shared Socioeconomic Pathways 1"@en ;
-    top:acronym "SS1"@en ;
-    dcterms:title "SS1: Sustainability (\"Taking the Green Road\")"@en ;
+    top:acronym "SSP 1"@en ;
+    dcterms:title "SSP1: Sustainability (\"Taking the Green Road\")"@en ;
     rdfs:comment "The world shifts gradually, but pervasively, toward a more sustainable path, emphasizing more inclusive development that respects predicted environmental boundaries. Management of the global commons slowly improves, educational and health investments accelerate the demographic transition, and the emphasis on economic growth shifts toward a broader emphasis on human well-being. Driven by an increasing commitment to achieving development goals, inequality is reduced both across and within countries. Consumption is oriented toward low material growth and lower resource and energy intensity."@en .
 
 <scenarios/SSP/SSP2> a ccso:SharedSocioeconomicPathway ;
