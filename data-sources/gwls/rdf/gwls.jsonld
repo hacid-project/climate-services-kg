@@ -1,0 +1,86 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "ccso": "https://w3id.org/hacid/onto/ccso/",
+    "gwl": "https://w3id.org/hacid/data/cs/GWLs/",
+    "label": "rdfs:label",
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "value": "rdf:value"
+  },
+  "@graph": [
+    {
+      "@id": "gwl:GWL1.5",
+      "@type": "ccso:GlobalWarmingLevel",
+      "label": "GWL1.5",
+      "comment": "Global warming level of 1.5°C, i.e. 1.5°C of global mean temperature increase compared to pre-industrial times (1871-1900)",
+      "value": 1.5
+    },
+    {
+      "@id": "gwl:GWL2",
+      "@type": "ccso:GlobalWarmingLevel",
+      "label": "GWL2",
+      "comment": "Global warming level of 2°C, i.e. 2°C of global mean temperature increase compared to pre-industrial times (1871-1900)",
+      "value": 2
+    },
+    {
+      "@id": "gwl:GWL2.5",
+      "@type": "ccso:GlobalWarmingLevel",
+      "label": "GWL2.5",
+      "comment": "Global warming level of 2.5°C, i.e. 2.5°C of global mean temperature increase compared to pre-industrial times (1871-1900)",
+      "value": 2.5
+    },
+    {
+      "@id": "gwl:GWL3",
+      "@type": "ccso:GlobalWarmingLevel",
+      "label": "GWL3",
+      "comment": "Global warming level of 3°C, i.e. 3°C of global mean temperature increase compared to pre-industrial times (1871-1900)",
+      "value": 3
+    },
+    {
+      "@id": "gwl:GWL3.5",
+      "@type": "ccso:GlobalWarmingLevel",
+      "label": "GWL3.5",
+      "comment": "Global warming level of 3.5°C, i.e. 3.5°C of global mean temperature increase compared to pre-industrial times (1871-1900)",
+      "value": 3.5
+    },
+    {
+      "@id": "gwl:GWL4",
+      "@type": "ccso:GlobalWarmingLevel",
+      "label": "GWL4",
+      "comment": "Global warming level of 4°C, i.e. 4°C of global mean temperature increase compared to pre-industrial times (1871-1900)",
+      "value": 4
+    },
+    {
+      "@id": "gwl:GWL4.5",
+      "@type": "ccso:GlobalWarmingLevel",
+      "label": "GWL4.5",
+      "comment": "Global warming level of 4.5°C, i.e. 4.5°C of global mean temperature increase compared to pre-industrial times (1871-1900)",
+      "value": 4.5
+    },
+    {
+      "@id": "gwl:GWL5",
+      "@type": "ccso:GlobalWarmingLevel",
+      "label": "GWL5",
+      "comment": "Global warming level of 5°C, i.e. 5°C of global mean temperature increase compared to pre-industrial times (1871-1900)",
+      "value": 5
+    },
+    {
+      "@id": "gwl:GWL5.5",
+      "@type": "ccso:GlobalWarmingLevel",
+      "label": "GWL5.5",
+      "comment": "Global warming level of 5.5°C, i.e. 5.5°C of global mean temperature increase compared to pre-industrial times (1871-1900)",
+      "value": 5.5
+    },
+    {
+      "@id": "gwl:GWL6",
+      "@type": "ccso:GlobalWarmingLevel",
+      "label": "GWL6",
+      "comment": "Global warming level of 6°C, i.e. 6°C of global mean temperature increase compared to pre-industrial times (1871-1900)",
+      "value": 6
+    }
+  ]
+}
