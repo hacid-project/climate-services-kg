@@ -1,0 +1,75 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix top: <https://w3id.org/hacid/onto/top-level/> .
+@prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
+@base <https://w3id.org/hacid/data/cs/> .
+
+<scenarios/RCP/RCP1.9> a ccso:GreenhouseGasConcentrationPathway ;
+    rdfs:label "Representative Concentration Pathway 1.9"@en ;
+    top:acronym "RCP 1.9"@en ;
+    rdfs:comment "RCP 1.9 is a pathway that limits global warming to below 1.5 °C, the aspirational goal of the Paris Agreement."@en .
+
+<scenarios/RCP/RCP2.6> a ccso:GreenhouseGasConcentrationPathway ;
+    rdfs:label "Representative Concentration Pathway 2.6"@en ;
+    top:acronym "RCP 2.6"@en ;
+    rdfs:comment "RCP 2.6 is a \"very stringent\" pathway. According to the IPCC, RCP 2.6 requires that carbon dioxide (CO2) emissions start declining by 2020 and go to zero by 2100. It also requires that methane emissions (CH4) go to approximately half the CH4 levels of 2020, and that sulphur dioxide (SO2) emissions decline to approximately 10% of those of 1980–1990. Like all the other RCPs, RCP 2.6 requires negative CO2 emissions (such as CO2 absorption by trees). For RCP 2.6, those negative emissions would be on average 2 Gigatons of CO2 per year (GtCO2/yr). RCP 2.6 is likely to keep global temperature rise below 2 °C by 2100."@en .
+
+<scenarios/RCP/RCP3.4> a ccso:GreenhouseGasConcentrationPathway ;
+    rdfs:label "Representative Concentration Pathway 3.4"@en ;
+    top:acronym "RCP 3.4"@en ;
+    rdfs:comment "RCP 3.4 represents an intermediate pathway between the \"very stringent\" RCP2.6 and less stringent mitigation efforts associated with RCP4.5. As well as just providing another option a variant of RCP3.4 includes considerable removal of greenhouse gases from the atmosphere. A 2021 paper suggests that the most plausible projections of cumulative CO2 emissions (having a 0.1% or 0.3% tolerance with historical accuracy) tend to suggest that RCP 3.4 (3.4 W/m^2, 2.0–2.4 degrees Celsius warming by 2100 according to study) is the most plausible pathway."@en .
+
+<scenarios/RCP/RCP4.5> a ccso:GreenhouseGasConcentrationPathway ;
+    rdfs:label "Representative Concentration Pathway 4.5"@en ;
+    top:acronym "RCP 4.5"@en ;
+    rdfs:comment "RCP 4.5 is described by the IPCC as an intermediate scenario. Emissions in RCP 4.5 peak around 2040, then decline. According to the IPCC, RCP 4.5 requires that carbon dioxide (CO2) emissions start declining by approximately 2045 to reach roughly half of the levels of 2050 by 2100. It also requires that methane emissions (CH4) stop increasing by 2050 and decline somewhat to about 75% of the CH4 levels of 2040, and that sulphur dioxide (SO2) emissions decline to approximately 20% of those of 1980–1990. Like all the other RCPs, RCP 4.5 requires negative CO2 emissions (such as CO2 absorption by trees). For RCP 4.5, those negative emissions would be 2 Gigatons of CO2 per year (GtCO2/yr). RCP 4.5 is more likely than not to result in global temperature rise between 2 °C and 3 °C, by 2100 with a mean sea level rise 35% higher than that of RCP 2.6. Many plant and animal species will be unable to adapt to the effects of RCP 4.5 and higher RCPs."@en .
+
+<scenarios/RCP/RCP6> a ccso:GreenhouseGasConcentrationPathway ;
+    rdfs:label "Representative Concentration Pathway 6"@en ;
+    top:acronym "RCP 6"@en ;
+    rdfs:comment "In RCP 6, emissions peak around 2080, then decline. The RCP 6.0 scenario uses a high greenhouse gas emission rate and is a stabilisation scenario where total radiative forcing is stabilised after 2100 by employment of a range of technologies and strategies for reducing greenhouse gas emissions. 6.0 W/m2 refers to the radiative forcing reached by 2100 Projections for temperature according to RCP 6.0 include continuous global warming through 2100 where CO2 levels rise to 670 ppm by 2100 making the global temperature rise by about 3–4 °C by 2100."@en .
+
+<scenarios/RCP/RCP7> a ccso:GreenhouseGasConcentrationPathway ;
+    rdfs:label "Representative Concentration Pathway 7"@en ;
+    top:acronym "RCP 7"@en ;
+    rdfs:comment "RCP7 is a baseline outcome rather than a mitigation target."@en .
+
+<scenarios/RCP/RCP8.5> a ccso:GreenhouseGasConcentrationPathway ;
+    rdfs:label "Representative Concentration Pathway 8.5"@en ;
+    top:acronym "RCP 8.5"@en ;
+    rdfs:comment "In RCP 8.5 emissions continue to rise throughout the 21st century. RCP8.5, generally taken as the basis for worst-case climate change scenarios, was based on what proved to be overestimation of projected coal outputs. It is still used for predicting mid-century (and earlier) emissions based on current and stated policies."@en .
+
+<scenarios/SSP/SSP1> a ccso:SharedSocioeconomicPathway ;
+    rdfs:label "Shared Socioeconomic Pathways 1"@en ;
+    top:acronym "SS1"@en ;
+    dcterms:title "SS1: Sustainability (\"Taking the Green Road\")"@en ;
+    rdfs:comment "The world shifts gradually, but pervasively, toward a more sustainable path, emphasizing more inclusive development that respects predicted environmental boundaries. Management of the global commons slowly improves, educational and health investments accelerate the demographic transition, and the emphasis on economic growth shifts toward a broader emphasis on human well-being. Driven by an increasing commitment to achieving development goals, inequality is reduced both across and within countries. Consumption is oriented toward low material growth and lower resource and energy intensity."@en .
+
+<scenarios/SSP/SSP2> a ccso:SharedSocioeconomicPathway ;
+    rdfs:label "Shared Socioeconomic Pathways 2"@en ;
+    top:acronym "SSP 2"@en ;
+    dcterms:title "SSP2: Middle of the road"@en ;
+    rdfs:comment "The world follows a path in which social, economic, and technological trends do not shift markedly from historical patterns. Development and income growth proceeds unevenly, with some countries making relatively good progress while others fall short of expectations. Global and national institutions work toward but make slow progress in achieving sustainable development goals. Environmental systems experience degradation, although there are some improvements and overall the intensity of resource and energy use declines. Global population growth is moderate and levels off in the second half of the century. Income inequality persists or improves only slowly and challenges to reducing vulnerability to societal and environmental changes remain."@en .
+
+<scenarios/SSP/SSP3> a ccso:SharedSocioeconomicPathway ;
+    rdfs:label "Shared Socioeconomic Pathways 3"@en ;
+    top:acronym "SSP 3"@en ;
+    dcterms:title "SSP3: Regional rivalry (A Rocky Road)"@en ;
+    rdfs:comment "A resurgent nationalism, concerns about competitiveness and security, and regional conflicts push countries to increasingly focus on domestic or, at most, regional issues. Policies shift over time to become increasingly oriented toward national and regional security issues. Countries focus on achieving energy and food security goals within their own regions at the expense of broader-based development. Investments in education and technological development decline. Economic development is slow, consumption is material-intensive, and inequalities persist or worsen over time. Population growth is low in industrialized and high in developing countries. A low international priority for addressing environmental concerns leads to strong environmental degradation in some regions."@en .
+
+<scenarios/SSP/SSP4> a ccso:SharedSocioeconomicPathway ;
+    rdfs:label "Shared Socioeconomic Pathways 4"@en ;
+    top:acronym "SSP 4"@en ;
+    dcterms:title "SSP4: Inequality (A Road Divided)"@en ;
+    rdfs:comment "Highly unequal investments in human capital, combined with increasing disparities in economic opportunity and political power, lead to increasing inequalities and stratification both across and within countries. Over time, a gap widens between an internationally-connected society that contributes to knowledge- and capital-intensive sectors of the global economy, and a fragmented collection of lower-income, poorly educated societies that work in a labor intensive, low-tech economy. Social cohesion degrades and conflict and unrest become increasingly common. Technology development is high in the high-tech economy and sectors. The globally connected energy sector diversifies, with investments in both carbon-intensive fuels like coal and unconventional oil, but also low-carbon energy sources. Environmental policies focus on local issues around middle and high income areas."@en .
+
+<scenarios/SSP/SSP5> a ccso:SharedSocioeconomicPathway ;
+    rdfs:label "Shared Socioeconomic Pathways 5"@en ;
+    top:acronym "SSP 5"@en ;
+    dcterms:title "SSP5: Fossil-Fueled Development (Taking the Highway)"@en ;
+    rdfs:comment "This world places increasing faith in competitive markets, innovation and participatory societies to produce rapid technological progress and development of human capital as the path to sustainable development. Global markets are increasingly integrated. There are also strong investments in health, education, and institutions to enhance human and social capital. At the same time, the push for economic and social development is coupled with the exploitation of abundant fossil fuel resources and the adoption of resource and energy intensive lifestyles around the world. All these factors lead to rapid growth of the global economy, while global population peaks and declines in the 21st century. Local environmental problems like air pollution are successfully managed. There is faith in the ability to effectively manage social and ecological systems, including by geo-engineering if necessary."@en .
+
+<scenarios/SRES/A1B> a ccso:GreenhouseGasConcentrationPathway ;
+    rdfs:label "Special Report on Emissions Scenarios A1B"@en ;
+    top:acronym "SRES A1B"@en ;
+    rdfs:comment "SRES A1B is one of the emissions scenarios defined in the IPCC Special Report on Emissions Scenarios (SRES, 2000). It belongs to the A1 scenario family, whose storyline describes a future world of very rapid economic growth, global population that peaks in mid-century and declines thereafter, and the rapid introduction of new and more efficient technologies, with substantial convergence among regions and reduced regional differences in per capita income. Within the A1 family, the A1B scenario assumes a balance across all energy sources, i.e. not relying too heavily on one particular energy source (as opposed to the fossil-intensive A1FI and the non-fossil A1T scenarios). It is commonly considered a medium-high emissions scenario: atmospheric CO2 concentration reaches about 700 ppm by 2100, and the IPCC Fourth Assessment Report gives a best estimate of 2.8 °C of global warming (likely range 1.7–4.4 °C) for 2090–2099 relative to 1980–1999."@en .
