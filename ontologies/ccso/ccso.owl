@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://w3id.org/hacid/onto/ccso#"
+<rdf:RDF xmlns="https://w3id.org/hacid/onto/ccso/"
      xml:base="https://w3id.org/hacid/onto/ccso"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:top="https://w3id.org/hacid/onto/top-level/"
@@ -15,13 +14,12 @@
         <owl:imports rdf:resource="https://w3id.org/hacid/onto/data"/>
         <owl:imports rdf:resource="https://w3id.org/hacid/onto/top-level"/>
         <owl:imports rdf:resource="https://w3id.org/hacid/onto/core/judgement"/>
-        <dc:description rdf:resource="https://raw.githubusercontent.com/hacid-project/knowledge-graph/main/ontologies/climate-services/visual/simpler_model_rev.png"/>
         <terms:creator rdf:resource="https://w3id.org/hacid/data/cs/person/andrea-giovanni-nuzzolese"/>
         <terms:creator rdf:resource="https://w3id.org/hacid/data/cs/person/miguel-ceriani"/>
         <terms:title xml:lang="en">CCSO - Core Climate Services Ontology</terms:title>
         <rdfs:comment xml:lang="en">The Core Climate Services Ontology (CCSO) is a comprehensive framework designed to facilitate the representation and integration of diverse climate-related data and knowledge. This ontology encompasses key concepts related to climate models, simulations, datasets, variables, and scenarios, along with their associated characteristics. The CCSO enables structured and standardized descriptions of these elements, promoting interoperability and data sharing among various stakeholders in climate science.
 
-Key features of the ontology include definitions of object properties such as spatial and temporal coverage, spatial and temporal resolution, and the relationships between simulations, datasets, climate models, and scenarios. These relationships are crucial for linking datasets with the variables they contain, the models used to generate climate projections, and the scenarios that guide simulation experiments.
+Key features of the ontology include the relationships between simulations, climate projections, climate models, and scenarios, building on the HACID data ontology for the description of datasets, their variables, and their spatial and temporal coverage and resolution. These relationships are crucial for linking datasets with the variables they contain, the models used to generate climate projections, and the scenarios that guide simulation experiments.
 
 The ontology also categorizes different types of scenarios, such as Greenhouse Gas Concentration Pathways and Shared Socioeconomic Pathways, which are essential for modeling and predicting the impacts of various emission trajectories on the climate system. By providing a clear and systematic way to describe and relate these complex elements, the CCSO aims to enhance the understanding, analysis, and dissemination of climate data, ultimately supporting more informed decision-making in climate research and policy.
 
@@ -44,12 +42,6 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/description -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
     
 
 
@@ -92,7 +84,6 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/assertsVulnerabilityToImpactType">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/isImpactTypeOfAssertedVulnerability"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/Vulnerability"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
         <rdfs:comment xml:lang="en">Associates a vulnerability with an impact type that the vulnerability asserts.</rdfs:comment>
@@ -105,7 +96,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/causesPhenomenaOfType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/causesPhenomenaOfType">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/isCausedByPhenomenaOfType"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ClimatePhenomenonType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ClimatePhenomenonType"/>
@@ -119,11 +110,11 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/hasDownscaling -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/hasDownscaling">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/precedes"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/isDownscalingOf"/>
-        <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ClimateSimulation"/>
+        <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ProjectionProduction"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/Downscaling"/>
-        <rdfs:comment xml:lang="en">The property that allows one to assert that the output of a climate simulation has been used for a simulation downscaling.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The property that allows one to assert that the output of a climate projection production (e.g., a climate simulation) has been used for a downscaling.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">has downscaling</rdfs:label>
     </owl:ObjectProperty>
@@ -133,7 +124,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/hasImpact -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/hasImpact">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isInvolvedIn"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ClimatePhenomenon"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/Impact"/>
         <rdfs:comment xml:lang="en">Associates a climate phenomenon with its impact on some asset.</rdfs:comment>
@@ -146,7 +137,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/hasIndicator -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/hasIndicator">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/isIndicatorOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/HazardType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/data/Variable"/>
@@ -160,7 +151,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/hasPotentialImpactType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/hasPotentialImpactType">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates a hazard type with an impact type that phenomena of that type can potentially cause.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/isPotentialImpactTypeOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/HazardType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
@@ -173,7 +165,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/hasPotentialVulnerabilityType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/hasPotentialVulnerabilityType">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates an asset type with a type of vulnerability that assets of that type can potentially have.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/isPotentialVulnerabilityTypeOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/AssetType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/VulnerabilityType"/>
@@ -186,6 +179,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/hasPotentiallyImpactedVulnerability -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/hasPotentiallyImpactedVulnerability">
+        <rdfs:comment xml:lang="en">Associates an impact type with a vulnerability that is a vulnerability to impacts of that type.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/isVulnerabilityToImpactType"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
@@ -199,7 +193,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/hasVulnerability -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/hasVulnerability">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates an asset with one of its vulnerabilities.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isInvolvedIn"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/isVulnerabilityOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/Asset"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/Vulnerability"/>
@@ -212,7 +207,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isCausedByPhenomenaOfType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isCausedByPhenomenaOfType">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ClimatePhenomenonType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ClimatePhenomenonType"/>
         <rdfs:comment xml:lang="en">Associates two types of phenomena that can be causally related, the second causing the first.</rdfs:comment>
@@ -225,10 +220,10 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isDownscalingOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isDownscalingOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/follows"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/Downscaling"/>
-        <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ClimateSimulation"/>
-        <rdfs:comment xml:lang="en">The property that allows one to assert that a simulation downscaling has as source the output of climate simulation.</rdfs:comment>
+        <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ProjectionProduction"/>
+        <rdfs:comment xml:lang="en">The property that allows one to assert that a downscaling has as source the output of a climate projection production (e.g., a climate simulation).</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">is downscaling of</rdfs:label>
     </owl:ObjectProperty>
@@ -252,7 +247,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isImpactTypeOfAssertedVulnerability -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isImpactTypeOfAssertedVulnerability">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates an impact type with a type of vulnerability whose classified vulnerabilities potentially assert vulnerability to impacts of that type.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/potentiallyAssertsVulnerabilityToImpactType"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/VulnerabilityType"/>
@@ -265,7 +261,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isIndicatorOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isIndicatorOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/data/Variable"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/HazardType"/>
         <rdfs:comment xml:lang="en">Indicates that a variable is a relevant indicator for a hazard type.</rdfs:comment>
@@ -278,6 +274,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isMaintainedBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isMaintainedBy">
+        <rdfs:range rdf:resource="https://w3id.org/hacid/onto/top-level/Agent"/>
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/maintains"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/top-level/Entity"/>
@@ -288,23 +285,11 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     
 
 
-    <!-- https://w3id.org/hacid/onto/ccso/isMemberSimulationOf -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isMemberSimulationOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
-        <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/Simulation"/>
-        <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/EnsembleSimulation"/>
-        <rdfs:comment xml:lang="en">Associates a simulation with an ensemble simulation that includes it.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
-        <rdfs:label xml:lang="en">is member simulation of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/hacid/onto/ccso/isModelUsedBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isModelUsedBy">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">The property that allows one to assert that a climate model is used by an experiment to simulate the behavior and evolution of the Earth’s climate system over a specified period.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isParticipantIn"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/usesModel"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ClimateModel"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ClimateSimulation"/>
@@ -317,11 +302,12 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isPotentialImpactTypeOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isPotentialImpactTypeOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates an impact type with a hazard type whose phenomena can potentially cause impacts of that type.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/HazardType"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
-        <rdfs:label xml:lang="en">is potential impact of</rdfs:label>
+        <rdfs:label xml:lang="en">is potential impact type of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -329,7 +315,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isPotentialVulnerabilityTypeOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isPotentialVulnerabilityTypeOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates a type of vulnerability with an asset type whose assets can potentially have vulnerabilities of that type.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/VulnerabilityType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/AssetType"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
@@ -341,7 +328,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isPotentiallySufferedImpactTypeOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isPotentiallySufferedImpactTypeOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates an impact type with an asset type whose assets can potentially suffer impacts of that type.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/potentiallySuffersImpactType"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/AssetType"/>
@@ -354,11 +342,11 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isScenarioReferredBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isScenarioReferredBy">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/classifies"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/describes"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/refersToScenario"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/EmissionScenario"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/top-level/Entity"/>
-        <rdfs:comment xml:lang="en">The object property that allows a scenario to be referred by an entity.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The object property that allows a scenario to be referred by an entity (e.g., a projection production or a projection) framed by its assumptions.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">is scenario referred by</rdfs:label>
     </owl:ObjectProperty>
@@ -368,7 +356,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isSufferedImpactOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isSufferedImpactOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates an impact with the asset that suffered it.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/involves"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/sufferedImpact"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/Impact"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/Asset"/>
@@ -381,6 +370,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isSufferedImpactTypeOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isSufferedImpactTypeOf">
+        <rdfs:comment xml:lang="en">Associates a type of impact with an asset that suffers impacts of that type.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
         <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/suffersImpactType"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
@@ -394,7 +384,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isVulnerabilityOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isVulnerabilityOf">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates a vulnerability with the asset that has it.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/involves"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/Vulnerability"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/Asset"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
@@ -406,6 +397,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/isVulnerabilityToImpactType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/isVulnerabilityToImpactType">
+        <rdfs:comment xml:lang="en">Associates a vulnerability with an impact type to which it is a vulnerability.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/Vulnerability"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
@@ -418,6 +410,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/maintains -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/maintains">
+        <rdfs:comment xml:lang="en">The relation that allows to link a maintainer to an object it maintains.</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/top-level/Agent"/>
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/top-level/Entity"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
@@ -429,7 +423,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/potentiallyAssertsVulnerabilityToImpactType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/potentiallyAssertsVulnerabilityToImpactType">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/VulnerabilityType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
         <rdfs:comment xml:lang="en">Associates a type of vulnerability with an impact type that is potentially asserted in the classified vulnerabilities.</rdfs:comment>
@@ -442,7 +436,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/potentiallySuffersImpactType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/potentiallySuffersImpactType">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates an asset type with an impact type that assets of that type can potentially suffer.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isRelatedToConcept"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/AssetType"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
@@ -467,24 +462,12 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/refersToScenario -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/refersToScenario">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isClassifiedBy"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isDescribedBy"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/top-level/Entity"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/EmissionScenario"/>
-        <rdfs:comment xml:lang="en">The object property that allows an entity to refer to a scenario.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The object property that allows an entity (e.g., a projection production or a projection) to refer to the scenario whose assumptions frame it.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">refers to scenario</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/hacid/onto/ccso/relatedWithPhenomenon -->
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/relatedWithPhenomenon">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
-        <owl:inverseOf rdf:resource="https://w3id.org/hacid/onto/ccso/relatedWithPhenomenon"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
-        <rdfs:label xml:lang="en">related with phenomenon</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -492,7 +475,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/sufferedImpact -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/sufferedImpact">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:comment xml:lang="en">Associates an asset with an impact it suffered.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/isInvolvedIn"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/Asset"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/Impact"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
@@ -504,6 +488,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/suffersImpactType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/suffersImpactType">
+        <rdfs:comment xml:lang="en">Associates an asset with a type of impact it suffers.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/Asset"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ImpactType"/>
@@ -516,10 +501,9 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/usesModel -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hacid/onto/ccso/usesModel">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/associatedWith"/>
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/hasParticipant"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/ClimateSimulation"/>
         <rdfs:range rdf:resource="https://w3id.org/hacid/onto/ccso/ClimateModel"/>
-        <rdfs:comment xml:lang="en">The property that allows one to assert that a climate model is used by an experiment to simulate the behavior and evolution of the Earth’s climate system over a specified period.</rdfs:comment>
         <rdfs:comment xml:lang="en">The property that allows one to assert that an experiment uses a climate model to simulate the behavior and evolution of the Earth’s climate system over a specified period.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">uses model</rdfs:label>
@@ -541,6 +525,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/productId -->
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/hacid/onto/ccso/productId">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hacid/onto/top-level/identifier"/>
         <rdfs:domain rdf:resource="https://w3id.org/hacid/onto/ccso/Projection"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">An identifier associated to a specific projection in the context of its production (e.g., a simulation having multiple outputs).</rdfs:comment>
@@ -586,6 +571,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/Asset -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/Asset">
+        <rdfs:comment xml:lang="en">Something of value (e.g., people, infrastructure, ecosystems, economic activities) that may be affected by climate phenomena and suffer their impacts.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Object"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">Asset</rdfs:label>
@@ -596,6 +582,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/AssetType -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/AssetType">
+        <rdfs:comment xml:lang="en">A type of asset (e.g., road infrastructure, crops), classifying assets that share the same potential vulnerabilities and impacts.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Concept"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -612,7 +599,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/ClimateModel -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/ClimateModel">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Entity"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Description"/>
         <rdfs:comment xml:lang="en">A representation of the Earth’s climate system. A model is used to simulate and understand the climate, including its variability and changes over time, by using a set of equations based on physical, chemical, and biological principles.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">Climate Model</rdfs:label>
@@ -623,6 +610,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/ClimateModelIntercomparisonExperiment -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/ClimateModelIntercomparisonExperiment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/ccso/EnsembleSimulation"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/ccso/ClimateSimulation"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/ccso/EnsembleProjectionProduction"/>
         <rdfs:comment xml:lang="en">A set of simulations run with the same constraints, using multiple models.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
@@ -634,6 +623,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/ClimatePhenomenon -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/ClimatePhenomenon">
+        <rdfs:comment xml:lang="en">A phenomenon of the climate system (e.g., a heat wave, a drought, a flood), considered as the situation including the entities involved in it, such as the affected area and period.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Situation"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">Climate Phenomenon</rdfs:label>
@@ -644,6 +634,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/ClimatePhenomenonType -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/ClimatePhenomenonType">
+        <rdfs:comment xml:lang="en">A type of climate phenomenon (e.g., heat wave, drought), classifying climate phenomena.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Concept"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -693,10 +684,10 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/hacid/onto/ccso/isDownscalingOf"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/hacid/onto/ccso/ClimateSimulation"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/hacid/onto/ccso/ProjectionProduction"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A process taking as input the output of a climate simulation and obtaining finer granularity, usually at the cost of reduced geographic coverage.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A process taking as input the output of a climate projection production (e.g., a climate simulation) and obtaining finer granularity, usually at the cost of reduced geographic coverage.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">Downscaling</rdfs:label>
     </owl:Class>
@@ -718,7 +709,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/EmissionScenario -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/EmissionScenario">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Concept"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Description"/>
         <rdfs:comment xml:lang="en">A projected trajectory of future greenhouse gas emissions, atmospheric concentrations, and corresponding impacts on the climate system. These scenarios are used in climate modeling to explore how different levels of emissions might influence global temperatures, weather patterns, sea level rise, and other climate-related phenomena.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">Emission Scenario</rdfs:label>
@@ -743,7 +734,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/ccso/ProjectionProduction"/>
         <rdfs:comment xml:lang="en">A process that generates a climate projection ensemble.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
-        <rdfs:label xml:lang="en">Projection Ensemble Production</rdfs:label>
+        <rdfs:label xml:lang="en">Ensemble Projection Production</rdfs:label>
     </owl:Class>
     
 
@@ -785,7 +776,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/GlobalWarmingLevel -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/GlobalWarmingLevel">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Concept"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Parameter"/>
         <rdfs:comment xml:lang="en">A global warming threshold specified as global temperature increase in respect to pre-industrial levels.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">Global Warming Level</rdfs:label>
@@ -810,7 +801,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/ccso/EmissionScenario"/>
         <rdfs:comment xml:lang="en">These pathways are used to model and predict the impacts of different levels of greenhouse gas emissions on the climate system. They are essential for understanding how different emissions scenarios might influence global temperatures, climate patterns, and related environmental changes.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
-        <rdfs:label xml:lang="en">Greenhouse gas concentration pathway</rdfs:label>
+        <rdfs:label xml:lang="en">Greenhouse Gas Concentration Pathway</rdfs:label>
     </owl:Class>
     
 
@@ -818,6 +809,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/HazardType -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/HazardType">
+        <rdfs:comment xml:lang="en">A type of climate phenomenon that may potentially cause harm to people and assets, directly or indirectly (e.g., heat wave, river flood).</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/ccso/ClimatePhenomenonType"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">Hazard Type</rdfs:label>
@@ -828,6 +820,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/Impact -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/Impact">
+        <rdfs:comment xml:lang="en">An effect of a climate phenomenon on an asset (e.g., damage to infrastructure, loss of crop yield), considered as the situation including the phenomenon, the asset and the related entities.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Situation"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">Impact</rdfs:label>
@@ -838,6 +831,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/ImpactType -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/ImpactType">
+        <rdfs:comment xml:lang="en">A type of impact (e.g., structural damage, loss of crop yield), classifying impacts.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Concept"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -876,6 +870,8 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/PerturbedParameterClimateEnsembleSimulation -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/PerturbedParameterClimateEnsembleSimulation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/ccso/EnsembleSimulation"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/ccso/ClimateSimulation"/>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/ccso/EnsembleProjectionProduction"/>
         <rdfs:comment xml:lang="en">A set of simulations run with the same model and common constraints, variating the values of some parameters.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
@@ -1002,7 +998,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/ccso/EmissionScenario"/>
         <rdfs:comment xml:lang="en">Shared socio-economic Pathways (SSPs) are scenarios developed to describe different trajectories of socioeconomic development, which can influence future greenhouse gas emissions and the ability of societies to mitigate and adapt to climate change. The SSPs are used in climate modeling to explore the interactions between socioeconomic factors, emissions pathways, and climate impacts.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
-        <rdfs:label xml:lang="en">Shared socio-economic pathway</rdfs:label>
+        <rdfs:label xml:lang="en">Shared Socioeconomic Pathway</rdfs:label>
     </owl:Class>
     
 
@@ -1010,6 +1006,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/Simulation -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/Simulation">
+        <rdfs:comment xml:lang="en">A process that generates data by running a model, e.g. a climate model, under given conditions.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/data/DataGeneratingProcess"/>
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">Simulation</rdfs:label>
@@ -1099,6 +1096,7 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
     <!-- https://w3id.org/hacid/onto/ccso/VulnerabilityType -->
 
     <owl:Class rdf:about="https://w3id.org/hacid/onto/ccso/VulnerabilityType">
+        <rdfs:comment xml:lang="en">A type of vulnerability, classifying vulnerabilities.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="https://w3id.org/hacid/onto/top-level/Concept"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1109,7 +1107,6 @@ Overall, the Core Climate Services Ontology serves as a vital tool for organizin
         <rdfs:isDefinedBy rdf:resource="https://w3id.org/hacid/onto/ccso"/>
         <rdfs:label xml:lang="en">Vulnerability Type</rdfs:label>
     </owl:Class>
-    
 </rdf:RDF>
 
 
