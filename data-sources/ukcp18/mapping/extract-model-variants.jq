@@ -20,6 +20,7 @@ map(
     if .variant == "25" and .cmip5_model_id == "HadGEM2-ES" then
         debug | empty
     end |
+    .cmip5_model_id |= if (. == "bcc-csm1-1") then "BCC-CSM1-1" end |
     if .cmip5_parent_experiment_rip == "N/A" 
         then .cmip5_parent_experiment_rip = "r\(.cmip5_realization)i\(.cmip5_initialization_method)p\(.cmip5_physics_version)"
     end

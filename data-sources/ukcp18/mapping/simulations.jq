@@ -3,6 +3,8 @@ import "./mapping/utils" as UTILS;
 import "./mapping/time" as TIME;
 import "./mapping/ukcp18-time" as UKCP18_TIME;
 import "./mapping/jsonld" as JSONLD;
+import "cmip5-model-synonyms" as $model_synonyms_source;
+
 
 def scenario_uri:
     {
@@ -30,6 +32,14 @@ def gwl_uri:
         @uri "https://w3id.org/hacid/data/cs/GWLs/\($gwl_map[.])"
     else null
     end;
+
+def normalize_model_id:
+    $model_synonyms_source::model_synonyms_source[0]
+    as $model_synonyms |
+    if . and $model_synonyms[.] then
+        $model_synonyms[.]
+    end |
+    gsub("\\."; "-");
 
 def get_model_variant_from_id:
     (
@@ -96,8 +106,8 @@ def dataset_to_gcm_simulation:
         }
     else
         {
-            "@id": @uri "https://w3id.org/hacid/data/cs/simulations/cmip5.\($model).\(.scenario).\($variant)",
-            has_output: @uri "https://w3id.org/hacid/data/cs/datasets/cmip5.\($model).\(.scenario).\($variant).output"
+            "@id": @uri "https://w3id.org/hacid/data/cs/simulations/cmip5.\($model | normalize_model_id).\(.scenario).\($variant)",
+            has_output: @uri "https://w3id.org/hacid/data/cs/datasets/cmip5.\($model | normalize_model_id).\(.scenario).\($variant).output1"
         }
     end as $simulation_with_output |
 
@@ -188,9 +198,9 @@ def dataset_to_cpm_simulation:
     };
 
 def dataset_to_cordex_simulation:
-    @uri "https://w3id.org/hacid/data/cs/datasets/cordex.output.EUR-11.\(.institution_id).\(.driving_model_id).\(.scenario).\(.driving_model_ensemble_member).\(.model_id).\(.rcm_version_id).\(.frequency).\(.variable)" as $output |
+    @uri "https://w3id.org/hacid/data/cs/datasets/cordex.output.EUR-11.\(.institution_id).\(.driving_model_id | normalize_model_id).\(.scenario).\(.driving_model_ensemble_member).\(.model_id | normalize_model_id).\(.rcm_version_id).\(.frequency).\(.variable)" as $output |
     {
-        "@id": @uri "https://w3id.org/hacid/data/cs/simulations/cordex.EUR-11.\(.driving_model_id).\(.scenario).\(.model_id).\(.rcm_version_id).\(.driving_model_ensemble_member)",
+        "@id": @uri "https://w3id.org/hacid/data/cs/simulations/cordex.EUR-11.\(.driving_model_id | normalize_model_id).\(.scenario).\(.model_id | normalize_model_id).\(.rcm_version_id).\(.driving_model_ensemble_member)",
         has_output: $output,
         ensemble: {
             "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.eurocordex.\(.scenario)",
