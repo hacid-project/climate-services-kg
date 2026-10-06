@@ -118,11 +118,13 @@ import "./mapping/jsonld" as JSONLD;
             comment: "A geodetic grid of approximate resolution \(.km)km x \(.km)km, based on a rotated pole coordinate system.",
             based_on_ds: (.pole | {
                 "@id": "georef:rotated-WGS84/\(.long),\(.lat)",
+                "@type": "data:Continuum",
                 label: "Rotated geodetic: pole \(.long)° \(.lat)°",
                 comment: "Rotated geodetic dimensional space, with polar coordinates \(.long)° \(.lat)°, in reference to the World Geodetic System 1984 (WGS84).",
                 based_on_ds: "georef:WGS84",
                 pole: {
                     "@id": "georef:WGS84/points/\(.long),\(.lat)",
+                    "@type": "data:GeodeticPoint",
                     point_of: "georef:WGS84",
                     label: "Geodetic point \(.long)° \(.lat)°",
                     comment: "Geodetic point with longitude \(.long)° and latitude \(.lat)°, in reference to the World Geodetic System 1984 (WGS84).",
@@ -186,7 +188,9 @@ import "./mapping/jsonld" as JSONLD;
             comment: "OSGB is a coordinate reference system for Great Britain.",
             based_on_ds: "dimension:geodetic",
             exact_bounding_region: {
-                "@id": "georef:OSGB36/coverage"
+                "@id": "georef:OSGB36/coverage",
+                "@type": "data:GeodeticRegion",
+                label: "Region covered by the Ordnance Survey of Great Britain (OSGB)"
             }
         },
         ($grids | map(del(.resolution_id) | del(.for_domain)))

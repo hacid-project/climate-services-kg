@@ -52,7 +52,9 @@
       "comment": "OSGB is a coordinate reference system for Great Britain.",
       "based_on_ds": "dimension:geodetic",
       "exact_bounding_region": {
-        "@id": "georef:OSGB36/coverage"
+        "@id": "georef:OSGB36/coverage",
+        "@type": "data:GeodeticRegion",
+        "label": "Region covered by the Ordnance Survey of Great Britain (OSGB)"
       }
     },
     [
@@ -160,11 +162,13 @@
         "comment": "A geodetic grid of approximate resolution 2.2km x 2.2km, based on a rotated pole coordinate system.",
         "based_on_ds": {
           "@id": "georef:rotated-WGS84/177.5,37.5",
+          "@type": "data:Continuum",
           "label": "Rotated geodetic: pole 177.5° 37.5°",
           "comment": "Rotated geodetic dimensional space, with polar coordinates 177.5° 37.5°, in reference to the World Geodetic System 1984 (WGS84).",
           "based_on_ds": "georef:WGS84",
           "pole": {
             "@id": "georef:WGS84/points/177.5,37.5",
+            "@type": "data:GeodeticPoint",
             "point_of": "georef:WGS84",
             "label": "Geodetic point 177.5° 37.5°",
             "comment": "Geodetic point with longitude 177.5° and latitude 37.5°, in reference to the World Geodetic System 1984 (WGS84).",
