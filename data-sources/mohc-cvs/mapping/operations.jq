@@ -88,7 +88,12 @@ def type_to_owl:
                     "top:Interval",
                     {
                         "@type": "owl:Restriction",
-                        onProperty: "top:hasBoundaryValue",
+                        onProperty: "top:hasUpperBoundary",
+                        allValuesFrom: (.items | type_to_owl)
+                    },
+                    {
+                        "@type": "owl:Restriction",
+                        onProperty: "top:hasLowerBoundary",
                         allValuesFrom: (.items | type_to_owl)
                     }
                 ]

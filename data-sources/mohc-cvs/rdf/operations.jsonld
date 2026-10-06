@@ -902,9 +902,8 @@
                     "@type": "owl:Class",
                     "unionOf": [
                       {
-                        "@type": "owl:Restriction",
-                        "onProperty": "top:inScheme",
-                        "hasValue": "schemes:GlobalWarmingLevel"
+                        "@id": "ccso:GlobalWarmingLevel",
+                        "@type": "owl:Class"
                       },
                       {
                         "@type": "owl:Class",
@@ -912,11 +911,18 @@
                           "top:Interval",
                           {
                             "@type": "owl:Restriction",
-                            "onProperty": "top:hasBoundaryValue",
+                            "onProperty": "top:hasUpperBoundary",
                             "allValuesFrom": {
-                              "@type": "owl:Restriction",
-                              "onProperty": "top:inScheme",
-                              "hasValue": "schemes:GlobalWarmingLevel"
+                              "@id": "ccso:GlobalWarmingLevel",
+                              "@type": "owl:Class"
+                            }
+                          },
+                          {
+                            "@type": "owl:Restriction",
+                            "onProperty": "top:hasLowerBoundary",
+                            "allValuesFrom": {
+                              "@id": "ccso:GlobalWarmingLevel",
+                              "@type": "owl:Class"
                             }
                           }
                         ]

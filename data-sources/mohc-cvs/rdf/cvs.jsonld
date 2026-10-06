@@ -57,62 +57,6 @@
       ]
     },
     {
-      "@id": "schemes:GlobalWarmingLevel",
-      "@type": "top:ConceptScheme",
-      "members": [
-        {
-          "@id": "schemes:GlobalWarmingLevel/GWL1.5",
-          "@type": "top:Concept",
-          "label": "GWL1.5"
-        },
-        {
-          "@id": "schemes:GlobalWarmingLevel/GWL2",
-          "@type": "top:Concept",
-          "label": "GWL2"
-        },
-        {
-          "@id": "schemes:GlobalWarmingLevel/GWL2.5",
-          "@type": "top:Concept",
-          "label": "GWL2.5"
-        },
-        {
-          "@id": "schemes:GlobalWarmingLevel/GWL3",
-          "@type": "top:Concept",
-          "label": "GWL3"
-        },
-        {
-          "@id": "schemes:GlobalWarmingLevel/GWL3.5",
-          "@type": "top:Concept",
-          "label": "GWL3.5"
-        },
-        {
-          "@id": "schemes:GlobalWarmingLevel/GWL4",
-          "@type": "top:Concept",
-          "label": "GWL4"
-        },
-        {
-          "@id": "schemes:GlobalWarmingLevel/GWL4.5",
-          "@type": "top:Concept",
-          "label": "GWL4.5"
-        },
-        {
-          "@id": "schemes:GlobalWarmingLevel/GWL5",
-          "@type": "top:Concept",
-          "label": "GWL5"
-        },
-        {
-          "@id": "schemes:GlobalWarmingLevel/GWL5.5",
-          "@type": "top:Concept",
-          "label": "GWL5.5"
-        },
-        {
-          "@id": "schemes:GlobalWarmingLevel/GWL6",
-          "@type": "top:Concept",
-          "label": "GWL6"
-        }
-      ]
-    },
-    {
       "@id": "schemes:ObservationType",
       "@type": "top:ConceptScheme",
       "members": [
