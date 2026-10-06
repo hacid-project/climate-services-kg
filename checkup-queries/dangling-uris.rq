@@ -1,0 +1,47 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/> 
+PREFIX deriv: <https://w3id.org/hacid/data/cs/derivations/> 
+PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
+
+SELECT 
+    ?g ?p ?prefix (count(distinct ?o) as ?c)
+WHERE {
+  GRAPH ?g {
+  	?s ?p ?o.
+  }
+  OPTIONAL {
+    ?s a ?st
+  }
+  BIND(REPLACE(STR(?o),"[^/]+$","") AS ?prefix)
+  FILTER(!STRSTARTS(STR(?o),STR(rdf:)))
+  FILTER(!STRSTARTS(STR(?o),STR(rdfs:)))
+  FILTER(!STRSTARTS(STR(?o),STR(xsd:)))
+  FILTER(!STRSTARTS(STR(?o),STR(owl:)))
+  FILTER (?st NOT IN (owl:Ontology))
+#  FILTER (?st NOT IN (owl:Class, owl:Ontology, owl:DatatypeProperty, owl:))
+  FILTER NOT EXISTS {
+    ?o a ?ot
+  }
+  FILTER NOT EXISTS {
+    ?o owl:intersectionOf []
+  }
+  FILTER NOT EXISTS {
+    ?o rdf:first []
+  }
+#  FILTER NOT EXISTS {
+#    ?s a owl:Class
+#  }
+#  FILTER NOT EXISTS {
+#    ?s a owl:ObjectProperty
+#  }
+  FILTER(?p NOT IN (rdf:type, rdfs:range))
+  FILTER(!ISLITERAL(?o))
+  FILTER(?o != rdf:nil)
+}
+GROUP BY ?g ?p ?prefix
+ORDER BY ?prefix desc(?c)
+LIMIT 100
