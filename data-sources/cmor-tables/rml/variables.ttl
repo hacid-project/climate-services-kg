@@ -140,8 +140,7 @@
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
         rr:objectMap [ 
-            rml:reference "units" ; 
-            rr:language "en" 
+            rml:reference "units"
         ]
     ] .
 

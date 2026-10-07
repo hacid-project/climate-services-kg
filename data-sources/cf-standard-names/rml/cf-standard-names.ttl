@@ -83,8 +83,7 @@
     rr:predicateObjectMap [
         rr:predicate rdfs:label;
         rr:objectMap [ 
-            rml:reference "canonical_units" ; 
-            rr:language "en" 
+            rml:reference "canonical_units"
         ]
     ] .
 

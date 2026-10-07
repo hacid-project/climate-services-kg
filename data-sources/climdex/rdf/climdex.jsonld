@@ -1083,8 +1083,8 @@
       "label": "User-defined consecutive number of hot days and nights (TXdTNd)",
       "definition": "Annual count of d consecutive days where both TX > 95th percentile and TN > 95th percentile, where 10 >= d >= 2",
       "comment": "Total consecutive hot days and hot nights (where consecutive periods are user-specified)",
-      "hasUnitOfMeasure": "unit:event",
-      "hasValuesOn": "unit:event",
+      "hasUnitOfMeasure": "unit:1",
+      "hasValuesOn": "unit:1",
       "generated": [],
       "basedOnVariable": [
         "variable:tasmin",
@@ -1144,8 +1144,8 @@
       "label": "Heating Degree Days (HDDheatn)",
       "definition": "Annual sum of n - TM (where n is a user-defined location-specific base temperature and TM < n)",
       "comment": "A measure of the energy demand needed to heat a building",
-      "hasUnitOfMeasure": "unit:degree-days",
-      "hasValuesOn": "unit:degree-days",
+      "hasUnitOfMeasure": "unit:%C2%B0C-days",
+      "hasValuesOn": "unit:%C2%B0C-days",
       "generated": [],
       "basedOnVariable": [
         "variable:tas"
@@ -1201,8 +1201,8 @@
       "label": "Cooling Degree Days (CDDcoldn)",
       "definition": "Annual sum of TM - n (where n is a user-defined location-specific base temperature and TM > n)",
       "comment": "A measure of the energy demand needed to cool a building",
-      "hasUnitOfMeasure": "unit:degree-days",
-      "hasValuesOn": "unit:degree-days",
+      "hasUnitOfMeasure": "unit:%C2%B0C-days",
+      "hasValuesOn": "unit:%C2%B0C-days",
       "generated": [],
       "basedOnVariable": [
         "variable:tas"
@@ -1258,8 +1258,8 @@
       "label": "Growing Degree Days (GDDgrown)",
       "definition": "Annual sum of TM - n (where n is a user-defined location-specific base temperature and TM > n)",
       "comment": "A measure of heat accumulation to predict plant and animal developmental rates",
-      "hasUnitOfMeasure": "unit:degree-days",
-      "hasValuesOn": "unit:degree-days",
+      "hasUnitOfMeasure": "unit:%C2%B0C-days",
+      "hasValuesOn": "unit:%C2%B0C-days",
       "generated": [],
       "basedOnVariable": [
         "variable:tas"
@@ -1708,8 +1708,8 @@
       "label": "User-defined consecutive number of cold days and nights (TXbdTNbd)",
       "definition": "Annual number of d consecutive days where both TX < 5th percentile and TN < 5th percentile, where 10 >= d >=2",
       "comment": "Total consecutive cold days and cold nights (where consecutive periods are user-specified)",
-      "hasUnitOfMeasure": "unit:event",
-      "hasValuesOn": "unit:event",
+      "hasUnitOfMeasure": "unit:1",
+      "hasValuesOn": "unit:1",
       "generated": [],
       "basedOnVariable": [
         "variable:tasmin",
@@ -2553,8 +2553,8 @@
       "label": "Heatwave number (HWN) as defined by either the Excess Heat Factor (EHF), 90th percentile of TX or the 90th percentile of TN (HWN(EHF/Tx90/Tn90))",
       "definition": "The number of individual heatwaves that occur each summer (Nov – Mar in southern hemisphere and May – Sep in northern hemisphere). A heatwave is defined as 3 or more days where either the EHF is positive, TX > 90th percentile of TX or where TN > 90th percentile of TN. Where percentiles are calculated from base period specified by user.",
       "comment": "See Appendix D and [Perkins and Alexander (2013)](#appendixa_refs) for more details.",
-      "hasUnitOfMeasure": "unit:Number%20of%20individual%20heatwaves%20events",
-      "hasValuesOn": "unit:Number%20of%20individual%20heatwaves%20events",
+      "hasUnitOfMeasure": "unit:1",
+      "hasValuesOn": "unit:1",
       "generated": [
         {
           "@id": "index:HWN_EHF"
@@ -2630,8 +2630,8 @@
       "label": "Heatwave number (HWN) as defined by the Excess Heat Factor (EHF) (HWN_EHF)",
       "definition": "The number of individual heatwaves that occur each summer (Nov – Mar in southern hemisphere and May – Sep in northern hemisphere). A heatwave is defined as 3 or more days where the EHF is positive. Where percentiles are calculated from base period specified by user.",
       "comment": "See Appendix D and [Perkins and Alexander (2013)](#appendixa_refs) for more details.",
-      "hasUnitOfMeasure": "unit:Number%20of%20individual%20heatwaves%20events",
-      "hasValuesOn": "unit:Number%20of%20individual%20heatwaves%20events",
+      "hasUnitOfMeasure": "unit:1",
+      "hasValuesOn": "unit:1",
       "generated": [],
       "basedOnVariable": [
         "variable:tas"
@@ -2676,8 +2676,8 @@
       "label": "Heatwave number (HWN) as defined by the 90th percentile of TX (HWN_Tx90)",
       "definition": "The number of individual heatwaves that occur each summer (Nov – Mar in southern hemisphere and May – Sep in northern hemisphere). A heatwave is defined as 3 or more days where TX > 90th percentile of TX. Where percentiles are calculated from base period specified by user.",
       "comment": "See Appendix D and [Perkins and Alexander (2013)](#appendixa_refs) for more details.",
-      "hasUnitOfMeasure": "unit:Number%20of%20individual%20heatwaves%20events",
-      "hasValuesOn": "unit:Number%20of%20individual%20heatwaves%20events",
+      "hasUnitOfMeasure": "unit:1",
+      "hasValuesOn": "unit:1",
       "generated": [],
       "basedOnVariable": [
         "variable:tasmax"
@@ -2722,8 +2722,8 @@
       "label": "Heatwave number (HWN) as defined by the 90th percentile of TN (HWN_Tn90)",
       "definition": "The number of individual heatwaves that occur each summer (Nov – Mar in southern hemisphere and May – Sep in northern hemisphere). A heatwave is defined as 3 or more days where TN > 90th percentile of TN. Where percentiles are calculated from base period specified by user.",
       "comment": "See Appendix D and [Perkins and Alexander (2013)](#appendixa_refs) for more details.",
-      "hasUnitOfMeasure": "unit:Number%20of%20individual%20heatwaves%20events",
-      "hasValuesOn": "unit:Number%20of%20individual%20heatwaves%20events",
+      "hasUnitOfMeasure": "unit:1",
+      "hasValuesOn": "unit:1",
       "generated": [],
       "basedOnVariable": [
         "variable:tasmin"
@@ -3274,8 +3274,8 @@
       "label": "Heatwave magnitude (HWM) as defined by the Excess Heat Factor (EHF) (HWM_EHF)",
       "definition": "The mean temperature of all heatwaves identified by HWN.",
       "comment": "See Appendix D and [Perkins and Alexander (2013)](#appendixa_refs) for more details.",
-      "hasUnitOfMeasure": "unit:%C2%B0C%5E2",
-      "hasValuesOn": "unit:%C2%B0C%5E2",
+      "hasUnitOfMeasure": "unit:%C2%B0C2",
+      "hasValuesOn": "unit:%C2%B0C2",
       "generated": [],
       "basedOnVariable": [
         "variable:tas"
@@ -3297,7 +3297,7 @@
         "longName": "Heatwave magnitude (HWM) as defined by the Excess Heat Factor (EHF)",
         "definition": "The mean temperature of all heatwaves identified by HWN.",
         "description": "See Appendix D and [Perkins and Alexander (2013)](#appendixa_refs) for more details.",
-        "units": "°C^2",
+        "units": "°C2",
         "timeScales": [
           "Ann"
         ],
@@ -3488,8 +3488,8 @@
       "label": "Heatwave amplitude (HWA) as defined by the Excess Heat Factor (EHF) (HWA_EHF)",
       "definition": "The peak daily value in the hottest heatwave (defined as the heatwave with highest HWM).",
       "comment": "See Appendix D and [Perkins and Alexander (2013)](#appendixa_refs) for more details.",
-      "hasUnitOfMeasure": "unit:%C2%B0C%5E2",
-      "hasValuesOn": "unit:%C2%B0C%5E2",
+      "hasUnitOfMeasure": "unit:%C2%B0C2",
+      "hasValuesOn": "unit:%C2%B0C2",
       "generated": [],
       "basedOnVariable": [
         "variable:tas"
@@ -3511,7 +3511,7 @@
         "longName": "Heatwave amplitude (HWA) as defined by the Excess Heat Factor (EHF)",
         "definition": "The peak daily value in the hottest heatwave (defined as the heatwave with highest HWM).",
         "description": "See Appendix D and [Perkins and Alexander (2013)](#appendixa_refs) for more details.",
-        "units": "°C^2",
+        "units": "°C2",
         "timeScales": [
           "Ann"
         ],
@@ -3626,8 +3626,8 @@
       "label": "Coldwave number (CWN) as defined by the Excess Cold Factor (ECF). (CWN_ECF)",
       "definition": "The number of individual ‘coldwaves’ that occur each year.",
       "comment": "See Appendix D and [Nairn and Fawcett (2013)](#appendixa_refs) for more information.",
-      "hasUnitOfMeasure": "unit:event",
-      "hasValuesOn": "unit:event",
+      "hasUnitOfMeasure": "unit:1",
+      "hasValuesOn": "unit:1",
       "generated": [],
       "basedOnVariable": [
         "variable:tas"
@@ -3761,8 +3761,8 @@
       "label": "Coldwave magnitude (CWM) as defined by the Excess Cold Factor (ECF). (CWM_ECF)",
       "definition": "The mean temperature of all ‘coldwaves’ identified by ECF_HWN.",
       "comment": "See Appendix D and [Nairn and Fawcett (2013)](#appendixa_refs) for more information.",
-      "hasUnitOfMeasure": "unit:%C2%B0C%5E2",
-      "hasValuesOn": "unit:%C2%B0C%5E2",
+      "hasUnitOfMeasure": "unit:%C2%B0C2",
+      "hasValuesOn": "unit:%C2%B0C2",
       "generated": [],
       "basedOnVariable": [
         "variable:tas"
@@ -3806,8 +3806,8 @@
       "label": "Coldwave amplitude (CWA) as defined by the Excess Cold Factor (ECF). (CWA_ECF)",
       "definition": "The minimum daily value in the coldest ‘coldwave’ (defined as the coldwave with lowest ECF_HWM).",
       "comment": "See Appendix D and [Nairn and Fawcett (2013)](#appendixa_refs) for more information.",
-      "hasUnitOfMeasure": "unit:%C2%B0C%5E2",
-      "hasValuesOn": "unit:%C2%B0C%5E2",
+      "hasUnitOfMeasure": "unit:%C2%B0C2",
+      "hasValuesOn": "unit:%C2%B0C2",
       "generated": [],
       "basedOnVariable": [
         "variable:tas"

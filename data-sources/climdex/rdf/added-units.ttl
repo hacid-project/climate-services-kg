@@ -1,0 +1,8 @@
+@prefix data: <https://w3id.org/hacid/onto/data/> .
+@prefix top: <https://w3id.org/hacid/onto/top-level/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uom: <https://w3id.org/hacid/data/cs/unitsofmeasure/> .
+
+uom:%C2%B0C2 a top:UnitOfMeasure, data:DimensionalSpace;
+    rdfs:label "°C2" .

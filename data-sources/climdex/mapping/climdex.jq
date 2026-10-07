@@ -123,8 +123,10 @@ def trim:
 {
     "days": "day",
     "unitless": "1",
-    "Number%20of%20individual%20heatwaves%20events": "event",
-    "events": "event"
+    "degree-days": "°C-days",
+    "°C^2": "°C2",
+    "Number of individual heatwaves events": "1",
+    "events": "1"
 } as $units_to_cmor_units |
 
 def convert_unit:
@@ -217,7 +219,7 @@ def convert_parameter:
                     (.baseVars = [$variant.baseVar]) |
                     (.units |=
                         if ($heatwave_multiindex.units == "°C (°C^2 for  EHF)")
-                            then (if ($variant.shortName == "EHF") then "°C^2" else "°C" end)
+                            then (if ($variant.shortName == "EHF") then "°C2" else "°C" end)
                         end
                     )
                 )
