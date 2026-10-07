@@ -1,0 +1,38 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/> 
+PREFIX deriv: <https://w3id.org/hacid/data/cs/derivations/> 
+PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
+
+SELECT DISTINCT ?id
+#(count(distinct ?o) as ?c)
+#?g ?p ?prefix (count(distinct ?o) as ?c)
+WHERE {
+  graph ?g {
+  	?s ?p ?o.
+  }
+  OPTIONAL {
+    ?s a ?st
+  }
+  BIND(REPLACE(STR(?o),"[^/]+$","") AS ?prefix)
+  FILTER(STRSTARTS(STR(?o),"https://w3id.org/hacid/data/cs/datasets/cordex."))
+  BIND(STRAFTER(STR(?o),"https://w3id.org/hacid/data/cs/datasets/cordex.") as ?id)
+  FILTER (?st NOT IN (owl:Ontology))
+  FILTER NOT EXISTS {
+    ?o a ?ot
+  }
+  FILTER NOT EXISTS {
+    ?o owl:intersectionOf []
+  }
+  FILTER NOT EXISTS {
+    ?o rdf:first []
+  }
+  FILTER(?p NOT IN (rdf:type, rdfs:range))
+  FILTER(!ISLITERAL(?o))
+  FILTER(?o != rdf:nil)
+}
+#group by ?g ?p ?prefix
+#order by ?prefix desc(?c)
+limit 100

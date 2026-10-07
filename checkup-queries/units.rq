@@ -1,0 +1,22 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX data: <https://w3id.org/hacid/onto/data/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX top: <https://w3id.org/hacid/onto/top-level/> 
+PREFIX ccso: <https://w3id.org/hacid/onto/ccso/>
+
+SELECT ?unit (GROUP_CONCAT(?graph_id; separator=",") as ?graphs) 
+#?st ?ot (count(1) as ?c)
+WHERE {
+  graph ?g {
+	  ?s a top:UnitOfMeasure.
+  }
+  BIND(STRAFTER(STR(?g), "https://w3id.org/hacid/data/cs/") AS ?graph_id)
+#  BIND(STRAFTER(STR(?s), "https://w3id.org/hacid/data/cs/unitsofmeasure/") AS ?id)
+  optional {
+    ?s rdfs:label ?unit
+  }
+}
+group by ?unit
+order by ?unit
+limit 200
