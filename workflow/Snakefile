@@ -7,18 +7,11 @@
 configfile: "config/config.yaml"
 
 
-# Git repositories, through snakemake-storage-plugin-git: each edition of the
-# CMOR tables is cloned from https://{edition}@github.com/PCMDI/{source}-cmor-tables.git
-# (GitHub ignores the user of public repositories) and its tag checked out
+# Git repositories, through snakemake-storage-plugin-git (patched to support a
+# git ref as URL fragment, e.g. https://github.com/PCMDI/cmip6-cmor-tables.git#6.9.33)
 storage git:
     provider="git",
     keep_local=True,
-    custom_heads={
-        "https://{1}@github.com/PCMDI/{0}-cmor-tables.git".format(*edition.split("/")): {
-            "tag": edition.split("/")[1]
-        }
-        for edition in config["cmor_tables"]["editions"]
-    },
 
 
 include: "patches/git_storage_plugin.py"
