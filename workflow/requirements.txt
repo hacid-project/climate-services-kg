@@ -1,0 +1,4 @@
+# Python requirements of the snakemake workflow (jq and git are needed too)
+snakemake>=9
+# Pinned: workflow/Snakefile patches a bug of this version
+snakemake-storage-plugin-git==0.1.0

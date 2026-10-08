@@ -1,0 +1,59 @@
+# Configuration of the data ingestion workflow (see workflow/Snakefile)
+
+cmor_tables:
+  # Each source is a git repository (fetched through the snakemake git storage
+  # plugin) with the CMOR tables of one or more editions.
+  #   repository: URL of the git repository
+  #   format:     "json" for CMOR 3 tables, "cmor2" for legacy plain-text tables
+  #   tables:     glob of the table files, relative to the repository root
+  #   editions:   editions to ingest, each one either a git tag (used as the
+  #               edition name too) or a mapping {name: ..., ref: ...} where ref
+  #               is any git revision, e.g. {name: latest, ref: origin/main}
+  #               (the clone is refreshed on each run, but outputs of a moving
+  #               ref are not rebuilt automatically: use --forcerun)
+  sources:
+    cmip5:
+      repository: https://github.com/PCMDI/cmip5-cmor-tables.git
+      format: cmor2
+      tables: Tables/CMIP5_*
+      editions:
+        - "5.0"
+    cmip6:
+      repository: https://github.com/PCMDI/cmip6-cmor-tables.git
+      format: json
+      tables: Tables/*.json
+      editions:
+        - "6.0.11"
+        - "6.0.12"
+        - "6.0.13"
+        - "6.0.14"
+        - "6.0.15"
+        - "6.0.16"
+        - "6.0.17"
+        - "6.0.18"
+        - "6.0.19"
+        - "6.0.19a"
+        - "6.0.20"
+        - "6.0.21"
+        - "6.1.22"
+        - "6.1.23"
+        - "6.2.24"
+        - "6.3.27"
+        - "6.3.27-fixed"
+        - "6.4.28"
+        - "6.5.29"
+        - "6.6.30"
+        - "6.7.31"
+        - "6.8.31"
+        - "6.9.32"
+        - "6.9.33"
+    mip:
+      repository: https://github.com/PCMDI/mip-cmor-tables.git
+      format: json
+      tables: Tables/*.json
+      editions:
+        - "v6.5.0.0"
+        - "v6.5.0.1"
+        - "v6.5.0.2"
+        - "v6.5.0.3"
+        - "v6.5.0.4"

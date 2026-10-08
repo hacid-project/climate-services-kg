@@ -1,0 +1,41 @@
+# Data ingestion workflow for the climate services KG.
+#
+# Run from the repository root, e.g.:
+#   snakemake --cores 1                 # everything
+#   snakemake --cores 1 cmor_tables     # just the CMOR tables
+
+configfile: "config/config.yaml"
+
+
+# Remote git repositories (snakemake-storage-plugin-git); each one is cloned
+# in .snakemake/storage/git/, kept there and fetched again on each run
+storage git:
+    provider="git",
+    keep_local=True,
+
+
+# Workaround for snakemake-storage-plugin-git 0.1.0: it clones (or fetches) a
+# repository only in inventory(), which snakemake runs just for the inputs of
+# the target jobs, so a repository used deeper in the DAG is reported as
+# missing. Clone (or fetch) it when its existence is checked instead, as the
+# plugin itself does in its unit tests (once per run, see _clone_or_pull).
+from snakemake_storage_plugin_git import StorageObject as GitStorageObject
+
+_git_storage_object_exists = GitStorageObject.exists
+
+
+def _git_storage_object_clone_and_exists(self):
+    self._clone_or_pull()
+    return _git_storage_object_exists(self)
+
+
+GitStorageObject.exists = _git_storage_object_clone_and_exists
+
+
+include: "rules/cmor_tables.smk"
+
+
+rule all:
+    default_target: True
+    input:
+        rules.cmor_tables.input,
