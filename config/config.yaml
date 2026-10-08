@@ -1,16 +1,14 @@
 # Configuration of the data ingestion workflow (see workflow/Snakefile)
 
 cmor_tables:
-  # Each source is a git repository (fetched through the snakemake git storage
-  # plugin) with the CMOR tables of one or more editions.
+  # Each source is a git repository with the CMOR tables of one or more
+  # editions, each one checked out through the snakemake git storage plugin.
   #   repository: URL of the git repository
   #   format:     "json" for CMOR 3 tables, "cmor2" for legacy plain-text tables
   #   tables:     glob of the table files, relative to the repository root
   #   editions:   editions to ingest, each one either a git tag (used as the
-  #               edition name too) or a mapping {name: ..., ref: ...} where ref
-  #               is any git revision, e.g. {name: latest, ref: origin/main}
-  #               (the clone is refreshed on each run, but outputs of a moving
-  #               ref are not rebuilt automatically: use --forcerun)
+  #               edition name too) or a mapping {name: ..., commit: ...}
+  #               (or tag: ...), as in the custom_heads setting of the plugin
   sources:
     cmip5:
       repository: https://github.com/PCMDI/cmip5-cmor-tables.git
