@@ -25,4 +25,3 @@ data-sources/workflow/metaWorkflow.jsonld,https://w3id.org/hacid/data/cs/wf,y
 data-sources/example-cases/*.ttl,https://w3id.org/hacid/data/cs/examples,y
 data-sources/mohc-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/mohc-cvs,n
 data-sources/ukcp18/rdf/*.jsonld,https://w3id.org/hacid/data/cs/ukcp18,n
-
