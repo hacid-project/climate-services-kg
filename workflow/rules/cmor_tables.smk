@@ -1,71 +1,58 @@
 # Ingestion of variable definitions from multiple editions of the CMOR tables.
 #
-#   git repository (storage plugin) --extract--> data/{source}/{edition}.json
-#                                   --map (jq)--> rdf/{source}/{edition}.jsonld
-
-CMOR_TABLES_DIR = "data-sources/cmor-tables"
-CMOR_TABLES_SOURCES = config["cmor_tables"]["sources"]
-
-
-def cmor_tables_editions(source):
-    """Editions of a source as a dict {name: git ref}."""
-    editions = {}
-    for edition in CMOR_TABLES_SOURCES[source]["editions"]:
-        if isinstance(edition, dict):
-            editions[str(edition["name"])] = str(edition["ref"])
-        else:
-            editions[str(edition)] = f"refs/tags/{edition}"
-    return editions
-
-
-CMOR_TABLES_EDITIONS = {
-    source: cmor_tables_editions(source) for source in CMOR_TABLES_SOURCES
-}
-
-
-wildcard_constraints:
-    source="|".join(CMOR_TABLES_SOURCES),
-    edition="[^/]+",
+# Each edition is checked out through the git storage plugin, its tables are
+# collected in data/{source}/{edition}.json (legacy CMOR 2 tables converted to
+# JSON) and mapped with jq to rdf/{source}/{edition}.jsonld.
+#
+# The edition is in the user part of the repository URL, so that each edition
+# gets its own checkout (custom_heads in workflow/Snakefile selects its tag).
 
 
 rule cmor_tables:
     input:
-        [
-            f"{CMOR_TABLES_DIR}/rdf/{source}/{edition}.jsonld"
-            for source, editions in CMOR_TABLES_EDITIONS.items()
-            for edition in editions
-        ],
+        expand(
+            "data-sources/cmor-tables/rdf/{edition}.jsonld",
+            edition=config["cmor_tables"]["editions"],
+        ),
 
 
-rule cmor_tables_extract:
+# Legacy CMOR 2 tables (CMIP5)
+rule cmor_tables_cmor2:
     input:
-        # The whole clone of the repository (all editions are read from it)
-        repo=lambda wc: storage.git(CMOR_TABLES_SOURCES[wc.source]["repository"]),
-        cmor2_parser=f"{CMOR_TABLES_DIR}/mapping/cmor2-table.jq",
+        checkout=storage.git("https://{edition}@github.com/PCMDI/{source}-cmor-tables.git"),
+        parser="data-sources/cmor-tables/mapping/cmor2-tables.jq",
     output:
-        f"{CMOR_TABLES_DIR}/data/{{source}}/{{edition}}.json",
+        "data-sources/cmor-tables/data/{source}/{edition}.json",
+    wildcard_constraints:
+        source="cmip5",
     log:
-        "logs/cmor_tables/extract/{source}/{edition}.log",
-    params:
-        repository=lambda wc: CMOR_TABLES_SOURCES[wc.source]["repository"],
-        ref=lambda wc: CMOR_TABLES_EDITIONS[wc.source][wc.edition],
-        format=lambda wc: CMOR_TABLES_SOURCES[wc.source]["format"],
-        tables=lambda wc: CMOR_TABLES_SOURCES[wc.source]["tables"],
-        script=f"{workflow.basedir}/scripts/extract-cmor-tables.sh",
+        "logs/cmor_tables/cmor2/{source}/{edition}.log",
     shell:
-        "bash {params.script:q} {input.repo:q} {params.ref:q} {params.format:q}"
-        " {params.tables:q} {input.cmor2_parser:q}"
-        " {wildcards.source:q} {wildcards.edition:q} {params.repository:q}"
-        " > {output:q} 2> {log:q}"
+        "jq -R -n -f {input.parser:q} {input.checkout:q}/Tables/CMIP5_* > {output:q} 2> {log:q}"
+
+
+# CMOR 3 JSON tables
+rule cmor_tables_json:
+    input:
+        checkout=storage.git("https://{edition}@github.com/PCMDI/{source}-cmor-tables.git"),
+    output:
+        "data-sources/cmor-tables/data/{source}/{edition}.json",
+    log:
+        "logs/cmor_tables/json/{source}/{edition}.log",
+    shell:
+        "jq -s . {input.checkout:q}/Tables/*.json > {output:q} 2> {log:q}"
+
+
+ruleorder: cmor_tables_cmor2 > cmor_tables_json
 
 
 rule cmor_tables_map_variables:
     input:
-        data=f"{CMOR_TABLES_DIR}/data/{{source}}/{{edition}}.json",
-        mapping=f"{CMOR_TABLES_DIR}/mapping/variables.jq",
+        tables="data-sources/cmor-tables/data/{source}/{edition}.json",
+        mapping="data-sources/cmor-tables/mapping/variables.jq",
     output:
-        f"{CMOR_TABLES_DIR}/rdf/{{source}}/{{edition}}.jsonld",
+        "data-sources/cmor-tables/rdf/{source}/{edition}.jsonld",
     log:
         "logs/cmor_tables/map_variables/{source}/{edition}.log",
     shell:
-        "jq -f {input.mapping:q} {input.data:q} > {output:q} 2> {log:q}"
+        "jq -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"

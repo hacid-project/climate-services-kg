@@ -20,10 +20,11 @@ Variable definitions are ingested from multiple editions (git tags) of the CMOR 
 repositories [cmip5-cmor-tables](https://github.com/PCMDI/cmip5-cmor-tables),
 [cmip6-cmor-tables](https://github.com/PCMDI/cmip6-cmor-tables) and
 [mip-cmor-tables](https://github.com/PCMDI/mip-cmor-tables),
-cloned through the git storage plugin (in `.snakemake/storage/git/`). For each source and edition:
+each edition checked out through the git storage plugin (in `.snakemake/storage/git/`).
+For each source and edition:
 
 1. `data-sources/cmor-tables/data/{source}/{edition}.json`: all the tables of the edition,
-   with legacy CMIP5 plain-text tables converted to JSON (`mapping/cmor2-table.jq`);
+   legacy CMIP5 plain-text tables being converted to JSON (`mapping/cmor2-tables.jq`);
 2. `data-sources/cmor-tables/rdf/{source}/{edition}.jsonld`: the variables mapped to JSON-LD
    (`mapping/variables.jq`).
 

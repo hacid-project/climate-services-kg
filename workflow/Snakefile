@@ -7,29 +7,21 @@
 configfile: "config/config.yaml"
 
 
-# Remote git repositories (snakemake-storage-plugin-git); each one is cloned
-# in .snakemake/storage/git/, kept there and fetched again on each run
+# Git repositories, through snakemake-storage-plugin-git: each edition of the
+# CMOR tables is cloned from https://{edition}@github.com/PCMDI/{source}-cmor-tables.git
+# (GitHub ignores the user of public repositories) and its tag checked out
 storage git:
     provider="git",
     keep_local=True,
+    custom_heads={
+        "https://{1}@github.com/PCMDI/{0}-cmor-tables.git".format(*edition.split("/")): {
+            "tag": edition.split("/")[1]
+        }
+        for edition in config["cmor_tables"]["editions"]
+    },
 
 
-# Workaround for snakemake-storage-plugin-git 0.1.0: it clones (or fetches) a
-# repository only in inventory(), which snakemake runs just for the inputs of
-# the target jobs, so a repository used deeper in the DAG is reported as
-# missing. Clone (or fetch) it when its existence is checked instead, as the
-# plugin itself does in its unit tests (once per run, see _clone_or_pull).
-from snakemake_storage_plugin_git import StorageObject as GitStorageObject
-
-_git_storage_object_exists = GitStorageObject.exists
-
-
-def _git_storage_object_clone_and_exists(self):
-    self._clone_or_pull()
-    return _git_storage_object_exists(self)
-
-
-GitStorageObject.exists = _git_storage_object_clone_and_exists
+include: "patches/git_storage_plugin.py"
 
 
 include: "rules/cmor_tables.smk"

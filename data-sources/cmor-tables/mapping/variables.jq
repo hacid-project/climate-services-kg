@@ -1,10 +1,9 @@
 # Mapping of the variable definitions of one edition of the CMOR tables to JSON-LD.
 #
-# Input: an edition document, as produced by workflow/scripts/extract-cmor-tables.sh
-#   {
-#     "source": "cmip6", "edition": "6.9.33", "repository": "...", "commit": "...",
-#     "tables": [{"file": "Tables/CMIP6_Amon.json", "Header": {...}, "variable_entry": {...}}, ...]
-#   }
+# Input: the array of the tables of the edition, each one with the shape of a
+# CMOR 3 JSON table (legacy CMOR 2 tables are converted by cmor2-tables.jq)
+#   [{"Header": {...}, "variable_entry": {"tas": {...}, ...}, ...}, ...]
+# Tables without variable entries (e.g. CV or coordinates) are ignored.
 #
 # Port of the RML mapping in ../rml/variables.ttl (same IRIs and triples), except
 # that a variable in multiple realms (e.g. "atmos atmosChem") is now a member of
@@ -37,7 +36,7 @@ def present: select(. != null and . != "");
 
 # Variable entries of all the tables
 [
-    .tables.[] | .variable_entry // {} | to_entries.[] |
+    .[] | .variable_entry // {} | to_entries.[] |
     .value + {out_name: ((.value.out_name | present) // .key)}
 ] as $entries |
 
