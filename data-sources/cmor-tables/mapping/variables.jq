@@ -1,8 +1,9 @@
-# Mapping of the variable definitions of a CMOR table to JSON-LD.
+# Mapping of the variable definitions of one edition of the CMOR tables to JSON-LD.
 #
-# Input: a CMOR 3 JSON table (legacy CMOR 2 tables are converted by cmor2-table.jq)
-#   {"Header": {...}, "variable_entry": {"tas": {...}, ...}, ...}
-# Tables without variable entries (e.g. CV or coordinates) give an empty graph.
+# Input: the array of the tables of the edition, each one with the shape of a
+# CMOR 3 JSON table (legacy CMOR 2 tables are converted by cmor2-tables.jq)
+#   [{"Header": {...}, "variable_entry": {"tas": {...}, ...}, ...}, ...]
+# Tables without variable entries (e.g. CV or coordinates) are ignored.
 #
 # Port of the RML mapping in ../rml/variables.ttl (same IRIs and triples), except
 # that a variable in multiple realms (e.g. "atmos atmosChem") is now a member of
@@ -33,9 +34,9 @@ def present: select(. != null and . != "");
     "olevel": ["elevation"]
 } as $dimension_map |
 
-# Variable entries of the table
+# Variable entries of all the tables
 [
-    .variable_entry // {} | to_entries.[] |
+    .[] | .variable_entry // {} | to_entries.[] |
     .value + {out_name: ((.value.out_name | present) // .key)}
 ] as $entries |
 

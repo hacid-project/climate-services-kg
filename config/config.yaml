@@ -1,57 +1,37 @@
 # Configuration of the data ingestion workflow (see workflow/Snakefile)
 
 cmor_tables:
-  # Each source is a git repository with the CMOR tables of one or more
-  # editions, each one checked out through the snakemake git storage plugin.
-  #   repository: URL of the git repository
-  #   format:     "json" for CMOR 3 tables, "cmor2" for legacy plain-text tables
-  #   tables:     glob of the table files, relative to the repository root
-  #   editions:   editions to ingest, each one either a git tag (used as the
-  #               edition name too) or a mapping {name: ..., commit: ...}
-  #               (or tag: ...), as in the custom_heads setting of the plugin
-  sources:
-    cmip5:
-      repository: https://github.com/PCMDI/cmip5-cmor-tables.git
-      format: cmor2
-      tables: Tables/CMIP5_*
-      editions:
-        - "5.0"
-    cmip6:
-      repository: https://github.com/PCMDI/cmip6-cmor-tables.git
-      format: json
-      tables: Tables/*.json
-      editions:
-        - "6.0.11"
-        - "6.0.12"
-        - "6.0.13"
-        - "6.0.14"
-        - "6.0.15"
-        - "6.0.16"
-        - "6.0.17"
-        - "6.0.18"
-        - "6.0.19"
-        - "6.0.19a"
-        - "6.0.20"
-        - "6.0.21"
-        - "6.1.22"
-        - "6.1.23"
-        - "6.2.24"
-        - "6.3.27"
-        - "6.3.27-fixed"
-        - "6.4.28"
-        - "6.5.29"
-        - "6.6.30"
-        - "6.7.31"
-        - "6.8.31"
-        - "6.9.32"
-        - "6.9.33"
-    mip:
-      repository: https://github.com/PCMDI/mip-cmor-tables.git
-      format: json
-      tables: Tables/*.json
-      editions:
-        - "v6.5.0.0"
-        - "v6.5.0.1"
-        - "v6.5.0.2"
-        - "v6.5.0.3"
-        - "v6.5.0.4"
+  # Editions of the CMOR tables to ingest, as {source}/{edition}, where
+  # PCMDI/{source}-cmor-tables is the GitHub repository and {edition} one of
+  # its git tags
+  editions:
+    - cmip5/5.0
+    - cmip6/6.0.11
+    - cmip6/6.0.12
+    - cmip6/6.0.13
+    - cmip6/6.0.14
+    - cmip6/6.0.15
+    - cmip6/6.0.16
+    - cmip6/6.0.17
+    - cmip6/6.0.18
+    - cmip6/6.0.19
+    - cmip6/6.0.19a
+    - cmip6/6.0.20
+    - cmip6/6.0.21
+    - cmip6/6.1.22
+    - cmip6/6.1.23
+    - cmip6/6.2.24
+    - cmip6/6.3.27
+    - cmip6/6.3.27-fixed
+    - cmip6/6.4.28
+    - cmip6/6.5.29
+    - cmip6/6.6.30
+    - cmip6/6.7.31
+    - cmip6/6.8.31
+    - cmip6/6.9.32
+    - cmip6/6.9.33
+    - mip/v6.5.0.0
+    - mip/v6.5.0.1
+    - mip/v6.5.0.2
+    - mip/v6.5.0.3
+    - mip/v6.5.0.4
