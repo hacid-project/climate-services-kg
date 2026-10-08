@@ -3,9 +3,6 @@
 # Each edition is checked out through the git storage plugin, its tables are
 # collected in data/{source}/{edition}.json (legacy CMOR 2 tables converted to
 # JSON) and mapped with jq to rdf/{source}/{edition}.jsonld.
-#
-# The edition is in the user part of the repository URL, so that each edition
-# gets its own checkout (custom_heads in workflow/Snakefile selects its tag).
 
 
 rule cmor_tables:
@@ -19,7 +16,7 @@ rule cmor_tables:
 # Legacy CMOR 2 tables (CMIP5)
 rule cmor_tables_cmor2:
     input:
-        checkout=storage.git("https://{edition}@github.com/PCMDI/{source}-cmor-tables.git"),
+        checkout=storage.git("https://github.com/PCMDI/{source}-cmor-tables.git#{edition}"),
         parser="data-sources/cmor-tables/mapping/cmor2-tables.jq",
     output:
         "data-sources/cmor-tables/data/{source}/{edition}.json",
@@ -34,7 +31,7 @@ rule cmor_tables_cmor2:
 # CMOR 3 JSON tables
 rule cmor_tables_json:
     input:
-        checkout=storage.git("https://{edition}@github.com/PCMDI/{source}-cmor-tables.git"),
+        checkout=storage.git("https://github.com/PCMDI/{source}-cmor-tables.git#{edition}"),
     output:
         "data-sources/cmor-tables/data/{source}/{edition}.json",
     log:

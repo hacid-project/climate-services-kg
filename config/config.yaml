@@ -2,8 +2,9 @@
 
 cmor_tables:
   # Editions of the CMOR tables to ingest, as {source}/{edition}, where
-  # PCMDI/{source}-cmor-tables is the GitHub repository and {edition} one of
-  # its git tags
+  # PCMDI/{source}-cmor-tables is the GitHub repository and {edition} a git ref
+  # of it (usually a tag; a branch, e.g. main, is not rebuilt automatically
+  # when it moves: use --forcerun)
   editions:
     - cmip5/5.0
     - cmip6/6.0.11
