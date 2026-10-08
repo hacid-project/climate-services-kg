@@ -181,3 +181,7 @@ data-sources/cmor-tables/data
 data-sources/ukcp18/data
 data-sources/observations/data
 data-sources/ukcp18/rdf/ceda_ukcp18_metadata_merged.jsonld
+
+# Snakemake workflow
+.snakemake/
+logs/
