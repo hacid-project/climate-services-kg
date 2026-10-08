@@ -21,7 +21,7 @@ storage git:
     },
 
 
-include: "lib/git_storage_fixes.py"
+include: "patches/git_storage_plugin.py"
 
 
 include: "rules/cmor_tables.smk"
