@@ -1,0 +1,52 @@
+source_from,source_to,edition_from,edition_to,comparison,metric,value
+cmip5,cmip6,cmip5/5.0,cmip6/6.0.11,by_name,entries_from,1098
+cmip5,cmip6,cmip5/5.0,cmip6/6.0.11,by_name,entries_to,2082
+cmip5,cmip6,cmip5/5.0,cmip6/6.0.11,by_name,names_from,672
+cmip5,cmip6,cmip5/5.0,cmip6/6.0.11,by_name,names_to,1339
+cmip5,cmip6,cmip5/5.0,cmip6/6.0.11,by_name,names_common,501
+cmip5,cmip6,cmip5/5.0,cmip6/6.0.11,by_name,names_dropped,171
+cmip5,cmip6,cmip5/5.0,cmip6/6.0.11,by_name,names_new,838
+cmip5,cmip6,cmip5/5.0,cmip6/6.0.11,by_name,same_table_and_key,455
+cmip5,cmip6,cmip5/5.0,cmip6/6.0.11,by_name,common_names_no_shared_quantity,"[""cfc11"", ""dms"", ""graz"", ""o2"", ""po4"", ""si"", ""wetso4""]"
+cmip5,cmip6,cmip5/5.0,cmip6/6.0.11,by_name,common_names_no_shared_units,"[""abs550aer"", ""albisccp"", ""basin"", ""cfadDbze94"", ""cfadLidarsr532"", ""cfc11"", ""ch4"", ""ch4Clim"", ""ch4global"", ""ch4globalClim"", ""ci"", ""cli"", ""clic"", ""clis"", ""clw"", ""clwc"", ""clws"", ""co2"", ""co2Clim"", ""demc"", ""dems"", ""dms"", ""dtauc"", ""dtaus"", ""h2o"", ""hus"", ""huss"", ""lai"", ""n2o"", ""n2oClim"", ""n2oglobal"", ""n2oglobalClim"", ""od550aer"", ""od550lt1aer"", ""od870aer"", ""parasolRefl"", ""pbo"", ""ph"", ""pso"", ""sci"", ""so"", ""soga"", ""sos"", ""thetao"", ""thetaoga"", ""tossq""]"
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,edition,cmip6/6.9.33
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,entries_from,1098
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,entries_to,2062
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,names_from,672
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,names_to,1313
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,names_common,492
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,names_dropped,180
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,names_new,821
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,same_table_and_key,445
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,common_names_no_shared_quantity,"[""cfc11"", ""co3satarag"", ""co3satcalc"", ""dms"", ""drybc"", ""drydust"", ""drynh3"", ""drynh4"", ""dryoa"", ""dryso2"", ""dryso4"", ""dryss"", ""frfe"", ""frn"", ""graz"", ""o2"", ""po4"", ""si"", ""tauucorr"", ""tauuo"", ""tauvcorr"", ""tauvo"", ""wetbc"", ""wetdust"", ""wetnh4"", ""wetoa"", ""wetso2"", ""wetso4"", ""wetss""]"
+cmip5,cmip6,cmip5/5.0,cmip6/6.9.33,by_name_to_last,common_names_no_shared_units,"[""cfc11"", ""ch4"", ""ch4Clim"", ""ch4global"", ""ch4globalClim"", ""cli"", ""clw"", ""co2"", ""co2Clim"", ""dms"", ""n2o"", ""n2oClim"", ""n2oglobal"", ""n2oglobalClim"", ""pbo"", ""pso"", ""so"", ""soga"", ""sos"", ""thetao"", ""thetaoga"", ""tos"", ""tossq""]"
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_name,entries_from,2062
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_name,entries_to,2049
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_name,names_from,1313
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_name,names_to,1323
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_name,names_common,1311
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_name,names_dropped,2
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_name,names_new,12
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_name,same_table_and_key,129
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_name,common_names_no_shared_quantity,[]
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_name,common_names_no_shared_units,[]
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,edition,mip/v6.5.0.4
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,entries_from,2062
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,entries_to,2049
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,names_from,1313
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,names_to,1323
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,names_common,1311
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,names_dropped,2
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,names_new,12
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,same_table_and_key,129
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,common_names_no_shared_quantity,[]
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.4,by_name_to_last,common_names_no_shared_units,[]
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_provenance,entries_from,2062
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_provenance,entries_to,2049
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_provenance,mapped,2039
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_provenance,entries_to_without_provenance,"[""AP3hr.prra"", ""AP3hr.sfcWind"", ""AP3hrPt.sfcWind"", ""AP6hr.sfcWind"", ""AP6hrPt.sfcWind"", ""APday.prra"", ""APmon.prra"", ""APmon.sfcWind"", ""APsubhrPtSite.sfcWind"", ""OPmon.prsn""]"
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_provenance,entries_from_not_carried,"[{""entry"": ""6hrPlev.sfcWind"", ""same_key_in"": [""AP3hr.sfcWind"", ""AP3hrPt.sfcWind"", ""AP6hr.sfcWind"", ""AP6hrPt.sfcWind"", ""APday.sfcWind"", ""APmon.sfcWind"", ""APsubhrPtSite.sfcWind""]}, {""entry"": ""6hrPlevPt.sfcWind"", ""same_key_in"": [""AP3hr.sfcWind"", ""AP3hrPt.sfcWind"", ""AP6hr.sfcWind"", ""AP6hrPt.sfcWind"", ""APday.sfcWind"", ""APmon.sfcWind"", ""APsubhrPtSite.sfcWind""]}, {""entry"": ""AERmon.ps"", ""same_key_in"": [""AP1hr.ps"", ""AP3hrPt.ps"", ""AP6hrPt.ps"", ""APday.ps"", ""APfx.ps"", ""APmon.ps"", ""APsubhrPt.ps"", ""APsubhrPtSite.ps""]}, {""entry"": ""Amon.sfcWind"", ""same_key_in"": [""AP3hr.sfcWind"", ""AP3hrPt.sfcWind"", ""AP6hr.sfcWind"", ""AP6hrPt.sfcWind"", ""APday.sfcWind"", ""APmon.sfcWind"", ""APsubhrPtSite.sfcWind""]}, {""entry"": ""CF3hr.ps"", ""same_key_in"": [""AP1hr.ps"", ""AP3hrPt.ps"", ""AP6hrPt.ps"", ""APday.ps"", ""APfx.ps"", ""APmon.ps"", ""APsubhrPt.ps"", ""APsubhrPtSite.ps""]}, {""entry"": ""CF3hr.sfcWind"", ""same_key_in"": [""AP3hr.sfcWind"", ""AP3hrPt.sfcWind"", ""AP6hr.sfcWind"", ""AP6hrPt.sfcWind"", ""APday.sfcWind"", ""APmon.sfcWind"", ""APsubhrPtSite.sfcWind""]}, {""entry"": ""CFmon.ps"", ""same_key_in"": [""AP1hr.ps"", ""AP3hrPt.ps"", ""AP6hrPt.ps"", ""APday.ps"", ""APfx.ps"", ""APmon.ps"", ""APsubhrPt.ps"", ""APsubhrPtSite.ps""]}, {""entry"": ""CFsubhr.latitude"", ""same_key_in"": []}, {""entry"": ""CFsubhr.longitude"", ""same_key_in"": []}, {""entry"": ""CFsubhr.sfcWind"", ""same_key_in"": [""AP3hr.sfcWind"", ""AP3hrPt.sfcWind"", ""AP6hr.sfcWind"", ""AP6hrPt.sfcWind"", ""APday.sfcWind"", ""APmon.sfcWind"", ""APsubhrPtSite.sfcWind""]}, {""entry"": ""E3hr.prra"", ""same_key_in"": [""AP3hr.prra"", ""APday.prra"", ""APmon.prra"", ""GIAmon.prra"", ""GIGmon.prra""]}, {""entry"": ""E3hr.sfcWind"", ""same_key_in"": [""AP3hr.sfcWind"", ""AP3hrPt.sfcWind"", ""AP6hr.sfcWind"", ""AP6hrPt.sfcWind"", ""APday.sfcWind"", ""APmon.sfcWind"", ""APsubhrPtSite.sfcWind""]}, {""entry"": ""E3hrPt.ps"", ""same_key_in"": [""AP1hr.ps"", ""AP3hrPt.ps"", ""AP6hrPt.ps"", ""APday.ps"", ""APfx.ps"", ""APmon.ps"", ""APsubhrPt.ps"", ""APsubhrPtSite.ps""]}, {""entry"": ""Eday.clt"", ""same_key_in"": [""AP3hr.clt"", ""AP3hrPt.clt"", ""APday.clt"", ""APmon.clt"", ""APsubhrPtSite.clt""]}, {""entry"": ""Eday.hfls"", ""same_key_in"": [""AP3hr.hfls"", ""AP3hrPt.hfls"", ""APday.hfls"", ""APmon.hfls"", ""APsubhrPt.hfls"", ""APsubhrPtSite.hfls"", ""GIAmon.hfls"", ""GIGmon.hfls""]}, {""entry"": ""Eday.hfss"", ""same_key_in"": [""AP3hr.hfss"", ""AP3hrPt.hfss"", ""APday.hfss"", ""APmon.hfss"", ""APsubhrPt.hfss"", ""APsubhrPtSite.hfss"", ""GIAmon.hfss"", ""GIGmon.hfss""]}, {""entry"": ""Eday.prra"", ""same_key_in"": [""AP3hr.prra"", ""APday.prra"", ""APmon.prra"", ""GIAmon.prra"", ""GIGmon.prra""]}, {""entry"": ""Eday.rls"", ""same_key_in"": [""APday.rls"", ""APmon.rls""]}, {""entry"": ""Eday.rss"", ""same_key_in"": [""APday.rss"", ""APmon.rss""]}, {""entry"": ""Emon.ps"", ""same_key_in"": [""AP1hr.ps"", ""AP3hrPt.ps"", ""AP6hrPt.ps"", ""APday.ps"", ""APfx.ps"", ""APmon.ps"", ""APsubhrPt.ps"", ""APsubhrPtSite.ps""]}, {""entry"": ""LImon.sbl"", ""same_key_in"": [""GIAmon.sbl"", ""GIGmon.sbl"", ""LI3hrPt.sbl"", ""LIday.sbl"", ""LImon.sbl"", ""LIsubhrPtSite.sbl""]}, {""entry"": ""Omon.prra"", ""same_key_in"": [""AP3hr.prra"", ""APday.prra"", ""APmon.prra"", ""GIAmon.prra"", ""GIGmon.prra""]}, {""entry"": ""Omon.prsn"", ""same_key_in"": [""AP3hr.prsn"", ""AP3hrPt.prsn"", ""APday.prsn"", ""APmon.prsn"", ""APsubhrPtSite.prsn"", ""GIAmon.prsn"", ""GIGmon.prsn"", ""OPmon.prsn""]}]"
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_provenance,renamed_keys,"[""Amon.hus -> APmon.hus19"", ""Amon.ua -> APmon.ua19"", ""Amon.va -> APmon.va19"", ""Eday.hus -> APday.hus19"", ""Eday.ta -> APday.ta19"", ""Eday.ua -> APday.ua19"", ""Eday.va -> APday.va19"", ""Eday.wap -> APday.wap19"", ""Eday.zg -> APday.zg19"", ""Emon.hus -> APmon.hus7h"", ""Emon.ua -> APmon.ua7h"", ""Emon.va -> APmon.va7h"", ""day.hus -> APday.hus8"", ""day.ta -> APday.ta8"", ""day.ua -> APday.ua8"", ""day.va -> APday.va8"", ""day.wap -> APday.wap8"", ""day.zg -> APday.zg8""]"
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_provenance,modified,183
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_provenance,modified_attributes,"{""valid_min"": 105, ""valid_max"": 105, ""ok_max_mean_abs"": 100, ""ok_min_mean_abs"": 84, ""out_name"": 82}"
+cmip6,mip,cmip6/6.9.33,mip/v6.5.0.0,by_provenance,standard_name_changes,{}

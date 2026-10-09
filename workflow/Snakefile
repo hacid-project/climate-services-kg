@@ -3,6 +3,7 @@
 # Run from the repository root, e.g.:
 #   snakemake --cores 1                 # everything
 #   snakemake --cores 1 cmor_tables     # just the CMOR tables
+#   snakemake --cores 1 cmor_tables_analysis  # analysis of the CMOR tables editions
 
 configfile: "config/config.yaml"
 
@@ -24,3 +25,4 @@ rule all:
     default_target: True
     input:
         rules.cmor_tables.input,
+        rules.cmor_tables_analysis.output,

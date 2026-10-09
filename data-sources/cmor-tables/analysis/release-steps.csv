@@ -1,0 +1,28 @@
+previous,edition,date,commit,entries,added,deleted,deleted_still_in_other_tables,deleted_renamed,deleted_readded_later,deleted_removed,modified_raw,modified,modified_semantic,names_added,names_deleted,modified_attributes
+cmip6/6.0.11,cmip6/6.0.12,2017-06-21,9b8825955f,2111,32,3,3,0,0,0,53,53,4,0,0,comment:47; cell_methods:4; long_name:2
+cmip6/6.0.12,cmip6/6.0.13,2017-07-22,de03c20cd3,2107,1,5,1,1,0,3,4,4,3,0,3,frequency:2; comment:2; standard_name:1
+cmip6/6.0.13,cmip6/6.0.14,2017-07-31,ceece4607a,2099,4,12,9,2,0,1,155,155,154,0,3,standard_name:78; positive:75; long_name:3; cell_methods:2; frequency:2; dimensions:1
+cmip6/6.0.14,cmip6/6.0.15,2017-08-03,925bc35919,2048,4,55,29,0,24,2,135,132,124,1,26,dimensions:83; cell_measures:52; standard_name:23; cell_methods:19; long_name:8; modeling_realm:3; comment:3
+cmip6/6.0.15,cmip6/6.0.16,2017-10-04,073a88d5d9,2045,3,6,0,2,0,4,366,366,357,1,4,frequency:350; comment:14; cell_methods:5; units:3; dimensions:2; cell_measures:2; long_name:2; standard_name:1
+cmip6/6.0.16,cmip6/6.0.17,2017-11-14,171cd4f387,2034,6,17,0,4,0,13,138,138,44,3,9,cell_measures:131; cell_methods:39; long_name:5; standard_name:3; dimensions:2; modeling_realm:2
+cmip6/6.0.17,cmip6/6.0.18,2017-11-27,b4736ecbed,2034,0,0,0,0,0,0,10,10,0,0,0,cell_measures:8; long_name:2
+cmip6/6.0.19a,cmip6/6.0.19,2017-12-21,b5b502f6df,2033,5,6,3,3,0,0,22,11,10,2,2,modeling_realm:8; standard_name:2; long_name:1
+cmip6/6.0.18,cmip6/6.0.19a,2017-12-13,ab1d25ffeb,2034,0,0,0,0,0,0,0,0,0,0,0,
+cmip6/6.0.19,cmip6/6.0.20,2018-01-04,e79084e42d,2033,0,0,0,0,0,0,11,11,11,0,0,units:4; dimensions:4; cell_methods:3; frequency:2; modeling_realm:1; positive:1
+cmip6/6.0.20,cmip6/6.0.21,2018-02-15,4e48e42cc3,2027,1,7,0,0,0,7,1036,72,56,1,7,positive:28; standard_name:27; comment:12; long_name:6; dimensions:2; units:1
+cmip6/6.0.21,cmip6/6.1.22,2018-03-07,f346afdb9f,2026,7,8,5,0,0,3,548,548,144,0,3,comment:365; cell_measures:128; dimensions:110; cell_methods:23; standard_name:13; frequency:6; positive:2; long_name:1
+cmip6/6.1.22,cmip6/6.1.23,2018-03-22,ddc98c1df1,2026,0,0,0,0,0,0,158,158,88,0,0,standard_name:87; cell_measures:70; comment:19; units:1
+cmip6/6.1.22,cmip6/6.2.24,2018-06-20,8eb3f1227a,2017,0,9,9,0,0,0,587,345,193,0,0,standard_name:173; comment:127; cell_measures:70; dimensions:24; long_name:5; units:4; positive:1
+cmip6/6.2.24,cmip6/6.3.27,2018-08-01,26b4f2489c,2068,63,12,0,0,0,12,463,330,197,36,12,comment:139; standard_name:103; cell_measures:87; dimensions:60; long_name:59; cell_methods:41; units:6; out_name:1
+cmip6/6.3.27,cmip6/6.3.27-fixed,2018-08-01,b427077cbc,2068,0,0,0,0,0,0,0,0,0,0,0,
+cmip6/6.3.27-fixed,cmip6/6.4.28,2018-12-06,96cd03b092,2063,0,5,4,0,0,1,132,132,119,0,1,cell_methods:79; modeling_realm:41; cell_measures:32; comment:12; dimensions:6; standard_name:4; long_name:1; out_name:1; units:1
+cmip6/6.4.28,cmip6/6.5.29,2018-12-20,0a4445523f,2063,0,0,0,0,0,0,1195,704,28,0,0,long_name:409; comment:345; cell_methods:23; units:5
+cmip6/6.5.29,cmip6/6.6.30,2019-04-18,ea2a2f73ee,2063,2,2,0,1,0,1,132,66,23,2,2,comment:57; dimensions:17; cell_methods:4; frequency:4; standard_name:3; long_name:3; modeling_realm:2; cell_measures:1; out_name:1
+cmip6/6.6.30,cmip6/6.7.31,2019-07-23,02c87565bc,2063,0,0,0,0,0,0,110,110,20,0,0,long_name:86; comment:14; cell_methods:12; standard_name:7; dimensions:4; modeling_realm:1; units:1
+cmip6/6.7.31,cmip6/6.8.31,2019-08-05,9f0ed59b75,2063,0,0,0,0,0,0,0,0,0,0,0,
+cmip6/6.8.31,cmip6/6.9.32,2020-05-29,b73ef11553,2062,0,1,1,0,0,0,87,20,3,0,0,comment:18; positive:2; dimensions:1
+cmip6/6.9.32,cmip6/6.9.33,2020-11-20,c881052626,2062,0,0,0,0,0,0,0,0,0,0,0,
+mip/v6.5.0.0,mip/v6.5.0.1,2024-03-05,1d3ff3d4f3,2049,0,0,0,0,0,0,107,107,0,0,0,valid_min:107; valid_max:107; ok_max_mean_abs:102; ok_min_mean_abs:86
+mip/v6.5.0.1,mip/v6.5.0.2,2024-04-20,0d6b274241,2049,0,0,0,0,0,0,0,0,0,0,0,
+mip/v6.5.0.2,mip/v6.5.0.3,2024-09-18,ab324e1827,2049,0,0,0,0,0,0,0,0,0,0,0,
+mip/v6.5.0.3,mip/v6.5.0.4,2026-03-03,e5bac791f5,2049,0,0,0,0,0,0,0,0,0,0,0,

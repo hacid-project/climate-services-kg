@@ -1,0 +1,793 @@
+{
+ "cf_standard_name_table_version": "86",
+ "editions": {
+  "cmip5/5.0": {
+   "date": "2014-05-14",
+   "commit": "7afc846ab5560b63e142ac371c38d7798cbaf8ab",
+   "previous": null
+  },
+  "cmip6/6.0.11": {
+   "date": "2017-06-16",
+   "commit": "f8ac5050f3b3798a010c55fe5e97643e1f3f9ca9",
+   "previous": null
+  },
+  "cmip6/6.0.12": {
+   "date": "2017-06-21",
+   "commit": "9b8825955f9c9bbf3e7668e213c2c0bced1a569e",
+   "previous": "cmip6/6.0.11"
+  },
+  "cmip6/6.0.13": {
+   "date": "2017-07-22",
+   "commit": "de03c20cd3d9a7174744aa4b86d4c7e2ec3f3079",
+   "previous": "cmip6/6.0.12"
+  },
+  "cmip6/6.0.14": {
+   "date": "2017-07-31",
+   "commit": "ceece4607ae0ab50c33757992f783a7442a8271f",
+   "previous": "cmip6/6.0.13"
+  },
+  "cmip6/6.0.15": {
+   "date": "2017-08-03",
+   "commit": "925bc35919451617907b9d204985b5beeec264df",
+   "previous": "cmip6/6.0.14"
+  },
+  "cmip6/6.0.16": {
+   "date": "2017-10-04",
+   "commit": "073a88d5d9a31f86a4736a145c9ced7cead6076f",
+   "previous": "cmip6/6.0.15"
+  },
+  "cmip6/6.0.17": {
+   "date": "2017-11-14",
+   "commit": "171cd4f387f155b7e2b16b326ea71b26230b5728",
+   "previous": "cmip6/6.0.16"
+  },
+  "cmip6/6.0.18": {
+   "date": "2017-11-27",
+   "commit": "b4736ecbed644a27a2a7e0e6ce97f01465816946",
+   "previous": "cmip6/6.0.17"
+  },
+  "cmip6/6.0.19": {
+   "date": "2017-12-21",
+   "commit": "b5b502f6df7f58cbd358cc4aa57c817eb703c02c",
+   "previous": "cmip6/6.0.19a"
+  },
+  "cmip6/6.0.19a": {
+   "date": "2017-12-13",
+   "commit": "ab1d25ffeb6685c566e6dc7f92c733d951025625",
+   "previous": "cmip6/6.0.18"
+  },
+  "cmip6/6.0.20": {
+   "date": "2018-01-04",
+   "commit": "e79084e42db2a0eea23e8347d6d8e51d5c2d2d00",
+   "previous": "cmip6/6.0.19"
+  },
+  "cmip6/6.0.21": {
+   "date": "2018-02-15",
+   "commit": "4e48e42cc3ef0adcf72eb1f56e6f2b9cc65da66b",
+   "previous": "cmip6/6.0.20"
+  },
+  "cmip6/6.1.22": {
+   "date": "2018-03-07",
+   "commit": "f346afdb9f329112ff91a532a4c83b5507b967f9",
+   "previous": "cmip6/6.0.21"
+  },
+  "cmip6/6.1.23": {
+   "date": "2018-03-22",
+   "commit": "ddc98c1df1cc21455c50ff1bc72129775464dd3f",
+   "previous": "cmip6/6.1.22"
+  },
+  "cmip6/6.2.24": {
+   "date": "2018-06-20",
+   "commit": "8eb3f1227afa76ae9db69d2affd1742c480c2031",
+   "previous": "cmip6/6.1.22"
+  },
+  "cmip6/6.3.27": {
+   "date": "2018-08-01",
+   "commit": "26b4f2489c0448ed32c94d408f06cc380d640f89",
+   "previous": "cmip6/6.2.24"
+  },
+  "cmip6/6.3.27-fixed": {
+   "date": "2018-08-01",
+   "commit": "b427077cbca2c28b2948752c63e4d3f68449fc1f",
+   "previous": "cmip6/6.3.27"
+  },
+  "cmip6/6.4.28": {
+   "date": "2018-12-06",
+   "commit": "96cd03b09264e07b1d1f5ab912eed085e23e30c2",
+   "previous": "cmip6/6.3.27-fixed"
+  },
+  "cmip6/6.5.29": {
+   "date": "2018-12-20",
+   "commit": "0a4445523f2d2964ef37aaf2423691b218a00bee",
+   "previous": "cmip6/6.4.28"
+  },
+  "cmip6/6.6.30": {
+   "date": "2019-04-18",
+   "commit": "ea2a2f73ee859706c58b34f83df1d52b0b6c1798",
+   "previous": "cmip6/6.5.29"
+  },
+  "cmip6/6.7.31": {
+   "date": "2019-07-23",
+   "commit": "02c87565bcac3c3fc916cd1e0f5242a68b588158",
+   "previous": "cmip6/6.6.30"
+  },
+  "cmip6/6.8.31": {
+   "date": "2019-08-05",
+   "commit": "9f0ed59b7575331c0c25320cfa8bb7f0b722a2d6",
+   "previous": "cmip6/6.7.31"
+  },
+  "cmip6/6.9.32": {
+   "date": "2020-05-29",
+   "commit": "b73ef115532e5d177dd03f8f662fd262c8b688ba",
+   "previous": "cmip6/6.8.31"
+  },
+  "cmip6/6.9.33": {
+   "date": "2020-11-20",
+   "commit": "c8810526268e8cb13f2b37aba6af377e15644561",
+   "previous": "cmip6/6.9.32"
+  },
+  "mip/v6.5.0.0": {
+   "date": "2023-11-20",
+   "commit": "f28f475d5db36b36a278dccc8b3be53f277d293f",
+   "previous": null
+  },
+  "mip/v6.5.0.1": {
+   "date": "2024-03-05",
+   "commit": "1d3ff3d4f3f0e1ae285112fa957528886c10c6ba",
+   "previous": "mip/v6.5.0.0"
+  },
+  "mip/v6.5.0.2": {
+   "date": "2024-04-20",
+   "commit": "0d6b27424192b3b07cc8394e85162122871c8d7a",
+   "previous": "mip/v6.5.0.1"
+  },
+  "mip/v6.5.0.3": {
+   "date": "2024-09-18",
+   "commit": "ab324e18272f57d77f30027ce27ec1c99e7c23b2",
+   "previous": "mip/v6.5.0.2"
+  },
+  "mip/v6.5.0.4": {
+   "date": "2026-03-03",
+   "commit": "e5bac791f5cd1dfc926eaf00cbd91fc386b6d4a8",
+   "previous": "mip/v6.5.0.3"
+  }
+ },
+ "deletion_fates": {
+  "still in other tables (same key)": 64,
+  "renamed (same table, same definition)": 13,
+  "removed": 47,
+  "removed, re-added later": 24
+ },
+ "standard_name_change_kinds": {
+  "fix of name not in CF table": 475,
+  "different CF quantity": 26,
+  "to name not in CF table": 2,
+  "sign convention (minus_)": 22
+ },
+ "history": {
+  "cmip5": {
+   "first": "cmip5/5.0",
+   "last": "cmip5/5.0",
+   "editions": 1,
+   "entries_first": 1098,
+   "entries_last": 1098,
+   "entries_ever": 1098,
+   "entries_ever_not_in_last": 0,
+   "entries_first_not_in_last": 0,
+   "names_ever": 672,
+   "names_ever_not_in_last": [],
+   "out_names_ever": 649,
+   "out_names_ever_not_in_last": 0,
+   "last_entries_with_semantic_change": 0,
+   "semantic_changes_by_attribute": {}
+  },
+  "cmip6": {
+   "first": "cmip6/6.0.11",
+   "last": "cmip6/6.9.33",
+   "editions": 24,
+   "entries_first": 2082,
+   "entries_last": 2062,
+   "entries_ever": 2162,
+   "entries_ever_not_in_last": 100,
+   "entries_first_not_in_last": 100,
+   "names_ever": 1361,
+   "names_ever_not_in_last": [
+    "H2p",
+    "H2s",
+    "H2wv",
+    "O17p",
+    "O17s",
+    "O17wv",
+    "O18p",
+    "O18s",
+    "O18sw",
+    "O18wv",
+    "albs",
+    "albsrfc",
+    "areacelli",
+    "cSoilBelow1m",
+    "co2totalmass",
+    "dfr",
+    "dpocdtcalc",
+    "dpocdtdiaz",
+    "dpocdtpico",
+    "et",
+    "expcfe",
+    "hcont300",
+    "lwtoacs",
+    "mmraerso4",
+    "mrlsl",
+    "msftmyz",
+    "msftyyz",
+    "od550aerstrat",
+    "pdi",
+    "pmlev",
+    "potet",
+    "siconco",
+    "siflsaltbot",
+    "slbnosn",
+    "sltnortha",
+    "tomint",
+    "tsnl",
+    "tso",
+    "tws",
+    "ua200",
+    "ua850",
+    "ugrid",
+    "va200",
+    "va850",
+    "waterDpth",
+    "zoomeso",
+    "zoomicro",
+    "zoomisc"
+   ],
+   "out_names_ever": 1318,
+   "out_names_ever_not_in_last": 47,
+   "last_entries_with_semantic_change": 1035,
+   "semantic_changes_by_attribute": {
+    "standard_name": 525,
+    "frequency": 366,
+    "dimensions": 316,
+    "cell_methods": 254,
+    "positive": 109,
+    "modeling_realm": 58,
+    "units": 26
+   }
+  },
+  "mip": {
+   "first": "mip/v6.5.0.0",
+   "last": "mip/v6.5.0.4",
+   "editions": 5,
+   "entries_first": 2049,
+   "entries_last": 2049,
+   "entries_ever": 2049,
+   "entries_ever_not_in_last": 0,
+   "entries_first_not_in_last": 0,
+   "names_ever": 1323,
+   "names_ever_not_in_last": [],
+   "out_names_ever": 1323,
+   "out_names_ever_not_in_last": 0,
+   "last_entries_with_semantic_change": 0,
+   "semantic_changes_by_attribute": {}
+  }
+ },
+ "transitions": [
+  {
+   "source_from": "cmip5",
+   "source_to": "cmip6",
+   "edition_from": "cmip5/5.0",
+   "edition_to": "cmip6/6.0.11",
+   "by_name": {
+    "entries_from": 1098,
+    "entries_to": 2082,
+    "names_from": 672,
+    "names_to": 1339,
+    "names_common": 501,
+    "names_dropped": 171,
+    "names_new": 838,
+    "same_table_and_key": 455,
+    "common_names_no_shared_quantity": [
+     "cfc11",
+     "dms",
+     "graz",
+     "o2",
+     "po4",
+     "si",
+     "wetso4"
+    ],
+    "common_names_no_shared_units": [
+     "abs550aer",
+     "albisccp",
+     "basin",
+     "cfadDbze94",
+     "cfadLidarsr532",
+     "cfc11",
+     "ch4",
+     "ch4Clim",
+     "ch4global",
+     "ch4globalClim",
+     "ci",
+     "cli",
+     "clic",
+     "clis",
+     "clw",
+     "clwc",
+     "clws",
+     "co2",
+     "co2Clim",
+     "demc",
+     "dems",
+     "dms",
+     "dtauc",
+     "dtaus",
+     "h2o",
+     "hus",
+     "huss",
+     "lai",
+     "n2o",
+     "n2oClim",
+     "n2oglobal",
+     "n2oglobalClim",
+     "od550aer",
+     "od550lt1aer",
+     "od870aer",
+     "parasolRefl",
+     "pbo",
+     "ph",
+     "pso",
+     "sci",
+     "so",
+     "soga",
+     "sos",
+     "thetao",
+     "thetaoga",
+     "tossq"
+    ]
+   },
+   "by_name_to_last": {
+    "edition": "cmip6/6.9.33",
+    "entries_from": 1098,
+    "entries_to": 2062,
+    "names_from": 672,
+    "names_to": 1313,
+    "names_common": 492,
+    "names_dropped": 180,
+    "names_new": 821,
+    "same_table_and_key": 445,
+    "common_names_no_shared_quantity": [
+     "cfc11",
+     "co3satarag",
+     "co3satcalc",
+     "dms",
+     "drybc",
+     "drydust",
+     "drynh3",
+     "drynh4",
+     "dryoa",
+     "dryso2",
+     "dryso4",
+     "dryss",
+     "frfe",
+     "frn",
+     "graz",
+     "o2",
+     "po4",
+     "si",
+     "tauucorr",
+     "tauuo",
+     "tauvcorr",
+     "tauvo",
+     "wetbc",
+     "wetdust",
+     "wetnh4",
+     "wetoa",
+     "wetso2",
+     "wetso4",
+     "wetss"
+    ],
+    "common_names_no_shared_units": [
+     "cfc11",
+     "ch4",
+     "ch4Clim",
+     "ch4global",
+     "ch4globalClim",
+     "cli",
+     "clw",
+     "co2",
+     "co2Clim",
+     "dms",
+     "n2o",
+     "n2oClim",
+     "n2oglobal",
+     "n2oglobalClim",
+     "pbo",
+     "pso",
+     "so",
+     "soga",
+     "sos",
+     "thetao",
+     "thetaoga",
+     "tos",
+     "tossq"
+    ]
+   }
+  },
+  {
+   "source_from": "cmip6",
+   "source_to": "mip",
+   "edition_from": "cmip6/6.9.33",
+   "edition_to": "mip/v6.5.0.0",
+   "by_name": {
+    "entries_from": 2062,
+    "entries_to": 2049,
+    "names_from": 1313,
+    "names_to": 1323,
+    "names_common": 1311,
+    "names_dropped": 2,
+    "names_new": 12,
+    "same_table_and_key": 129,
+    "common_names_no_shared_quantity": [],
+    "common_names_no_shared_units": []
+   },
+   "by_name_to_last": {
+    "edition": "mip/v6.5.0.4",
+    "entries_from": 2062,
+    "entries_to": 2049,
+    "names_from": 1313,
+    "names_to": 1323,
+    "names_common": 1311,
+    "names_dropped": 2,
+    "names_new": 12,
+    "same_table_and_key": 129,
+    "common_names_no_shared_quantity": [],
+    "common_names_no_shared_units": []
+   },
+   "by_provenance": {
+    "entries_from": 2062,
+    "entries_to": 2049,
+    "mapped": 2039,
+    "entries_to_without_provenance": [
+     "AP3hr.prra",
+     "AP3hr.sfcWind",
+     "AP3hrPt.sfcWind",
+     "AP6hr.sfcWind",
+     "AP6hrPt.sfcWind",
+     "APday.prra",
+     "APmon.prra",
+     "APmon.sfcWind",
+     "APsubhrPtSite.sfcWind",
+     "OPmon.prsn"
+    ],
+    "entries_from_not_carried": [
+     {
+      "entry": "6hrPlev.sfcWind",
+      "same_key_in": [
+       "AP3hr.sfcWind",
+       "AP3hrPt.sfcWind",
+       "AP6hr.sfcWind",
+       "AP6hrPt.sfcWind",
+       "APday.sfcWind",
+       "APmon.sfcWind",
+       "APsubhrPtSite.sfcWind"
+      ]
+     },
+     {
+      "entry": "6hrPlevPt.sfcWind",
+      "same_key_in": [
+       "AP3hr.sfcWind",
+       "AP3hrPt.sfcWind",
+       "AP6hr.sfcWind",
+       "AP6hrPt.sfcWind",
+       "APday.sfcWind",
+       "APmon.sfcWind",
+       "APsubhrPtSite.sfcWind"
+      ]
+     },
+     {
+      "entry": "AERmon.ps",
+      "same_key_in": [
+       "AP1hr.ps",
+       "AP3hrPt.ps",
+       "AP6hrPt.ps",
+       "APday.ps",
+       "APfx.ps",
+       "APmon.ps",
+       "APsubhrPt.ps",
+       "APsubhrPtSite.ps"
+      ]
+     },
+     {
+      "entry": "Amon.sfcWind",
+      "same_key_in": [
+       "AP3hr.sfcWind",
+       "AP3hrPt.sfcWind",
+       "AP6hr.sfcWind",
+       "AP6hrPt.sfcWind",
+       "APday.sfcWind",
+       "APmon.sfcWind",
+       "APsubhrPtSite.sfcWind"
+      ]
+     },
+     {
+      "entry": "CF3hr.ps",
+      "same_key_in": [
+       "AP1hr.ps",
+       "AP3hrPt.ps",
+       "AP6hrPt.ps",
+       "APday.ps",
+       "APfx.ps",
+       "APmon.ps",
+       "APsubhrPt.ps",
+       "APsubhrPtSite.ps"
+      ]
+     },
+     {
+      "entry": "CF3hr.sfcWind",
+      "same_key_in": [
+       "AP3hr.sfcWind",
+       "AP3hrPt.sfcWind",
+       "AP6hr.sfcWind",
+       "AP6hrPt.sfcWind",
+       "APday.sfcWind",
+       "APmon.sfcWind",
+       "APsubhrPtSite.sfcWind"
+      ]
+     },
+     {
+      "entry": "CFmon.ps",
+      "same_key_in": [
+       "AP1hr.ps",
+       "AP3hrPt.ps",
+       "AP6hrPt.ps",
+       "APday.ps",
+       "APfx.ps",
+       "APmon.ps",
+       "APsubhrPt.ps",
+       "APsubhrPtSite.ps"
+      ]
+     },
+     {
+      "entry": "CFsubhr.latitude",
+      "same_key_in": []
+     },
+     {
+      "entry": "CFsubhr.longitude",
+      "same_key_in": []
+     },
+     {
+      "entry": "CFsubhr.sfcWind",
+      "same_key_in": [
+       "AP3hr.sfcWind",
+       "AP3hrPt.sfcWind",
+       "AP6hr.sfcWind",
+       "AP6hrPt.sfcWind",
+       "APday.sfcWind",
+       "APmon.sfcWind",
+       "APsubhrPtSite.sfcWind"
+      ]
+     },
+     {
+      "entry": "E3hr.prra",
+      "same_key_in": [
+       "AP3hr.prra",
+       "APday.prra",
+       "APmon.prra",
+       "GIAmon.prra",
+       "GIGmon.prra"
+      ]
+     },
+     {
+      "entry": "E3hr.sfcWind",
+      "same_key_in": [
+       "AP3hr.sfcWind",
+       "AP3hrPt.sfcWind",
+       "AP6hr.sfcWind",
+       "AP6hrPt.sfcWind",
+       "APday.sfcWind",
+       "APmon.sfcWind",
+       "APsubhrPtSite.sfcWind"
+      ]
+     },
+     {
+      "entry": "E3hrPt.ps",
+      "same_key_in": [
+       "AP1hr.ps",
+       "AP3hrPt.ps",
+       "AP6hrPt.ps",
+       "APday.ps",
+       "APfx.ps",
+       "APmon.ps",
+       "APsubhrPt.ps",
+       "APsubhrPtSite.ps"
+      ]
+     },
+     {
+      "entry": "Eday.clt",
+      "same_key_in": [
+       "AP3hr.clt",
+       "AP3hrPt.clt",
+       "APday.clt",
+       "APmon.clt",
+       "APsubhrPtSite.clt"
+      ]
+     },
+     {
+      "entry": "Eday.hfls",
+      "same_key_in": [
+       "AP3hr.hfls",
+       "AP3hrPt.hfls",
+       "APday.hfls",
+       "APmon.hfls",
+       "APsubhrPt.hfls",
+       "APsubhrPtSite.hfls",
+       "GIAmon.hfls",
+       "GIGmon.hfls"
+      ]
+     },
+     {
+      "entry": "Eday.hfss",
+      "same_key_in": [
+       "AP3hr.hfss",
+       "AP3hrPt.hfss",
+       "APday.hfss",
+       "APmon.hfss",
+       "APsubhrPt.hfss",
+       "APsubhrPtSite.hfss",
+       "GIAmon.hfss",
+       "GIGmon.hfss"
+      ]
+     },
+     {
+      "entry": "Eday.prra",
+      "same_key_in": [
+       "AP3hr.prra",
+       "APday.prra",
+       "APmon.prra",
+       "GIAmon.prra",
+       "GIGmon.prra"
+      ]
+     },
+     {
+      "entry": "Eday.rls",
+      "same_key_in": [
+       "APday.rls",
+       "APmon.rls"
+      ]
+     },
+     {
+      "entry": "Eday.rss",
+      "same_key_in": [
+       "APday.rss",
+       "APmon.rss"
+      ]
+     },
+     {
+      "entry": "Emon.ps",
+      "same_key_in": [
+       "AP1hr.ps",
+       "AP3hrPt.ps",
+       "AP6hrPt.ps",
+       "APday.ps",
+       "APfx.ps",
+       "APmon.ps",
+       "APsubhrPt.ps",
+       "APsubhrPtSite.ps"
+      ]
+     },
+     {
+      "entry": "LImon.sbl",
+      "same_key_in": [
+       "GIAmon.sbl",
+       "GIGmon.sbl",
+       "LI3hrPt.sbl",
+       "LIday.sbl",
+       "LImon.sbl",
+       "LIsubhrPtSite.sbl"
+      ]
+     },
+     {
+      "entry": "Omon.prra",
+      "same_key_in": [
+       "AP3hr.prra",
+       "APday.prra",
+       "APmon.prra",
+       "GIAmon.prra",
+       "GIGmon.prra"
+      ]
+     },
+     {
+      "entry": "Omon.prsn",
+      "same_key_in": [
+       "AP3hr.prsn",
+       "AP3hrPt.prsn",
+       "APday.prsn",
+       "APmon.prsn",
+       "APsubhrPtSite.prsn",
+       "GIAmon.prsn",
+       "GIGmon.prsn",
+       "OPmon.prsn"
+      ]
+     }
+    ],
+    "renamed_keys": [
+     "Amon.hus -> APmon.hus19",
+     "Amon.ua -> APmon.ua19",
+     "Amon.va -> APmon.va19",
+     "Eday.hus -> APday.hus19",
+     "Eday.ta -> APday.ta19",
+     "Eday.ua -> APday.ua19",
+     "Eday.va -> APday.va19",
+     "Eday.wap -> APday.wap19",
+     "Eday.zg -> APday.zg19",
+     "Emon.hus -> APmon.hus7h",
+     "Emon.ua -> APmon.ua7h",
+     "Emon.va -> APmon.va7h",
+     "day.hus -> APday.hus8",
+     "day.ta -> APday.ta8",
+     "day.ua -> APday.ua8",
+     "day.va -> APday.va8",
+     "day.wap -> APday.wap8",
+     "day.zg -> APday.zg8"
+    ],
+    "modified": 183,
+    "modified_attributes": {
+     "valid_min": 105,
+     "valid_max": 105,
+     "ok_max_mean_abs": 100,
+     "ok_min_mean_abs": 84,
+     "out_name": 82
+    },
+    "standard_name_changes": {}
+   }
+  }
+ ],
+ "homonyms_per_edition": {
+  "cmip5/5.0": 9,
+  "cmip6/6.0.11": 0,
+  "cmip6/6.0.12": 0,
+  "cmip6/6.0.13": 0,
+  "cmip6/6.0.14": 0,
+  "cmip6/6.0.15": 0,
+  "cmip6/6.0.16": 0,
+  "cmip6/6.0.17": 0,
+  "cmip6/6.0.18": 0,
+  "cmip6/6.0.19": 0,
+  "cmip6/6.0.19a": 0,
+  "cmip6/6.0.20": 0,
+  "cmip6/6.0.21": 0,
+  "cmip6/6.1.22": 0,
+  "cmip6/6.1.23": 0,
+  "cmip6/6.2.24": 0,
+  "cmip6/6.3.27": 0,
+  "cmip6/6.3.27-fixed": 0,
+  "cmip6/6.4.28": 0,
+  "cmip6/6.5.29": 0,
+  "cmip6/6.6.30": 0,
+  "cmip6/6.7.31": 0,
+  "cmip6/6.8.31": 0,
+  "cmip6/6.9.32": 0,
+  "cmip6/6.9.33": 0,
+  "mip/v6.5.0.0": 0,
+  "mip/v6.5.0.1": 0,
+  "mip/v6.5.0.2": 0,
+  "mip/v6.5.0.3": 0,
+  "mip/v6.5.0.4": 0
+ },
+ "homonyms_by_kind": {
+  "cmip5 (all editions)": {
+   "different CF quantities": 9
+  },
+  "cmip6 (all editions)": {
+   "naming fix only (name not in CF table replaced)": 313,
+   "sign convention (minus_)": 24,
+   "different CF quantities": 18
+  },
+  "mip (all editions)": {},
+  "all repositories": {
+   "different CF quantities": 33,
+   "naming fix only (name not in CF table replaced)": 314,
+   "sign convention (minus_)": 23
+  }
+ },
+ "names_with_multiple_units": 36
+}

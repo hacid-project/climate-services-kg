@@ -1,0 +1,73 @@
+out_name,units,editions,n_editions,tables
+cfc11,mol kg-1,cmip5/5.0 .. cmip5/5.0,1,Omon
+cfc11,mol m-3,cmip6/6.0.11 .. mip/v6.5.0.4,29,OPmonLev OPyrLev Omon Oyr
+ch4,1e-9,cmip5/5.0 .. cmip5/5.0,1,Amon
+ch4,mol mol-1,cmip6/6.0.11 .. mip/v6.5.0.4,29,AERmon AERmonZ AEmonLev AEmonZ AP3hrPtLev APmon Amon E3hrPt
+ch4global,1e-09,cmip6/6.0.11 .. mip/v6.5.0.4,29,APmon Amon
+ch4global,1e-9,cmip5/5.0 .. cmip5/5.0,1,Amon
+cli,1,cmip5/5.0 .. cmip5/5.0,1,Amon cfDay cfSites
+cli,kg kg-1,cmip6/6.0.11 .. mip/v6.5.0.4,29,APdayLev APmonLev APsubhrPtSite Amon CFday CFsubhr
+clw,1,cmip5/5.0 .. cmip5/5.0,1,Amon cfDay cfSites
+clw,kg kg-1,cmip6/6.0.11 .. mip/v6.5.0.4,29,APdayLev APmonLev APsubhrPtSite Amon CFday CFsubhr
+co2,1e-6,cmip5/5.0 .. cmip5/5.0,1,Amon
+co2,mol mol-1,cmip6/6.0.11 .. mip/v6.5.0.4,29,AERmon AEmonLev AP3hrPtLev APmon Amon E3hrPt
+dms,mol m-3,cmip5/5.0 .. cmip5/5.0,1,Omon Oyr
+dms,mol mol-1,cmip6/6.0.11 .. mip/v6.5.0.4,29,AERmon AEmonLev Omon Oyr
+fLulccAtmLut,kg m-2 s-1,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fLulccAtmLut,kg s-1,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fProductDecompLut,kg m-2 s-1,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fProductDecompLut,kg s-1,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fg13co2,kg m-2 s-1,cmip6/6.0.16 .. mip/v6.5.0.4,24,OBmon OByr Omon Oyr
+fg13co2,mol m-2 s-1,cmip6/6.0.11 .. cmip6/6.0.15,5,Omon Oyr
+fg14co2,kg m-2 s-1,cmip6/6.0.16 .. mip/v6.5.0.4,24,Emon OBmon
+fg14co2,mol m-2 s-1,cmip6/6.0.11 .. cmip6/6.0.15,5,Emon
+fgcfc11,mol m-2 s-1,cmip6/6.3.27 .. mip/v6.5.0.4,14,OPmon Omon
+fgcfc11,mol sec-1 m-2,cmip6/6.0.11 .. cmip6/6.2.24,15,Omon
+fgcfc12,mol m-2 s-1,cmip6/6.3.27 .. mip/v6.5.0.4,14,OPmon Omon
+fgcfc12,mol sec-1 m-2,cmip6/6.0.11 .. cmip6/6.2.24,15,Omon
+fgsf6,mol m-2 s-1,cmip6/6.3.27 .. mip/v6.5.0.4,14,OPmon Omon
+fgsf6,mol sec-1 m-2,cmip6/6.0.11 .. cmip6/6.2.24,15,Omon
+intuadse,1.e6 J m-1 s-1,cmip6/6.0.11 .. cmip6/6.4.28,18,Emon
+intuadse,MJ m-1 s-1,cmip6/6.5.29 .. mip/v6.5.0.4,11,APmon Emon
+intvadse,1.e6 J m-1 s-1,cmip6/6.0.11 .. cmip6/6.4.28,18,Emon
+intvadse,MJ m-1 s-1,cmip6/6.5.29 .. mip/v6.5.0.4,11,APmon Emon
+irrLut,kg m-2 s-1,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+irrLut,kg s-1,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+ksat,1e-6 m s-1,cmip6/6.0.11 .. cmip6/6.4.28,18,Efx
+ksat,micron s-1,cmip6/6.5.29 .. mip/v6.5.0.4,11,Efx LPfx
+n2o,1e-9,cmip5/5.0 .. cmip5/5.0,1,Amon
+n2o,mol mol-1,cmip6/6.0.11 .. mip/v6.5.0.4,29,AERmon AERmonZ AEmonLev AEmonZ AP3hrPtLev APmon Amon E3hrPt
+n2oglobal,1e-09,cmip6/6.0.11 .. mip/v6.5.0.4,29,APmon Amon
+n2oglobal,1e-9,cmip5/5.0 .. cmip5/5.0,1,Amon
+nwdFracLut,%,cmip6/6.0.21 .. mip/v6.5.0.4,18,Emon LPmon
+nwdFracLut,1,cmip6/6.0.11 .. cmip6/6.0.20,11,Emon
+pbo,Pa,cmip6/6.0.11 .. mip/v6.5.0.4,29,OPmon Omon
+pbo,dbar,cmip5/5.0 .. cmip5/5.0,1,Omon
+pod0,mol m-2,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+pod0,mol m-2 s-1,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+psitem,kg s-1,cmip6/6.1.23 .. mip/v6.5.0.4,16,APdayZ EdayZ
+psitem,kg s^-1,cmip6/6.0.11 .. cmip6/6.1.22,13,EdayZ
+pso,Pa,cmip6/6.0.11 .. mip/v6.5.0.4,29,OPmon Omon
+pso,dbar,cmip5/5.0 .. cmip5/5.0,1,Omon
+rootdsl,kg m-2,cmip6/6.3.27 .. mip/v6.5.0.4,14,Efx LPfx
+rootdsl,kg m-3,cmip6/6.0.11 .. cmip6/6.2.24,15,Efx
+simpmass,kg m-2,cmip6/6.0.11 .. cmip6/6.3.27-fixed,17,SImon
+simpmass,m,cmip6/6.4.28 .. mip/v6.5.0.4,12,SImon
+so,0.001,cmip6/6.0.11 .. mip/v6.5.0.4,29,OPdecLev OPmonLev Odec Omon
+so,psu,cmip5/5.0 .. cmip5/5.0,1,Omon
+soga,0.001,cmip6/6.0.11 .. mip/v6.5.0.4,29,OPdec OPmon Odec Omon
+soga,psu,cmip5/5.0 .. cmip5/5.0,1,Omon
+somint,1e-3 kg m-2,cmip6/6.0.11 .. cmip6/6.4.28,18,Emon Oyr
+somint,g m-2,cmip6/6.5.29 .. mip/v6.5.0.4,11,Emon OPmon OPyr Oyr
+sos,0.001,cmip6/6.0.11 .. mip/v6.5.0.4,29,OPday OPdec OPmon Oday Odec Omon
+sos,psu,cmip5/5.0 .. cmip5/5.0,1,Omon
+thetao,K,cmip5/5.0 .. cmip5/5.0,1,Omon
+thetao,degC,cmip6/6.0.11 .. mip/v6.5.0.4,29,OPdecLev OPmonLev Odec Omon
+thetaoga,K,cmip5/5.0 .. cmip5/5.0,1,Omon
+thetaoga,degC,cmip6/6.0.11 .. mip/v6.5.0.4,29,OPdec OPmon Odec Omon
+tos,K,cmip5/5.0 .. cmip6/6.0.19a,11,3hr Oday Odec Omon day
+tos,degC,cmip6/6.0.20 .. mip/v6.5.0.4,19,3hr OP3hrPt OPday OPdec OPmon Oday Odec Omon
+tossq,K2,cmip5/5.0 .. cmip5/5.0,1,Omon day
+tossq,degC2,cmip6/6.0.11 .. mip/v6.5.0.4,29,OPday OPmon Oday Omon
+vt100,K m s-1,cmip6/6.7.31 .. mip/v6.5.0.4,9,AERmonZ AEmonZ
+vt100,W m-2,cmip6/6.0.11 .. cmip6/6.6.30,20,AERmonZ
