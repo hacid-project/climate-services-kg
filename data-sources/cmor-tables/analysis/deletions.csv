@@ -1,0 +1,149 @@
+previous,edition,entry,fate,replaced_by_or_back_in,standard_name
+cmip6/6.0.11,cmip6/6.0.12,E3hrPt.psl,still in other tables (same key),6hrPlev.psl 6hrPlevPt.psl Amon.psl CF3hr.psl CFsubhr.psl E1hr.psl E3hr.psl day.psl,air_pressure_at_sea_level
+cmip6/6.0.11,cmip6/6.0.12,E3hrPt.rsuscs,still in other tables (same key),3hr.rsuscs Amon.rsuscs CF3hr.rsuscs CFday.rsuscs CFsubhr.rsuscs,surface_upwelling_shortwave_flux_in_air_assuming_clear_sky
+cmip6/6.0.11,cmip6/6.0.12,E3hrPt.ts,still in other tables (same key),6hrPlevPt.ts Amon.ts CF3hr.ts CFsubhr.ts Eday.ts ImonAnt.ts ImonGre.ts,surface_temperature
+cmip6/6.0.12,cmip6/6.0.13,6hrLev.pmlev,"renamed (same table, same definition)",6hrLev.pfull,air_pressure
+cmip6/6.0.12,cmip6/6.0.13,AERmon.albs,removed,,surface_albedo
+cmip6/6.0.12,cmip6/6.0.13,AERmon.albsrfc,still in other tables (same key),6hrPlevPt.albsrfc,surface_albedo
+cmip6/6.0.12,cmip6/6.0.13,Eday.albs,removed,,surface_albedo
+cmip6/6.0.12,cmip6/6.0.13,Emon.od550aerstrat,removed,,strat_aerosol_optical_depth
+cmip6/6.0.13,cmip6/6.0.14,3hr.tso,"renamed (same table, same definition)",3hr.tos,sea_surface_temperature
+cmip6/6.0.13,cmip6/6.0.14,6hrPlevPt.albsrfc,removed,,surface_albedo
+cmip6/6.0.13,cmip6/6.0.14,CFsubhrOff.cfadDbze94,still in other tables (same key),E3hrPt.cfadDbze94 Emon.cfadDbze94,histogram_of_equivalent_reflectivity_factor_over_height_above_reference_ellipsoid
+cmip6/6.0.13,cmip6/6.0.14,CFsubhrOff.cfadLidarsr532,still in other tables (same key),E3hrPt.cfadLidarsr532 Emon.cfadLidarsr532,histogram_of_backscattering_ratio_over_height_above_reference_ellipsoid
+cmip6/6.0.13,cmip6/6.0.14,CFsubhrOff.clcalipso,still in other tables (same key),CFday.clcalipso CFmon.clcalipso E3hrPt.clcalipso,cloud_area_fraction_in_atmosphere_layer
+cmip6/6.0.13,cmip6/6.0.14,CFsubhrOff.clcalipso2,still in other tables (same key),E3hrPt.clcalipso2,cloud_area_fraction_in_atmosphere_layer
+cmip6/6.0.13,cmip6/6.0.14,CFsubhrOff.clhcalipso,still in other tables (same key),CFday.clhcalipso CFmon.clhcalipso E3hrPt.clhcalipso,cloud_area_fraction_in_atmosphere_layer
+cmip6/6.0.13,cmip6/6.0.14,CFsubhrOff.cllcalipso,still in other tables (same key),CFday.cllcalipso CFmon.cllcalipso E3hrPt.cllcalipso,cloud_area_fraction_in_atmosphere_layer
+cmip6/6.0.13,cmip6/6.0.14,CFsubhrOff.clmcalipso,still in other tables (same key),CFday.clmcalipso CFmon.clmcalipso E3hrPt.clmcalipso,cloud_area_fraction_in_atmosphere_layer
+cmip6/6.0.13,cmip6/6.0.14,CFsubhrOff.cltcalipso,still in other tables (same key),CFday.cltcalipso CFmon.cltcalipso E3hrPt.cltcalipso,cloud_area_fraction
+cmip6/6.0.13,cmip6/6.0.14,CFsubhrOff.parasolRefl,still in other tables (same key),E3hrPt.parasolRefl Eday.parasolRefl Emon.parasolRefl,toa_bidirectional_reflectance
+cmip6/6.0.13,cmip6/6.0.14,Emon.expcfe,"renamed (same table, same definition)",Emon.expfe,sinking_mole_flux_of_particulate_iron_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Emon.dissi13c,still in other tables (same key),Omon.dissi13c Oyr.dissi13c,mole_concentration_of_dissolved_inorganic_carbon13_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Emon.dissicnat,still in other tables (same key),Omon.dissicnat Oyr.dissicnat,mole_concentration_of_dissolved_inorganic_carbon_natural_analogue_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Emon.o2sat,still in other tables (same key),Omon.o2sat Oyr.o2sat,mole_concentration_of_dissolved_molecular_oxygen_in_sea_water_at_saturation
+cmip6/6.0.14,cmip6/6.0.15,Emon.waterDpth,removed,,water_table_depth
+cmip6/6.0.14,cmip6/6.0.15,Omon.aragos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.baccos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_bacteria_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.calcos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_calcite_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.co3abioos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_carbonate_abiotic_analogue_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.co3natos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_carbonate_natural_analogue_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.co3os,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.co3sataragos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_carbonate_expressed_as_carbon_at_equilibrium_with_pure_aragonite_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.co3satcalcos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_carbonate_expressed_as_carbon_at_equilibrium_with_pure_calcite_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.detocos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_organic_detritus_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.dissicos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_dissolved_inorganic_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.dissocos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_dissolved_organic_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.dms,still in other tables (same key),AERmon.dms,mole_fraction_of_dimethyl_sulfide_in_air
+cmip6/6.0.14,cmip6/6.0.15,Omon.nh4os,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_ammonium_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.phos,"removed, re-added later",cmip6/6.3.27,sea_water_ph_reported_on_total_scale
+cmip6/6.0.14,cmip6/6.0.15,Omon.phycalcos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_calcareous_phytoplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.phydiatos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_diatoms_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.phydiazos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.phymiscos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_miscellaneous_phytoplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.phypicoos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_picophytoplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.po4os,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.talkos,"removed, re-added later",cmip6/6.3.27,sea_water_alkalinity_expressed_as_mole_equivalent
+cmip6/6.0.14,cmip6/6.0.15,Omon.zmesoos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_mesozooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.zmicroos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_microzooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.zmiscos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_miscellaneous_zooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Omon.zoocos,"removed, re-added later",cmip6/6.3.27,mole_concentration_of_zooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.arag,still in other tables (same key),Omon.arag,mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.bacc,still in other tables (same key),Omon.bacc,mole_concentration_of_bacteria_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.calc,still in other tables (same key),Omon.calc,mole_concentration_of_calcite_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.co3,still in other tables (same key),Omon.co3,mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.co3abio,still in other tables (same key),Omon.co3abio,mole_concentration_of_carbonate_abiotic_analogue_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.co3nat,still in other tables (same key),Omon.co3nat,mole_concentration_of_carbonate_natural_analogue_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.co3satarag,still in other tables (same key),Omon.co3satarag,mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water_at_saturation
+cmip6/6.0.14,cmip6/6.0.15,Oyr.co3satcalc,still in other tables (same key),Omon.co3satcalc,mole_concentration_of_calcite_expressed_as_carbon_in_sea_water_at_saturation
+cmip6/6.0.14,cmip6/6.0.15,Oyr.detoc,still in other tables (same key),Omon.detoc,mole_concentration_of_organic_detritus_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.dissic,still in other tables (same key),Omon.dissic,mole_concentration_of_dissolved_inorganic_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.dissoc,still in other tables (same key),Omon.dissoc,mole_concentration_of_dissolved_organic_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.dms,still in other tables (same key),AERmon.dms,mole_fraction_of_dimethyl_sulfide_in_air
+cmip6/6.0.14,cmip6/6.0.15,Oyr.nh4,still in other tables (same key),Omon.nh4,mole_concentration_of_ammonium_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.ph,still in other tables (same key),Omon.ph,sea_water_ph_reported_on_total_scale
+cmip6/6.0.14,cmip6/6.0.15,Oyr.phycalc,still in other tables (same key),Omon.phycalc,mole_concentration_of_calcareous_phytoplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.phydiat,still in other tables (same key),Omon.phydiat,mole_concentration_of_diatoms_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.phydiaz,still in other tables (same key),Omon.phydiaz,mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.phymisc,still in other tables (same key),Omon.phymisc,mole_concentration_of_miscellaneous_phytoplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.phypico,still in other tables (same key),Omon.phypico,mole_concentration_of_picophytoplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.po4,still in other tables (same key),Omon.po4,mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.talk,still in other tables (same key),Omon.talk,sea_water_alkalinity_expressed_as_mole_equivalent
+cmip6/6.0.14,cmip6/6.0.15,Oyr.zmeso,still in other tables (same key),Omon.zmeso,mole_concentration_of_mesozooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.zmicro,still in other tables (same key),Omon.zmicro,mole_concentration_of_microzooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.zmisc,still in other tables (same key),Omon.zmisc,mole_concentration_of_miscellaneous_zooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,Oyr.zooc,still in other tables (same key),Omon.zooc,mole_concentration_of_zooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.14,cmip6/6.0.15,SImon.siflsaltbot,removed,,salt_flux_from_ice
+cmip6/6.0.15,cmip6/6.0.16,6hrPlevPt.mrlsl,"renamed (same table, same definition)",6hrPlevPt.mrsol,moisture_content_of_soil_layer
+cmip6/6.0.15,cmip6/6.0.16,Eday.mrlsl,removed,,moisture_content_of_soil_layer
+cmip6/6.0.15,cmip6/6.0.16,Eday.potet,removed,,water_potential_evapotranspiration_flux
+cmip6/6.0.15,cmip6/6.0.16,Eday.slbnosn,"renamed (same table, same definition)",Eday.sblnosn,sublimation_amount_assuming_no_snow
+cmip6/6.0.15,cmip6/6.0.16,Emon.mmraerso4,removed,,mass_fraction_of_sulfate_dry_aerosol_in_air
+cmip6/6.0.15,cmip6/6.0.16,Lmon.mrlsl,removed,,moisture_content_of_soil_layer
+cmip6/6.0.16,cmip6/6.0.17,6hrPlev.ua200,removed,,eastward_wind
+cmip6/6.0.16,cmip6/6.0.17,6hrPlev.ua850,removed,,eastward_wind
+cmip6/6.0.16,cmip6/6.0.17,6hrPlev.va200,removed,,northward_wind
+cmip6/6.0.16,cmip6/6.0.17,6hrPlev.va850,removed,,northward_wind
+cmip6/6.0.16,cmip6/6.0.17,E3hrPt.ua850,removed,,eastward_wind
+cmip6/6.0.16,cmip6/6.0.17,E3hrPt.va850,removed,,northward_wind
+cmip6/6.0.16,cmip6/6.0.17,Eday.tws,removed,,canopy_and_surface_and_subsurface_water_amount
+cmip6/6.0.16,cmip6/6.0.17,Eday.ua200,removed,,eastward_wind
+cmip6/6.0.16,cmip6/6.0.17,Eday.ua850,removed,,eastward_wind
+cmip6/6.0.16,cmip6/6.0.17,Eday.va200,removed,,northward_wind
+cmip6/6.0.16,cmip6/6.0.17,Eday.va850,removed,,northward_wind
+cmip6/6.0.16,cmip6/6.0.17,Emon.lwtoacs,removed,,tendency_of_clear_sky_top_of_atmosphere_longwave_flux_to_dust_ambient_aerosol_particles___2D_field_radiative_properties
+cmip6/6.0.16,cmip6/6.0.17,EmonZ.co2totalmass,removed,,CO2_total_mass_in_atmos
+cmip6/6.0.16,cmip6/6.0.17,IyrAnt.areacelli,"renamed (same table, same definition)",IyrAnt.modelCellAreai,cell_area
+cmip6/6.0.16,cmip6/6.0.17,IyrGre.areacelli,"renamed (same table, same definition)",IyrGre.modelCellAreai,cell_area
+cmip6/6.0.16,cmip6/6.0.17,SIday.siconco,"renamed (same table, same definition)",SIday.siconca,sea_ice_area_fraction
+cmip6/6.0.16,cmip6/6.0.17,SImon.siconco,"renamed (same table, same definition)",SImon.siconca,sea_ice_area_fraction
+cmip6/6.0.19a,cmip6/6.0.19,Emon.fgdms,still in other tables (same key),Omon.fgdms,surface_upward_mole_flux_of_dimethyl_sulfide
+cmip6/6.0.19a,cmip6/6.0.19,Emon.mmrbc,still in other tables (same key),AERmon.mmrbc,mass_fraction_of_elemental_carbon_dry_aerosol_particles_in_air
+cmip6/6.0.19a,cmip6/6.0.19,Emon.mmrss,still in other tables (same key),AERmon.mmrss,mass_fraction_of_seasalt_dry_aerosol_particles_in_air
+cmip6/6.0.19a,cmip6/6.0.19,Odec.msftmyz,"renamed (same table, same definition)",Odec.msftmz,ocean_meridional_overturning_mass_streamfunction
+cmip6/6.0.19a,cmip6/6.0.19,Omon.msftmyz,"renamed (same table, same definition)",Omon.msftmz,ocean_meridional_overturning_mass_streamfunction
+cmip6/6.0.19a,cmip6/6.0.19,Omon.msftyyz,"renamed (same table, same definition)",Omon.msftyz,ocean_y_overturning_mass_streamfunction
+cmip6/6.0.20,cmip6/6.0.21,Emon.zoomeso,removed,,mole_concentration_of_mesozooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.20,cmip6/6.0.21,Emon.zoomicro,removed,,mole_concentration_of_microzooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.20,cmip6/6.0.21,Emon.zoomisc,removed,,mole_concentration_of_miscellaneous_zooplankton_expressed_as_carbon_in_sea_water
+cmip6/6.0.20,cmip6/6.0.21,Oyr.dpocdtcalc,removed,,tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_calcareous_phytoplankton
+cmip6/6.0.20,cmip6/6.0.21,Oyr.dpocdtdiaz,removed,,tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diazotrophs
+cmip6/6.0.20,cmip6/6.0.21,Oyr.dpocdtpico,removed,,tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_picophytoplankton
+cmip6/6.0.20,cmip6/6.0.21,Oyr.pdi,removed,,tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_net_primary_production_by_diatoms
+cmip6/6.0.21,cmip6/6.1.22,Eday.tsnl,removed,,snow_temperature
+cmip6/6.0.21,cmip6/6.1.22,Emon.cSoilBelow1m,removed,,soil_carbon_content
+cmip6/6.0.21,cmip6/6.1.22,Emon.fbddtalk,still in other tables (same key),Omon.fbddtalk,integral_wrt_depth_of_tendency_of_sea_water_alkalinity_expressed_as_mole_equivalent_due_to_biological_processes
+cmip6/6.0.21,cmip6/6.1.22,Emon.fbddtdife,still in other tables (same key),Omon.fbddtdife,tendency_of_ocean_mole_content_of_dissolved_inorganic_iron_due_to_biological_processes
+cmip6/6.0.21,cmip6/6.1.22,Emon.tomint,removed,,integral_wrt_depth_of_product_of_sea_water_density_and_prognostic_temperature
+cmip6/6.0.21,cmip6/6.1.22,Omon.pbfe,still in other tables (same key),Oyr.pbfe,tendency_of_mole_concentration_of_iron_in_sea_water_due_to_biological_production
+cmip6/6.0.21,cmip6/6.1.22,Omon.pbsi,still in other tables (same key),Oyr.pbsi,tendency_of_mole_concentration_of_silicon_in_sea_water_due_to_biological_production
+cmip6/6.0.21,cmip6/6.1.22,Omon.pnitrate,still in other tables (same key),Oyr.pnitrate,tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_nitrate_utilization
+cmip6/6.1.22,cmip6/6.2.24,Emon.fbddtdic,still in other tables (same key),Omon.fbddtdic,tendency_of_ocean_mole_content_of_dissolved_inorganic_carbon_due_to_biological_processes
+cmip6/6.1.22,cmip6/6.2.24,Emon.fbddtdin,still in other tables (same key),Omon.fbddtdin,tendency_of_ocean_mole_content_of_dissolved_inorganic_nitrogen_due_to_biological_processes
+cmip6/6.1.22,cmip6/6.2.24,Emon.fbddtdip,still in other tables (same key),Omon.fbddtdip,tendency_of_ocean_mole_content_of_dissolved_inorganic_phosphorus_due_to_biological_processes
+cmip6/6.1.22,cmip6/6.2.24,Emon.fbddtdisi,still in other tables (same key),Omon.fbddtdisi,tendency_of_ocean_mole_content_of_dissolved_inorganic_silicon_due_to_biological_processes
+cmip6/6.1.22,cmip6/6.2.24,Emon.fddtdic,still in other tables (same key),Omon.fddtdic,tendency_of_ocean_mole_content_of_dissolved_inorganic_carbon
+cmip6/6.1.22,cmip6/6.2.24,Emon.fddtdife,still in other tables (same key),Omon.fddtdife,tendency_of_ocean_mole_content_of_dissolved_inorganic_iron
+cmip6/6.1.22,cmip6/6.2.24,Emon.fddtdin,still in other tables (same key),Omon.fddtdin,tendency_of_ocean_mole_content_of_dissolved_inorganic_nitrogen
+cmip6/6.1.22,cmip6/6.2.24,Emon.fddtdip,still in other tables (same key),Omon.fddtdip,tendency_of_ocean_mole_content_of_dissolved_inorganic_phosphorus
+cmip6/6.1.22,cmip6/6.2.24,Emon.fddtdisi,still in other tables (same key),Omon.fddtdisi,tendency_of_ocean_mole_content_of_dissolved_inorganic_silicon
+cmip6/6.2.24,cmip6/6.3.27,Eday.dfr,removed,,depth_of_frozen_soil
+cmip6/6.2.24,cmip6/6.3.27,Eday.et,removed,,surface_evapotranspiration
+cmip6/6.2.24,cmip6/6.3.27,Emon.H2p,removed,,missing
+cmip6/6.2.24,cmip6/6.3.27,Emon.H2s,removed,,missing
+cmip6/6.2.24,cmip6/6.3.27,Emon.H2wv,removed,,missing
+cmip6/6.2.24,cmip6/6.3.27,Emon.O17p,removed,,missing
+cmip6/6.2.24,cmip6/6.3.27,Emon.O17s,removed,,missing
+cmip6/6.2.24,cmip6/6.3.27,Emon.O17wv,removed,,missing
+cmip6/6.2.24,cmip6/6.3.27,Emon.O18p,removed,,missing
+cmip6/6.2.24,cmip6/6.3.27,Emon.O18s,removed,,missing
+cmip6/6.2.24,cmip6/6.3.27,Emon.O18sw,removed,,missing
+cmip6/6.2.24,cmip6/6.3.27,Emon.hcont300,removed,,heat_content_of_ocean_layer
+cmip6/6.3.27-fixed,cmip6/6.4.28,Emon.fddtalk,still in other tables (same key),Omon.fddtalk,integral_wrt_depth_of_tendency_of_sea_water_alkalinity_expressed_as_mole_equivalent
+cmip6/6.3.27-fixed,cmip6/6.4.28,Emon.fg14co2abio,still in other tables (same key),Omon.fg14co2abio Oyr.fg14co2abio,surface_downward_mass_flux_of_14C_dioxide_abiotic_analogue_expressed_as_carbon
+cmip6/6.3.27-fixed,cmip6/6.4.28,Emon.fgco2abio,still in other tables (same key),Omon.fgco2abio Oyr.fgco2abio,surface_downward_mass_flux_of_carbon_dioxide_abiotic_analogue_expressed_as_carbon
+cmip6/6.3.27-fixed,cmip6/6.4.28,Emon.fgco2nat,still in other tables (same key),Omon.fgco2nat Oyr.fgco2nat,surface_downward_mass_flux_of_carbon_dioxide_natural_analogue_expressed_as_carbon
+cmip6/6.3.27-fixed,cmip6/6.4.28,EmonZ.sltnortha,removed,,northward_ocean_salt_transport
+cmip6/6.5.29,cmip6/6.6.30,Emon.O18wv,removed,,isotope_ratio_of_18O_to_16O_in_sea_water_excluding_solutes_and_solids
+cmip6/6.5.29,cmip6/6.6.30,Ofx.ugrid,"renamed (same table, same definition)",Ofx.ugrido,longitude
+cmip6/6.8.31,cmip6/6.9.32,E6hrZ.ps,still in other tables (same key),3hr.ps 6hrLev.ps AERhr.ps AERmon.ps Amon.ps CF3hr.ps CFday.ps CFmon.ps CFsubhr.ps E3hrPt.ps Efx.ps Emon.ps Esubhr.ps,surface_air_pressure

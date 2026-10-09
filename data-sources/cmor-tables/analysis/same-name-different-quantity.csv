@@ -1,0 +1,827 @@
+out_name,kind,standard_name,in_cf_table,editions,n_editions,tables
+aerasymbnd,naming fix only (name not in CF table replaced),asymmetry_factor_of_ambient_aerosol_particles,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AP3hrPtLev E3hrPt
+aerasymbnd,naming fix only (name not in CF table replaced),band_aerosol_asymmetry_parameter,False,cmip6/6.0.11 .. cmip6/6.1.22,13,E3hrPt
+aerasymbnd,naming fix only (name not in CF table replaced),volume_spectral_asymmetry_factor_in_air_due_to_ambient_aerosol_particles,False,cmip6/6.1.23 .. cmip6/6.2.24,2,E3hrPt
+albdiffbnd,naming fix only (name not in CF table replaced),band_diffuse_albedo,False,cmip6/6.0.11 .. cmip6/6.1.22,13,E3hrPt
+albdiffbnd,naming fix only (name not in CF table replaced),surface_diffuse_shortwave_hemispherical_reflectance,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AP3hrPt E3hrPt
+albdiffbnd,naming fix only (name not in CF table replaced),surface_spectral_hemispherical_reflectance_of_diffuse_shortwave_radiation,False,cmip6/6.1.23 .. cmip6/6.2.24,2,E3hrPt
+albdirbnd,naming fix only (name not in CF table replaced),band_direct_albedo,False,cmip6/6.0.11 .. cmip6/6.1.22,13,E3hrPt
+albdirbnd,naming fix only (name not in CF table replaced),surface_direct_shortwave_hemispherical_reflectance,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AP3hrPt E3hrPt
+albdirbnd,naming fix only (name not in CF table replaced),surface_spectral_hemispherical_reflectance_of_direct_shortwave_radiation,False,cmip6/6.1.23 .. cmip6/6.2.24,2,E3hrPt
+albsn,naming fix only (name not in CF table replaced),snow_and_ice_albedo,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+albsn,naming fix only (name not in CF table replaced),surface_albedo,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+aod550volso4,naming fix only (name not in CF table replaced),aerosol_optical_depth_due_to_stratospheric_volcanic_aerosols,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Eday
+aod550volso4,naming fix only (name not in CF table replaced),stratosphere_optical_thickness_due_to_volcanic_aerosol_particles,False,cmip6/6.1.23 .. cmip6/6.1.23,1,Eday
+aod550volso4,naming fix only (name not in CF table replaced),stratosphere_optical_thickness_due_to_volcanic_ambient_aerosol_particles,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APday Eday
+aragos,naming fix only (name not in CF table replaced),mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+aragos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_aragonite_epressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+baccos,naming fix only (name not in CF table replaced),mole_concentration_of_bacteria_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+baccos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_bacteria_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+bfeos,naming fix only (name not in CF table replaced),mole_concentration_of_particulate_organic_matter_expressed_as_iron_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+bfeos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_particulate_organic_matter_expressed_as_iron_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+bs550aer,naming fix only (name not in CF table replaced),volume_lidar_backwards_scattering_coefficient_in_air_due_to_ambient_aerosol_particles,False,cmip6/6.0.11 .. cmip6/6.1.23,14,6hrLev
+bs550aer,naming fix only (name not in CF table replaced),volume_scattering_function_in_air_due_to_ambient_aerosol_particles,False,cmip6/6.2.24 .. cmip6/6.2.24,1,6hrLev
+bs550aer,naming fix only (name not in CF table replaced),volume_scattering_function_of_radiative_flux_in_air_due_to_ambient_aerosol_particles,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,6hrLev AE6hrPtLev
+bsios,different CF quantities,mole_concentration_of_particulate_matter_expressed_as_silicon_in_sea_water,True,cmip6/6.0.14 .. cmip6/6.0.14,1,Omon
+bsios,different CF quantities,mole_concentration_of_particulate_organic_matter_expressed_as_silicon_in_sea_water,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,OBmon Omon
+bsios,different CF quantities,surface_mole_concentration_of_particulate_matter_expressed_as_silicon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+c13Land,naming fix only (name not in CF table replaced),mass_content_of_13C_in_vegetation_and_litter_and_soil_and_forestry_and_agricultural_products,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+c13Land,naming fix only (name not in CF table replaced),total_land_c13,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+c13Litter,naming fix only (name not in CF table replaced),litter_c13_content,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+c13Litter,naming fix only (name not in CF table replaced),litter_mass_content_of_13C,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+c13Soil,naming fix only (name not in CF table replaced),soil_c13_content,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+c13Soil,naming fix only (name not in CF table replaced),soil_mass_content_of_13C,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+c13Veg,naming fix only (name not in CF table replaced),vegetation_c13_content,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+c13Veg,naming fix only (name not in CF table replaced),vegetation_mass_content_of_13C,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+c14Land,naming fix only (name not in CF table replaced),mass_content_of_14C_in_vegetation_and_litter_and_soil_and_forestry_and_agricultural_products,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+c14Land,naming fix only (name not in CF table replaced),total_land_c14,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+c14Litter,naming fix only (name not in CF table replaced),litter_c14_content,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+c14Litter,naming fix only (name not in CF table replaced),litter_mass_content_of_14C,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+c14Soil,naming fix only (name not in CF table replaced),soil_c14_content,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+c14Soil,naming fix only (name not in CF table replaced),soil_mass_content_of_14C,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+c14Veg,naming fix only (name not in CF table replaced),vegetation_c14_content,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+c14Veg,naming fix only (name not in CF table replaced),vegetation_mass_content_of_14C,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+cLand,naming fix only (name not in CF table replaced),mass_content_of_carbon_in_vegetation_and_litter_and_soil_and_forestry_and_agricultural_products,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+cLand,naming fix only (name not in CF table replaced),total_land_carbon,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+cLitterCwd,naming fix only (name not in CF table replaced),litter_wood_debris_carbon_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+cLitterCwd,naming fix only (name not in CF table replaced),wood_debris_mass_content_of_carbon,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+cOther,naming fix only (name not in CF table replaced),miscellaneous_living_matter_mass_content_of_carbon,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+cOther,naming fix only (name not in CF table replaced),other_vegegtation_components_carbon_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+cProductLut,naming fix only (name not in CF table replaced),carbon_content_in_wood_and_agricultural_products,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Eyr
+cProductLut,naming fix only (name not in CF table replaced),carbon_content_of_forestry_and_agricultural_products,True,cmip6/6.2.24 .. cmip6/6.2.24,1,Eyr
+cProductLut,naming fix only (name not in CF table replaced),carbon_content_of_products_of_anthropogenic_land_use_change,True,cmip6/6.1.23 .. cmip6/6.1.23,1,Eyr
+cProductLut,naming fix only (name not in CF table replaced),carbon_mass_content_of_forestry_and_agricultural_products,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eyr LPyrPt
+cSoilAbove1m,naming fix only (name not in CF table replaced),soil_carbon_content,True,cmip6/6.0.21 .. cmip6/6.2.24,4,Emon
+cSoilAbove1m,naming fix only (name not in CF table replaced),soil_carbon_content_above_1m_depth,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Emon
+cSoilAbove1m,naming fix only (name not in CF table replaced),soil_mass_content_of_carbon,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+cSoilBelow1m,naming fix only (name not in CF table replaced),soil_carbon_content,True,cmip6/6.0.21 .. cmip6/6.0.21,1,Emon
+cSoilBelow1m,naming fix only (name not in CF table replaced),soil_carbon_content_below_1m_depth,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Emon
+cSoilLevels,naming fix only (name not in CF table replaced),soil_carbon_content,True,cmip6/6.0.21 .. cmip6/6.2.24,4,Emon
+cSoilLevels,naming fix only (name not in CF table replaced),soil_carbon_content_on_model_levels,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Emon
+cSoilLevels,naming fix only (name not in CF table replaced),soil_mass_content_of_carbon,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+cSoilPools,naming fix only (name not in CF table replaced),soil_carbon_content,True,cmip6/6.1.23 .. cmip6/6.2.24,2,Emon
+cSoilPools,naming fix only (name not in CF table replaced),soil_carbon_content_by_pool,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+cSoilPools,naming fix only (name not in CF table replaced),soil_mass_content_of_carbon,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+cStem,naming fix only (name not in CF table replaced),stem_carbon_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+cStem,naming fix only (name not in CF table replaced),stem_mass_content_of_carbon,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+cTotFireLut,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+cTotFireLut,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_fires,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+calcos,naming fix only (name not in CF table replaced),mole_concentration_of_calcite_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+calcos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_calcite_epressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+ccldncl,naming fix only (name not in CF table replaced),number_concentration_of_convective_cloud_liquid_water_particle_at_convective_liquid_water_cloud_top,True,cmip6/6.1.23 .. cmip6/6.8.31,9,Eday
+ccldncl,naming fix only (name not in CF table replaced),number_concentration_of_convective_cloud_liquid_water_particles_at_convective_liquid_water_cloud_top,True,cmip6/6.9.32 .. mip/v6.5.0.4,7,APday Eday
+ccldncl,naming fix only (name not in CF table replaced),number_concentration_of_convective_cloud_liquid_water_particles_in_air_at_liquid_water_cloud_top,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Eday
+cfc11,different CF quantities,mole_concentration_of_cfc11_in_sea_water,True,cmip6/6.0.11 .. mip/v6.5.0.4,29,OPmonLev OPyrLev Omon Oyr
+cfc11,different CF quantities,moles_of_cfc11_per_unit_mass_in_sea_water,True,cmip5/5.0 .. cmip5/5.0,1,Omon
+clayfrac,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Efx
+clayfrac,naming fix only (name not in CF table replaced),volume_fraction_of_clay_in_soil,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,Efx LPfx
+clcalipsoliq,naming fix only (name not in CF table replaced),liquid_cloud_area_fraction_in_atmosphere_layer,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+clcalipsoliq,naming fix only (name not in CF table replaced),liquid_water_cloud_area_fraction_in_atmosphere_layer,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APmon Emon
+clisccp,different CF quantities,cloud_area_fraction_in_atmosphere_layer,True,cmip5/5.0 .. mip/v6.5.0.4,30,AP3hrPt APday APmon CFday CFmon E3hrPt cfDay
+clisccp,different CF quantities,isccp_cloud_area_fraction,True,cmip5/5.0 .. cmip5/5.0,1,cfMon
+clivic,naming fix only (name not in CF table replaced),atmosphere_convective_cloud_ice_content,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Eday
+clivic,naming fix only (name not in CF table replaced),atmosphere_mass_content_of_convective_cloud_ice,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,APday Eday
+clwmodis,naming fix only (name not in CF table replaced),liquid_cloud_area_fraction,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Emon
+clwmodis,naming fix only (name not in CF table replaced),liquid_water_cloud_area_fraction,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,APmon Emon
+co23D,naming fix only (name not in CF table replaced),CO2_3D_tracer,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+co23D,naming fix only (name not in CF table replaced),mass_fraction_of_carbon_dioxide_tracer_in_air,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APmonLev Emon
+co3abio,naming fix only (name not in CF table replaced),mole_concentration_of_carbonate_abiotic_analogue_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmonLev OByrLev Omon Oyr
+co3abio,naming fix only (name not in CF table replaced),mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water_due_to_abiotic_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon Oyr
+co3abioos,naming fix only (name not in CF table replaced),mole_concentration_of_carbonate_abiotic_analogue_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+co3abioos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water_due_to_abiotic_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+co3nat,naming fix only (name not in CF table replaced),mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water_due_to_natural_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon Oyr
+co3nat,naming fix only (name not in CF table replaced),mole_concentration_of_carbonate_natural_analogue_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmonLev OByrLev Omon Oyr
+co3natos,naming fix only (name not in CF table replaced),mole_concentration_of_carbonate_natural_analogue_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+co3natos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water_due_to_natural_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+co3os,naming fix only (name not in CF table replaced),mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+co3os,naming fix only (name not in CF table replaced),surface_mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+co3satarag,different CF quantities,mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water_at_saturation,True,cmip5/5.0 .. cmip6/6.0.14,5,Omon Oyr
+co3satarag,different CF quantities,mole_concentration_of_carbonate_expressed_as_carbon_at_equilibrium_with_pure_aragonite_in_sea_water,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,OBmonLev OByrLev Omon Oyr
+co3sataragos,naming fix only (name not in CF table replaced),mole_concentration_of_carbonate_expressed_as_carbon_at_equilibrium_with_pure_aragonite_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+co3sataragos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_carbonate_expressed_as_carbon_for_sea_water_in_equilibrium_with_pure_aragonite,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+co3satcalc,different CF quantities,mole_concentration_of_calcite_expressed_as_carbon_in_sea_water_at_saturation,True,cmip5/5.0 .. cmip6/6.0.14,5,Omon Oyr
+co3satcalc,different CF quantities,mole_concentration_of_carbonate_expressed_as_carbon_at_equilibrium_with_pure_calcite_in_sea_water,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,OBmonLev OByrLev Omon Oyr
+co3satcalcos,naming fix only (name not in CF table replaced),mole_concentration_of_carbonate_expressed_as_carbon_at_equilibrium_with_pure_calcite_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+co3satcalcos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_carbonate_expressed_as_carbon_for_sea_water_in_equilibrium_with_pure_calcite,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+depdust,naming fix only (name not in CF table replaced),minus_tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AEmon Emon
+depdust,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_total_deposition,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+detocos,naming fix only (name not in CF table replaced),mole_concentration_of_organic_detritus_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+detocos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_organic_detritus_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+dfeos,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_iron_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+dfeos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_iron_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+dgw,naming fix only (name not in CF table replaced),change_over_time_in_groundwater,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+dgw,naming fix only (name not in CF table replaced),change_over_time_in_groundwater_amount,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+dissi13cos,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_13C_in_sea_water,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,OBmon Omon
+dissi13cos,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_carbon13_in_sea_water,True,cmip6/6.0.14 .. cmip6/6.2.24,12,Omon
+dissi13cos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_inorganic_carbon13_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+dissi14c,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_14C_in_sea_water,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon OBmonLev
+dissi14c,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_c14_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.21,12,Emon
+dissi14c,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_carbon14_in_sea_water,True,cmip6/6.1.22 .. cmip6/6.2.24,3,Emon
+dissi14cabioos,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_14C_in_sea_water,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,OBmon Omon
+dissi14cabioos,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_carbon14_in_sea_water,True,cmip6/6.0.14 .. cmip6/6.2.24,12,Omon
+dissi14cabioos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_inorganic_carbon14_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+dissicabio,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_carbon_abiotic_analogue_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmonLev OByrLev Omon Oyr
+dissicabio,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_abiotic_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon Oyr
+dissicabioos,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_carbon_abiotic_analogue_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+dissicabioos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_due_to_abiotic_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+dissicnat,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_natural_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Emon Omon Oyr
+dissicnat,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_carbon_natural_analogue_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,Emon OBmonLev OByrLev Omon Oyr
+dissicnatos,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_carbon_natural_analogue_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+dissicnatos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_due_to_natural_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+dissicos,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+dissicos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_inorganic_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+dissocos,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_organic_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+dissocos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_organic_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+dmlt,naming fix only (name not in CF table replaced),depth_at_shallowest_isotherm_defined_by_soil_temperature,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+dmlt,naming fix only (name not in CF table replaced),depth_of_subsurface_melting,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+dms,different CF quantities,mole_concentration_of_dimethyl_sulfide_in_sea_water,True,cmip5/5.0 .. cmip5/5.0,1,Omon Oyr
+dms,different CF quantities,mole_fraction_of_dimethyl_sulfide_in_air,True,cmip6/6.0.11 .. mip/v6.5.0.4,29,AERmon AEmonLev Omon Oyr
+dmsos,naming fix only (name not in CF table replaced),mole_concentration_of_dimethyl_sulfide_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+dmsos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dimethyl_sulfide_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+dpco2abio,naming fix only (name not in CF table replaced),surface_carbon_dioxide_abiotic_analogue_partial_pressure_difference_between_sea_water_and_air,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,OBmon Omon
+dpco2abio,naming fix only (name not in CF table replaced),surface_carbon_dioxide_partial_pressure_difference_between_sea_water_and_air_due_to_abiotic_component,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Omon
+dpco2nat,naming fix only (name not in CF table replaced),surface_carbon_dioxide_natural_analogue_partial_pressure_difference_between_sea_water_and_air,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,OBmon Omon
+dpco2nat,naming fix only (name not in CF table replaced),surface_carbon_dioxide_partial_pressure_difference_between_sea_water_and_air_due_to_natural_component,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Omon
+drybc,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+drybc,sign convention (minus_),tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_dry_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+drybc,sign convention (minus_),tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+drydust,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+drydust,sign convention (minus_),tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_dry_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+drydust,sign convention (minus_),tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+drynh3,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_ammonia_due_to_dry_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+drynh3,sign convention (minus_),tendency_of_atmosphere_mass_content_of_ammonia_due_to_dry_deposition,True,cmip5/5.0 .. cmip6/6.2.24,16,AERmon aero
+drynh4,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+drynh4,sign convention (minus_),tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_due_to_dry_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+drynh4,sign convention (minus_),tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+drynoy,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_dry_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+drynoy,sign convention (minus_),tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_dry_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+dryo3,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_ozone_due_to_dry_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+dryo3,sign convention (minus_),tendency_of_atmosphere_mass_content_of_ozone_due_to_dry_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+dryoa,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+dryoa,sign convention (minus_),tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_dry_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+dryoa,sign convention (minus_),tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+dryso2,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_dry_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+dryso2,sign convention (minus_),tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_dry_deposition,True,cmip5/5.0 .. cmip6/6.2.24,16,AERmon aero
+dryso4,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+dryso4,sign convention (minus_),tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_due_to_dry_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+dryso4,sign convention (minus_),tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+dryss,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+dryss,sign convention (minus_),tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_dry_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+dryss,sign convention (minus_),tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_dry_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+dslw,naming fix only (name not in CF table replaced),change_over_time_in_mass_content_of_water_in_soil,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+dslw,naming fix only (name not in CF table replaced),change_over_time_in_water_content_of_soil_layer,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+dsn,naming fix only (name not in CF table replaced),change_over_time_in_amount_of_ice_and_snow_on_land,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+dsn,naming fix only (name not in CF table replaced),change_over_time_in_surface_snow_and_ice_amount,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+dsw,naming fix only (name not in CF table replaced),change_over_time_in_land_water_amount,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+dsw,naming fix only (name not in CF table replaced),change_over_time_in_surface_water_amount,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+dtes,naming fix only (name not in CF table replaced),change_over_time_in_thermal_energy_content_of_surface,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+dtes,naming fix only (name not in CF table replaced),change_over_time_in_thermal_energy_content_of_vegetation_and_litter_and_soil,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+dtesn,naming fix only (name not in CF table replaced),change_over_time_in_thermal_energy_content_of_ice_and_snow_on_land,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+dtesn,naming fix only (name not in CF table replaced),change_over_time_in_thermal_energy_content_of_surface_snow_and_ice,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+ec,naming fix only (name not in CF table replaced),liquid_water_evaporation_flux_from_canopy,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+ec,naming fix only (name not in CF table replaced),water_evaporation_flux_from_canopy,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+eow,naming fix only (name not in CF table replaced),liquid_water_evaporation_flux_from_open_water,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+eow,naming fix only (name not in CF table replaced),surface_water_evaporation_flux,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+epn100,naming fix only (name not in CF table replaced),sinking_mole_flux_of_particulate_nitrogen_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Omon
+epn100,naming fix only (name not in CF table replaced),sinking_mole_flux_of_particulate_organic_nitrogen_in_sea_water,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,OBmon Omon
+epp100,naming fix only (name not in CF table replaced),sinking_mole_flux_of_particulate_organic_phosphorus_in_sea_water,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,OBmon Omon
+epp100,naming fix only (name not in CF table replaced),sinking_mole_flux_of_particulate_phosphorus_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Omon
+es,naming fix only (name not in CF table replaced),liquid_water_evaporation_flux_from_soil,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Eday
+es,naming fix only (name not in CF table replaced),water_evaporation_flux_from_soil,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Eday LPday
+esn,naming fix only (name not in CF table replaced),liquid_water_evaporation_flux_from_surface_snow,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Eday
+esn,naming fix only (name not in CF table replaced),water_evaporation_flux,True,cmip6/6.2.24 .. cmip6/6.2.24,1,Eday
+esn,naming fix only (name not in CF table replaced),water_evapotranspiration_flux,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+fAnthDisturb,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_anthrogpogenic_emission,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fAnthDisturb,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_anthropogenic_emission,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fBNF,naming fix only (name not in CF table replaced),biological_nitrogen_fixation,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fBNF,naming fix only (name not in CF table replaced),tendency_of_soil_and_vegetation_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_fixation,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fCLandToOcean,naming fix only (name not in CF table replaced),carbon_mass_flux_into_ocean_from_rivers,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+fCLandToOcean,naming fix only (name not in CF table replaced),mass_flux_of_carbon_into_sea_water_from_rivers,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+fDeforestToProduct,naming fix only (name not in CF table replaced),carbon_mass_flux_into_forestry_and_agricultural_products_due_to_anthropogenic_land_use_or_land_cover_change,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fDeforestToProduct,naming fix only (name not in CF table replaced),deforested_biomass_into_product_pool_due_to_anthorpogenic_land_use_change,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fFireAll,naming fix only (name not in CF table replaced),fire_CO2_emissions_from_all_sources,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+fFireAll,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_fires,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+fFireNat,naming fix only (name not in CF table replaced),fire_CO2_emissions_from_wildfire,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+fFireNat,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_natural_fires,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+fHarvestToProduct,naming fix only (name not in CF table replaced),harvested_biomass_into_product_pool,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+fHarvestToProduct,naming fix only (name not in CF table replaced),mass_flux_of_carbon_into_forestry_and_agricultural_products_due_to_crop_harvesting,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+fLitterFire,naming fix only (name not in CF table replaced),fire_CO2_emissions_from_litter_carbon,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+fLitterFire,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_litter_in_fires,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+fLulccAtmLut,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_direct_to_atmosphere_due_to_anthropogenic_land_use_land_cover_change,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+fLulccAtmLut,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_anthropogenic_land_use_or_land_cover_change_excluding_forestry_and_agricultural_products,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+fLulccProductLut,naming fix only (name not in CF table replaced),carbon_mass_flux_into_forestry_and_agricultural_products_due_to_anthropogenic_land_use_or_land_cover_change,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fLulccProductLut,naming fix only (name not in CF table replaced),carbon_mass_flux_into_wood_and_agricultural_product_pools_due_to_anthropogenic_land_use_or_land_cover_change,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fN2O,naming fix only (name not in CF table replaced),land_net_n2o_flux,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fN2O,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_nitrous_oxide_expressed_as_nitrogen_out_of_vegetation_and_litter_and_soil,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNAnthDisturb,naming fix only (name not in CF table replaced),nitrogen_flux_into_atmos_due_to_direct_human_disturbance,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+fNAnthDisturb,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_anthropogenic_emission,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+fNLandToOcean,naming fix only (name not in CF table replaced),mass_flux_of_nitrogen_compounds_expressed_as_nitrogen_into_sea_from_rivers,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNLandToOcean,naming fix only (name not in CF table replaced),nitrogen_mass_flux_into_ocean_from_rivers,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNOx,naming fix only (name not in CF table replaced),land_net_nox_flux,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNOx,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_nox_expressed_as_nitrogen_out_of_vegetation_and_litter_and_soil,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNProduct,naming fix only (name not in CF table replaced),nitrogen_mass_flux_into_forestry_and_agricultural_products_due_to_anthropogenic_land_use_or_land_cover_change,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNProduct,naming fix only (name not in CF table replaced),nitrogen_mass_flux_to_product_pool_due_to_anthorpogenic_activity,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNVegLitter,naming fix only (name not in CF table replaced),litter_nitrogen_flux,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNVegLitter,naming fix only (name not in CF table replaced),nitrogen_mass_flux_into_litter_from_vegetation,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNdep,sign convention (minus_),deposition_of_nitrogen_onto_land,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNdep,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+fNdep,sign convention (minus_),tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_deposition,True,cmip6/6.2.24 .. cmip6/6.2.24,1,Emon
+fNfert,naming fix only (name not in CF table replaced),fertiliser_of_nitrogen_onto_land,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNfert,naming fix only (name not in CF table replaced),tendency_of_soil_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_fertilization,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNgas,naming fix only (name not in CF table replaced),land_nitrogen_lost_to_atmosphere,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+fNgas,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_nitrogen_compounds_expressed_as_nitrogen,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+fNgasFire,naming fix only (name not in CF table replaced),land_nitrogen_lost_to_atmosphere_due_to_fire,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNgasFire,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_nitrogen_compounds_expressed_as_nitrogen_due_to_emission_from_fires,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNgasNonFire,naming fix only (name not in CF table replaced),land_nitrogen_lost_to_atmosphere_not_due_to_fire,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNgasNonFire,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_nitrogen_compounds_expressed_as_nitrogen_due_to_all_land_processes_excluding_fires,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNleach,naming fix only (name not in CF table replaced),land_nitrogen_lost_to_leaching,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNleach,naming fix only (name not in CF table replaced),mass_flux_of_carbon_out_of_soil_due_to_leaching_and_runoff,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNloss,naming fix only (name not in CF table replaced),land_nitrogen_lost,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNloss,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_nitrogen_compounds_expressed_as_nitrogen_out_of_vegetation_and_litter_and_soil,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNnetmin,naming fix only (name not in CF table replaced),mass_flux_of_nitrogen_compounds_expressed_as_nitrogen_out_of_litter_and_soil_due_to_immobilisation_and_remineralization,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fNnetmin,naming fix only (name not in CF table replaced),net_nitrogen_mineralisation,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNup,naming fix only (name not in CF table replaced),plant_nitrogen_uptake,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fNup,naming fix only (name not in CF table replaced),tendency_of_vegetation_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_fixation,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fProductDecomp,naming fix only (name not in CF table replaced),Carbon_flux_out_of_storage_product_pools_into_atmos,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fProductDecomp,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_forestry_and_agricultural_products,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fProductDecompLut,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_forestry_and_agricultural_products,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+fProductDecompLut,naming fix only (name not in CF table replaced),tendency_of_atmospheric_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_wood_and_agricultural_product_pool,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+fVegFire,naming fix only (name not in CF table replaced),fire_CO2_emissions_from_vegetation_carbon,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+fVegFire,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_vegetation_in_fires,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+fVegLitterMortality,naming fix only (name not in CF table replaced),mass_flux_of_carbon_into_litter_from_vegetation_due_to_mortality,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+fVegLitterMortality,naming fix only (name not in CF table replaced),mortality_litter_carbon_flux,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+fVegLitterSenescence,naming fix only (name not in CF table replaced),mass_flux_of_carbon_into_litter_from_vegetation_due_to_senescence,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+fVegLitterSenescence,naming fix only (name not in CF table replaced),senescence_litter_carbon_flux,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+fVegSoilMortality,naming fix only (name not in CF table replaced),mass_flux_of_carbon_into_soil_from_vegetation_due_to_mortality,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+fVegSoilMortality,naming fix only (name not in CF table replaced),mortality_vegtosoil_carbon_flux,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+fVegSoilSenescence,naming fix only (name not in CF table replaced),mass_flux_of_carbon_into_soil_from_vegetation_due_to_senescence,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+fVegSoilSenescence,naming fix only (name not in CF table replaced),senescence_vegtosoil_carbon_flux,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+fg13co2,naming fix only (name not in CF table replaced),air_sea_flux_of_13CO2,False,cmip6/6.0.11 .. cmip6/6.1.22,5,Omon Oyr
+fg13co2,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_13C_dioxide_abiotic_analogue_expressed_as_13C,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,OBmon OByr Omon Oyr
+fg13co2,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13,True,cmip6/6.0.15 .. cmip6/6.2.24,10,Omon Oyr
+fg14co2,naming fix only (name not in CF table replaced),air_sea_flux_of_14CO2,False,cmip6/6.0.11 .. cmip6/6.0.15,5,Emon
+fg14co2,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_14C_dioxide_abiotic_analogue_expressed_as_carbon,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon OBmon
+fg14co2,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_carbon14_dioxide_abiotic_analogue_expressed_as_carbon,True,cmip6/6.0.16 .. cmip6/6.2.24,10,Emon
+fg14co2abio,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_14C_dioxide_abiotic_analogue_expressed_as_carbon,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon OBmon OByr Omon Oyr
+fg14co2abio,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_abiotic_14_carbon_dioxide_expressed_as_carbon,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Emon Omon Oyr
+fg14co2abio,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_carbon14_dioxide_abiotic_analogue_expressed_as_carbon,True,cmip6/6.0.15 .. cmip6/6.2.24,11,Emon Omon Oyr
+fgco2abio,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_abiotic_carbon_dioxide_expressed_as_carbon,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Emon Omon Oyr
+fgco2abio,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_carbon_dioxide_abiotic_analogue_expressed_as_carbon,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,Emon OBmon OByr Omon Oyr
+fgco2nat,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_carbon_dioxide_natural_analogue_expressed_as_carbon,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,Emon OBmon OByr Omon Oyr
+fgco2nat,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_natural_carbon_dioxide_expressed_as_carbon,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Emon Omon Oyr
+fgsf6,naming fix only (name not in CF table replaced),surface_downward_mole_flux_of_sf6,False,cmip6/6.0.11 .. cmip6/6.0.16,6,Omon
+fgsf6,naming fix only (name not in CF table replaced),surface_downward_mole_flux_of_sulfur_hexafluoride,True,cmip6/6.0.17 .. mip/v6.5.0.4,23,OPmon Omon
+flashrate,naming fix only (name not in CF table replaced),frequency_of_lightning_flashes_per_unit_area,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,ACmon Emon
+flashrate,naming fix only (name not in CF table replaced),lightning_flash_rate,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+fldcapacity,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Efx
+fldcapacity,naming fix only (name not in CF table replaced),volume_fraction_of_condensed_water_in_soil_at_field_capacity,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Efx LPfx
+frfe,sign convention (minus_),minus_tendency_of_ocean_mole_content_of_iron_due_to_sedimentation,True,cmip6/6.4.28 .. mip/v6.5.0.4,12,OBmon Omon
+frfe,sign convention (minus_),tendency_of_ocean_mole_content_of_iron_due_to_sedimentation,True,cmip5/5.0 .. cmip6/6.3.27-fixed,18,Omon
+fric,sign convention (minus_),minus_tendency_of_ocean_mole_content_of_inorganic_carbon_due_to_sedimentation,True,cmip6/6.4.28 .. mip/v6.5.0.4,12,OBmon Omon
+fric,sign convention (minus_),tendency_of_ocean_mole_content_of_inorganic_carbon_due_to_sedimentation,True,cmip6/6.0.11 .. cmip6/6.3.27-fixed,17,Omon
+frn,sign convention (minus_),minus_tendency_of_ocean_mole_content_of_elemental_nitrogen_due_to_denitrification_and_sedimentation,True,cmip6/6.4.28 .. mip/v6.5.0.4,12,OBmon Omon
+frn,sign convention (minus_),tendency_of_ocean_mole_content_of_elemental_nitrogen_due_to_denitrification_and_sedimentation,True,cmip5/5.0 .. cmip6/6.3.27-fixed,18,Omon
+froc,sign convention (minus_),minus_tendency_of_ocean_mole_content_of_organic_carbon_due_to_sedimentation,True,cmip6/6.4.28 .. mip/v6.5.0.4,12,OBmon Omon
+froc,sign convention (minus_),tendency_of_ocean_mole_content_of_organic_carbon_due_to_sedimentation,True,cmip6/6.0.11 .. cmip6/6.3.27-fixed,17,Omon
+gppc13,naming fix only (name not in CF table replaced),gross_primary_productivity_of_biomass_expressed_as_13C,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+gppc13,naming fix only (name not in CF table replaced),gross_primary_productivity_of_c13,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+gppc14,naming fix only (name not in CF table replaced),gross_primary_productivity_of_biomass_expressed_as_14C,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+gppc14,naming fix only (name not in CF table replaced),gross_primary_productivity_of_c14,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+graz,different CF quantities,tendency_of_mole_concentration_of_dissolved_iron_in_sea_water_due_to_grazing_of_phytoplankton,True,cmip5/5.0 .. cmip5/5.0,1,Oyr
+graz,different CF quantities,tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_grazing_of_phytoplankton,True,cmip6/6.0.11 .. mip/v6.5.0.4,29,OBmonLev OByrLev Omon Oyr
+hfbasinpmadv,naming fix only (name not in CF table replaced),northward_ocean_heat_transport_due_to_parameterized_mesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Omon
+hfbasinpmadv,naming fix only (name not in CF table replaced),northward_ocean_heat_transport_due_to_parameterized_mesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,OPmonZ Omon
+hfbasinpmdiff,naming fix only (name not in CF table replaced),northward_ocean_heat_transport_due_to_parameterized_mesoscale_diffusion,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Omon
+hfbasinpmdiff,naming fix only (name not in CF table replaced),northward_ocean_heat_transport_due_to_parameterized_mesoscale_eddy_diffusion,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,OPmonZ Omon
+hfbasinpsmadv,naming fix only (name not in CF table replaced),northward_ocean_heat_transport_due_to_parameterized_submesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Omon
+hfbasinpsmadv,naming fix only (name not in CF table replaced),northward_ocean_heat_transport_due_to_parameterized_submesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,OPmonZ Omon
+hfdsnb,naming fix only (name not in CF table replaced),downward_heat_flux_at_ground_level_in_snow,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,APday Eday
+hfdsnb,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Eday
+hfls,different CF quantities,surface_downward_latent_heat_flux,True,cmip5/5.0 .. cmip5/5.0,1,Omon
+hfls,different CF quantities,surface_upward_latent_heat_flux,True,cmip5/5.0 .. mip/v6.5.0.4,30,3hr AP3hr AP3hrPt APday APmon APsubhrPt APsubhrPtSite Amon CF3hr CFsubhr Eday Esubhr GIAmon GIGmon ImonAnt ImonGre cf3hr cfDay cfSites day
+hfrs,naming fix only (name not in CF table replaced),temperature_flux_due_to_rainfall_expressed_as_heat_flux_onto_snow_and_ice,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+hfrs,naming fix only (name not in CF table replaced),tendency_of_thermal_energy_content_of_surface_snow_due_to_rainfall_temperature_excess_above_freezing,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APday Eday
+hfsbl,naming fix only (name not in CF table replaced),surface_snow_and_ice_sublimation_heat_flux,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+hfsbl,naming fix only (name not in CF table replaced),surface_upward_latent_heat_flux_due_to_sublimation,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APday Eday
+hfss,different CF quantities,surface_downward_sensible_heat_flux,True,cmip5/5.0 .. cmip5/5.0,1,Omon
+hfss,different CF quantities,surface_upward_sensible_heat_flux,True,cmip5/5.0 .. mip/v6.5.0.4,30,3hr AP3hr AP3hrPt APday APmon APsubhrPt APsubhrPtSite Amon CF3hr CFsubhr Eday Esubhr GIAmon GIGmon ImonAnt ImonGre cf3hr cfDay cfSites day
+intuadse,naming fix only (name not in CF table replaced),eastward_atmosphere_dry_static_energy_transport_across_unit_distance,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APmon Emon
+intuadse,naming fix only (name not in CF table replaced),vertical_integral_eastward_wind_by_dry_static_energy,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+intuaw,naming fix only (name not in CF table replaced),eastward_atmosphere_water_transport_across_unit_distance,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APmon Emon
+intuaw,naming fix only (name not in CF table replaced),vertical_integral_eastward_wind_by_total_water,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+intvadse,naming fix only (name not in CF table replaced),northward_atmosphere_dry_static_energy_transport_across_unit_distance,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APmon Emon
+intvadse,naming fix only (name not in CF table replaced),vertical_integral_northward_wind_by_dry_static_energy,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+intvaw,different CF quantities,northward_atmosphere_dry_static_energy_transport_across_unit_distance,True,cmip6/6.2.24 .. cmip6/6.2.24,1,Emon
+intvaw,different CF quantities,northward_atmosphere_water_transport_across_unit_distance,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APmon Emon
+intvaw,different CF quantities,vertical_integral_northward_wind_by_total_water,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+irrLut,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_water_due_to_irrigation,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+irrLut,naming fix only (name not in CF table replaced),surface_downward_water_flux_due_to_irrigation,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+ksat,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Efx
+ksat,naming fix only (name not in CF table replaced),soil_hydraulic_conductivity_at_saturation,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Efx LPfx
+laiLut,naming fix only (name not in CF table replaced),leaf_area_index,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+laiLut,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+limfecalc,naming fix only (name not in CF table replaced),iron_growth_limitation_of_calcareous_phytoplankton,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limfecalc,naming fix only (name not in CF table replaced),iron_limitation_of_calcareous_phytoplankton,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limfediat,naming fix only (name not in CF table replaced),iron_growth_limitation_of_diatoms,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limfediat,naming fix only (name not in CF table replaced),iron_limitation_of_diatoms,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limfediaz,naming fix only (name not in CF table replaced),iron_growth_limitation_of_diazotrophic_phytoplankton,True,cmip6/6.9.32 .. mip/v6.5.0.4,7,OBmon Omon
+limfediaz,naming fix only (name not in CF table replaced),iron_growth_limitation_of_diazotrophs,True,cmip6/6.0.14 .. cmip6/6.8.31,19,Omon
+limfediaz,naming fix only (name not in CF table replaced),iron_limitation_of_diazotrophs,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limfemisc,naming fix only (name not in CF table replaced),iron_growth_limitation_of_miscellaneous_phytoplankton,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limfemisc,naming fix only (name not in CF table replaced),iron_limitation_of_miscellaneous_phytoplankton,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limfepico,naming fix only (name not in CF table replaced),iron_growth_limitation_of_picophytoplankton,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limfepico,naming fix only (name not in CF table replaced),iron_limitation_of_picophytoplankton,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limirrcalc,naming fix only (name not in CF table replaced),growth_limitation_of_calcareous_phytoplankton_due_to_solar_irradiance,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limirrcalc,naming fix only (name not in CF table replaced),irradiance_limitation_of_calcareous_phytoplankton,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limirrdiat,naming fix only (name not in CF table replaced),growth_limitation_of_diatoms_due_to_solar_irradiance,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limirrdiat,naming fix only (name not in CF table replaced),irradiance_limitation_of_diatoms,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limirrdiaz,naming fix only (name not in CF table replaced),growth_limitation_of_diazotrophic_phytoplankton_due_to_solar_irradiance,True,cmip6/6.9.32 .. mip/v6.5.0.4,7,OBmon Omon
+limirrdiaz,naming fix only (name not in CF table replaced),growth_limitation_of_diazotrophs_due_to_solar_irradiance,True,cmip6/6.0.14 .. cmip6/6.8.31,19,Omon
+limirrdiaz,naming fix only (name not in CF table replaced),irradiance_limitation_of_diazotrophs,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limirrmisc,naming fix only (name not in CF table replaced),growth_limitation_of_miscellaneous_phytoplankton_due_to_solar_irradiance,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limirrmisc,naming fix only (name not in CF table replaced),irradiance_limitation_of_miscellaneous_phytoplankton,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limirrpico,different CF quantities,growth_limitation_of_miscellaneous_phytoplankton_due_to_solar_irradiance,True,cmip6/6.0.14 .. cmip6/6.0.14,1,Omon
+limirrpico,different CF quantities,growth_limitation_of_picophytoplankton_due_to_solar_irradiance,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,OBmon Omon
+limirrpico,different CF quantities,irradiance_limitation_of_picophytoplankton,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limncalc,naming fix only (name not in CF table replaced),nitrogen_growth_limitation_of_calcareous_phytoplankton,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limncalc,naming fix only (name not in CF table replaced),nitrogen_limitation_of_calcareous_phytoplankton,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limndiat,naming fix only (name not in CF table replaced),nitrogen_growth_limitation_of_diatoms,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limndiat,naming fix only (name not in CF table replaced),nitrogen_limitation_of_diatoms,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limndiaz,naming fix only (name not in CF table replaced),nitrogen_growth_limitation_of_diazotrophic_phytoplankton,True,cmip6/6.9.32 .. mip/v6.5.0.4,7,OBmon Omon
+limndiaz,naming fix only (name not in CF table replaced),nitrogen_growth_limitation_of_diazotrophs,True,cmip6/6.0.14 .. cmip6/6.8.31,19,Omon
+limndiaz,naming fix only (name not in CF table replaced),nitrogen_limitation_of_diazotrophs,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limnmisc,naming fix only (name not in CF table replaced),nitrogen_growth_limitation_of_miscellaneous_phytoplankton,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limnmisc,naming fix only (name not in CF table replaced),nitrogen_limitation_of_miscellaneous_phytoplankton,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+limnpico,naming fix only (name not in CF table replaced),nitrogen_growth_limitation_of_picophytoplankton,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+limnpico,naming fix only (name not in CF table replaced),nitrogen_limitation_of_picophytoplankton,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+lossn2o,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mole_concentration_of_nitrous_oxide_due_to_chemical_destruction,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmonLev
+lossn2o,naming fix only (name not in CF table replaced),tendency_of_atmosphere_of_mole_concentration_of_nitrous_oxide_due_to_chemical_destruction,False,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+lwsffluxaero,naming fix only (name not in CF table replaced),longwave__flux__due_to_volcanic_aerosols_at_the_surface,False,cmip6/6.0.11 .. cmip6/6.1.23,14,6hrPlevPt
+lwsffluxaero,naming fix only (name not in CF table replaced),surface_downwelling_longwave_flux_in_air_due_to_volcanic_ambient_aerosol_particles,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,6hrPlevPt AP6hrPt
+lwsrfasdust,naming fix only (name not in CF table replaced),surface_instantaneous_longwave_forcing_due_to_dust,False,cmip6/6.0.17 .. cmip6/6.2.24,9,Emon
+lwsrfasdust,naming fix only (name not in CF table replaced),surface_net_downward_longwave_dust_ambient_aerosol_particles_direct_radiative_effect,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APmon Emon
+lwsrfasdust,naming fix only (name not in CF table replaced),tendency_of_all_sky_surface_longwave_flux_to_dust_ambient_aerosol_particles,False,cmip6/6.0.11 .. cmip6/6.0.16,6,Emon
+lwsrfcsdust,naming fix only (name not in CF table replaced),surface_instantaneous_longwave_forcing_due_to_dust_in_clearsky,False,cmip6/6.0.17 .. cmip6/6.2.24,9,Emon
+lwsrfcsdust,naming fix only (name not in CF table replaced),surface_net_downward_longwave_dust_ambient_aerosol_particles_direct_radiative_effect_assuming_clear_sky,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APmon Emon
+lwsrfcsdust,naming fix only (name not in CF table replaced),tendency_of_clear_sky_surface_longwave_flux_to_dust_ambient_aerosol_particles,False,cmip6/6.0.11 .. cmip6/6.0.16,6,Emon
+lwtoacsdust,naming fix only (name not in CF table replaced),toa_instantaneous_longwave_forcing_due_to_dust_in_clearsky,False,cmip6/6.0.17 .. cmip6/6.2.24,9,Emon
+lwtoacsdust,naming fix only (name not in CF table replaced),toa_longwave_dust_ambient_aerosol_particles_direct_radiative_effect_assuming_clear_sky,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APmon Emon
+lwtoafluxaerocs,naming fix only (name not in CF table replaced),longwave_flux_due_to_volcanic_aerosols_at_TOA_under_clear_sky,False,cmip6/6.0.11 .. cmip6/6.1.23,14,6hrPlevPt
+lwtoafluxaerocs,naming fix only (name not in CF table replaced),toa_outgoing_longwave_flux_due_to_volcanic_ambient_aerosol_particles_assuming_clear_sky,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,6hrPlevPt AP6hrPt
+mrlso,different CF quantities,liquid_water_content_of_soil_layer,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+mrlso,different CF quantities,soil_liquid_water_content,True,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+mrsfl,naming fix only (name not in CF table replaced),frozen_moisture_content_of_soil_layer,False,cmip6/6.0.11 .. cmip6/6.0.21,12,Eday Emon
+mrsfl,naming fix only (name not in CF table replaced),frozen_water_content_of_soil_layer,True,cmip6/6.1.22 .. mip/v6.5.0.4,17,Eday Emon LPday LPmon
+mrsll,naming fix only (name not in CF table replaced),liquid_moisture_content_of_soil_layer,False,cmip6/6.0.11 .. cmip6/6.0.21,12,Eday Emon
+mrsll,naming fix only (name not in CF table replaced),liquid_water_content_of_soil_layer,True,cmip6/6.1.22 .. mip/v6.5.0.4,17,Eday Emon LPday LPmon
+mrtws,naming fix only (name not in CF table replaced),land_water_amount,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday Emon LPday LPmon
+mrtws,naming fix only (name not in CF table replaced),total_water_storage,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday Emon
+msftmrhompa,naming fix only (name not in CF table replaced),ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_mesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Omon
+msftmrhompa,naming fix only (name not in CF table replaced),ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_mesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,OPmonZ Omon
+msftmzmpa,naming fix only (name not in CF table replaced),ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_mesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Omon
+msftmzmpa,naming fix only (name not in CF table replaced),ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_mesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,OPmonZ Omon
+msftmzsmpa,naming fix only (name not in CF table replaced),ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_submesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Omon
+msftmzsmpa,naming fix only (name not in CF table replaced),ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_submesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,OPmonZ Omon
+msftyrhompa,naming fix only (name not in CF table replaced),ocean_y_overturning_mass_streamfunction_due_to_parameterized_mesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Omon
+msftyrhompa,naming fix only (name not in CF table replaced),ocean_y_overturning_mass_streamfunction_due_to_parameterized_mesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,OPmon Omon
+msftyzmpa,naming fix only (name not in CF table replaced),ocean_y_overturning_mass_streamfunction_due_to_parameterized_mesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Omon
+msftyzmpa,naming fix only (name not in CF table replaced),ocean_y_overturning_mass_streamfunction_due_to_parameterized_mesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,OPmonLev Omon
+msftyzsmpa,naming fix only (name not in CF table replaced),ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_submesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Omon
+msftyzsmpa,naming fix only (name not in CF table replaced),ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_submesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,OPmonZ Omon
+nLand,naming fix only (name not in CF table replaced),mass_content_of_nitrogen_in_vegetation_and_litter_and_soil_and_forestry_and_agricultural_products,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nLand,naming fix only (name not in CF table replaced),total_land_nitrogen,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nLeaf,naming fix only (name not in CF table replaced),leaf_mass_content_of_nitrogen,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nLeaf,naming fix only (name not in CF table replaced),leaf_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nLitter,naming fix only (name not in CF table replaced),litter_mass_content_of_nitrogen,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nLitter,naming fix only (name not in CF table replaced),litter_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nLitterCwd,naming fix only (name not in CF table replaced),litter_wood_debris_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nLitterCwd,naming fix only (name not in CF table replaced),wood_debris_mass_content_of_nitrogen,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nLitterSubSurf,naming fix only (name not in CF table replaced),subsurface_litter_mass_content_of_nitrogen,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nLitterSubSurf,naming fix only (name not in CF table replaced),subsurface_litter_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nLitterSurf,naming fix only (name not in CF table replaced),surface_litter_mass_content_of_nitrogen,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nLitterSurf,naming fix only (name not in CF table replaced),surface_litter_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nMineral,naming fix only (name not in CF table replaced),mineral_soil_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+nMineral,naming fix only (name not in CF table replaced),soil_mass_content_of_inorganic_nitrogen_expressed_as_nitrogen,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+nMineralNH4,naming fix only (name not in CF table replaced),mineral_nh4_soil_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+nMineralNH4,naming fix only (name not in CF table replaced),soil_mass_content_of_inorganic_ammonium_expressed_as_nitrogen,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+nMineralNO3,naming fix only (name not in CF table replaced),mineral_no3_soil_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+nMineralNO3,naming fix only (name not in CF table replaced),soil_mass_content_of_inorganic_nitrate_expressed_as_nitrogen,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+nOther,naming fix only (name not in CF table replaced),miscellaneous_living_matter_mass_content_of_nitrogen,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nOther,naming fix only (name not in CF table replaced),other_vegegtation_components_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nProduct,naming fix only (name not in CF table replaced),nitrogen_content_of_forestry_and_agricultural_products,False,cmip6/6.2.24 .. cmip6/6.2.24,1,Emon
+nProduct,naming fix only (name not in CF table replaced),nitrogen_content_of_products_of_anthropogenic_land_use_change,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nProduct,naming fix only (name not in CF table replaced),nitrogen_mass_content_of_forestry_and_agricultural_products,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+nRoot,naming fix only (name not in CF table replaced),root_mass_content_of_nitrogen,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nRoot,naming fix only (name not in CF table replaced),root_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nSoil,naming fix only (name not in CF table replaced),soil_mass_content_of_nitrogen,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+nSoil,naming fix only (name not in CF table replaced),soil_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+nStem,naming fix only (name not in CF table replaced),stem_mass_content_of_nitrogen,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nStem,naming fix only (name not in CF table replaced),stem_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nVeg,naming fix only (name not in CF table replaced),vegetation_mass_content_of_nitrogen,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nVeg,naming fix only (name not in CF table replaced),vegetation_nitrogen_content,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+netAtmosLandC13Flux,naming fix only (name not in CF table replaced),net_atmos_to_land_C13_flux,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+netAtmosLandC13Flux,naming fix only (name not in CF table replaced),surface_net_downward_mass_flux_of_13C_dioxide_expressed_as_13C_due_to_all_land_processes,False,cmip6/6.2.24 .. cmip6/6.2.24,1,Emon
+netAtmosLandC13Flux,naming fix only (name not in CF table replaced),surface_net_downward_mass_flux_of_carbon_dioxide_expressed_as_13C_due_to_all_land_processes,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+netAtmosLandC14Flux,naming fix only (name not in CF table replaced),net_atmos_to_land_C14_flux,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+netAtmosLandC14Flux,naming fix only (name not in CF table replaced),surface_net_downward_mass_flux_of_14C_dioxide_expressed_as_14C_due_to_all_land_processes,False,cmip6/6.2.24 .. cmip6/6.2.24,1,Emon
+netAtmosLandC14Flux,naming fix only (name not in CF table replaced),surface_net_downward_mass_flux_of_carbon_dioxide_expressed_as_14C_due_to_all_land_processes,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+nh4os,naming fix only (name not in CF table replaced),mole_concentration_of_ammonium_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+nh4os,naming fix only (name not in CF table replaced),surface_mole_concentration_of_ammonium_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+no3os,naming fix only (name not in CF table replaced),mole_concentration_of_nitrate_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+no3os,naming fix only (name not in CF table replaced),surface_mole_concentration_of_nitrate_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+nppOther,naming fix only (name not in CF table replaced),net_primary_production_allocated_to_other,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+nppOther,naming fix only (name not in CF table replaced),net_primary_productivity_of_biomass_expressed_as_carbon_accumulated_in_miscellaneous_living_matter,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+nppStem,naming fix only (name not in CF table replaced),net_primary_production_allocated_to_stem,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+nppStem,naming fix only (name not in CF table replaced),net_primary_productivity_of_biomass_expressed_as_carbon_accumulated_in_stems,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+nudgincsm,naming fix only (name not in CF table replaced),nudging_increment_in_mass_content_of_water_in_soil,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+nudgincsm,naming fix only (name not in CF table replaced),nudging_increment_in_water_content_of_soil_layer,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+nudgincswe,naming fix only (name not in CF table replaced),nudging_increment_in_snow_and_ice_amount_on_land,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+nudgincswe,naming fix only (name not in CF table replaced),nudging_increment_in_surface_snow_and_ice_amount,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+nwdFracLut,naming fix only (name not in CF table replaced),area_fraction,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+nwdFracLut,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+o2,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_molecular_oxygen_in_sea_water,True,cmip6/6.0.11 .. mip/v6.5.0.4,29,OBmonLev OByrLev Omon Oyr
+o2,naming fix only (name not in CF table replaced),mole_concentration_of_molecular_oxygen_in_sea_water,False,cmip5/5.0 .. cmip5/5.0,1,Omon Oyr
+o2os,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_molecular_oxygen_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+o2os,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_molecular_oxygen_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+o2satos,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_molecular_oxygen_in_sea_water_at_saturation,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+o2satos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_molecular_oxygen_in_sea_water_at_saturation,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+ocontemppmdiff,naming fix only (name not in CF table replaced),tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Emon Oyr
+ocontemppmdiff,naming fix only (name not in CF table replaced),tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_eddy_diffusion,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,Emon OPmonLev OPyrLev Oyr
+ocontemppsmadvect,naming fix only (name not in CF table replaced),tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Emon Oyr
+ocontemppsmadvect,naming fix only (name not in CF table replaced),tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,Emon OPmonLev OPyrLev Oyr
+od550aerso,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.0.12,2,Emon
+od550aerso,naming fix only (name not in CF table replaced),strat_aerosol_optical_depth,False,cmip6/6.0.13 .. cmip6/6.2.24,13,Emon
+od550aerso,naming fix only (name not in CF table replaced),stratosphere_optical_thickness_due_to_ambient_aerosol_particles,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APmon Emon
+od550no3,naming fix only (name not in CF table replaced),atmosphere_optical_thickness_due_to_nitrate_ambient_aerosol,False,cmip6/6.0.11 .. cmip6/6.0.21,12,AERmon
+od550no3,naming fix only (name not in CF table replaced),atmosphere_optical_thickness_due_to_nitrate_ambient_aerosol_particles,True,cmip6/6.1.22 .. mip/v6.5.0.4,17,AERmon AEmon
+od550so4,naming fix only (name not in CF table replaced),atmosphere_optical_thickness_due_to_sulfate_ambient_aerosol,False,cmip6/6.0.11 .. cmip6/6.0.21,12,AERmon
+od550so4,naming fix only (name not in CF table replaced),atmosphere_optical_thickness_due_to_sulfate_ambient_aerosol_particles,True,cmip6/6.1.22 .. mip/v6.5.0.4,17,AERmon AEmon
+od550so4so,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+od550so4so,naming fix only (name not in CF table replaced),stratosphere_optical_thickness_due_to_ambient_suplhate_aerosol_particles,False,cmip6/6.1.23 .. cmip6/6.2.24,2,Emon
+od550so4so,naming fix only (name not in CF table replaced),stratosphere_optical_thickness_due_to_sulfate_ambient_aerosol_particles,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APmon Emon
+opottemppmdiff,naming fix only (name not in CF table replaced),tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Emon Oyr
+opottemppmdiff,naming fix only (name not in CF table replaced),tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_eddy_diffusion,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,Emon OPmonLev OPyrLev Oyr
+opottemppsmadvect,naming fix only (name not in CF table replaced),tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Emon Oyr
+opottemppsmadvect,naming fix only (name not in CF table replaced),tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,Emon OPmonLev OPyrLev Oyr
+osaltpmdiff,naming fix only (name not in CF table replaced),tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_diffusion,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Emon Oyr
+osaltpmdiff,naming fix only (name not in CF table replaced),tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_eddy_diffusion,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,Emon OPmonLev OPyrLev Oyr
+osaltpsmadvect,naming fix only (name not in CF table replaced),tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_submesoscale_advection,False,cmip6/6.0.11 .. cmip6/6.0.20,11,Emon Oyr
+osaltpsmadvect,naming fix only (name not in CF table replaced),tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_submesoscale_eddy_advection,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,Emon OPmonLev OPyrLev Oyr
+oxloss,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mole_concentration_of_ox_due_to_chemical_destruction,False,cmip6/6.1.23 .. cmip6/6.2.24,2,EmonZ
+oxloss,naming fix only (name not in CF table replaced),tendency_of_mole_concentration_of_ox_in_air_due_to_chemical_destruction,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,ACmonZ EmonZ
+oxloss,naming fix only (name not in CF table replaced),tendency_of_mole_concentration_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom_due_to_chemical_destruction,False,cmip6/6.0.11 .. cmip6/6.1.22,13,EmonZ
+oxprod,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mole_concentration_of_ox_due_to_chemical_and_photolytic_production,False,cmip6/6.1.23 .. cmip6/6.2.24,2,EmonZ
+oxprod,naming fix only (name not in CF table replaced),tendency_of_mole_concentration_of_ox_in_air_due_to_chemical_and_photolytic_production,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,ACmonZ EmonZ
+oxprod,naming fix only (name not in CF table replaced),tendency_of_mole_concentration_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom_due_to_chemical_production_and_photolysis,False,cmip6/6.0.11 .. cmip6/6.1.22,13,EmonZ
+pathetao,naming fix only (name not in CF table replaced),sea_water_added_potential_temperature,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon OPmonLev
+pathetao,naming fix only (name not in CF table replaced),sea_water_additional_potential_temperature,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+phabio,naming fix only (name not in CF table replaced),sea_water_ph_abiotic_analogue_reported_on_total_scale,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmonLev OByrLev Omon Oyr
+phabio,naming fix only (name not in CF table replaced),sea_water_ph_reported_on_total_scale_due_to_abiotic_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon Oyr
+phabioos,naming fix only (name not in CF table replaced),sea_water_ph_abiotic_analogue_reported_on_total_scale,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+phabioos,naming fix only (name not in CF table replaced),sea_water_ph_reported_on_total_scale_due_to_abiotic_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+phnat,naming fix only (name not in CF table replaced),sea_water_ph_natural_analogue_reported_on_total_scale,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmonLev OByrLev Omon Oyr
+phnat,naming fix only (name not in CF table replaced),sea_water_ph_reported_on_total_scale_due_to_natural_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon Oyr
+phnatos,naming fix only (name not in CF table replaced),sea_water_ph_natural_analogue_reported_on_total_scale,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+phnatos,naming fix only (name not in CF table replaced),sea_water_ph_reported_on_total_scale_due_to_natural_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+phycalcos,naming fix only (name not in CF table replaced),mole_concentration_of_calcareous_phytoplankton_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+phycalcos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_calcareous_phytoplankton_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+phydiatos,naming fix only (name not in CF table replaced),mole_concentration_of_diatoms_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+phydiatos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_diatoms_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+phydiazos,naming fix only (name not in CF table replaced),mole_concentration_of_diazotrophic_phytoplankton_expressed_as_carbon_in_sea_water,True,cmip6/6.9.32 .. mip/v6.5.0.4,7,OBmon Omon
+phydiazos,naming fix only (name not in CF table replaced),mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. cmip6/6.8.31,8,Omon
+phydiazos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+phyfeos,naming fix only (name not in CF table replaced),mole_concentration_of_phytoplankton_expressed_as_iron_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+phyfeos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_phytoplankton_expressed_as_iron_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+phymiscos,naming fix only (name not in CF table replaced),mole_concentration_of_miscellaneous_phytoplankton_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+phymiscos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_miscellaneous_phytoplankton_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+phynos,naming fix only (name not in CF table replaced),mole_concentration_of_phytoplankton_expressed_as_nitrogen_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+phynos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_phytoplankton_expressed_as_nitrogen_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+phypicoos,naming fix only (name not in CF table replaced),mole_concentration_of_picophytoplankton_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+phypicoos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_picophytoplankton_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+phypos,naming fix only (name not in CF table replaced),mole_concentration_of_phytoplankton_expressed_as_phosphorus_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+phypos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_phytoplankton_expressed_as_phosphorus_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+physios,naming fix only (name not in CF table replaced),mole_concentration_of_phytoplankton_expressed_as_silicon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+physios,naming fix only (name not in CF table replaced),surface_mole_concentration_of_phytoplankton_expressed_as_silicon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+po4,different CF quantities,mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water,True,cmip6/6.0.11 .. mip/v6.5.0.4,29,OBmonLev OByrLev Omon Oyr
+po4,different CF quantities,mole_concentration_of_phosphate_in_sea_water,True,cmip5/5.0 .. cmip5/5.0,1,Omon Oyr
+po4os,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+po4os,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+pod0,naming fix only (name not in CF table replaced),integral_wrt_time_of_mole_stomatal_uptake_of_ozone,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+pod0,naming fix only (name not in CF table replaced),integration_wrt_time_of_mole_stomatal_uptake_of_ozone,False,cmip6/6.2.24 .. cmip6/6.2.24,1,AERmon
+pod0,naming fix only (name not in CF table replaced),pending_CF_name,False,cmip6/6.0.11 .. cmip6/6.1.23,14,AERmon
+ponos,naming fix only (name not in CF table replaced),mole_concentration_of_particulate_organic_matter_expressed_as_nitrogen_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+ponos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_particulate_organic_matter_expressed_as_nitrogen_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+popos,naming fix only (name not in CF table replaced),mole_concentration_of_particulate_organic_matter_expressed_as_phosphorus_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+popos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_particulate_organic_matter_expressed_as_phosphorus_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+pr,different CF quantities,precipitation_flux,True,cmip5/5.0 .. mip/v6.5.0.4,30,3hr 6hrPlev AP1hr AP3hr AP3hrPt AP6hr APday APmon APsubhrPt APsubhrPtSite Amon CF3hr CFsubhr E1hr Esubhr cf3hr cfSites day
+pr,different CF quantities,rainfall_flux,True,cmip5/5.0 .. cmip5/5.0,1,OImon Omon
+prcsh,naming fix only (name not in CF table replaced),hallow_convective_precipitation_flux,False,cmip6/6.0.11 .. cmip6/6.0.13,3,E3hr
+prcsh,naming fix only (name not in CF table replaced),shallow_convective_precipitation_flux,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,AP3hr E3hr
+prrsn,naming fix only (name not in CF table replaced),mass_fraction_of_rainfall_falling_onto_surface_snow,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APday Eday
+prrsn,naming fix only (name not in CF table replaced),mass_fraction_of_rainfall_onto_snow,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+prsnsn,naming fix only (name not in CF table replaced),mass_fraction_of_snowfall_onto_snow,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+prsnsn,naming fix only (name not in CF table replaced),mass_fraction_of_solid_precipitation_falling_onto_surface_snow,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APday Eday
+psitem,naming fix only (name not in CF table replaced),atmosphere_transformed_eulerian_mean_meridional_overturning_mass_streamfunction,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APdayZ EdayZ
+psitem,naming fix only (name not in CF table replaced),meridional_streamfunction_transformed_eulerian_mean,False,cmip6/6.0.11 .. cmip6/6.1.23,14,EdayZ
+qgwr,naming fix only (name not in CF table replaced),downward_liquid_water_mass_flux_into_groundwater,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+qgwr,naming fix only (name not in CF table replaced),water_flux_from_soil_layer_to_groundwater,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+raLeaf,naming fix only (name not in CF table replaced),autotrophic_respiration_from_leaves,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+raLeaf,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration_in_leaves,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+raOther,naming fix only (name not in CF table replaced),autotrophic_respiration,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+raOther,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration_in_miscellaneous_living_matter,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+raRoot,naming fix only (name not in CF table replaced),autotrophic_respiration_from_roots,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+raRoot,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration_in_roots,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+raStem,naming fix only (name not in CF table replaced),autotrophic_respiration_from_stem,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+raStem,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration_in_stems,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+rac13,naming fix only (name not in CF table replaced),plant_respiration_c13_flux,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+rac13,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_13C_due_to_plant_respiration,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+rac14,naming fix only (name not in CF table replaced),plant_respiration_c14_flux,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+rac14,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_14C_due_to_plant_respiration,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+reffcclwtop,naming fix only (name not in CF table replaced),effective_radius_of_convective_cloud_liquid_water_particle_at_convective_liquid_water_cloud_top,True,cmip6/6.1.23 .. cmip6/6.8.31,9,Eday
+reffcclwtop,naming fix only (name not in CF table replaced),effective_radius_of_convective_cloud_liquid_water_particle_at_liquid_water_cloud_top,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Eday
+reffcclwtop,naming fix only (name not in CF table replaced),effective_radius_of_convective_cloud_liquid_water_particles_at_convective_liquid_water_cloud_top,True,cmip6/6.9.32 .. mip/v6.5.0.4,7,APday Eday
+reffsclwtop,naming fix only (name not in CF table replaced),effective_radius_of_stratiform_cloud_liquid_water_particle_at_liquid_water_cloud_top,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Eday
+reffsclwtop,naming fix only (name not in CF table replaced),effective_radius_of_stratiform_cloud_liquid_water_particle_at_stratiform_liquid_water_cloud_top,True,cmip6/6.1.23 .. cmip6/6.8.31,9,Eday
+reffsclwtop,naming fix only (name not in CF table replaced),effective_radius_of_stratiform_cloud_liquid_water_particles_at_stratiform_liquid_water_cloud_top,True,cmip6/6.9.32 .. mip/v6.5.0.4,7,APday Eday
+remoc,naming fix only (name not in CF table replaced),tendency_of_mole_concentration_of_organic_matter_expressed_as_carbon_in_sea_water_due_to_remineralization,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Oyr
+remoc,naming fix only (name not in CF table replaced),tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_remineralization,True,cmip6/6.0.15 .. mip/v6.5.0.4,25,OByrLev Oyr
+rhLitter,naming fix only (name not in CF table replaced),heterotrophic_respiration_carbon_flux_from_litter,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+rhLitter,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_due_to_heterotrophic_respiration_in_litter,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+rhSoil,naming fix only (name not in CF table replaced),heterotrophic_respiration_carbon_flux_from_soil,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+rhSoil,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_due_to_heterotrophic_respiration_in_soil,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+rhc13,naming fix only (name not in CF table replaced),heterotrophic_respiration_c13_flux,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+rhc13,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_13C_dioxide_expressed_as_13C_due_to_heterotrophic_respiration,False,cmip6/6.2.24 .. cmip6/6.2.24,1,Emon
+rhc13,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_13C_due_to_heterotrophic_respiration,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+rhc14,naming fix only (name not in CF table replaced),heterotrophic_respiration_c14_flux,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+rhc14,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_14C_dioxide_expressed_as_14C_due_to_heterotrophic_respiration,False,cmip6/6.2.24 .. cmip6/6.2.24,1,Emon
+rhc14,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_carbon_dioxide_expressed_as_14C_due_to_heterotrophic_respiration,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+rivi,naming fix only (name not in CF table replaced),incoming_water_volume_transport_along_river_channel,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+rivi,naming fix only (name not in CF table replaced),water_flux_from_upstream,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+rivo,naming fix only (name not in CF table replaced),outgoing_water_volume_transport_along_river_channel,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+rivo,naming fix only (name not in CF table replaced),water_flux_to_downstream,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+rlds,different CF quantities,surface_downwelling_longwave_flux_in_air,True,cmip5/5.0 .. mip/v6.5.0.4,30,3hr AP3hr AP3hrPt APday APmon APsubhrPtSite Amon CF3hr CFsubhr GIAmon GIGmon ImonAnt ImonGre cf3hr cfDay cfSites day
+rlds,different CF quantities,surface_net_downward_longwave_flux,True,cmip5/5.0 .. cmip5/5.0,1,Omon
+rootdsl,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Efx
+rootdsl,naming fix only (name not in CF table replaced),root_mass_content,False,cmip6/6.1.23 .. cmip6/6.2.24,2,Efx
+rootdsl,naming fix only (name not in CF table replaced),root_mass_content_of_carbon,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Efx LPfx
+rsdcsaf,naming fix only (name not in CF table replaced),downwelling_shortwave_flux_assuming_clean_clear_sky,False,cmip6/6.0.11 .. cmip6/6.1.22,13,E3hrPt
+rsdcsaf,naming fix only (name not in CF table replaced),downwelling_shortwave_flux_in_air_assuming_clean_clear_sky,True,cmip6/6.1.23 .. cmip6/6.2.24,2,E3hrPt
+rsdcsaf,naming fix only (name not in CF table replaced),downwelling_shortwave_flux_in_air_assuming_clear_sky_and_no_aerosol,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AE3hrPtLev E3hrPt
+rsdcsafbnd,naming fix only (name not in CF table replaced),band_downwelling_shortwave_flux_assuming_clean_clear_sky,False,cmip6/6.0.11 .. cmip6/6.1.22,13,E3hrPt
+rsdcsafbnd,naming fix only (name not in CF table replaced),downwelling_shortwave_flux_in_air_assuming_clean_clear_sky,True,cmip6/6.1.23 .. cmip6/6.2.24,2,E3hrPt
+rsdcsafbnd,naming fix only (name not in CF table replaced),downwelling_shortwave_flux_in_air_assuming_clear_sky_and_no_aerosol,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AE3hrPtLev E3hrPt
+rsdcsbnd,naming fix only (name not in CF table replaced),band_downwelling_shortwave_flux_assuming_clear_sky,False,cmip6/6.0.11 .. cmip6/6.0.20,11,E3hrPt
+rsdcsbnd,naming fix only (name not in CF table replaced),downwelling_shortwave_flux_in_air_assuming_clear_sky,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,AP3hrPtLev E3hrPt
+rsds,different CF quantities,downwelling_shortwave_flux_in_sea_water,True,cmip5/5.0 .. cmip5/5.0,1,Omon
+rsds,different CF quantities,surface_downwelling_shortwave_flux_in_air,True,cmip5/5.0 .. mip/v6.5.0.4,30,3hr AP3hr AP3hrPt APday APmon APsubhrPtSite Amon CF3hr CFsubhr GIAmon GIGmon ImonAnt ImonGre cf3hr cfDay cfSites day
+rsucsaf,naming fix only (name not in CF table replaced),upwelling_shortwave_flux_assuming_clean_clear_sky,False,cmip6/6.0.11 .. cmip6/6.1.22,13,E3hrPt
+rsucsaf,naming fix only (name not in CF table replaced),upwelling_shortwave_flux_in_air_assuming_clean_clear_sky,True,cmip6/6.1.23 .. cmip6/6.2.24,2,E3hrPt
+rsucsaf,naming fix only (name not in CF table replaced),upwelling_shortwave_flux_in_air_assuming_clear_sky_and_no_aerosol,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AE3hrPtLev E3hrPt
+rsucsafbnd,naming fix only (name not in CF table replaced),band_upwelling_shortwave_flux_assuming_clean_clear_sky,False,cmip6/6.0.11 .. cmip6/6.1.22,13,E3hrPt
+rsucsafbnd,naming fix only (name not in CF table replaced),upwelling_shortwave_flux_in_air_assuming_clean_clear_sky,True,cmip6/6.1.23 .. cmip6/6.2.24,2,E3hrPt
+rsucsafbnd,naming fix only (name not in CF table replaced),upwelling_shortwave_flux_in_air_assuming_clear_sky_and_no_aerosol,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AE3hrPtLev E3hrPt
+rsucsbnd,naming fix only (name not in CF table replaced),band_upwelling_shortwave_flux_assuming_clear_sky,False,cmip6/6.0.11 .. cmip6/6.0.20,11,E3hrPt
+rsucsbnd,naming fix only (name not in CF table replaced),upwelling_shortwave_flux_in_air_assuming_clear_sky,True,cmip6/6.0.21 .. mip/v6.5.0.4,18,AP3hrPtLev E3hrPt
+rsutcsaf,different CF quantities,toa_outgoing_shortwave_flux_assuming_clean_clear_sky,True,cmip6/6.1.23 .. cmip6/6.2.24,2,AERmon E3hrPt
+rsutcsaf,different CF quantities,toa_outgoing_shortwave_flux_assuming_clear_sky,True,cmip6/6.0.11 .. cmip6/6.1.22,13,AERmon E3hrPt
+rsutcsaf,different CF quantities,toa_outgoing_shortwave_flux_assuming_clear_sky_and_no_aerosol,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AE3hrPt AERmon AEmon E3hrPt
+rsutcsafbnd,naming fix only (name not in CF table replaced),band_toa_outgoing_shortwave_flux_assuming_clean_clear_sky,False,cmip6/6.0.11 .. cmip6/6.1.22,13,E3hrPt
+rsutcsafbnd,naming fix only (name not in CF table replaced),toa_outgoing_shortwave_flux_assuming_clean_clear_sky,True,cmip6/6.1.23 .. cmip6/6.2.24,2,E3hrPt
+rsutcsafbnd,naming fix only (name not in CF table replaced),toa_outgoing_shortwave_flux_assuming_clear_sky_and_no_aerosol,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AP3hrPt E3hrPt
+rzwc,naming fix only (name not in CF table replaced),mass_content_of_water_in_soil_layer_defined_by_root_depth,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+rzwc,naming fix only (name not in CF table replaced),water_content_of_root_zone,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+sandfrac,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Efx
+sandfrac,naming fix only (name not in CF table replaced),volume_fraction_of_sand_in_soil,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Efx LPfx
+sblnosn,naming fix only (name not in CF table replaced),sublimation_amount_assuming_no_snow,False,cmip6/6.0.16 .. cmip6/6.2.24,10,Eday
+sblnosn,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mass_content_of_water_vapor_due_to_sublimation_of_surface_ice,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APday Eday
+scldncl,naming fix only (name not in CF table replaced),number_concentration_of_stratiform_cloud_liquid_water_particle_at_stratiform_liquid_water_cloud_top,True,cmip6/6.1.23 .. cmip6/6.8.31,9,Eday
+scldncl,naming fix only (name not in CF table replaced),number_concentration_of_stratiform_cloud_liquid_water_particles_at_stratiform_liquid_water_cloud_top,True,cmip6/6.9.32 .. mip/v6.5.0.4,7,APday Eday
+scldncl,naming fix only (name not in CF table replaced),number_concentration_of_stratiform_cloud_liquid_water_particles_in_air_at_liquid_water_cloud_top,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Eday
+sedustCI,naming fix only (name not in CF table replaced),minus_tendency_of_atmosphere_mass_content_of_insoluble_dust_dry_aerosol_particles_due_to_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AEmon Emon
+sedustCI,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_sedimentation,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+si,different CF quantities,mole_concentration_of_dissolved_inorganic_silicon_in_sea_water,True,cmip6/6.0.11 .. mip/v6.5.0.4,29,OBmonLev OByrLev Omon Oyr
+si,different CF quantities,mole_concentration_of_silicate_in_sea_water,True,cmip5/5.0 .. cmip5/5.0,1,Omon Oyr
+sidmassdyn,naming fix only (name not in CF table replaced),tendency_of_sea_ice_amount_due_to_dynamics,False,cmip6/6.0.11 .. cmip6/6.2.24,15,SImon
+sidmassdyn,naming fix only (name not in CF table replaced),tendency_of_sea_ice_amount_due_to_sea_ice_dynamics,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+sidmassgrowthwat,naming fix only (name not in CF table replaced),tendency_of_sea_ice_amount_due_to_frazil_ice_accumulation_in_leads,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,SImon
+sidmassgrowthwat,naming fix only (name not in CF table replaced),tendency_of_sea_ice_amount_due_to_freezing_in_open_water,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+sidmassth,naming fix only (name not in CF table replaced),tendency_of_sea_ice_amount_due_to_sea_ice_thermodynamics,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+sidmassth,naming fix only (name not in CF table replaced),tendency_of_sea_ice_amount_due_to_thermodynamics,False,cmip6/6.0.11 .. cmip6/6.2.24,15,SImon
+sidragbot,naming fix only (name not in CF table replaced),sea_ice_basal_drag_coefficient_for_momentum_in_sea_water,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+sidragbot,naming fix only (name not in CF table replaced),surface_drag_coefficient_for_momentum_in_sea_water,False,cmip6/6.1.23 .. cmip6/6.2.24,2,SImon
+sidragbot,naming fix only (name not in CF table replaced),surface_drag_coefficient_for_momentum_in_water,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+siflcondbot,naming fix only (name not in CF table replaced),basal_downward_heat_flux_in_sea_ice,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+siflcondbot,naming fix only (name not in CF table replaced),conductive_heat_flux_at_sea_ice_bottom,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+siflcondbot,naming fix only (name not in CF table replaced),sea_ice_basal_net_downward_sensible_heat_flux,False,cmip6/6.1.23 .. cmip6/6.2.24,2,SImon
+siflcondtop,naming fix only (name not in CF table replaced),conductive_heat_flux_at_sea_ice_surface,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+siflcondtop,naming fix only (name not in CF table replaced),surface_downward_sensible_heat_flux,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,SImon
+siflfwbot,naming fix only (name not in CF table replaced),freshwater_flux_from_ice,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+siflfwbot,naming fix only (name not in CF table replaced),water_flux_into_sea_water_due_to_sea_ice_thermodynamics,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,SImon
+siflfwbot,naming fix only (name not in CF table replaced),water_flux_into_sea_water_from_sea_ice,False,cmip6/6.1.23 .. cmip6/6.1.23,1,SImon
+siflfwdrain,naming fix only (name not in CF table replaced),freshwater_flux_from_ice_surface,False,cmip6/6.0.11 .. cmip6/6.2.24,15,SImon
+siflfwdrain,naming fix only (name not in CF table replaced),water_flux_into_sea_water_due_to_surface_drainage,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+siflsensupbot,naming fix only (name not in CF table replaced),ice_ocean_heat_flux,False,cmip6/6.0.11 .. cmip6/6.0.13,3,SImon
+siflsensupbot,naming fix only (name not in CF table replaced),upward_sea_ice_basal_heat_flux,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,SImon
+siflswdbot,naming fix only (name not in CF table replaced),bottom_downwelling_shortwave_flux_into_ocean,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+siflswdbot,naming fix only (name not in CF table replaced),downwelling_shortwave_flux_in_sea_water_at_sea_ice_base,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,SImon
+siforcecoriolx,naming fix only (name not in CF table replaced),coriolis_force_on_sea_ice_x,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+siforcecoriolx,naming fix only (name not in CF table replaced),sea_ice_specific_x_force_due_to_coriolis_term,False,cmip6/6.1.23 .. cmip6/6.2.24,2,SImon
+siforcecoriolx,naming fix only (name not in CF table replaced),sea_ice_x_force_per_unit_area_due_to_coriolis_effect,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+siforcecorioly,naming fix only (name not in CF table replaced),coriolis_force_on_sea_ice_y,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+siforcecorioly,naming fix only (name not in CF table replaced),sea_ice_specific_y_force_due_to_coriolis_term,False,cmip6/6.1.23 .. cmip6/6.2.24,2,SImon
+siforcecorioly,naming fix only (name not in CF table replaced),sea_ice_y_force_per_unit_area_due_to_coriolis_effect,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+siforceintstrx,naming fix only (name not in CF table replaced),internal_stress_in_sea_ice_x,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+siforceintstrx,naming fix only (name not in CF table replaced),sea_ice_specific_x_force_due_to_internal_forces,False,cmip6/6.1.23 .. cmip6/6.2.24,2,SImon
+siforceintstrx,naming fix only (name not in CF table replaced),sea_ice_x_internal_stress,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+siforceintstry,naming fix only (name not in CF table replaced),internal_stress_in_sea_ice_y,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+siforceintstry,naming fix only (name not in CF table replaced),sea_ice_specific_y_force_due_to_internal_forces,False,cmip6/6.1.23 .. cmip6/6.2.24,2,SImon
+siforceintstry,naming fix only (name not in CF table replaced),sea_ice_y_internal_stress,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+siforcetiltx,naming fix only (name not in CF table replaced),sea_ice_specific_x_force_due_to_sea_surface_tilt,False,cmip6/6.1.23 .. cmip6/6.2.24,2,SImon
+siforcetiltx,naming fix only (name not in CF table replaced),sea_ice_x_force_per_unit_area_due_to_sea_surface_tilt,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+siforcetiltx,naming fix only (name not in CF table replaced),sea_surface_tilt_force_on_sea_ice_x,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+siforcetilty,naming fix only (name not in CF table replaced),sea_ice_specific_y_force_due_to_sea_surface_tilt,False,cmip6/6.1.23 .. cmip6/6.2.24,2,SImon
+siforcetilty,naming fix only (name not in CF table replaced),sea_ice_y_force_per_unit_area_due_to_sea_surface_tilt,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+siforcetilty,naming fix only (name not in CF table replaced),sea_surface_tilt_force_on_sea_ice_y,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+siitdconc,naming fix only (name not in CF table replaced),sea_ice_area_fraction,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,SImon
+siitdconc,naming fix only (name not in CF table replaced),sea_ice_area_fraction_over_categories,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+siitdsnconc,naming fix only (name not in CF table replaced),snow_area_fraction_over_categories,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+siitdsnconc,naming fix only (name not in CF table replaced),surface_snow_area_fraction,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,SImon
+siitdsnthick,naming fix only (name not in CF table replaced),snow_thickness_over_categories,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+siitdsnthick,naming fix only (name not in CF table replaced),surface_snow_thickness,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,SImon
+siitdthick,naming fix only (name not in CF table replaced),sea_ice_thickness,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,SImon
+siitdthick,naming fix only (name not in CF table replaced),sea_ice_thickness_over_categories,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+siltfrac,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.0.21,12,Efx
+siltfrac,naming fix only (name not in CF table replaced),volume_fraction_of_silt_in_soil,True,cmip6/6.1.22 .. mip/v6.5.0.4,17,APfx Efx
+simpmass,naming fix only (name not in CF table replaced),sea_ice_melt_pond_thickness,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,SImon
+simpmass,naming fix only (name not in CF table replaced),surface_liquid_water_amount,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+simprefrozen,naming fix only (name not in CF table replaced),melt_pond_refrozen_ice,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+simprefrozen,naming fix only (name not in CF table replaced),thickness_of_ice_on_sea_ice_melt_pond,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,SImon
+sios,naming fix only (name not in CF table replaced),mole_concentration_of_dissolved_inorganic_silicon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+sios,naming fix only (name not in CF table replaced),surface_mole_concentration_of_dissolved_inorganic_silicon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+sirdgconc,naming fix only (name not in CF table replaced),area_fraction,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+sirdgconc,naming fix only (name not in CF table replaced),fraction_of_ridged_sea_ice,False,cmip6/6.0.11 .. cmip6/6.2.24,15,SImon
+sirdgthick,naming fix only (name not in CF table replaced),sea_ice_thickness,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+sirdgthick,naming fix only (name not in CF table replaced),thickness_of_ridged_sea_ice,False,cmip6/6.0.11 .. cmip6/6.2.24,15,SImon
+sisaltmass,naming fix only (name not in CF table replaced),sea_ice_mass_content_of_salt,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+sisaltmass,naming fix only (name not in CF table replaced),sea_ice_salt_content,False,cmip6/6.1.23 .. cmip6/6.2.24,2,SImon
+sisaltmass,naming fix only (name not in CF table replaced),sea_ice_salt_mass,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+sishevel,naming fix only (name not in CF table replaced),maximum_over_coordinate_rotation_of_sea_ice_horizontal_shear_strain_rate,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon SImonPt
+sishevel,naming fix only (name not in CF table replaced),maximum_shear_of_sea_ice_velocity,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+sishevel,naming fix only (name not in CF table replaced),sea_ice_second_invariant_of_horizontal_strain_tensor_expressed_as_effective_stress,False,cmip6/6.2.24 .. cmip6/6.2.24,1,SImon
+sistremax,naming fix only (name not in CF table replaced),maximum_over_coordinate_rotation_of_sea_ice_horizontal_shear_stress,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon SImonPt
+sistremax,naming fix only (name not in CF table replaced),maximum_shear_stress,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+sistremax,naming fix only (name not in CF table replaced),sea_ice_second_invariant_of_horizontal_stress_tensor_expressed_as_effective_stress,False,cmip6/6.2.24 .. cmip6/6.2.24,1,SImon
+sistresave,naming fix only (name not in CF table replaced),average_normal_stress,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+sistresave,naming fix only (name not in CF table replaced),sea_ice_average_normal_horizontal_stress,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon SImonPt
+sistresave,naming fix only (name not in CF table replaced),sea_ice_trace_of_horizontal_stress_tensor,False,cmip6/6.2.24 .. cmip6/6.2.24,1,SImon
+sistrxubot,naming fix only (name not in CF table replaced),sea_ice_base_upward_x_stress,False,cmip6/6.0.11 .. cmip6/6.0.13,3,SImon
+sistrxubot,naming fix only (name not in CF table replaced),upward_x_stress_at_sea_ice_base,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,SImon
+sistryubot,different CF quantities,downward_y_stress_at_sea_ice_base,True,cmip6/6.0.11 .. cmip6/6.0.13,3,SImon
+sistryubot,different CF quantities,upward_y_stress_at_sea_ice_base,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,SImon
+sitempbot,naming fix only (name not in CF table replaced),sea_ice_basal_temperature,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,SImon
+sitempbot,naming fix only (name not in CF table replaced),sea_ice_bottom_temperature,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+sitimefrac,naming fix only (name not in CF table replaced),fraction_of_time_with_sea_ice_area_fraction_above_threshold,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SIday SImon
+sitimefrac,naming fix only (name not in CF table replaced),sea_ice_time_fraction,False,cmip6/6.0.11 .. cmip6/6.2.24,15,SIday SImon
+slthick,naming fix only (name not in CF table replaced),cell_thickness,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Efx LPfx
+slthick,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Efx
+sndmassdyn,naming fix only (name not in CF table replaced),tendency_of_snow_mass_due_to_sea_ice_dynamics,False,cmip6/6.0.11 .. cmip6/6.2.24,15,SImon
+sndmassdyn,naming fix only (name not in CF table replaced),tendency_of_surface_snow_amount_due_to_sea_ice_dynamics,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+sndmasssubl,naming fix only (name not in CF table replaced),surface_snow_and_ice_sublimation_flux,True,cmip6/6.2.24 .. cmip6/6.2.24,1,SImon
+sndmasssubl,naming fix only (name not in CF table replaced),surface_snow_sublimation_flux,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+sndmasssubl,naming fix only (name not in CF table replaced),tendency_of_atmosphere_mass_content_of_water_vapor_due_to_sublimation_of_surface_snow_and_ice,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+sndmasswindrif,naming fix only (name not in CF table replaced),tendency_of_snow_mass_due_to_drifting_snow,False,cmip6/6.0.11 .. cmip6/6.1.22,13,SImon
+sndmasswindrif,naming fix only (name not in CF table replaced),tendency_of_surface_snow_amount_due_to_drifting,False,cmip6/6.1.23 .. cmip6/6.2.24,2,SImon
+sndmasswindrif,naming fix only (name not in CF table replaced),tendency_of_surface_snow_amount_due_to_drifting_into_sea,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,SImon
+snmassacrossline,naming fix only (name not in CF table replaced),snow_mass_transport_across_line,False,cmip6/6.0.11 .. cmip6/6.1.23,14,SImon
+snmassacrossline,naming fix only (name not in CF table replaced),snow_transport_across_line_due_to_sea_ice_dynamics,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,SImon
+snmsl,naming fix only (name not in CF table replaced),liquid_water_mass_flux_into_soil_due_to_surface_snow_melt,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APday Eday
+snmsl,naming fix only (name not in CF table replaced),surface_snow_melt_flux_into_soil_layer,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+solbnd,different CF quantities,band_solar_insolation,False,cmip6/6.0.11 .. cmip6/6.0.20,11,E3hrPt
+solbnd,different CF quantities,solar_irradiance,True,cmip6/6.0.21 .. cmip6/6.0.21,1,E3hrPt
+solbnd,different CF quantities,toa_incoming_shortwave_flux,True,cmip6/6.1.22 .. mip/v6.5.0.4,17,AP3hrPt E3hrPt
+somint,naming fix only (name not in CF table replaced),integral_wrt_depth_of_product_of_salinity_and_sea_water_density,True,cmip6/6.9.32 .. mip/v6.5.0.4,7,Emon OPmon OPyr Oyr
+somint,naming fix only (name not in CF table replaced),integral_wrt_depth_of_product_of_sea_water_density_and_prognostic_salinity,False,cmip6/6.0.11 .. cmip6/6.0.19a,9,Emon Oyr
+somint,naming fix only (name not in CF table replaced),integral_wrt_depth_of_product_of_sea_water_density_and_salinity,True,cmip6/6.0.19 .. cmip6/6.8.31,13,Emon Oyr
+spco2abio,different CF quantities,surface_carbon_dioxide_abiotic_analogue_partial_pressure_difference_between_sea_water_and_air,True,cmip6/6.1.22 .. mip/v6.5.0.4,17,OBmon Omon
+spco2abio,different CF quantities,surface_partial_pressure_of_carbon_dioxide_abiotic_analogue_in_sea_water,True,cmip6/6.0.15 .. cmip6/6.0.21,8,Omon
+spco2abio,different CF quantities,surface_partial_pressure_of_carbon_dioxide_in_sea_water_due_to_abiotic_component,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Omon
+spco2nat,different CF quantities,surface_carbon_dioxide_natural_analogue_partial_pressure_difference_between_sea_water_and_air,True,cmip6/6.1.22 .. mip/v6.5.0.4,17,OBmon Omon
+spco2nat,different CF quantities,surface_partial_pressure_of_carbon_dioxide_in_sea_water_due_to_natural_component,False,cmip6/6.0.11 .. cmip6/6.0.14,4,Omon
+spco2nat,different CF quantities,surface_partial_pressure_of_carbon_dioxide_natural_analogue_in_sea_water,True,cmip6/6.0.15 .. cmip6/6.0.21,8,Omon
+strbasemag,naming fix only (name not in CF table replaced),land_ice_basal_drag,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,GIAyr GIGyr IyrAnt IyrGre
+strbasemag,naming fix only (name not in CF table replaced),magnitude_of_basal_drag_at_land_ice_base,False,cmip6/6.0.11 .. cmip6/6.1.22,13,IyrAnt IyrGre
+strbasemag,naming fix only (name not in CF table replaced),magnitude_of_land_ice_basal_drag,False,cmip6/6.1.23 .. cmip6/6.1.23,1,IyrAnt IyrGre
+sw,naming fix only (name not in CF table replaced),land_surface_liquid_water_amount,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Eday LPday
+sw,naming fix only (name not in CF table replaced),surface_water_amount_assuming_no_snow,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Eday
+sweLut,naming fix only (name not in CF table replaced),lwe_thickness_of_surface_snow_amount,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+sweLut,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+sweLut,naming fix only (name not in CF table replaced),snow_amount_expressed_as_liquid_water_depth,False,cmip6/6.1.23 .. cmip6/6.1.23,1,Emon
+swsffluxaero,naming fix only (name not in CF table replaced),shortwave__flux_due_to_volcanic_aerosols_at__the_surface,False,cmip6/6.0.11 .. cmip6/6.1.22,13,6hrPlevPt
+swsffluxaero,naming fix only (name not in CF table replaced),shortwave__flux_due_to_volcanic_ambient_aerosol_particles_at_the_surface,False,cmip6/6.1.23 .. cmip6/6.1.23,1,6hrPlevPt
+swsffluxaero,naming fix only (name not in CF table replaced),surface_downwelling_shortwave_flux_in_air_due_to_volcanic_ambient_aerosol_particles,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,6hrPlevPt AP6hrPt
+swsrfasdust,naming fix only (name not in CF table replaced),surface_net_downward_shortwave_dust_ambient_aerosol_particles_direct_radiative_effect,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APmon Emon
+swsrfasdust,naming fix only (name not in CF table replaced),tendency_of_all_sky_surface_shortwave_flux_due_to_dust_ambient_aerosol_particles,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+swsrfcsdust,naming fix only (name not in CF table replaced),surface_net_downward_shortwave_dust_ambient_aerosol_particles_direct_radiative_effect_assuming_clear_sky,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APmon Emon
+swsrfcsdust,naming fix only (name not in CF table replaced),tendency_of_clear_sky_surface_shortwave_flux_due_to_dust_ambient_aerosol_particles,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+swtoafluxaerocs,naming fix only (name not in CF table replaced),shortwave_flux_due_to_volcanic_aerosols_at_TOA_under_clear_sky,False,cmip6/6.0.11 .. cmip6/6.1.23,14,6hrPlevPt
+swtoafluxaerocs,naming fix only (name not in CF table replaced),toa_outgoing_shortwave_flux_due_to_volcanic_ambient_aerosol_particles_assuming_clear_sky,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,6hrPlevPt AP6hrPt
+tSoilPools,naming fix only (name not in CF table replaced),soil_carbon_turnover_rate_by_pool,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+tSoilPools,naming fix only (name not in CF table replaced),soil_pool_carbon_decay_rate,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+talknat,naming fix only (name not in CF table replaced),sea_water_alkalinity_natural_analogue_expressed_as_mole_equivalent,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmonLev OByrLev Omon Oyr
+talknat,naming fix only (name not in CF table replaced),seawater_alkalinity_expressed_as_mole_equivalent_natural_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon Oyr
+talknatos,naming fix only (name not in CF table replaced),sea_water_alkalinity_expressed_as_mole_equivalent_due_to_natural_component,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+talknatos,naming fix only (name not in CF table replaced),sea_water_alkalinity_natural_analogue_expressed_as_mole_equivalent,True,cmip6/6.0.14 .. mip/v6.5.0.4,26,OBmon Omon
+tau,naming fix only (name not in CF table replaced),magnitude_of_surface_downward_stress,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APday Eday
+tau,naming fix only (name not in CF table replaced),surface_downward_stress,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Eday
+tauucorr,different CF quantities,downward_x_stress_correction_at_sea_water_surface,True,cmip6/6.7.31 .. mip/v6.5.0.4,9,OPmon Omon
+tauucorr,different CF quantities,surface_downward_x_stress_correction,True,cmip5/5.0 .. cmip6/6.6.30,21,Omon
+tauuo,different CF quantities,downward_x_stress_at_sea_water_surface,True,cmip6/6.7.31 .. mip/v6.5.0.4,9,OPdec OPmon Odec Omon
+tauuo,different CF quantities,surface_downward_x_stress,True,cmip5/5.0 .. cmip6/6.6.30,21,Odec Omon
+tauupbl,naming fix only (name not in CF table replaced),surface_downward_eastward_stress_due_to_boundary_layer_mixing,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APday Eday
+tauupbl,naming fix only (name not in CF table replaced),surface_downward_eastward_stress_due_to_planetary_boundary_layer,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Eday
+tauvcorr,different CF quantities,downward_y_stress_correction_at_sea_water_surface,True,cmip6/6.7.31 .. mip/v6.5.0.4,9,OPmon Omon
+tauvcorr,different CF quantities,surface_downward_y_stress_correction,True,cmip5/5.0 .. cmip6/6.6.30,21,Omon
+tauvo,different CF quantities,downward_y_stress_at_sea_water_surface,True,cmip6/6.7.31 .. mip/v6.5.0.4,9,OPdec OPmon Odec Omon
+tauvo,different CF quantities,surface_downward_y_stress,True,cmip5/5.0 .. cmip6/6.6.30,21,Odec Omon
+tauvpbl,naming fix only (name not in CF table replaced),surface_downward_northward_stress_due_to_boundary_layer_mixing,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APday Eday
+tauvpbl,naming fix only (name not in CF table replaced),surface_downward_northward_stress_due_to_planetary_boundary_layer,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Eday
+tnhusscp,naming fix only (name not in CF table replaced),tendency_of_specific_humidity_due_to_stratiform_cloud_and_precipitation,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,APmonLev APsubhrPtSite Emon Esubhr
+tnhusscp,naming fix only (name not in CF table replaced),tendency_of_specific_humidity_due_to_stratiform_clouds_and_precipitation,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon Esubhr
+tntd,naming fix only (name not in CF table replaced),tendency_of_air_temperature_due_to_diffusion,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APmonLev APsubhrPtSite Emon Esubhr
+tntd,naming fix only (name not in CF table replaced),tendency_of_air_temperature_due_to_numerical_diffusion,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon Esubhr
+tntnogw,naming fix only (name not in CF table replaced),temperature_tendency_due_to_dissipation_nonorographic_gravity_wave_drag,False,cmip6/6.0.11 .. cmip6/6.1.23,14,EmonZ
+tntnogw,naming fix only (name not in CF table replaced),tendency_of_air_temperature_due_to_dissipation_of_nonorographic_gravity_waves,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APmonZ EmonZ
+tntogw,naming fix only (name not in CF table replaced),temperature_tendency_due_to_dissipation_orographic_gravity_wave_drag,False,cmip6/6.0.11 .. cmip6/6.1.23,14,EmonZ
+tntogw,naming fix only (name not in CF table replaced),tendency_of_air_temperature_due_to_dissipation_of_orographic_gravity_waves,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,APmonZ EmonZ
+tntscp,naming fix only (name not in CF table replaced),tendency_of_air_temperature_due_to_stratiform_cloud_and_precipitation,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,APmonLev APmonZ APsubhrPtSite Emon EmonZ Esubhr
+tntscp,naming fix only (name not in CF table replaced),tendency_of_air_temperature_due_to_stratiform_clouds_and_precipitation,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon EmonZ Esubhr
+tos,different CF quantities,sea_surface_temperature,True,cmip5/5.0 .. mip/v6.5.0.4,30,3hr OP3hrPt OPday OPdec OPmon Oday Odec Omon
+tos,different CF quantities,surface_temperature,True,cmip5/5.0 .. cmip5/5.0,1,day
+ugrido,naming fix only (name not in CF table replaced),longitude,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,OPfx Ofx
+ugrido,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Ofx
+utendvtem,naming fix only (name not in CF table replaced),tendency_of_eastward_wind_due_to_advection_by_northward_transformed_eulerian_mean_air_velocity,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APdayZ EdayZ
+utendvtem,naming fix only (name not in CF table replaced),tendency_of_eastward_wind_due_to_advection_by_the_northward_transformed_eulerian_mean_air_velocity,False,cmip6/6.1.23 .. cmip6/6.2.24,2,EdayZ
+utendvtem,naming fix only (name not in CF table replaced),u-tendency_by_wstar_advection,False,cmip6/6.0.11 .. cmip6/6.1.22,13,EdayZ
+utendwtem,naming fix only (name not in CF table replaced),tendency_of_eastward_wind_due_to_advection_by_the_upward_transformed_eulerian_mean_air_velocity,False,cmip6/6.1.23 .. cmip6/6.2.24,2,EdayZ
+utendwtem,naming fix only (name not in CF table replaced),tendency_of_eastward_wind_due_to_advection_by_upward_transformed_eulerian_mean_air_velocity,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,APdayZ EdayZ
+utendwtem,naming fix only (name not in CF table replaced),u-tendency_by_vstar_advection,False,cmip6/6.0.11 .. cmip6/6.1.22,13,EdayZ
+vmrox,naming fix only (name not in CF table replaced),mole_fraction_of_ox_in_air,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,ACmonZ EmonZ
+vmrox,naming fix only (name not in CF table replaced),mole_fraction_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom,False,cmip6/6.0.11 .. cmip6/6.1.22,13,EmonZ
+vt100,different CF quantities,covariance_over_longitude_of_northward_wind_and_air_temperature,True,cmip6/6.7.31 .. mip/v6.5.0.4,9,AERmonZ AEmonZ
+vt100,different CF quantities,northward_heat_flux_in_air_due_to_eddy_advection,True,cmip6/6.0.11 .. cmip6/6.6.30,20,AERmonZ
+wetbc,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+wetbc,sign convention (minus_),tendency_of_atmosphere_mass_content_of_black_carbon_dry_aerosol_due_to_wet_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+wetbc,sign convention (minus_),tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+wetdust,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+wetdust,sign convention (minus_),tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_due_to_wet_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+wetdust,sign convention (minus_),tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+wetlandCH4,naming fix only (name not in CF table replaced),surface_net_upward_mass_flux_of_methane_due_to_emission_from_wetland_biological_processes,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,Emon LPmon
+wetlandCH4,naming fix only (name not in CF table replaced),wetland_methane_emissions,False,cmip6/6.0.11 .. cmip6/6.2.24,15,Emon
+wetlandCH4cons,naming fix only (name not in CF table replaced),surface_downward_mass_flux_of_methane_due_to_wetland_biological_consumption,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+wetlandCH4cons,naming fix only (name not in CF table replaced),wetland_methane_consumption,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+wetlandCH4prod,naming fix only (name not in CF table replaced),surface_upward_mass_flux_of_methane_due_to_emission_from_wetland_biological_production,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Emon LPmon
+wetlandCH4prod,naming fix only (name not in CF table replaced),wetland_methane_production,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Emon
+wetlandFrac,naming fix only (name not in CF table replaced),area_fraction,True,cmip6/6.2.24 .. mip/v6.5.0.4,15,Emon LPmon
+wetlandFrac,naming fix only (name not in CF table replaced),wetland_fraction,False,cmip6/6.0.11 .. cmip6/6.1.23,14,Emon
+wetnh3,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_ammonia_due_to_wet_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+wetnh3,sign convention (minus_),tendency_of_atmosphere_mass_content_of_ammonia_due_to_wet_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+wetnh4,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+wetnh4,sign convention (minus_),tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_due_to_wet_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+wetnh4,sign convention (minus_),tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+wetnoy,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_wet_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+wetnoy,sign convention (minus_),tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_wet_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+wetoa,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+wetoa,sign convention (minus_),tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_due_to_wet_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+wetoa,sign convention (minus_),tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+wetso2,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_wet_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+wetso2,sign convention (minus_),tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_wet_deposition,True,cmip5/5.0 .. cmip6/6.2.24,16,AERmon aero
+wetso4,different CF quantities,minus_tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+wetso4,different CF quantities,tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+wetso4,different CF quantities,tendency_of_atmosphere_mass_content_of_sulfate_expressed_as_sulfur_dry_aerosol_due_to_wet_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+wetss,sign convention (minus_),minus_tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.3.27 .. mip/v6.5.0.4,14,AERmon AEmon
+wetss,sign convention (minus_),tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_due_to_wet_deposition,True,cmip5/5.0 .. cmip5/5.0,1,aero
+wetss,sign convention (minus_),tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_wet_deposition,True,cmip6/6.0.11 .. cmip6/6.2.24,15,AERmon
+wilt,naming fix only (name not in CF table replaced),missing,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Efx
+wilt,naming fix only (name not in CF table replaced),volume_fraction_of_condensed_water_in_soil_at_wilting_point,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Efx LPfx
+wtd,naming fix only (name not in CF table replaced),depth_of_soil_moisture_saturation,False,cmip6/6.0.11 .. cmip6/6.1.22,13,Eday Emon
+wtd,naming fix only (name not in CF table replaced),water_table_depth,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,Eday Emon LPday LPmon
+wtem,naming fix only (name not in CF table replaced),unset,False,cmip6/6.0.11 .. cmip6/6.1.22,13,EdayZ EmonZ
+wtem,naming fix only (name not in CF table replaced),upward_transformed_eulerian_mean_air_velocity,True,cmip6/6.1.23 .. mip/v6.5.0.4,16,APdayZ APmonZ EdayZ EmonZ
+zfull,different CF quantities,depth_below_geoid,True,cmip5/5.0 .. cmip5/5.0,1,Oclim Omon Oyr
+zfull,different CF quantities,height_above_reference_ellipsoid,True,cmip5/5.0 .. mip/v6.5.0.4,30,AP3hrPtLev APfx CF3hr cf3hr fx
+zhalf,different CF quantities,depth_below_geoid,True,cmip5/5.0 .. cmip5/5.0,1,Oclim Omon Oyr
+zhalf,different CF quantities,height_above_reference_ellipsoid,True,cmip5/5.0 .. mip/v6.5.0.4,30,AP3hrPtLev CF3hr cf3hr
+zmesoos,naming fix only (name not in CF table replaced),mole_concentration_of_mesozooplankton_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+zmesoos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_mesozooplankton_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+zmicroos,naming fix only (name not in CF table replaced),mole_concentration_of_microzooplankton_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+zmicroos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_microzooplankton_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+zmiscos,naming fix only (name not in CF table replaced),mole_concentration_of_miscellaneous_zooplankton_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+zmiscos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_miscellaneous_zooplankton_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon
+zmlwaero,different CF quantities,longwave_heating_rate_due_to_volcanic_aerosols,False,cmip6/6.0.11 .. cmip6/6.1.23,14,E6hrZ
+zmlwaero,different CF quantities,tendency_of_air_temperature_due_to_longwave_heating_from_volcanic_ambient_aerosol_particles,True,cmip6/6.6.30 .. mip/v6.5.0.4,10,AP6hrPtZ E6hrZ
+zmlwaero,different CF quantities,tendency_of_air_temperature_due_to_shortwave_heating_from_volcanic_ambient_aerosol_particles,True,cmip6/6.2.24 .. cmip6/6.5.29,5,E6hrZ
+zmswaero,different CF quantities,shortwave_heating_rate_due_to_volcanic_aerosols,False,cmip6/6.0.11 .. cmip6/6.1.23,14,E6hrZ
+zmswaero,different CF quantities,tendency_of_air_temperature_due_to_longwave_heating_from_volcanic_ambient_aerosol_particles,True,cmip6/6.2.24 .. cmip6/6.5.29,5,E6hrZ
+zmswaero,different CF quantities,tendency_of_air_temperature_due_to_shortwave_heating_from_volcanic_ambient_aerosol_particles,True,cmip6/6.6.30 .. mip/v6.5.0.4,10,AP6hrPtZ E6hrZ
+zoocos,naming fix only (name not in CF table replaced),mole_concentration_of_zooplankton_expressed_as_carbon_in_sea_water,True,cmip6/6.0.14 .. mip/v6.5.0.4,15,OBmon Omon
+zoocos,naming fix only (name not in CF table replaced),surface_mole_concentration_of_zooplankton_expressed_as_carbon_in_sea_water,False,cmip6/6.0.11 .. cmip6/6.0.13,3,Omon

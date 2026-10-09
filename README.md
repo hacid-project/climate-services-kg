@@ -29,3 +29,7 @@ For each source and edition:
    (`mapping/variables.jq`).
 
 Editions are listed in `config/config.yaml`. Changing a mapping reruns only the affected steps.
+
+The evolution of the variable definitions across the editions (additions, deletions,
+modifications, names used for different quantities) is analysed in
+`data-sources/cmor-tables/analysis/` (`snakemake --cores 4 cmor_tables_analysis`, see its README).

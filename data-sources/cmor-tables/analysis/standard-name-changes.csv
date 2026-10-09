@@ -1,0 +1,526 @@
+previous,edition,entry,old,new,kind
+cmip6/6.0.12,cmip6/6.0.13,Emon.od550aerso,missing,strat_aerosol_optical_depth,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,E3hr.prcsh,hallow_convective_precipitation_flux,shallow_convective_precipitation_flux,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Emon.clwmodis,liquid_cloud_area_fraction,liquid_water_cloud_area_fraction,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Emon.dissicnat,mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_natural_component,mole_concentration_of_dissolved_inorganic_carbon_natural_analogue_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.aragos,surface_mole_concentration_of_aragonite_epressed_as_carbon_in_sea_water,mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.baccos,surface_mole_concentration_of_bacteria_expressed_as_carbon_in_sea_water,mole_concentration_of_bacteria_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.bfeos,surface_mole_concentration_of_particulate_organic_matter_expressed_as_iron_in_sea_water,mole_concentration_of_particulate_organic_matter_expressed_as_iron_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.bsios,surface_mole_concentration_of_particulate_matter_expressed_as_silicon_in_sea_water,mole_concentration_of_particulate_matter_expressed_as_silicon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.calcos,surface_mole_concentration_of_calcite_epressed_as_carbon_in_sea_water,mole_concentration_of_calcite_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.co3abio,mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water_due_to_abiotic_component,mole_concentration_of_carbonate_abiotic_analogue_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.co3abioos,surface_mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water_due_to_abiotic_component,mole_concentration_of_carbonate_abiotic_analogue_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.co3nat,mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water_due_to_natural_component,mole_concentration_of_carbonate_natural_analogue_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.co3natos,surface_mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water_due_to_natural_component,mole_concentration_of_carbonate_natural_analogue_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.co3os,surface_mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water,mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.co3sataragos,surface_mole_concentration_of_carbonate_expressed_as_carbon_for_sea_water_in_equilibrium_with_pure_aragonite,mole_concentration_of_carbonate_expressed_as_carbon_at_equilibrium_with_pure_aragonite_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.co3satcalcos,surface_mole_concentration_of_carbonate_expressed_as_carbon_for_sea_water_in_equilibrium_with_pure_calcite,mole_concentration_of_carbonate_expressed_as_carbon_at_equilibrium_with_pure_calcite_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.detocos,surface_mole_concentration_of_organic_detritus_expressed_as_carbon_in_sea_water,mole_concentration_of_organic_detritus_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.dfeos,surface_mole_concentration_of_dissolved_iron_in_sea_water,mole_concentration_of_dissolved_iron_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.dissi13cos,surface_mole_concentration_of_dissolved_inorganic_carbon13_in_sea_water,mole_concentration_of_dissolved_inorganic_carbon13_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.dissi14cabioos,surface_mole_concentration_of_dissolved_inorganic_carbon14_in_sea_water,mole_concentration_of_dissolved_inorganic_carbon14_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.dissicabio,mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_abiotic_component,mole_concentration_of_dissolved_inorganic_carbon_abiotic_analogue_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.dissicabioos,surface_mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_due_to_abiotic_component,mole_concentration_of_dissolved_inorganic_carbon_abiotic_analogue_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.dissicnat,mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_natural_component,mole_concentration_of_dissolved_inorganic_carbon_natural_analogue_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.dissicnatos,surface_mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_due_to_natural_component,mole_concentration_of_dissolved_inorganic_carbon_natural_analogue_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.dissicos,surface_mole_concentration_of_dissolved_inorganic_carbon_in_sea_water,mole_concentration_of_dissolved_inorganic_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.dissocos,surface_mole_concentration_of_dissolved_organic_carbon_in_sea_water,mole_concentration_of_dissolved_organic_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.dmsos,surface_mole_concentration_of_dimethyl_sulfide_in_sea_water,mole_concentration_of_dimethyl_sulfide_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limfecalc,iron_limitation_of_calcareous_phytoplankton,iron_growth_limitation_of_calcareous_phytoplankton,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limfediat,iron_limitation_of_diatoms,iron_growth_limitation_of_diatoms,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limfediaz,iron_limitation_of_diazotrophs,iron_growth_limitation_of_diazotrophs,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limfemisc,iron_limitation_of_miscellaneous_phytoplankton,iron_growth_limitation_of_miscellaneous_phytoplankton,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limfepico,iron_limitation_of_picophytoplankton,iron_growth_limitation_of_picophytoplankton,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limirrcalc,irradiance_limitation_of_calcareous_phytoplankton,growth_limitation_of_calcareous_phytoplankton_due_to_solar_irradiance,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limirrdiat,irradiance_limitation_of_diatoms,growth_limitation_of_diatoms_due_to_solar_irradiance,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limirrdiaz,irradiance_limitation_of_diazotrophs,growth_limitation_of_diazotrophs_due_to_solar_irradiance,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limirrmisc,irradiance_limitation_of_miscellaneous_phytoplankton,growth_limitation_of_miscellaneous_phytoplankton_due_to_solar_irradiance,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limirrpico,irradiance_limitation_of_picophytoplankton,growth_limitation_of_miscellaneous_phytoplankton_due_to_solar_irradiance,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limncalc,nitrogen_limitation_of_calcareous_phytoplankton,nitrogen_growth_limitation_of_calcareous_phytoplankton,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limndiat,nitrogen_limitation_of_diatoms,nitrogen_growth_limitation_of_diatoms,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limndiaz,nitrogen_limitation_of_diazotrophs,nitrogen_growth_limitation_of_diazotrophs,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limnmisc,nitrogen_limitation_of_miscellaneous_phytoplankton,nitrogen_growth_limitation_of_miscellaneous_phytoplankton,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.limnpico,nitrogen_limitation_of_picophytoplankton,nitrogen_growth_limitation_of_picophytoplankton,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.nh4os,surface_mole_concentration_of_ammonium_in_sea_water,mole_concentration_of_ammonium_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.no3os,surface_mole_concentration_of_nitrate_in_sea_water,mole_concentration_of_nitrate_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.o2os,surface_mole_concentration_of_dissolved_molecular_oxygen_in_sea_water,mole_concentration_of_dissolved_molecular_oxygen_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.o2satos,surface_mole_concentration_of_dissolved_molecular_oxygen_in_sea_water_at_saturation,mole_concentration_of_dissolved_molecular_oxygen_in_sea_water_at_saturation,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phabio,sea_water_ph_reported_on_total_scale_due_to_abiotic_component,sea_water_ph_abiotic_analogue_reported_on_total_scale,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phabioos,sea_water_ph_reported_on_total_scale_due_to_abiotic_component,sea_water_ph_abiotic_analogue_reported_on_total_scale,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phnat,sea_water_ph_reported_on_total_scale_due_to_natural_component,sea_water_ph_natural_analogue_reported_on_total_scale,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phnatos,sea_water_ph_reported_on_total_scale_due_to_natural_component,sea_water_ph_natural_analogue_reported_on_total_scale,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phycalcos,surface_mole_concentration_of_calcareous_phytoplankton_expressed_as_carbon_in_sea_water,mole_concentration_of_calcareous_phytoplankton_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phydiatos,surface_mole_concentration_of_diatoms_expressed_as_carbon_in_sea_water,mole_concentration_of_diatoms_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phydiazos,surface_mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_water,mole_concentration_of_diazotrophs_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phyfeos,surface_mole_concentration_of_phytoplankton_expressed_as_iron_in_sea_water,mole_concentration_of_phytoplankton_expressed_as_iron_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phymiscos,surface_mole_concentration_of_miscellaneous_phytoplankton_expressed_as_carbon_in_sea_water,mole_concentration_of_miscellaneous_phytoplankton_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phynos,surface_mole_concentration_of_phytoplankton_expressed_as_nitrogen_in_sea_water,mole_concentration_of_phytoplankton_expressed_as_nitrogen_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phypicoos,surface_mole_concentration_of_picophytoplankton_expressed_as_carbon_in_sea_water,mole_concentration_of_picophytoplankton_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.phypos,surface_mole_concentration_of_phytoplankton_expressed_as_phosphorus_in_sea_water,mole_concentration_of_phytoplankton_expressed_as_phosphorus_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.physios,surface_mole_concentration_of_phytoplankton_expressed_as_silicon_in_sea_water,mole_concentration_of_phytoplankton_expressed_as_silicon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.po4os,surface_mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water,mole_concentration_of_dissolved_inorganic_phosphorus_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.ponos,surface_mole_concentration_of_particulate_organic_matter_expressed_as_nitrogen_in_sea_water,mole_concentration_of_particulate_organic_matter_expressed_as_nitrogen_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.popos,surface_mole_concentration_of_particulate_organic_matter_expressed_as_phosphorus_in_sea_water,mole_concentration_of_particulate_organic_matter_expressed_as_phosphorus_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.sios,surface_mole_concentration_of_dissolved_inorganic_silicon_in_sea_water,mole_concentration_of_dissolved_inorganic_silicon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.talknat,seawater_alkalinity_expressed_as_mole_equivalent_natural_component,sea_water_alkalinity_natural_analogue_expressed_as_mole_equivalent,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.talknatos,sea_water_alkalinity_expressed_as_mole_equivalent_due_to_natural_component,sea_water_alkalinity_natural_analogue_expressed_as_mole_equivalent,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.zmesoos,surface_mole_concentration_of_mesozooplankton_expressed_as_carbon_in_sea_water,mole_concentration_of_mesozooplankton_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.zmicroos,surface_mole_concentration_of_microzooplankton_expressed_as_carbon_in_sea_water,mole_concentration_of_microzooplankton_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.zmiscos,surface_mole_concentration_of_miscellaneous_zooplankton_expressed_as_carbon_in_sea_water,mole_concentration_of_miscellaneous_zooplankton_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Omon.zoocos,surface_mole_concentration_of_zooplankton_expressed_as_carbon_in_sea_water,mole_concentration_of_zooplankton_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Oyr.co3abio,mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water_due_to_abiotic_component,mole_concentration_of_carbonate_abiotic_analogue_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Oyr.co3nat,mole_concentration_of_carbonate_expressed_as_carbon_in_sea_water_due_to_natural_component,mole_concentration_of_carbonate_natural_analogue_expressed_as_carbon_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Oyr.dissicabio,mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_abiotic_component,mole_concentration_of_dissolved_inorganic_carbon_abiotic_analogue_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Oyr.dissicnat,mole_concentration_of_dissolved_inorganic_carbon_in_sea_water_natural_component,mole_concentration_of_dissolved_inorganic_carbon_natural_analogue_in_sea_water,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Oyr.phabio,sea_water_ph_reported_on_total_scale_due_to_abiotic_component,sea_water_ph_abiotic_analogue_reported_on_total_scale,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Oyr.phnat,sea_water_ph_reported_on_total_scale_due_to_natural_component,sea_water_ph_natural_analogue_reported_on_total_scale,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,Oyr.talknat,seawater_alkalinity_expressed_as_mole_equivalent_natural_component,sea_water_alkalinity_natural_analogue_expressed_as_mole_equivalent,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,SImon.siflsensupbot,ice_ocean_heat_flux,upward_sea_ice_basal_heat_flux,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,SImon.sistrxubot,sea_ice_base_upward_x_stress,upward_x_stress_at_sea_ice_base,fix of name not in CF table
+cmip6/6.0.13,cmip6/6.0.14,SImon.sistryubot,downward_y_stress_at_sea_ice_base,upward_y_stress_at_sea_ice_base,different CF quantity
+cmip6/6.0.14,cmip6/6.0.15,Efx.clayfrac,missing,volume_fraction_of_clay_in_soil,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Emon.fg14co2abio,surface_downward_mass_flux_of_abiotic_14_carbon_dioxide_expressed_as_carbon,surface_downward_mass_flux_of_carbon14_dioxide_abiotic_analogue_expressed_as_carbon,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Emon.fgco2abio,surface_downward_mass_flux_of_abiotic_carbon_dioxide_expressed_as_carbon,surface_downward_mass_flux_of_carbon_dioxide_abiotic_analogue_expressed_as_carbon,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Emon.fgco2nat,surface_downward_mass_flux_of_natural_carbon_dioxide_expressed_as_carbon,surface_downward_mass_flux_of_carbon_dioxide_natural_analogue_expressed_as_carbon,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Omon.bsios,mole_concentration_of_particulate_matter_expressed_as_silicon_in_sea_water,mole_concentration_of_particulate_organic_matter_expressed_as_silicon_in_sea_water,different CF quantity
+cmip6/6.0.14,cmip6/6.0.15,Omon.co3satarag,mole_concentration_of_aragonite_expressed_as_carbon_in_sea_water_at_saturation,mole_concentration_of_carbonate_expressed_as_carbon_at_equilibrium_with_pure_aragonite_in_sea_water,different CF quantity
+cmip6/6.0.14,cmip6/6.0.15,Omon.co3satcalc,mole_concentration_of_calcite_expressed_as_carbon_in_sea_water_at_saturation,mole_concentration_of_carbonate_expressed_as_carbon_at_equilibrium_with_pure_calcite_in_sea_water,different CF quantity
+cmip6/6.0.14,cmip6/6.0.15,Omon.dpco2abio,surface_carbon_dioxide_partial_pressure_difference_between_sea_water_and_air_due_to_abiotic_component,surface_carbon_dioxide_abiotic_analogue_partial_pressure_difference_between_sea_water_and_air,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Omon.dpco2nat,surface_carbon_dioxide_partial_pressure_difference_between_sea_water_and_air_due_to_natural_component,surface_carbon_dioxide_natural_analogue_partial_pressure_difference_between_sea_water_and_air,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Omon.epn100,sinking_mole_flux_of_particulate_nitrogen_in_sea_water,sinking_mole_flux_of_particulate_organic_nitrogen_in_sea_water,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Omon.epp100,sinking_mole_flux_of_particulate_phosphorus_in_sea_water,sinking_mole_flux_of_particulate_organic_phosphorus_in_sea_water,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Omon.fg13co2,air_sea_flux_of_13CO2,surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Omon.fg14co2abio,surface_downward_mass_flux_of_abiotic_14_carbon_dioxide_expressed_as_carbon,surface_downward_mass_flux_of_carbon14_dioxide_abiotic_analogue_expressed_as_carbon,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Omon.fgco2abio,surface_downward_mass_flux_of_abiotic_carbon_dioxide_expressed_as_carbon,surface_downward_mass_flux_of_carbon_dioxide_abiotic_analogue_expressed_as_carbon,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Omon.fgco2nat,surface_downward_mass_flux_of_natural_carbon_dioxide_expressed_as_carbon,surface_downward_mass_flux_of_carbon_dioxide_natural_analogue_expressed_as_carbon,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Omon.limirrpico,growth_limitation_of_miscellaneous_phytoplankton_due_to_solar_irradiance,growth_limitation_of_picophytoplankton_due_to_solar_irradiance,different CF quantity
+cmip6/6.0.14,cmip6/6.0.15,Omon.spco2abio,surface_partial_pressure_of_carbon_dioxide_in_sea_water_due_to_abiotic_component,surface_partial_pressure_of_carbon_dioxide_abiotic_analogue_in_sea_water,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Omon.spco2nat,surface_partial_pressure_of_carbon_dioxide_in_sea_water_due_to_natural_component,surface_partial_pressure_of_carbon_dioxide_natural_analogue_in_sea_water,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Oyr.fg13co2,air_sea_flux_of_13CO2,surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Oyr.fg14co2abio,surface_downward_mass_flux_of_abiotic_14_carbon_dioxide_expressed_as_carbon,surface_downward_mass_flux_of_carbon14_dioxide_abiotic_analogue_expressed_as_carbon,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Oyr.fgco2abio,surface_downward_mass_flux_of_abiotic_carbon_dioxide_expressed_as_carbon,surface_downward_mass_flux_of_carbon_dioxide_abiotic_analogue_expressed_as_carbon,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Oyr.fgco2nat,surface_downward_mass_flux_of_natural_carbon_dioxide_expressed_as_carbon,surface_downward_mass_flux_of_carbon_dioxide_natural_analogue_expressed_as_carbon,fix of name not in CF table
+cmip6/6.0.14,cmip6/6.0.15,Oyr.remoc,tendency_of_mole_concentration_of_organic_matter_expressed_as_carbon_in_sea_water_due_to_remineralization,tendency_of_mole_concentration_of_particulate_organic_matter_expressed_as_carbon_in_sea_water_due_to_remineralization,fix of name not in CF table
+cmip6/6.0.15,cmip6/6.0.16,Emon.fg14co2,air_sea_flux_of_14CO2,surface_downward_mass_flux_of_carbon14_dioxide_abiotic_analogue_expressed_as_carbon,fix of name not in CF table
+cmip6/6.0.16,cmip6/6.0.17,Emon.lwsrfasdust,tendency_of_all_sky_surface_longwave_flux_to_dust_ambient_aerosol_particles,surface_instantaneous_longwave_forcing_due_to_dust,fix of name not in CF table
+cmip6/6.0.16,cmip6/6.0.17,Emon.lwsrfcsdust,tendency_of_clear_sky_surface_longwave_flux_to_dust_ambient_aerosol_particles,surface_instantaneous_longwave_forcing_due_to_dust_in_clearsky,fix of name not in CF table
+cmip6/6.0.16,cmip6/6.0.17,Omon.fgsf6,surface_downward_mole_flux_of_sf6,surface_downward_mole_flux_of_sulfur_hexafluoride,fix of name not in CF table
+cmip6/6.0.19a,cmip6/6.0.19,Emon.somint,integral_wrt_depth_of_product_of_sea_water_density_and_prognostic_salinity,integral_wrt_depth_of_product_of_sea_water_density_and_salinity,fix of name not in CF table
+cmip6/6.0.19a,cmip6/6.0.19,Oyr.somint,integral_wrt_depth_of_product_of_sea_water_density_and_prognostic_salinity,integral_wrt_depth_of_product_of_sea_water_density_and_salinity,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,E3hrPt.rsdcsbnd,band_downwelling_shortwave_flux_assuming_clear_sky,downwelling_shortwave_flux_in_air_assuming_clear_sky,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,E3hrPt.rsucsbnd,band_upwelling_shortwave_flux_assuming_clear_sky,upwelling_shortwave_flux_in_air_assuming_clear_sky,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,E3hrPt.solbnd,band_solar_insolation,solar_irradiance,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Emon.cSoilAbove1m,soil_carbon_content_above_1m_depth,soil_carbon_content,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Emon.cSoilBelow1m,soil_carbon_content_below_1m_depth,soil_carbon_content,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Emon.cSoilLevels,soil_carbon_content_on_model_levels,soil_carbon_content,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Emon.ocontemppmdiff,tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion,tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_eddy_diffusion,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Emon.ocontemppsmadvect,tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_advection,tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Emon.opottemppmdiff,tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion,tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_eddy_diffusion,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Emon.opottemppsmadvect,tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_advection,tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Emon.osaltpmdiff,tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_diffusion,tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_eddy_diffusion,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Emon.osaltpsmadvect,tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_submesoscale_advection,tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_submesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Omon.hfbasinpmadv,northward_ocean_heat_transport_due_to_parameterized_mesoscale_advection,northward_ocean_heat_transport_due_to_parameterized_mesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Omon.hfbasinpmdiff,northward_ocean_heat_transport_due_to_parameterized_mesoscale_diffusion,northward_ocean_heat_transport_due_to_parameterized_mesoscale_eddy_diffusion,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Omon.hfbasinpsmadv,northward_ocean_heat_transport_due_to_parameterized_submesoscale_advection,northward_ocean_heat_transport_due_to_parameterized_submesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Omon.msftmrhompa,ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_mesoscale_advection,ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_mesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Omon.msftmzmpa,ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_mesoscale_advection,ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_mesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Omon.msftmzsmpa,ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_submesoscale_advection,ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_submesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Omon.msftyrhompa,ocean_y_overturning_mass_streamfunction_due_to_parameterized_mesoscale_advection,ocean_y_overturning_mass_streamfunction_due_to_parameterized_mesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Omon.msftyzmpa,ocean_y_overturning_mass_streamfunction_due_to_parameterized_mesoscale_advection,ocean_y_overturning_mass_streamfunction_due_to_parameterized_mesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Omon.msftyzsmpa,ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_submesoscale_advection,ocean_meridional_overturning_mass_streamfunction_due_to_parameterized_submesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Oyr.ocontemppmdiff,tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion,tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_eddy_diffusion,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Oyr.ocontemppsmadvect,tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_advection,tendency_of_sea_water_conservative_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Oyr.opottemppmdiff,tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion,tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_eddy_diffusion,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Oyr.opottemppsmadvect,tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_advection,tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_submesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Oyr.osaltpmdiff,tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_diffusion,tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_eddy_diffusion,fix of name not in CF table
+cmip6/6.0.20,cmip6/6.0.21,Oyr.osaltpsmadvect,tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_submesoscale_advection,tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_submesoscale_eddy_advection,fix of name not in CF table
+cmip6/6.0.21,cmip6/6.1.22,AERmon.od550no3,atmosphere_optical_thickness_due_to_nitrate_ambient_aerosol,atmosphere_optical_thickness_due_to_nitrate_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.0.21,cmip6/6.1.22,AERmon.od550so4,atmosphere_optical_thickness_due_to_sulfate_ambient_aerosol,atmosphere_optical_thickness_due_to_sulfate_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.0.21,cmip6/6.1.22,E3hrPt.solbnd,solar_irradiance,toa_incoming_shortwave_flux,different CF quantity
+cmip6/6.0.21,cmip6/6.1.22,Eday.mrsfl,frozen_moisture_content_of_soil_layer,frozen_water_content_of_soil_layer,fix of name not in CF table
+cmip6/6.0.21,cmip6/6.1.22,Eday.mrsll,liquid_moisture_content_of_soil_layer,liquid_water_content_of_soil_layer,fix of name not in CF table
+cmip6/6.0.21,cmip6/6.1.22,Efx.siltfrac,missing,volume_fraction_of_silt_in_soil,fix of name not in CF table
+cmip6/6.0.21,cmip6/6.1.22,Emon.dissi14c,mole_concentration_of_dissolved_inorganic_c14_in_sea_water,mole_concentration_of_dissolved_inorganic_carbon14_in_sea_water,fix of name not in CF table
+cmip6/6.0.21,cmip6/6.1.22,Emon.mrsfl,frozen_moisture_content_of_soil_layer,frozen_water_content_of_soil_layer,fix of name not in CF table
+cmip6/6.0.21,cmip6/6.1.22,Emon.mrsll,liquid_moisture_content_of_soil_layer,liquid_water_content_of_soil_layer,fix of name not in CF table
+cmip6/6.0.21,cmip6/6.1.22,Omon.fg13co2,surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13,air_sea_flux_of_13CO2,to name not in CF table
+cmip6/6.0.21,cmip6/6.1.22,Omon.spco2abio,surface_partial_pressure_of_carbon_dioxide_abiotic_analogue_in_sea_water,surface_carbon_dioxide_abiotic_analogue_partial_pressure_difference_between_sea_water_and_air,different CF quantity
+cmip6/6.0.21,cmip6/6.1.22,Omon.spco2nat,surface_partial_pressure_of_carbon_dioxide_natural_analogue_in_sea_water,surface_carbon_dioxide_natural_analogue_partial_pressure_difference_between_sea_water_and_air,different CF quantity
+cmip6/6.0.21,cmip6/6.1.22,Oyr.fg13co2,surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13,air_sea_flux_of_13CO2,to name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,6hrPlevPt.swsffluxaero,shortwave__flux_due_to_volcanic_aerosols_at__the_surface,shortwave__flux_due_to_volcanic_ambient_aerosol_particles_at_the_surface,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,AERmon.rsutcsaf,toa_outgoing_shortwave_flux_assuming_clear_sky,toa_outgoing_shortwave_flux_assuming_clean_clear_sky,different CF quantity
+cmip6/6.1.22,cmip6/6.1.23,E3hrPt.aerasymbnd,band_aerosol_asymmetry_parameter,volume_spectral_asymmetry_factor_in_air_due_to_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,E3hrPt.albdiffbnd,band_diffuse_albedo,surface_spectral_hemispherical_reflectance_of_diffuse_shortwave_radiation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,E3hrPt.albdirbnd,band_direct_albedo,surface_spectral_hemispherical_reflectance_of_direct_shortwave_radiation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,E3hrPt.rsdcsaf,downwelling_shortwave_flux_assuming_clean_clear_sky,downwelling_shortwave_flux_in_air_assuming_clean_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,E3hrPt.rsdcsafbnd,band_downwelling_shortwave_flux_assuming_clean_clear_sky,downwelling_shortwave_flux_in_air_assuming_clean_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,E3hrPt.rsucsaf,upwelling_shortwave_flux_assuming_clean_clear_sky,upwelling_shortwave_flux_in_air_assuming_clean_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,E3hrPt.rsucsafbnd,band_upwelling_shortwave_flux_assuming_clean_clear_sky,upwelling_shortwave_flux_in_air_assuming_clean_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,E3hrPt.rsutcsaf,toa_outgoing_shortwave_flux_assuming_clear_sky,toa_outgoing_shortwave_flux_assuming_clean_clear_sky,different CF quantity
+cmip6/6.1.22,cmip6/6.1.23,E3hrPt.rsutcsafbnd,band_toa_outgoing_shortwave_flux_assuming_clean_clear_sky,toa_outgoing_shortwave_flux_assuming_clean_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Eday.aod550volso4,aerosol_optical_depth_due_to_stratospheric_volcanic_aerosols,stratosphere_optical_thickness_due_to_volcanic_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Eday.ccldncl,number_concentration_of_convective_cloud_liquid_water_particles_in_air_at_liquid_water_cloud_top,number_concentration_of_convective_cloud_liquid_water_particle_at_convective_liquid_water_cloud_top,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Eday.clivic,atmosphere_convective_cloud_ice_content,atmosphere_mass_content_of_convective_cloud_ice,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Eday.hfdsnb,missing,downward_heat_flux_at_ground_level_in_snow,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Eday.reffcclwtop,effective_radius_of_convective_cloud_liquid_water_particle_at_liquid_water_cloud_top,effective_radius_of_convective_cloud_liquid_water_particle_at_convective_liquid_water_cloud_top,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Eday.reffsclwtop,effective_radius_of_stratiform_cloud_liquid_water_particle_at_liquid_water_cloud_top,effective_radius_of_stratiform_cloud_liquid_water_particle_at_stratiform_liquid_water_cloud_top,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Eday.scldncl,number_concentration_of_stratiform_cloud_liquid_water_particles_in_air_at_liquid_water_cloud_top,number_concentration_of_stratiform_cloud_liquid_water_particle_at_stratiform_liquid_water_cloud_top,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Eday.wtd,depth_of_soil_moisture_saturation,water_table_depth,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,EdayZ.utendvtem,u-tendency_by_wstar_advection,tendency_of_eastward_wind_due_to_advection_by_the_northward_transformed_eulerian_mean_air_velocity,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,EdayZ.utendwtem,u-tendency_by_vstar_advection,tendency_of_eastward_wind_due_to_advection_by_the_upward_transformed_eulerian_mean_air_velocity,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,EdayZ.wtem,unset,upward_transformed_eulerian_mean_air_velocity,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Efx.fldcapacity,missing,volume_fraction_of_condensed_water_in_soil_at_field_capacity,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Efx.ksat,missing,soil_hydraulic_conductivity_at_saturation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Efx.rootdsl,missing,root_mass_content,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Efx.sandfrac,missing,volume_fraction_of_sand_in_soil,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Efx.slthick,missing,cell_thickness,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Efx.wilt,missing,volume_fraction_of_condensed_water_in_soil_at_wilting_point,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.c13Land,total_land_c13,mass_content_of_13C_in_vegetation_and_litter_and_soil_and_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.c13Litter,litter_c13_content,litter_mass_content_of_13C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.c13Soil,soil_c13_content,soil_mass_content_of_13C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.c13Veg,vegetation_c13_content,vegetation_mass_content_of_13C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.c14Land,total_land_c14,mass_content_of_14C_in_vegetation_and_litter_and_soil_and_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.c14Litter,litter_c14_content,litter_mass_content_of_14C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.c14Soil,soil_c14_content,soil_mass_content_of_14C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.c14Veg,vegetation_c14_content,vegetation_mass_content_of_14C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.cSoilPools,soil_carbon_content_by_pool,soil_carbon_content,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.cTotFireLut,missing,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.fCLandToOcean,carbon_mass_flux_into_ocean_from_rivers,mass_flux_of_carbon_into_sea_water_from_rivers,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.fFireAll,fire_CO2_emissions_from_all_sources,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.fFireNat,fire_CO2_emissions_from_wildfire,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_natural_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.fHarvestToProduct,harvested_biomass_into_product_pool,mass_flux_of_carbon_into_forestry_and_agricultural_products_due_to_crop_harvesting,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.fLitterFire,fire_CO2_emissions_from_litter_carbon,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_litter_in_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.fVegFire,fire_CO2_emissions_from_vegetation_carbon,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_vegetation_in_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.fVegLitterMortality,mortality_litter_carbon_flux,mass_flux_of_carbon_into_litter_from_vegetation_due_to_mortality,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.fVegLitterSenescence,senescence_litter_carbon_flux,mass_flux_of_carbon_into_litter_from_vegetation_due_to_senescence,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.fVegSoilMortality,mortality_vegtosoil_carbon_flux,mass_flux_of_carbon_into_soil_from_vegetation_due_to_mortality,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.fVegSoilSenescence,senescence_vegtosoil_carbon_flux,mass_flux_of_carbon_into_soil_from_vegetation_due_to_senescence,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.laiLut,missing,leaf_area_index,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.nMineral,mineral_soil_nitrogen_content,soil_mass_content_of_inorganic_nitrogen_expressed_as_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.nMineralNH4,mineral_nh4_soil_nitrogen_content,soil_mass_content_of_inorganic_ammonium_expressed_as_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.nMineralNO3,mineral_no3_soil_nitrogen_content,soil_mass_content_of_inorganic_nitrate_expressed_as_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.nwdFracLut,missing,area_fraction,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.od550so4so,missing,stratosphere_optical_thickness_due_to_ambient_suplhate_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.sweLut,missing,snow_amount_expressed_as_liquid_water_depth,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.tnhusscp,tendency_of_specific_humidity_due_to_stratiform_clouds_and_precipitation,tendency_of_specific_humidity_due_to_stratiform_cloud_and_precipitation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.tntscp,tendency_of_air_temperature_due_to_stratiform_clouds_and_precipitation,tendency_of_air_temperature_due_to_stratiform_cloud_and_precipitation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.wetlandCH4cons,wetland_methane_consumption,surface_downward_mass_flux_of_methane_due_to_wetland_biological_consumption,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.wetlandCH4prod,wetland_methane_production,surface_upward_mass_flux_of_methane_due_to_emission_from_wetland_biological_production,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Emon.wtd,depth_of_soil_moisture_saturation,water_table_depth,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,EmonZ.oxloss,tendency_of_mole_concentration_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom_due_to_chemical_destruction,tendency_of_atmosphere_mole_concentration_of_ox_due_to_chemical_destruction,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,EmonZ.oxprod,tendency_of_mole_concentration_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom_due_to_chemical_production_and_photolysis,tendency_of_atmosphere_mole_concentration_of_ox_due_to_chemical_and_photolytic_production,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,EmonZ.tntscp,tendency_of_air_temperature_due_to_stratiform_clouds_and_precipitation,tendency_of_air_temperature_due_to_stratiform_cloud_and_precipitation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,EmonZ.vmrox,mole_fraction_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom,mole_fraction_of_ox_in_air,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,EmonZ.wtem,unset,upward_transformed_eulerian_mean_air_velocity,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Esubhr.tnhusscp,tendency_of_specific_humidity_due_to_stratiform_clouds_and_precipitation,tendency_of_specific_humidity_due_to_stratiform_cloud_and_precipitation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Esubhr.tntscp,tendency_of_air_temperature_due_to_stratiform_clouds_and_precipitation,tendency_of_air_temperature_due_to_stratiform_cloud_and_precipitation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Eyr.cProductLut,carbon_content_in_wood_and_agricultural_products,carbon_content_of_products_of_anthropogenic_land_use_change,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,IyrAnt.strbasemag,magnitude_of_basal_drag_at_land_ice_base,magnitude_of_land_ice_basal_drag,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,IyrGre.strbasemag,magnitude_of_basal_drag_at_land_ice_base,magnitude_of_land_ice_basal_drag,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Omon.fg13co2,air_sea_flux_of_13CO2,surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,Oyr.fg13co2,air_sea_flux_of_13CO2,surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.sidragbot,surface_drag_coefficient_for_momentum_in_water,surface_drag_coefficient_for_momentum_in_sea_water,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.siflcondbot,conductive_heat_flux_at_sea_ice_bottom,sea_ice_basal_net_downward_sensible_heat_flux,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.siflfwbot,freshwater_flux_from_ice,water_flux_into_sea_water_from_sea_ice,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.siflswdbot,bottom_downwelling_shortwave_flux_into_ocean,downwelling_shortwave_flux_in_sea_water_at_sea_ice_base,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.siforcecoriolx,coriolis_force_on_sea_ice_x,sea_ice_specific_x_force_due_to_coriolis_term,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.siforcecorioly,coriolis_force_on_sea_ice_y,sea_ice_specific_y_force_due_to_coriolis_term,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.siforceintstrx,internal_stress_in_sea_ice_x,sea_ice_specific_x_force_due_to_internal_forces,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.siforceintstry,internal_stress_in_sea_ice_y,sea_ice_specific_y_force_due_to_internal_forces,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.siforcetiltx,sea_surface_tilt_force_on_sea_ice_x,sea_ice_specific_x_force_due_to_sea_surface_tilt,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.siforcetilty,sea_surface_tilt_force_on_sea_ice_y,sea_ice_specific_y_force_due_to_sea_surface_tilt,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.simpmass,surface_liquid_water_amount,sea_ice_melt_pond_thickness,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.simprefrozen,melt_pond_refrozen_ice,thickness_of_ice_on_sea_ice_melt_pond,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.sisaltmass,sea_ice_salt_mass,sea_ice_salt_content,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.sitempbot,sea_ice_bottom_temperature,sea_ice_basal_temperature,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.1.23,SImon.sndmasswindrif,tendency_of_snow_mass_due_to_drifting_snow,tendency_of_surface_snow_amount_due_to_drifting,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,6hrLev.bs550aer,volume_lidar_backwards_scattering_coefficient_in_air_due_to_ambient_aerosol_particles,volume_scattering_function_in_air_due_to_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,6hrPlevPt.lwsffluxaero,longwave__flux__due_to_volcanic_aerosols_at_the_surface,surface_downwelling_longwave_flux_in_air_due_to_volcanic_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,6hrPlevPt.lwtoafluxaerocs,longwave_flux_due_to_volcanic_aerosols_at_TOA_under_clear_sky,toa_outgoing_longwave_flux_due_to_volcanic_ambient_aerosol_particles_assuming_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,6hrPlevPt.swsffluxaero,shortwave__flux_due_to_volcanic_aerosols_at__the_surface,surface_downwelling_shortwave_flux_in_air_due_to_volcanic_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,6hrPlevPt.swtoafluxaerocs,shortwave_flux_due_to_volcanic_aerosols_at_TOA_under_clear_sky,toa_outgoing_shortwave_flux_due_to_volcanic_ambient_aerosol_particles_assuming_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,AERmon.pod0,pending_CF_name,integration_wrt_time_of_mole_stomatal_uptake_of_ozone,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,AERmon.rsutcsaf,toa_outgoing_shortwave_flux_assuming_clear_sky,toa_outgoing_shortwave_flux_assuming_clean_clear_sky,different CF quantity
+cmip6/6.1.22,cmip6/6.2.24,E3hrPt.aerasymbnd,band_aerosol_asymmetry_parameter,volume_spectral_asymmetry_factor_in_air_due_to_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,E3hrPt.albdiffbnd,band_diffuse_albedo,surface_spectral_hemispherical_reflectance_of_diffuse_shortwave_radiation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,E3hrPt.albdirbnd,band_direct_albedo,surface_spectral_hemispherical_reflectance_of_direct_shortwave_radiation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,E3hrPt.rsdcsaf,downwelling_shortwave_flux_assuming_clean_clear_sky,downwelling_shortwave_flux_in_air_assuming_clean_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,E3hrPt.rsdcsafbnd,band_downwelling_shortwave_flux_assuming_clean_clear_sky,downwelling_shortwave_flux_in_air_assuming_clean_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,E3hrPt.rsucsaf,upwelling_shortwave_flux_assuming_clean_clear_sky,upwelling_shortwave_flux_in_air_assuming_clean_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,E3hrPt.rsucsafbnd,band_upwelling_shortwave_flux_assuming_clean_clear_sky,upwelling_shortwave_flux_in_air_assuming_clean_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,E3hrPt.rsutcsaf,toa_outgoing_shortwave_flux_assuming_clear_sky,toa_outgoing_shortwave_flux_assuming_clean_clear_sky,different CF quantity
+cmip6/6.1.22,cmip6/6.2.24,E3hrPt.rsutcsafbnd,band_toa_outgoing_shortwave_flux_assuming_clean_clear_sky,toa_outgoing_shortwave_flux_assuming_clean_clear_sky,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,E6hrZ.zmlwaero,longwave_heating_rate_due_to_volcanic_aerosols,tendency_of_air_temperature_due_to_shortwave_heating_from_volcanic_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,E6hrZ.zmswaero,shortwave_heating_rate_due_to_volcanic_aerosols,tendency_of_air_temperature_due_to_longwave_heating_from_volcanic_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.aod550volso4,aerosol_optical_depth_due_to_stratospheric_volcanic_aerosols,stratosphere_optical_thickness_due_to_volcanic_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.ccldncl,number_concentration_of_convective_cloud_liquid_water_particles_in_air_at_liquid_water_cloud_top,number_concentration_of_convective_cloud_liquid_water_particle_at_convective_liquid_water_cloud_top,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.clivic,atmosphere_convective_cloud_ice_content,atmosphere_mass_content_of_convective_cloud_ice,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.es,liquid_water_evaporation_flux_from_soil,water_evaporation_flux_from_soil,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.esn,liquid_water_evaporation_flux_from_surface_snow,water_evaporation_flux,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.hfdsnb,missing,downward_heat_flux_at_ground_level_in_snow,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.reffcclwtop,effective_radius_of_convective_cloud_liquid_water_particle_at_liquid_water_cloud_top,effective_radius_of_convective_cloud_liquid_water_particle_at_convective_liquid_water_cloud_top,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.reffsclwtop,effective_radius_of_stratiform_cloud_liquid_water_particle_at_liquid_water_cloud_top,effective_radius_of_stratiform_cloud_liquid_water_particle_at_stratiform_liquid_water_cloud_top,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.scldncl,number_concentration_of_stratiform_cloud_liquid_water_particles_in_air_at_liquid_water_cloud_top,number_concentration_of_stratiform_cloud_liquid_water_particle_at_stratiform_liquid_water_cloud_top,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.tau,surface_downward_stress,magnitude_of_surface_downward_stress,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.tauupbl,surface_downward_eastward_stress_due_to_planetary_boundary_layer,surface_downward_eastward_stress_due_to_boundary_layer_mixing,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.tauvpbl,surface_downward_northward_stress_due_to_planetary_boundary_layer,surface_downward_northward_stress_due_to_boundary_layer_mixing,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eday.wtd,depth_of_soil_moisture_saturation,water_table_depth,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EdayZ.psitem,meridional_streamfunction_transformed_eulerian_mean,atmosphere_transformed_eulerian_mean_meridional_overturning_mass_streamfunction,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EdayZ.utendvtem,u-tendency_by_wstar_advection,tendency_of_eastward_wind_due_to_advection_by_the_northward_transformed_eulerian_mean_air_velocity,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EdayZ.utendwtem,u-tendency_by_vstar_advection,tendency_of_eastward_wind_due_to_advection_by_the_upward_transformed_eulerian_mean_air_velocity,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EdayZ.wtem,unset,upward_transformed_eulerian_mean_air_velocity,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Efx.fldcapacity,missing,volume_fraction_of_condensed_water_in_soil_at_field_capacity,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Efx.ksat,missing,soil_hydraulic_conductivity_at_saturation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Efx.rootdsl,missing,root_mass_content,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Efx.sandfrac,missing,volume_fraction_of_sand_in_soil,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Efx.slthick,missing,cell_thickness,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Efx.wilt,missing,volume_fraction_of_condensed_water_in_soil_at_wilting_point,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.c13Land,total_land_c13,mass_content_of_13C_in_vegetation_and_litter_and_soil_and_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.c13Litter,litter_c13_content,litter_mass_content_of_13C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.c13Soil,soil_c13_content,soil_mass_content_of_13C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.c13Veg,vegetation_c13_content,vegetation_mass_content_of_13C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.c14Land,total_land_c14,mass_content_of_14C_in_vegetation_and_litter_and_soil_and_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.c14Litter,litter_c14_content,litter_mass_content_of_14C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.c14Soil,soil_c14_content,soil_mass_content_of_14C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.c14Veg,vegetation_c14_content,vegetation_mass_content_of_14C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.cLand,total_land_carbon,mass_content_of_carbon_in_vegetation_and_litter_and_soil_and_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.cLitterCwd,litter_wood_debris_carbon_content,wood_debris_mass_content_of_carbon,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.cOther,other_vegegtation_components_carbon_content,miscellaneous_living_matter_mass_content_of_carbon,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.cSoilPools,soil_carbon_content_by_pool,soil_carbon_content,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.cStem,stem_carbon_content,stem_mass_content_of_carbon,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.cTotFireLut,missing,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.clcalipsoliq,liquid_cloud_area_fraction_in_atmosphere_layer,liquid_water_cloud_area_fraction_in_atmosphere_layer,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.co23D,CO2_3D_tracer,mass_fraction_of_carbon_dioxide_tracer_in_air,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fAnthDisturb,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_anthrogpogenic_emission,tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_anthropogenic_emission,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fBNF,biological_nitrogen_fixation,tendency_of_soil_and_vegetation_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_fixation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fCLandToOcean,carbon_mass_flux_into_ocean_from_rivers,mass_flux_of_carbon_into_sea_water_from_rivers,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fDeforestToProduct,deforested_biomass_into_product_pool_due_to_anthorpogenic_land_use_change,carbon_mass_flux_into_forestry_and_agricultural_products_due_to_anthropogenic_land_use_or_land_cover_change,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fFireAll,fire_CO2_emissions_from_all_sources,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fFireNat,fire_CO2_emissions_from_wildfire,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_natural_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fHarvestToProduct,harvested_biomass_into_product_pool,mass_flux_of_carbon_into_forestry_and_agricultural_products_due_to_crop_harvesting,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fLitterFire,fire_CO2_emissions_from_litter_carbon,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_litter_in_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fLulccProductLut,carbon_mass_flux_into_wood_and_agricultural_product_pools_due_to_anthropogenic_land_use_or_land_cover_change,carbon_mass_flux_into_forestry_and_agricultural_products_due_to_anthropogenic_land_use_or_land_cover_change,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fN2O,land_net_n2o_flux,surface_upward_mass_flux_of_nitrous_oxide_expressed_as_nitrogen_out_of_vegetation_and_litter_and_soil,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNLandToOcean,nitrogen_mass_flux_into_ocean_from_rivers,mass_flux_of_nitrogen_compounds_expressed_as_nitrogen_into_sea_from_rivers,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNOx,land_net_nox_flux,surface_upward_mass_flux_of_nox_expressed_as_nitrogen_out_of_vegetation_and_litter_and_soil,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNProduct,nitrogen_mass_flux_to_product_pool_due_to_anthorpogenic_activity,nitrogen_mass_flux_into_forestry_and_agricultural_products_due_to_anthropogenic_land_use_or_land_cover_change,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNVegLitter,litter_nitrogen_flux,nitrogen_mass_flux_into_litter_from_vegetation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNdep,deposition_of_nitrogen_onto_land,tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_deposition,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNfert,fertiliser_of_nitrogen_onto_land,tendency_of_soil_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_fertilization,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNgasFire,land_nitrogen_lost_to_atmosphere_due_to_fire,surface_upward_mass_flux_of_nitrogen_compounds_expressed_as_nitrogen_due_to_emission_from_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNgasNonFire,land_nitrogen_lost_to_atmosphere_not_due_to_fire,surface_upward_mass_flux_of_nitrogen_compounds_expressed_as_nitrogen_due_to_all_land_processes_excluding_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNleach,land_nitrogen_lost_to_leaching,mass_flux_of_carbon_out_of_soil_due_to_leaching_and_runoff,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNloss,land_nitrogen_lost,surface_upward_mass_flux_of_nitrogen_compounds_expressed_as_nitrogen_out_of_vegetation_and_litter_and_soil,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNnetmin,net_nitrogen_mineralisation,mass_flux_of_nitrogen_compounds_expressed_as_nitrogen_out_of_litter_and_soil_due_to_immobilisation_and_remineralization,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fNup,plant_nitrogen_uptake,tendency_of_vegetation_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_fixation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fProductDecomp,Carbon_flux_out_of_storage_product_pools_into_atmos,tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fProductDecompLut,tendency_of_atmospheric_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_wood_and_agricultural_product_pool,tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fVegFire,fire_CO2_emissions_from_vegetation_carbon,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_vegetation_in_fires,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fVegLitterMortality,mortality_litter_carbon_flux,mass_flux_of_carbon_into_litter_from_vegetation_due_to_mortality,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fVegLitterSenescence,senescence_litter_carbon_flux,mass_flux_of_carbon_into_litter_from_vegetation_due_to_senescence,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fVegSoilMortality,mortality_vegtosoil_carbon_flux,mass_flux_of_carbon_into_soil_from_vegetation_due_to_mortality,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.fVegSoilSenescence,senescence_vegtosoil_carbon_flux,mass_flux_of_carbon_into_soil_from_vegetation_due_to_senescence,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.gppc13,gross_primary_productivity_of_c13,gross_primary_productivity_of_biomass_expressed_as_13C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.gppc14,gross_primary_productivity_of_c14,gross_primary_productivity_of_biomass_expressed_as_14C,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.intuadse,vertical_integral_eastward_wind_by_dry_static_energy,eastward_atmosphere_dry_static_energy_transport_across_unit_distance,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.intuaw,vertical_integral_eastward_wind_by_total_water,eastward_atmosphere_water_transport_across_unit_distance,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.intvadse,vertical_integral_northward_wind_by_dry_static_energy,northward_atmosphere_dry_static_energy_transport_across_unit_distance,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.intvaw,vertical_integral_northward_wind_by_total_water,northward_atmosphere_dry_static_energy_transport_across_unit_distance,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.irrLut,surface_downward_water_flux_due_to_irrigation,surface_downward_mass_flux_of_water_due_to_irrigation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.laiLut,missing,leaf_area_index,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.mrlso,soil_liquid_water_content,liquid_water_content_of_soil_layer,different CF quantity
+cmip6/6.1.22,cmip6/6.2.24,Emon.nLand,total_land_nitrogen,mass_content_of_nitrogen_in_vegetation_and_litter_and_soil_and_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nLeaf,leaf_nitrogen_content,leaf_mass_content_of_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nLitter,litter_nitrogen_content,litter_mass_content_of_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nLitterCwd,litter_wood_debris_nitrogen_content,wood_debris_mass_content_of_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nLitterSubSurf,subsurface_litter_nitrogen_content,subsurface_litter_mass_content_of_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nLitterSurf,surface_litter_nitrogen_content,surface_litter_mass_content_of_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nMineral,mineral_soil_nitrogen_content,soil_mass_content_of_inorganic_nitrogen_expressed_as_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nMineralNH4,mineral_nh4_soil_nitrogen_content,soil_mass_content_of_inorganic_ammonium_expressed_as_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nMineralNO3,mineral_no3_soil_nitrogen_content,soil_mass_content_of_inorganic_nitrate_expressed_as_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nOther,other_vegegtation_components_nitrogen_content,miscellaneous_living_matter_mass_content_of_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nProduct,nitrogen_content_of_products_of_anthropogenic_land_use_change,nitrogen_content_of_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nRoot,root_nitrogen_content,root_mass_content_of_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nStem,stem_nitrogen_content,stem_mass_content_of_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nVeg,vegetation_nitrogen_content,vegetation_mass_content_of_nitrogen,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.netAtmosLandC13Flux,net_atmos_to_land_C13_flux,surface_net_downward_mass_flux_of_13C_dioxide_expressed_as_13C_due_to_all_land_processes,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.netAtmosLandC14Flux,net_atmos_to_land_C14_flux,surface_net_downward_mass_flux_of_14C_dioxide_expressed_as_14C_due_to_all_land_processes,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nppOther,net_primary_production_allocated_to_other,net_primary_productivity_of_biomass_expressed_as_carbon_accumulated_in_miscellaneous_living_matter,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.nwdFracLut,missing,area_fraction,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.od550so4so,missing,stratosphere_optical_thickness_due_to_ambient_suplhate_aerosol_particles,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.pathetao,sea_water_additional_potential_temperature,sea_water_added_potential_temperature,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.raLeaf,autotrophic_respiration_from_leaves,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration_in_leaves,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.raOther,autotrophic_respiration,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration_in_miscellaneous_living_matter,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.raRoot,autotrophic_respiration_from_roots,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration_in_roots,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.raStem,autotrophic_respiration_from_stem,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_plant_respiration_in_stems,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.rhLitter,heterotrophic_respiration_carbon_flux_from_litter,surface_upward_mass_flux_of_carbon_due_to_heterotrophic_respiration_in_litter,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.rhSoil,heterotrophic_respiration_carbon_flux_from_soil,surface_upward_mass_flux_of_carbon_due_to_heterotrophic_respiration_in_soil,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.rhc13,heterotrophic_respiration_c13_flux,surface_upward_mass_flux_of_13C_dioxide_expressed_as_13C_due_to_heterotrophic_respiration,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.rhc14,heterotrophic_respiration_c14_flux,surface_upward_mass_flux_of_14C_dioxide_expressed_as_14C_due_to_heterotrophic_respiration,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.sweLut,missing,lwe_thickness_of_surface_snow_amount,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.tSoilPools,soil_carbon_turnover_rate_by_pool,soil_pool_carbon_decay_rate,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.tnhusscp,tendency_of_specific_humidity_due_to_stratiform_clouds_and_precipitation,tendency_of_specific_humidity_due_to_stratiform_cloud_and_precipitation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.tntd,tendency_of_air_temperature_due_to_numerical_diffusion,tendency_of_air_temperature_due_to_diffusion,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.tntscp,tendency_of_air_temperature_due_to_stratiform_clouds_and_precipitation,tendency_of_air_temperature_due_to_stratiform_cloud_and_precipitation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.wetlandCH4cons,wetland_methane_consumption,surface_downward_mass_flux_of_methane_due_to_wetland_biological_consumption,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.wetlandCH4prod,wetland_methane_production,surface_upward_mass_flux_of_methane_due_to_emission_from_wetland_biological_production,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.wetlandFrac,wetland_fraction,area_fraction,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Emon.wtd,depth_of_soil_moisture_saturation,water_table_depth,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EmonZ.oxloss,tendency_of_mole_concentration_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom_due_to_chemical_destruction,tendency_of_atmosphere_mole_concentration_of_ox_due_to_chemical_destruction,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EmonZ.oxprod,tendency_of_mole_concentration_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom_due_to_chemical_production_and_photolysis,tendency_of_atmosphere_mole_concentration_of_ox_due_to_chemical_and_photolytic_production,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EmonZ.tntnogw,temperature_tendency_due_to_dissipation_nonorographic_gravity_wave_drag,tendency_of_air_temperature_due_to_dissipation_of_nonorographic_gravity_waves,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EmonZ.tntogw,temperature_tendency_due_to_dissipation_orographic_gravity_wave_drag,tendency_of_air_temperature_due_to_dissipation_of_orographic_gravity_waves,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EmonZ.tntscp,tendency_of_air_temperature_due_to_stratiform_clouds_and_precipitation,tendency_of_air_temperature_due_to_stratiform_cloud_and_precipitation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EmonZ.vmrox,mole_fraction_of_ozone_and_atomic_oxygen_and_1D_oxygen_atom,mole_fraction_of_ox_in_air,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,EmonZ.wtem,unset,upward_transformed_eulerian_mean_air_velocity,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Esubhr.tnhusscp,tendency_of_specific_humidity_due_to_stratiform_clouds_and_precipitation,tendency_of_specific_humidity_due_to_stratiform_cloud_and_precipitation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Esubhr.tntd,tendency_of_air_temperature_due_to_numerical_diffusion,tendency_of_air_temperature_due_to_diffusion,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Esubhr.tntscp,tendency_of_air_temperature_due_to_stratiform_clouds_and_precipitation,tendency_of_air_temperature_due_to_stratiform_cloud_and_precipitation,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Eyr.cProductLut,carbon_content_in_wood_and_agricultural_products,carbon_content_of_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,IyrAnt.strbasemag,magnitude_of_basal_drag_at_land_ice_base,land_ice_basal_drag,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,IyrGre.strbasemag,magnitude_of_basal_drag_at_land_ice_base,land_ice_basal_drag,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Omon.fg13co2,air_sea_flux_of_13CO2,surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,Oyr.fg13co2,air_sea_flux_of_13CO2,surface_downward_mass_flux_of_carbon13_dioxide_abiotic_analogue_expressed_as_carbon13,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.sidmassgrowthwat,tendency_of_sea_ice_amount_due_to_freezing_in_open_water,tendency_of_sea_ice_amount_due_to_frazil_ice_accumulation_in_leads,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.sidragbot,surface_drag_coefficient_for_momentum_in_water,surface_drag_coefficient_for_momentum_in_sea_water,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siflcondbot,conductive_heat_flux_at_sea_ice_bottom,sea_ice_basal_net_downward_sensible_heat_flux,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siflcondtop,conductive_heat_flux_at_sea_ice_surface,surface_downward_sensible_heat_flux,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siflfwbot,freshwater_flux_from_ice,water_flux_into_sea_water_due_to_sea_ice_thermodynamics,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siflswdbot,bottom_downwelling_shortwave_flux_into_ocean,downwelling_shortwave_flux_in_sea_water_at_sea_ice_base,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siforcecoriolx,coriolis_force_on_sea_ice_x,sea_ice_specific_x_force_due_to_coriolis_term,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siforcecorioly,coriolis_force_on_sea_ice_y,sea_ice_specific_y_force_due_to_coriolis_term,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siforceintstrx,internal_stress_in_sea_ice_x,sea_ice_specific_x_force_due_to_internal_forces,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siforceintstry,internal_stress_in_sea_ice_y,sea_ice_specific_y_force_due_to_internal_forces,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siforcetiltx,sea_surface_tilt_force_on_sea_ice_x,sea_ice_specific_x_force_due_to_sea_surface_tilt,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siforcetilty,sea_surface_tilt_force_on_sea_ice_y,sea_ice_specific_y_force_due_to_sea_surface_tilt,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siitdconc,sea_ice_area_fraction_over_categories,sea_ice_area_fraction,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siitdsnconc,snow_area_fraction_over_categories,surface_snow_area_fraction,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siitdsnthick,snow_thickness_over_categories,surface_snow_thickness,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.siitdthick,sea_ice_thickness_over_categories,sea_ice_thickness,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.simpmass,surface_liquid_water_amount,sea_ice_melt_pond_thickness,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.simprefrozen,melt_pond_refrozen_ice,thickness_of_ice_on_sea_ice_melt_pond,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.sisaltmass,sea_ice_salt_mass,sea_ice_salt_content,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.sishevel,maximum_shear_of_sea_ice_velocity,sea_ice_second_invariant_of_horizontal_strain_tensor_expressed_as_effective_stress,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.sistremax,maximum_shear_stress,sea_ice_second_invariant_of_horizontal_stress_tensor_expressed_as_effective_stress,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.sistresave,average_normal_stress,sea_ice_trace_of_horizontal_stress_tensor,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.sitempbot,sea_ice_bottom_temperature,sea_ice_basal_temperature,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.sndmasssubl,surface_snow_sublimation_flux,surface_snow_and_ice_sublimation_flux,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.sndmasswindrif,tendency_of_snow_mass_due_to_drifting_snow,tendency_of_surface_snow_amount_due_to_drifting,fix of name not in CF table
+cmip6/6.1.22,cmip6/6.2.24,SImon.snmassacrossline,snow_mass_transport_across_line,snow_transport_across_line_due_to_sea_ice_dynamics,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,6hrLev.bs550aer,volume_scattering_function_in_air_due_to_ambient_aerosol_particles,volume_scattering_function_of_radiative_flux_in_air_due_to_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,AERmon.drybc,tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_dry_deposition,minus_tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_dry_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.drydust,tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_dry_deposition,minus_tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_dry_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.drynh3,tendency_of_atmosphere_mass_content_of_ammonia_due_to_dry_deposition,minus_tendency_of_atmosphere_mass_content_of_ammonia_due_to_dry_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.drynh4,tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_dry_deposition,minus_tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_dry_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.drynoy,tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_dry_deposition,minus_tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_dry_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.dryo3,tendency_of_atmosphere_mass_content_of_ozone_due_to_dry_deposition,minus_tendency_of_atmosphere_mass_content_of_ozone_due_to_dry_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.dryoa,tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_dry_deposition,minus_tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_dry_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.dryso2,tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_dry_deposition,minus_tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_dry_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.dryso4,tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_dry_deposition,minus_tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_dry_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.dryss,tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_dry_deposition,minus_tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_dry_deposition,different CF quantity
+cmip6/6.2.24,cmip6/6.3.27,AERmon.lossn2o,tendency_of_atmosphere_of_mole_concentration_of_nitrous_oxide_due_to_chemical_destruction,tendency_of_atmosphere_mole_concentration_of_nitrous_oxide_due_to_chemical_destruction,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,AERmon.pod0,integration_wrt_time_of_mole_stomatal_uptake_of_ozone,integral_wrt_time_of_mole_stomatal_uptake_of_ozone,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,AERmon.wetbc,tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_wet_deposition,minus_tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_wet_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.wetdust,tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_wet_deposition,minus_tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_wet_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.wetnh3,tendency_of_atmosphere_mass_content_of_ammonia_due_to_wet_deposition,minus_tendency_of_atmosphere_mass_content_of_ammonia_due_to_wet_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.wetnh4,tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_wet_deposition,minus_tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_wet_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.wetnoy,tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_wet_deposition,minus_tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_wet_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.wetoa,tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_wet_deposition,minus_tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_wet_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.wetso2,tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_wet_deposition,minus_tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_wet_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.wetso4,tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_wet_deposition,minus_tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_wet_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,AERmon.wetss,tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_wet_deposition,minus_tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_wet_deposition,different CF quantity
+cmip6/6.2.24,cmip6/6.3.27,E3hrPt.aerasymbnd,volume_spectral_asymmetry_factor_in_air_due_to_ambient_aerosol_particles,asymmetry_factor_of_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,E3hrPt.albdiffbnd,surface_spectral_hemispherical_reflectance_of_diffuse_shortwave_radiation,surface_diffuse_shortwave_hemispherical_reflectance,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,E3hrPt.albdirbnd,surface_spectral_hemispherical_reflectance_of_direct_shortwave_radiation,surface_direct_shortwave_hemispherical_reflectance,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.albsn,snow_and_ice_albedo,surface_albedo,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.dgw,change_over_time_in_groundwater,change_over_time_in_groundwater_amount,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.dmlt,depth_of_subsurface_melting,depth_at_shallowest_isotherm_defined_by_soil_temperature,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.dslw,change_over_time_in_water_content_of_soil_layer,change_over_time_in_mass_content_of_water_in_soil,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.dsn,change_over_time_in_surface_snow_and_ice_amount,change_over_time_in_amount_of_ice_and_snow_on_land,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.dsw,change_over_time_in_surface_water_amount,change_over_time_in_land_water_amount,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.dtes,change_over_time_in_thermal_energy_content_of_surface,change_over_time_in_thermal_energy_content_of_vegetation_and_litter_and_soil,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.dtesn,change_over_time_in_thermal_energy_content_of_surface_snow_and_ice,change_over_time_in_thermal_energy_content_of_ice_and_snow_on_land,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.ec,liquid_water_evaporation_flux_from_canopy,water_evaporation_flux_from_canopy,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.eow,liquid_water_evaporation_flux_from_open_water,surface_water_evaporation_flux,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.hfrs,temperature_flux_due_to_rainfall_expressed_as_heat_flux_onto_snow_and_ice,tendency_of_thermal_energy_content_of_surface_snow_due_to_rainfall_temperature_excess_above_freezing,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.hfsbl,surface_snow_and_ice_sublimation_heat_flux,surface_upward_latent_heat_flux_due_to_sublimation,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.mrtws,total_water_storage,land_water_amount,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.nudgincsm,nudging_increment_in_water_content_of_soil_layer,nudging_increment_in_mass_content_of_water_in_soil,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.nudgincswe,nudging_increment_in_surface_snow_and_ice_amount,nudging_increment_in_snow_and_ice_amount_on_land,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.prrsn,mass_fraction_of_rainfall_onto_snow,mass_fraction_of_rainfall_falling_onto_surface_snow,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.prsnsn,mass_fraction_of_snowfall_onto_snow,mass_fraction_of_solid_precipitation_falling_onto_surface_snow,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.qgwr,water_flux_from_soil_layer_to_groundwater,downward_liquid_water_mass_flux_into_groundwater,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.rivi,water_flux_from_upstream,incoming_water_volume_transport_along_river_channel,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.rivo,water_flux_to_downstream,outgoing_water_volume_transport_along_river_channel,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.rzwc,water_content_of_root_zone,mass_content_of_water_in_soil_layer_defined_by_root_depth,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.sblnosn,sublimation_amount_assuming_no_snow,tendency_of_atmosphere_mass_content_of_water_vapor_due_to_sublimation_of_surface_ice,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.snmsl,surface_snow_melt_flux_into_soil_layer,liquid_water_mass_flux_into_soil_due_to_surface_snow_melt,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Eday.sw,surface_water_amount_assuming_no_snow,land_surface_liquid_water_amount,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,EdayZ.utendvtem,tendency_of_eastward_wind_due_to_advection_by_the_northward_transformed_eulerian_mean_air_velocity,tendency_of_eastward_wind_due_to_advection_by_northward_transformed_eulerian_mean_air_velocity,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,EdayZ.utendwtem,tendency_of_eastward_wind_due_to_advection_by_the_upward_transformed_eulerian_mean_air_velocity,tendency_of_eastward_wind_due_to_advection_by_upward_transformed_eulerian_mean_air_velocity,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Efx.rootdsl,root_mass_content,root_mass_content_of_carbon,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.O18wv,missing,isotope_ratio_of_18O_to_16O_in_sea_water_excluding_solutes_and_solids,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.depdust,tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_total_deposition,minus_tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_deposition,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.fLulccAtmLut,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_direct_to_atmosphere_due_to_anthropogenic_land_use_land_cover_change,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_anthropogenic_land_use_or_land_cover_change_excluding_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.fNAnthDisturb,nitrogen_flux_into_atmos_due_to_direct_human_disturbance,tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_anthropogenic_emission,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.fNdep,tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_deposition,minus_tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_deposition,sign convention (minus_)
+cmip6/6.2.24,cmip6/6.3.27,Emon.fNgas,land_nitrogen_lost_to_atmosphere,surface_upward_mass_flux_of_nitrogen_compounds_expressed_as_nitrogen,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.flashrate,lightning_flash_rate,frequency_of_lightning_flashes_per_unit_area,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.intvaw,northward_atmosphere_dry_static_energy_transport_across_unit_distance,northward_atmosphere_water_transport_across_unit_distance,different CF quantity
+cmip6/6.2.24,cmip6/6.3.27,Emon.lwsrfasdust,surface_instantaneous_longwave_forcing_due_to_dust,surface_net_downward_longwave_dust_ambient_aerosol_particles_direct_radiative_effect,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.lwsrfcsdust,surface_instantaneous_longwave_forcing_due_to_dust_in_clearsky,surface_net_downward_longwave_dust_ambient_aerosol_particles_direct_radiative_effect_assuming_clear_sky,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.lwtoacsdust,toa_instantaneous_longwave_forcing_due_to_dust_in_clearsky,toa_longwave_dust_ambient_aerosol_particles_direct_radiative_effect_assuming_clear_sky,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.mrtws,total_water_storage,land_water_amount,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.nProduct,nitrogen_content_of_forestry_and_agricultural_products,nitrogen_mass_content_of_forestry_and_agricultural_products,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.nSoil,soil_nitrogen_content,soil_mass_content_of_nitrogen,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.netAtmosLandC13Flux,surface_net_downward_mass_flux_of_13C_dioxide_expressed_as_13C_due_to_all_land_processes,surface_net_downward_mass_flux_of_carbon_dioxide_expressed_as_13C_due_to_all_land_processes,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.netAtmosLandC14Flux,surface_net_downward_mass_flux_of_14C_dioxide_expressed_as_14C_due_to_all_land_processes,surface_net_downward_mass_flux_of_carbon_dioxide_expressed_as_14C_due_to_all_land_processes,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.nppStem,net_primary_production_allocated_to_stem,net_primary_productivity_of_biomass_expressed_as_carbon_accumulated_in_stems,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.od550aerso,strat_aerosol_optical_depth,stratosphere_optical_thickness_due_to_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.od550so4so,stratosphere_optical_thickness_due_to_ambient_suplhate_aerosol_particles,stratosphere_optical_thickness_due_to_sulfate_ambient_aerosol_particles,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.rac13,plant_respiration_c13_flux,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_13C_due_to_plant_respiration,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.rac14,plant_respiration_c14_flux,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_14C_due_to_plant_respiration,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.rhc13,surface_upward_mass_flux_of_13C_dioxide_expressed_as_13C_due_to_heterotrophic_respiration,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_13C_due_to_heterotrophic_respiration,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.rhc14,surface_upward_mass_flux_of_14C_dioxide_expressed_as_14C_due_to_heterotrophic_respiration,surface_upward_mass_flux_of_carbon_dioxide_expressed_as_14C_due_to_heterotrophic_respiration,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.sedustCI,tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_sedimentation,minus_tendency_of_atmosphere_mass_content_of_insoluble_dust_dry_aerosol_particles_due_to_deposition,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.swsrfasdust,tendency_of_all_sky_surface_shortwave_flux_due_to_dust_ambient_aerosol_particles,surface_net_downward_shortwave_dust_ambient_aerosol_particles_direct_radiative_effect,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.swsrfcsdust,tendency_of_clear_sky_surface_shortwave_flux_due_to_dust_ambient_aerosol_particles,surface_net_downward_shortwave_dust_ambient_aerosol_particles_direct_radiative_effect_assuming_clear_sky,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Emon.wetlandCH4,wetland_methane_emissions,surface_net_upward_mass_flux_of_methane_due_to_emission_from_wetland_biological_processes,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,EmonZ.oxloss,tendency_of_atmosphere_mole_concentration_of_ox_due_to_chemical_destruction,tendency_of_mole_concentration_of_ox_in_air_due_to_chemical_destruction,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,EmonZ.oxprod,tendency_of_atmosphere_mole_concentration_of_ox_due_to_chemical_and_photolytic_production,tendency_of_mole_concentration_of_ox_in_air_due_to_chemical_and_photolytic_production,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,Ofx.ugrid,missing,longitude,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SIday.sitimefrac,sea_ice_time_fraction,fraction_of_time_with_sea_ice_area_fraction_above_threshold,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sidmassdyn,tendency_of_sea_ice_amount_due_to_dynamics,tendency_of_sea_ice_amount_due_to_sea_ice_dynamics,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sidmassth,tendency_of_sea_ice_amount_due_to_thermodynamics,tendency_of_sea_ice_amount_due_to_sea_ice_thermodynamics,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sidragbot,surface_drag_coefficient_for_momentum_in_sea_water,sea_ice_basal_drag_coefficient_for_momentum_in_sea_water,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.siflcondbot,sea_ice_basal_net_downward_sensible_heat_flux,basal_downward_heat_flux_in_sea_ice,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.siflfwdrain,freshwater_flux_from_ice_surface,water_flux_into_sea_water_due_to_surface_drainage,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.siforcecoriolx,sea_ice_specific_x_force_due_to_coriolis_term,sea_ice_x_force_per_unit_area_due_to_coriolis_effect,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.siforcecorioly,sea_ice_specific_y_force_due_to_coriolis_term,sea_ice_y_force_per_unit_area_due_to_coriolis_effect,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.siforceintstrx,sea_ice_specific_x_force_due_to_internal_forces,sea_ice_x_internal_stress,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.siforceintstry,sea_ice_specific_y_force_due_to_internal_forces,sea_ice_y_internal_stress,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.siforcetiltx,sea_ice_specific_x_force_due_to_sea_surface_tilt,sea_ice_x_force_per_unit_area_due_to_sea_surface_tilt,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.siforcetilty,sea_ice_specific_y_force_due_to_sea_surface_tilt,sea_ice_y_force_per_unit_area_due_to_sea_surface_tilt,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sirdgconc,fraction_of_ridged_sea_ice,area_fraction,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sirdgthick,thickness_of_ridged_sea_ice,sea_ice_thickness,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sisaltmass,sea_ice_salt_content,sea_ice_mass_content_of_salt,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sishevel,sea_ice_second_invariant_of_horizontal_strain_tensor_expressed_as_effective_stress,maximum_over_coordinate_rotation_of_sea_ice_horizontal_shear_strain_rate,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sistremax,sea_ice_second_invariant_of_horizontal_stress_tensor_expressed_as_effective_stress,maximum_over_coordinate_rotation_of_sea_ice_horizontal_shear_stress,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sistresave,sea_ice_trace_of_horizontal_stress_tensor,sea_ice_average_normal_horizontal_stress,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sitimefrac,sea_ice_time_fraction,fraction_of_time_with_sea_ice_area_fraction_above_threshold,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sndmassdyn,tendency_of_snow_mass_due_to_sea_ice_dynamics,tendency_of_surface_snow_amount_due_to_sea_ice_dynamics,fix of name not in CF table
+cmip6/6.2.24,cmip6/6.3.27,SImon.sndmasswindrif,tendency_of_surface_snow_amount_due_to_drifting,tendency_of_surface_snow_amount_due_to_drifting_into_sea,fix of name not in CF table
+cmip6/6.3.27-fixed,cmip6/6.4.28,Omon.frfe,tendency_of_ocean_mole_content_of_iron_due_to_sedimentation,minus_tendency_of_ocean_mole_content_of_iron_due_to_sedimentation,sign convention (minus_)
+cmip6/6.3.27-fixed,cmip6/6.4.28,Omon.fric,tendency_of_ocean_mole_content_of_inorganic_carbon_due_to_sedimentation,minus_tendency_of_ocean_mole_content_of_inorganic_carbon_due_to_sedimentation,sign convention (minus_)
+cmip6/6.3.27-fixed,cmip6/6.4.28,Omon.frn,tendency_of_ocean_mole_content_of_elemental_nitrogen_due_to_denitrification_and_sedimentation,minus_tendency_of_ocean_mole_content_of_elemental_nitrogen_due_to_denitrification_and_sedimentation,sign convention (minus_)
+cmip6/6.3.27-fixed,cmip6/6.4.28,Omon.froc,tendency_of_ocean_mole_content_of_organic_carbon_due_to_sedimentation,minus_tendency_of_ocean_mole_content_of_organic_carbon_due_to_sedimentation,sign convention (minus_)
+cmip6/6.5.29,cmip6/6.6.30,E6hrZ.zmlwaero,tendency_of_air_temperature_due_to_shortwave_heating_from_volcanic_ambient_aerosol_particles,tendency_of_air_temperature_due_to_longwave_heating_from_volcanic_ambient_aerosol_particles,different CF quantity
+cmip6/6.5.29,cmip6/6.6.30,E6hrZ.zmswaero,tendency_of_air_temperature_due_to_longwave_heating_from_volcanic_ambient_aerosol_particles,tendency_of_air_temperature_due_to_shortwave_heating_from_volcanic_ambient_aerosol_particles,different CF quantity
+cmip6/6.5.29,cmip6/6.6.30,Emon.sw18O,isotope_ratio_of_17O_to_16O_in_sea_water_excluding_solutes_and_solids,isotope_ratio_of_18O_to_16O_in_sea_water_excluding_solutes_and_solids,different CF quantity
+cmip6/6.6.30,cmip6/6.7.31,AERmonZ.vt100,northward_heat_flux_in_air_due_to_eddy_advection,covariance_over_longitude_of_northward_wind_and_air_temperature,different CF quantity
+cmip6/6.6.30,cmip6/6.7.31,Odec.tauuo,surface_downward_x_stress,downward_x_stress_at_sea_water_surface,different CF quantity
+cmip6/6.6.30,cmip6/6.7.31,Odec.tauvo,surface_downward_y_stress,downward_y_stress_at_sea_water_surface,different CF quantity
+cmip6/6.6.30,cmip6/6.7.31,Omon.tauucorr,surface_downward_x_stress_correction,downward_x_stress_correction_at_sea_water_surface,different CF quantity
+cmip6/6.6.30,cmip6/6.7.31,Omon.tauuo,surface_downward_x_stress,downward_x_stress_at_sea_water_surface,different CF quantity
+cmip6/6.6.30,cmip6/6.7.31,Omon.tauvcorr,surface_downward_y_stress_correction,downward_y_stress_correction_at_sea_water_surface,different CF quantity
+cmip6/6.6.30,cmip6/6.7.31,Omon.tauvo,surface_downward_y_stress,downward_y_stress_at_sea_water_surface,different CF quantity
