@@ -1,4 +1,4 @@
-[ 
+[
     {
         "era": "cmip5",
         "keep": [
@@ -17,14 +17,131 @@
                     "Oclim"
                 ],
                 "map": {
-                    "hfls": "hlfso",
+                    "hfls": "hflso",
                     "hfss": "hfsso",
                     "pr": "prra",
-                    "rlds": "rsdo",
-                    "rsds": "rsntds",
+                    "rlds": "rlntds",
+                    "rsds": "rsdo",
                     "zfull": "zfullo",
                     "zhalf": "zhalfo"
                 }
+            },
+            {
+                "for_tables": [
+                    "OImon"
+                ],
+                "map": {
+                    "bmelt": "sidmassmeltbot",
+                    "grCongel": "sidmassgrowthbot",
+                    "grFrazil": "sidmassgrowthwat",
+                    "snoToIce": "sidmasssi",
+                    "tmelt": "sidmassmelttop",
+                    "transix": "sidmasstranx",
+                    "transiy": "sidmasstrany"
+                }
+            },
+            {
+                "for_tables": [
+                    "OImon",
+                    "day"
+                ],
+                "map": {
+                    "sit": "sivol"
+                }
+            },
+            {
+                "for_tables": [
+                    "Oyr"
+                ],
+                "map": {
+                    "dpocdtcalc": "ppcalc",
+                    "dpocdtdiaz": "ppdiaz",
+                    "dpocdtpico": "pppico",
+                    "expcfe": "expfe",
+                    "pdi": "ppdiat",
+                    "phypmisc": "ppmisc",
+                    "zoocmisc": "zmisc"
+                }
+            },
+            {
+                "for_tables": [
+                    "Omon"
+                ],
+                "map": {
+                    "zoocmisc": "zmiscos"
+                }
+            }
+        ],
+        "unit_change": [
+            {
+                "id": "tos",
+                "units": "K",
+                "offset": -273.15
+            },
+            {
+                "id": "thetao",
+                "units": "K",
+                "offset": -273.15
+            },
+            {
+                "id": "thetaoga",
+                "units": "K",
+                "offset": -273.15
+            },
+            {
+                "id": "so",
+                "units": "psu",
+                "factor": 1
+            },
+            {
+                "id": "soga",
+                "units": "psu",
+                "factor": 1
+            },
+            {
+                "id": "sos",
+                "units": "psu",
+                "factor": 1
+            },
+            {
+                "id": "pbo",
+                "units": "dbar",
+                "factor": 10000
+            },
+            {
+                "id": "pso",
+                "units": "dbar",
+                "factor": 10000
+            },
+            {
+                "id": "ch4",
+                "units": "1e-9",
+                "factor": 1e-09
+            },
+            {
+                "id": "ch4Clim",
+                "units": "1e-9",
+                "factor": 1e-09
+            },
+            {
+                "id": "n2o",
+                "units": "1e-9",
+                "factor": 1e-09
+            },
+            {
+                "id": "n2oClim",
+                "units": "1e-9",
+                "factor": 1e-09
+            },
+            {
+                "id": "co2",
+                "units": "1e-6",
+                "factor": 1e-06
+            },
+            {
+                "id": "co2Clim",
+                "units": "1e-6",
+                "factor": 1e-06
             }
         ]
     },
@@ -38,31 +155,15 @@
             "6.0.13": [
                 "albsrfc"
             ],
-            "6.0.14": [
-                "siflsaltbot"
-            ],
             "6.0.15": [
-                "mmraerso4",
-                "mrlsl",
-                "potet"
+                "mmraerso4"
             ],
             "6.0.16": [
                 "co2totalmass",
-                "lwtoacs",
-                "tws",
                 "ua200",
                 "ua850",
                 "va200",
                 "va850"
-            ],
-            "6.0.20": [
-                "dpocdtcalc",
-                "dpocdtdiaz",
-                "dpocdtpico",
-                "pdi",
-                "zoomeso",
-                "zoomicro",
-                "zoomisc"
             ],
             "6.0.21": [
                 "cSoilBelow1m",
@@ -71,17 +172,7 @@
             ],
             "6.2.24": [
                 "dfr",
-                "et",
-                "hcont300",
-                "H2p",
-                "H2s",
-                "H2wv",
-                "O17p",
-                "O17s",
-                "O17wv",
-                "O18p",
-                "O18s",
-                "O18sw"
+                "hcont300"
             ],
             "6.3.27-fixed": [
                 "sltnortha"
@@ -98,130 +189,53 @@
         },
         "rename": {
             "areacelli": "modelCellAreai",
+            "dpocdtcalc": "ppcalc",
+            "dpocdtdiaz": "ppdiaz",
+            "dpocdtpico": "pppico",
+            "et": "evspsbl",
             "expcfe": "expfe",
+            "H2p": "pr2h",
+            "H2s": "prsn2h",
+            "H2wv": "prw2H",
+            "lwtoacs": "lwtoacsdust",
             "mrlsl": "mrsol",
             "msftmyz": "msftmz",
             "msftyyz": "msftyz",
+            "O17p": "pr17O",
+            "O17s": "prsn17O",
+            "O17wv": "prw17O",
+            "O18p": "pr18O",
+            "O18s": "prsn18O",
+            "O18sw": "sw18O",
+            "pdi": "ppdiat",
             "pmlev": "pfull",
+            "potet": "evspsblpot",
             "siconco": "siconca",
+            "siflsaltbot": "sfdsi",
             "slbnosn": "sblnosn",
             "tso": "tos",
+            "tws": "mrtws",
             "ugrid": "ugrido",
-            "waterDpth": "wtd"
+            "waterDpth": "wtd",
+            "zoomeso": "zmeso",
+            "zoomicro": "zmicro",
+            "zoomisc": "zmisc"
         },
-        "sign_change": {
-            "6.6.24": [
+        "unit_change": {
+            "6.0.19": [
                 {
-                    "id": "depdust",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_total_deposition",
-                    "new_quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_deposition"
-                },
-                {
-                    "id": "drybc",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_dry_deposition"
-                },
-                {
-                    "id": "drydust",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_dry_deposition"
-                },
-                {
-                    "id": "drynh3",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_ammonia_due_to_dry_deposition"
-                },
-                {
-                    "id": "drynh4",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_dry_deposition"
-                },
-                {
-                    "id": "drynoy",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_dry_deposition"
-                },
-                {
-                    "id": "dryoa",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_dry_deposition"
-                },
-                {
-                    "id": "dryo3",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_ozone_due_to_dry_deposition"
-                },
-                {
-                    "id": "dryso2",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_dry_deposition"
-                },
-                {
-                    "id": "dryso4",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_dry_deposition"
-                },
-                {
-                    "id": "dryss",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_dry_deposition",
-                    "new_quantity": "tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_dry_deposition"
-                },
-                {
-                    "id": "fNdep",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_deposition"
-                },
-                {
-                    "id": "wetbc",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_wet_deposition"
-                },
-                {
-                    "id": "wetdust",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_wet_deposition"
-                },
-                {
-                    "id": "wetnh3",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_ammonia_due_to_wet_deposition"
-                },
-                {
-                    "id": "wetnh4",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_wet_deposition"
-                },
-                {
-                    "id": "wetnoy",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_wet_deposition"
-                },
-                {
-                    "id": "wetoa",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_wet_deposition"
-                },
-                {
-                    "id": "wetso2",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_wet_deposition"
-                },
-                {
-                    "id": "wetso4",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_wet_deposition"
-                },
-                {
-                    "id": "wetss",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_wet_deposition",
-                    "new_quantity": "tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_wet_deposition"
-                },
-                {
-                    "id": "sedustCI",
-                    "quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_sedimentation",
-                    "new_quantity": "tendency_of_atmosphere_mass_content_of_insoluble_dust_dry_aerosol_particles_due_to_deposition"
+                    "id": "tos",
+                    "units": "K",
+                    "offset": -273.15
                 }
             ],
-            "6.3.27-fixed": [
+            "6.0.20": [
                 {
-                    "id": "frfe",
-                    "quantity": "tendency_of_ocean_mole_content_of_iron_due_to_sedimentation"
-                },
-                {
-                    "id": "fric",
-                    "quantity": "tendency_of_ocean_mole_content_of_inorganic_carbon_due_to_sedimentation"
-                },
-                {
-                    "id": "frn",
-                    "quantity": "tendency_of_ocean_mole_content_of_elemental_nitrogen_due_to_denitrification_and_sedimentation"
-                },
-                {
-                    "id": "froc",
-                    "quantity": "tendency_of_ocean_mole_content_of_organic_carbon_due_to_sedimentation"
+                    "id": "nwdFracLut",
+                    "units": "1",
+                    "factor": 100
                 }
-           ]
+            ]
         }
     }
 ]
