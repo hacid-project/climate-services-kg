@@ -82,7 +82,10 @@
                     "time"
                 ],
                 "map": {
-                    "tro3": "o3"
+                    "hus": "hus19",
+                    "tro3": "o3",
+                    "ua": "ua19",
+                    "va": "va19"
                 }
             },
             {
@@ -152,6 +155,25 @@
                     "hfrunoffds": "hfrunoffds2d",
                     "hfsifrazil": "hfsifrazil2d",
                     "hfsnthermds": "hfsnthermds2d"
+                }
+            },
+            {
+                "for_tables": [
+                    "day"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plev8",
+                    "time"
+                ],
+                "map": {
+                    "hus": "hus8",
+                    "ta": "ta8",
+                    "ua": "ua8",
+                    "va": "va8",
+                    "wap": "wap8",
+                    "zg": "zg8"
                 }
             }
         ],
