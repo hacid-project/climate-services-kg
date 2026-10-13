@@ -70,6 +70,74 @@
                 "map": {
                     "zoocmisc": "zmiscos"
                 }
+            },
+            {
+                "for_tables": [
+                    "Amon"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plevs",
+                    "time2"
+                ],
+                "map": {
+                    "ch4": "ch4Clim",
+                    "co2": "co2Clim",
+                    "n2o": "n2oClim"
+                }
+            },
+            {
+                "for_tables": [
+                    "Amon"
+                ],
+                "dimensions": [
+                    "time2"
+                ],
+                "map": {
+                    "ch4global": "ch4globalClim",
+                    "co2mass": "co2massClim",
+                    "n2oglobal": "n2oglobalClim"
+                }
+            },
+            {
+                "for_tables": [
+                    "Oclim"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "time2"
+                ],
+                "map": {
+                    "difmxybo": "difmxybo2d",
+                    "difmxylo": "difmxylo2d",
+                    "diftrbbo": "diftrbbo2d",
+                    "diftrblo": "diftrblo2d",
+                    "diftrebo": "diftrebo2d",
+                    "diftrelo": "diftrelo2d",
+                    "diftrxybo": "diftrxybo2d",
+                    "diftrxylo": "diftrxylo2d",
+                    "dispkexyfo": "dispkexyfo2d",
+                    "tnkebto": "tnkebto2d"
+                }
+            },
+            {
+                "for_tables": [
+                    "Omon"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "time"
+                ],
+                "map": {
+                    "ficeberg": "ficeberg2d",
+                    "hfibthermds": "hfibthermds2d",
+                    "hfrunoffds": "hfrunoffds2d",
+                    "hfsifrazil": "hfsifrazil2d",
+                    "hfsnthermds": "hfsnthermds2d"
+                }
             }
         ],
         "unit_change": [
@@ -155,6 +223,9 @@
                         "E3hrPt"
                     ],
                     "dimensions": [
+                        "longitude",
+                        "latitude",
+                        "time1",
                         "p850"
                     ]
                 },
@@ -164,6 +235,9 @@
                         "E3hrPt"
                     ],
                     "dimensions": [
+                        "longitude",
+                        "latitude",
+                        "time1",
                         "p850"
                     ]
                 }
@@ -187,40 +261,307 @@
                 }
             ]
         },
-        "rename": {
-            "areacelli": "modelCellAreai",
-            "dpocdtcalc": "ppcalc",
-            "dpocdtdiaz": "ppdiaz",
-            "dpocdtpico": "pppico",
-            "et": "evspsbl",
-            "expcfe": "expfe",
-            "H2p": "pr2h",
-            "H2s": "prsn2h",
-            "H2wv": "prw2H",
-            "lwtoacs": "lwtoacsdust",
-            "mrlsl": "mrsol",
-            "msftmyz": "msftmz",
-            "msftyyz": "msftyz",
-            "O17p": "pr17O",
-            "O17s": "prsn17O",
-            "O17wv": "prw17O",
-            "O18p": "pr18O",
-            "O18s": "prsn18O",
-            "O18sw": "sw18O",
-            "O18wv": "prw18O",
-            "pdi": "ppdiat",
-            "pmlev": "pfull",
-            "potet": "evspsblpot",
-            "siconco": "siconca",
-            "siflsaltbot": "sfdsi",
-            "slbnosn": "sblnosn",
-            "tso": "tos",
-            "tws": "mrtws",
-            "waterDpth": "wtd",
-            "zoomeso": "zmeso",
-            "zoomicro": "zmicro",
-            "zoomisc": "zmisc"
-        },
+        "rename": [
+            {
+                "map": {
+                    "areacelli": "modelCellAreai",
+                    "dpocdtcalc": "ppcalc",
+                    "dpocdtdiaz": "ppdiaz",
+                    "dpocdtpico": "pppico",
+                    "et": "evspsbl",
+                    "expcfe": "expfe",
+                    "H2p": "pr2h",
+                    "H2s": "prsn2h",
+                    "H2wv": "prw2H",
+                    "lwtoacs": "lwtoacsdust",
+                    "mrlsl": "mrsol",
+                    "msftmyz": "msftmz",
+                    "msftyyz": "msftyz",
+                    "O17p": "pr17O",
+                    "O17s": "prsn17O",
+                    "O17wv": "prw17O",
+                    "O18p": "pr18O",
+                    "O18s": "prsn18O",
+                    "O18sw": "sw18O",
+                    "O18wv": "prw18O",
+                    "pdi": "ppdiat",
+                    "pmlev": "pfull",
+                    "potet": "evspsblpot",
+                    "siconco": "siconca",
+                    "siflsaltbot": "sfdsi",
+                    "slbnosn": "sblnosn",
+                    "tso": "tos",
+                    "tws": "mrtws",
+                    "waterDpth": "wtd",
+                    "zoomeso": "zmeso",
+                    "zoomicro": "zmicro",
+                    "zoomisc": "zmisc"
+                }
+            },
+            {
+                "for_tables": [
+                    "6hrPlev"
+                ],
+                "map": {
+                    "hus": "hus4",
+                    "wap": "wap4"
+                }
+            },
+            {
+                "for_tables": [
+                    "6hrPlevPt"
+                ],
+                "map": {
+                    "cldicemxrat": "cldicemxrat27",
+                    "cldwatmxrat": "cldwatmxrat27",
+                    "grplmxrat": "grplmxrat27",
+                    "rainmxrat": "rainmxrat27",
+                    "snowmxrat": "snowmxrat27",
+                    "wbptemp": "wbptemp7h"
+                }
+            },
+            {
+                "for_tables": [
+                    "6hrPlevPt"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plev27",
+                    "time1"
+                ],
+                "map": {
+                    "hus": "hus27",
+                    "ta": "ta27",
+                    "zg": "zg27"
+                }
+            },
+            {
+                "for_tables": [
+                    "6hrPlevPt"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plev7h",
+                    "time1"
+                ],
+                "map": {
+                    "hus": "hus7h",
+                    "ta": "ta7h",
+                    "ua": "ua7h",
+                    "va": "va7h",
+                    "zg": "zg7h"
+                }
+            },
+            {
+                "for_tables": [
+                    "Amon"
+                ],
+                "map": {
+                    "hus": "hus19",
+                    "ua": "ua19",
+                    "va": "va19"
+                }
+            },
+            {
+                "for_tables": [
+                    "Amon"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plev19",
+                    "time2"
+                ],
+                "map": {
+                    "ch4": "ch4Clim",
+                    "co2": "co2Clim",
+                    "n2o": "n2oClim",
+                    "o3": "o3Clim"
+                }
+            },
+            {
+                "for_tables": [
+                    "Amon"
+                ],
+                "dimensions": [
+                    "time2"
+                ],
+                "map": {
+                    "ch4global": "ch4globalClim",
+                    "co2mass": "co2massClim",
+                    "n2oglobal": "n2oglobalClim"
+                }
+            },
+            {
+                "for_tables": [
+                    "E1hr"
+                ],
+                "map": {
+                    "tntr": "tntr27",
+                    "utendnogw": "utendnogw27",
+                    "vtendnogw": "vtendnogw27",
+                    "zg": "zg27"
+                }
+            },
+            {
+                "for_tables": [
+                    "E1hr"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plev27",
+                    "time1"
+                ],
+                "map": {
+                    "ta": "ta27",
+                    "ua": "ua27",
+                    "va": "va27",
+                    "wap": "wap27"
+                }
+            },
+            {
+                "for_tables": [
+                    "E3hrPt"
+                ],
+                "map": {
+                    "ta": "ta7h",
+                    "wap": "wap7h"
+                }
+            },
+            {
+                "for_tables": [
+                    "E3hrPt"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plev7h",
+                    "time1"
+                ],
+                "map": {
+                    "hus": "hus7h",
+                    "ua": "ua7h",
+                    "va": "va7h"
+                }
+            },
+            {
+                "for_tables": [
+                    "Eday"
+                ],
+                "map": {
+                    "hus": "hus19",
+                    "ta": "ta19",
+                    "ua": "ua19",
+                    "va": "va19",
+                    "wap": "wap19",
+                    "zg": "zg19"
+                }
+            },
+            {
+                "for_tables": [
+                    "Emon"
+                ],
+                "map": {
+                    "cldicemxrat": "cldicemxrat27",
+                    "cldwatmxrat": "cldwatmxrat27",
+                    "grplmxrat": "grplmxrat27",
+                    "rainmxrat": "rainmxrat27",
+                    "snowmxrat": "snowmxrat27",
+                    "ta": "ta27",
+                    "tntmp": "tntmp27",
+                    "tntrl": "tntrl27",
+                    "tntrs": "tntrs27",
+                    "zg": "zg27"
+                }
+            },
+            {
+                "for_tables": [
+                    "Emon"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plev27",
+                    "time"
+                ],
+                "map": {
+                    "hus": "hus27",
+                    "ua": "ua27",
+                    "va": "va27"
+                }
+            },
+            {
+                "for_tables": [
+                    "Emon"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plev7h",
+                    "time"
+                ],
+                "map": {
+                    "hus": "hus7h",
+                    "ua": "ua7h",
+                    "va": "va7h"
+                }
+            },
+            {
+                "for_tables": [
+                    "Oclim"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "time2"
+                ],
+                "map": {
+                    "difmxybo": "difmxybo2d",
+                    "difmxylo": "difmxylo2d",
+                    "diftrbbo": "diftrbbo2d",
+                    "diftrblo": "diftrblo2d",
+                    "diftrebo": "diftrebo2d",
+                    "diftrelo": "diftrelo2d",
+                    "diftrxybo": "diftrxybo2d",
+                    "diftrxylo": "diftrxylo2d",
+                    "dispkexyfo": "dispkexyfo2d",
+                    "tnkebto": "tnkebto2d"
+                }
+            },
+            {
+                "for_tables": [
+                    "Omon"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "time"
+                ],
+                "map": {
+                    "ficeberg": "ficeberg2d",
+                    "hfibthermds": "hfibthermds2d",
+                    "hfrunoffds": "hfrunoffds2d",
+                    "hfsifrazil": "hfsifrazil2d",
+                    "hfsnthermds": "hfsnthermds2d"
+                }
+            },
+            {
+                "for_tables": [
+                    "day"
+                ],
+                "map": {
+                    "hus": "hus8",
+                    "ta": "ta8",
+                    "ua": "ua8",
+                    "va": "va8",
+                    "wap": "wap8",
+                    "zg": "zg8"
+                }
+            }
+        ],
         "sign_change": {
             "6.0.13": [
                 {
