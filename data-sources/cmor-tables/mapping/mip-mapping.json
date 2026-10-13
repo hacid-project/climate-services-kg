@@ -263,7 +263,10 @@
             ],
             "6.0.15": [
                 "mmraerso4",
-                "fg13co2",
+                {
+                    "id": "fg13co2",
+                    "units": "mol m-2 s-1"
+                },
                 {
                     "id": "fg14co2",
                     "quantity": "air_sea_flux_of_14CO2"
@@ -306,7 +309,10 @@
                 "tsnl"
             ],
             "6.1.23": [
-                "fLulccAtmLut",
+                {
+                    "id": "fLulccAtmLut",
+                    "units": "kg s-1"
+                },
                 {
                     "id": "fProductDecompLut",
                     "quantity": "tendency_of_atmospheric_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_wood_and_agricultural_product_pool"
@@ -338,7 +344,10 @@
             ],
             "6.3.27-fixed": [
                 "sltnortha",
-                "simpmass"
+                {
+                    "id": "simpmass",
+                    "units": "kg m-2"
+                }
             ],
             "6.6.30": [
                 {

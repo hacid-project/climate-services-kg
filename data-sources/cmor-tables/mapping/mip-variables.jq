@@ -11,6 +11,7 @@
 #       "out_name": "hus",
 #       "era": "cmip6",            # era of the variable (case insensitive)
 #       "quantity": "specific_humidity",  # CF standard name
+#       "units": "1",
 #       "table": "Amon",
 #       "dimensions": "longitude latitude plev19 time"  # or an array
 #   }
@@ -36,16 +37,18 @@ def _variable_spec:
         id: .out_name,
         era: (.era | if . != null then ascii_downcase end),
         quantity,
+        units,
         table,
         dimensions: (if .dimensions != null then [.dimensions | _words] | unique end)
     };
 
 # Conditions of a mapping entry or rename group (for_tables, dimensions,
-# quantity) against the variable: each one must be known and match
+# quantity, units) against the variable: each one must be known and match
 def _applies_to($v):
     ((has("for_tables") | not) or ($v.table != null and any(.for_tables[]; . == $v.table))) and
     ((has("dimensions") | not) or ($v.dimensions != null and (.dimensions | unique) == $v.dimensions)) and
-    ((has("quantity") | not) or ($v.quantity != null and .quantity == $v.quantity));
+    ((has("quantity") | not) or ($v.quantity != null and .quantity == $v.quantity)) and
+    ((has("units") | not) or ($v.units != null and .units == $v.units));
 
 # Entries of a keep/sign_change/unit_change section as {version, kind, entry},
 # where the section is either a list (no versions, as for cmip5) or an object

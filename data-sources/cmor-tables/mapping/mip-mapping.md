@@ -61,7 +61,7 @@ version of the CMOR tables is not known for a dataset, so an entry applies to
 all the variables of its era (and of the previous eras) with its `id` and
 conditions. An entry for a variable that still exists with the same name must
 therefore have conditions that tell the old definition from the following
-ones, usually its `quantity`.
+ones: its `quantity` or, if the quantity did not change, its `units`.
 
 An entry is either an `out_name` or an object with:
 
@@ -73,9 +73,12 @@ An entry is either an `out_name` or an object with:
   distinguishes the old variable from the current one: the entry applies only
   if the quantity of the variable is known and the same. An old variable
   defined with different standard names has an entry for each;
+- `units` (optional for `keep` and `sign_change`, required for
+  `unit_change`): the units of the old variable, as written in the tables.
+  The entry applies only if the units of the variable are known and the same;
 - `new_quantity` (optional): the CF standard name to use for the variable,
   replacing the one in the tables;
-- for `unit_change`: `units`, `factor`, `offset`, as above.
+- for `unit_change`: `factor`, `offset`, as above.
 
 ### `rename`
 
@@ -94,7 +97,8 @@ in `map` gives the new name.
 ## Resolution
 
 A variable is described by its `out_name` and, when known, its era, its
-table, its dimensions and its CF quantity (as in the metadata of a dataset).
+table, its dimensions, its CF quantity and its units (as in the metadata of a
+dataset).
 It is resolved going through the eras, from its own era to the last one,
 starting with its own name:
 
@@ -110,14 +114,19 @@ If no entry matches, the variable is the variable of the last edition with
 the resulting name.
 
 So the changes in an era apply to the variables of the previous eras too: a
-CMIP5 `tos` (in K) is the CMIP6 `tos` up to 6.0.19 (`unit_change`), a CMIP6
+CMIP5 `tos` in K is the CMIP6 `tos` up to 6.0.19 (`unit_change`), a CMIP6
 `hus` in `Amon` on `plev19` is the MIP `hus19`, and so is a CMIP5 `hus` in
 `Amon` on `plevs` (the 17 levels of `plevs` are the first 17 of `plev19`).
 
 Notes:
 
-- A condition (`for_tables`, `dimensions`, `quantity`) is satisfied only if
-  the corresponding information on the variable is known and matches.
+- A condition (`for_tables`, `dimensions`, `quantity`, `units`) is satisfied
+  only if the corresponding information on the variable is known and
+  matches. In particular, a variable whose units are not known never
+  resolves to a `unit_change` entry: e.g. a CMIP5 `tos` without units is the
+  current `tos`, with units `K` it is the CMIP6 `tos` up to 6.0.19. Units are
+  compared as strings, so they must be written as in the tables (e.g. `1e-9`,
+  `mol m-2 s-1`).
 - Without an era, the name is taken as the name of a variable of the last
   edition.
 
@@ -140,7 +149,7 @@ jq -L data-sources/cmor-tables/mapping -f data-sources/cmor-tables/mapping/mip-v
 ```
 
 The input is an `out_name` or an object with `out_name` and, optionally,
-`era`, `quantity`, `table` and `dimensions` (string or array). With
+`era`, `quantity`, `units`, `table` and `dimensions` (string or array). With
 `--arg details true` it returns the whole resolution (resulting name, era,
 version, kind and entry of the match, renames applied).
 
