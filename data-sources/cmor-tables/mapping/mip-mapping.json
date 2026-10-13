@@ -1,0 +1,227 @@
+[ 
+    {
+        "era": "cmip5",
+        "keep": [
+            "cfc11",
+            "dms",
+            "graz",
+            "po4",
+            "si",
+            "wetso4"
+        ],
+        "rename": [
+            {
+                "for_tables": [
+                    "Omon",
+                    "Oyr",
+                    "Oclim"
+                ],
+                "map": {
+                    "hfls": "hlfso",
+                    "hfss": "hfsso",
+                    "pr": "prra",
+                    "rlds": "rsdo",
+                    "rsds": "rsntds",
+                    "zfull": "zfullo",
+                    "zhalf": "zhalfo"
+                }
+            }
+        ]
+    },
+    {
+        "era": "cmip6",
+        "keep": {
+            "6.0.12": [
+                "albs",
+                "od550aerstrat"
+            ],
+            "6.0.13": [
+                "albsrfc"
+            ],
+            "6.0.14": [
+                "siflsaltbot"
+            ],
+            "6.0.15": [
+                "mmraerso4",
+                "mrlsl",
+                "potet"
+            ],
+            "6.0.16": [
+                "co2totalmass",
+                "lwtoacs",
+                "tws",
+                "ua200",
+                "ua850",
+                "va200",
+                "va850"
+            ],
+            "6.0.20": [
+                "dpocdtcalc",
+                "dpocdtdiaz",
+                "dpocdtpico",
+                "pdi",
+                "zoomeso",
+                "zoomicro",
+                "zoomisc"
+            ],
+            "6.0.21": [
+                "cSoilBelow1m",
+                "tomint",
+                "tsnl"
+            ],
+            "6.2.24": [
+                "dfr",
+                "et",
+                "hcont300",
+                "H2p",
+                "H2s",
+                "H2wv",
+                "O17p",
+                "O17s",
+                "O17wv",
+                "O18p",
+                "O18s",
+                "O18sw"
+            ],
+            "6.3.27-fixed": [
+                "sltnortha"
+            ],
+            "6.5.29": [
+                "O18wv"
+            ],
+            "6.6.30": [
+                {
+                    "id": "vt100",
+                    "quantity": "northward_heat_flux_in_air_due_to_eddy_advection"
+                }
+            ]
+        },
+        "rename": {
+            "areacelli": "modelCellAreai",
+            "expcfe": "expfe",
+            "mrlsl": "mrsol",
+            "msftmyz": "msftmz",
+            "msftyyz": "msftyz",
+            "pmlev": "pfull",
+            "siconco": "siconca",
+            "slbnosn": "sblnosn",
+            "tso": "tos",
+            "ugrid": "ugrido",
+            "waterDpth": "wtd"
+        },
+        "sign_change": {
+            "6.6.24": [
+                {
+                    "id": "depdust",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_total_deposition",
+                    "new_quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_deposition"
+                },
+                {
+                    "id": "drybc",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_dry_deposition"
+                },
+                {
+                    "id": "drydust",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_dry_deposition"
+                },
+                {
+                    "id": "drynh3",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_ammonia_due_to_dry_deposition"
+                },
+                {
+                    "id": "drynh4",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_dry_deposition"
+                },
+                {
+                    "id": "drynoy",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_dry_deposition"
+                },
+                {
+                    "id": "dryoa",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_dry_deposition"
+                },
+                {
+                    "id": "dryo3",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_ozone_due_to_dry_deposition"
+                },
+                {
+                    "id": "dryso2",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_dry_deposition"
+                },
+                {
+                    "id": "dryso4",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_dry_deposition"
+                },
+                {
+                    "id": "dryss",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_dry_deposition",
+                    "new_quantity": "tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_dry_deposition"
+                },
+                {
+                    "id": "fNdep",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_nitrogen_compounds_expressed_as_nitrogen_due_to_deposition"
+                },
+                {
+                    "id": "wetbc",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_elemental_carbon_dry_aerosol_particles_due_to_wet_deposition"
+                },
+                {
+                    "id": "wetdust",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_wet_deposition"
+                },
+                {
+                    "id": "wetnh3",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_ammonia_due_to_wet_deposition"
+                },
+                {
+                    "id": "wetnh4",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_ammonium_dry_aerosol_particles_due_to_wet_deposition"
+                },
+                {
+                    "id": "wetnoy",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_noy_expressed_as_nitrogen_due_to_wet_deposition"
+                },
+                {
+                    "id": "wetoa",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_particulate_organic_matter_dry_aerosol_particles_due_to_wet_deposition"
+                },
+                {
+                    "id": "wetso2",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_sulfur_dioxide_due_to_wet_deposition"
+                },
+                {
+                    "id": "wetso4",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_sulfate_dry_aerosol_particles_due_to_wet_deposition"
+                },
+                {
+                    "id": "wetss",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_seasalt_dry_aerosol_particles_due_to_wet_deposition",
+                    "new_quantity": "tendency_of_atmosphere_mass_content_of_sea_salt_dry_aerosol_particles_due_to_wet_deposition"
+                },
+                {
+                    "id": "sedustCI",
+                    "quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_sedimentation",
+                    "new_quantity": "tendency_of_atmosphere_mass_content_of_insoluble_dust_dry_aerosol_particles_due_to_deposition"
+                }
+            ],
+            "6.3.27-fixed": [
+                {
+                    "id": "frfe",
+                    "quantity": "tendency_of_ocean_mole_content_of_iron_due_to_sedimentation"
+                },
+                {
+                    "id": "fric",
+                    "quantity": "tendency_of_ocean_mole_content_of_inorganic_carbon_due_to_sedimentation"
+                },
+                {
+                    "id": "frn",
+                    "quantity": "tendency_of_ocean_mole_content_of_elemental_nitrogen_due_to_denitrification_and_sedimentation"
+                },
+                {
+                    "id": "froc",
+                    "quantity": "tendency_of_ocean_mole_content_of_organic_carbon_due_to_sedimentation"
+                }
+           ]
+        }
+    }
+]
