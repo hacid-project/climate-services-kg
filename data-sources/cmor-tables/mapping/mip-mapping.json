@@ -28,6 +28,8 @@
             "graz",
             "grLateral",
             "hfbasindiff",
+            "hfnorth",
+            "hfnorthba",
             "hfnorthdiff",
             "hfsithermds",
             "hfxba",
@@ -183,8 +185,6 @@
                 ],
                 "map": {
                     "hfbasinba": "hfbasinpadv",
-                    "hfnorth": "hfbasin",
-                    "hfnorthba": "hfbasinpadv",
                     "intpcalc": "intppcalc",
                     "intpdiat": "intppdiat",
                     "intpdiaz": "intppdiaz",
