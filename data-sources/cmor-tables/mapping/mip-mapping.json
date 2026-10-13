@@ -264,7 +264,10 @@
             "6.0.15": [
                 "mmraerso4",
                 "fg13co2",
-                "fg14co2"
+                {
+                    "id": "fg14co2",
+                    "quantity": "air_sea_flux_of_14CO2"
+                }
             ],
             "6.0.16": [
                 "co2totalmass",
@@ -304,14 +307,34 @@
             ],
             "6.1.23": [
                 "fLulccAtmLut",
-                "fProductDecompLut",
-                "irrLut"
+                {
+                    "id": "fProductDecompLut",
+                    "quantity": "tendency_of_atmospheric_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_wood_and_agricultural_product_pool"
+                },
+                {
+                    "id": "irrLut",
+                    "quantity": "surface_downward_water_flux_due_to_irrigation"
+                }
             ],
             "6.2.24": [
                 "dfr",
                 "hcont300",
-                "pod0",
-                "rootdsl"
+                {
+                    "id": "pod0",
+                    "quantity": "pending_CF_name"
+                },
+                {
+                    "id": "pod0",
+                    "quantity": "integration_wrt_time_of_mole_stomatal_uptake_of_ozone"
+                },
+                {
+                    "id": "rootdsl",
+                    "quantity": "missing"
+                },
+                {
+                    "id": "rootdsl",
+                    "quantity": "root_mass_content"
+                }
             ],
             "6.3.27-fixed": [
                 "sltnortha",

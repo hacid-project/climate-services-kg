@@ -55,8 +55,13 @@ variable as the one with the same name in the last edition:
 Each section is either a list (for an era with a single version, as `cmip5`)
 or an object from a **version** of the CMOR tables of the era to a list. The
 version is the last one in which the variable is defined with that meaning
-and specifications: the entry applies to the variables of that version and of
-all the previous ones.
+and specifications, and it names the variable (see
+[Variable IRIs](#variable-iris)). It is not used to match the variables: the
+version of the CMOR tables is not known for a dataset, so an entry applies to
+all the variables of its era (and of the previous eras) with its `id` and
+conditions. An entry for a variable that still exists with the same name must
+therefore have conditions that tell the old definition from the following
+ones, usually its `quantity`.
 
 An entry is either an `out_name` or an object with:
 
@@ -64,10 +69,10 @@ An entry is either an `out_name` or an object with:
 - `for_tables` (optional): the tables to which the entry applies;
 - `dimensions` (optional): the dimensions of the variable to which the entry
   applies (the same set, in any order);
-- `quantity` (optional): the CF standard name of the variable at that
-  version. It distinguishes the old variable from the current one when only
-  the era is known (as in the metadata of the datasets): if the quantity of a
-  variable is known and different, the entry does not apply;
+- `quantity` (optional): the CF standard name of the old variable. It
+  distinguishes the old variable from the current one: the entry applies only
+  if the quantity of the variable is known and the same. An old variable
+  defined with different standard names has an entry for each;
 - `new_quantity` (optional): the CF standard name to use for the variable,
   replacing the one in the tables;
 - for `unit_change`: `units`, `factor`, `offset`, as above.
@@ -88,17 +93,15 @@ in `map` gives the new name.
 
 ## Resolution
 
-A variable is described by its `out_name` and, when known, its era, the
-version of the CMOR tables, its table, its dimensions and its CF quantity. It
-is resolved going through the eras, from its own era to the last one, starting
-with its own name:
+A variable is described by its `out_name` and, when known, its era, its
+table, its dimensions and its CF quantity (as in the metadata of a dataset).
+It is resolved going through the eras, from its own era to the last one,
+starting with its own name:
 
 1. In the era, the `keep`, `sign_change` and `unit_change` entries are
-   considered in order of version: in the variable's own era only those of
-   its version and the following ones (all of them if the version is not
-   known), in the following eras all of them. The first entry matching the
-   current name (and its conditions) gives the identity of the variable: the
-   variable of that era and version. The resolution stops.
+   considered in order of version. The first entry matching the current name
+   (and its conditions) gives the identity of the variable: the variable of
+   that era and version. The resolution stops.
 2. Otherwise, if a rename of the era applies, the current name becomes the
    new one.
 3. Go on with the next era.
@@ -113,12 +116,8 @@ CMIP5 `tos` (in K) is the CMIP6 `tos` up to 6.0.19 (`unit_change`), a CMIP6
 
 Notes:
 
-- Versions are compared by their numbers: `6.3.27-fixed` is `6.3.27`, the
-  pre-release `6.0.19a` counts as `6.0.19`, and the side branch `6.1.23`
-  (from `6.1.22`) comes before `6.2.24`.
-- Conditions on tables and dimensions apply only if the table and the
-  dimensions of the variable are known; the condition on the quantity applies
-  only if the quantity is known.
+- A condition (`for_tables`, `dimensions`, `quantity`) is satisfied only if
+  the corresponding information on the variable is known and matches.
 - Without an era, the name is taken as the name of a variable of the last
   edition.
 
@@ -141,7 +140,7 @@ jq -L data-sources/cmor-tables/mapping -f data-sources/cmor-tables/mapping/mip-v
 ```
 
 The input is an `out_name` or an object with `out_name` and, optionally,
-`era`, `version`, `quantity`, `table` and `dimensions` (string or array). With
+`era`, `quantity`, `table` and `dimensions` (string or array). With
 `--arg details true` it returns the whole resolution (resulting name, era,
 version, kind and entry of the match, renames applied).
 
@@ -161,6 +160,7 @@ mapping as argument, e.g. `mip_variable_iri($mapping)`).
 
 When a new edition is considered, the variables that are deleted or changed
 in it are added to `keep` (or `sign_change`, `unit_change`) under the last
-version in which they had the old definition, and the safe renames to
-`rename`. The analysis in `../analysis` lists the deletions and changes of
+version in which they had the old definition (with the conditions that
+identify the old definition, if the name is still in use), and the safe
+renames to `rename`. The analysis in `../analysis` lists the deletions and changes of
 the variables across the editions.

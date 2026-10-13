@@ -10,7 +10,6 @@
 #   {
 #       "out_name": "hus",
 #       "era": "cmip6",            # era of the variable (case insensitive)
-#       "version": "6.2.24",       # version of the CMOR tables, within the era
 #       "quantity": "specific_humidity",  # CF standard name
 #       "table": "Amon",
 #       "dimensions": "longitude latitude plev19 time"  # or an array
@@ -27,8 +26,7 @@ def _words:
     else empty
     end;
 
-# Numeric parts of a version, to compare versions: "6.3.27-fixed" -> [6, 3, 27]
-# (a suffixed pre-release such as 6.0.19a counts as the release it precedes)
+# Numeric parts of a version, to sort the entries: "6.3.27-fixed" -> [6, 3, 27]
 def _version_key: [scan("[0-9]+") | tonumber];
 
 # Input as an object, with normalised era and dimensions
@@ -37,19 +35,17 @@ def _variable_spec:
     {
         id: .out_name,
         era: (.era | if . != null then ascii_downcase end),
-        version: (.version | if . != null then tostring end),
         quantity,
         table,
         dimensions: (if .dimensions != null then [.dimensions | _words] | unique end)
     };
 
 # Conditions of a mapping entry or rename group (for_tables, dimensions,
-# quantity) against the variable: tables and dimensions must be known and
-# match; the quantity must match only if known
+# quantity) against the variable: each one must be known and match
 def _applies_to($v):
     ((has("for_tables") | not) or ($v.table != null and any(.for_tables[]; . == $v.table))) and
     ((has("dimensions") | not) or ($v.dimensions != null and (.dimensions | unique) == $v.dimensions)) and
-    ((has("quantity") | not) or $v.quantity == null or .quantity == $v.quantity);
+    ((has("quantity") | not) or ($v.quantity != null and .quantity == $v.quantity));
 
 # Entries of a keep/sign_change/unit_change section as {version, kind, entry},
 # where the section is either a list (no versions, as for cmip5) or an object
@@ -66,8 +62,8 @@ def _versioned_entries($kind):
 #       id,        # out_name of the variable in the last version, or in the
 #                  # version given by era/version if it is a previous variable
 #       era, version,  # null for a variable of the last version, otherwise
-#                      # where the variable is defined (version is null if the
-#                      # era has no versions in the mapping)
+#                      # the era and version of the matching entry (version is
+#                      # null if the era has no versions in the mapping)
 #       kind,      # null, "keep", "sign_change" or "unit_change"
 #       entry,     # the matching keep/sign_change/unit_change entry
 #       renames    # renames applied, as [{era, from, to}]
@@ -81,16 +77,13 @@ def mip_variable_resolution($mapping):
         else
             . as $state |
             ($v + {id: $state.id}) as $current |
-            # versions from the one of the variable (all, if not known or in a later era)
-            (if $section.era == $v.era and $v.version != null then $v.version | _version_key else null end) as $from |
             (first(
                 [
                     $section | (
                         (.keep | _versioned_entries("keep")),
                         (.sign_change | _versioned_entries("sign_change")),
                         (.unit_change | _versioned_entries("unit_change"))
-                    ) |
-                    select(.version == null or $from == null or (.version | _version_key) >= $from)
+                    )
                 ] |
                 sort_by(.version | if . == null then [] else _version_key end) |
                 .[] |
