@@ -54,11 +54,6 @@
                     "Oyr"
                 ],
                 "map": {
-                    "dpocdtcalc": "ppcalc",
-                    "dpocdtdiaz": "ppdiaz",
-                    "dpocdtpico": "pppico",
-                    "expcfe": "expfe",
-                    "pdi": "ppdiat",
                     "phypmisc": "ppmisc",
                     "zoocmisc": "zmisc"
                 }
@@ -82,10 +77,7 @@
                     "time"
                 ],
                 "map": {
-                    "hus": "hus19",
-                    "tro3": "o3",
-                    "ua": "ua19",
-                    "va": "va19"
+                    "tro3": "o3"
                 }
             },
             {
@@ -104,85 +96,9 @@
                     "n2o": "n2oClim",
                     "tro3": "o3Clim"
                 }
-            },
-            {
-                "for_tables": [
-                    "Amon"
-                ],
-                "dimensions": [
-                    "time2"
-                ],
-                "map": {
-                    "ch4global": "ch4globalClim",
-                    "co2mass": "co2massClim",
-                    "n2oglobal": "n2oglobalClim"
-                }
-            },
-            {
-                "for_tables": [
-                    "Oclim"
-                ],
-                "dimensions": [
-                    "longitude",
-                    "latitude",
-                    "time2"
-                ],
-                "map": {
-                    "difmxybo": "difmxybo2d",
-                    "difmxylo": "difmxylo2d",
-                    "diftrbbo": "diftrbbo2d",
-                    "diftrblo": "diftrblo2d",
-                    "diftrebo": "diftrebo2d",
-                    "diftrelo": "diftrelo2d",
-                    "diftrxybo": "diftrxybo2d",
-                    "diftrxylo": "diftrxylo2d",
-                    "dispkexyfo": "dispkexyfo2d",
-                    "tnkebto": "tnkebto2d"
-                }
-            },
-            {
-                "for_tables": [
-                    "Omon"
-                ],
-                "dimensions": [
-                    "longitude",
-                    "latitude",
-                    "time"
-                ],
-                "map": {
-                    "ficeberg": "ficeberg2d",
-                    "hfibthermds": "hfibthermds2d",
-                    "hfrunoffds": "hfrunoffds2d",
-                    "hfsifrazil": "hfsifrazil2d",
-                    "hfsnthermds": "hfsnthermds2d"
-                }
-            },
-            {
-                "for_tables": [
-                    "day"
-                ],
-                "dimensions": [
-                    "longitude",
-                    "latitude",
-                    "plev8",
-                    "time"
-                ],
-                "map": {
-                    "hus": "hus8",
-                    "ta": "ta8",
-                    "ua": "ua8",
-                    "va": "va8",
-                    "wap": "wap8",
-                    "zg": "zg8"
-                }
             }
         ],
         "unit_change": [
-            {
-                "id": "tos",
-                "units": "K",
-                "offset": -273.15
-            },
             {
                 "id": "thetao",
                 "units": "K",
@@ -613,6 +529,13 @@
             ]
         },
         "unit_change": {
+            "6.0.13": [
+                {
+                    "id": "tso",
+                    "units": "K",
+                    "offset": -273.15
+                }
+            ],
             "6.0.19": [
                 {
                     "id": "tos",
