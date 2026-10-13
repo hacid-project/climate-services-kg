@@ -79,12 +79,30 @@
                     "longitude",
                     "latitude",
                     "plevs",
+                    "time"
+                ],
+                "map": {
+                    "hus": "hus19",
+                    "tro3": "o3",
+                    "ua": "ua19",
+                    "va": "va19"
+                }
+            },
+            {
+                "for_tables": [
+                    "Amon"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plevs",
                     "time2"
                 ],
                 "map": {
                     "ch4": "ch4Clim",
                     "co2": "co2Clim",
-                    "n2o": "n2oClim"
+                    "n2o": "n2oClim",
+                    "tro3": "o3Clim"
                 }
             },
             {
@@ -138,6 +156,25 @@
                     "hfsifrazil": "hfsifrazil2d",
                     "hfsnthermds": "hfsnthermds2d"
                 }
+            },
+            {
+                "for_tables": [
+                    "day"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plev8",
+                    "time"
+                ],
+                "map": {
+                    "hus": "hus8",
+                    "ta": "ta8",
+                    "ua": "ua8",
+                    "va": "va8",
+                    "wap": "wap8",
+                    "zg": "zg8"
+                }
             }
         ],
         "unit_change": [
@@ -188,6 +225,11 @@
             },
             {
                 "id": "n2o",
+                "units": "1e-9",
+                "factor": 1e-09
+            },
+            {
+                "id": "tro3",
                 "units": "1e-9",
                 "factor": 1e-09
             },
