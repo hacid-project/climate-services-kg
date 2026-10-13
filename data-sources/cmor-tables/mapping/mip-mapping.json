@@ -13,7 +13,9 @@
             "concoa",
             "concpoa",
             "concso2",
+            "concso4",
             "concsoa",
+            "concss",
             "dms",
             "drydms",
             "drypoa",
@@ -180,6 +182,18 @@
                     "Omon"
                 ],
                 "map": {
+                    "hfbasinba": "hfbasinpadv",
+                    "hfnorth": "hfbasin",
+                    "hfnorthba": "hfbasinpadv",
+                    "intpcalc": "intppcalc",
+                    "intpdiat": "intppdiat",
+                    "intpdiaz": "intppdiaz",
+                    "intpmisc": "intppmisc",
+                    "intpnitrate": "intppnitrate",
+                    "intppico": "intpppico",
+                    "msftmrhoz": "msftmrho",
+                    "msftyrhoz": "msftyrho",
+                    "omlmax": "omldamax",
                     "zoocmisc": "zmiscos"
                 }
             },
@@ -212,6 +226,33 @@
                     "co2": "co2Clim",
                     "n2o": "n2oClim",
                     "tro3": "o3Clim"
+                }
+            },
+            {
+                "for_tables": [
+                    "day"
+                ],
+                "map": {
+                    "rhs": "hurs",
+                    "rhsmax": "hursmax",
+                    "rhsmin": "hursmin"
+                }
+            },
+            {
+                "for_tables": [
+                    "cfMon"
+                ],
+                "map": {
+                    "evisct": "edt",
+                    "eviscu": "evu"
+                }
+            },
+            {
+                "for_tables": [
+                    "Lmon"
+                ],
+                "map": {
+                    "burntArea": "burntFractionAll"
                 }
             }
         ],
