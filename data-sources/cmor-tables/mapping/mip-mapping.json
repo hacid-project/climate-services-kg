@@ -2,12 +2,111 @@
     {
         "era": "cmip5",
         "keep": [
+            "ageice",
             "cfc11",
+            "concaerh2o",
+            "concbb",
+            "concbc",
+            "concdms",
+            "concnh4",
+            "concno3",
+            "concoa",
+            "concpoa",
+            "concso2",
+            "concso4",
+            "concsoa",
+            "concss",
             "dms",
+            "drydms",
+            "drypoa",
+            "drysoa",
+            "emibb",
+            "emipoa",
+            "eshrice",
+            "frc",
+            "fsc",
             "graz",
+            "grLateral",
+            "hfbasindiff",
+            "hfnorth",
+            "hfnorthba",
+            "hfnorthdiff",
+            "hfsithermds",
+            "hfxba",
+            "hfxdiff",
+            "hfyba",
+            "hfydiff",
+            "ialb",
+            "inc",
+            "msftmrhozba",
+            "msftmyzba",
+            "msftyrhozba",
+            "msftyyzba",
+            "nshrice",
             "po4",
+            "prAdjust",
+            "pslAdjust",
+            "rhopoto",
+            "ridgice",
+            "sconcbc",
+            "sconcnh4",
+            "sconcno3",
+            "sconcoa",
+            "sconcpoa",
+            "sconcsoa",
             "si",
-            "wetso4"
+            "sim",
+            "ssi",
+            "tasAdjust",
+            "tnsccw",
+            "tnsccwa",
+            "tnsccwacr",
+            "tnsccwacs",
+            "tnsccwbl",
+            "tnsccwce",
+            "tnsccwcm",
+            "tnsccwif",
+            "tnscli",
+            "tnsclia",
+            "tnscliag",
+            "tnsclias",
+            "tnsclibfpcl",
+            "tnsclibl",
+            "tnsclicd",
+            "tnsclicm",
+            "tnsclids",
+            "tnscliemi",
+            "tnsclihencl",
+            "tnsclihenv",
+            "tnsclihon",
+            "tnscliif",
+            "tnsclimcl",
+            "tnsclimr",
+            "tnscliricl",
+            "tnsclirir",
+            "tnsclw",
+            "tnsclwa",
+            "tnsclwac",
+            "tnsclwar",
+            "tnsclwas",
+            "tnsclwbfpcli",
+            "tnsclwbl",
+            "tnsclwcd",
+            "tnsclwce",
+            "tnsclwcm",
+            "tnsclwhen",
+            "tnsclwhon",
+            "tnsclwmi",
+            "tnsclwri",
+            "tossq",
+            "tsAdjust",
+            "wetdms",
+            "wetpoa",
+            "wetso4",
+            "wetsoa",
+            "wmosq",
+            "zosga",
+            "zossga"
         ],
         "rename": [
             {
@@ -32,12 +131,31 @@
                 ],
                 "map": {
                     "bmelt": "sidmassmeltbot",
+                    "divice": "sidivvel",
+                    "evap": "sidmassevapsubl",
                     "grCongel": "sidmassgrowthbot",
                     "grFrazil": "sidmassgrowthwat",
+                    "hcice": "sihc",
+                    "hflssi": "sifllatstop",
+                    "hfssi": "siflsenstop",
+                    "rldssi": "sifllwdtop",
+                    "rlussi": "sifllwutop",
+                    "rsdssi": "siflswdtop",
+                    "rsussi": "siflswutop",
+                    "sblsi": "sndmasssubl",
+                    "snomelt": "sndmassmelt",
                     "snoToIce": "sidmasssi",
+                    "strairx": "sistrxdtop",
+                    "strairy": "sistrydtop",
+                    "streng": "sicompstren",
+                    "strocnx": "sistrxubot",
+                    "strocny": "sistryubot",
                     "tmelt": "sidmassmelttop",
+                    "transifs": "simassacrossline",
                     "transix": "sidmasstranx",
-                    "transiy": "sidmasstrany"
+                    "transiy": "sidmasstrany",
+                    "tsice": "sitemptop",
+                    "tsnint": "sitempsnic"
                 }
             },
             {
@@ -46,7 +164,10 @@
                     "day"
                 ],
                 "map": {
-                    "sit": "sivol"
+                    "sic": "siconc",
+                    "sit": "sivol",
+                    "usi": "siu",
+                    "vsi": "siv"
                 }
             },
             {
@@ -54,11 +175,6 @@
                     "Oyr"
                 ],
                 "map": {
-                    "dpocdtcalc": "ppcalc",
-                    "dpocdtdiaz": "ppdiaz",
-                    "dpocdtpico": "pppico",
-                    "expcfe": "expfe",
-                    "pdi": "ppdiat",
                     "phypmisc": "ppmisc",
                     "zoocmisc": "zmisc"
                 }
@@ -68,6 +184,16 @@
                     "Omon"
                 ],
                 "map": {
+                    "hfbasinba": "hfbasinpadv",
+                    "intpcalc": "intppcalc",
+                    "intpdiat": "intppdiat",
+                    "intpdiaz": "intppdiaz",
+                    "intpmisc": "intppmisc",
+                    "intpnitrate": "intppnitrate",
+                    "intppico": "intpppico",
+                    "msftmrhoz": "msftmrho",
+                    "msftyrhoz": "msftyrho",
+                    "omlmax": "omldamax",
                     "zoocmisc": "zmiscos"
                 }
             },
@@ -82,10 +208,7 @@
                     "time"
                 ],
                 "map": {
-                    "hus": "hus19",
-                    "tro3": "o3",
-                    "ua": "ua19",
-                    "va": "va19"
+                    "tro3": "o3"
                 }
             },
             {
@@ -107,82 +230,33 @@
             },
             {
                 "for_tables": [
-                    "Amon"
-                ],
-                "dimensions": [
-                    "time2"
-                ],
-                "map": {
-                    "ch4global": "ch4globalClim",
-                    "co2mass": "co2massClim",
-                    "n2oglobal": "n2oglobalClim"
-                }
-            },
-            {
-                "for_tables": [
-                    "Oclim"
-                ],
-                "dimensions": [
-                    "longitude",
-                    "latitude",
-                    "time2"
-                ],
-                "map": {
-                    "difmxybo": "difmxybo2d",
-                    "difmxylo": "difmxylo2d",
-                    "diftrbbo": "diftrbbo2d",
-                    "diftrblo": "diftrblo2d",
-                    "diftrebo": "diftrebo2d",
-                    "diftrelo": "diftrelo2d",
-                    "diftrxybo": "diftrxybo2d",
-                    "diftrxylo": "diftrxylo2d",
-                    "dispkexyfo": "dispkexyfo2d",
-                    "tnkebto": "tnkebto2d"
-                }
-            },
-            {
-                "for_tables": [
-                    "Omon"
-                ],
-                "dimensions": [
-                    "longitude",
-                    "latitude",
-                    "time"
-                ],
-                "map": {
-                    "ficeberg": "ficeberg2d",
-                    "hfibthermds": "hfibthermds2d",
-                    "hfrunoffds": "hfrunoffds2d",
-                    "hfsifrazil": "hfsifrazil2d",
-                    "hfsnthermds": "hfsnthermds2d"
-                }
-            },
-            {
-                "for_tables": [
                     "day"
                 ],
-                "dimensions": [
-                    "longitude",
-                    "latitude",
-                    "plev8",
-                    "time"
+                "map": {
+                    "rhs": "hurs",
+                    "rhsmax": "hursmax",
+                    "rhsmin": "hursmin"
+                }
+            },
+            {
+                "for_tables": [
+                    "cfMon"
                 ],
                 "map": {
-                    "hus": "hus8",
-                    "ta": "ta8",
-                    "ua": "ua8",
-                    "va": "va8",
-                    "wap": "wap8",
-                    "zg": "zg8"
+                    "evisct": "edt",
+                    "eviscu": "evu"
+                }
+            },
+            {
+                "for_tables": [
+                    "Lmon"
+                ],
+                "map": {
+                    "burntArea": "burntFractionAll"
                 }
             }
         ],
         "unit_change": [
-            {
-                "id": "tos",
-                "units": "K",
-                "offset": -273.15
-            },
             {
                 "id": "thetao",
                 "units": "K",
@@ -251,7 +325,15 @@
                 "albsrfc"
             ],
             "6.0.15": [
-                "mmraerso4"
+                "mmraerso4",
+                {
+                    "id": "fg13co2",
+                    "units": "mol m-2 s-1"
+                },
+                {
+                    "id": "fg14co2",
+                    "quantity": "air_sea_flux_of_14CO2"
+                }
             ],
             "6.0.16": [
                 "co2totalmass",
@@ -289,12 +371,46 @@
                 "tomint",
                 "tsnl"
             ],
+            "6.1.23": [
+                {
+                    "id": "fLulccAtmLut",
+                    "units": "kg s-1"
+                },
+                {
+                    "id": "fProductDecompLut",
+                    "quantity": "tendency_of_atmospheric_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_wood_and_agricultural_product_pool"
+                },
+                {
+                    "id": "irrLut",
+                    "quantity": "surface_downward_water_flux_due_to_irrigation"
+                }
+            ],
             "6.2.24": [
                 "dfr",
-                "hcont300"
+                "hcont300",
+                {
+                    "id": "pod0",
+                    "quantity": "pending_CF_name"
+                },
+                {
+                    "id": "pod0",
+                    "quantity": "integration_wrt_time_of_mole_stomatal_uptake_of_ozone"
+                },
+                {
+                    "id": "rootdsl",
+                    "quantity": "missing"
+                },
+                {
+                    "id": "rootdsl",
+                    "quantity": "root_mass_content"
+                }
             ],
             "6.3.27-fixed": [
-                "sltnortha"
+                "sltnortha",
+                {
+                    "id": "simpmass",
+                    "units": "kg m-2"
+                }
             ],
             "6.6.30": [
                 {
@@ -613,6 +729,13 @@
             ]
         },
         "unit_change": {
+            "6.0.13": [
+                {
+                    "id": "tso",
+                    "units": "K",
+                    "offset": -273.15
+                }
+            ],
             "6.0.19": [
                 {
                     "id": "tos",
