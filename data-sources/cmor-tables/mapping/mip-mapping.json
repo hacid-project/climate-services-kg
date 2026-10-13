@@ -119,27 +119,12 @@
                 "factor": 1e-09
             },
             {
-                "id": "ch4Clim",
-                "units": "1e-9",
-                "factor": 1e-09
-            },
-            {
                 "id": "n2o",
                 "units": "1e-9",
                 "factor": 1e-09
             },
             {
-                "id": "n2oClim",
-                "units": "1e-9",
-                "factor": 1e-09
-            },
-            {
                 "id": "co2",
-                "units": "1e-6",
-                "factor": 1e-06
-            },
-            {
-                "id": "co2Clim",
                 "units": "1e-6",
                 "factor": 1e-06
             }
@@ -163,7 +148,25 @@
                 "ua200",
                 "ua850",
                 "va200",
-                "va850"
+                "va850",
+                {
+                    "id": "ua",
+                    "for_tables": [
+                        "E3hrPt"
+                    ],
+                    "dimensions": [
+                        "p850"
+                    ]
+                },
+                {
+                    "id": "va",
+                    "for_tables": [
+                        "E3hrPt"
+                    ],
+                    "dimensions": [
+                        "p850"
+                    ]
+                }
             ],
             "6.0.21": [
                 "cSoilBelow1m",
@@ -176,9 +179,6 @@
             ],
             "6.3.27-fixed": [
                 "sltnortha"
-            ],
-            "6.5.29": [
-                "O18wv"
             ],
             "6.6.30": [
                 {
@@ -207,6 +207,7 @@
             "O18p": "pr18O",
             "O18s": "prsn18O",
             "O18sw": "sw18O",
+            "O18wv": "prw18O",
             "pdi": "ppdiat",
             "pmlev": "pfull",
             "potet": "evspsblpot",
@@ -215,7 +216,6 @@
             "slbnosn": "sblnosn",
             "tso": "tos",
             "tws": "mrtws",
-            "ugrid": "ugrido",
             "waterDpth": "wtd",
             "zoomeso": "zmeso",
             "zoomicro": "zmicro",
