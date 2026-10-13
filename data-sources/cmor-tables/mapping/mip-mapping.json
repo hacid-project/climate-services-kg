@@ -127,12 +127,31 @@
                 ],
                 "map": {
                     "bmelt": "sidmassmeltbot",
+                    "divice": "sidivvel",
+                    "evap": "sidmassevapsubl",
                     "grCongel": "sidmassgrowthbot",
                     "grFrazil": "sidmassgrowthwat",
+                    "hcice": "sihc",
+                    "hflssi": "sifllatstop",
+                    "hfssi": "siflsenstop",
+                    "rldssi": "sifllwdtop",
+                    "rlussi": "sifllwutop",
+                    "rsdssi": "siflswdtop",
+                    "rsussi": "siflswutop",
+                    "sblsi": "sndmasssubl",
+                    "snomelt": "sndmassmelt",
                     "snoToIce": "sidmasssi",
+                    "strairx": "sistrxdtop",
+                    "strairy": "sistrydtop",
+                    "streng": "sicompstren",
+                    "strocnx": "sistrxubot",
+                    "strocny": "sistryubot",
                     "tmelt": "sidmassmelttop",
+                    "transifs": "simassacrossline",
                     "transix": "sidmasstranx",
-                    "transiy": "sidmasstrany"
+                    "transiy": "sidmasstrany",
+                    "tsice": "sitemptop",
+                    "tsnint": "sitempsnic"
                 }
             },
             {
@@ -141,7 +160,10 @@
                     "day"
                 ],
                 "map": {
-                    "sit": "sivol"
+                    "sic": "siconc",
+                    "sit": "sivol",
+                    "usi": "siu",
+                    "vsi": "siv"
                 }
             },
             {
