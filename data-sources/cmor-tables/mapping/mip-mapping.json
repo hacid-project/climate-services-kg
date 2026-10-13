@@ -79,12 +79,27 @@
                     "longitude",
                     "latitude",
                     "plevs",
+                    "time"
+                ],
+                "map": {
+                    "tro3": "o3"
+                }
+            },
+            {
+                "for_tables": [
+                    "Amon"
+                ],
+                "dimensions": [
+                    "longitude",
+                    "latitude",
+                    "plevs",
                     "time2"
                 ],
                 "map": {
                     "ch4": "ch4Clim",
                     "co2": "co2Clim",
-                    "n2o": "n2oClim"
+                    "n2o": "n2oClim",
+                    "tro3": "o3Clim"
                 }
             },
             {
@@ -188,6 +203,11 @@
             },
             {
                 "id": "n2o",
+                "units": "1e-9",
+                "factor": 1e-09
+            },
+            {
+                "id": "tro3",
                 "units": "1e-9",
                 "factor": 1e-09
             },
