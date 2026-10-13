@@ -221,6 +221,14 @@
             "zoomicro": "zmicro",
             "zoomisc": "zmisc"
         },
+        "sign_change": {
+            "6.0.13": [
+                {
+                    "id": "sistryubot",
+                    "quantity": "downward_y_stress_at_sea_ice_base"
+                }
+            ]
+        },
         "unit_change": {
             "6.0.19": [
                 {
