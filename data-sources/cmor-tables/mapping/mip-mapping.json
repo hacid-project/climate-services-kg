@@ -1,4 +1,4 @@
-[ 
+[
     {
         "era": "cmip5",
         "keep": [
@@ -17,13 +17,58 @@
                     "Oclim"
                 ],
                 "map": {
-                    "hfls": "hlfso",
+                    "hfls": "hflso",
                     "hfss": "hfsso",
                     "pr": "prra",
-                    "rlds": "rsdo",
-                    "rsds": "rsntds",
+                    "rlds": "rlntds",
+                    "rsds": "rsdo",
                     "zfull": "zfullo",
                     "zhalf": "zhalfo"
+                }
+            },
+            {
+                "for_tables": [
+                    "OImon"
+                ],
+                "map": {
+                    "bmelt": "sidmassmeltbot",
+                    "grCongel": "sidmassgrowthbot",
+                    "grFrazil": "sidmassgrowthwat",
+                    "snoToIce": "sidmasssi",
+                    "tmelt": "sidmassmelttop",
+                    "transix": "sidmasstranx",
+                    "transiy": "sidmasstrany"
+                }
+            },
+            {
+                "for_tables": [
+                    "OImon",
+                    "day"
+                ],
+                "map": {
+                    "sit": "sivol"
+                }
+            },
+            {
+                "for_tables": [
+                    "Oyr"
+                ],
+                "map": {
+                    "dpocdtcalc": "ppcalc",
+                    "dpocdtdiaz": "ppdiaz",
+                    "dpocdtpico": "pppico",
+                    "expcfe": "expfe",
+                    "pdi": "ppdiat",
+                    "phypmisc": "ppmisc",
+                    "zoocmisc": "zmisc"
+                }
+            },
+            {
+                "for_tables": [
+                    "Omon"
+                ],
+                "map": {
+                    "zoocmisc": "zmiscos"
                 }
             }
         ]
@@ -38,31 +83,15 @@
             "6.0.13": [
                 "albsrfc"
             ],
-            "6.0.14": [
-                "siflsaltbot"
-            ],
             "6.0.15": [
-                "mmraerso4",
-                "mrlsl",
-                "potet"
+                "mmraerso4"
             ],
             "6.0.16": [
                 "co2totalmass",
-                "lwtoacs",
-                "tws",
                 "ua200",
                 "ua850",
                 "va200",
                 "va850"
-            ],
-            "6.0.20": [
-                "dpocdtcalc",
-                "dpocdtdiaz",
-                "dpocdtpico",
-                "pdi",
-                "zoomeso",
-                "zoomicro",
-                "zoomisc"
             ],
             "6.0.21": [
                 "cSoilBelow1m",
@@ -71,17 +100,7 @@
             ],
             "6.2.24": [
                 "dfr",
-                "et",
-                "hcont300",
-                "H2p",
-                "H2s",
-                "H2wv",
-                "O17p",
-                "O17s",
-                "O17wv",
-                "O18p",
-                "O18s",
-                "O18sw"
+                "hcont300"
             ],
             "6.3.27-fixed": [
                 "sltnortha"
@@ -98,19 +117,40 @@
         },
         "rename": {
             "areacelli": "modelCellAreai",
+            "dpocdtcalc": "ppcalc",
+            "dpocdtdiaz": "ppdiaz",
+            "dpocdtpico": "pppico",
+            "et": "evspsbl",
             "expcfe": "expfe",
+            "H2p": "pr2h",
+            "H2s": "prsn2h",
+            "H2wv": "prw2H",
+            "lwtoacs": "lwtoacsdust",
             "mrlsl": "mrsol",
             "msftmyz": "msftmz",
             "msftyyz": "msftyz",
+            "O17p": "pr17O",
+            "O17s": "prsn17O",
+            "O17wv": "prw17O",
+            "O18p": "pr18O",
+            "O18s": "prsn18O",
+            "O18sw": "sw18O",
+            "pdi": "ppdiat",
             "pmlev": "pfull",
+            "potet": "evspsblpot",
             "siconco": "siconca",
+            "siflsaltbot": "sfdsi",
             "slbnosn": "sblnosn",
             "tso": "tos",
+            "tws": "mrtws",
             "ugrid": "ugrido",
-            "waterDpth": "wtd"
+            "waterDpth": "wtd",
+            "zoomeso": "zmeso",
+            "zoomicro": "zmicro",
+            "zoomisc": "zmisc"
         },
         "sign_change": {
-            "6.6.24": [
+            "6.2.24": [
                 {
                     "id": "depdust",
                     "quantity": "tendency_of_atmosphere_mass_content_of_dust_dry_aerosol_particles_due_to_total_deposition",
@@ -221,7 +261,7 @@
                     "id": "froc",
                     "quantity": "tendency_of_ocean_mole_content_of_organic_carbon_due_to_sedimentation"
                 }
-           ]
+            ]
         }
     }
 ]
