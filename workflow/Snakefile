@@ -4,6 +4,10 @@
 #   snakemake --cores 1                 # everything
 #   snakemake --cores 1 cmor_tables     # just the CMOR tables
 #   snakemake --cores 1 cmor_tables_analysis  # analysis of the CMOR tables editions
+#   snakemake --cores 1 cmor_tables_mip # mapping to the MIP variables (current and previous)
+
+import json
+
 
 configfile: "config/config.yaml"
 
@@ -25,4 +29,5 @@ rule all:
     default_target: True
     input:
         rules.cmor_tables.input,
+        rules.cmor_tables_mip.input,
         rules.cmor_tables_analysis.output,

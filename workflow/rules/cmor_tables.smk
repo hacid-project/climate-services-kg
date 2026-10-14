@@ -4,6 +4,10 @@
 # collected in data/{source}/{edition}.json (legacy CMOR 2 tables converted to
 # JSON) and mapped with jq to rdf/{source}/{edition}.jsonld.
 #
+# The mapping to the MIP variables (mapping/mip-mapping.md) needs the current
+# edition and the editions of the previous variables kept separate, which are
+# mapped to rdf/previous/{source}/{edition}.jsonld.
+#
 # The evolution of the variable definitions across the editions is analysed in
 # analysis/ (see analysis/README.md).
 
@@ -55,12 +59,63 @@ rule cmor_tables_map_variables:
     input:
         tables="data-sources/cmor-tables/data/{source}/{edition}.json",
         mapping="data-sources/cmor-tables/mapping/variables.jq",
+        modules="data-sources/cmor-tables/mapping/variables-jsonld.jq",
     output:
         "data-sources/cmor-tables/rdf/{source}/{edition}.jsonld",
     log:
         "logs/cmor_tables/map_variables/{source}/{edition}.log",
     shell:
-        "jq -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"
+        "jq -L data-sources/cmor-tables/mapping -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"
+
+
+# --- Mapping to the MIP variables
+
+
+# Editions needed (computed with jq from the eras and the mapping):
+# {"current": "<source>/<edition>", "previous": ["<source>/<edition>", ...]}
+MIP_EDITIONS = json.loads(
+    shell(
+        "jq -c -L data-sources/cmor-tables/mapping"
+        " -f data-sources/cmor-tables/mapping/mip-editions.jq config/cmor-tables-eras.json",
+        read=True,
+    )
+)
+
+
+# MIP variables (the current edition, mapped as the other editions) and
+# previous variables
+rule cmor_tables_mip:
+    input:
+        expand(
+            "data-sources/cmor-tables/rdf/{edition}.jsonld",
+            edition=MIP_EDITIONS["current"],
+        ),
+        expand(
+            "data-sources/cmor-tables/rdf/previous/{edition}.jsonld",
+            edition=MIP_EDITIONS["previous"],
+        ),
+
+
+# Previous variables of an edition (keep/sign_change/unit_change entries of the mapping)
+rule cmor_tables_map_previous_variables:
+    input:
+        tables="data-sources/cmor-tables/data/{source}/{edition}.json",
+        mapping="data-sources/cmor-tables/mapping/mip-previous-variables.jq",
+        modules=[
+            "data-sources/cmor-tables/mapping/variables-jsonld.jq",
+            "data-sources/cmor-tables/mapping/mip-variables.jq",
+            "data-sources/cmor-tables/mapping/mip-mapping.json",
+        ],
+        eras="config/cmor-tables-eras.json",
+    output:
+        "data-sources/cmor-tables/rdf/previous/{source}/{edition}.jsonld",
+    log:
+        "logs/cmor_tables/map_previous_variables/{source}/{edition}.log",
+    shell:
+        "jq -L data-sources/cmor-tables/mapping"
+        " --arg source {wildcards.source:q} --arg edition {wildcards.edition:q}"
+        " --slurpfile eras {input.eras:q}"
+        " -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"
 
 
 # --- Analysis of the evolution of the variable definitions

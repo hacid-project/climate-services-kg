@@ -60,6 +60,13 @@ def _versioned_entries($kind):
     end |
     .entry |= (if type == "string" then {id: .} end);
 
+# keep/sign_change/unit_change entries of an era of the mapping, as
+# {version, kind, entry} (version is null if the era has no versions)
+def mip_section_entries:
+    (.keep | _versioned_entries("keep")),
+    (.sign_change | _versioned_entries("sign_change")),
+    (.unit_change | _versioned_entries("unit_change"));
+
 # Resolution of a variable with a mapping (the array in mip-mapping.json):
 #   {
 #       id,        # out_name of the variable in the last version, or in the
@@ -81,13 +88,7 @@ def mip_variable_resolution($mapping):
             . as $state |
             ($v + {id: $state.id}) as $current |
             (first(
-                [
-                    $section | (
-                        (.keep | _versioned_entries("keep")),
-                        (.sign_change | _versioned_entries("sign_change")),
-                        (.unit_change | _versioned_entries("unit_change"))
-                    )
-                ] |
+                [$section | mip_section_entries] |
                 sort_by(.version | if . == null then [] else _version_key end) |
                 .[] |
                 select(.entry.id == $current.id and (.entry | _applies_to($current)))
@@ -103,7 +104,10 @@ def mip_variable_resolution($mapping):
         end
     );
 
-def mip_variable_resolution: mip_variable_resolution($MIP_MAPPING::MIP_MAPPING[0]);
+# The mapping in mip-mapping.json
+def mip_mapping: $MIP_MAPPING::MIP_MAPPING[0];
+
+def mip_variable_resolution: mip_variable_resolution(mip_mapping);
 
 # IRI of a resolution: <base><out_name> for a variable of the last version,
 # <base><era>/<version>/<out_name> for a variable of a previous version
@@ -113,3 +117,10 @@ def mip_variable_resolution_iri:
 def mip_variable_iri($mapping): mip_variable_resolution($mapping) | mip_variable_resolution_iri;
 
 def mip_variable_iri: mip_variable_resolution | mip_variable_resolution_iri;
+
+# Source of the editions of an era of the configuration of the eras
+# (config/cmor-tables-eras.json), as in the workflow: the repository must be
+# https://github.com/PCMDI/<source>-cmor-tables
+def era_source:
+    .repo | capture("^https://github.com/PCMDI/(?<source>[^/]+)-cmor-tables(\\.git)?$").source //
+        error("repository not supported by the workflow: \(.)");

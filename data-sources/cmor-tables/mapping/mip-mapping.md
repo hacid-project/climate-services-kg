@@ -8,7 +8,8 @@ a separate variable for each previous variable that cannot be identified with
 one of them.
 
 `mip-variables.jq` implements this interpretation, giving the IRI of the
-variable (see [Variable IRIs](#variable-iris)).
+variable (see [Variable IRIs](#variable-iris)), and the workflow maps the
+previous variables to the KG (see [Mapping to the KG](#mapping-to-the-kg)).
 
 ## Structure
 
@@ -164,6 +165,53 @@ include "mip-variables";   # jq -L data-sources/cmor-tables/mapping
 
 It defines `mip_variable_iri`, `mip_variable_resolution` (and the same with a
 mapping as argument, e.g. `mip_variable_iri($mapping)`).
+
+## Mapping to the KG
+
+The snakemake rule `cmor_tables_mip` maps the MIP variables and the previous
+variables:
+
+```bash
+snakemake --cores 4 cmor_tables_mip
+```
+
+The eras are configured in `config/cmor-tables-eras.json`: the repository of
+the CMOR tables of each era, the edition of the eras without versions in the
+mapping (`cmip5`) and of the current era, and the current era (`current`):
+
+```json
+{
+    "eras": [
+        {"era": "cmip5", "repo": "https://github.com/PCMDI/cmip5-cmor-tables.git", "edition": "5.0"},
+        {"era": "cmip6", "repo": "https://github.com/PCMDI/cmip6-cmor-tables.git"},
+        {"era": "cmip6plus", "repo": "https://github.com/PCMDI/mip-cmor-tables.git", "edition": "v6.5.0.4"}
+    ],
+    "current": "cmip6plus"
+}
+```
+
+The repositories must be `https://github.com/PCMDI/<source>-cmor-tables`, as
+the editions are retrieved by the rules of the other editions
+(`data/<source>/<edition>.json`, reused if already there, e.g. after the
+analysis).
+
+1. `mip-editions.jq` computes from the configuration and the mapping the
+   editions needed: the current one and those with `keep`, `sign_change` or
+   `unit_change` entries, e.g.
+   `{"current": "mip/v6.5.0.4", "previous": ["cmip5/5.0", "cmip6/6.0.12", ...]}`.
+2. The current edition is mapped as any other edition by `variables.jq`
+   (`rdf/mip/v6.5.0.4.jsonld`): one variable per `out_name`.
+3. Each previous edition is mapped by `mip-previous-variables.jq`
+   (`rdf/previous/<source>/<edition>.jsonld`) to the variables matched by
+   the entries of that version (with the table, dimensions, standard name and
+   units of the table entry for the conditions). They are mapped as the
+   others, but with the IRI of a previous variable, a label naming the era
+   and version (e.g. "Sea Surface Temperature (tos, CMIP6 6.0.19)") and the
+   `new_quantity` of the entry, if any, as quantity. As for the current
+   variables, the entries of the same `out_name` in different tables are
+   mapped to the same variable.
+
+The previous variables are exactly those the resolution can return.
 
 ## Maintenance
 
