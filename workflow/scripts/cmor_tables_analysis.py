@@ -109,6 +109,11 @@ class CF:
 # --- Comparison
 
 
+def by_count(counter):
+    """Items of a Counter, most common first (ties by name, to be reproducible)."""
+    return sorted(counter.items(), key=lambda item: (-item[1], item[0]))
+
+
 class Analysis:
     def __init__(self, editions, tables, infos, cf):
         self.editions = editions
@@ -119,16 +124,16 @@ class Analysis:
             with open(p) as f:
                 self.info[e] = json.load(f)
                 self.info[e]["ancestors"] = set(self.info[e]["ancestors"])
-        self.sources = list(dict.fromkeys(e.split("/")[0] for e in editions))
-        self.by_source = {s: [e for e in editions if e.split("/")[0] == s] for s in self.sources}
+        self.eras = list(dict.fromkeys(e.split("/")[0] for e in editions))
+        self.by_era = {s: [e for e in editions if e.split("/")[0] == s] for s in self.eras}
 
     def descends(self, e, p):
         """Whether edition e descends from (or is the same commit of) edition p."""
         return self.info[p]["commit"] in self.info[e]["ancestors"]
 
     def predecessor(self, e):
-        """Latest configured edition of the same source that e descends from."""
-        eds = self.by_source[e.split("/")[0]]
+        """Latest configured edition of the same era that e descends from."""
+        eds = self.by_era[e.split("/")[0]]
         candidates = [
             p for p in eds
             if p != e and self.descends(e, p)
@@ -166,7 +171,7 @@ class Analysis:
             return "renamed (same table, same definition)", [f"{t}.{kk}" for t, kk in same if t == table]
         if same:
             return "renamed and moved (same definition)", [f"{t}.{kk}" for t, kk in same]
-        later = [e for e in self.by_source[cur.split("/")[0]] if e != cur and self.descends(e, cur) and k in self.data[e]]
+        later = [e for e in self.by_era[cur.split("/")[0]] if e != cur and self.descends(e, cur) and k in self.data[e]]
         if later:
             return "removed, re-added later", sorted(later, key=lambda e: self.info[e]["date"])[:1]
         return "removed", []
@@ -202,19 +207,19 @@ class Analysis:
                 modified_raw=raw, modified=len(mods),
                 modified_semantic=sum(1 for c in mods.values() if set(c) & set(SEMANTIC)),
                 names_added=len(keys_b - keys_a), names_deleted=len(keys_a - keys_b),
-                modified_attributes="; ".join(f"{x}:{n}" for x, n in collections.Counter(
-                    x for c in mods.values() for x in c).most_common()),
+                modified_attributes="; ".join(f"{x}:{n}" for x, n in by_count(collections.Counter(
+                    x for c in mods.values() for x in c))),
             ))
         return steps, deletions, sn_changes
 
-    def last(self, source):
-        """Latest edition of a source that no other edition descends from."""
-        eds = self.by_source[source]
+    def last(self, era):
+        """Latest edition of an era that no other edition descends from."""
+        eds = self.by_era[era]
         tips = [e for e in eds if not any(o != e and self.descends(o, e) for o in eds)]
         return max(tips, key=lambda e: self.info[e]["date"])
 
-    def first(self, source):
-        return min(self.by_source[source], key=lambda e: self.info[e]["date"])
+    def first(self, era):
+        return min(self.by_era[era], key=lambda e: self.info[e]["date"])
 
     def by_name(self, entries):
         out = collections.defaultdict(list)
@@ -253,16 +258,16 @@ class Analysis:
             ],
             renamed_keys=sorted(f"{c[0]}.{c[1]} -> {m[0]}.{m[1]}" for m, c in mapped.items() if m[1] != c[1]),
             modified=sum(1 for c in changes.values() if c),
-            modified_attributes=dict(collections.Counter(x for c in changes.values() for x in c).most_common()),
+            modified_attributes=dict(by_count(collections.Counter(x for c in changes.values() for x in c))),
             standard_name_changes=dict(collections.Counter(
                 self.cf.classify_change(*c["standard_name"]) for c in changes.values() if "standard_name" in c)),
         )
 
     def transitions(self):
         out = []
-        for sa, sb in zip(self.sources, self.sources[1:]):
+        for sa, sb in zip(self.eras, self.eras[1:]):
             a, first, last = self.last(sa), self.first(sb), self.last(sb)
-            t = dict(source_from=sa, source_to=sb, edition_from=a, edition_to=first, by_name=self.compare_names(a, first))
+            t = dict(era_from=sa, era_to=sb, edition_from=a, edition_to=first, by_name=self.compare_names(a, first))
             if last != first:
                 t["by_name_to_last"] = dict(edition=last, **self.compare_names(a, last))
             if self.info[first]["provenance"] is not None:
@@ -272,8 +277,8 @@ class Analysis:
 
     def history(self):
         out = {}
-        for source, eds in self.by_source.items():
-            first, last = self.first(source), self.last(source)
+        for era, eds in self.by_era.items():
+            first, last = self.first(era), self.last(era)
             union = set().union(*(self.data[e] for e in eds))
             keys = lambda es: {k for e in es for _, k in self.data[e]}
             outs = lambda es: {v["out_name"] for e in es for v in self.data[e].values()}
@@ -288,7 +293,7 @@ class Analysis:
                         if x in SEMANTIC:
                             changed.add(k)
                             by_attr[x] += 1
-            out[source] = dict(
+            out[era] = dict(
                 first=first, last=last, editions=len(eds),
                 entries_first=len(self.data[first]), entries_last=len(self.data[last]),
                 entries_ever=len(union), entries_ever_not_in_last=len(union - set(self.data[last])),
@@ -296,7 +301,7 @@ class Analysis:
                 names_ever=len(keys(eds)), names_ever_not_in_last=sorted(keys(eds) - keys([last])),
                 out_names_ever=len(outs(eds)), out_names_ever_not_in_last=len(outs(eds) - outs([last])),
                 last_entries_with_semantic_change=len(changed & set(self.data[last])),
-                semantic_changes_by_attribute=dict(by_attr.most_common()),
+                semantic_changes_by_attribute=dict(by_count(by_attr)),
             )
         return out
 
@@ -317,7 +322,7 @@ class Analysis:
 
     def homonym_counts(self):
         per_edition = {e: len(self.homonyms([e])) for e in self.editions}
-        scopes = {f"{s} (all editions)": eds for s, eds in self.by_source.items()}
+        scopes = {f"{s} (all editions)": eds for s, eds in self.by_era.items()}
         scopes["all repositories"] = self.editions
         per_scope = {
             name: dict(collections.Counter(self.cf.classify_names(d) for d in self.homonyms(eds).values()))
@@ -369,7 +374,7 @@ def main(editions, tables, infos, cf_table, out):
             for metric, value in t.get(scope, {}).items():
                 if isinstance(value, (list, dict)):
                     value = json.dumps(value)
-                transition_rows.append(dict(source_from=t["source_from"], source_to=t["source_to"],
+                transition_rows.append(dict(era_from=t["era_from"], era_to=t["era_to"],
                                             edition_from=t["edition_from"],
                                             edition_to=t.get(scope, {}).get("edition", t["edition_to"]),
                                             comparison=scope, metric=metric, value=value))
@@ -381,7 +386,7 @@ def main(editions, tables, infos, cf_table, out):
               ["out_name", "kind", "standard_name", "in_cf_table", "editions", "n_editions", "tables"])
     write_csv(out["same_name_different_units"], units_rows, ["out_name", "units", "editions", "n_editions", "tables"])
     write_csv(out["repository_transitions"], transition_rows,
-              ["source_from", "source_to", "edition_from", "edition_to", "comparison", "metric", "value"])
+              ["era_from", "era_to", "edition_from", "edition_to", "comparison", "metric", "value"])
     summary = dict(
         cf_standard_name_table_version=cf.version,
         editions={e: dict(date=an.info[e]["date"], commit=an.info[e]["commit"], previous=an.predecessor(e))

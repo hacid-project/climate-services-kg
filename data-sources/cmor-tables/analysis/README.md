@@ -1,10 +1,11 @@
 # Evolution of the variable definitions in the CMOR tables
 
 Analysis of how the variable definitions change across the editions of the CMOR
-tables ingested by the workflow (`config/config.yaml`): releases of
-[cmip5-cmor-tables](https://github.com/PCMDI/cmip5-cmor-tables) (5.0),
-[cmip6-cmor-tables](https://github.com/PCMDI/cmip6-cmor-tables) (6.0.11 to 6.9.33) and
-[mip-cmor-tables](https://github.com/PCMDI/mip-cmor-tables) (v6.5.0.0 to v6.5.0.4).
+tables ingested by the workflow (`config/config.yaml`, as `<era>/<version>`,
+with the repository of each era in `config/cmor-tables-eras.json`): releases of
+[cmip5-cmor-tables](https://github.com/PCMDI/cmip5-cmor-tables) (era `cmip5`, 5.0),
+[cmip6-cmor-tables](https://github.com/PCMDI/cmip6-cmor-tables) (era `cmip6`, 6.0.11 to 6.9.33) and
+[mip-cmor-tables](https://github.com/PCMDI/mip-cmor-tables) (era `cmip6plus`, v6.5.0.0 to v6.5.0.4).
 
 The aim is to know how much the releases can be treated as incremental updates
 (especially regarding deletions) and whether the same name is used for different
@@ -18,11 +19,11 @@ The files in this folder are produced by the snakemake workflow:
 snakemake --cores 4 cmor_tables_analysis
 ```
 
-- `workflow/scripts/cmor_tables_edition_info.py` (rule `cmor_tables_edition_info`)
+- `workflow/scripts/cmor_tables_edition_info.py` (rules `cmor_tables_<era>_edition_info`)
   reads each checkout: commit, date, ancestor commits and, for mip-cmor-tables,
   the CMIP6 provenance of the entries (`MIP_variables.json`);
 - `workflow/scripts/cmor_tables_analysis.py` (rule `cmor_tables_analysis`) compares
-  the tables extracted by the workflow (`data/{source}/{edition}.json`) and writes
+  the tables extracted by the workflow (`data/{era}/{version}.json`) and writes
   the files below.
 
 Everything is recomputed from the configured editions, so the figures in this
@@ -63,7 +64,7 @@ CF standard name table v86).
 | `standard-name-changes.csv` | Each change of `standard_name` of an entry, classified |
 | `same-name-different-quantity.csv` | `out_name`s used with standard names of different quantities (across all editions), with kind, editions and tables of each meaning |
 | `same-name-different-units.csv` | `out_name`s used with different units |
-| `repository-transitions.csv` | Comparison of consecutive repositories (cmip5 → cmip6, cmip6 → mip), by name and, for mip, through the CMIP6 provenance of its entries |
+| `repository-transitions.csv` | Comparison of consecutive repositories (cmip5 → cmip6, cmip6 → cmip6plus), by name and, for cmip6plus, through the CMIP6 provenance of its entries |
 | `summary.json` | All the counts (editions with dates and predecessors, history of each repository, transitions, homonyms) |
 
 ## Results
@@ -73,7 +74,7 @@ CF standard name table v86).
 | Repository | Entries (first → last) | Entries ever | Ever deleted (not in last) | Names deleted |
 |---|---|---|---|---|
 | cmip6 (6.0.11 → 6.9.33) | 2082 → 2062 | 2162 | 100 (4.6%) | 48 of 1361 (3.5%) |
-| mip (v6.5.0.0 → v6.5.0.4) | 2049 → 2049 | 2049 | 0 | 0 |
+| cmip6plus (v6.5.0.0 → v6.5.0.4) | 2049 → 2049 | 2049 | 0 | 0 |
 
 In the CMIP6 releases there are 148 deletions of entries:
 

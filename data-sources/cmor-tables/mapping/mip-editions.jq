@@ -4,30 +4,28 @@
 # versions with keep/sign_change/unit_change entries in mip-mapping.json).
 #
 # Input: the configuration of the eras (config/cmor-tables-eras.json).
-# Output: the editions as <source>/<edition> (as in config/config.yaml)
-#   {"current": "mip/v6.5.0.4", "previous": ["cmip5/5.0", "cmip6/6.0.12", ...]}
+# Output: the editions as <era>/<version> (as in config/config.yaml)
+#   {"current": "cmip6plus/v6.5.0.4", "previous": ["cmip5/5.0", "cmip6/6.0.12", ...]}
 #
 #   jq -L data-sources/cmor-tables/mapping -f data-sources/cmor-tables/mapping/mip-editions.jq config/cmor-tables-eras.json
 
 include "./mip-variables";
 
-def edition($edition): "\(era_source)/\($edition)";
+# Edition of the era (input) with its version (from the configuration if null)
+def edition($version):
+    "\(.era)/\($version // .version // error("no version for the era \(.era)"))";
 
 (.eras | map({key: .era, value: .}) | from_entries) as $eras |
 {
     current: (
         ($eras[.current] // error("current era not in the eras: \(.current)")) |
-        edition(.edition // error("no edition for the current era \(.era)"))
+        edition(null)
     ),
     previous: [
         mip_mapping[] |
         ($eras[.era] // error("era of the mapping not in the eras: \(.era)")) as $era |
+        # null for an era without versions
         [mip_section_entries | .version] | unique | .[] |
-        if . == null then
-            # era without versions
-            $era | edition(.edition // error("no edition for the era \(.era)"))
-        else
-            . as $version | $era | edition($version)
-        end
+        . as $version | $era | edition($version)
     ] | unique
 }

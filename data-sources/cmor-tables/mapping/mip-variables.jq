@@ -130,10 +130,3 @@ def mip_variable_resolution_iri:
 def mip_variable_iri($mapping): mip_variable_resolution($mapping) | mip_variable_resolution_iri;
 
 def mip_variable_iri: mip_variable_resolution | mip_variable_resolution_iri;
-
-# Source of the editions of an era of the configuration of the eras
-# (config/cmor-tables-eras.json), as in the workflow: the repository must be
-# https://github.com/PCMDI/<source>-cmor-tables
-def era_source:
-    .repo | capture("^https://github.com/PCMDI/(?<source>[^/]+)-cmor-tables(\\.git)?$").source //
-        error("repository not supported by the workflow: \(.)");
