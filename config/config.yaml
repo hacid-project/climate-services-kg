@@ -1,7 +1,9 @@
 # Configuration of the data ingestion workflow (see workflow/Snakefile)
 
 cmor_tables:
-  # Editions of the CMOR tables to ingest, as {era}/{version}, where {era} is
+  # Editions of the CMOR tables to analyse (rule cmor_tables_analysis; the KG
+  # needs only the editions given by the mapping to the MIP variables, see
+  # data-sources/cmor-tables/mapping/mip-mapping.md), as {era}/{version}, where {era} is
   # one of the eras of config/cmor-tables-eras.json (which gives its git
   # repository) and {version} a git ref of the repository (usually a tag; a
   # branch, e.g. main, is not rebuilt automatically when it moves: use

@@ -168,11 +168,11 @@ mapping as argument, e.g. `mip_variable_iri($mapping)`).
 
 ## Mapping to the KG
 
-The snakemake rule `cmor_tables_mip` maps the MIP variables and the previous
+The snakemake rule `cmor_tables` maps the MIP variables and the previous
 variables:
 
 ```bash
-snakemake --cores 4 cmor_tables_mip
+snakemake --cores 4 cmor_tables
 ```
 
 The eras are configured in `config/cmor-tables-eras.json`: the git repository
@@ -199,8 +199,8 @@ The editions are retrieved by the same rules as for the analysis
    editions needed: the current one and those with `keep`, `sign_change` or
    `unit_change` entries, e.g.
    `{"current": "cmip6plus/v6.5.0.4", "previous": ["cmip5/5.0", "cmip6/6.0.12", ...]}`.
-2. The current edition is mapped as any other edition by `variables.jq`
-   (`rdf/cmip6plus/v6.5.0.4.jsonld`): one variable per `out_name`.
+2. The current edition is mapped by `variables.jq`
+   (`rdf/current/cmip6plus/v6.5.0.4.jsonld`): one variable per `out_name`.
 3. Each previous edition is mapped by `mip-previous-variables.jq`
    (`rdf/previous/<era>/<version>.jsonld`) to the variables matched by
    the entries of that version (with the table, dimensions, standard name and
