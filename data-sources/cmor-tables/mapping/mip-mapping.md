@@ -218,7 +218,7 @@ analysis).
 
    - `data:hasOppositeValueOf` for `sign_change`, e.g.
      `.../mip/cmip6/6.0.13/sistryubot` → `.../mip/sistryubot`;
-   - `data:isLinearTrasformationOf` for `unit_change`, e.g.
+   - `data:isLinearTransformationOf` for `unit_change`, e.g.
      `.../mip/cmip6/6.0.19/tos` → `.../mip/tos`. A variable in several
      tables may have several: `.../mip/cmip5/tro3` → `.../mip/o3` (monthly)
      and `.../mip/o3Clim` (climatology). The factor and offset of the

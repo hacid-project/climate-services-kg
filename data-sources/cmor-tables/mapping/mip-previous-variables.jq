@@ -11,7 +11,7 @@
 # - for a sign_change or unit_change entry, it is related to the variables that
 #   follow it (the resolution of the variable after the entry, usually the
 #   current variable with the same name) by data:hasOppositeValueOf or
-#   data:isLinearTrasformationOf (provisional properties).
+#   data:isLinearTransformationOf (provisional properties).
 #
 # Input: the array of the tables of the edition (see variables-jsonld.jq).
 # Arguments: --arg source <source> --arg edition <edition> (the edition, as in
@@ -44,7 +44,7 @@ include "./mip-variables";
         iri: ({era: $era.era, version: $match.version, id: .out_name} | mip_variable_resolution_iri),
         era_version: ([($era.era | ascii_upcase), $match.version | values] | join(" ")),
         relation: (
-            {sign_change: "data:hasOppositeValueOf", unit_change: "data:isLinearTrasformationOf"}[$match.kind] //
+            {sign_change: "data:hasOppositeValueOf", unit_change: "data:isLinearTransformationOf"}[$match.kind] //
             null
         ),
         follower: (
