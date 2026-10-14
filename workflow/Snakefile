@@ -1,10 +1,12 @@
 # Data ingestion workflow for the climate services KG.
 #
 # Run from the repository root, e.g.:
-#   snakemake --cores 1                 # everything for the KG
-#   snakemake --cores 1 cmor_tables     # variables of the CMOR tables (MIP and previous variables)
-#   snakemake --cores 1 cmip5           # CMIP5 datasets
-#   snakemake --cores 1 cmor_tables_analysis  # analysis of all the CMOR tables editions (not in the KG)
+#   snakemake --cores 1                       # mapping (default)
+#   snakemake --cores 1 mapping               # all the mappings to the KG
+#   snakemake --cores 1 sources_analysis      # all the analyses of the sources (not in the KG)
+#   snakemake --cores 1 cmor_tables           # variables of the CMOR tables (MIP and previous variables)
+#   snakemake --cores 1 cmip5                 # CMIP5 datasets
+#   snakemake --cores 1 cmor_tables_analysis  # analysis of all the CMOR tables editions
 
 import json
 
@@ -32,8 +34,15 @@ include: "rules/cmor_tables.smk"
 include: "rules/cmip5.smk"
 
 
-rule all:
+# Mappings of the sources to the KG
+rule mapping:
     default_target: True
     input:
         rules.cmor_tables.input,
         rules.cmip5.input,
+
+
+# Analyses of the sources
+rule sources_analysis:
+    input:
+        rules.cmor_tables_analysis.output,

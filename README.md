@@ -10,8 +10,9 @@ It requires `git`, `jq` and the Python packages in `workflow/requirements.txt`:
 
 ```bash
 pip install -r workflow/requirements.txt
-snakemake --cores 4               # whole workflow
-snakemake --cores 4 cmor_tables   # just the variables of the CMOR tables
+snakemake --cores 4 mapping            # all the mappings to the KG (default target)
+snakemake --cores 4 sources_analysis   # all the analyses of the sources
+snakemake --cores 4 cmor_tables        # just the variables of the CMOR tables
 ```
 
 ### CMOR tables
