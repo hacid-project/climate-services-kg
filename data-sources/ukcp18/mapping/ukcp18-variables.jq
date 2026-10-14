@@ -4,6 +4,14 @@
 
 include "mip-variables";
 
+# Variables named in some UKCP18 datasets by their CF standard name (their ids
+# use the CMIP name, as the other datasets of the same variable)
+def _variable_renames:
+    {
+        "air_pressure_at_sea_level": "psl",
+        "subsurface_runoff_flux": "mrrob"
+    };
+
 # IRI of the variable of a dataset (input: its metadata): the MIP variable of
 # its name in the CMIP5 era (UKCP18 is based on CMIP5 models), with its units
 # and, if known, the CMIP5 table of the source data (cmip5_table_id, e.g.
@@ -11,7 +19,7 @@ include "mip-variables";
 # (or the IRI already resolved in the variable_iri field, see with_variable_iris)
 def variable_iri:
     .variable_iri // ({
-        out_name: .variable,
+        out_name: (_variable_renames[.variable] // .variable),
         era: "cmip5",
         table: ((.cmip5_table_id // "" | capture("^Table (?<table>\\S+)").table) // null),
         units
