@@ -19,12 +19,18 @@ IDS::fix_units |
 VARIABLES::with_variable_iris |
 map(
     select(
-        (VARIABLES::ukcp_variable // null) as $ukcp |
-        if $ukcp != null then
-            [$ukcp.anomaly_of // empty, $ukcp.derived_from[]?, $ukcp.local_of // empty] | any(.[]; $known[.] | not)
-        else
-            $known[.variable_iri] | not
-        end
+        # the variable, if not a UKCP18 one, or the variables the UKCP18 ones are linked to
+        [
+            .variable_iri,
+            (
+                VARIABLES::ukcp_variables[] |
+                .anomaly_of, .relative_anomaly_of, .derived_from[]?, .local_of, .return_level_of,
+                .probability_representation_of
+            ) |
+            strings |
+            select(startswith("https://w3id.org/hacid/data/cs/variables/ukcp/") | not)
+        ] |
+        any(.[]; $known[.] | not)
     ) |
     del(.variable_iri)
 )
