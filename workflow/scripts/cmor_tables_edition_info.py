@@ -5,7 +5,7 @@ descends from (to order the editions by git history) and, if the repository
 has a MIP_variables.json (mip-cmor-tables), the CMIP6 provenance of its
 variable entries.
 
-Run by snakemake (rule cmor_tables_edition_info).
+Run by snakemake (rules cmor_tables_<era>_edition_info).
 """
 
 import json
@@ -32,12 +32,12 @@ def provenance(checkout):
     )
 
 
-def edition_info(checkout, source, edition):
+def edition_info(checkout, era, version):
     repo = pygit2.Repository(checkout)
     head = repo.head.peel(pygit2.Commit)
     return {
-        "source": source,
-        "edition": edition,
+        "era": era,
+        "version": version,
         "commit": str(head.id),
         "date": datetime.fromtimestamp(head.commit_time, timezone.utc).date().isoformat(),
         "ancestors": sorted(str(c.id) for c in repo.walk(head.id)),
@@ -48,8 +48,8 @@ def edition_info(checkout, source, edition):
 if "snakemake" in globals():
     info = edition_info(
         snakemake.input.checkout,  # noqa: F821
-        snakemake.wildcards.source,  # noqa: F821
-        snakemake.wildcards.edition,  # noqa: F821
+        snakemake.params.era,  # noqa: F821
+        snakemake.wildcards.version,  # noqa: F821
     )
     with open(snakemake.output[0], "w") as f:  # noqa: F821
         json.dump(info, f, indent=1)

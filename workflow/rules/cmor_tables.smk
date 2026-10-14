@@ -1,20 +1,24 @@
 # Ingestion of variable definitions from multiple editions of the CMOR tables.
 #
+# The editions are identified as {era}/{version}: the eras, with the git
+# repository of their CMOR tables, are configured in config/cmor-tables-eras.json
+# and {version} is a git ref of the repository.
+#
 # Each edition is checked out through the git storage plugin, its tables are
-# collected in data/{source}/{edition}.json (legacy CMOR 2 tables converted to
-# JSON) and mapped with jq to rdf/{source}/{edition}.jsonld.
+# collected in data/{era}/{version}.json (legacy CMOR 2 tables converted to
+# JSON) and mapped with jq to rdf/{era}/{version}.jsonld.
 #
 # The mapping to the MIP variables (mapping/mip-mapping.md) needs the current
 # edition and the editions of the previous variables kept separate, which are
-# mapped to rdf/previous/{source}/{edition}.jsonld.
+# mapped to rdf/previous/{era}/{version}.jsonld.
 #
 # The evolution of the variable definitions across the editions is analysed in
 # analysis/ (see analysis/README.md).
 
 
 wildcard_constraints:
-    source="[^/]+",
-    edition="[^/]+",
+    era="[^/]+",
+    version="[^/]+",
 
 
 rule cmor_tables:
@@ -25,45 +29,56 @@ rule cmor_tables:
         ),
 
 
-# Legacy CMOR 2 tables (CMIP5)
-rule cmor_tables_cmor2:
-    input:
-        checkout=storage.git("https://github.com/PCMDI/{source}-cmor-tables.git#{edition}"),
-        parser="data-sources/cmor-tables/mapping/cmor2-tables.jq",
-    output:
-        "data-sources/cmor-tables/data/{source}/{edition}.json",
-    wildcard_constraints:
-        source="cmip5",
-    log:
-        "logs/cmor_tables/cmor2/{source}/{edition}.log",
-    shell:
-        "jq -R -n -f {input.parser:q} {input.checkout:q}/Tables/CMIP5_* > {output:q} 2> {log:q}"
+# Rules reading the repository of an era, for each era (the repository of a
+# git storage object cannot depend on a wildcard)
+for cmor_era in config["eras"]:
 
+    # Tables of an edition: CMOR 3 JSON tables, or legacy CMOR 2 tables (e.g.
+    # CMIP5) converted to JSON if there are no JSON tables
+    rule:
+        name:
+            f"cmor_tables_{cmor_era['era']}_tables"
+        input:
+            checkout=storage.git(f"{cmor_era['repo']}#{{version}}"),
+            parser="data-sources/cmor-tables/mapping/cmor2-tables.jq",
+        output:
+            f"data-sources/cmor-tables/data/{cmor_era['era']}/{{version}}.json",
+        log:
+            f"logs/cmor_tables/tables/{cmor_era['era']}/{{version}}.log",
+        shell:
+            "if ls {input.checkout:q}/Tables/*.json > /dev/null 2>&1; then"
+            " jq -s . {input.checkout:q}/Tables/*.json;"
+            " else"
+            " jq -R -n -f {input.parser:q} $(grep -l '^table_id:' {input.checkout:q}/Tables/*);"
+            " fi > {output:q} 2> {log:q}"
 
-# CMOR 3 JSON tables
-rule cmor_tables_json:
-    input:
-        checkout=storage.git("https://github.com/PCMDI/{source}-cmor-tables.git#{edition}"),
-    output:
-        "data-sources/cmor-tables/data/{source}/{edition}.json",
-    log:
-        "logs/cmor_tables/json/{source}/{edition}.log",
-    shell:
-        "jq -s . {input.checkout:q}/Tables/*.json > {output:q} 2> {log:q}"
-
-
-ruleorder: cmor_tables_cmor2 > cmor_tables_json
+    # Commit, date, ancestors (to order the editions) and, for repositories with
+    # a MIP_variables.json (mip-cmor-tables), the CMIP6 provenance of the
+    # entries (for the analysis)
+    rule:
+        name:
+            f"cmor_tables_{cmor_era['era']}_edition_info"
+        input:
+            checkout=storage.git(f"{cmor_era['repo']}#{{version}}"),
+        output:
+            f"data-sources/cmor-tables/data/{cmor_era['era']}/{{version}}/info.json",
+        params:
+            era=cmor_era["era"],
+        log:
+            f"logs/cmor_tables/edition_info/{cmor_era['era']}/{{version}}.log",
+        script:
+            "../scripts/cmor_tables_edition_info.py"
 
 
 rule cmor_tables_map_variables:
     input:
-        tables="data-sources/cmor-tables/data/{source}/{edition}.json",
+        tables="data-sources/cmor-tables/data/{era}/{version}.json",
         mapping="data-sources/cmor-tables/mapping/variables.jq",
         modules="data-sources/cmor-tables/mapping/variables-jsonld.jq",
     output:
-        "data-sources/cmor-tables/rdf/{source}/{edition}.jsonld",
+        "data-sources/cmor-tables/rdf/{era}/{version}.jsonld",
     log:
-        "logs/cmor_tables/map_variables/{source}/{edition}.log",
+        "logs/cmor_tables/map_variables/{era}/{version}.log",
     shell:
         "jq -L data-sources/cmor-tables/mapping -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"
 
@@ -72,7 +87,7 @@ rule cmor_tables_map_variables:
 
 
 # Editions needed (computed with jq from the eras and the mapping):
-# {"current": "<source>/<edition>", "previous": ["<source>/<edition>", ...]}
+# {"current": "<era>/<version>", "previous": ["<era>/<version>", ...]}
 MIP_EDITIONS = json.loads(
     shell(
         "jq -c -L data-sources/cmor-tables/mapping"
@@ -99,7 +114,7 @@ rule cmor_tables_mip:
 # Previous variables of an edition (keep/sign_change/unit_change entries of the mapping)
 rule cmor_tables_map_previous_variables:
     input:
-        tables="data-sources/cmor-tables/data/{source}/{edition}.json",
+        tables="data-sources/cmor-tables/data/{era}/{version}.json",
         mapping="data-sources/cmor-tables/mapping/mip-previous-variables.jq",
         modules=[
             "data-sources/cmor-tables/mapping/variables-jsonld.jq",
@@ -108,30 +123,17 @@ rule cmor_tables_map_previous_variables:
         ],
         eras="config/cmor-tables-eras.json",
     output:
-        "data-sources/cmor-tables/rdf/previous/{source}/{edition}.jsonld",
+        "data-sources/cmor-tables/rdf/previous/{era}/{version}.jsonld",
     log:
-        "logs/cmor_tables/map_previous_variables/{source}/{edition}.log",
+        "logs/cmor_tables/map_previous_variables/{era}/{version}.log",
     shell:
         "jq -L data-sources/cmor-tables/mapping"
-        " --arg source {wildcards.source:q} --arg edition {wildcards.edition:q}"
+        " --arg era {wildcards.era:q} --arg version {wildcards.version:q}"
         " --slurpfile eras {input.eras:q}"
         " -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"
 
 
 # --- Analysis of the evolution of the variable definitions
-
-
-# Commit, date, ancestors (to order the editions) and, for mip-cmor-tables,
-# CMIP6 provenance of the entries
-rule cmor_tables_edition_info:
-    input:
-        checkout=storage.git("https://github.com/PCMDI/{source}-cmor-tables.git#{edition}"),
-    output:
-        "data-sources/cmor-tables/data/{source}/{edition}/info.json",
-    log:
-        "logs/cmor_tables/edition_info/{source}/{edition}.log",
-    script:
-        "../scripts/cmor_tables_edition_info.py"
 
 
 rule cmor_tables_analysis:

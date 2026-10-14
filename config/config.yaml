@@ -1,10 +1,11 @@
 # Configuration of the data ingestion workflow (see workflow/Snakefile)
 
 cmor_tables:
-  # Editions of the CMOR tables to ingest, as {source}/{edition}, where
-  # PCMDI/{source}-cmor-tables is the GitHub repository and {edition} a git ref
-  # of it (usually a tag; a branch, e.g. main, is not rebuilt automatically
-  # when it moves: use --forcerun)
+  # Editions of the CMOR tables to ingest, as {era}/{version}, where {era} is
+  # one of the eras of config/cmor-tables-eras.json (which gives its git
+  # repository) and {version} a git ref of the repository (usually a tag; a
+  # branch, e.g. main, is not rebuilt automatically when it moves: use
+  # --forcerun)
   editions:
     - cmip5/5.0
     - cmip6/6.0.11
@@ -31,8 +32,8 @@ cmor_tables:
     - cmip6/6.8.31
     - cmip6/6.9.32
     - cmip6/6.9.33
-    - mip/v6.5.0.0
-    - mip/v6.5.0.1
-    - mip/v6.5.0.2
-    - mip/v6.5.0.3
-    - mip/v6.5.0.4
+    - cmip6plus/v6.5.0.0
+    - cmip6plus/v6.5.0.1
+    - cmip6plus/v6.5.0.2
+    - cmip6plus/v6.5.0.3
+    - cmip6plus/v6.5.0.4

@@ -12,6 +12,10 @@ import json
 configfile: "config/config.yaml"
 
 
+# Eras of the CMOR tables, with their repositories (config["eras"], config["current"])
+configfile: "config/cmor-tables-eras.json"
+
+
 # Git repositories, through snakemake-storage-plugin-git (patched to support a
 # git ref as URL fragment, e.g. https://github.com/PCMDI/cmip6-cmor-tables.git#6.9.33)
 storage git:

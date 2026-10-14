@@ -126,30 +126,30 @@
    "commit": "c8810526268e8cb13f2b37aba6af377e15644561",
    "previous": "cmip6/6.9.32"
   },
-  "mip/v6.5.0.0": {
+  "cmip6plus/v6.5.0.0": {
    "date": "2023-11-20",
    "commit": "f28f475d5db36b36a278dccc8b3be53f277d293f",
    "previous": null
   },
-  "mip/v6.5.0.1": {
+  "cmip6plus/v6.5.0.1": {
    "date": "2024-03-05",
    "commit": "1d3ff3d4f3f0e1ae285112fa957528886c10c6ba",
-   "previous": "mip/v6.5.0.0"
+   "previous": "cmip6plus/v6.5.0.0"
   },
-  "mip/v6.5.0.2": {
+  "cmip6plus/v6.5.0.2": {
    "date": "2024-04-20",
    "commit": "0d6b27424192b3b07cc8394e85162122871c8d7a",
-   "previous": "mip/v6.5.0.1"
+   "previous": "cmip6plus/v6.5.0.1"
   },
-  "mip/v6.5.0.3": {
+  "cmip6plus/v6.5.0.3": {
    "date": "2024-09-18",
    "commit": "ab324e18272f57d77f30027ce27ec1c99e7c23b2",
-   "previous": "mip/v6.5.0.2"
+   "previous": "cmip6plus/v6.5.0.2"
   },
-  "mip/v6.5.0.4": {
+  "cmip6plus/v6.5.0.4": {
    "date": "2026-03-03",
    "commit": "e5bac791f5cd1dfc926eaf00cbd91fc386b6d4a8",
-   "previous": "mip/v6.5.0.3"
+   "previous": "cmip6plus/v6.5.0.3"
   }
  },
  "deletion_fates": {
@@ -254,9 +254,9 @@
     "units": 26
    }
   },
-  "mip": {
-   "first": "mip/v6.5.0.0",
-   "last": "mip/v6.5.0.4",
+  "cmip6plus": {
+   "first": "cmip6plus/v6.5.0.0",
+   "last": "cmip6plus/v6.5.0.4",
    "editions": 5,
    "entries_first": 2049,
    "entries_last": 2049,
@@ -273,8 +273,8 @@
  },
  "transitions": [
   {
-   "source_from": "cmip5",
-   "source_to": "cmip6",
+   "era_from": "cmip5",
+   "era_to": "cmip6",
    "edition_from": "cmip5/5.0",
    "edition_to": "cmip6/6.0.11",
    "by_name": {
@@ -413,10 +413,10 @@
    }
   },
   {
-   "source_from": "cmip6",
-   "source_to": "mip",
+   "era_from": "cmip6",
+   "era_to": "cmip6plus",
    "edition_from": "cmip6/6.9.33",
-   "edition_to": "mip/v6.5.0.0",
+   "edition_to": "cmip6plus/v6.5.0.0",
    "by_name": {
     "entries_from": 2062,
     "entries_to": 2049,
@@ -430,7 +430,7 @@
     "common_names_no_shared_units": []
    },
    "by_name_to_last": {
-    "edition": "mip/v6.5.0.4",
+    "edition": "cmip6plus/v6.5.0.4",
     "entries_from": 2062,
     "entries_to": 2049,
     "names_from": 1313,
@@ -731,8 +731,8 @@
     ],
     "modified": 183,
     "modified_attributes": {
-     "valid_min": 105,
      "valid_max": 105,
+     "valid_min": 105,
      "ok_max_mean_abs": 100,
      "ok_min_mean_abs": 84,
      "out_name": 82
@@ -767,11 +767,11 @@
   "cmip6/6.8.31": 0,
   "cmip6/6.9.32": 0,
   "cmip6/6.9.33": 0,
-  "mip/v6.5.0.0": 0,
-  "mip/v6.5.0.1": 0,
-  "mip/v6.5.0.2": 0,
-  "mip/v6.5.0.3": 0,
-  "mip/v6.5.0.4": 0
+  "cmip6plus/v6.5.0.0": 0,
+  "cmip6plus/v6.5.0.1": 0,
+  "cmip6plus/v6.5.0.2": 0,
+  "cmip6plus/v6.5.0.3": 0,
+  "cmip6plus/v6.5.0.4": 0
  },
  "homonyms_by_kind": {
   "cmip5 (all editions)": {
@@ -782,7 +782,7 @@
    "sign convention (minus_)": 24,
    "different CF quantities": 18
   },
-  "mip (all editions)": {},
+  "cmip6plus (all editions)": {},
   "all repositories": {
    "different CF quantities": 33,
    "naming fix only (name not in CF table replaced)": 314,

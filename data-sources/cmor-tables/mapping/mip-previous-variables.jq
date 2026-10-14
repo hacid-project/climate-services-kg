@@ -14,10 +14,10 @@
 #   data:isLinearTransformationOf (provisional properties).
 #
 # Input: the array of the tables of the edition (see variables-jsonld.jq).
-# Arguments: --arg source <source> --arg edition <edition> (the edition, as in
+# Arguments: --arg era <era> --arg version <version> (the edition, as in
 # config/config.yaml) --slurpfile eras config/cmor-tables-eras.json
 #
-#   jq -L data-sources/cmor-tables/mapping --arg source cmip6 --arg edition 6.0.19 \
+#   jq -L data-sources/cmor-tables/mapping --arg era cmip6 --arg version 6.0.19 \
 #       --slurpfile eras config/cmor-tables-eras.json \
 #       -f data-sources/cmor-tables/mapping/mip-previous-variables.jq data-sources/cmor-tables/data/cmip6/6.0.19.json
 
@@ -25,13 +25,13 @@ include "./variables-jsonld";
 include "./mip-variables";
 
 (
-    first($eras[0].eras[] | select(era_source == $source)) //
-    error("no era for the source \($source)")
+    first($eras[0].eras[] | select(.era == $era)) //
+    error("era not in the eras: \($era)")
 ) as $era |
 (
     [mip_mapping[] | select(.era == $era.era) | mip_section_entries] |
     # entries of the edition (in an era without versions, of its edition)
-    map(select(if .version == null then $edition == $era.edition else .version == $edition end))
+    map(select(if .version == null then $version == $era.version else .version == $version end))
 ) as $entries |
 [
     variable_entries[] |
