@@ -37,3 +37,8 @@ cmor_tables:
     - cmip6plus/v6.5.0.2
     - cmip6plus/v6.5.0.3
     - cmip6plus/v6.5.0.4
+
+cmip5:
+  # Edition of the CMOR tables defining the variables of the CMIP5 datasets
+  # (as in cmor_tables.editions), used to resolve their MIP variables
+  cmor_tables: cmip5/5.0

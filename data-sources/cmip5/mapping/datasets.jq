@@ -13,6 +13,17 @@
 #   institute;
 # - the variables of the dataset, its spatial grid and its temporal grid (the
 #   time interval of the dataset rounded to the time frequency).
+#
+# The IRIs of the variables are those of the MIP variables (see
+# data-sources/cmor-tables/mapping/mip-mapping.md), resolved from the
+# definitions of the variables in the CMIP5 CMOR tables (see _variable_specs).
+#
+# Arguments: --slurpfile cmor_tables <tables of the CMIP5 CMOR tables>
+# (data-sources/cmor-tables/data/cmip5/5.0.json); the modules of
+# data-sources/cmor-tables/mapping must be in the library path (-L).
+
+include "variables-jsonld";
+include "mip-variables";
 
 # --- Time
 
@@ -118,8 +129,60 @@ def _typed($type): if . == null then null else {"@value": ., "@type": $type} end
 # English literal (null if the value is null)
 def _en: if . == null then null else {"@value": ., "@language": "en"} end;
 
+# --- Variables
+
+# Definitions of a variable of a dataset in the CMIP5 CMOR tables, as the input
+# of mip_variable_iri: the entries of the table of the dataset whose key or
+# out_name is the variable (the ESGF results use either), or if there are none
+# (e.g. a variable of the "day" table in "cfDay", or tables not in the CMOR
+# tables, as "AmonExtras") the entries of any table. Among them, a climatology
+# (time frequency monClim) is defined on time2, the other datasets not. Of the
+# remaining entries, only the table, dimensions, standard name and units on
+# which all agree are given.
+def _variable_specs($entries_by_name):
+    . as {$table, $variable, $frequency} |
+    ($entries_by_name[$variable] // []) as $entries |
+    (
+        [$entries[] | select(.table == $table)] |
+        if . == [] then $entries end |
+        ([.[] | select((.dimensions | test("\\btime2\\b")) == ($frequency == "monClim"))] | if . == [] then null end) // .
+    ) as $candidates |
+    def agreed(f): [$candidates[] | f] | unique | if length == 1 then .[0] else null end;
+    {
+        out_name: (agreed(.out_name) // $variable),
+        era: "cmip5",
+        table: (if $candidates == [] then $table else agreed(.table) end),
+        dimensions: agreed(.dimensions),
+        quantity: agreed(.standard_name),
+        units: agreed(.units)
+    };
+
 # --- Mapping
 
+# Entries of the CMIP5 CMOR tables by key and out_name
+(
+    $cmor_tables[0] |
+    [
+        .[] | select(.variable_entry) |
+        ((.Header.table_id // "") | sub("^Table "; "")) as $table |
+        .variable_entry | to_entries[] |
+        .value + {key, out_name: (.value.out_name // .key), $table}
+    ] |
+    [.[] | {name: .key, entry: .}, {name: .out_name, entry: .}] |
+    group_by(.name) |
+    map({key: .[0].name, value: (map(.entry) | unique)}) |
+    from_entries
+) as $entries_by_name |
+# IRIs of the variables of the datasets, by table, variable and time frequency
+(
+    [
+        .response.docs[] |
+        {table: .cmor_table[0], variable: .variable[]?, frequency: .time_frequency[0]}
+    ] |
+    unique |
+    map({key: "\(.table) \(.variable) \(.frequency)", value: (_variable_specs($entries_by_name) | mip_variable_iri)}) |
+    from_entries
+) as $variable_iris |
 [
     .response.docs[] |
     (.master_id | split(".")) as $parts |
@@ -141,7 +204,9 @@ def _en: if . == null then null else {"@value": ., "@language": "en"} end;
     "\($simulation)/geodetic-grid" as $space |
     [.model[] | _ns + "models/\(_quote)"] as $models |
     [.institute[] | _ns + "organizations/\(_quote)"] as $institutes |
-    [.variable[]? | _ns + "variables/mip/\(_quote)"] as $variables |
+    .cmor_table[0] as $table |
+    .time_frequency[0] as $frequency |
+    [.variable[]? | $variable_iris["\($table) \(.) \($frequency)"]] as $variables |
     [
         .experiment[] |
         {
