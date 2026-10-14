@@ -11,31 +11,34 @@ It requires `git`, `jq` and the Python packages in `workflow/requirements.txt`:
 ```bash
 pip install -r workflow/requirements.txt
 snakemake --cores 4               # whole workflow
-snakemake --cores 4 cmor_tables   # just the CMOR tables
+snakemake --cores 4 cmor_tables   # just the variables of the CMOR tables
 ```
 
 ### CMOR tables
 
-Variable definitions are ingested from multiple editions (git tags) of the CMOR tables
+Variable definitions are ingested from editions (git tags) of the CMOR tables
 of each era, configured with the repository of its tables in `config/cmor-tables-eras.json`:
 `cmip5` ([cmip5-cmor-tables](https://github.com/PCMDI/cmip5-cmor-tables)),
 `cmip6` ([cmip6-cmor-tables](https://github.com/PCMDI/cmip6-cmor-tables)) and
 `cmip6plus` ([mip-cmor-tables](https://github.com/PCMDI/mip-cmor-tables)),
-each edition checked out through the git storage plugin (in `.snakemake/storage/git/`).
-For each edition `{era}/{version}`:
+each edition `{era}/{version}` checked out through the git storage plugin (in `.snakemake/storage/git/`)
+and its tables collected in `data-sources/cmor-tables/data/{era}/{version}.json` (legacy CMOR 2
+plain-text tables of CMIP5 being converted to JSON by `mapping/cmor2-tables.jq`).
 
-1. `data-sources/cmor-tables/data/{era}/{version}.json`: all the tables of the edition,
-   legacy CMOR 2 plain-text tables (CMIP5) being converted to JSON (`mapping/cmor2-tables.jq`);
-2. `data-sources/cmor-tables/rdf/{era}/{version}.jsonld`: the variables mapped to JSON-LD
-   (`mapping/variables.jq`).
+The KG has the MIP variables, i.e. the variables of the current edition, and the previous
+variables kept separate from them (see `data-sources/cmor-tables/mapping/mip-mapping.md`), so only
+the current edition and the editions with previous variables are retrieved
+(`snakemake --cores 4 cmor_tables`):
 
-Editions are listed in `config/config.yaml`. Changing a mapping reruns only the affected steps.
+1. `data-sources/cmor-tables/rdf/current/{era}/{version}.jsonld`: all the variables of the
+   current edition (`mapping/variables.jq`);
+2. `data-sources/cmor-tables/rdf/previous/{era}/{version}.jsonld`: only the variables of the
+   `keep`, `sign_change` and `unit_change` entries of each previous edition
+   (`mapping/mip-previous-variables.jq`).
 
-The MIP variables of the current era and the variables of previous editions kept separate
-from them are mapped by `snakemake --cores 4 cmor_tables_mip`
-(see `data-sources/cmor-tables/mapping/mip-mapping.md`).
+Changing a mapping reruns only the affected steps.
 
-The evolution of the variable definitions across the editions (additions, deletions,
+The evolution of the variable definitions across all the editions listed in `config/config.yaml` (additions, deletions,
 modifications, names used for different quantities) is analysed in
 `data-sources/cmor-tables/analysis/` (`snakemake --cores 4 cmor_tables_analysis`, see its README).
 

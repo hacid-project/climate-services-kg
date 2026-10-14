@@ -4,29 +4,25 @@
 # repository of their CMOR tables, are configured in config/cmor-tables-eras.json
 # and {version} is a git ref of the repository.
 #
-# Each edition is checked out through the git storage plugin, its tables are
+# Each edition is checked out through the git storage plugin and its tables are
 # collected in data/{era}/{version}.json (legacy CMOR 2 tables converted to
-# JSON) and mapped with jq to rdf/{era}/{version}.jsonld.
+# JSON).
 #
-# The mapping to the MIP variables (mapping/mip-mapping.md) needs the current
-# edition and the editions of the previous variables kept separate, which are
-# mapped to rdf/previous/{era}/{version}.jsonld.
+# The KG (rule cmor_tables) has the MIP variables, i.e. the variables of the
+# current edition, mapped with jq to rdf/current/{era}/{version}.jsonld, and
+# the previous variables kept separate from them (mapping/mip-mapping.md), i.e.
+# only the variables of the keep/sign_change/unit_change entries of an edition,
+# mapped to rdf/previous/{era}/{version}.jsonld. Only those editions are
+# retrieved.
 #
-# The evolution of the variable definitions across the editions is analysed in
-# analysis/ (see analysis/README.md).
+# The evolution of the variable definitions across all the editions listed in
+# config/config.yaml is analysed in analysis/ (rule cmor_tables_analysis, see
+# analysis/README.md).
 
 
 wildcard_constraints:
     era="[^/]+",
     version="[^/]+",
-
-
-rule cmor_tables:
-    input:
-        expand(
-            "data-sources/cmor-tables/rdf/{edition}.jsonld",
-            edition=config["cmor_tables"]["editions"],
-        ),
 
 
 # Rules reading the repository of an era, for each era (the repository of a
@@ -70,20 +66,7 @@ for cmor_era in config["eras"]:
             "../scripts/cmor_tables_edition_info.py"
 
 
-rule cmor_tables_map_variables:
-    input:
-        tables="data-sources/cmor-tables/data/{era}/{version}.json",
-        mapping="data-sources/cmor-tables/mapping/variables.jq",
-        modules="data-sources/cmor-tables/mapping/variables-jsonld.jq",
-    output:
-        "data-sources/cmor-tables/rdf/{era}/{version}.jsonld",
-    log:
-        "logs/cmor_tables/map_variables/{era}/{version}.log",
-    shell:
-        "jq -L data-sources/cmor-tables/mapping -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"
-
-
-# --- Mapping to the MIP variables
+# --- Mapping to the KG: MIP variables and previous variables
 
 
 # Editions needed (computed with jq from the eras and the mapping):
@@ -97,18 +80,30 @@ MIP_EDITIONS = json.loads(
 )
 
 
-# MIP variables (the current edition, mapped as the other editions) and
-# previous variables
-rule cmor_tables_mip:
+rule cmor_tables:
     input:
         expand(
-            "data-sources/cmor-tables/rdf/{edition}.jsonld",
+            "data-sources/cmor-tables/rdf/current/{edition}.jsonld",
             edition=MIP_EDITIONS["current"],
         ),
         expand(
             "data-sources/cmor-tables/rdf/previous/{edition}.jsonld",
             edition=MIP_EDITIONS["previous"],
         ),
+
+
+# MIP variables: all the variables of the current edition
+rule cmor_tables_map_variables:
+    input:
+        tables="data-sources/cmor-tables/data/{era}/{version}.json",
+        mapping="data-sources/cmor-tables/mapping/variables.jq",
+        modules="data-sources/cmor-tables/mapping/variables-jsonld.jq",
+    output:
+        "data-sources/cmor-tables/rdf/current/{era}/{version}.jsonld",
+    log:
+        "logs/cmor_tables/map_variables/{era}/{version}.log",
+    shell:
+        "jq -L data-sources/cmor-tables/mapping -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"
 
 
 # Previous variables of an edition (keep/sign_change/unit_change entries of the mapping)
