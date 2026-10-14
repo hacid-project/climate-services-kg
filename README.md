@@ -38,3 +38,12 @@ from them are mapped by `snakemake --cores 4 cmor_tables_mip`
 The evolution of the variable definitions across the editions (additions, deletions,
 modifications, names used for different quantities) is analysed in
 `data-sources/cmor-tables/analysis/` (`snakemake --cores 4 cmor_tables_analysis`, see its README).
+
+### CMIP5 datasets
+
+The CMIP5 datasets found on ESGF (`data-sources/cmip5/data/cmip5.json`, see `query.txt`) are mapped
+by `data-sources/cmip5/mapping/datasets.jq` to `data-sources/cmip5/rdf/datasets.jsonld`
+(`snakemake --cores 4 cmip5`): datasets, simulation, ensemble and experiment outputs, simulations,
+models and their spatial and temporal grids. The variables of the datasets are the MIP variables
+resolved through `data-sources/cmor-tables/mapping/mip-mapping.json` from their definitions in the
+CMIP5 CMOR tables (e.g. a CMIP5 `tos`, in K, is `.../variables/mip/cmip6/6.0.19/tos`).
