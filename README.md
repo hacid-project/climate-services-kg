@@ -6,7 +6,8 @@ Code and data used to populate the climate services knowledge graph for the HACI
 
 Parts of the ingestion are being moved to a [Snakemake](https://snakemake.github.io/) workflow
 (`workflow/Snakefile`, configured in `config/config.yaml`).
-It requires `git`, `jq` and the Python packages in `workflow/requirements.txt`:
+It requires `git`, `jq` (1.8, as the UKCP18 mapping uses its syntax) and the Python packages in
+`workflow/requirements.txt`:
 
 ```bash
 pip install -r workflow/requirements.txt
@@ -51,3 +52,19 @@ by `data-sources/cmip5/mapping/datasets.jq` to `data-sources/cmip5/rdf/datasets.
 models and their spatial and temporal grids. The variables of the datasets are the MIP variables
 resolved through `data-sources/cmor-tables/mapping/mip-mapping.json` from their definitions in the
 CMIP5 CMOR tables (e.g. a CMIP5 `tos`, in K, is `.../variables/mip/cmip6/6.0.19/tos`).
+
+### UKCP18 datasets
+
+The metadata of the UKCP18 datasets (from CEDA) is downloaded from Zenodo
+([10.5281/zenodo.23362544](https://doi.org/10.5281/zenodo.23362544)) through the Zenodo storage plugin
+and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cores 4 ukcp18`):
+
+1. `rdf/spatial-grids.jsonld` and `data/spatial-grid-map.json`: the spatial grids of the UKCP18 resolutions;
+2. `data/model-variants.json`: the variants of the models of the land-gcm datasets;
+3. `rdf/ceda_ukcp18_metadata_merged.jsonld`: the datasets, with their simulations, models and grids
+   (the datasets whose id does not match their metadata are listed in `logs/ukcp18/map_datasets.log`).
+   Their variables are the MIP variables resolved through `data-sources/cmor-tables/mapping/mip-mapping.json`
+   from the variable name (CMIP5 era), units and, for the land-gcm datasets, CMIP5 table (`mapping/ukcp18-variables.jq`).
+
+The Zenodo plugin requires an access token, which is not needed for published records: a placeholder is
+used unless `SNAKEMAKE_STORAGE_ZENODO_ACCESS_TOKEN` is set.

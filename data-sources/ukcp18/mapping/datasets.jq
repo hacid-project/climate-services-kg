@@ -4,6 +4,7 @@ import "./mapping/time" as TIME;
 import "./mapping/ukcp18-time" as UKCP18_TIME;
 import "./mapping/simulations" as SIMULATIONS;
 import "./mapping/jsonld" as JSONLD;
+import "./mapping/ukcp18-variables" as VARIABLES;
 
 $spatial_grid_maps as [$spatial_grid_map] |
 
@@ -85,6 +86,8 @@ def decompose_id($collection):
     $id_comp_pos_by_collection[$collection] |
     with_entries(.value = $id_comp_list[.value]);
 
+VARIABLES::with_variable_iris |
+
 [
     $mohc_models.[],
     ( .[] |
@@ -163,7 +166,7 @@ def decompose_id($collection):
                         else "ccso:SingleProjection"
                     end,
                 label: "ukcp18.\(.id[:-3])",
-                single_dependent_variable: @uri "https://w3id.org/hacid/data/cs/variables/mip/\(.variable)",
+                single_dependent_variable: VARIABLES::variable_iri,
                 independent_variable: [
                     UKCP18_TIME::dataset_to_variable($time_interval),
                     $spatial_grid_map[.domain][.resolution]
