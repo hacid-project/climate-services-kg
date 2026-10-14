@@ -63,6 +63,8 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
 2. `data/model-variants.json`: the variants of the models of the land-gcm datasets;
 3. `rdf/ceda_ukcp18_metadata_merged.jsonld`: the datasets, with their simulations, models and grids
    (the datasets whose id does not match their metadata are listed in `logs/ukcp18/map_datasets.log`).
+   Their variables are the MIP variables resolved through `data-sources/cmor-tables/mapping/mip-mapping.json`
+   from the variable name (CMIP5 era), units and, for the land-gcm datasets, CMIP5 table (`mapping/ukcp18-variables.jq`).
 
 The Zenodo plugin requires an access token, which is not needed for published records: a placeholder is
 used unless `SNAKEMAKE_STORAGE_ZENODO_ACCESS_TOKEN` is set.

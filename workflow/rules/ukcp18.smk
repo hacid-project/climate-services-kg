@@ -2,7 +2,9 @@
 # JSON-LD with jq.
 #
 # The jq programs are run from data-sources/ukcp18, as their modules and data
-# are imported relative to it (./mapping/..., ./data/...).
+# are imported relative to it (./mapping/..., ./data/...). The variables of the
+# datasets are resolved to the MIP variables
+# (data-sources/cmor-tables/mapping/mip-mapping.md).
 
 
 rule ukcp18:
@@ -67,6 +69,9 @@ rule ukcp18_map_datasets:
             "data-sources/ukcp18/mapping/ukcp18-time.jq",
             "data-sources/ukcp18/mapping/simulations.jq",
             "data-sources/ukcp18/mapping/jsonld.jq",
+            "data-sources/ukcp18/mapping/ukcp18-variables.jq",
+            "data-sources/cmor-tables/mapping/mip-variables.jq",
+            "data-sources/cmor-tables/mapping/mip-mapping.json",
         ],
         data=[
             "data-sources/ukcp18/data/spatial-grid-map.json",
@@ -79,4 +84,5 @@ rule ukcp18_map_datasets:
         "logs/ukcp18/map_datasets.log",
     shell:
         "root=$PWD; cd data-sources/ukcp18 &&"
-        " jq -L mapping -f mapping/datasets.jq $root/{input.metadata:q} > $root/{output:q} 2> $root/{log:q}"
+        " jq -L mapping -L ../cmor-tables/mapping -f mapping/datasets.jq $root/{input.metadata:q}"
+        " > $root/{output:q} 2> $root/{log:q}"
