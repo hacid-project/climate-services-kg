@@ -1,0 +1,8 @@
+{
+    "eras": [
+        {"era": "cmip5", "repo": "https://github.com/PCMDI/cmip5-cmor-tables.git", "edition": "5.0"},
+        {"era": "cmip6", "repo": "https://github.com/PCMDI/cmip6-cmor-tables.git"},
+        {"era": "cmip6plus", "repo": "https://github.com/PCMDI/mip-cmor-tables.git", "edition": "v6.5.0.4"}
+    ],
+    "current": "cmip6plus"
+}
