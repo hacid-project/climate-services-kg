@@ -70,6 +70,7 @@ rule ukcp18_map_datasets:
             "data-sources/ukcp18/mapping/simulations.jq",
             "data-sources/ukcp18/mapping/jsonld.jq",
             "data-sources/ukcp18/mapping/ukcp18-variables.jq",
+            "data-sources/ukcp18/mapping/ukcp18-ids.jq",
             "data-sources/cmor-tables/mapping/mip-variables.jq",
             "data-sources/cmor-tables/mapping/mip-mapping.json",
         ],
@@ -98,6 +99,7 @@ rule ukcp18_unmapped_variables:
         filter="data-sources/ukcp18/analysis/unmapped-variables.jq",
         modules=[
             "data-sources/ukcp18/mapping/ukcp18-variables.jq",
+            "data-sources/ukcp18/mapping/ukcp18-ids.jq",
             "data-sources/cmor-tables/mapping/mip-variables.jq",
             "data-sources/cmor-tables/mapping/mip-mapping.json",
         ],

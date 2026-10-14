@@ -10,8 +10,9 @@
 # marine-sim collection), as in the input.
 
 import "./mapping/ukcp18-variables" as VARIABLES;
+import "./mapping/ukcp18-ids" as IDS;
 
 ($kg_variables[0] | map({key: ., value: true}) | from_entries) as $known |
-map(select(.collection != "marine-sim")) |
+map(select(.collection != "marine-sim") | IDS::fix_variable) |
 VARIABLES::with_variable_iris |
 map(select($known[.variable_iri] | not) | del(.variable_iri))
