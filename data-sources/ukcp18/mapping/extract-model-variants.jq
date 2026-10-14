@@ -18,7 +18,7 @@ map(
     select(.collection == "land-gcm") |
     .variant = (.id[:-3] | split("_").[5]) |
     if .variant == "25" and .cmip5_model_id == "HadGEM2-ES" then
-        debug | empty
+        empty
     end |
     .cmip5_model_id |= if (. == "bcc-csm1-1") then "BCC-CSM1-1" end |
     if .cmip5_parent_experiment_rip == "N/A" 

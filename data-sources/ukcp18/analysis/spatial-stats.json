@@ -1,0 +1,179 @@
+[
+  {
+    "collection": "EuroCORDEX",
+    "resolution": "12km",
+    "domain": "uk",
+    "scenario": [
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "EuroCORDEX",
+    "resolution": "country/region/river",
+    "domain": "uk",
+    "scenario": [
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "land-cpm",
+    "resolution": "2.2km",
+    "domain": "uk",
+    "scenario": [
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "land-cpm",
+    "resolution": "5km",
+    "domain": "uk",
+    "scenario": [
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "land-cpm",
+    "resolution": "country/region/river",
+    "domain": "uk",
+    "scenario": [
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "land-derived",
+    "resolution": "60km",
+    "domain": "uk",
+    "scenario": [
+      "gwl2",
+      "gwl4",
+      "rcp26"
+    ]
+  },
+  {
+    "collection": "land-derived",
+    "resolution": "country/region/river",
+    "domain": "uk",
+    "scenario": [
+      "gwl2",
+      "gwl4",
+      "rcp26"
+    ]
+  },
+  {
+    "collection": "land-derived",
+    "resolution": "n216",
+    "domain": "uk",
+    "scenario": [
+      "gwl2",
+      "gwl4",
+      "rcp26"
+    ]
+  },
+  {
+    "collection": "land-gcm",
+    "resolution": "60km",
+    "domain": "global",
+    "scenario": [
+      "rcp26",
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "land-gcm",
+    "resolution": "60km",
+    "domain": "uk",
+    "scenario": [
+      "rcp26",
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "land-gcm",
+    "resolution": "country/region/river",
+    "domain": "uk",
+    "scenario": [
+      "rcp26",
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "land-indices",
+    "resolution": "60km",
+    "domain": "global",
+    "scenario": [
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "land-prob",
+    "resolution": "glb",
+    "domain": "global",
+    "scenario": [
+      "a1b",
+      "rcp26",
+      "rcp45",
+      "rcp60",
+      "rcp85",
+      "sres-a1b"
+    ]
+  },
+  {
+    "collection": "land-prob",
+    "resolution": "25km",
+    "domain": "uk",
+    "scenario": [
+      "rcp26",
+      "rcp45",
+      "rcp60",
+      "rcp85",
+      "sres-a1b"
+    ]
+  },
+  {
+    "collection": "land-prob",
+    "resolution": "country/region/river",
+    "domain": "uk",
+    "scenario": [
+      "rcp26",
+      "rcp45",
+      "rcp60",
+      "rcp85",
+      "sres-a1b"
+    ]
+  },
+  {
+    "collection": "land-rcm",
+    "resolution": "12km",
+    "domain": "eur",
+    "scenario": [
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "land-rcm",
+    "resolution": "12km",
+    "domain": "uk",
+    "scenario": [
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "land-rcm",
+    "resolution": "country/region/river",
+    "domain": "uk",
+    "scenario": [
+      "rcp85"
+    ]
+  },
+  {
+    "collection": "marine-sim",
+    "resolution": null,
+    "domain": "uk",
+    "scenario": [
+      null,
+      "rcp26",
+      "rcp45",
+      "rcp85"
+    ]
+  }
+]

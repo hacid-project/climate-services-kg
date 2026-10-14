@@ -178,9 +178,11 @@ data-sources/cordex-cmip5/raw-data/chunks
 data-sources/cordex-cmip5/rdf
 data-sources/cmor-tables/rdf
 data-sources/cmor-tables/data
-data-sources/ukcp18/data
 data-sources/observations/data
-data-sources/ukcp18/rdf/ceda_ukcp18_metadata_merged.jsonld
+data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json
+data-sources/ukcp18/data/model-variants.json
+data-sources/ukcp18/data/spatial-grid-map.json
+data-sources/ukcp18/rdf
 data-sources/cmip5/rdf
 
 # Snakemake workflow

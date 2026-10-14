@@ -1,4 +1,4 @@
-import "cmip5-model-synonyms" as $model_synonyms_source;
+import "./data/cmip5-model-synonyms" as $model_synonyms_source;
 
 (
     ["AER", "AS-RCEC", "AWI", "BCC", "BOM", "CAMS", "CAS", "CCCR-IITM", "CCCma",

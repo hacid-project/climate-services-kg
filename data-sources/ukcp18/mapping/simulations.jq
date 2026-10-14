@@ -3,7 +3,7 @@ import "./mapping/utils" as UTILS;
 import "./mapping/time" as TIME;
 import "./mapping/ukcp18-time" as UKCP18_TIME;
 import "./mapping/jsonld" as JSONLD;
-import "cmip5-model-synonyms" as $model_synonyms_source;
+import "./data/cmip5-model-synonyms" as $model_synonyms_source;
 
 
 def scenario_uri:
