@@ -65,8 +65,13 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
    (the datasets whose id does not match their metadata are listed in `logs/ukcp18/map_datasets.log`).
    Their variables are the MIP variables resolved through `data-sources/cmor-tables/mapping/mip-mapping.json`
    from the variable name (CMIP5 era), units and, for the land-gcm datasets, CMIP5 table (`mapping/ukcp18-variables.jq`).
+   The UKCP18 variables not defined in the CMOR tables are defined in `https://w3id.org/hacid/data/cs/variables/ukcp/`:
+   each `<variable>Anom` is the anomaly (`ccso:isAnomalyOf`) of the MIP variable `<variable>`, and the indices
+   (`jetlat`, `jetstr`, `naodjf`, `wtype8`, `wtype30`) and `pr1day`, `pr5day` are derived (`data:derivedFromVariable`)
+   from the MIP variables `ua`, `psl` and `pr`.
 
-The datasets whose variable is not a variable of the KG (neither a MIP nor a previous variable) are
+The datasets whose variable is not a variable of the KG (neither a MIP nor a previous variable, nor a UKCP18
+variable linked to MIP variables of the KG) are
 extracted, to review their mapping, in `data-sources/ukcp18/analysis/unmapped-variables.json.gz`
 (part of `snakemake --cores 4 sources_analysis`).
 

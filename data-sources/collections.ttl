@@ -9,6 +9,10 @@
     rdfs:label "MIP variables"@en ;
     rdfs:comment "Collection of stadard MIP variables defined in the CMOR Tables."@en .
 
+<https://w3id.org/hacid/data/cs/variables/ukcp> a top:Collection ;
+    rdfs:label "UKCP variables"@en ;
+    rdfs:comment "Collection of variables of the UKCP18 datasets not defined in the CMOR Tables (e.g. anomalies and indices)."@en .
+
 <https://w3id.org/hacid/data/cs/climdex/indices> a top:Collection ;
     rdfs:label "Climdex indices"@en ;
     rdfs:comment "Collection of climate indices described in climdex.org."@en .

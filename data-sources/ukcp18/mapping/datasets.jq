@@ -41,8 +41,11 @@ $spatial_grid_maps as [$spatial_grid_map] |
 map(IDS::fix_variable) |
 VARIABLES::with_variable_iris |
 
+(map(select(.collection != "marine-sim")) | VARIABLES::ukcp_variable_nodes) as $ukcp_variables |
+
 [
     $mohc_models.[],
+    $ukcp_variables.[],
     ( .[] |
 
 #    "EuroCORDEX": 68255,
@@ -212,6 +215,9 @@ VARIABLES::with_variable_iris |
                     based_on_ds: "data:basedOnDimensionalSpace",
                     discretization: "data:hasDiscretization",
                     exact_bounding_region: "data:hasExactBoundingRegion",
+                    is_member_of: "top:isMemberOf",
+                    is_anomaly_of: "ccso:isAnomalyOf",
+                    derived_from_variable: "data:derivedFromVariable",
                 },
                 "http://www.w3.org/2001/XMLSchema#dateTime": {
                     start_datetime: "data:hasStartDateTime",
@@ -226,7 +232,8 @@ VARIABLES::with_variable_iris |
             "@language": {
                 en: {
                     label: "rdfs:label",
-                    comment: "rdfs:comment"
+                    comment: "rdfs:comment",
+                    acronym: "top:acronym"
                 }
             }
 
