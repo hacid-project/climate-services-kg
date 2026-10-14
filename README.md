@@ -66,5 +66,9 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
    Their variables are the MIP variables resolved through `data-sources/cmor-tables/mapping/mip-mapping.json`
    from the variable name (CMIP5 era), units and, for the land-gcm datasets, CMIP5 table (`mapping/ukcp18-variables.jq`).
 
+The datasets whose variable is not a variable of the KG (neither a MIP nor a previous variable) are
+extracted, to review their mapping, in `data-sources/ukcp18/analysis/unmapped-variables.json.gz`
+(part of `snakemake --cores 4 sources_analysis`).
+
 The Zenodo plugin requires an access token, which is not needed for published records: a placeholder is
 used unless `SNAKEMAKE_STORAGE_ZENODO_ACCESS_TOKEN` is set.

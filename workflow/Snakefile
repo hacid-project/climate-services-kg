@@ -61,3 +61,4 @@ rule mapping:
 rule sources_analysis:
     input:
         rules.cmor_tables_analysis.output,
+        rules.ukcp18_unmapped_variables.output,

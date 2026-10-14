@@ -86,3 +86,32 @@ rule ukcp18_map_datasets:
         "root=$PWD; cd data-sources/ukcp18 &&"
         " jq -L mapping -L ../cmor-tables/mapping -f mapping/datasets.jq $root/{input.metadata:q}"
         " > $root/{output:q} 2> $root/{log:q}"
+
+
+# --- Analysis
+
+
+# Datasets whose variable is not a variable of the KG, to review their mapping
+rule ukcp18_unmapped_variables:
+    input:
+        metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json",
+        filter="data-sources/ukcp18/analysis/unmapped-variables.jq",
+        modules=[
+            "data-sources/ukcp18/mapping/ukcp18-variables.jq",
+            "data-sources/cmor-tables/mapping/mip-variables.jq",
+            "data-sources/cmor-tables/mapping/mip-mapping.json",
+        ],
+        kg_variables=rules.cmor_tables.input,
+    output:
+        "data-sources/ukcp18/analysis/unmapped-variables.json.gz",
+    log:
+        "logs/ukcp18/unmapped_variables.log",
+    shell:
+        "root=$PWD;"
+        " jq -n '[inputs | .[\"@graph\"][] | select(.[\"@type\"] == \"data:Variable\") | .[\"@id\"]] | unique'"
+        " {input.kg_variables:q} > $root/{output:q}.variables.json 2> $root/{log:q} &&"
+        " cd data-sources/ukcp18 &&"
+        " jq -L mapping -L ../cmor-tables/mapping --slurpfile kg_variables $root/{output:q}.variables.json"
+        " -f analysis/unmapped-variables.jq $root/{input.metadata:q} 2>> $root/{log:q} |"
+        " gzip -n > $root/{output:q} &&"
+        " rm $root/{output:q}.variables.json"
