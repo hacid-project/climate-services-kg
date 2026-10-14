@@ -39,6 +39,7 @@ $spatial_grid_maps as [$spatial_grid_map] |
 ["scenario", "collection", "domain", "resolution", "frequency"] as $id_comps_to_check |
 
 map(IDS::fix_variable) |
+IDS::fix_units |
 VARIABLES::with_variable_iris |
 
 (map(select(.collection != "marine-sim")) | VARIABLES::ukcp_variable_nodes) as $ukcp_variables |
@@ -218,6 +219,9 @@ VARIABLES::with_variable_iris |
                     is_member_of: "top:isMemberOf",
                     is_anomaly_of: "ccso:isAnomalyOf",
                     derived_from_variable: "data:derivedFromVariable",
+                    is_linear_transformation_of: "data:isLinearTransformationOf",
+                    has_unit_of_measure: "top:hasUnitOfMeasure",
+                    has_values_on: "data:hasValuesOn",
                 },
                 "http://www.w3.org/2001/XMLSchema#dateTime": {
                     start_datetime: "data:hasStartDateTime",

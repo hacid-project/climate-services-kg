@@ -68,7 +68,9 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
    The UKCP18 variables not defined in the CMOR tables are defined in `https://w3id.org/hacid/data/cs/variables/ukcp/`:
    each `<variable>Anom` is the anomaly (`ccso:isAnomalyOf`) of the MIP variable `<variable>`, and the indices
    (`jetlat`, `jetstr`, `naodjf`, `wtype8`, `wtype30`) and `pr1day`, `pr5day` are derived (`data:derivedFromVariable`)
-   from the MIP variables `ua`, `psl` and `pr`.
+   from the MIP variables `ua`, `psl` and `pr`. The variables whose units differ from those of the MIP variable
+   (e.g. `tas` in degC, `pr` in mm/day) have a local version, `.../variables/ukcp/<variable>/<units>`, with its units,
+   which is a linear transformation (`data:isLinearTransformationOf`) of the MIP variable if the units are convertible.
 
 The datasets whose variable is not a variable of the KG (neither a MIP nor a previous variable, nor a UKCP18
 variable linked to MIP variables of the KG) are

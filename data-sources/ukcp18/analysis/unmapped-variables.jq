@@ -15,12 +15,13 @@ import "./mapping/ukcp18-ids" as IDS;
 
 ($kg_variables[0] | map({key: ., value: true}) | from_entries) as $known |
 map(select(.collection != "marine-sim") | IDS::fix_variable) |
+IDS::fix_units |
 VARIABLES::with_variable_iris |
 map(
     select(
         (VARIABLES::ukcp_variable // null) as $ukcp |
         if $ukcp != null then
-            [$ukcp.anomaly_of // empty, $ukcp.derived_from[]?] | any(.[]; $known[.] | not)
+            [$ukcp.anomaly_of // empty, $ukcp.derived_from[]?, $ukcp.local_of // empty] | any(.[]; $known[.] | not)
         else
             $known[.variable_iri] | not
         end
