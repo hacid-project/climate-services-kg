@@ -7,7 +7,11 @@
 # - its IRI is the one of a previous variable (see mip-variables.jq), e.g.
 #   https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.19/tos;
 # - its label names the era and version, e.g. "Sea Surface Temperature (tos, CMIP6 6.0.19)";
-# - its quantity is the new_quantity of the entry, if any.
+# - its quantity is the new_quantity of the entry, if any;
+# - for a sign_change or unit_change entry, it is related to the variables that
+#   follow it (the resolution of the variable after the entry, usually the
+#   current variable with the same name) by data:hasOppositeValueOf or
+#   data:isLinearTrasformationOf (provisional properties).
 #
 # Input: the array of the tables of the edition (see variables-jsonld.jq).
 # Arguments: --arg source <source> --arg edition <edition> (the edition, as in
@@ -38,8 +42,25 @@ include "./mip-variables";
     first($entries[] | select(.entry.id == $variable.id and (.entry | _applies_to($variable)))) as $match |
     . + {
         iri: ({era: $era.era, version: $match.version, id: .out_name} | mip_variable_resolution_iri),
-        era_version: ([($era.era | ascii_upcase), $match.version | values] | join(" "))
+        era_version: ([($era.era | ascii_upcase), $match.version | values] | join(" ")),
+        relation: (
+            {sign_change: "data:hasOppositeValueOf", unit_change: "data:isLinearTrasformationOf"}[$match.kind] //
+            null
+        ),
+        follower: (
+            $variable | {out_name: .id, era, table, dimensions} |
+            mip_variable_resolution(mip_mapping; {era: $era.era, version: $match.version}) |
+            mip_variable_resolution_iri
+        )
     } |
     if $match.entry.new_quantity != null then .standard_name = $match.entry.new_quantity end
 ] |
-variables_jsonld(.iri; "\(.long_name) (\(.out_name), \(.era_version))")
+# relations to the following variables, by IRI (a variable in several tables
+# may be followed by different variables, e.g. a time series and a climatology)
+(
+    map(select(.relation != null)) | group_by(.iri) |
+    map({key: .[0].iri, value: {(.[0].relation): (map(.follower) | unique | map({"@id": .}))}}) |
+    from_entries
+) as $relations |
+variables_jsonld(.iri; "\(.long_name) (\(.out_name), \(.era_version))") |
+.["@graph"] |= map(. + ($relations[.["@id"]] // {}))

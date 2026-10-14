@@ -211,6 +211,19 @@ analysis).
    variables, the entries of the same `out_name` in different tables are
    mapped to the same variable.
 
+   A previous variable of a `sign_change` or `unit_change` entry is related to
+   the variables that follow it, i.e. the resolution of its table entries
+   after the entry (the following renames and eras, usually the current
+   variable with the same name), with the provisional properties:
+
+   - `data:hasOppositeValueOf` for `sign_change`, e.g.
+     `.../mip/cmip6/6.0.13/sistryubot` → `.../mip/sistryubot`;
+   - `data:isLinearTrasformationOf` for `unit_change`, e.g.
+     `.../mip/cmip6/6.0.19/tos` → `.../mip/tos`. A variable in several
+     tables may have several: `.../mip/cmip5/tro3` → `.../mip/o3` (monthly)
+     and `.../mip/o3Clim` (climatology). The factor and offset of the
+     conversion are not represented.
+
 The previous variables are exactly those the resolution can return.
 
 ## Maintenance

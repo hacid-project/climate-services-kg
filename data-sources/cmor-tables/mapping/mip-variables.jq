@@ -78,7 +78,11 @@ def mip_section_entries:
 #       entry,     # the matching keep/sign_change/unit_change entry
 #       renames    # renames applied, as [{era, from, to}]
 #   }
-def mip_variable_resolution($mapping):
+# With $after = {era, version} (the era and version of an entry, as in the
+# resolution), the entries of that era up to that version are ignored: the
+# resolution gives the variable that follows the one of the entry (e.g. the
+# current variable for a sign_change or unit_change entry).
+def mip_variable_resolution($mapping; $after):
     _variable_spec as $v |
     ($mapping | map(.era) | index($v.era)) as $start |
     reduce (if $start == null then empty else $mapping[$start:][] end) as $section (
@@ -88,7 +92,14 @@ def mip_variable_resolution($mapping):
             . as $state |
             ($v + {id: $state.id}) as $current |
             (first(
-                [$section | mip_section_entries] |
+                [
+                    $section | mip_section_entries |
+                    select(
+                        $after == null or $section.era != $after.era or
+                        ($after.version != null and .version != null and
+                            (.version | _version_key) > ($after.version | _version_key))
+                    )
+                ] |
                 sort_by(.version | if . == null then [] else _version_key end) |
                 .[] |
                 select(.entry.id == $current.id and (.entry | _applies_to($current)))
@@ -103,6 +114,8 @@ def mip_variable_resolution($mapping):
             end
         end
     );
+
+def mip_variable_resolution($mapping): mip_variable_resolution($mapping; null);
 
 # The mapping in mip-mapping.json
 def mip_mapping: $MIP_MAPPING::MIP_MAPPING[0];
