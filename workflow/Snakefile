@@ -6,9 +6,11 @@
 #   snakemake --cores 1 sources_analysis      # all the analyses of the sources (not in the KG)
 #   snakemake --cores 1 cmor_tables           # variables of the CMOR tables (MIP and previous variables)
 #   snakemake --cores 1 cmip5                 # CMIP5 datasets
+#   snakemake --cores 1 ukcp18                # UKCP18 datasets
 #   snakemake --cores 1 cmor_tables_analysis  # analysis of all the CMOR tables editions
 
 import json
+import os
 
 
 configfile: "config/config.yaml"
@@ -25,6 +27,15 @@ storage git:
     keep_local=True,
 
 
+# Zenodo records, through snakemake-storage-plugin-zenodo. The plugin requires
+# an access token, which Zenodo ignores for published records: a placeholder is
+# used if none is given (environment variable SNAKEMAKE_STORAGE_ZENODO_ACCESS_TOKEN)
+storage zenodo:
+    provider="zenodo",
+    keep_local=True,
+    access_token=os.environ.get("SNAKEMAKE_STORAGE_ZENODO_ACCESS_TOKEN", "anonymous"),
+
+
 include: "patches/git_storage_plugin.py"
 
 
@@ -34,12 +45,16 @@ include: "rules/cmor_tables.smk"
 include: "rules/cmip5.smk"
 
 
+include: "rules/ukcp18.smk"
+
+
 # Mappings of the sources to the KG
 rule mapping:
     default_target: True
     input:
         rules.cmor_tables.input,
         rules.cmip5.input,
+        rules.ukcp18.input,
 
 
 # Analyses of the sources

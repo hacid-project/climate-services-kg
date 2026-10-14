@@ -2,3 +2,4 @@
 snakemake>=9
 # Pinned: workflow/Snakefile patches a bug of this version
 snakemake-storage-plugin-git==0.1.0
+snakemake-storage-plugin-zenodo
