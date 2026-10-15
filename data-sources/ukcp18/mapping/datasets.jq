@@ -222,7 +222,7 @@ VARIABLES::with_variable_iris |
                     is_member_of: "top:isMemberOf",
                     is_anomaly_of: "ccso:isAnomalyOf",
                     is_relative_anomaly_of: "ccso:isRelativeAnomalyOf",
-                    is_return_level_of: "data:isReturnLevelOf",
+                    is_specialization_of_variable: "data:isSpecializationOfVariable",
                     is_probabilistic_representation_of: "data:isProbabilisticRepresentationOf",
                     derived_from_variable: "data:derivedFromVariable",
                     is_linear_transformation_of: "data:isLinearTransformationOf",
@@ -236,8 +236,7 @@ VARIABLES::with_variable_iris |
                 "http://www.w3.org/2001/XMLSchema#duration": {
                     resolution_value: "data:hasResolutionValue",
                     period_value: "data:hasPeriodValue",
-                    in_period_resolution_value: "data:hasInPeriodResolutionValue",
-                    has_return_period: "data:hasReturnPeriod"
+                    in_period_resolution_value: "data:hasInPeriodResolutionValue"
                 }
             },
             "@language": {
