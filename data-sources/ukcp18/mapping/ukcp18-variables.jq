@@ -282,7 +282,7 @@ def ukcp_variable_nodes:
         } |
         {
             "@id": .iri,
-            "@type": (["data:Variable"] + (.types // [])),
+            "@type": (["data:DeterministicVariable"] + (.types // [])),
             is_member_of: _ukcp_variables_collection,
             label,
             acronym: (.tag | split(", ") | .[0]),

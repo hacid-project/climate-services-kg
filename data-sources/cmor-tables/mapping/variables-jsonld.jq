@@ -75,7 +75,7 @@ def variables_jsonld(iri_of; label_of):
                     ((.units | present | @uri "https://w3id.org/hacid/data/cs/unitsofmeasure/\(.)") // null) as $unit |
                     {
                         "@id": iri_of,
-                        "@type": "data:Variable",
+                        "@type": "data:DeterministicVariable",
                         isMemberOf: [
                             "https://w3id.org/hacid/data/cs/variables/mip",
                             (.modeling_realm | words | @uri "https://w3id.org/hacid/data/cs/realms/\(.)")

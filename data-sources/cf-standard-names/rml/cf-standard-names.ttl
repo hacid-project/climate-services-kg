@@ -41,7 +41,7 @@
     
     rr:subjectMap [
         rr:template "https://w3id.org/hacid/data/cs/variables/cf/{id}" ;
-        rr:class data:Variable
+        rr:class data:DeterministicVariable
     ] ;
 
     rr:predicateObjectMap [
