@@ -43,6 +43,22 @@ rule ukcp18_spatial_grids:
         " jq .grid_map $root/{output.rdf:q} > $root/{output.grid_map:q} 2>> $root/{log:q}"
 
 
+# Units of the variables of the KG (MIP and previous variables), by IRI, to
+# tell the UKCP18 variables with other units
+rule ukcp18_mip_variable_units:
+    input:
+        rules.cmor_tables.input,
+    output:
+        "data-sources/ukcp18/data/mip-variable-units.json",
+    log:
+        "logs/ukcp18/mip_variable_units.log",
+    shell:
+        "jq -n '[inputs | .[\"@graph\"][]] |"
+        " (map(select(.[\"@type\"] | index(\"top:UnitOfMeasure\")?) | {{key: .[\"@id\"], value: .[\"rdfs:label\"]}}) | from_entries) as $units |"
+        " map(select(.[\"@type\"] == \"data:Variable\" and .hasUnitOfMeasure) | {{key: .[\"@id\"], value: $units[.hasUnitOfMeasure]}}) |"
+        " from_entries' {input:q} > {output:q} 2> {log:q}"
+
+
 # Variants of the models of the land-gcm datasets
 rule ukcp18_model_variants:
     input:
@@ -70,6 +86,7 @@ rule ukcp18_map_datasets:
             "data-sources/ukcp18/mapping/simulations.jq",
             "data-sources/ukcp18/mapping/jsonld.jq",
             "data-sources/ukcp18/mapping/ukcp18-variables.jq",
+            "data-sources/ukcp18/data/mip-variable-units.json",
             "data-sources/ukcp18/mapping/ukcp18-ids.jq",
             "data-sources/cmor-tables/mapping/mip-variables.jq",
             "data-sources/cmor-tables/mapping/mip-mapping.json",
@@ -99,6 +116,7 @@ rule ukcp18_unmapped_variables:
         filter="data-sources/ukcp18/analysis/unmapped-variables.jq",
         modules=[
             "data-sources/ukcp18/mapping/ukcp18-variables.jq",
+            "data-sources/ukcp18/data/mip-variable-units.json",
             "data-sources/ukcp18/mapping/ukcp18-ids.jq",
             "data-sources/cmor-tables/mapping/mip-variables.jq",
             "data-sources/cmor-tables/mapping/mip-mapping.json",

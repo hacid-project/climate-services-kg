@@ -39,6 +39,7 @@ $spatial_grid_maps as [$spatial_grid_map] |
 ["scenario", "collection", "domain", "resolution", "frequency"] as $id_comps_to_check |
 
 map(IDS::fix_variable) |
+IDS::fix_units |
 VARIABLES::with_variable_iris |
 
 (map(select(.collection != "marine-sim")) | VARIABLES::ukcp_variable_nodes) as $ukcp_variables |
@@ -112,11 +113,14 @@ VARIABLES::with_variable_iris |
         (
             {
                 "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
-                "@type":
+                "@type": [
                     if $collection == "land-prob"
                         then "ccso:ProbabilisticProjection"
                         else "ccso:SingleProjection"
                     end,
+                    # its kind of distribution representation, as its variable
+                    (VARIABLES::distribution_representation_type | values)
+                ],
                 label: "ukcp18.\(.id[:-3])",
                 single_dependent_variable: VARIABLES::variable_iri,
                 independent_variable: [
@@ -217,7 +221,13 @@ VARIABLES::with_variable_iris |
                     exact_bounding_region: "data:hasExactBoundingRegion",
                     is_member_of: "top:isMemberOf",
                     is_anomaly_of: "ccso:isAnomalyOf",
+                    is_relative_anomaly_of: "ccso:isRelativeAnomalyOf",
+                    is_return_level_of: "data:isReturnLevelOf",
+                    is_probabilistic_representation_of: "data:isProbabilisticRepresentationOf",
                     derived_from_variable: "data:derivedFromVariable",
+                    is_linear_transformation_of: "data:isLinearTransformationOf",
+                    has_unit_of_measure: "top:hasUnitOfMeasure",
+                    has_values_on: "data:hasValuesOn",
                 },
                 "http://www.w3.org/2001/XMLSchema#dateTime": {
                     start_datetime: "data:hasStartDateTime",
@@ -226,7 +236,8 @@ VARIABLES::with_variable_iris |
                 "http://www.w3.org/2001/XMLSchema#duration": {
                     resolution_value: "data:hasResolutionValue",
                     period_value: "data:hasPeriodValue",
-                    in_period_resolution_value: "data:hasInPeriodResolutionValue"
+                    in_period_resolution_value: "data:hasInPeriodResolutionValue",
+                    has_return_period: "data:hasReturnPeriod"
                 }
             },
             "@language": {

@@ -60,8 +60,24 @@ def id_comp_struct:
 
 # Variables with a wrong value in the metadata of some datasets, replaced by
 # the variable in their id (e.g. ensemble_member in EuroCORDEX datasets, var__
-# for evspsblveg, air_temperature for tasAnom)
+# for evspsblveg, air_temperature for tasAnom). The units of ensemble_member
+# are not those of the variable: they are removed (see fix_units).
 def fix_variable:
     if .collection != "marine-sim" and (.variable | IN("air_temperature", "ensemble_member", "var__")) then
+        if .variable == "ensemble_member" then .units = null end |
         .variable = id_comp_struct.variable
     end;
+
+# The datasets (input: array of metadata) with the units missing (null or
+# "None") taken from the other datasets of the same collection and variable,
+# if they all have the same units
+def fix_units:
+    def key: [.collection, .variable] | tojson;
+    def missing: .units == null or .units == "None";
+    (
+        map(select(missing | not)) |
+        group_by(key) |
+        map({key: (.[0] | key), value: (map(.units) | unique)}) |
+        from_entries
+    ) as $units_by_key |
+    map(if missing then .units = ($units_by_key[key] | if length == 1 then .[0] else null end) end);

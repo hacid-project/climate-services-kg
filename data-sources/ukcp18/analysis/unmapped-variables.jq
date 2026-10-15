@@ -15,15 +15,28 @@ import "./mapping/ukcp18-ids" as IDS;
 
 ($kg_variables[0] | map({key: ., value: true}) | from_entries) as $known |
 map(select(.collection != "marine-sim") | IDS::fix_variable) |
-VARIABLES::with_variable_iris |
-map(
-    select(
-        (VARIABLES::ukcp_variable // null) as $ukcp |
-        if $ukcp != null then
-            [$ukcp.anomaly_of // empty, $ukcp.derived_from[]?] | any(.[]; $known[.] | not)
-        else
-            $known[.variable_iri] | not
-        end
-    ) |
-    del(.variable_iri)
-)
+IDS::fix_units |
+# whether the variables of the datasets are mapped, once for each key
+# (VARIABLES::variable_key): the variable, if not a UKCP18 one, or the variables
+# the UKCP18 ones are linked to must be variables of the KG
+(
+    unique_by(VARIABLES::variable_key) |
+    map({
+        key: VARIABLES::variable_key,
+        value: (
+            [
+                VARIABLES::variable_iri,
+                (
+                    VARIABLES::ukcp_variables[] |
+                    .anomaly_of, .relative_anomaly_of, .derived_from[]?, .local_of, .return_level_of,
+                    .probabilistic_representation_of
+                ) |
+                strings |
+                select(startswith("https://w3id.org/hacid/data/cs/variables/ukcp/") | not)
+            ] |
+            all(.[]; $known[.])
+        )
+    }) |
+    from_entries
+) as $mapped |
+map(select($mapped[VARIABLES::variable_key] | not))

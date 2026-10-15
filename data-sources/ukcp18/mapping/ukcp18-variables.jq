@@ -1,10 +1,29 @@
 # Variables of the UKCP18 datasets: the MIP variables resolved through
 # data-sources/cmor-tables/mapping/mip-mapping.json (the modules of
 # data-sources/cmor-tables/mapping must be in the library path, -L), and the
-# UKCP18 variables not defined in the CMOR tables
-# (https://w3id.org/hacid/data/cs/variables/ukcp/<name>).
+# UKCP18 variables not defined in the CMOR tables or with units other than those
+# of the MIP variable, and the return levels and probability representations
+# of the probabilistic datasets (https://w3id.org/hacid/data/cs/variables/ukcp/...,
+# see ukcp_variables).
+#
+# Needs data/mip-variable-units.json: the units of the variables of the KG, by IRI.
 
 include "mip-variables";
+
+import "./data/mip-variable-units" as $MIP_VARIABLE_UNITS;
+
+def _mip_variable_units: $MIP_VARIABLE_UNITS::MIP_VARIABLE_UNITS[0];
+
+# Units of the UKCP18 datasets that are a linear transformation of units of the
+# MIP variables (assuming the density of water for precipitation and snow)
+def _linear_conversions:
+    {
+        "degC": ["K"],
+        "hPa": ["Pa"],
+        "mm/day": ["kg m-2 s-1"],
+        "mm/hour": ["kg m-2 s-1"],
+        "mm": ["kg m-2"]
+    };
 
 # Variables named in some UKCP18 datasets by their CF standard name (their ids
 # use the CMIP name, as the other datasets of the same variable)
@@ -39,74 +58,203 @@ def _ukcp_variables:
 
 def _mip_variable_iri_of($name): {out_name: $name, era: "cmip5"} | mip_variable_iri;
 
-# The UKCP18 variable of a dataset (input: its metadata), if its variable is not
-# a MIP variable: {name, iri, anomaly_of, derived_from} (IRIs of MIP variables).
-# Besides the variables above, each <variable>Anom is the anomaly of the MIP
-# variable <variable>.
-def ukcp_variable:
-    (_variable_renames[.variable] // .variable) as $name |
-    if _ukcp_variables[$name] != null then
-        {
-            name: $name,
-            derived_from: [_ukcp_variables[$name].derived_from[]? | _mip_variable_iri_of(.)]
-        }
-    elif $name | test(".Anom$") then
-        {name: $name, anomaly_of: _mip_variable_iri_of($name | rtrimstr("Anom"))}
-    else
-        null
-    end |
-    if . != null then .iri = _ukcp_variables_base + (.name | @uri) end;
-
-# IRI of the variable of a dataset (input: its metadata): the UKCP18 variable,
-# if any, otherwise the MIP variable of its name in the CMIP5 era (UKCP18 is
-# based on CMIP5 models), with its units and, if known, the CMIP5 table of the
-# source data (cmip5_table_id, e.g. "Table Amon (12 November 2010) 6e53...",
-# for the land-gcm datasets) (or the IRI already resolved in the variable_iri
-# field, see with_variable_iris)
-def variable_iri:
-    .variable_iri // ukcp_variable.iri // ({
+# The MIP variable of a dataset (input: its metadata): the MIP variable of its
+# name in the CMIP5 era (UKCP18 is based on CMIP5 models), with its units and,
+# if known, the CMIP5 table of the source data (cmip5_table_id, e.g.
+# "Table Amon (12 November 2010) 6e53...", for the land-gcm datasets)
+def _mip_variable_iri:
+    {
         out_name: (_variable_renames[.variable] // .variable),
         era: "cmip5",
         table: ((.cmip5_table_id // "" | capture("^Table (?<table>\\S+)").table) // null),
         units
     } |
-    mip_variable_iri);
+    mip_variable_iri;
+
+def _lcfirst: (.[0:1] | ascii_downcase) + .[1:];
+
+# Distribution representations (data ontology) of the probabilistic (land-prob)
+# datasets, by their prob_data_type. The "cdf" datasets give the values of the
+# variable at percentiles (in the units of the variable), i.e. its quantile
+# function (data:QuantileFunction), not its cumulative distribution function
+# (whose values are probabilities)
+def _probability_representations:
+    {
+        pdf: {type: "data:ProbabilityDensityFunction", text: "Probability density of"},
+        cdf: {type: "data:QuantileFunction", text: "Quantile function of"},
+        sample: {type: "data:Sample", text: "Sample of"}
+    };
+
+# Type of distribution representation of a dataset (input: its metadata), if
+# probabilistic (land-prob), otherwise null
+def distribution_representation_type:
+    if .collection == "land-prob" then _probability_representations[.prob_data_type // ""].type else null end;
+
+# The UKCP18 variables of a dataset (input: its metadata), from the base
+# variable to the variable of the dataset (the last one), as descriptors
+# {iri, types, text, tag, units} with the links of the variable (IRIs):
+# anomaly_of, relative_anomaly_of, derived_from, linear_transformation_of,
+# return_level_of (with return_period), probabilistic_representation_of; and
+# local_of (for the analysis), the MIP variable of a local version. Empty for a
+# dataset of a MIP variable. The variables are:
+# - the base variable:
+#   - the variables above, derived from MIP variables;
+#   - each <variable>Anom, the anomaly of the MIP variable <variable>, or its
+#     relative anomaly for a percentage_change (anomaly_type);
+#   - a local version of a MIP variable, if the units of the dataset are not
+#     those of the MIP variable, which is a linear transformation of it if the
+#     units are (see _linear_conversions) (not for the probabilistic datasets,
+#     whose variables below are of the MIP variable);
+# - for the return levels (land-prob datasets with a return_period), the return
+#   level of the base variable for the return period, <base>/<return period>;
+# - for the probabilistic datasets (land-prob), the probability representation
+#   (pdf, cdf, sample) of the previous variable, <previous>/<pdf|cdf|sample>, a
+#   data:DistributionRepresentation linked to it with the shortcut
+#   data:isProbabilisticRepresentationOf (without modelling its random version).
+def ukcp_variables:
+    (_variable_renames[.variable] // .variable) as $name |
+    ((.variable_long_name // null) | if . then sub(" probability density$"; "") else null end) as $long_name |
+    (.collection == "land-prob") as $probabilistic |
+    (if $probabilistic then _probability_representations[.prob_data_type // ""] else null end) as $representation |
+    .units as $units |
+    (
+        if _ukcp_variables[$name] != null then
+            {
+                iri: (_ukcp_variables_base + ($name | @uri)),
+                text: ($long_name // $name),
+                derived_from: [_ukcp_variables[$name].derived_from[]? | _mip_variable_iri_of(.)]
+            }
+        elif $name | test(".Anom$") then
+            (.anomaly_type == "percentage_change") as $relative |
+            _mip_variable_iri_of($name | rtrimstr("Anom")) as $mip_variable |
+            {
+                iri: (_ukcp_variables_base + ($name | @uri)),
+                text: (($long_name // ($name | rtrimstr("Anom"))) + if $relative then " relative anomaly" else " anomaly" end),
+                anomaly_of: (if $relative then null else $mip_variable end),
+                relative_anomaly_of: (if $relative then $mip_variable else null end)
+            }
+        elif $probabilistic then
+            # MIP variable, as base of the variables of the probabilistic datasets
+            {iri: _mip_variable_iri, mip: true, text: ($long_name // $name)}
+        else
+            _mip_variable_iri as $mip_variable |
+            _mip_variable_units[$mip_variable] as $mip_units |
+            if $units != null and $mip_units != null and $units != $mip_units then
+                {
+                    iri: (_ukcp_variables_base + ($name | @uri) + "/" + ($units | @uri)),
+                    text: ($long_name // $name),
+                    tag: "\($name), \($units)",
+                    units: $units,
+                    local_of: $mip_variable,
+                    linear_transformation_of: (
+                        if (_linear_conversions[$units] // []) | index($mip_units) then $mip_variable else null end
+                    )
+                }
+            else
+                {iri: $mip_variable, mip: true}
+            end
+        end |
+        .tag //= $name |
+        .path = (if .mip then _ukcp_variables_base + ($name | @uri) else .iri end) |
+        # units of the values of the dataset, unless they are probability densities
+        if (.mip | not) and .units == null and ($representation.type // "") != "data:ProbabilityDensityFunction" then
+            .units = $units
+        end
+    ) as $base |
+    (
+        if $probabilistic and .return_period then
+            (.return_period | ltrimstr("rp")) as $years |
+            {
+                iri: ($base.path + "/" + (.return_period | @uri)),
+                path: ($base.path + "/" + (.return_period | @uri)),
+                types: ["data:ReturnLevel"],
+                text: "\($base.text) \($years)-year return level",
+                tag: "\($base.tag), \(.return_period)",
+                units: (if $representation.type != "data:ProbabilityDensityFunction" then $units else null end),
+                return_level_of: $base.iri,
+                return_period: "P\($years)Y"
+            }
+        else
+            null
+        end
+    ) as $return_level |
+    (($return_level // $base)) as $represented |
+    (
+        if $representation then
+            {
+                iri: ($represented.path + "/" + .prob_data_type),
+                types: [$representation.type],
+                text: "\($representation.text) \($represented.text | _lcfirst)",
+                tag: "\($represented.tag), \(.prob_data_type)",
+                units: $units,
+                probabilistic_representation_of: $represented.iri
+            }
+        else
+            null
+        end
+    ) as $representation_variable |
+    [($base | select(.mip | not)), $return_level, $representation_variable | values];
+
+# IRI of the variable of a dataset (input: its metadata): the last UKCP18
+# variable, if any, otherwise the MIP variable (or the IRI already resolved in
+# the variable_iri field, see with_variable_iris)
+def variable_iri:
+    .variable_iri // (ukcp_variables | last | .iri) // _mip_variable_iri;
+
+# Key of the metadata of a dataset determining its variables
+def variable_key: [.variable, .units, .cmip5_table_id, .collection, .return_period, .prob_data_type, .anomaly_type] | tojson;
 
 # The datasets (input: array of metadata) with the IRIs of their variables in
-# the variable_iri field, resolved once for each variable, units and table
+# the variable_iri field, resolved once for each key (variable_key)
 def with_variable_iris:
-    def key: [.variable, .units, .cmip5_table_id] | tojson;
-    (unique_by(key) | map({key: key, value: variable_iri}) | from_entries) as $variable_iris |
-    map(.variable_iri = $variable_iris[key]);
+    (unique_by(variable_key) | map({key: variable_key, value: variable_iri}) | from_entries) as $variable_iris |
+    map(.variable_iri = $variable_iris[variable_key]);
 
 # Nodes of the UKCP18 variables of the datasets (input: array of metadata),
-# with the terms of the context of datasets.jq: label from the long name of the
-# variable (of the datasets that are not probability densities), anomalies
-# linked to their MIP variable (ccso:isAnomalyOf), the others to the MIP
-# variables they are derived from (data:derivedFromVariable)
+# with the terms of the context of datasets.jq: label (the most common among
+# the datasets, preferring those with a long name), units (the most common),
+# links; and the nodes of their units
 def ukcp_variable_nodes:
-    [.[] | {variable, variable_long_name}] |
-    group_by(.variable) |
+    def most_common: group_by(.) | max_by(length) | .[0];
+    [
+        group_by(variable_key)[] |
+        length as $count |
+        (.[0].variable_long_name != null) as $named |
+        .[0] | ukcp_variables[] | . + {count: $count, named: $named}
+    ] |
+    group_by(.iri) |
     map(
-        (.[0] | ukcp_variable) as $variable |
-        select($variable != null) |
-        (
-            [.[].variable_long_name | strings | select(test("probability density") | not)] |
-            unique | .[0]
-        ) as $long_name |
-        {
-            "@id": $variable.iri,
-            "@type": "data:Variable",
-            is_member_of: _ukcp_variables_collection,
+        . as $descriptors |
+        .[0] + {
             label: (
-                if $long_name == null then $variable.name
-                elif $variable.anomaly_of then "\($long_name) anomaly (\($variable.name))"
-                else "\($long_name) (\($variable.name))"
-                end
+                # preferring the long names in plain words (e.g. not soil_moisture_stress_factor)
+                (map(select(.named and (.text | test("_") | not))) | if length > 0 then . else $descriptors end) |
+                [.[] | "\(.text) (\(.tag))" as $label | range(0; .count) | $label] | most_common
             ),
-            acronym: $variable.name,
-            is_anomaly_of: $variable.anomaly_of,
-            derived_from_variable: $variable.derived_from
+            units: ([.[] | .units as $units | select($units != null) | range(0; .count) | $units] | if length > 0 then most_common else null end)
+        } |
+        {
+            "@id": .iri,
+            "@type": (["data:Variable"] + (.types // [])),
+            is_member_of: _ukcp_variables_collection,
+            label,
+            acronym: (.tag | split(", ") | .[0]),
+            is_anomaly_of: .anomaly_of,
+            is_relative_anomaly_of: .relative_anomaly_of,
+            derived_from_variable: .derived_from,
+            is_linear_transformation_of: .linear_transformation_of,
+            is_return_level_of: .return_level_of,
+            has_return_period: .return_period,
+            is_probabilistic_representation_of: .probabilistic_representation_of,
+            has_unit_of_measure: (.units | if . then "https://w3id.org/hacid/data/cs/unitsofmeasure/\(@uri)" else null end),
+            has_values_on: (.units | if . then "https://w3id.org/hacid/data/cs/unitsofmeasure/\(@uri)" else null end)
         }
     ) |
-    unique_by(."@id");
+    . + (
+        [.[].has_unit_of_measure | values] | unique |
+        map({
+            "@id": .,
+            "@type": ["top:UnitOfMeasure", "data:DimensionalSpace"],
+            "rdfs:label": (ltrimstr("https://w3id.org/hacid/data/cs/unitsofmeasure/") | @urid)
+        })
+    );
