@@ -11,6 +11,7 @@
 include "mip-variables";
 
 import "./data/mip-variable-units" as $MIP_VARIABLE_UNITS;
+import "./mapping/ukcp18-time" as UKCP18_TIME;
 
 def _mip_variable_units: $MIP_VARIABLE_UNITS::MIP_VARIABLE_UNITS[0];
 
@@ -73,6 +74,30 @@ def _mip_variable_iri:
 
 def _lcfirst: (.[0:1] | ascii_downcase) + .[1:];
 
+# Anomaly classes by anomaly_type
+def _anomaly_types:
+    {
+        "absolute_change": "ccso:AbsoluteAnomaly",
+        "percentage_change": "ccso:RelativeAnomaly"
+    };
+
+# Years of a baseline period (input: baseline_period, e.g. "b8100" or
+# "1981-2000") as "<start year>-<end year>", or null if unknown. In the
+# b<start><end> form the years are the last two digits, from 1900 (the end
+# year in the following century if before the start one)
+def _baseline_years:
+    if type != "string" then
+        null
+    elif test("^b[0-9]{4}$") then
+        (1900 + (.[1:3] | tonumber)) as $start |
+        (1900 + (.[3:5] | tonumber)) as $end |
+        "\($start)-\(if $end < $start then $end + 100 else $end end)"
+    elif test("^[0-9]{4}-[0-9]{4}$") then
+        .
+    else
+        null
+    end;
+
 # Distribution representations (data ontology) of the probabilistic (land-prob)
 # datasets, by their prob_data_type. The "cdf" datasets give the values of the
 # variable at percentiles (in the units of the variable), i.e. its quantile
@@ -93,16 +118,19 @@ def distribution_representation_type:
 # The UKCP18 variables of a dataset (input: its metadata), from the base
 # variable to the variable of the dataset (the last one), as descriptors
 # {iri, types, text, tag, units} with the links of the variable (IRIs):
-# anomaly_of, absolute_anomaly_of, relative_anomaly_of, derived_from,
-# linear_transformation_of, probabilistic_representation_of; and
+# anomaly_of (with baseline, the temporal region of the baseline period),
+# derived_from, linear_transformation_of, probabilistic_representation_of; and
 # local_of (for the analysis), the MIP variable of a local version. Empty for a
 # dataset of a MIP variable. The variables are:
 # - the base variable:
 #   - the variables above, derived from MIP variables;
-#   - each <variable>Anom, the absolute anomaly of the MIP variable <variable>
-#     for an absolute_change (anomaly_type), its relative anomaly for a
-#     percentage_change, otherwise its anomaly (generic). The baseline period
-#     of the anomaly is not represented;
+#   - each <variable>Anom, the anomaly of the MIP variable <variable> with
+#     respect to a baseline period, <variable>Anom/<start year>-<end year>
+#     (<variable>Anom if the baseline period is unknown), a ccso:AbsoluteAnomaly
+#     for an absolute_change (anomaly_type), a ccso:RelativeAnomaly for a
+#     percentage_change, otherwise a ccso:Anomaly. The baseline period is the
+#     interval of calendar years (UKCP18 climatologies may use years from
+#     December to November);
 #   - a local version of a MIP variable, if the units of the dataset are not
 #     those of the MIP variable, which is a linear transformation of it if the
 #     units are (see _linear_conversions) (not for the probabilistic datasets,
@@ -135,15 +163,22 @@ def ukcp_variables:
             }
         elif $name | test(".Anom$") then
             (.anomaly_type == "percentage_change") as $relative |
-            (.anomaly_type == "absolute_change") as $absolute |
-            _mip_variable_iri_of($name | rtrimstr("Anom")) as $mip_variable |
+            (.baseline_period | _baseline_years) as $baseline_years |
             {
-                iri: (_ukcp_variables_base + ($name | @uri)),
+                iri: (
+                    _ukcp_variables_base + ($name | @uri) +
+                    if $baseline_years then "/" + $baseline_years else "" end
+                ),
+                types: [_anomaly_types[.anomaly_type // ""] // "ccso:Anomaly"],
                 # (some long names already end with "anomaly")
-                text: (($long_name // ($name | rtrimstr("Anom")) | sub(" anomaly$"; "")) + if $relative then " relative anomaly" else " anomaly" end),
-                anomaly_of: (if $relative or $absolute then null else $mip_variable end),
-                absolute_anomaly_of: (if $absolute then $mip_variable else null end),
-                relative_anomaly_of: (if $relative then $mip_variable else null end)
+                text: (
+                    ($long_name // ($name | rtrimstr("Anom")) | sub(" anomaly$"; "")) +
+                    (if $relative then " relative anomaly" else " anomaly" end) +
+                    if $baseline_years then " with respect to \($baseline_years)" else "" end
+                ),
+                tag: ([$name, $baseline_years | values] | join(", ")),
+                anomaly_of: _mip_variable_iri_of($name | rtrimstr("Anom")),
+                baseline: (if $baseline_years then $baseline_years | UKCP18_TIME::str_to_interval else null end)
             }
         elif $probabilistic then
             # MIP variable, as base of the variables of the probabilistic datasets
@@ -212,7 +247,7 @@ def variable_iri:
     .variable_iri // (ukcp_variables | last | .iri) // _mip_variable_iri;
 
 # Key of the metadata of a dataset determining its variables
-def variable_key: [.variable, .units, .cmip5_table_id, .collection, .return_period, .prob_data_type, .anomaly_type] | tojson;
+def variable_key: [.variable, .units, .cmip5_table_id, .collection, .return_period, .prob_data_type, .anomaly_type, .baseline_period] | tojson;
 
 # The datasets (input: array of metadata) with the IRIs of their variables in
 # the variable_iri field, resolved once for each key (variable_key)
@@ -223,7 +258,7 @@ def with_variable_iris:
 # Nodes of the UKCP18 variables of the datasets (input: array of metadata),
 # with the terms of the context of datasets.jq: label (the most common among
 # the datasets, preferring those with a long name), units (the most common),
-# links; and the nodes of their units
+# links; and the nodes of their units and baseline periods
 def ukcp_variable_nodes:
     def most_common: group_by(.) | max_by(length) | .[0];
     [
@@ -250,8 +285,8 @@ def ukcp_variable_nodes:
             label,
             acronym: (.tag | split(", ") | .[0]),
             is_anomaly_of: .anomaly_of,
-            is_absolute_anomaly_of: .absolute_anomaly_of,
-            is_relative_anomaly_of: .relative_anomaly_of,
+            has_baseline_period: .baseline."@id",
+            baseline: .baseline,
             derived_from_variable: .derived_from,
             is_linear_transformation_of: .linear_transformation_of,
             is_probabilistic_representation_of: .probabilistic_representation_of,
@@ -259,7 +294,9 @@ def ukcp_variable_nodes:
             has_values_on: (.units | if . then "https://w3id.org/hacid/data/cs/unitsofmeasure/\(@uri)" else null end)
         }
     ) |
-    . + (
+    ([.[].baseline | values] | unique_by(."@id")) as $baselines |
+    map(del(.baseline)) +
+    $baselines + (
         [.[].has_unit_of_measure | values] | unique |
         map({
             "@id": .,
