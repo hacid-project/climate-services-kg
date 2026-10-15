@@ -46,8 +46,9 @@ modifications, names used for different quantities) is analysed in
 
 ### CMIP5 datasets
 
-The CMIP5 datasets found on ESGF (`data-sources/cmip5/data/cmip5.json`, see `query.txt`) are mapped
-by `data-sources/cmip5/mapping/datasets.jq` to `data-sources/cmip5/rdf/datasets.jsonld`
+The metadata of the CMIP5 datasets found on ESGF (see `query.txt`) is downloaded from Zenodo
+([10.5281/zenodo.23363413](https://doi.org/10.5281/zenodo.23363413)) through the Zenodo storage plugin
+to `data-sources/cmip5/data/cmip5.json` and mapped by `data-sources/cmip5/mapping/datasets.jq` to `data-sources/cmip5/rdf/datasets.jsonld`
 (`snakemake --cores 4 cmip5`): datasets, simulation, ensemble and experiment outputs, simulations,
 models and their spatial and temporal grids. The variables of the datasets are the MIP variables
 resolved through `data-sources/cmor-tables/mapping/mip-mapping.json` from their definitions in the

@@ -1,5 +1,5 @@
 # Mapping of the CMIP5 datasets (ESGF search results, see
-# data-sources/cmip5/query.txt) to JSON-LD with jq.
+# data-sources/cmip5/query.txt, published on Zenodo) to JSON-LD with jq.
 #
 # The variables of the datasets are resolved to the MIP variables
 # (data-sources/cmor-tables/mapping/mip-mapping.md) from their definitions in
@@ -9,6 +9,16 @@
 rule cmip5:
     input:
         "data-sources/cmip5/rdf/datasets.jsonld",
+
+
+# Metadata of the CMIP5 datasets (https://doi.org/10.5281/zenodo.23363413)
+rule cmip5_metadata:
+    input:
+        storage.zenodo("zenodo://record/23363413/cmip5.json.gz"),
+    output:
+        "data-sources/cmip5/data/cmip5.json",
+    shell:
+        "gunzip -c {input:q} > {output:q}"
 
 
 rule cmip5_map_datasets:
