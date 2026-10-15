@@ -214,7 +214,7 @@ The editions are retrieved by the same rules as for the analysis
    A previous variable of a `sign_change` or `unit_change` entry is related to
    the variables that follow it, i.e. the resolution of its table entries
    after the entry (the following renames and eras, usually the current
-   variable with the same name), with the provisional properties:
+   variable with the same name), with the properties of the data ontology:
 
    - `data:hasOppositeValueOf` for `sign_change`, e.g.
      `.../mip/cmip6/6.0.13/sistryubot` → `.../mip/sistryubot`;

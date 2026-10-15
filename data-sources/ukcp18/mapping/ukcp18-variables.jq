@@ -77,8 +77,8 @@ def _lcfirst: (.[0:1] | ascii_downcase) + .[1:];
 # Anomaly classes by anomaly_type
 def _anomaly_types:
     {
-        "absolute_change": "ccso:AbsoluteAnomaly",
-        "percentage_change": "ccso:RelativeAnomaly"
+        "absolute_change": "data:AbsoluteAnomaly",
+        "percentage_change": "data:RelativeAnomaly"
     };
 
 # Years of a baseline period (input: baseline_period, e.g. "b8100" or
@@ -126,9 +126,11 @@ def distribution_representation_type:
 #   - the variables above, derived from MIP variables;
 #   - each <variable>Anom, the anomaly of the MIP variable <variable> with
 #     respect to a baseline period, <variable>Anom/<start year>-<end year>
-#     (<variable>Anom if the baseline period is unknown), a ccso:AbsoluteAnomaly
-#     for an absolute_change (anomaly_type), a ccso:RelativeAnomaly for a
-#     percentage_change, otherwise a ccso:Anomaly. The baseline period is the
+#     (<variable>Anom if the baseline period is unknown), a data:AbsoluteAnomaly
+#     for an absolute_change (anomaly_type), a data:RelativeAnomaly for a
+#     percentage_change, otherwise a data:Anomaly. The baseline period is
+#     linked with the shortcut data:hasBaselineRegion (the baseline variable,
+#     the climatology over the period, is not represented). It is the
 #     interval of calendar years (UKCP18 climatologies may use years from
 #     December to November);
 #   - a local version of a MIP variable, if the units of the dataset are not
@@ -169,7 +171,7 @@ def ukcp_variables:
                     _ukcp_variables_base + ($name | @uri) +
                     if $baseline_years then "/" + $baseline_years else "" end
                 ),
-                types: [_anomaly_types[.anomaly_type // ""] // "ccso:Anomaly"],
+                types: [_anomaly_types[.anomaly_type // ""] // "data:Anomaly"],
                 # (some long names already end with "anomaly")
                 text: (
                     ($long_name // ($name | rtrimstr("Anom")) | sub(" anomaly$"; "")) +
@@ -285,7 +287,7 @@ def ukcp_variable_nodes:
             label,
             acronym: (.tag | split(", ") | .[0]),
             is_anomaly_of: .anomaly_of,
-            has_baseline_period: .baseline."@id",
+            has_baseline_region: .baseline."@id",
             baseline: .baseline,
             derived_from_variable: .derived_from,
             is_linear_transformation_of: .linear_transformation_of,
