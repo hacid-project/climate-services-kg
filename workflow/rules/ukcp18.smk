@@ -115,6 +115,8 @@ rule ukcp18_unmapped_variables:
         metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json",
         filter="data-sources/ukcp18/analysis/unmapped-variables.jq",
         modules=[
+            "data-sources/ukcp18/mapping/time.jq",
+            "data-sources/ukcp18/mapping/ukcp18-time.jq",
             "data-sources/ukcp18/mapping/ukcp18-variables.jq",
             "data-sources/ukcp18/data/mip-variable-units.json",
             "data-sources/ukcp18/mapping/ukcp18-ids.jq",

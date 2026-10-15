@@ -1,46 +1,44 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix data: <https://w3id.org/hacid/onto/data/> .
 @prefix ccso: <https://w3id.org/hacid/onto/ccso/> .
 
 # Provisional terms used by the mappings, not yet in the ontologies
 # (data.owl, ccso.owl). To be moved there (or replaced) when defined.
 # (The terms for linear transformations and distribution representations are
-# now in data.owl.)
+# now in data.owl; the return levels are derived from their variables,
+# data:derivedFromVariable.)
 
 <https://w3id.org/hacid/onto/provisional> a owl:Ontology ;
     rdfs:comment "Provisional terms used by the mappings of the climate services KG, not yet in the HACID ontologies."@en .
 
 # --- Anomalies
 
+ccso:Anomaly a owl:Class ;
+    rdfs:subClassOf data:Variable ;
+    rdfs:label "anomaly"@en ;
+    rdfs:comment "Variable whose values are the changes of the values of another variable with respect to a baseline, usually its climatology over a baseline period."@en .
+
+ccso:AbsoluteAnomaly a owl:Class ;
+    rdfs:subClassOf ccso:Anomaly ;
+    rdfs:label "absolute anomaly"@en ;
+    rdfs:comment "Anomaly whose values are the differences from the baseline."@en .
+
+ccso:RelativeAnomaly a owl:Class ;
+    rdfs:subClassOf ccso:Anomaly ;
+    owl:disjointWith ccso:AbsoluteAnomaly ;
+    rdfs:label "relative anomaly"@en ;
+    rdfs:comment "Anomaly whose values are the differences from the baseline relative to the baseline (e.g. as a percentage)."@en .
+
 ccso:isAnomalyOf a owl:ObjectProperty ;
-    rdfs:domain data:Variable ;
+    rdfs:subPropertyOf data:derivedFromVariable ;
+    rdfs:domain ccso:Anomaly ;
     rdfs:range data:Variable ;
     rdfs:label "is anomaly of"@en ;
-    rdfs:comment "The variable is the anomaly (absolute change with respect to a baseline) of the other variable."@en .
+    rdfs:comment "Associates an anomaly with the variable of which it is the anomaly."@en .
 
-ccso:isRelativeAnomalyOf a owl:ObjectProperty ;
-    rdfs:domain data:Variable ;
-    rdfs:range data:Variable ;
-    rdfs:label "is relative anomaly of"@en ;
-    rdfs:comment "The variable is the relative anomaly (change with respect to a baseline relative to the baseline, e.g. as a percentage) of the other variable."@en .
-
-# --- Return levels
-
-data:ReturnLevel a owl:Class ;
-    rdfs:subClassOf data:Variable ;
-    rdfs:label "return level"@en ;
-    rdfs:comment "Variable whose values are the levels of another variable expected to be exceeded on average once in a return period."@en .
-
-data:isReturnLevelOf a owl:ObjectProperty ;
-    rdfs:domain data:ReturnLevel ;
-    rdfs:range data:Variable ;
-    rdfs:label "is return level of"@en ;
-    rdfs:comment "The return level is of the levels of the other variable."@en .
-
-data:hasReturnPeriod a owl:DatatypeProperty ;
-    rdfs:domain data:ReturnLevel ;
-    rdfs:range xsd:duration ;
-    rdfs:label "has return period"@en ;
-    rdfs:comment "The return period of the return level."@en .
+ccso:hasBaselinePeriod a owl:ObjectProperty ;
+    rdfs:domain ccso:Anomaly ;
+    rdfs:range data:TemporalRegion ;
+    rdfs:label "has baseline period"@en ;
+    rdfs:comment "Associates an anomaly with the period of the baseline (e.g. the climatology over 1981-2000) with respect to which it is computed."@en .

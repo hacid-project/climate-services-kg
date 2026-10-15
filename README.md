@@ -67,16 +67,20 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
    from the variable name (CMIP5 era), units and, for the land-gcm datasets, CMIP5 table (`mapping/ukcp18-variables.jq`).
    The UKCP18 variables not defined in the CMOR tables are defined in `https://w3id.org/hacid/data/cs/variables/ukcp/`
    (with the provisional terms of `data-sources/ontologies/provisional.ttl`):
-   - each `<variable>Anom` is the anomaly (`ccso:isAnomalyOf`) of the MIP variable `<variable>`, or its relative
-     anomaly (`ccso:isRelativeAnomalyOf`) for a percentage change (`prAnom`, `cltAnom`, `hussAnom`);
+   - each `<variable>Anom` with respect to a baseline period is an anomaly (`ccso:isAnomalyOf`, a
+     `data:derivedFromVariable`) of the MIP variable `<variable>`, `.../ukcp/<variable>Anom/<start year>-<end year>`
+     (e.g. `.../ukcp/tasAnom/1981-2000`), with its baseline period (`ccso:hasBaselinePeriod`, a `data:TemporalRegion`);
+     it is a `ccso:RelativeAnomaly` for a percentage change (`prAnom`, `cltAnom`, `hussAnom`), otherwise a
+     `ccso:AbsoluteAnomaly`;
    - the indices (`jetlat`, `jetstr`, `naodjf`, `wtype8`, `wtype30`) and `pr1day`, `pr5day` are derived
      (`data:derivedFromVariable`) from the MIP variables `ua`, `psl` and `pr`;
    - the variables whose units differ from those of the MIP variable (e.g. `tas` in degC, `pr` in mm/day) have a local
      version, `.../ukcp/<variable>/<units>`, with its units, which is a linear transformation
      (`data:isLinearTransformationOf`) of the MIP variable if the units are convertible;
-   - the return levels of the probabilistic datasets (land-prob) are variables (`data:ReturnLevel`),
-     `.../ukcp/<variable>/<return period>` (e.g. `.../ukcp/tasmax/rp20`), return levels of the base variable
-     (`data:isReturnLevelOf`) with their return period (`data:hasReturnPeriod`);
+   - the return levels of the probabilistic datasets (land-prob) are variables,
+     `.../ukcp/<variable>/<return period>` (e.g. `.../ukcp/tasmax/rp20`), derived from the base variable
+     (`data:derivedFromVariable`). A return level is a form of aggregation and, like the others (min, max,
+     mean, ...), is not represented in more detail for now (no specific class or return period property);
    - the variable of a probabilistic dataset is a distribution representation of its anomaly or return level
      (`data:isProbabilisticRepresentationOf`, without modelling the random version), `.../<variable>/pdf`, `cdf` or
      `sample`, a `data:ProbabilityDensityFunction`, `data:QuantileFunction` (the UKCP18 "cdf" datasets give the values
