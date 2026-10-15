@@ -184,7 +184,7 @@ data-sources/ukcp18/data/model-variants.json
 data-sources/ukcp18/data/spatial-grid-map.json
 data-sources/ukcp18/data/mip-variable-units.json
 data-sources/ukcp18/rdf
-data-sources/cmip5/data/cmip5.json
+data-sources/cmip5/data
 data-sources/cmip5/rdf
 
 # Snakemake workflow
