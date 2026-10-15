@@ -75,8 +75,8 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
      version, `.../ukcp/<variable>/<units>`, with its units, which is a linear transformation
      (`data:isLinearTransformationOf`) of the MIP variable if the units are convertible;
    - the return levels of the probabilistic datasets (land-prob) are variables,
-     `.../ukcp/<variable>/<return period>` (e.g. `.../ukcp/tasmax/rp20`), specializations of the base variable
-     (`data:isSpecializationOfVariable`). A return level is a form of aggregation and, like the others (min, max,
+     `.../ukcp/<variable>/<return period>` (e.g. `.../ukcp/tasmax/rp20`), derived from the base variable
+     (`data:derivedFromVariable`). A return level is a form of aggregation and, like the others (min, max,
      mean, ...), is not represented in more detail for now (no specific class or return period property);
    - the variable of a probabilistic dataset is a distribution representation of its anomaly or return level
      (`data:isProbabilisticRepresentationOf`, without modelling the random version), `.../<variable>/pdf`, `cdf` or

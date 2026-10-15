@@ -28,7 +28,7 @@ IDS::fix_units |
                 VARIABLES::variable_iri,
                 (
                     VARIABLES::ukcp_variables[] |
-                    .anomaly_of, .relative_anomaly_of, .derived_from[]?, .local_of, .specialization_of,
+                    .anomaly_of, .relative_anomaly_of, .derived_from[]?, .local_of,
                     .probabilistic_representation_of
                 ) |
                 strings |

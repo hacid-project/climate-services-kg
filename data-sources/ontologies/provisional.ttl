@@ -6,8 +6,8 @@
 # Provisional terms used by the mappings, not yet in the ontologies
 # (data.owl, ccso.owl). To be moved there (or replaced) when defined.
 # (The terms for linear transformations and distribution representations are
-# now in data.owl; the return levels are specializations of their variables,
-# data:isSpecializationOfVariable.)
+# now in data.owl; the return levels are derived from their variables,
+# data:derivedFromVariable.)
 
 <https://w3id.org/hacid/onto/provisional> a owl:Ontology ;
     rdfs:comment "Provisional terms used by the mappings of the climate services KG, not yet in the HACID ontologies."@en .

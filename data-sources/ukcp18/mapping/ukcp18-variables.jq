@@ -94,7 +94,7 @@ def distribution_representation_type:
 # variable to the variable of the dataset (the last one), as descriptors
 # {iri, types, text, tag, units} with the links of the variable (IRIs):
 # anomaly_of, relative_anomaly_of, derived_from, linear_transformation_of,
-# specialization_of, probabilistic_representation_of; and
+# probabilistic_representation_of; and
 # local_of (for the analysis), the MIP variable of a local version. Empty for a
 # dataset of a MIP variable. The variables are:
 # - the base variable:
@@ -107,9 +107,9 @@ def distribution_representation_type:
 #     whose variables below are of the MIP variable);
 # - for the return levels (land-prob datasets with a return_period), the return
 #   level of the base variable for the return period, <base>/<return period>,
-#   linked to the base variable as a specialization of it
-#   (data:isSpecializationOfVariable). A return level is a form of aggregation
-#   (a quantile of the distribution of the annual maxima) and, as the other
+#   derived from the base variable (data:derivedFromVariable). A return level
+#   is a form of aggregation (a quantile of the distribution of the annual
+#   maxima) and, as the other
 #   forms of aggregation (min, max, mean, ...) are not represented in detail,
 #   neither is it (no specific class, nor properties for the return period).
 #   A more detailed representation of the aggregations could cover it in the
@@ -177,7 +177,7 @@ def ukcp_variables:
                 text: "\($base.text) \($years)-year return level",
                 tag: "\($base.tag), \(.return_period)",
                 units: (if $representation.type != "data:ProbabilityDensityFunction" then $units else null end),
-                specialization_of: $base.iri
+                derived_from: [$base.iri]
             }
         else
             null
@@ -248,7 +248,6 @@ def ukcp_variable_nodes:
             is_relative_anomaly_of: .relative_anomaly_of,
             derived_from_variable: .derived_from,
             is_linear_transformation_of: .linear_transformation_of,
-            is_specialization_of_variable: .specialization_of,
             is_probabilistic_representation_of: .probabilistic_representation_of,
             has_unit_of_measure: (.units | if . then "https://w3id.org/hacid/data/cs/unitsofmeasure/\(@uri)" else null end),
             has_values_on: (.units | if . then "https://w3id.org/hacid/data/cs/unitsofmeasure/\(@uri)" else null end)

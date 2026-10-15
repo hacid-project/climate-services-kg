@@ -222,7 +222,6 @@ VARIABLES::with_variable_iris |
                     is_member_of: "top:isMemberOf",
                     is_anomaly_of: "ccso:isAnomalyOf",
                     is_relative_anomaly_of: "ccso:isRelativeAnomalyOf",
-                    is_specialization_of_variable: "data:isSpecializationOfVariable",
                     is_probabilistic_representation_of: "data:isProbabilisticRepresentationOf",
                     derived_from_variable: "data:derivedFromVariable",
                     is_linear_transformation_of: "data:isLinearTransformationOf",
