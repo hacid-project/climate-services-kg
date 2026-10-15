@@ -11,7 +11,7 @@
 # - for a sign_change or unit_change entry, it is related to the variables that
 #   follow it (the resolution of the variable after the entry, usually the
 #   current variable with the same name) by data:hasOppositeValueOf or
-#   data:isLinearTransformationOf (provisional properties).
+#   data:isLinearTransformationOf (data ontology).
 #
 # Input: the array of the tables of the edition (see variables-jsonld.jq).
 # Arguments: --arg era <era> --arg version <version> (the edition, as in
