@@ -113,11 +113,14 @@ VARIABLES::with_variable_iris |
         (
             {
                 "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
-                "@type":
+                "@type": [
                     if $collection == "land-prob"
                         then "ccso:ProbabilisticProjection"
                         else "ccso:SingleProjection"
                     end,
+                    # its kind of distribution representation, as its variable
+                    (VARIABLES::distribution_representation_type | values)
+                ],
                 label: "ukcp18.\(.id[:-3])",
                 single_dependent_variable: VARIABLES::variable_iri,
                 independent_variable: [
@@ -220,7 +223,7 @@ VARIABLES::with_variable_iris |
                     is_anomaly_of: "ccso:isAnomalyOf",
                     is_relative_anomaly_of: "ccso:isRelativeAnomalyOf",
                     is_return_level_of: "data:isReturnLevelOf",
-                    is_probability_representation_of: "data:isProbabilityRepresentationOf",
+                    is_probabilistic_representation_of: "data:isProbabilisticRepresentationOf",
                     derived_from_variable: "data:derivedFromVariable",
                     is_linear_transformation_of: "data:isLinearTransformationOf",
                     has_unit_of_measure: "top:hasUnitOfMeasure",

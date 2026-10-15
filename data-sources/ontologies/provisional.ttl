@@ -6,23 +6,13 @@
 
 # Provisional terms used by the mappings, not yet in the ontologies
 # (data.owl, ccso.owl). To be moved there (or replaced) when defined.
+# (The terms for linear transformations and distribution representations are
+# now in data.owl.)
 
 <https://w3id.org/hacid/onto/provisional> a owl:Ontology ;
     rdfs:comment "Provisional terms used by the mappings of the climate services KG, not yet in the HACID ontologies."@en .
 
-# --- Relations between variables
-
-data:isLinearTransformationOf a owl:ObjectProperty ;
-    rdfs:domain data:Variable ;
-    rdfs:range data:Variable ;
-    rdfs:label "is linear transformation of"@en ;
-    rdfs:comment "The values of the variable are a linear transformation of the values of the other variable (e.g. the same quantity in other units)."@en .
-
-data:hasOppositeValueOf a owl:ObjectProperty , owl:SymmetricProperty ;
-    rdfs:domain data:Variable ;
-    rdfs:range data:Variable ;
-    rdfs:label "has opposite value of"@en ;
-    rdfs:comment "The values of the variable are the opposite of the values of the other variable (e.g. a flux in the opposite direction)."@en .
+# --- Anomalies
 
 ccso:isAnomalyOf a owl:ObjectProperty ;
     rdfs:domain data:Variable ;
@@ -54,31 +44,3 @@ data:hasReturnPeriod a owl:DatatypeProperty ;
     rdfs:range xsd:duration ;
     rdfs:label "has return period"@en ;
     rdfs:comment "The return period of the return level."@en .
-
-# --- Probability representations
-
-data:ProbabilityRepresentation a owl:Class ;
-    rdfs:subClassOf data:Variable ;
-    rdfs:label "probability representation"@en ;
-    rdfs:comment "Variable whose values represent the probability distribution of another variable."@en .
-
-data:ProbabilityDensityFunction a owl:Class ;
-    rdfs:subClassOf data:ProbabilityRepresentation ;
-    rdfs:label "probability density function"@en ;
-    rdfs:comment "Probability representation whose values are the probability densities of the values of the other variable."@en .
-
-data:CumulativeDistributionFunction a owl:Class ;
-    rdfs:subClassOf data:ProbabilityRepresentation ;
-    rdfs:label "cumulative distribution function"@en ;
-    rdfs:comment "Probability representation given by the cumulative distribution of the other variable, e.g. its values at given percentiles."@en .
-
-data:ProbabilisticSample a owl:Class ;
-    rdfs:subClassOf data:ProbabilityRepresentation ;
-    rdfs:label "probabilistic sample"@en ;
-    rdfs:comment "Probability representation whose values are a sample drawn from the probability distribution of the other variable."@en .
-
-data:isProbabilityRepresentationOf a owl:ObjectProperty ;
-    rdfs:domain data:ProbabilityRepresentation ;
-    rdfs:range data:Variable ;
-    rdfs:label "is probability representation of"@en ;
-    rdfs:comment "The probability representation represents the probability distribution of the other variable."@en .

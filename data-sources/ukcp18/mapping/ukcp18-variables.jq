@@ -73,19 +73,28 @@ def _mip_variable_iri:
 
 def _lcfirst: (.[0:1] | ascii_downcase) + .[1:];
 
-# Types of the probability representations (prob_data_type of land-prob datasets)
+# Distribution representations (data ontology) of the probabilistic (land-prob)
+# datasets, by their prob_data_type. The "cdf" datasets give the values of the
+# variable at percentiles (in the units of the variable), i.e. its quantile
+# function (data:QuantileFunction), not its cumulative distribution function
+# (whose values are probabilities)
 def _probability_representations:
     {
         pdf: {type: "data:ProbabilityDensityFunction", text: "Probability density of"},
-        cdf: {type: "data:CumulativeDistributionFunction", text: "Cumulative distribution of"},
-        sample: {type: "data:ProbabilisticSample", text: "Sample of"}
+        cdf: {type: "data:QuantileFunction", text: "Quantile function of"},
+        sample: {type: "data:Sample", text: "Sample of"}
     };
+
+# Type of distribution representation of a dataset (input: its metadata), if
+# probabilistic (land-prob), otherwise null
+def distribution_representation_type:
+    if .collection == "land-prob" then _probability_representations[.prob_data_type // ""].type else null end;
 
 # The UKCP18 variables of a dataset (input: its metadata), from the base
 # variable to the variable of the dataset (the last one), as descriptors
 # {iri, types, text, tag, units} with the links of the variable (IRIs):
 # anomaly_of, relative_anomaly_of, derived_from, linear_transformation_of,
-# return_level_of (with return_period), probability_representation_of; and
+# return_level_of (with return_period), probabilistic_representation_of; and
 # local_of (for the analysis), the MIP variable of a local version. Empty for a
 # dataset of a MIP variable. The variables are:
 # - the base variable:
@@ -99,7 +108,9 @@ def _probability_representations:
 # - for the return levels (land-prob datasets with a return_period), the return
 #   level of the base variable for the return period, <base>/<return period>;
 # - for the probabilistic datasets (land-prob), the probability representation
-#   (pdf, cdf, sample) of the previous variable, <previous>/<pdf|cdf|sample>.
+#   (pdf, cdf, sample) of the previous variable, <previous>/<pdf|cdf|sample>, a
+#   data:DistributionRepresentation linked to it with the shortcut
+#   data:isProbabilisticRepresentationOf (without modelling its random version).
 def ukcp_variables:
     (_variable_renames[.variable] // .variable) as $name |
     ((.variable_long_name // null) | if . then sub(" probability density$"; "") else null end) as $long_name |
@@ -176,7 +187,7 @@ def ukcp_variables:
                 text: "\($representation.text) \($represented.text | _lcfirst)",
                 tag: "\($represented.tag), \(.prob_data_type)",
                 units: $units,
-                probability_representation_of: $represented.iri
+                probabilistic_representation_of: $represented.iri
             }
         else
             null
@@ -191,13 +202,13 @@ def variable_iri:
     .variable_iri // (ukcp_variables | last | .iri) // _mip_variable_iri;
 
 # Key of the metadata of a dataset determining its variables
-def _variable_key: [.variable, .units, .cmip5_table_id, .collection, .return_period, .prob_data_type, .anomaly_type] | tojson;
+def variable_key: [.variable, .units, .cmip5_table_id, .collection, .return_period, .prob_data_type, .anomaly_type] | tojson;
 
 # The datasets (input: array of metadata) with the IRIs of their variables in
-# the variable_iri field, resolved once for each key (_variable_key)
+# the variable_iri field, resolved once for each key (variable_key)
 def with_variable_iris:
-    (unique_by(_variable_key) | map({key: _variable_key, value: variable_iri}) | from_entries) as $variable_iris |
-    map(.variable_iri = $variable_iris[_variable_key]);
+    (unique_by(variable_key) | map({key: variable_key, value: variable_iri}) | from_entries) as $variable_iris |
+    map(.variable_iri = $variable_iris[variable_key]);
 
 # Nodes of the UKCP18 variables of the datasets (input: array of metadata),
 # with the terms of the context of datasets.jq: label (the most common among
@@ -206,7 +217,7 @@ def with_variable_iris:
 def ukcp_variable_nodes:
     def most_common: group_by(.) | max_by(length) | .[0];
     [
-        group_by(_variable_key)[] |
+        group_by(variable_key)[] |
         length as $count |
         (.[0].variable_long_name != null) as $named |
         .[0] | ukcp_variables[] | . + {count: $count, named: $named}
@@ -234,7 +245,7 @@ def ukcp_variable_nodes:
             is_linear_transformation_of: .linear_transformation_of,
             is_return_level_of: .return_level_of,
             has_return_period: .return_period,
-            is_probability_representation_of: .probability_representation_of,
+            is_probabilistic_representation_of: .probabilistic_representation_of,
             has_unit_of_measure: (.units | if . then "https://w3id.org/hacid/data/cs/unitsofmeasure/\(@uri)" else null end),
             has_values_on: (.units | if . then "https://w3id.org/hacid/data/cs/unitsofmeasure/\(@uri)" else null end)
         }

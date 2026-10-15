@@ -77,9 +77,10 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
    - the return levels of the probabilistic datasets (land-prob) are variables (`data:ReturnLevel`),
      `.../ukcp/<variable>/<return period>` (e.g. `.../ukcp/tasmax/rp20`), return levels of the base variable
      (`data:isReturnLevelOf`) with their return period (`data:hasReturnPeriod`);
-   - the variable of a probabilistic dataset is the probability representation (`data:isProbabilityRepresentationOf`)
-     of its anomaly or return level, `.../<variable>/pdf`, `cdf` or `sample`, a `data:ProbabilityDensityFunction`,
-     `data:CumulativeDistributionFunction` or `data:ProbabilisticSample` with its units (e.g. degC-1 for a pdf).
+   - the variable of a probabilistic dataset is a distribution representation of its anomaly or return level
+     (`data:isProbabilisticRepresentationOf`, without modelling the random version), `.../<variable>/pdf`, `cdf` or
+     `sample`, a `data:ProbabilityDensityFunction`, `data:QuantileFunction` (the UKCP18 "cdf" datasets give the values
+     at percentiles) or `data:Sample` with its units (e.g. degC-1 for a pdf); the datasets have the same type.
 
 The datasets whose variable is not a variable of the KG (neither a MIP nor a previous variable, nor a UKCP18
 variable linked to MIP variables of the KG) are
