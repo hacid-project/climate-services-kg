@@ -67,8 +67,9 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
    from the variable name (CMIP5 era), units and, for the land-gcm datasets, CMIP5 table (`mapping/ukcp18-variables.jq`).
    The UKCP18 variables not defined in the CMOR tables are defined in `https://w3id.org/hacid/data/cs/variables/ukcp/`
    (with the provisional terms of `data-sources/ontologies/provisional.ttl`):
-   - each `<variable>Anom` is the anomaly (`ccso:isAnomalyOf`) of the MIP variable `<variable>`, or its relative
-     anomaly (`ccso:isRelativeAnomalyOf`) for a percentage change (`prAnom`, `cltAnom`, `hussAnom`);
+   - each `<variable>Anom` is the absolute anomaly (`ccso:isAbsoluteAnomalyOf`) of the MIP variable `<variable>`, or
+     its relative anomaly (`ccso:isRelativeAnomalyOf`) for a percentage change (`prAnom`, `cltAnom`, `hussAnom`), both
+     sub-properties of `ccso:isAnomalyOf` (itself a `data:derivedFromVariable`); the baseline period is not represented;
    - the indices (`jetlat`, `jetstr`, `naodjf`, `wtype8`, `wtype30`) and `pr1day`, `pr5day` are derived
      (`data:derivedFromVariable`) from the MIP variables `ua`, `psl` and `pr`;
    - the variables whose units differ from those of the MIP variable (e.g. `tas` in degC, `pr` in mm/day) have a local

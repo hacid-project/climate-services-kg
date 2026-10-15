@@ -93,14 +93,16 @@ def distribution_representation_type:
 # The UKCP18 variables of a dataset (input: its metadata), from the base
 # variable to the variable of the dataset (the last one), as descriptors
 # {iri, types, text, tag, units} with the links of the variable (IRIs):
-# anomaly_of, relative_anomaly_of, derived_from, linear_transformation_of,
-# probabilistic_representation_of; and
+# anomaly_of, absolute_anomaly_of, relative_anomaly_of, derived_from,
+# linear_transformation_of, probabilistic_representation_of; and
 # local_of (for the analysis), the MIP variable of a local version. Empty for a
 # dataset of a MIP variable. The variables are:
 # - the base variable:
 #   - the variables above, derived from MIP variables;
-#   - each <variable>Anom, the anomaly of the MIP variable <variable>, or its
-#     relative anomaly for a percentage_change (anomaly_type);
+#   - each <variable>Anom, the absolute anomaly of the MIP variable <variable>
+#     for an absolute_change (anomaly_type), its relative anomaly for a
+#     percentage_change, otherwise its anomaly (generic). The baseline period
+#     of the anomaly is not represented;
 #   - a local version of a MIP variable, if the units of the dataset are not
 #     those of the MIP variable, which is a linear transformation of it if the
 #     units are (see _linear_conversions) (not for the probabilistic datasets,
@@ -133,11 +135,14 @@ def ukcp_variables:
             }
         elif $name | test(".Anom$") then
             (.anomaly_type == "percentage_change") as $relative |
+            (.anomaly_type == "absolute_change") as $absolute |
             _mip_variable_iri_of($name | rtrimstr("Anom")) as $mip_variable |
             {
                 iri: (_ukcp_variables_base + ($name | @uri)),
-                text: (($long_name // ($name | rtrimstr("Anom"))) + if $relative then " relative anomaly" else " anomaly" end),
-                anomaly_of: (if $relative then null else $mip_variable end),
+                # (some long names already end with "anomaly")
+                text: (($long_name // ($name | rtrimstr("Anom")) | sub(" anomaly$"; "")) + if $relative then " relative anomaly" else " anomaly" end),
+                anomaly_of: (if $relative or $absolute then null else $mip_variable end),
+                absolute_anomaly_of: (if $absolute then $mip_variable else null end),
                 relative_anomaly_of: (if $relative then $mip_variable else null end)
             }
         elif $probabilistic then
@@ -245,6 +250,7 @@ def ukcp_variable_nodes:
             label,
             acronym: (.tag | split(", ") | .[0]),
             is_anomaly_of: .anomaly_of,
+            is_absolute_anomaly_of: .absolute_anomaly_of,
             is_relative_anomaly_of: .relative_anomaly_of,
             derived_from_variable: .derived_from,
             is_linear_transformation_of: .linear_transformation_of,

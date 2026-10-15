@@ -15,13 +15,22 @@
 # --- Anomalies
 
 ccso:isAnomalyOf a owl:ObjectProperty ;
-    rdfs:domain data:Variable ;
+    rdfs:subPropertyOf data:derivedFromVariable ;
+    rdfs:domain data:DerivedVariable ;
     rdfs:range data:Variable ;
     rdfs:label "is anomaly of"@en ;
-    rdfs:comment "The variable is the anomaly (absolute change with respect to a baseline) of the other variable."@en .
+    rdfs:comment "The variable is an anomaly (change with respect to a baseline, e.g. the climatology of a reference period) of the other variable. Its sub-properties specify whether the anomaly is absolute or relative."@en .
+
+ccso:isAbsoluteAnomalyOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf ccso:isAnomalyOf ;
+    rdfs:domain data:DerivedVariable ;
+    rdfs:range data:Variable ;
+    rdfs:label "is absolute anomaly of"@en ;
+    rdfs:comment "The variable is the absolute anomaly (difference from a baseline) of the other variable."@en .
 
 ccso:isRelativeAnomalyOf a owl:ObjectProperty ;
-    rdfs:domain data:Variable ;
+    rdfs:subPropertyOf ccso:isAnomalyOf ;
+    rdfs:domain data:DerivedVariable ;
     rdfs:range data:Variable ;
     rdfs:label "is relative anomaly of"@en ;
-    rdfs:comment "The variable is the relative anomaly (change with respect to a baseline relative to the baseline, e.g. as a percentage) of the other variable."@en .
+    rdfs:comment "The variable is the relative anomaly (difference from a baseline relative to the baseline, e.g. as a percentage) of the other variable."@en .

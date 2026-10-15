@@ -221,6 +221,7 @@ VARIABLES::with_variable_iris |
                     exact_bounding_region: "data:hasExactBoundingRegion",
                     is_member_of: "top:isMemberOf",
                     is_anomaly_of: "ccso:isAnomalyOf",
+                    is_absolute_anomaly_of: "ccso:isAbsoluteAnomalyOf",
                     is_relative_anomaly_of: "ccso:isRelativeAnomalyOf",
                     is_probabilistic_representation_of: "data:isProbabilisticRepresentationOf",
                     derived_from_variable: "data:derivedFromVariable",
