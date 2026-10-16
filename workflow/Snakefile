@@ -67,3 +67,4 @@ rule sources_analysis:
     input:
         rules.cmor_tables_analysis.output,
         rules.ukcp18_unmapped_variables.output,
+        rules.cordex_cmip5_variables_check.output,

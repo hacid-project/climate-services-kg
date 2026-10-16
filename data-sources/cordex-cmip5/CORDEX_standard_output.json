@@ -1,0 +1,6390 @@
+[
+  {
+    "Header": {
+      "table_id": "Table 3hr",
+      "frequency": "3hr",
+      "project_id": "CORDEX",
+      "table_date": "2014-08-18",
+      "title": "3-hourly output (3hr)",
+      "source": "CORDEX_standard_output.xls",
+      "comment": "CORDEX attempts to adapt as much as possible to CMIP5. Therefore, the specifications of the variables requested for the CORDEX archive, which until now are laid down in a file CORDEX_variables_requirements_table.xls will be formatted as is the 'standard_output.xls' spread sheet provided by the CMIP5. The names of the sheets for the atmospheric variables remain unchanged in order not to necessitate a renaming of the CMOR MIP tables. The names of the sheets with oceanic variables will be the same but with a capital 'O' prepended. The sheet 'all' will be kept, and any specification in that sheet will be pointed at in the other sheets. The base version is of 21 Feb 2014, Version 3.1, SVN revision 6378 in http://svn-mad.zmaw.de/svn/mad/Model/DOCs/cordex_specs."
+    },
+    "variable_entry": {
+      "tas": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Near-Surface Air Temperature",
+        "out_name": "tas",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "tas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "pr": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Precipitation",
+        "out_name": "pr",
+        "standard_name": "precipitation_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "pr",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "ps": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Surface Air Pressure",
+        "out_name": "ps",
+        "standard_name": "surface_air_pressure",
+        "units": "Pa",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "ps",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          }
+        }
+      },
+      "psl": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Sea Level Pressure",
+        "out_name": "psl",
+        "standard_name": "air_pressure_at_sea_level",
+        "units": "Pa",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "psl",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "huss": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Near-Surface Specific Humidity",
+        "out_name": "huss",
+        "standard_name": "specific_humidity",
+        "units": "1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "huss",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "hurs": {
+        "frequency": "3hr",
+        "priority": "2",
+        "long_name": "Near-Surface Relative Humidity",
+        "out_name": "hurs",
+        "standard_name": "relative_humidity",
+        "units": "%",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "hurs",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "sfcWind": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Near-Surface Wind Speed",
+        "out_name": "sfcWind",
+        "standard_name": "wind_speed",
+        "units": "m s-1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "sfcWind",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "clt": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Total Cloud Fraction",
+        "out_name": "clt",
+        "standard_name": "cloud_area_fraction",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "clt",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "sund": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Duration of Sunshine",
+        "out_name": "sund",
+        "standard_name": "duration_of_sunshine",
+        "units": "s",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "sund",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsds": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Surface Downwelling Shortwave Radiation",
+        "out_name": "rsds",
+        "standard_name": "surface_downwelling_shortwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsds",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlds": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Surface Downwelling Longwave Radiation",
+        "out_name": "rlds",
+        "standard_name": "surface_downwelling_longwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlds",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "hfls": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Surface Upward Latent Heat Flux",
+        "out_name": "hfls",
+        "standard_name": "surface_upward_latent_heat_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "hfls",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "hfss": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Surface Upward Sensible Heat Flux",
+        "out_name": "hfss",
+        "standard_name": "surface_upward_sensible_heat_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "hfss",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsus": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Surface Upwelling Shortwave Radiation",
+        "out_name": "rsus",
+        "standard_name": "surface_upwelling_shortwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsus",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlus": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Surface Upwelling Longwave Radiation",
+        "out_name": "rlus",
+        "standard_name": "surface_upwelling_longwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlus",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "prc": {
+        "frequency": "3hr",
+        "priority": "1",
+        "long_name": "Convective Precipitation",
+        "out_name": "prc",
+        "standard_name": "convective_precipitation_flux",
+        "units": "kg m-2 s-1",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "prc",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Header": {
+      "table_id": "Table 6hr",
+      "frequency": "6hr",
+      "project_id": "CORDEX",
+      "table_date": "2014-08-18",
+      "title": "6-hourly output (6hr)",
+      "source": "CORDEX_standard_output.xls",
+      "comment": "CORDEX attempts to adapt as much as possible to CMIP5. Therefore, the specifications of the variables requested for the CORDEX archive, which until now are laid down in a file CORDEX_variables_requirements_table.xls will be formatted as is the 'standard_output.xls' spread sheet provided by the CMIP5. The names of the sheets for the atmospheric variables remain unchanged in order not to necessitate a renaming of the CMOR MIP tables. The names of the sheets with oceanic variables will be the same but with a capital 'O' prepended. The sheet 'all' will be kept, and any specification in that sheet will be pointed at in the other sheets. The base version is of 21 Feb 2014, Version 3.1, SVN revision 6378 in http://svn-mad.zmaw.de/svn/mad/Model/DOCs/cordex_specs."
+    },
+    "variable_entry": {
+      "evspsbl": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Evaporation",
+        "out_name": "evspsbl",
+        "standard_name": "water_evaporation_flux",
+        "units": "kg m-2 s-1",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "evspsbl",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "evspsblpot": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Potential Evapotranspiration",
+        "out_name": "evspsblpot",
+        "standard_name": "water_potential_evaporation_flux",
+        "units": "kg m-2 s-1",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "evspsblpot",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "mrfso": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Soil Frozen Water Content",
+        "out_name": "mrfso",
+        "standard_name": "soil_frozen_water_content",
+        "units": "kg m-2",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrfso",
+        "modeling_realm": "land landIce",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "mrros": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Surface Runoff",
+        "out_name": "mrros",
+        "standard_name": "surface_runoff_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrros",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "mrro": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Total Runoff",
+        "out_name": "mrro",
+        "standard_name": "runoff_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrro",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "mrso": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Total Soil Moisture Content",
+        "out_name": "mrso",
+        "standard_name": "soil_moisture_content",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrso",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snw": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Surface Snow Amount",
+        "out_name": "snw",
+        "standard_name": "surface_snow_amount",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snw",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snm": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Surface Snow Melt",
+        "out_name": "snm",
+        "standard_name": "surface_snow_melt_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snm",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlut": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "TOA Outgoing Longwave Radiation",
+        "out_name": "rlut",
+        "standard_name": "toa_outgoing_longwave_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlut",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsdt": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "TOA Incident Shortwave Radiation",
+        "out_name": "rsdt",
+        "standard_name": "toa_incoming_shortwave_flux",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsdt",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsut": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "TOA Outgoing Shortwave Radiation",
+        "out_name": "rsut",
+        "standard_name": "toa_outgoing_shortwave_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsut",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "uas": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Eastward Near-Surface Wind",
+        "out_name": "uas",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "cmor_variable_name": "uas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "vas": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Northward Near-Surface Wind",
+        "out_name": "vas",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "cmor_variable_name": "vas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "tauu": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Surface Downward Eastward Wind Stress",
+        "out_name": "tauu",
+        "standard_name": "surface_downward_eastward_stress",
+        "units": "Pa",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "tauu",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "tauv": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Surface Downward Northward Wind Stress",
+        "out_name": "tauv",
+        "standard_name": "surface_downward_northward_stress",
+        "units": "Pa",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "tauv",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "ts": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Surface Temperature",
+        "out_name": "ts",
+        "standard_name": "surface_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "ts",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          }
+        }
+      },
+      "zmla": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Height of Boundary Layer",
+        "out_name": "zmla",
+        "standard_name": "atmosphere_boundary_layer_thickness",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "zmla",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          }
+        }
+      },
+      "prw": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Water Vapor Path",
+        "out_name": "prw",
+        "standard_name": "atmosphere_water_vapor_content",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "prw",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          }
+        }
+      },
+      "clwvi": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Condensed Water Path",
+        "out_name": "clwvi",
+        "standard_name": "atmosphere_cloud_condensed_water_content",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "clwvi",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          }
+        }
+      },
+      "clivi": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Ice Water Path",
+        "out_name": "clivi",
+        "standard_name": "atmosphere_cloud_ice_content",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "clivi",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          }
+        }
+      },
+      "ua850": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua850",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va850": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va850",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta850": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta850",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "hus850": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Specific Humidity",
+        "out_name": "hus850",
+        "standard_name": "specific_humidity",
+        "units": "1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "hus850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ua500": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua500",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va500": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va500",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "zg500": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Geopotential Height",
+        "out_name": "zg500",
+        "standard_name": "geopotential_height",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "zg500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta500": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta500",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ua200": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua200",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va200": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va200",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta200": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta200",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "zg200": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Geopotential Height",
+        "out_name": "zg200",
+        "standard_name": "geopotential_height",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "zg200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "clh": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "High Level Cloud Fraction",
+        "out_name": "clh",
+        "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat pressure time",
+        "cmor_variable_name": "clh",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "clm": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Mid Level Cloud Fraction",
+        "out_name": "clm",
+        "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat pressure time",
+        "cmor_variable_name": "clm",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "cll": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Low Level Cloud Fraction",
+        "out_name": "cll",
+        "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat pressure time",
+        "cmor_variable_name": "cll",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "snc": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Snow Area Fraction",
+        "out_name": "snc",
+        "standard_name": "surface_snow_area_fraction",
+        "units": "%",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snc",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snd": {
+        "frequency": "6hr",
+        "priority": "1",
+        "long_name": "Snow Depth",
+        "out_name": "snd",
+        "standard_name": "surface_snow_thickness",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snd",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Header": {
+      "table_id": "Table day",
+      "frequency": "day",
+      "project_id": "CORDEX",
+      "table_date": "2014-08-18",
+      "title": "daily output (day)",
+      "source": "CORDEX_standard_output.xls",
+      "comment": "CORDEX attempts to adapt as much as possible to CMIP5. Therefore, the specifications of the variables requested for the CORDEX archive, which until now are laid down in a file CORDEX_variables_requirements_table.xls will be formatted as is the 'standard_output.xls' spread sheet provided by the CMIP5. The names of the sheets for the atmospheric variables remain unchanged in order not to necessitate a renaming of the CMOR MIP tables. The names of the sheets with oceanic variables will be the same but with a capital 'O' prepended. The sheet 'all' will be kept, and any specification in that sheet will be pointed at in the other sheets. The base version is of 21 Feb 2014, Version 3.1, SVN revision 6378 in http://svn-mad.zmaw.de/svn/mad/Model/DOCs/cordex_specs."
+    },
+    "variable_entry": {
+      "tas": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Near-Surface Air Temperature",
+        "out_name": "tas",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "tas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "tasmax": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Daily Maximum Near-Surface Air Temperature",
+        "out_name": "tasmax",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "tasmax",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      },
+      "tasmin": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Daily Minimum Near-Surface Air Temperature",
+        "out_name": "tasmin",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "tasmin",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      },
+      "pr": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Precipitation",
+        "out_name": "pr",
+        "standard_name": "precipitation_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "pr",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "ps": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Air Pressure",
+        "out_name": "ps",
+        "standard_name": "surface_air_pressure",
+        "units": "Pa",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "ps",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          }
+        }
+      },
+      "psl": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Sea Level Pressure",
+        "out_name": "psl",
+        "standard_name": "air_pressure_at_sea_level",
+        "units": "Pa",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "psl",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "huss": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Near-Surface Specific Humidity",
+        "out_name": "huss",
+        "standard_name": "specific_humidity",
+        "units": "1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "huss",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "hurs": {
+        "frequency": "day",
+        "priority": "2",
+        "long_name": "Near-Surface Relative Humidity",
+        "out_name": "hurs",
+        "standard_name": "relative_humidity",
+        "units": "%",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "hurs",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "sfcWind": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Near-Surface Wind Speed",
+        "out_name": "sfcWind",
+        "standard_name": "wind_speed",
+        "units": "m s-1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "sfcWind",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "sfcWindmax": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Daily Maximum Near-Surface Wind Speed",
+        "out_name": "sfcWindmax",
+        "standard_name": "wind_speed",
+        "units": "m s-1",
+        "type": "real",
+        "cmor_variable_name": "sfcWindmax",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      },
+      "clt": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Total Cloud Fraction",
+        "out_name": "clt",
+        "standard_name": "cloud_area_fraction",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "clt",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "sund": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Duration of Sunshine",
+        "out_name": "sund",
+        "standard_name": "duration_of_sunshine",
+        "units": "s",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "sund",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsds": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Downwelling Shortwave Radiation",
+        "out_name": "rsds",
+        "standard_name": "surface_downwelling_shortwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsds",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlds": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Downwelling Longwave Radiation",
+        "out_name": "rlds",
+        "standard_name": "surface_downwelling_longwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlds",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "hfls": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Upward Latent Heat Flux",
+        "out_name": "hfls",
+        "standard_name": "surface_upward_latent_heat_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "hfls",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "hfss": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Upward Sensible Heat Flux",
+        "out_name": "hfss",
+        "standard_name": "surface_upward_sensible_heat_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "hfss",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsus": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Upwelling Shortwave Radiation",
+        "out_name": "rsus",
+        "standard_name": "surface_upwelling_shortwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsus",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlus": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Upwelling Longwave Radiation",
+        "out_name": "rlus",
+        "standard_name": "surface_upwelling_longwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlus",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "evspsbl": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Evaporation",
+        "out_name": "evspsbl",
+        "standard_name": "water_evaporation_flux",
+        "units": "kg m-2 s-1",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "evspsbl",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "evspsblpot": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Potential Evapotranspiration",
+        "out_name": "evspsblpot",
+        "standard_name": "water_potential_evaporation_flux",
+        "units": "kg m-2 s-1",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "evspsblpot",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "mrfso": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Soil Frozen Water Content",
+        "out_name": "mrfso",
+        "standard_name": "soil_frozen_water_content",
+        "units": "kg m-2",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrfso",
+        "modeling_realm": "land landIce",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "mrros": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Runoff",
+        "out_name": "mrros",
+        "standard_name": "surface_runoff_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrros",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "mrro": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Total Runoff",
+        "out_name": "mrro",
+        "standard_name": "runoff_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrro",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "mrso": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Total Soil Moisture Content",
+        "out_name": "mrso",
+        "standard_name": "soil_moisture_content",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrso",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snw": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Snow Amount",
+        "out_name": "snw",
+        "standard_name": "surface_snow_amount",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snw",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snm": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Snow Melt",
+        "out_name": "snm",
+        "standard_name": "surface_snow_melt_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snm",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "prhmax": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Daily Maximum Hourly Precipitation Rate",
+        "out_name": "prhmax",
+        "standard_name": "precipitation_flux",
+        "units": "kg m-2 s-1",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "prhmax",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "prc": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Convective Precipitation",
+        "out_name": "prc",
+        "standard_name": "convective_precipitation_flux",
+        "units": "kg m-2 s-1",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "prc",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "rlut": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "TOA Outgoing Longwave Radiation",
+        "out_name": "rlut",
+        "standard_name": "toa_outgoing_longwave_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlut",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsdt": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "TOA Incident Shortwave Radiation",
+        "out_name": "rsdt",
+        "standard_name": "toa_incoming_shortwave_flux",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsdt",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsut": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "TOA Outgoing Shortwave Radiation",
+        "out_name": "rsut",
+        "standard_name": "toa_outgoing_shortwave_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsut",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "uas": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Eastward Near-Surface Wind",
+        "out_name": "uas",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "cmor_variable_name": "uas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "vas": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Northward Near-Surface Wind",
+        "out_name": "vas",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "cmor_variable_name": "vas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "wsgsmax": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Daily Maximum Near-Surface Wind Speed of Gust",
+        "out_name": "wsgsmax",
+        "standard_name": "wind_speed_of_gust",
+        "units": "m s-1",
+        "type": "real",
+        "cmor_variable_name": "wsgsmax",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "tauu": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Downward Eastward Wind Stress",
+        "out_name": "tauu",
+        "standard_name": "surface_downward_eastward_stress",
+        "units": "Pa",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "tauu",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "tauv": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Downward Northward Wind Stress",
+        "out_name": "tauv",
+        "standard_name": "surface_downward_northward_stress",
+        "units": "Pa",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "tauv",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "ts": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Surface Temperature",
+        "out_name": "ts",
+        "standard_name": "surface_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "ts",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          }
+        }
+      },
+      "zmla": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Height of Boundary Layer",
+        "out_name": "zmla",
+        "standard_name": "atmosphere_boundary_layer_thickness",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "zmla",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          }
+        }
+      },
+      "prw": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Water Vapor Path",
+        "out_name": "prw",
+        "standard_name": "atmosphere_water_vapor_content",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "prw",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          }
+        }
+      },
+      "clwvi": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Condensed Water Path",
+        "out_name": "clwvi",
+        "standard_name": "atmosphere_cloud_condensed_water_content",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "clwvi",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          }
+        }
+      },
+      "clivi": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Ice Water Path",
+        "out_name": "clivi",
+        "standard_name": "atmosphere_cloud_ice_content",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "clivi",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          }
+        }
+      },
+      "ua850": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua850",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va850": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va850",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta850": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta850",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "hus850": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Specific Humidity",
+        "out_name": "hus850",
+        "standard_name": "specific_humidity",
+        "units": "1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "hus850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ua500": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua500",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va500": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va500",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "zg500": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Geopotential Height",
+        "out_name": "zg500",
+        "standard_name": "geopotential_height",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "zg500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta500": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta500",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ua200": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua200",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va200": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va200",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta200": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta200",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "zg200": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Geopotential Height",
+        "out_name": "zg200",
+        "standard_name": "geopotential_height",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "zg200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "clh": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "High Level Cloud Fraction",
+        "out_name": "clh",
+        "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat pressure time",
+        "cmor_variable_name": "clh",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "clm": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Mid Level Cloud Fraction",
+        "out_name": "clm",
+        "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat pressure time",
+        "cmor_variable_name": "clm",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "cll": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Low Level Cloud Fraction",
+        "out_name": "cll",
+        "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat pressure time",
+        "cmor_variable_name": "cll",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      },
+      "snc": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Snow Area Fraction",
+        "out_name": "snc",
+        "standard_name": "surface_snow_area_fraction",
+        "units": "%",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snc",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snd": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Snow Depth",
+        "out_name": "snd",
+        "standard_name": "surface_snow_thickness",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snd",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "sic": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Sea Ice Area Fraction",
+        "out_name": "sic",
+        "standard_name": "sea_ice_area_fraction",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "sic",
+        "modeling_realm": "seaIce ocean",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      },
+      "prsn": {
+        "frequency": "day",
+        "priority": "1",
+        "long_name": "Snowfall Flux",
+        "out_name": "prsn",
+        "standard_name": "snowfall_flux",
+        "units": "kg m-2 s-1",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "prsn",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Header": {
+      "table_id": "Table mon",
+      "frequency": "mon",
+      "project_id": "CORDEX",
+      "table_date": "2014-08-18",
+      "title": "monthly output (mon)",
+      "source": "CORDEX_standard_output.xls",
+      "comment": "CORDEX attempts to adapt as much as possible to CMIP5. Therefore, the specifications of the variables requested for the CORDEX archive, which until now are laid down in a file CORDEX_variables_requirements_table.xls will be formatted as is the 'standard_output.xls' spread sheet provided by the CMIP5. The names of the sheets for the atmospheric variables remain unchanged in order not to necessitate a renaming of the CMOR MIP tables. The names of the sheets with oceanic variables will be the same but with a capital 'O' prepended. The sheet 'all' will be kept, and any specification in that sheet will be pointed at in the other sheets. The base version is of 21 Feb 2014, Version 3.1, SVN revision 6378 in http://svn-mad.zmaw.de/svn/mad/Model/DOCs/cordex_specs."
+    },
+    "variable_entry": {
+      "tas": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Near-Surface Air Temperature",
+        "out_name": "tas",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "tas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "tasmax": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Daily Maximum Near-Surface Air Temperature",
+        "out_name": "tasmax",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "tasmax",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      },
+      "tasmin": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Daily Minimum Near-Surface Air Temperature",
+        "out_name": "tasmin",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "tasmin",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      },
+      "pr": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Precipitation",
+        "out_name": "pr",
+        "standard_name": "precipitation_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "pr",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "psl": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Sea Level Pressure",
+        "out_name": "psl",
+        "standard_name": "air_pressure_at_sea_level",
+        "units": "Pa",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "psl",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "huss": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Near-Surface Specific Humidity",
+        "out_name": "huss",
+        "standard_name": "specific_humidity",
+        "units": "1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "huss",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "hurs": {
+        "frequency": "mon",
+        "priority": "2",
+        "long_name": "Near-Surface Relative Humidity",
+        "out_name": "hurs",
+        "standard_name": "relative_humidity",
+        "units": "%",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "hurs",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "sfcWind": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Near-Surface Wind Speed",
+        "out_name": "sfcWind",
+        "standard_name": "wind_speed",
+        "units": "m s-1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "sfcWind",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "sfcWindmax": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Daily Maximum Near-Surface Wind Speed",
+        "out_name": "sfcWindmax",
+        "standard_name": "wind_speed",
+        "units": "m s-1",
+        "type": "real",
+        "cmor_variable_name": "sfcWindmax",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      },
+      "clt": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Total Cloud Fraction",
+        "out_name": "clt",
+        "standard_name": "cloud_area_fraction",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "clt",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "sund": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Duration of Sunshine",
+        "out_name": "sund",
+        "standard_name": "duration_of_sunshine",
+        "units": "s",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "sund",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsds": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Surface Downwelling Shortwave Radiation",
+        "out_name": "rsds",
+        "standard_name": "surface_downwelling_shortwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsds",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlds": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Surface Downwelling Longwave Radiation",
+        "out_name": "rlds",
+        "standard_name": "surface_downwelling_longwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlds",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "hfls": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Surface Upward Latent Heat Flux",
+        "out_name": "hfls",
+        "standard_name": "surface_upward_latent_heat_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "hfls",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "hfss": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Surface Upward Sensible Heat Flux",
+        "out_name": "hfss",
+        "standard_name": "surface_upward_sensible_heat_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "hfss",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsus": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Surface Upwelling Shortwave Radiation",
+        "out_name": "rsus",
+        "standard_name": "surface_upwelling_shortwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsus",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlus": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Surface Upwelling Longwave Radiation",
+        "out_name": "rlus",
+        "standard_name": "surface_upwelling_longwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlus",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "evspsbl": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Evaporation",
+        "out_name": "evspsbl",
+        "standard_name": "water_evaporation_flux",
+        "units": "kg m-2 s-1",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "evspsbl",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "mrfso": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Soil Frozen Water Content",
+        "out_name": "mrfso",
+        "standard_name": "soil_frozen_water_content",
+        "units": "kg m-2",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrfso",
+        "modeling_realm": "land landIce",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "mrros": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Surface Runoff",
+        "out_name": "mrros",
+        "standard_name": "surface_runoff_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrros",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "mrro": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Total Runoff",
+        "out_name": "mrro",
+        "standard_name": "runoff_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrro",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "mrso": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Total Soil Moisture Content",
+        "out_name": "mrso",
+        "standard_name": "soil_moisture_content",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrso",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snw": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Surface Snow Amount",
+        "out_name": "snw",
+        "standard_name": "surface_snow_amount",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snw",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snm": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Surface Snow Melt",
+        "out_name": "snm",
+        "standard_name": "surface_snow_melt_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snm",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlut": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "TOA Outgoing Longwave Radiation",
+        "out_name": "rlut",
+        "standard_name": "toa_outgoing_longwave_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlut",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsdt": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "TOA Incident Shortwave Radiation",
+        "out_name": "rsdt",
+        "standard_name": "toa_incoming_shortwave_flux",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsdt",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsut": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "TOA Outgoing Shortwave Radiation",
+        "out_name": "rsut",
+        "standard_name": "toa_outgoing_shortwave_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsut",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "uas": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Eastward Near-Surface Wind",
+        "out_name": "uas",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "cmor_variable_name": "uas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "vas": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Northward Near-Surface Wind",
+        "out_name": "vas",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "cmor_variable_name": "vas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ua850": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua850",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va850": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va850",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta850": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta850",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "hus850": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Specific Humidity",
+        "out_name": "hus850",
+        "standard_name": "specific_humidity",
+        "units": "1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "hus850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ua500": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua500",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va500": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va500",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "zg500": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Geopotential Height",
+        "out_name": "zg500",
+        "standard_name": "geopotential_height",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "zg500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta500": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta500",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ua200": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua200",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va200": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va200",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta200": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta200",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "zg200": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Geopotential Height",
+        "out_name": "zg200",
+        "standard_name": "geopotential_height",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "zg200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snc": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Snow Area Fraction",
+        "out_name": "snc",
+        "standard_name": "surface_snow_area_fraction",
+        "units": "%",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snc",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snd": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Snow Depth",
+        "out_name": "snd",
+        "standard_name": "surface_snow_thickness",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snd",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "sic": {
+        "frequency": "mon",
+        "priority": "1",
+        "long_name": "Sea Ice Area Fraction",
+        "out_name": "sic",
+        "standard_name": "sea_ice_area_fraction",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "sic",
+        "modeling_realm": "seaIce ocean",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Header": {
+      "table_id": "Table sem",
+      "frequency": "sem",
+      "project_id": "CORDEX",
+      "table_date": "2014-08-18",
+      "title": "seasonal output (sem)",
+      "source": "CORDEX_standard_output.xls",
+      "comment": "CORDEX attempts to adapt as much as possible to CMIP5. Therefore, the specifications of the variables requested for the CORDEX archive, which until now are laid down in a file CORDEX_variables_requirements_table.xls will be formatted as is the 'standard_output.xls' spread sheet provided by the CMIP5. The names of the sheets for the atmospheric variables remain unchanged in order not to necessitate a renaming of the CMOR MIP tables. The names of the sheets with oceanic variables will be the same but with a capital 'O' prepended. The sheet 'all' will be kept, and any specification in that sheet will be pointed at in the other sheets. The base version is of 21 Feb 2014, Version 3.1, SVN revision 6378 in http://svn-mad.zmaw.de/svn/mad/Model/DOCs/cordex_specs."
+    },
+    "variable_entry": {
+      "tas": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Near-Surface Air Temperature",
+        "out_name": "tas",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "tas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "tasmax": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Daily Maximum Near-Surface Air Temperature",
+        "out_name": "tasmax",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "tasmax",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      },
+      "tasmin": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Daily Minimum Near-Surface Air Temperature",
+        "out_name": "tasmin",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "tasmin",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      },
+      "pr": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Precipitation",
+        "out_name": "pr",
+        "standard_name": "precipitation_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "pr",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "psl": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Sea Level Pressure",
+        "out_name": "psl",
+        "standard_name": "air_pressure_at_sea_level",
+        "units": "Pa",
+        "cell_methods": "time: point",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "psl",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "huss": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Near-Surface Specific Humidity",
+        "out_name": "huss",
+        "standard_name": "specific_humidity",
+        "units": "1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "huss",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "hurs": {
+        "frequency": "sem",
+        "priority": "2",
+        "long_name": "Near-Surface Relative Humidity",
+        "out_name": "hurs",
+        "standard_name": "relative_humidity",
+        "units": "%",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "hurs",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "sfcWind": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Near-Surface Wind Speed",
+        "out_name": "sfcWind",
+        "standard_name": "wind_speed",
+        "units": "m s-1",
+        "cell_methods": "time: point",
+        "type": "real",
+        "cmor_variable_name": "sfcWind",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "8"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*8"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*8"
+          }
+        }
+      },
+      "sfcWindmax": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Daily Maximum Near-Surface Wind Speed",
+        "out_name": "sfcWindmax",
+        "standard_name": "wind_speed",
+        "units": "m s-1",
+        "type": "real",
+        "cmor_variable_name": "sfcWindmax",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      },
+      "clt": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Total Cloud Fraction",
+        "out_name": "clt",
+        "standard_name": "cloud_area_fraction",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "clt",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "sund": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Duration of Sunshine",
+        "out_name": "sund",
+        "standard_name": "duration_of_sunshine",
+        "units": "s",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "sund",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsds": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Surface Downwelling Shortwave Radiation",
+        "out_name": "rsds",
+        "standard_name": "surface_downwelling_shortwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsds",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlds": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Surface Downwelling Longwave Radiation",
+        "out_name": "rlds",
+        "standard_name": "surface_downwelling_longwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlds",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "hfls": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Surface Upward Latent Heat Flux",
+        "out_name": "hfls",
+        "standard_name": "surface_upward_latent_heat_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "hfls",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "hfss": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Surface Upward Sensible Heat Flux",
+        "out_name": "hfss",
+        "standard_name": "surface_upward_sensible_heat_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "hfss",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsus": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Surface Upwelling Shortwave Radiation",
+        "out_name": "rsus",
+        "standard_name": "surface_upwelling_shortwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsus",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlus": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Surface Upwelling Longwave Radiation",
+        "out_name": "rlus",
+        "standard_name": "surface_upwelling_longwave_flux_in_air",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlus",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "8",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "evspsbl": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Evaporation",
+        "out_name": "evspsbl",
+        "standard_name": "water_evaporation_flux",
+        "units": "kg m-2 s-1",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "evspsbl",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "mrfso": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Soil Frozen Water Content",
+        "out_name": "mrfso",
+        "standard_name": "soil_frozen_water_content",
+        "units": "kg m-2",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrfso",
+        "modeling_realm": "land landIce",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "mrros": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Surface Runoff",
+        "out_name": "mrros",
+        "standard_name": "surface_runoff_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrros",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "mrro": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Total Runoff",
+        "out_name": "mrro",
+        "standard_name": "runoff_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrro",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "mrso": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Total Soil Moisture Content",
+        "out_name": "mrso",
+        "standard_name": "soil_moisture_content",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "mrso",
+        "modeling_realm": "land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snw": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Surface Snow Amount",
+        "out_name": "snw",
+        "standard_name": "surface_snow_amount",
+        "units": "kg m-2",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snw",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snm": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Surface Snow Melt",
+        "out_name": "snm",
+        "standard_name": "surface_snow_melt_flux",
+        "units": "kg m-2 s-1",
+        "cell_methods": "area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snm",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rlut": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "TOA Outgoing Longwave Radiation",
+        "out_name": "rlut",
+        "standard_name": "toa_outgoing_longwave_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rlut",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsdt": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "TOA Incident Shortwave Radiation",
+        "out_name": "rsdt",
+        "standard_name": "toa_incoming_shortwave_flux",
+        "units": "W m-2",
+        "positive": "down",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsdt",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "rsut": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "TOA Outgoing Shortwave Radiation",
+        "out_name": "rsut",
+        "standard_name": "toa_outgoing_shortwave_flux",
+        "units": "W m-2",
+        "positive": "up",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "rsut",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "a"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1"
+          },
+          "seasonal": {
+            "samples_per_season": "1"
+          }
+        }
+      },
+      "uas": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Eastward Near-Surface Wind",
+        "out_name": "uas",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "cmor_variable_name": "uas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "vas": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Northward Near-Surface Wind",
+        "out_name": "vas",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "cmor_variable_name": "vas",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ua850": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua850",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va850": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va850",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta850": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta850",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "hus850": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Specific Humidity",
+        "out_name": "hus850",
+        "standard_name": "specific_humidity",
+        "units": "1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "hus850",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ua500": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua500",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va500": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va500",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "zg500": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Geopotential Height",
+        "out_name": "zg500",
+        "standard_name": "geopotential_height",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "zg500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta500": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta500",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta500",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ua200": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Eastward Wind",
+        "out_name": "ua200",
+        "standard_name": "eastward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ua200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "va200": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Northward Wind",
+        "out_name": "va200",
+        "standard_name": "northward_wind",
+        "units": "m s-1",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "va200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "ta200": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Air Temperature",
+        "out_name": "ta200",
+        "standard_name": "air_temperature",
+        "units": "K",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "ta200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "zg200": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Geopotential Height",
+        "out_name": "zg200",
+        "standard_name": "geopotential_height",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat height time",
+        "cmor_variable_name": "zg200",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snc": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Snow Area Fraction",
+        "out_name": "snc",
+        "standard_name": "surface_snow_area_fraction",
+        "units": "%",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snc",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "snd": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Snow Depth",
+        "out_name": "snd",
+        "standard_name": "surface_snow_thickness",
+        "units": "m",
+        "cell_methods": "time: point area: mean where land",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "snd",
+        "modeling_realm": "landIce land",
+        "requested_output": {
+          "sub-daily": {
+            "tier": "Tier 2",
+            "samples_per_day": "4",
+            "aggregation": "i"
+          },
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1",
+            "aggregation": "4"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m*4"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s*4"
+          }
+        }
+      },
+      "sic": {
+        "frequency": "sem",
+        "priority": "1",
+        "long_name": "Sea Ice Area Fraction",
+        "out_name": "sic",
+        "standard_name": "sea_ice_area_fraction",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat time",
+        "cmor_variable_name": "sic",
+        "modeling_realm": "seaIce ocean",
+        "requested_output": {
+          "daily": {
+            "tier": "Tier 1",
+            "samples_per_day": "1"
+          },
+          "monthly": {
+            "tier": "Core",
+            "samples_per_month": "1",
+            "aggregation": "m"
+          },
+          "seasonal": {
+            "samples_per_season": "1",
+            "aggregation": "s"
+          }
+        }
+      }
+    }
+  },
+  {
+    "Header": {
+      "table_id": "Table fx",
+      "frequency": "fx",
+      "project_id": "CORDEX",
+      "table_date": "2014-08-18",
+      "title": "time-invariant output (fx)",
+      "source": "CORDEX_standard_output.xls",
+      "comment": "CORDEX attempts to adapt as much as possible to CMIP5. Therefore, the specifications of the variables requested for the CORDEX archive, which until now are laid down in a file CORDEX_variables_requirements_table.xls will be formatted as is the 'standard_output.xls' spread sheet provided by the CMIP5. The names of the sheets for the atmospheric variables remain unchanged in order not to necessitate a renaming of the CMOR MIP tables. The names of the sheets with oceanic variables will be the same but with a capital 'O' prepended. The sheet 'all' will be kept, and any specification in that sheet will be pointed at in the other sheets. The base version is of 21 Feb 2014, Version 3.1, SVN revision 6378 in http://svn-mad.zmaw.de/svn/mad/Model/DOCs/cordex_specs."
+    },
+    "variable_entry": {
+      "areacella": {
+        "frequency": "fx",
+        "priority": "1",
+        "long_name": "Atmosphere Grid-Cell Area",
+        "out_name": "areacella",
+        "standard_name": "cell_area",
+        "units": "m2",
+        "type": "real",
+        "dimensions": "rlon rlat",
+        "cmor_variable_name": "areacella",
+        "modeling_realm": "atmos land",
+        "requested_output": {
+          "fx": {}
+        }
+      },
+      "orog": {
+        "frequency": "fx",
+        "priority": "1",
+        "long_name": "Surface Altitude",
+        "out_name": "orog",
+        "standard_name": "surface_altitude",
+        "units": "m",
+        "type": "real",
+        "dimensions": "rlon rlat",
+        "cmor_variable_name": "orog",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "fx": {}
+        }
+      },
+      "sftlf": {
+        "frequency": "fx",
+        "priority": "1",
+        "long_name": "Land Area Fraction",
+        "out_name": "sftlf",
+        "standard_name": "land_area_fraction",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat",
+        "cmor_variable_name": "sftlf",
+        "modeling_realm": "atmos",
+        "requested_output": {
+          "fx": {}
+        }
+      },
+      "sftgif": {
+        "frequency": "fx",
+        "priority": "1",
+        "long_name": "Fraction of Grid Cell Covered with Glacier",
+        "out_name": "sftgif",
+        "standard_name": "land_ice_area_fraction",
+        "units": "%",
+        "type": "real",
+        "dimensions": "rlon rlat",
+        "cmor_variable_name": "sftgif",
+        "modeling_realm": "land",
+        "requested_output": {
+          "fx": {}
+        }
+      },
+      "mrsofc": {
+        "frequency": "fx",
+        "priority": "1",
+        "long_name": "Capacity of Soil to Store Water",
+        "out_name": "mrsofc",
+        "standard_name": "soil_moisture_content_at_field_capacity",
+        "units": "kg m-2",
+        "type": "real",
+        "dimensions": "rlon rlat",
+        "cmor_variable_name": "mrsofc",
+        "modeling_realm": "land",
+        "requested_output": {
+          "fx": {}
+        }
+      },
+      "rootd": {
+        "frequency": "fx",
+        "priority": "1",
+        "long_name": "Maximum Root Depth",
+        "out_name": "rootd",
+        "standard_name": "root_depth",
+        "units": "m",
+        "type": "real",
+        "dimensions": "rlon rlat",
+        "cmor_variable_name": "rootd",
+        "modeling_realm": "land",
+        "requested_output": {
+          "fx": {}
+        }
+      }
+    }
+  }
+]

@@ -26,15 +26,16 @@
 # data-sources/cmor-tables/mapping/mip-mapping.md), resolved from the
 # definitions of the variables in the CMIP5 CMOR tables (see cmip5_variable_iri
 # in data-sources/cmip5/mapping/esgf.jq), in the tables of the time frequency
-# of the dataset (see _frequency_tables).
+# of the dataset (see cordex-variables.jq).
 #
 # Arguments: --slurpfile cmor_tables <tables of the CMIP5 CMOR tables>
 # (data-sources/cmor-tables/data/cmip5/5.0.json), --slurpfile model_synonyms
-# mapping/cmip5-model-synonyms.json; the modules of data-sources/cmip5/mapping
-# (esgf.jq) and of data-sources/cmor-tables/mapping must be in the library path
-# (-L).
+# mapping/cmip5-model-synonyms.json; the modules of this directory, of
+# data-sources/cmip5/mapping (esgf.jq) and of data-sources/cmor-tables/mapping
+# must be in the library path (-L).
 
 include "esgf";
+include "cordex-variables";
 
 # --- Driving models (clean-data.jq)
 
@@ -73,34 +74,11 @@ def _clean:
     .driving_model = $driving_models |
     .master_id |= _fix_id($driving_models);
 
-# --- Variables
-
-# CMIP5 CMOR tables of the time frequencies of the CORDEX datasets, where
-# their variables are looked up first (the variables of the other frequencies,
-# as 1hr and sem, in any table)
-def _frequency_tables:
-    {
-        "3hr": ["3hr"],
-        "6hr": ["6hrPlev", "6hrLev"],
-        "day": ["day", "cfDay"],
-        "mon": ["Amon", "Lmon", "LImon", "OImon", "aero", "cfMon"],
-        "fx": ["fx"]
-    };
-
 # --- Mapping
 
 [inputs | .response.docs[] | _clean] as $datasets |
 ($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
-# IRIs of the variables of the datasets, by variable and time frequency
-(
-    [$datasets[] | {variable: .variable[], frequency: .time_frequency[0]}] |
-    unique |
-    map({
-        key: "\(.variable) \(.frequency)",
-        value: (.tables = (_frequency_tables[.frequency] // []) | cmip5_variable_iri($entries_by_name))
-    }) |
-    from_entries
-) as $variable_iris |
+($datasets | variable_iris($entries_by_name)) as $variable_iris |
 [
     $datasets[] |
     (.master_id | split(".")) as $parts |
@@ -139,7 +117,7 @@ def _frequency_tables:
     [.rcm_name[] | ns + "models/\(quote)"] as $models |
     [.institute[] | ns + "organizations/\(quote)"] as $institutes |
     .time_frequency[0] as $frequency |
-    [.variable[] | $variable_iris["\(.) \($frequency)"]] as $variables |
+    [.variable[] | $variable_iris[variable_key(.; $frequency)]] as $variables |
     (.experiment | scenario_iris | map(id(.))) as $refers_to_scenario |
     temporal_grid as $time |
     ($time | temporal_iris) as $time_iris |

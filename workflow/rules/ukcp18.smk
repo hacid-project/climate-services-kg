@@ -55,7 +55,7 @@ rule ukcp18_mip_variable_units:
     shell:
         "jq -n '[inputs | .[\"@graph\"][]] |"
         " (map(select(.[\"@type\"] | index(\"top:UnitOfMeasure\")?) | {{key: .[\"@id\"], value: .[\"rdfs:label\"]}}) | from_entries) as $units |"
-        " map(select(.[\"@type\"] == \"data:Variable\" and .hasUnitOfMeasure) | {{key: .[\"@id\"], value: $units[.hasUnitOfMeasure]}}) |"
+        " map(select((.[\"@type\"] | IN(\"data:Variable\", \"data:DeterministicVariable\")) and .hasUnitOfMeasure) | {{key: .[\"@id\"], value: $units[.hasUnitOfMeasure]}}) |"
         " from_entries' {input:q} > {output:q} 2> {log:q}"
 
 
@@ -130,7 +130,7 @@ rule ukcp18_unmapped_variables:
         "logs/ukcp18/unmapped_variables.log",
     shell:
         "root=$PWD;"
-        " jq -n '[inputs | .[\"@graph\"][] | select(.[\"@type\"] == \"data:Variable\") | .[\"@id\"]] | unique'"
+        " jq -n '[inputs | .[\"@graph\"][] | select((.[\"@type\"] | IN(\"data:Variable\", \"data:DeterministicVariable\"))) | .[\"@id\"]] | unique'"
         " {input.kg_variables:q} > $root/{output:q}.variables.json 2> $root/{log:q} &&"
         " cd data-sources/ukcp18 &&"
         " jq -L mapping -L ../cmor-tables/mapping --slurpfile kg_variables $root/{output:q}.variables.json"
