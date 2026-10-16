@@ -6,6 +6,7 @@
 rule cordex_cmip5:
     input:
         "data-sources/cordex-cmip5/rdf/datasets.jsonld",
+        "data-sources/cordex-cmip5/rdf/variables.jsonld",
 
 
 # Metadata of the CORDEX-CMIP5 datasets (https://doi.org/10.5281/zenodo.23364077):
@@ -39,6 +40,8 @@ rule cordex_cmip5_map_datasets:
             "data-sources/cmor-tables/data/{edition}.json",
             edition=config["cmip5"]["cmor_tables"],
         ),
+        standard_output="data-sources/cordex-cmip5/CORDEX_standard_output.json",
+        kg_variables=rules.cmor_tables_variable_iris.output,
         modules=CORDEX_CMIP5_MODULES,
     output:
         "data-sources/cordex-cmip5/rdf/datasets.jsonld",
@@ -48,7 +51,40 @@ rule cordex_cmip5_map_datasets:
         "jq -n -L data-sources/cordex-cmip5/mapping -L data-sources/cmip5/mapping -L data-sources/cmor-tables/mapping"
         " --slurpfile model_synonyms {input.model_synonyms:q}"
         " --slurpfile cmor_tables {input.cmor_tables:q}"
+        " --slurpfile standard_output {input.standard_output:q}"
+        " --slurpfile kg_variables {input.kg_variables:q}"
         " -f {input.mapping:q} {input.data:q}/cordex-*.json > {output:q} 2> {log:q}"
+
+
+# Variables defined locally: the variables requested by CORDEX (standard
+# output) that are not variables of the KG, mapped as those of the CMOR tables
+# (with the long names of the variables at a single pressure level derived from
+# the MIP variables)
+rule cordex_cmip5_map_variables:
+    input:
+        mapping="data-sources/cordex-cmip5/mapping/variables.jq",
+        standard_output="data-sources/cordex-cmip5/CORDEX_standard_output.json",
+        cmor_tables=expand(
+            "data-sources/cmor-tables/data/{edition}.json",
+            edition=config["cmip5"]["cmor_tables"],
+        ),
+        kg_variables=rules.cmor_tables_variable_iris.output,
+        # tables of the editions of the MIP variables, for the long names
+        mip_tables=expand(
+            "data-sources/cmor-tables/data/{edition}.json",
+            edition=[MIP_EDITIONS["current"], *MIP_EDITIONS["previous"]],
+        ),
+        modules=CORDEX_CMIP5_MODULES + ["data-sources/cmor-tables/mapping/variables-jsonld.jq"],
+    output:
+        "data-sources/cordex-cmip5/rdf/variables.jsonld",
+    log:
+        "logs/cordex_cmip5/map_variables.log",
+    shell:
+        "jq -n -L data-sources/cordex-cmip5/mapping -L data-sources/cmip5/mapping -L data-sources/cmor-tables/mapping"
+        " --slurpfile standard_output {input.standard_output:q}"
+        " --slurpfile cmor_tables {input.cmor_tables:q}"
+        " --slurpfile kg_variables {input.kg_variables:q}"
+        " -f {input.mapping:q} {input.mip_tables:q} > {output:q} 2> {log:q}"
 
 
 # --- Variables requested by CORDEX
@@ -81,20 +117,17 @@ rule cordex_cmip5_variables_check:
             edition=config["cmip5"]["cmor_tables"],
         ),
         modules=CORDEX_CMIP5_MODULES,
-        kg_variables=rules.cmor_tables.input,
+        kg_variables=rules.cmor_tables_variable_iris.output,
     output:
         json="data-sources/cordex-cmip5/analysis/variables-check.json",
         csv="data-sources/cordex-cmip5/analysis/variables-check.csv",
     log:
         "logs/cordex_cmip5/variables_check.log",
     shell:
-        "jq -n '[inputs | .[\"@graph\"][] | select(.[\"@type\"] | IN(\"data:Variable\", \"data:DeterministicVariable\")) | .[\"@id\"]] | unique'"
-        " {input.kg_variables:q} > {output.json:q}.kg-variables.json 2> {log:q} &&"
-        " jq -n -L data-sources/cordex-cmip5/mapping -L data-sources/cmip5/mapping -L data-sources/cmor-tables/mapping"
+        "jq -n -L data-sources/cordex-cmip5/mapping -L data-sources/cmip5/mapping -L data-sources/cmor-tables/mapping"
         " --slurpfile standard_output {input.standard_output:q}"
         " --slurpfile cmor_tables {input.cmor_tables:q}"
-        " --slurpfile kg_variables {output.json:q}.kg-variables.json"
-        " -f {input.check:q} {input.data:q}/cordex-*.json > {output.json:q} 2>> {log:q} &&"
-        " rm {output.json:q}.kg-variables.json &&"
+        " --slurpfile kg_variables {input.kg_variables:q}"
+        " -f {input.check:q} {input.data:q}/cordex-*.json > {output.json:q} 2> {log:q} &&"
         " jq -r '.variables | (.[0] | keys_unsorted) as $keys | ($keys | @csv), (.[] | [.[$keys[]]] | @csv)'"
         " {output.json:q} > {output.csv:q} 2>> {log:q}"

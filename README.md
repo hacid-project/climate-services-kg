@@ -65,8 +65,13 @@ experiments and domains, the simulations (downscalings of the CMIP5 simulations 
 models and the spatial (CORDEX domain) and temporal grids. The driving models are normalised to the CMIP5 model names
 (`mapping/cmip5-model-synonyms.json`), also in the dataset ids. The variables of the datasets are the MIP variables
 resolved, as for CMIP5, from their definitions in the CMIP5 CMOR tables of their time frequency (e.g. a CORDEX `sic`
-is `.../variables/mip/siconc`); the CORDEX variables not in the CMOR tables (e.g. `ta200`, `ua100m`, `pr-bc`) keep the
-IRI `.../variables/mip/<variable>`, which is not a variable of the KG.
+is `.../variables/mip/siconc`). The variables requested by CORDEX (see below) that are not variables of the KG (`ta200`,
+`ua500`, `va500`, `zg200`, `sund`, `clh`, `cll`, `clm`, `wsgsmax`) are defined locally from the CORDEX standard output,
+with the mapping of the CMOR tables (`variables_jsonld`), as `.../variables/cordex/<variable>` in
+`data-sources/cordex-cmip5/rdf/variables.jsonld` (collection `.../variables/cordex`), with the long names of those at a
+single pressure level derived from the analogous MIP variables (e.g. `ta200` is "Air Temperature at 200hPa", as `ta500`
+on `p500`); the other variables not in the
+CMOR tables (e.g. `ua100m`, `pr-bc`) keep the IRI `.../variables/mip/<variable>`, which is not a variable of the KG.
 
 The variables requested for the CORDEX archive (`data-sources/cordex-cmip5/CORDEX_standard_output.xls`, the CORDEX
 standard output) are converted to JSON tables in the format of the CMOR tables, one per frequency
@@ -74,7 +79,12 @@ standard output) are converted to JSON tables in the format of the CMOR tables, 
 against them and against the variables of the KG in `data-sources/cordex-cmip5/analysis/variables-check.json` (summary
 and variables) and `.csv` (`snakemake --cores 4 cordex_cmip5_variables_check`, part of `sources_analysis`): for each
 variable and time frequency, the number of datasets, whether it is requested at that frequency, the units and standard
-names of the standard output and those found in the datasets, and the resolved MIP variable.
+names of the standard output and those found in the datasets, and the resolved variable. The standard names found
+are compared with those of the standard output and of the CMIP5 CMOR tables: other names in a minority of the datasets
+are ignored, while other names in a majority of them (`standard_name_majority_other`) and different definitions
+(`standard_name_definitions_differ`) are left for further analysis; the units are compared in a canonical form, so that
+the same units written differently (e.g. `W/m2` for `W m-2`) are ignored, while different units (e.g. `K` for `m`,
+`units_inconsistent`) are left for further analysis.
 
 ### UKCP18 datasets
 

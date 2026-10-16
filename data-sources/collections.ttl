@@ -13,6 +13,10 @@
     rdfs:label "UKCP variables"@en ;
     rdfs:comment "Collection of variables of the UKCP18 datasets not defined in the CMOR Tables (e.g. anomalies and indices)."@en .
 
+<https://w3id.org/hacid/data/cs/variables/cordex> a top:Collection ;
+    rdfs:label "CORDEX variables"@en ;
+    rdfs:comment "Collection of variables requested by CORDEX (CORDEX standard output) not defined in the CMOR Tables (e.g. variables at a single pressure level)."@en .
+
 <https://w3id.org/hacid/data/cs/climdex/indices> a top:Collection ;
     rdfs:label "Climdex indices"@en ;
     rdfs:comment "Collection of climate indices described in climdex.org."@en .

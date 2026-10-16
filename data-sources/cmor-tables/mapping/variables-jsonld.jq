@@ -1,5 +1,6 @@
 # Mapping of variable definitions of the CMOR tables to JSON-LD (module, used
-# by variables.jq and mip-previous-variables.jq).
+# by variables.jq and mip-previous-variables.jq, and for the tables in the same
+# format of other sources, as data-sources/cordex-cmip5/mapping/variables.jq).
 #
 # The tables of an edition have the shape of CMOR 3 JSON tables (legacy CMOR 2
 # tables are converted by cmor2-tables.jq)
@@ -31,6 +32,8 @@ def _dimension_map:
         "time2": ["time"],
         "time3": ["time"],
         "gridlatitude": ["geodetic-lat"],
+        # rotated grids of the CORDEX tables (rlon rlat, as longitude latitude)
+        "rlon": ["geodetic"],
         "alevel": ["elevation"],
         "alevhalf": ["elevation"],
         "olevel": ["elevation"]
@@ -48,8 +51,9 @@ def variable_entries:
 
 # JSON-LD document of variable entries (as given by variable_entries), with the
 # IRI and the label of each variable given by iri_of and label_of (applied to
-# the entry; the label only if the entry has a long_name)
-def variables_jsonld(iri_of; label_of):
+# the entry; the label only if the entry has a long_name), members of the
+# collection $collection (and of their realms)
+def variables_jsonld(iri_of; label_of; $collection):
     . as $entries |
     _dimension_map as $dimension_map |
     {
@@ -77,7 +81,7 @@ def variables_jsonld(iri_of; label_of):
                         "@id": iri_of,
                         "@type": "data:DeterministicVariable",
                         isMemberOf: [
-                            "https://w3id.org/hacid/data/cs/variables/mip",
+                            $collection,
                             (.modeling_realm | words | @uri "https://w3id.org/hacid/data/cs/realms/\(.)")
                         ],
                         label: (((.long_name | present) as $long_name | label_of) // null),
@@ -115,3 +119,8 @@ def variables_jsonld(iri_of; label_of):
             )
         ]
     };
+
+# JSON-LD document of variable entries of the CMOR tables, members of the
+# collection of the MIP variables
+def variables_jsonld(iri_of; label_of):
+    variables_jsonld(iri_of; label_of; "https://w3id.org/hacid/data/cs/variables/mip");

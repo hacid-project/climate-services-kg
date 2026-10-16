@@ -1,0 +1,58 @@
+# Mapping to JSON-LD of the variables of the CORDEX-CMIP5 datasets defined
+# locally: the variables requested by CORDEX (the CORDEX standard output,
+# CORDEX_standard_output.json, in the format of the CMOR tables) that are not
+# variables of the KG (see local_variables in cordex-variables.jq), mapped as
+# the variables of the CMOR tables (variables_jsonld in
+# data-sources/cmor-tables/mapping/variables-jsonld.jq), as
+# https://w3id.org/hacid/data/cs/variables/cordex/<out_name>, members of the
+# collection https://w3id.org/hacid/data/cs/variables/cordex.
+#
+# The long names of the variables at a single pressure level, <base><level>
+# (e.g. ta200), are derived from the analogous MIP variables, of the same base
+# at a single pressure level (e.g. ta500, on the dimension p500): the quantity
+# of their long names (without a level, e.g. "Air Temperature") at the level,
+# as in the CMOR tables (e.g. "Air Temperature at 200hPa").
+#
+# Input: the tables of the editions of the MIP variables of the KG (current
+# and previous, data-sources/cmor-tables/data/<era>/<version>.json).
+#
+# Arguments (run with -n): --slurpfile standard_output
+# CORDEX_standard_output.json, --slurpfile cmor_tables (the CMIP5 CMOR tables,
+# as for datasets.jq), --slurpfile kg_variables
+# data-sources/cmor-tables/data/variable-iris.json; the modules of this
+# directory, of data-sources/cmip5/mapping and of
+# data-sources/cmor-tables/mapping must be in the library path (-L).
+
+include "variables-jsonld";
+include "esgf";
+include "cordex-variables";
+
+# Quantity names (long names without the level) of the MIP variables at a
+# single pressure level by base, the most common one
+def _single_level_quantities:
+    [
+        .[] | variable_entries[] |
+        (.out_name | capture("^(?<base>[A-Za-z]+)(?<level>[0-9]+)$")) as $name |
+        select([.dimensions | words] | index("p\($name.level)")) |
+        {base: $name.base, quantity: (.long_name | present | sub(" at ?[0-9]+ ?hPa$"; ""))}
+    ] |
+    group_by(.base) |
+    map({key: .[0].base, value: (map(.quantity) | group_by(.) | max_by(length) | .[0])}) |
+    from_entries;
+
+([inputs] | _single_level_quantities) as $quantities |
+($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
+($kg_variables[0] | iri_set) as $kg |
+[
+    local_variables($standard_output[0]; $entries_by_name; $kg) | to_entries[] |
+    .value + {out_name: .key} |
+    ((.out_name | capture("^(?<base>[A-Za-z]+)(?<level>[0-9]+)$")) // null) as $name |
+    if $name != null and $quantities[$name.base] != null then
+        .long_name = "\($quantities[$name.base]) at \($name.level)hPa"
+    end
+] |
+variables_jsonld(
+    .out_name | cordex_variable_iri;
+    "\(.long_name) (\(.out_name))";
+    cordex_variables_collection
+)

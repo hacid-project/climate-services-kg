@@ -28,9 +28,15 @@
 # in data-sources/cmip5/mapping/esgf.jq), in the tables of the time frequency
 # of the dataset (see cordex-variables.jq).
 #
+# The variables not in the KG that CORDEX requests (CORDEX_standard_output.json)
+# are defined locally (see variables.jq and local_variables in
+# cordex-variables.jq), https://w3id.org/hacid/data/cs/variables/cordex/<name>.
+#
 # Arguments: --slurpfile cmor_tables <tables of the CMIP5 CMOR tables>
 # (data-sources/cmor-tables/data/cmip5/5.0.json), --slurpfile model_synonyms
-# mapping/cmip5-model-synonyms.json; the modules of this directory, of
+# mapping/cmip5-model-synonyms.json, --slurpfile standard_output
+# CORDEX_standard_output.json, --slurpfile kg_variables
+# data-sources/cmor-tables/data/variable-iris.json; the modules of this directory, of
 # data-sources/cmip5/mapping (esgf.jq) and of data-sources/cmor-tables/mapping
 # must be in the library path (-L).
 
@@ -78,7 +84,8 @@ def _clean:
 
 [inputs | .response.docs[] | _clean] as $datasets |
 ($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
-($datasets | variable_iris($entries_by_name)) as $variable_iris |
+($kg_variables[0] | iri_set) as $kg |
+($datasets | variable_iris($entries_by_name; local_variables($standard_output[0]; $entries_by_name; $kg); $kg)) as $variable_iris |
 [
     $datasets[] |
     (.master_id | split(".")) as $parts |
