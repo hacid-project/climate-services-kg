@@ -63,7 +63,10 @@ storage plugin to `data-sources/cordex-cmip5/data/cordex-<n>.json` and mapped by
 (`snakemake --cores 4 cordex_cmip5`): datasets, the outputs of their simulations, driving ensembles, ensembles,
 experiments and domains, the simulations (downscalings of the CMIP5 simulations of the driving models), the regional
 models and the spatial (CORDEX domain) and temporal grids. The driving models are normalised to the CMIP5 model names
-(`mapping/cmip5-model-synonyms.json`), also in the dataset ids.
+(`mapping/cmip5-model-synonyms.json`), also in the dataset ids. The variables of the datasets are the MIP variables
+resolved, as for CMIP5, from their definitions in the CMIP5 CMOR tables of their time frequency (e.g. a CORDEX `sic`
+is `.../variables/mip/siconc`); the CORDEX variables not in the CMOR tables (e.g. `ta200`, `ua100m`, `pr-bc`) keep the
+IRI `.../variables/mip/<variable>`, which is not a variable of the KG.
 
 ### UKCP18 datasets
 

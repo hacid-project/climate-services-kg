@@ -26,6 +26,10 @@ rule cordex_cmip5_map_datasets:
         data="data-sources/cordex-cmip5/data",
         mapping="data-sources/cordex-cmip5/mapping/datasets.jq",
         model_synonyms="data-sources/cordex-cmip5/mapping/cmip5-model-synonyms.json",
+        cmor_tables=expand(
+            "data-sources/cmor-tables/data/{edition}.json",
+            edition=config["cmip5"]["cmor_tables"],
+        ),
         modules=[
             "data-sources/cmip5/mapping/esgf.jq",
             "data-sources/cmor-tables/mapping/mip-variables.jq",
@@ -38,4 +42,5 @@ rule cordex_cmip5_map_datasets:
     shell:
         "jq -n -L data-sources/cmip5/mapping -L data-sources/cmor-tables/mapping"
         " --slurpfile model_synonyms {input.model_synonyms:q}"
+        " --slurpfile cmor_tables {input.cmor_tables:q}"
         " -f {input.mapping:q} {input.data:q}/cordex-*.json > {output:q} 2> {log:q}"
