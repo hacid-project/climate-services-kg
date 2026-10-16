@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Download of the CORDEX-CMIP5 datasets from ESGF (CEDA), in pages of the search
+# results, to data/cordex-<n>.json (run from data-sources/cordex-cmip5). The
+# workflow uses the pages published on Zenodo
+# (https://doi.org/10.5281/zenodo.23364077, see workflow/rules/cordex_cmip5.smk).
+
 BASE_URL="https://esgf.ceda.ac.uk/esg-search/search/"
 FILTER_ITEM_TYPE="Dataset"
 FILTER_PROJECTS="CORDEX"
@@ -26,6 +31,6 @@ do
     curl $PAGE_URL \
         -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
         -H 'accept-language: en-GB,en;q=0.9,it-IT;q=0.8,it;q=0.7,es-AR;q=0.6,es;q=0.5,en-US;q=0.4,pt;q=0.3,fr;q=0.2' \
-        >"chunks/cordex-$PAGE_NUM.json"
+        >"data/cordex-$PAGE_NUM.json"
 done
 

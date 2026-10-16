@@ -54,6 +54,17 @@ models and their spatial and temporal grids. The variables of the datasets are t
 resolved through `data-sources/cmor-tables/mapping/mip-mapping.json` from their definitions in the
 CMIP5 CMOR tables (e.g. a CMIP5 `tos`, in K, is `.../variables/mip/cmip6/6.0.19/tos`).
 
+### CORDEX-CMIP5 datasets
+
+The metadata of the CORDEX-CMIP5 datasets found on ESGF (see `download-data.sh`), in pages of the search results, is
+downloaded from Zenodo ([10.5281/zenodo.23364077](https://doi.org/10.5281/zenodo.23364077)) through the Zenodo
+storage plugin to `data-sources/cordex-cmip5/data/cordex-<n>.json` and mapped by
+`data-sources/cordex-cmip5/mapping/datasets.jq` to `data-sources/cordex-cmip5/rdf/datasets.jsonld`
+(`snakemake --cores 4 cordex_cmip5`): datasets, the outputs of their simulations, driving ensembles, ensembles,
+experiments and domains, the simulations (downscalings of the CMIP5 simulations of the driving models), the regional
+models and the spatial (CORDEX domain) and temporal grids. The driving models are normalised to the CMIP5 model names
+(`mapping/cmip5-model-synonyms.json`), also in the dataset ids.
+
 ### UKCP18 datasets
 
 The metadata of the UKCP18 datasets (from CEDA) is downloaded from Zenodo
