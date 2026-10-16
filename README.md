@@ -54,6 +54,28 @@ models and their spatial and temporal grids. The variables of the datasets are t
 resolved through `data-sources/cmor-tables/mapping/mip-mapping.json` from their definitions in the
 CMIP5 CMOR tables (e.g. a CMIP5 `tos`, in K, is `.../variables/mip/cmip6/6.0.19/tos`).
 
+### CORDEX-CMIP5 datasets
+
+The metadata of the CORDEX-CMIP5 datasets found on ESGF (see `download-data.sh`), in pages of the search results, is
+downloaded from Zenodo ([10.5281/zenodo.23364077](https://doi.org/10.5281/zenodo.23364077)) through the Zenodo
+storage plugin to `data-sources/cordex-cmip5/data/cordex-<n>.json` and mapped by
+`data-sources/cordex-cmip5/mapping/datasets.jq` to `data-sources/cordex-cmip5/rdf/datasets.jsonld`
+(`snakemake --cores 4 cordex_cmip5`): datasets, the outputs of their simulations, driving ensembles, ensembles,
+experiments and domains, the simulations (downscalings of the CMIP5 simulations of the driving models), the regional
+models and the spatial (CORDEX domain) and temporal grids. The driving models are normalised to the CMIP5 model names
+(`mapping/cmip5-model-synonyms.json`), also in the dataset ids. The variables of the datasets are the MIP variables
+resolved, as for CMIP5, from their definitions in the CMIP5 CMOR tables of their time frequency (e.g. a CORDEX `sic`
+is `.../variables/mip/siconc`); the CORDEX variables not in the CMOR tables (e.g. `ta200`, `ua100m`, `pr-bc`) keep the
+IRI `.../variables/mip/<variable>`, which is not a variable of the KG.
+
+The variables requested for the CORDEX archive (`data-sources/cordex-cmip5/CORDEX_standard_output.xls`, the CORDEX
+standard output) are converted to JSON tables in the format of the CMOR tables, one per frequency
+(`CORDEX_standard_output.json`, rule `cordex_cmip5_standard_output`), and the variables of the datasets are checked
+against them and against the variables of the KG in `data-sources/cordex-cmip5/analysis/variables-check.json` (summary
+and variables) and `.csv` (`snakemake --cores 4 cordex_cmip5_variables_check`, part of `sources_analysis`): for each
+variable and time frequency, the number of datasets, whether it is requested at that frequency, the units and standard
+names of the standard output and those found in the datasets, and the resolved MIP variable.
+
 ### UKCP18 datasets
 
 The metadata of the UKCP18 datasets (from CEDA) is downloaded from Zenodo

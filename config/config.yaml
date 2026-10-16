@@ -42,5 +42,6 @@ cmor_tables:
 
 cmip5:
   # Edition of the CMOR tables defining the variables of the CMIP5 datasets
-  # (as in cmor_tables.editions), used to resolve their MIP variables
+  # (as in cmor_tables.editions), used to resolve their MIP variables (also of
+  # the CORDEX-CMIP5 datasets)
   cmor_tables: cmip5/5.0

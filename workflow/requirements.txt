@@ -3,3 +3,5 @@ snakemake>=9
 # Pinned: workflow/Snakefile patches a bug of this version
 snakemake-storage-plugin-git==0.1.0
 snakemake-storage-plugin-zenodo
+# Reads the CORDEX standard output (data-sources/cordex-cmip5/CORDEX_standard_output.xls)
+xlrd

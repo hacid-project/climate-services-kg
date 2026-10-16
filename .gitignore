@@ -174,7 +174,6 @@ cython_debug/
 .pypirc
 
 data-sources/cordex-cmip5/data
-data-sources/cordex-cmip5/raw-data/chunks
 data-sources/cordex-cmip5/rdf
 data-sources/cmor-tables/rdf
 data-sources/cmor-tables/data
