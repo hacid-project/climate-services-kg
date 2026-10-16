@@ -68,7 +68,9 @@ resolved, as for CMIP5, from their definitions in the CMIP5 CMOR tables of their
 is `.../variables/mip/siconc`). The variables requested by CORDEX (see below) that are not variables of the KG (`ta200`,
 `ua500`, `va500`, `zg200`, `sund`, `clh`, `cll`, `clm`, `wsgsmax`) are defined locally from the CORDEX standard output,
 with the mapping of the CMOR tables (`variables_jsonld`), as `.../variables/cordex/<variable>` in
-`data-sources/cordex-cmip5/rdf/variables.jsonld` (collection `.../variables/cordex`); the other variables not in the
+`data-sources/cordex-cmip5/rdf/variables.jsonld` (collection `.../variables/cordex`), with the long names of those at a
+single pressure level derived from the analogous MIP variables (e.g. `ta200` is "Air Temperature at 200hPa", as `ta500`
+on `p500`); the other variables not in the
 CMOR tables (e.g. `ua100m`, `pr-bc`) keep the IRI `.../variables/mip/<variable>`, which is not a variable of the KG.
 
 The variables requested for the CORDEX archive (`data-sources/cordex-cmip5/CORDEX_standard_output.xls`, the CORDEX

@@ -58,6 +58,8 @@ rule cordex_cmip5_map_datasets:
 
 # Variables defined locally: the variables requested by CORDEX (standard
 # output) that are not variables of the KG, mapped as those of the CMOR tables
+# (with the long names of the variables at a single pressure level derived from
+# the MIP variables)
 rule cordex_cmip5_map_variables:
     input:
         mapping="data-sources/cordex-cmip5/mapping/variables.jq",
@@ -67,6 +69,11 @@ rule cordex_cmip5_map_variables:
             edition=config["cmip5"]["cmor_tables"],
         ),
         kg_variables=rules.cmor_tables_variable_iris.output,
+        # tables of the editions of the MIP variables, for the long names
+        mip_tables=expand(
+            "data-sources/cmor-tables/data/{edition}.json",
+            edition=[MIP_EDITIONS["current"], *MIP_EDITIONS["previous"]],
+        ),
         modules=CORDEX_CMIP5_MODULES + ["data-sources/cmor-tables/mapping/variables-jsonld.jq"],
     output:
         "data-sources/cordex-cmip5/rdf/variables.jsonld",
@@ -77,7 +84,7 @@ rule cordex_cmip5_map_variables:
         " --slurpfile standard_output {input.standard_output:q}"
         " --slurpfile cmor_tables {input.cmor_tables:q}"
         " --slurpfile kg_variables {input.kg_variables:q}"
-        " -f {input.mapping:q} > {output:q} 2> {log:q}"
+        " -f {input.mapping:q} {input.mip_tables:q} > {output:q} 2> {log:q}"
 
 
 # --- Variables requested by CORDEX
