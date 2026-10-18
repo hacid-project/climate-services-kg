@@ -91,7 +91,9 @@ the same units written differently (e.g. `W/m2` for `W m-2`) are ignored, while 
 `units_inconsistent`) are left for further analysis. The known issues of the datasets are in
 `data-sources/cordex-cmip5/mapping/data-issues.json`: the datasets excluded from the mapping (`emiss` of the NARCliM
 models, the surface emissivity, not the CMIP5 `emiss`) and the names known to be used in place of the CF standard names
-(the clear-sky radiation fluxes of ALADIN63, `known_alias` in the check); see `data-sources/cordex-cmip5/DECISIONS.md`.
+(the clear-sky radiation fluxes of ALADIN63, `known_alias` in the check), the units known to be wrong (the
+geopotential heights in K of RegCM4-3) and the variables of a model with their own units (`pr` in mm and mm/month of
+BOM-SDM, `.../variables/cordex/BOM-SDM/pr/<units>`); see `data-sources/cordex-cmip5/DECISIONS.md`.
 
 ### UKCP18 datasets
 

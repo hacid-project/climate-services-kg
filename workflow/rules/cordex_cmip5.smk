@@ -71,6 +71,7 @@ rule cordex_cmip5_map_variables:
             edition=config["cmip5"]["cmor_tables"],
         ),
         kg_variables=rules.cmor_tables_variable_iris.output,
+        data_issues="data-sources/cordex-cmip5/mapping/data-issues.json",
         # tables of the editions of the MIP variables, for the long names
         mip_tables=expand(
             "data-sources/cmor-tables/data/{edition}.json",
@@ -86,6 +87,7 @@ rule cordex_cmip5_map_variables:
         " --slurpfile standard_output {input.standard_output:q}"
         " --slurpfile cmor_tables {input.cmor_tables:q}"
         " --slurpfile kg_variables {input.kg_variables:q}"
+        " --slurpfile data_issues {input.data_issues:q}"
         " -f {input.mapping:q} {input.mip_tables:q} > {output:q} 2> {log:q}"
 
 

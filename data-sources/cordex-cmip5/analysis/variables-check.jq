@@ -36,8 +36,11 @@
 #   CMOR tables give different units (see canonical_units), else "match" if all
 #   the datasets use the units of the definition, "equivalent" if they use the
 #   same units written differently (e.g. W/m2 for W m-2, ignored),
-#   "inconsistent" if some use other units (e.g. K for m), listed in
-#   other_units;
+#   "known_issue" if the others have units known to be wrong (units_errors in
+#   mapping/data-issues.json) or are of a variable of their model with its own
+#   units (model_variables), "inconsistent" if some use other units (e.g. K for
+#   m), listed in other_units, with the models of their datasets
+#   (other_units_models, as <institute>/<model>);
 # - variable_iri: the IRI resolved by the mapping, and in_kg, whether it is a
 #   variable of the KG or a variable defined locally (see local_variables).
 
@@ -112,6 +115,10 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
             units: ($units[$i]? // null),
             standard_name: $name,
             alias_of: ($dataset | standard_name_alias($issues; $variables[$i]; $name)),
+            # units known to be wrong, or of a variable of the model
+            fixed_units: ($dataset | units_error($issues; $variables[$i])),
+            model_variable: (($dataset | model_variable($issues; $variables[$i])) != null),
+            model: "\($dataset.institute[0])/\($dataset.rcm_name[0])",
             long_name: ($long_names[$i]? // null)
         }
     ] |
@@ -123,6 +130,7 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
             frequency: .[0].frequency,
             datasets: length,
             units: [.[].units],
+            records: [.[] | {units, fixed_units, model_variable, model}],
             standard_names: [.[].standard_name],
             # the standard names, with the known aliases replaced
             cf_standard_names: [.[] | .alias_of // .standard_name],
@@ -141,7 +149,7 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
     unique |
     map(
         . as {$variable, $frequency} |
-        ($found[variable_key($variable; $frequency)] // {datasets: 0, units: [], standard_names: [], cf_standard_names: [], aliased: 0, long_names: []}) as $f |
+        ($found[variable_key($variable; $frequency)] // {datasets: 0, units: [], records: [], standard_names: [], cf_standard_names: [], aliased: 0, long_names: []}) as $f |
         ($standard[$variable] // []) as $entries |
         ([$entries[] | select(.frequency == $frequency)][0] // $entries[0]) as $entry |
         ({variable: $variable, frequency: $frequency, tables: (frequency_tables[$frequency] // [])} | cmip5_variable_spec($entries_by_name)) as $cmor |
@@ -152,7 +160,9 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
         # units
         ($entry.units // $cmor.units) as $definition_units |
         ($definition_units | canonical_units) as $canonical |
-        ([$f.units[] | select((. | canonical_units) != $canonical)]) as $other_units |
+        [$f.records[] | select(.model_variable | not) | select((.fixed_units // .units | canonical_units) != $canonical)] as $other_records |
+        ([$other_records[].units]) as $other_units |
+        ([$f.records[] | select(.model_variable or .fixed_units != null)] | length) as $known_units_issues |
         {
             variable: $variable,
             frequency: $frequency,
@@ -183,11 +193,14 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
                 if $f.datasets == 0 or $definition_units == null then null
                 elif $entry.units != null and $cmor.units != null and ($entry.units | canonical_units) != ($cmor.units | canonical_units) then "definitions_differ"
                 elif all($f.units[]; . == $definition_units) then "match"
+                elif $other_units == [] and $known_units_issues > 0 then "known_issue"
                 elif $other_units == [] then "equivalent"
                 else "inconsistent"
                 end
             ),
             other_units: ($other_units | map(. // "") | _counts),
+            other_units_models: ($other_records | map(.model) | _counts),
+            known_units_issues: $known_units_issues,
             long_name: $entry.long_name,
             long_names: ($f.long_names | unique | join("; ")),
             variable_iri: $iri,
@@ -237,7 +250,10 @@ def _cases($status; f): [$variables[] | select(f == $status) | "\(.variable) \(.
         ),
         units_status: ([$variables[] | .units_status | values] | group_by(.) | map({key: .[0], value: length}) | from_entries),
         units_inconsistent: (
-            [$variables[] | select(.units_status == "inconsistent") | "\(.variable) \(.frequency): \(.other_units) (definition: \(.standard_units // .cmor_units))"]
+            [$variables[] | select(.units_status == "inconsistent") | "\(.variable) \(.frequency): \(.other_units) (definition: \(.standard_units // .cmor_units)) in \(.other_units_models)"]
+        ),
+        units_known_issues: (
+            [$variables[] | select(.units_status == "known_issue") | "\(.variable) \(.frequency): \(.units) (definition: \(.standard_units // .cmor_units))"]
         ),
         units_definitions_differ: (
             [$variables[] | select(.units_status == "definitions_differ") | "\(.variable) \(.frequency): \(.standard_units) (CORDEX), \(.cmor_units) (CMOR tables); datasets: \(.units)"]

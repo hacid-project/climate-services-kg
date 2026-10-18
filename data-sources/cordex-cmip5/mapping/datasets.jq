@@ -127,7 +127,15 @@ def _clean:
     [.rcm_name[] | ns + "models/\(quote)"] as $models |
     [.institute[] | ns + "organizations/\(quote)"] as $institutes |
     .time_frequency[0] as $frequency |
-    [.variable[] | $variable_iris[variable_key(.; $frequency)]] as $variables |
+    # (the variables of a model with their own units, model_variables in
+    # mapping/data-issues.json, are those of the model)
+    . as $record |
+    [
+        .variable[] |
+        . as $variable |
+        (($record | model_variable($data_issues[0]; $variable)) | if . then model_variable_iri else null end) //
+        $variable_iris[variable_key(.; $frequency)]
+    ] as $variables |
     (.experiment | scenario_iris | map(id(.))) as $refers_to_scenario |
     temporal_grid as $time |
     ($time | temporal_iris) as $time_iris |

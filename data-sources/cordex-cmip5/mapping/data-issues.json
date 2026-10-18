@@ -1,46 +1,187 @@
 {
     "excluded_datasets": [
         {
-            "match": {"variable": ["emiss"], "rcm_name": ["WRF360J", "WRF360K", "WRF360L"]},
+            "match": {
+                "variable": [
+                    "emiss"
+                ],
+                "rcm_name": [
+                    "WRF360J",
+                    "WRF360K",
+                    "WRF360L"
+                ]
+            },
             "reason": "The variable emiss of the NARCliM datasets (UNSW, WRF360*) is the surface emissivity (cf_standard_name surface_emissivity, no units), while emiss in the CMIP5 CMOR tables is the emission of sea salt aerosol (kg m-2 s-1): excluded for now, as there is no variable of the KG for it."
         }
     ],
+    "units_errors": [
+        {
+            "match": {
+                "variable": [
+                    "zg200",
+                    "zg300",
+                    "zg400",
+                    "zg500",
+                    "zg600",
+                    "zg700",
+                    "zg850",
+                    "zg925"
+                ],
+                "rcm_name": [
+                    "RegCM4-3"
+                ],
+                "variable_units": [
+                    "K"
+                ]
+            },
+            "units": "m"
+        }
+    ],
+    "units_errors_reason": "The geopotential heights at the pressure levels of the RU-CORE RegCM4-3 datasets (SEA-22) have the units K (with the standard name and long name of the air temperature, see standard_name_aliases): taken as an error in generating the metadata, the datasets keep the variables of their names, in m (the MIP variables, or the variables defined locally, as zg200).",
+    "model_variables": [
+        {
+            "match": {
+                "variable": [
+                    "pr"
+                ],
+                "rcm_name": [
+                    "BOM-SDM"
+                ],
+                "variable_units": [
+                    "mm"
+                ]
+            },
+            "model": "BOM-SDM",
+            "variable": "pr",
+            "units": "mm",
+            "long_name": "Total precipitation rate"
+        },
+        {
+            "match": {
+                "variable": [
+                    "pr"
+                ],
+                "rcm_name": [
+                    "BOM-SDM"
+                ],
+                "variable_units": [
+                    "mm/month"
+                ]
+            },
+            "model": "BOM-SDM",
+            "variable": "pr",
+            "units": "mm/month",
+            "long_name": "Precipitation"
+        }
+    ],
+    "model_variables_reason": "The BoM statistical downscaling (BOM, BOM-SDM, domain AUS) gives pr in mm (daily datasets) and mm/month (monthly datasets), a different use of the variable: each is a variable of its own, variables/cordex/<model>/<variable>/<units>, member of the CORDEX variables and of the variables of the model (variables/cordex/<model>, associated with the model), derived from the MIP variable.",
     "standard_name_aliases": [
         {
-            "match": {"variable": ["rldscs"], "rcm_name": ["ALADIN63"]},
+            "match": {
+                "variable": [
+                    "rldscs"
+                ],
+                "rcm_name": [
+                    "ALADIN63"
+                ]
+            },
             "standard_name": "clear-sky_surface_downwelling_longwave_radiation",
             "cf_standard_name": "surface_downwelling_longwave_flux_in_air_assuming_clear_sky"
         },
         {
-            "match": {"variable": ["rluscs"], "rcm_name": ["ALADIN63"]},
+            "match": {
+                "variable": [
+                    "rluscs"
+                ],
+                "rcm_name": [
+                    "ALADIN63"
+                ]
+            },
             "standard_name": "clear-sky_surface_upwelling_longwave_radiation",
             "cf_standard_name": "surface_upwelling_longwave_flux_in_air_assuming_clear_sky"
         },
         {
-            "match": {"variable": ["rlutcs"], "rcm_name": ["ALADIN63"]},
+            "match": {
+                "variable": [
+                    "rlutcs"
+                ],
+                "rcm_name": [
+                    "ALADIN63"
+                ]
+            },
             "standard_name": "clear-sky_toa_outgoing_longwave_radiation",
             "cf_standard_name": "toa_outgoing_longwave_flux_assuming_clear_sky"
         },
         {
-            "match": {"variable": ["rsdscs"], "rcm_name": ["ALADIN63"]},
+            "match": {
+                "variable": [
+                    "rsdscs"
+                ],
+                "rcm_name": [
+                    "ALADIN63"
+                ]
+            },
             "standard_name": "clear-sky_surface_downwelling_shortwave_radiation",
             "cf_standard_name": "surface_downwelling_shortwave_flux_in_air_assuming_clear_sky"
         },
         {
-            "match": {"variable": ["rsuscs"], "rcm_name": ["ALADIN63"]},
+            "match": {
+                "variable": [
+                    "rsuscs"
+                ],
+                "rcm_name": [
+                    "ALADIN63"
+                ]
+            },
             "standard_name": "clear-sky_surface_upwelling_shortwave_radiation",
             "cf_standard_name": "surface_upwelling_shortwave_flux_in_air_assuming_clear_sky"
         },
         {
-            "match": {"variable": ["rsutcs"], "rcm_name": ["ALADIN63"]},
+            "match": {
+                "variable": [
+                    "rsutcs"
+                ],
+                "rcm_name": [
+                    "ALADIN63"
+                ]
+            },
             "standard_name": "clear-sky_toa_outgoing_shortwave_radiation",
             "cf_standard_name": "toa_outgoing_shortwave_flux_assuming_clear_sky"
         },
         {
-            "match": {"variable": ["reffclwtop"], "rcm_name": ["ALADIN63"]},
+            "match": {
+                "variable": [
+                    "reffclwtop"
+                ],
+                "rcm_name": [
+                    "ALADIN63"
+                ]
+            },
             "standard_name": "cloud-top_effective_droplet_radius",
             "cf_standard_name": "effective_radius_of_cloud_liquid_water_particle_at_liquid_water_cloud_top"
+        },
+        {
+            "match": {
+                "variable": [
+                    "zg200",
+                    "zg300",
+                    "zg400",
+                    "zg500",
+                    "zg600",
+                    "zg700",
+                    "zg850",
+                    "zg925"
+                ],
+                "rcm_name": [
+                    "RegCM4-3",
+                    "RegCM4-4",
+                    "RegCM4-6",
+                    "RegCM4-7"
+                ]
+            },
+            "standard_name": "air_temperature",
+            "cf_standard_name": "geopotential_height"
         }
     ],
-    "standard_name_aliases_reason": "The CNRM ALADIN63 datasets of the clear-sky radiation fluxes (and of reffclwtop) use descriptive names that are not CF standard names; their variables, units and long names are those of the MIP variables with the same name, so they are taken as the CF standard names of the MIP variables (the datasets keep the MIP variables) and reported separately by the check (known_alias)."
+    "standard_name_aliases_reason": "The CNRM ALADIN63 datasets of the clear-sky radiation fluxes (and of reffclwtop) use descriptive names that are not CF standard names; their variables, units and long names are those of the MIP variables with the same name, so they are taken as the CF standard names of the MIP variables (the datasets keep the MIP variables) and reported separately by the check (known_alias). The RegCM4 datasets of the geopotential heights at the pressure levels have the standard name (and long name) of the air temperature, an error in generating the metadata (in RegCM4-3 also the units, see units_errors): taken as the standard name of the geopotential height."
 }

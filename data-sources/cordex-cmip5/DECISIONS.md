@@ -32,6 +32,25 @@ variables (`analysis/variables-check.json`, see the end of this document).
     aerosol (`kg m-2 s-1`), so the resolution by name would give the wrong
     variable. Excluded for now.
 
+- **Wrong units of the geopotential heights** (`mapping/data-issues.json`,
+  `units_errors`): the RU-CORE `RegCM4-3` datasets (SEA-22) of the
+  geopotential heights at the pressure levels (`zg200`, ..., `zg925`, 8
+  datasets each) have the units `K`, and, as the other `RegCM4` datasets
+  (`RegCM4-4`, `RegCM4-6`, `RegCM4-7`), the standard name and long name of the
+  air temperature. Taken as an error in generating the metadata: the datasets
+  keep the variables of their names, in `m` (`.../mip/zg500`,
+  `.../cordex/zg200`), and the check reports them as known issues.
+- **Variables of a model** (`mapping/data-issues.json`, `model_variables`):
+  the BoM statistical downscaling (BOM, `BOM-SDM`, domain AUS) gives `pr` in
+  `mm` (1 daily dataset, "Total precipitation rate") and in `mm/month` (66
+  monthly datasets): a genuinely different use of the variable. Each is a
+  variable of its own, `.../variables/cordex/BOM-SDM/pr/mm` and
+  `.../variables/cordex/BOM-SDM/pr/mm%2Fmonth`, member of the CORDEX variables
+  and of the variables of the model (`.../variables/cordex/BOM-SDM`, associated
+  with the model by `top:associatedWith`), derived from the MIP `pr`
+  (`data:derivedFromVariable`; no linear transformation, as a monthly total
+  depends on the length of the month).
+
 ## Variables (`mapping/cordex-variables.jq`, `mapping/variables.jq`)
 
 - **Resolution to the MIP variables.** As for CMIP5 (see
@@ -87,15 +106,32 @@ definitions of the standard output and of the CMIP5 CMOR tables:
   and long names are those of the MIP variables with the same name, so they
   keep the MIP variables, and the names are taken as the CF standard names of
   the MIP variables (e.g. `surface_downwelling_longwave_flux_in_air_assuming_clear_sky`),
-  reported separately by the check (`known_alias`).
+  reported separately by the check (`known_alias`). Also the standard name
+  `air_temperature` of the `RegCM4` datasets of the geopotential heights is
+  taken as `geopotential_height` (see above).
 - **Units.** The units are compared in a canonical form (symbols with
   exponents): the same units written differently are ignored (`equivalent`,
   e.g. `W/m2` for `W m-2`, `kg/m2/s` for `kg m-2 s-1`, `Kg` for `kg`, and
-  `kg kg-1` for `1`), while different units (`inconsistent`, e.g. `K` for `m`,
-  `1` for `%`, `mm/month` for `kg m-2 s-1`, `None`) are left for further
-  analysis.
+  `kg kg-1` for `1`), units known to be wrong (`units_errors`) and the
+  variables of a model (`model_variables`) are reported as `known_issue`, while
+  different units (`inconsistent`, e.g. `1` for `%`, `None`) are left for
+  further analysis, with the models of their datasets.
 
 ## Open cases
+
+The remaining unit inconsistencies are each specific to the output of one
+model (`other_units_models` in the check):
+
+| Variable | Units | Definition | Model (institute/model) |
+| --- | --- | --- | --- |
+| `hfls`, `hfss` | `kg m-2 s-1` | `W m-2` | CSIRO/CCAM-2008 |
+| `mrso` | `m3/m3` (`avg_soil_moisture_1`) | `kg m-2` | CSIRO/CCAM |
+| `snw` | `m` (`snow_depth_(liquid_water)`) | `kg m-2` | CSIRO/CCAM |
+| `ts` | `units` (standard name `long_name`) | `K` | CSIRO/CCAM-1704 |
+| `hur`, `sic` | `1` (`sic` as `sea_ice_flag`) | `%` | UCAN/WRF341I |
+| `hurs` | `1` | `%` | NUIM/WRF341E |
+| `sftlf` | `1` | `%` | DMI/HIRHAM5 (AFR-44) |
+| `prc` | `None` (standard name `prc`) | `kg m-2 s-1` | ICTP/RegCM4-7 (CAM-22) |
 
 Listed in the summary of `analysis/variables-check.json`:
 `standard_name_majority_other`, `standard_name_definitions_differ`,

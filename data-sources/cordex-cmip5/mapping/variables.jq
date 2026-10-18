@@ -16,7 +16,11 @@
 # Input: the tables of the editions of the MIP variables of the KG (current
 # and previous, data-sources/cmor-tables/data/<era>/<version>.json).
 #
-# Arguments (run with -n): --slurpfile standard_output
+# Also the variables of a model with their own units (model_variables in
+# mapping/data-issues.json), variables/cordex/<model>/<variable>/<units>.
+#
+# Arguments (run with -n): --slurpfile data_issues mapping/data-issues.json,
+# --slurpfile standard_output
 # CORDEX_standard_output.json, --slurpfile cmor_tables (the CMIP5 CMOR tables,
 # as for datasets.jq), --slurpfile kg_variables
 # data-sources/cmor-tables/data/variable-iris.json; the modules of this
@@ -55,4 +59,35 @@ variables_jsonld(
     .out_name | cordex_variable_iri;
     "\(.long_name) (\(.out_name))";
     cordex_variables_collection
-)
+) |
+# The variables of a model with their own units (model_variables in
+# mapping/data-issues.json), derived from the MIP variable, members of the
+# collection of the variables of the model, associated with the model
+.["@graph"] += [
+    $data_issues[0].model_variables[]? |
+    . as $rule |
+    (.units | @uri "https://w3id.org/hacid/data/cs/unitsofmeasure/\(.)") as $unit |
+    {
+        "@id": model_variable_iri,
+        "@type": "data:DeterministicVariable",
+        isMemberOf: [cordex_variables_collection, model_variables_collection(.model)],
+        label: "\(.long_name) (\(.variable), \(.units), \(.model))",
+        acronym: .variable,
+        "data:derivedFromVariable": {"@id": mip_variable_iri_of($rule.variable; ""; $entries_by_name)},
+        hasUnitOfMeasure: $unit,
+        hasValuesOn: $unit
+    },
+    {
+        "@id": model_variables_collection(.model),
+        "@type": "top:Collection",
+        "rdfs:label": {"@value": "\(.model) variables", "@language": "en"},
+        "rdfs:comment": {"@value": "Collection of the variables of the CORDEX-CMIP5 datasets of the model \(.model) used differently from the CORDEX standard (e.g. with other units).", "@language": "en"},
+        "top:associatedWith": {"@id": ("https://w3id.org/hacid/data/cs/models/" + (.model | @uri))}
+    },
+    {
+        "@id": $unit,
+        "@type": ["top:UnitOfMeasure", "data:DimensionalSpace"],
+        "rdfs:label": .units
+    }
+] |
+.["@graph"] |= unique

@@ -89,3 +89,21 @@ def excluded($issues): . as $dataset | any($issues.excluded_datasets[]; .match a
 def standard_name_alias($issues; $variable; $standard_name):
     . as $dataset |
     [$issues.standard_name_aliases[] | select(.standard_name == $standard_name) | select(.match as $m | $dataset | matches($m) and ($m.variable // [$variable] | index($variable)))][0].cf_standard_name;
+
+# The rule of model_variables (variables of a model, with their own units)
+# for a variable of a dataset (input: its ESGF metadata), if any
+def model_variable($issues; $variable):
+    . as $dataset |
+    [$issues.model_variables[]? | select(.variable == $variable) | select(.match as $m | $dataset | matches($m))][0];
+
+# IRI of the collection of the variables of a model
+def model_variables_collection($model): cordex_variables_collection + "/" + ($model | @uri);
+
+# IRI of a variable of a model (input: its rule of model_variables)
+def model_variable_iri: model_variables_collection(.model) + "/" + (.variable | @uri) + "/" + (.units | @uri);
+
+# The correct units of a variable of a dataset (input: its ESGF metadata)
+# whose units are known to be wrong (units_errors), if any
+def units_error($issues; $variable):
+    . as $dataset |
+    [$issues.units_errors[]? | select(.match as $m | $dataset | matches($m) and ($m.variable // [$variable] | index($variable)))][0].units;
