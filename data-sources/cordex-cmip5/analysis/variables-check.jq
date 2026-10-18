@@ -4,7 +4,8 @@
 # cordex_cmip5_standard_output).
 #
 # Input: the pages of the ESGF search results (data/cordex-<n>.json), read
-# with -n. Arguments: --slurpfile standard_output
+# with -n. Arguments: --slurpfile data_issues mapping/data-issues.json,
+# --slurpfile standard_output
 # CORDEX_standard_output.json, --slurpfile cmor_tables (the CMIP5
 # CMOR tables, as for the mapping), --slurpfile kg_variables (the IRIs of the
 # variables of the KG); the modules of mapping/, data-sources/cmip5/mapping and
@@ -21,11 +22,15 @@
 #   cmor_standard_name, cmor_units of the CMIP5 CMOR tables (on which their
 #   definitions agree, see cmip5_variable_spec), and those found in the
 #   datasets (standard_names and units, with the number of datasets);
+# - excluded: the number of datasets excluded from the mapping (see
+#   mapping/data-issues.json), not considered in the other fields;
 # - standard_name_status: null without definitions, otherwise
 #   "definitions_differ" if the standard output and the CMOR tables give
 #   different standard names, else "match" if all the datasets use one of them,
-#   "minority_other" if a minority of the datasets use another one (ignored),
-#   "majority_other" if a majority do;
+#   "known_alias" if the others use a name known to be used in place of it
+#   (standard_name_aliases in mapping/data-issues.json), "minority_other" if a
+#   minority of the datasets use another one (ignored), "majority_other" if a
+#   majority do;
 # - units_status: null without definitions (the standard output, or else the
 #   CMOR tables), otherwise "definitions_differ" if the standard output and the
 #   CMOR tables give different units (see canonical_units), else "match" if all
@@ -73,7 +78,14 @@ def canonical_units:
         end
     end;
 
-[inputs | .response.docs[]] as $datasets |
+$data_issues[0] as $issues |
+[inputs | .response.docs[]] as $all_datasets |
+[$all_datasets[] | select(excluded($issues) | not)] as $datasets |
+# Excluded datasets by variable and frequency
+(
+    [$all_datasets[] | select(excluded($issues)) | variable_key(.variable[]; .time_frequency[0])] |
+    group_by(.) | map({key: .[0], value: length}) | from_entries
+) as $excluded |
 ($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
 ($kg_variables[0] | iri_set) as $kg |
 local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables |
@@ -90,13 +102,16 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
     [
         $datasets[] |
         .time_frequency[0] as $frequency |
+        . as $dataset |
         [.variable, .variable_units, .cf_standard_name, .variable_long_name] as [$variables, $units, $names, $long_names] |
         range($variables | length) as $i |
+        ($names[$i]? // null) as $name |
         {
             variable: $variables[$i],
             frequency: $frequency,
             units: ($units[$i]? // null),
-            standard_name: ($names[$i]? // null),
+            standard_name: $name,
+            alias_of: ($dataset | standard_name_alias($issues; $variables[$i]; $name)),
             long_name: ($long_names[$i]? // null)
         }
     ] |
@@ -109,6 +124,9 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
             datasets: length,
             units: [.[].units],
             standard_names: [.[].standard_name],
+            # the standard names, with the known aliases replaced
+            cf_standard_names: [.[] | .alias_of // .standard_name],
+            aliased: ([.[] | select(.alias_of)] | length),
             long_names: [.[].long_name | values]
         }
     }) |
@@ -117,19 +135,20 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
 (
     (
         [$found[] | {variable, frequency}] +
+        [$excluded | keys[] | split(" ") | {variable: .[0], frequency: .[1]}] +
         [$standard | to_entries[] | .key as $variable | .value[] | {variable: $variable, frequency}]
     ) |
     unique |
     map(
         . as {$variable, $frequency} |
-        ($found[variable_key($variable; $frequency)] // {datasets: 0, units: [], standard_names: [], long_names: []}) as $f |
+        ($found[variable_key($variable; $frequency)] // {datasets: 0, units: [], standard_names: [], cf_standard_names: [], aliased: 0, long_names: []}) as $f |
         ($standard[$variable] // []) as $entries |
         ([$entries[] | select(.frequency == $frequency)][0] // $entries[0]) as $entry |
         ({variable: $variable, frequency: $frequency, tables: (frequency_tables[$frequency] // [])} | cmip5_variable_spec($entries_by_name)) as $cmor |
         $variable_iris[variable_key($variable; $frequency)] as $iri |
         # standard names
         ([$entry.standard_name, $cmor.quantity | values] | unique) as $names |
-        ([$f.standard_names[] | select(. as $name | $names | index($name) | not)]) as $other_names |
+        ([$f.cf_standard_names[] | select(. as $name | $names | index($name) | not)]) as $other_names |
         # units
         ($entry.units // $cmor.units) as $definition_units |
         ($definition_units | canonical_units) as $canonical |
@@ -138,6 +157,7 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
             variable: $variable,
             frequency: $frequency,
             datasets: $f.datasets,
+            excluded: ($excluded[variable_key($variable; $frequency)] // 0),
             requested: (
                 if any($entries[]; .frequency == $frequency) then "yes"
                 elif $entries != [] then "other_frequency"
@@ -151,7 +171,7 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
             standard_name_status: (
                 if $f.datasets == 0 or $names == [] then null
                 elif ($names | length) > 1 then "definitions_differ"
-                elif $other_names == [] then "match"
+                elif $other_names == [] then (if $f.aliased > 0 then "known_alias" else "match" end)
                 elif ($other_names | length) * 2 < $f.datasets then "minority_other"
                 else "majority_other"
                 end
@@ -179,6 +199,9 @@ def _cases($status; f): [$variables[] | select(f == $status) | "\(.variable) \(.
 {
     summary: {
         datasets: ($datasets | length),
+        excluded_datasets: (
+            [$issues.excluded_datasets[] | . as $rule | {match, datasets: ([$all_datasets[] | select(matches($rule.match))] | length)}]
+        ),
         variables_found: ([$variables[] | select(.datasets > 0) | .variable] | unique | length),
         variables_requested: ($standard | length),
         variables_defined_locally: ($local_variables | keys),
@@ -205,6 +228,9 @@ def _cases($status; f): [$variables[] | select(f == $status) | "\(.variable) \(.
         standard_name_status: ([$variables[] | .standard_name_status | values] | group_by(.) | map({key: .[0], value: length}) | from_entries),
         standard_name_majority_other: (
             [$variables[] | select(.standard_name_status == "majority_other") | "\(.variable) \(.frequency): \(.standard_names) (definition: \([.standard_name, .cmor_standard_name | values] | unique | join(", ")))"]
+        ),
+        standard_name_known_aliases: (
+            [$variables[] | select(.standard_name_status == "known_alias") | "\(.variable) \(.frequency): \(.standard_names) (definition: \([.standard_name, .cmor_standard_name | values] | unique | join(", ")))"]
         ),
         standard_name_definitions_differ: (
             [$variables[] | select(.standard_name_status == "definitions_differ") | "\(.variable) \(.frequency): \(.standard_name) (CORDEX), \(.cmor_standard_name) (CMOR tables); datasets: \(.standard_names)"]

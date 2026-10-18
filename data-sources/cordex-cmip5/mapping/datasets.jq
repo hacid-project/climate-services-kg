@@ -36,7 +36,9 @@
 # (data-sources/cmor-tables/data/cmip5/5.0.json), --slurpfile model_synonyms
 # mapping/cmip5-model-synonyms.json, --slurpfile standard_output
 # CORDEX_standard_output.json, --slurpfile kg_variables
-# data-sources/cmor-tables/data/variable-iris.json; the modules of this directory, of
+# data-sources/cmor-tables/data/variable-iris.json, --slurpfile data_issues
+# mapping/data-issues.json (the known issues of the datasets, see
+# ../DECISIONS.md); the modules of this directory, of
 # data-sources/cmip5/mapping (esgf.jq) and of data-sources/cmor-tables/mapping
 # must be in the library path (-L).
 
@@ -82,7 +84,8 @@ def _clean:
 
 # --- Mapping
 
-[inputs | .response.docs[] | _clean] as $datasets |
+# (without the datasets excluded in mapping/data-issues.json)
+[inputs | .response.docs[] | select(excluded($data_issues[0]) | not) | _clean] as $datasets |
 ($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
 ($kg_variables[0] | iri_set) as $kg |
 ($datasets | variable_iris($entries_by_name; local_variables($standard_output[0]; $entries_by_name; $kg); $kg)) as $variable_iris |

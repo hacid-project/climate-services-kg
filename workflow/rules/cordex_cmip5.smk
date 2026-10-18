@@ -42,6 +42,7 @@ rule cordex_cmip5_map_datasets:
         ),
         standard_output="data-sources/cordex-cmip5/CORDEX_standard_output.json",
         kg_variables=rules.cmor_tables_variable_iris.output,
+        data_issues="data-sources/cordex-cmip5/mapping/data-issues.json",
         modules=CORDEX_CMIP5_MODULES,
     output:
         "data-sources/cordex-cmip5/rdf/datasets.jsonld",
@@ -53,6 +54,7 @@ rule cordex_cmip5_map_datasets:
         " --slurpfile cmor_tables {input.cmor_tables:q}"
         " --slurpfile standard_output {input.standard_output:q}"
         " --slurpfile kg_variables {input.kg_variables:q}"
+        " --slurpfile data_issues {input.data_issues:q}"
         " -f {input.mapping:q} {input.data:q}/cordex-*.json > {output:q} 2> {log:q}"
 
 
@@ -118,6 +120,7 @@ rule cordex_cmip5_variables_check:
         ),
         modules=CORDEX_CMIP5_MODULES,
         kg_variables=rules.cmor_tables_variable_iris.output,
+        data_issues="data-sources/cordex-cmip5/mapping/data-issues.json",
     output:
         json="data-sources/cordex-cmip5/analysis/variables-check.json",
         csv="data-sources/cordex-cmip5/analysis/variables-check.csv",
@@ -128,6 +131,7 @@ rule cordex_cmip5_variables_check:
         " --slurpfile standard_output {input.standard_output:q}"
         " --slurpfile cmor_tables {input.cmor_tables:q}"
         " --slurpfile kg_variables {input.kg_variables:q}"
+        " --slurpfile data_issues {input.data_issues:q}"
         " -f {input.check:q} {input.data:q}/cordex-*.json > {output.json:q} 2> {log:q} &&"
         " jq -r '.variables | (.[0] | keys_unsorted) as $keys | ($keys | @csv), (.[] | [.[$keys[]]] | @csv)'"
         " {output.json:q} > {output.csv:q} 2>> {log:q}"

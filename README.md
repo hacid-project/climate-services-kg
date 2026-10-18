@@ -16,6 +16,10 @@ snakemake --cores 4 sources_analysis   # all the analyses of the sources
 snakemake --cores 4 cmor_tables        # just the variables of the CMOR tables
 ```
 
+The decisions taken for each data source on its issues, inconsistencies and conflicting versions (and the cases left
+for further analysis) are documented in its `DECISIONS.md` (`data-sources/cmor-tables`, `cmip5`, `cordex-cmip5`,
+`ukcp18`).
+
 ### CMOR tables
 
 Variable definitions are ingested from editions (git tags) of the CMOR tables
@@ -84,7 +88,10 @@ are compared with those of the standard output and of the CMIP5 CMOR tables: oth
 are ignored, while other names in a majority of them (`standard_name_majority_other`) and different definitions
 (`standard_name_definitions_differ`) are left for further analysis; the units are compared in a canonical form, so that
 the same units written differently (e.g. `W/m2` for `W m-2`) are ignored, while different units (e.g. `K` for `m`,
-`units_inconsistent`) are left for further analysis.
+`units_inconsistent`) are left for further analysis. The known issues of the datasets are in
+`data-sources/cordex-cmip5/mapping/data-issues.json`: the datasets excluded from the mapping (`emiss` of the NARCliM
+models, the surface emissivity, not the CMIP5 `emiss`) and the names known to be used in place of the CF standard names
+(the clear-sky radiation fluxes of ALADIN63, `known_alias` in the check); see `data-sources/cordex-cmip5/DECISIONS.md`.
 
 ### UKCP18 datasets
 

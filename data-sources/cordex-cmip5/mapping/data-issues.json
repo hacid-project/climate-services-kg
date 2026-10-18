@@ -1,0 +1,46 @@
+{
+    "excluded_datasets": [
+        {
+            "match": {"variable": ["emiss"], "rcm_name": ["WRF360J", "WRF360K", "WRF360L"]},
+            "reason": "The variable emiss of the NARCliM datasets (UNSW, WRF360*) is the surface emissivity (cf_standard_name surface_emissivity, no units), while emiss in the CMIP5 CMOR tables is the emission of sea salt aerosol (kg m-2 s-1): excluded for now, as there is no variable of the KG for it."
+        }
+    ],
+    "standard_name_aliases": [
+        {
+            "match": {"variable": ["rldscs"], "rcm_name": ["ALADIN63"]},
+            "standard_name": "clear-sky_surface_downwelling_longwave_radiation",
+            "cf_standard_name": "surface_downwelling_longwave_flux_in_air_assuming_clear_sky"
+        },
+        {
+            "match": {"variable": ["rluscs"], "rcm_name": ["ALADIN63"]},
+            "standard_name": "clear-sky_surface_upwelling_longwave_radiation",
+            "cf_standard_name": "surface_upwelling_longwave_flux_in_air_assuming_clear_sky"
+        },
+        {
+            "match": {"variable": ["rlutcs"], "rcm_name": ["ALADIN63"]},
+            "standard_name": "clear-sky_toa_outgoing_longwave_radiation",
+            "cf_standard_name": "toa_outgoing_longwave_flux_assuming_clear_sky"
+        },
+        {
+            "match": {"variable": ["rsdscs"], "rcm_name": ["ALADIN63"]},
+            "standard_name": "clear-sky_surface_downwelling_shortwave_radiation",
+            "cf_standard_name": "surface_downwelling_shortwave_flux_in_air_assuming_clear_sky"
+        },
+        {
+            "match": {"variable": ["rsuscs"], "rcm_name": ["ALADIN63"]},
+            "standard_name": "clear-sky_surface_upwelling_shortwave_radiation",
+            "cf_standard_name": "surface_upwelling_shortwave_flux_in_air_assuming_clear_sky"
+        },
+        {
+            "match": {"variable": ["rsutcs"], "rcm_name": ["ALADIN63"]},
+            "standard_name": "clear-sky_toa_outgoing_shortwave_radiation",
+            "cf_standard_name": "toa_outgoing_shortwave_flux_assuming_clear_sky"
+        },
+        {
+            "match": {"variable": ["reffclwtop"], "rcm_name": ["ALADIN63"]},
+            "standard_name": "cloud-top_effective_droplet_radius",
+            "cf_standard_name": "effective_radius_of_cloud_liquid_water_particle_at_liquid_water_cloud_top"
+        }
+    ],
+    "standard_name_aliases_reason": "The CNRM ALADIN63 datasets of the clear-sky radiation fluxes (and of reffclwtop) use descriptive names that are not CF standard names; their variables, units and long names are those of the MIP variables with the same name, so they are taken as the CF standard names of the MIP variables (the datasets keep the MIP variables) and reported separately by the check (known_alias)."
+}

@@ -71,3 +71,21 @@ def variable_iris($entries_by_name; $local_variables; $kg):
 # The IRIs of the variables of the KG (input: an array, as
 # data-sources/cmor-tables/data/variable-iris.json) as object keys
 def iri_set: map({key: ., value: true}) | from_entries;
+
+# --- Known issues of the datasets (mapping/data-issues.json)
+
+# Whether a dataset (input: its ESGF metadata) matches a condition of
+# data-issues.json, {<field>: [<values>]}: each field has one of the values
+def matches($match):
+    . as $dataset |
+    all($match | to_entries[]; .value as $values | any($dataset[.key] | if type == "array" then .[] else . end; . as $value | $values | index($value)));
+
+# Whether a dataset (input: its ESGF metadata) is excluded
+# ($issues: data-issues.json)
+def excluded($issues): . as $dataset | any($issues.excluded_datasets[]; .match as $m | $dataset | matches($m));
+
+# The CF standard name of the standard name of a variable of a dataset (input:
+# its ESGF metadata) known to be used in its place, if any
+def standard_name_alias($issues; $variable; $standard_name):
+    . as $dataset |
+    [$issues.standard_name_aliases[] | select(.standard_name == $standard_name) | select(.match as $m | $dataset | matches($m) and ($m.variable // [$variable] | index($variable)))][0].cf_standard_name;
