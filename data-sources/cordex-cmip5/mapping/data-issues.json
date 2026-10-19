@@ -63,9 +63,24 @@
                 ]
             },
             "units": "kg m-2 s-1"
+        },
+        {
+            "match": {
+                "variable": [
+                    "hfls",
+                    "hfss"
+                ],
+                "rcm_name": [
+                    "CCAM-2008"
+                ],
+                "variable_units": [
+                    "kg m-2 s-1"
+                ]
+            },
+            "units": "W m-2"
         }
     ],
-    "units_errors_reason": "The geopotential heights at the pressure levels of the RU-CORE RegCM4-3 datasets (SEA-22) have the units K (with the standard name and long name of the air temperature, see standard_name_aliases): taken as an error in generating the metadata, the datasets keep the variables of their names, in m (the MIP variables, or the variables defined locally, as zg200). The ts of 2 CSIRO CCAM-1704 datasets (units units, standard name and long name long_name) and the prc of 3 ICTP RegCM4-7 datasets (CAM-22, units None, standard name prc) have placeholder metadata, taken as local bugs: they keep the MIP variables (in K and kg m-2 s-1).",
+    "units_errors_reason": "The geopotential heights at the pressure levels of the RU-CORE RegCM4-3 datasets (SEA-22) have the units K (with the standard name and long name of the air temperature, see standard_name_aliases): taken as an error in generating the metadata, the datasets keep the variables of their names, in m (the MIP variables, or the variables defined locally, as zg200). The ts of 2 CSIRO CCAM-1704 datasets (units units, standard name and long name long_name) and the prc of 3 ICTP RegCM4-7 datasets (CAM-22, units None, standard name prc) have placeholder metadata, taken as local bugs: they keep the MIP variables (in K and kg m-2 s-1). The hfls and hfss of CSIRO CCAM-2008 (36 datasets each, versions 20210701 to 20211112) have the units kg m-2 s-1, with the standard and long names of the heat fluxes: taken as an error in the units attribute (hypothesis, to be verified on the magnitudes of the values in the NetCDF files), as kg m-2 s-1 has no meaning for the sensible heat flux, the water flux of the latent heat flux is published separately (evspsbl, in kg m-2 s-1), all the other energy fluxes of CCAM-2008 are in W m-2, and the earlier CCAM versions (CCAM, CCAM-1704) give hfls and hfss in W m-2: they keep the MIP variables (in W m-2).",
     "model_variables": [
         {
             "match": {

@@ -44,6 +44,16 @@ variables (`analysis/variables-check.json`, see the end of this document).
   name `long_name`) and the `prc` of 3 ICTP `RegCM4-7` datasets (CAM-22, units
   `None`, standard name `prc`) are taken as local bugs: they keep the MIP
   variables, in `K` and `kg m-2 s-1`.
+- **Wrong units of the heat fluxes** (`units_errors`): the `hfls` and `hfss`
+  of CSIRO `CCAM-2008` (ANT-44i, AUS-44i, 36 datasets each, versions 20210701
+  to 20211112) are in `kg m-2 s-1`, with the standard and long names of the
+  heat fluxes. Taken as an error in the units attribute (a hypothesis, see
+  below): `kg m-2 s-1` has no meaning for the sensible heat flux, the water
+  flux corresponding to the latent heat flux is published separately
+  (`evspsbl`, in `kg m-2 s-1`), all the other energy fluxes of `CCAM-2008`
+  are in `W m-2`, and the earlier CCAM versions (`CCAM`, 2017, and
+  `CCAM-1704`, 2020) give `hfls` and `hfss` in `W m-2`. They keep the MIP
+  variables, in `W m-2`.
 - **Variables of a model** (`mapping/data-issues.json`, `model_variables`):
   the BoM statistical downscaling (BOM, `BOM-SDM`, domain AUS) gives `pr` in
   `mm` (1 daily dataset, "Total precipitation rate") and in `mm/month` (66
@@ -138,15 +148,12 @@ definitions of the standard output and of the CMIP5 CMOR tables:
 
 ## Open cases
 
-- **`hfls`, `hfss` of CSIRO `CCAM-2008`** (ANT-44i, AUS-44i, 36 datasets
-  each, day and mon): in `kg m-2 s-1` instead of `W m-2`, with the CF standard
-  names of the heat fluxes. Whether they are mass fluxes (e.g. of the
-  evaporation) or wrong units is not known: they keep the MIP variables and
-  remain inconsistent in the check.
 - **Checks against the NetCDF files.** The edge cases above (the alternative
   units, the placeholder metadata, the bias-corrected variables) should be
   checked against the content of the NetCDF files; not done for now, as it
   would take too much effort and the ESGF nodes could not easily be accessed.
+  For the heat fluxes of `CCAM-2008`, the magnitudes of the values tell the
+  units: tens to hundreds for `W m-2`, around 1e-5 for a mass flux.
 
 Listed in the summary of `analysis/variables-check.json`:
 `standard_name_majority_other`, `standard_name_definitions_differ`,
