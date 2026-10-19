@@ -182,13 +182,13 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 
 ## Entries from the MOHC controlled vocabularies work (2026-10-19)
 
-### R-019: Curated data as the source of a step
-- **Category:** VER, DOC · **Priority:** M · **Status:** workaround
+### R-019: Data curated within the project as a source
+- **Category:** VER, QUA, DOC · **Priority:** M · **Status:** workaround
 - **Date:** 2026-10-19 · **Evidence:** `data-sources/mohc-cvs/DECISIONS.md`; the removed `cleanse.sh`, `CSVtoJSON.py` and `data-raw-*` (up to commit 8f1041e); commits cd7f9c7, 0da6e7b, 53e3ea7
-- **Situation:** the controlled vocabularies were produced from spreadsheets by conversion and cleansing scripts, and then edited by hand. The scripts could no longer regenerate the files without losing the edits, so the curated files became the source and the derivation was dropped.
-- **Requirement:** a dataflow should allow a curated dataset to be declared as a source, with its provenance (what it was derived from, which edits were made by hand, by whom) recorded, rather than lost when the derivation is dropped. Ideally the edits would be patches or curation rules applied on the derived data (R-012), so the derivation could still be rerun.
-- **Current handling:** the curated JSON files are kept in the repository as source; their history is only in git.
-- **Notes:** related to R-012 and R-016.
+- **Situation:** the MOHC controlled vocabularies are collected and curated manually within the project. They were first kept in shared spreadsheets, converted to JSON and cleansed by scripts. It was then decided that the cleansed JSON files would be the source of truth, and later updates were made there, so the spreadsheets and the scripts became obsolete. The change of the authoring medium was a one-off migration, not a step of the dataflow.
+- **Requirement:** a dataflow should distinguish external sources from data authored within the project, and support the latter as first-class inputs: edited in a declared format (with a schema checked on each change, as nothing else validates hand edits), versioned with the history of the curation (who changed what and why), and with a recorded migration when the authoring medium changes (e.g. from spreadsheets to JSON).
+- **Current handling:** the JSON files are kept in the repository as source and edited directly; the curation history is only in git; no schema is checked.
+- **Notes:** related to R-012 (curation decisions on external data) and R-016.
 
 ### R-020: Data files imported by a mapping
 - **Category:** MAP, MOD · **Priority:** L · **Status:** workaround

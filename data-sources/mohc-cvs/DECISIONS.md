@@ -5,14 +5,15 @@ methods, operations) to the KG.
 
 ## Source data
 
-- **Curated files as source.** The JSON files in `data/` are the source: they
-  were derived from spreadsheets (exported to CSV and converted to JSON) by
-  cleansing scripts, and then edited by hand (e.g. the operation to select
-  climate models, commits cd7f9c7 and 0da6e7b, and the global warming levels,
-  53e3ea7). Regenerating them from the spreadsheets would lose those edits, so
-  the spreadsheet exports, the conversion and cleansing scripts and their
-  statistics were removed (they remain in the git history, up to commit
-  8f1041e).
+- **Curated files as source.** The vocabularies are data collected and curated
+  manually within the project. They were first kept in shared spreadsheets,
+  exported to CSV, converted to JSON and cleansed by scripts; then it was
+  decided that the cleansed JSON files in `data/` would be the source of truth,
+  and later updates were made there (e.g. the operation to select climate
+  models, commits cd7f9c7 and 0da6e7b, and the global warming levels,
+  53e3ea7). The spreadsheet exports, the conversion and cleansing scripts and
+  their statistics were therefore removed (they remain in the git history, up
+  to commit 8f1041e).
 - **Schemes of the values** (`data/cv-map.json`). Mapped to the schemes of the
   KG (`mapping/cvs.jq`), and read by the mapping of the operations
   (`mapping/operations.jq`, as `$cv_map`) for the values of their parameters.
