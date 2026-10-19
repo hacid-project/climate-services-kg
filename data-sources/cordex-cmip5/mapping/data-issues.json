@@ -35,9 +35,37 @@
                 ]
             },
             "units": "m"
+        },
+        {
+            "match": {
+                "variable": [
+                    "ts"
+                ],
+                "rcm_name": [
+                    "CCAM-1704"
+                ],
+                "variable_units": [
+                    "units"
+                ]
+            },
+            "units": "K"
+        },
+        {
+            "match": {
+                "variable": [
+                    "prc"
+                ],
+                "rcm_name": [
+                    "RegCM4-7"
+                ],
+                "variable_units": [
+                    "None"
+                ]
+            },
+            "units": "kg m-2 s-1"
         }
     ],
-    "units_errors_reason": "The geopotential heights at the pressure levels of the RU-CORE RegCM4-3 datasets (SEA-22) have the units K (with the standard name and long name of the air temperature, see standard_name_aliases): taken as an error in generating the metadata, the datasets keep the variables of their names, in m (the MIP variables, or the variables defined locally, as zg200).",
+    "units_errors_reason": "The geopotential heights at the pressure levels of the RU-CORE RegCM4-3 datasets (SEA-22) have the units K (with the standard name and long name of the air temperature, see standard_name_aliases): taken as an error in generating the metadata, the datasets keep the variables of their names, in m (the MIP variables, or the variables defined locally, as zg200). The ts of 2 CSIRO CCAM-1704 datasets (units units, standard name and long name long_name) and the prc of 3 ICTP RegCM4-7 datasets (CAM-22, units None, standard name prc) have placeholder metadata, taken as local bugs: they keep the MIP variables (in K and kg m-2 s-1).",
     "model_variables": [
         {
             "match": {
@@ -54,7 +82,8 @@
             "model": "BOM-SDM",
             "variable": "pr",
             "units": "mm",
-            "long_name": "Total precipitation rate"
+            "long_name": "Total precipitation rate",
+            "relation": "derived"
         },
         {
             "match": {
@@ -71,10 +100,118 @@
             "model": "BOM-SDM",
             "variable": "pr",
             "units": "mm/month",
-            "long_name": "Precipitation"
+            "long_name": "Precipitation",
+            "relation": "derived"
+        },
+        {
+            "match": {
+                "variable": [
+                    "hurs"
+                ],
+                "rcm_name": [
+                    "WRF341E"
+                ],
+                "variable_units": [
+                    "1"
+                ]
+            },
+            "model": "WRF341E",
+            "variable": "hurs",
+            "units": "1",
+            "long_name": "Near-Surface Relative Humidity",
+            "relation": "linear_transformation"
+        },
+        {
+            "match": {
+                "variable": [
+                    "hur"
+                ],
+                "rcm_name": [
+                    "WRF341I"
+                ],
+                "variable_units": [
+                    "1"
+                ]
+            },
+            "model": "WRF341I",
+            "variable": "hur",
+            "units": "1",
+            "long_name": "Relative Humidity",
+            "relation": "linear_transformation"
+        },
+        {
+            "match": {
+                "variable": [
+                    "sic"
+                ],
+                "rcm_name": [
+                    "WRF341I"
+                ],
+                "variable_units": [
+                    "1"
+                ]
+            },
+            "model": "WRF341I",
+            "variable": "sic",
+            "units": "1",
+            "long_name": "Sea Ice Flag",
+            "relation": "derived"
+        },
+        {
+            "match": {
+                "variable": [
+                    "sftlf"
+                ],
+                "rcm_name": [
+                    "HIRHAM5"
+                ],
+                "variable_units": [
+                    "1"
+                ]
+            },
+            "model": "HIRHAM5",
+            "variable": "sftlf",
+            "units": "1",
+            "long_name": "Land Area Fraction",
+            "relation": "linear_transformation"
+        },
+        {
+            "match": {
+                "variable": [
+                    "snw"
+                ],
+                "rcm_name": [
+                    "CCAM"
+                ],
+                "variable_units": [
+                    "m"
+                ]
+            },
+            "model": "CCAM",
+            "variable": "snw",
+            "units": "m",
+            "long_name": "Snow Depth (Liquid Water)",
+            "relation": "linear_transformation"
+        },
+        {
+            "match": {
+                "variable": [
+                    "mrso"
+                ],
+                "rcm_name": [
+                    "CCAM"
+                ],
+                "variable_units": [
+                    "m3/m3"
+                ]
+            },
+            "model": "CCAM",
+            "variable": "mrso",
+            "units": "m3/m3",
+            "long_name": "Average Soil Moisture"
         }
     ],
-    "model_variables_reason": "The BoM statistical downscaling (BOM, BOM-SDM, domain AUS) gives pr in mm (daily datasets) and mm/month (monthly datasets), a different use of the variable: each is a variable of its own, variables/cordex/<model>/<variable>/<units>, member of the CORDEX variables and of the variables of the model (variables/cordex/<model>, associated with the model), derived from the MIP variable.",
+    "model_variables_reason": "The BoM statistical downscaling (BOM, BOM-SDM, domain AUS) gives pr in mm (daily datasets) and mm/month (monthly datasets), a different use of the variable: each is a variable of its own, variables/cordex/<model>/<variable>/<units>, member of the CORDEX variables and of the variables of the model (variables/cordex/<model>, associated with the model), derived from the MIP variable. Also the fractions in 1 instead of % (hurs of NUIM WRF341E, hur and sic of UCAN WRF341I, sftlf of DMI HIRHAM5), and snw in m (snow depth as liquid water) and mrso in m3/m3 (volumetric soil moisture) of CSIRO CCAM, taken as legitimate alternative units or measures of the same phenomena (not checked in the NetCDF files). The relation to the MIP variable is linear_transformation (data:isLinearTransformationOf) if the units are convertible (1 and %; m of liquid water and kg m-2, assuming the density of water), derived (data:derivedFromVariable) for a different quantity (pr totals in mm and mm/month; the sea ice flag of WRF341I, sea_ice_flag, from the sea ice fraction), and none if neither (mrso in m3/m3 needs the soil depth).",
     "standard_name_aliases": [
         {
             "match": {
@@ -181,7 +318,31 @@
             },
             "standard_name": "air_temperature",
             "cf_standard_name": "geopotential_height"
+        },
+        {
+            "match": {
+                "variable": [
+                    "ts"
+                ],
+                "rcm_name": [
+                    "CCAM-1704"
+                ]
+            },
+            "standard_name": "long_name",
+            "cf_standard_name": "surface_temperature"
+        },
+        {
+            "match": {
+                "variable": [
+                    "prc"
+                ],
+                "rcm_name": [
+                    "RegCM4-7"
+                ]
+            },
+            "standard_name": "prc",
+            "cf_standard_name": "convective_precipitation_flux"
         }
     ],
-    "standard_name_aliases_reason": "The CNRM ALADIN63 datasets of the clear-sky radiation fluxes (and of reffclwtop) use descriptive names that are not CF standard names; their variables, units and long names are those of the MIP variables with the same name, so they are taken as the CF standard names of the MIP variables (the datasets keep the MIP variables) and reported separately by the check (known_alias). The RegCM4 datasets of the geopotential heights at the pressure levels have the standard name (and long name) of the air temperature, an error in generating the metadata (in RegCM4-3 also the units, see units_errors): taken as the standard name of the geopotential height."
+    "standard_name_aliases_reason": "The CNRM ALADIN63 datasets of the clear-sky radiation fluxes (and of reffclwtop) use descriptive names that are not CF standard names; their variables, units and long names are those of the MIP variables with the same name, so they are taken as the CF standard names of the MIP variables (the datasets keep the MIP variables) and reported separately by the check (known_alias). The RegCM4 datasets of the geopotential heights at the pressure levels have the standard name (and long name) of the air temperature, an error in generating the metadata (in RegCM4-3 also the units, see units_errors): taken as the standard name of the geopotential height. The placeholder standard names of the ts of CCAM-1704 (long_name) and of the prc of RegCM4-7 (prc) are those of the MIP variables (see units_errors)."
 }

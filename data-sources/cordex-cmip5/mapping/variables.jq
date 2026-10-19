@@ -17,7 +17,9 @@
 # and previous, data-sources/cmor-tables/data/<era>/<version>.json).
 #
 # Also the variables of a model with their own units (model_variables in
-# mapping/data-issues.json), variables/cordex/<model>/<variable>/<units>.
+# mapping/data-issues.json), variables/cordex/<model>/<variable>/<units>,
+# related to the MIP variable as given by their relation
+# (data:isLinearTransformationOf, data:derivedFromVariable, or none).
 #
 # Arguments (run with -n): --slurpfile data_issues mapping/data-issues.json,
 # --slurpfile standard_output
@@ -73,7 +75,11 @@ variables_jsonld(
         isMemberOf: [cordex_variables_collection, model_variables_collection(.model)],
         label: "\(.long_name) (\(.variable), \(.units), \(.model))",
         acronym: .variable,
-        "data:derivedFromVariable": {"@id": mip_variable_iri_of($rule.variable; ""; $entries_by_name)},
+        # relation to the MIP variable
+        (
+            {linear_transformation: "data:isLinearTransformationOf", derived: "data:derivedFromVariable"}[.relation // ""] //
+            "data:relatedTo"
+        ): (if .relation then {"@id": mip_variable_iri_of($rule.variable; ""; $entries_by_name)} else null end),
         hasUnitOfMeasure: $unit,
         hasValuesOn: $unit
     },
@@ -90,4 +96,4 @@ variables_jsonld(
         "rdfs:label": .units
     }
 ] |
-.["@graph"] |= unique
+.["@graph"] |= (map(with_entries(select(.value != null))) | unique)

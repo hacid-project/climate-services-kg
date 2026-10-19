@@ -31,7 +31,6 @@ variables (`analysis/variables-check.json`, see the end of this document).
     units), while `emiss` in the CMIP5 CMOR tables is the emission of sea salt
     aerosol (`kg m-2 s-1`), so the resolution by name would give the wrong
     variable. Excluded for now.
-
 - **Wrong units of the geopotential heights** (`mapping/data-issues.json`,
   `units_errors`): the RU-CORE `RegCM4-3` datasets (SEA-22) of the
   geopotential heights at the pressure levels (`zg200`, ..., `zg925`, 8
@@ -40,6 +39,11 @@ variables (`analysis/variables-check.json`, see the end of this document).
   air temperature. Taken as an error in generating the metadata: the datasets
   keep the variables of their names, in `m` (`.../mip/zg500`,
   `.../cordex/zg200`), and the check reports them as known issues.
+- **Placeholder metadata** (`units_errors`, `standard_name_aliases`): the
+  `ts` of 2 CSIRO `CCAM-1704` datasets (units `units`, standard name and long
+  name `long_name`) and the `prc` of 3 ICTP `RegCM4-7` datasets (CAM-22, units
+  `None`, standard name `prc`) are taken as local bugs: they keep the MIP
+  variables, in `K` and `kg m-2 s-1`.
 - **Variables of a model** (`mapping/data-issues.json`, `model_variables`):
   the BoM statistical downscaling (BOM, `BOM-SDM`, domain AUS) gives `pr` in
   `mm` (1 daily dataset, "Total precipitation rate") and in `mm/month` (66
@@ -50,6 +54,21 @@ variables (`analysis/variables-check.json`, see the end of this document).
   with the model by `top:associatedWith`), derived from the MIP `pr`
   (`data:derivedFromVariable`; no linear transformation, as a monthly total
   depends on the length of the month).
+
+  The same is done for the other units taken as legitimate alternative units,
+  or alternative measures of the same phenomena (not checked in the NetCDF
+  files, see below), each `.../variables/cordex/<model>/<variable>/<units>`,
+  related to the MIP variable as given by its `relation`:
+
+  | Variable | Units | Model (institute/model) | Datasets | Relation to the MIP variable |
+  | --- | --- | --- | --- | --- |
+  | `pr` | `mm`, `mm/month` | BOM/BOM-SDM | 67 | derived (`pr`) |
+  | `hurs` | `1` | NUIM/WRF341E | 12 | linear transformation (`hurs`, `%`) |
+  | `hur` | `1` | UCAN/WRF341I | 3 | linear transformation (`hur`, `%`) |
+  | `sic` | `1` ("Sea Ice Flag", `sea_ice_flag`) | UCAN/WRF341I | 4 | derived (`siconc`): a flag, not the fraction |
+  | `sftlf` | `1` | DMI/HIRHAM5 | 3 | linear transformation (`sftlf`, `%`) |
+  | `snw` | `m` (snow depth as liquid water) | CSIRO/CCAM | 36 | linear transformation (`snw`, `kg m-2`, density of water) |
+  | `mrso` | `m3/m3` (volumetric soil moisture) | CSIRO/CCAM | 36 | none (the soil depth would be needed) |
 
 ## Variables (`mapping/cordex-variables.jq`, `mapping/variables.jq`)
 
@@ -114,24 +133,20 @@ definitions of the standard output and of the CMIP5 CMOR tables:
   e.g. `W/m2` for `W m-2`, `kg/m2/s` for `kg m-2 s-1`, `Kg` for `kg`, and
   `kg kg-1` for `1`), units known to be wrong (`units_errors`) and the
   variables of a model (`model_variables`) are reported as `known_issue`, while
-  different units (`inconsistent`, e.g. `1` for `%`, `None`) are left for
-  further analysis, with the models of their datasets.
+  other different units (`inconsistent`) are left for further analysis, with
+  the models of their datasets.
 
 ## Open cases
 
-The remaining unit inconsistencies are each specific to the output of one
-model (`other_units_models` in the check):
-
-| Variable | Units | Definition | Model (institute/model) |
-| --- | --- | --- | --- |
-| `hfls`, `hfss` | `kg m-2 s-1` | `W m-2` | CSIRO/CCAM-2008 |
-| `mrso` | `m3/m3` (`avg_soil_moisture_1`) | `kg m-2` | CSIRO/CCAM |
-| `snw` | `m` (`snow_depth_(liquid_water)`) | `kg m-2` | CSIRO/CCAM |
-| `ts` | `units` (standard name `long_name`) | `K` | CSIRO/CCAM-1704 |
-| `hur`, `sic` | `1` (`sic` as `sea_ice_flag`) | `%` | UCAN/WRF341I |
-| `hurs` | `1` | `%` | NUIM/WRF341E |
-| `sftlf` | `1` | `%` | DMI/HIRHAM5 (AFR-44) |
-| `prc` | `None` (standard name `prc`) | `kg m-2 s-1` | ICTP/RegCM4-7 (CAM-22) |
+- **`hfls`, `hfss` of CSIRO `CCAM-2008`** (ANT-44i, AUS-44i, 36 datasets
+  each, day and mon): in `kg m-2 s-1` instead of `W m-2`, with the CF standard
+  names of the heat fluxes. Whether they are mass fluxes (e.g. of the
+  evaporation) or wrong units is not known: they keep the MIP variables and
+  remain inconsistent in the check.
+- **Checks against the NetCDF files.** The edge cases above (the alternative
+  units, the placeholder metadata, the bias-corrected variables) should be
+  checked against the content of the NetCDF files; not done for now, as it
+  would take too much effort and the ESGF nodes could not easily be accessed.
 
 Listed in the summary of `analysis/variables-check.json`:
 `standard_name_majority_other`, `standard_name_definitions_differ`,
