@@ -197,3 +197,13 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Requirement:** the data a mapping reads should be declared as inputs of its step, not resolved implicitly by the mapping.
 - **Current handling:** passed with `--slurpfile` and listed among the inputs of the rule.
 - **Notes:** related to R-015.
+
+## Entries from the Climdex work (2026-10-19)
+
+### R-021: Snapshots of sources without a stable structured version
+- **Category:** VER, FAIR, DOC · **Priority:** M · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** `data-sources/climdex/DECISIONS.md`; `data-sources/climdex/data/table.md`, `by-sector.json`
+- **Situation:** the Climdex indices are published only as web pages. The most interoperable version found is a Markdown table in the Climpact user guide (in a git repository). The local copy matches the table of two releases (v3.2, v3.3), but with one row added by hand, and the guide has changed since. The classification by sector is incomplete in the table, so it was curated by hand from another web page. None of this was recorded with the files.
+- **Requirement:** a local snapshot of a source should carry its provenance as metadata: where it comes from (URL, repository, release or commit), when it was taken, and how it differs from the original (rows added, curated parts), so it can be compared with newer versions of the original.
+- **Current handling:** the snapshots are kept in the repository as source, with their provenance written in `DECISIONS.md` (reconstructed by comparing the copy with the history of the guide).
+- **Notes:** related to R-001, R-018 and R-019.

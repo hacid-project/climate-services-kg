@@ -18,7 +18,7 @@ snakemake --cores 4 cmor_tables        # just the variables of the CMOR tables
 
 The decisions taken for each data source on its issues, inconsistencies and conflicting versions (and the cases left
 for further analysis) are documented in its `DECISIONS.md` (`data-sources/cf-standard-names`, `cmor-tables`, `cmip5`,
-`cordex-domains`, `cordex-cmip5`, `ukcp18`, `mohc-cvs`).
+`cordex-domains`, `cordex-cmip5`, `ukcp18`, `mohc-cvs`, `climdex`).
 
 ### CF standard names
 
@@ -157,6 +157,17 @@ extracted, to review their mapping, in `data-sources/ukcp18/analysis/unmapped-va
 
 The Zenodo plugin requires an access token, which is not needed for published records: a placeholder is
 used unless `SNAKEMAKE_STORAGE_ZENODO_ACCESS_TOKEN` is set.
+
+### Climdex/Climpact indices
+
+The climate indices of [Climdex](https://www.climdex.org/learn/indices/) are taken from the table of the indices of
+the [Climpact user guide](https://github.com/ARCCSS-extremes/climpact/blob/master/www/user_guide/Climpact_user_guide.md#appendix-a-tables-of-climpact-indices)
+(`data-sources/climdex/data/table.md`), and their classification by sector from the
+[Climdex page of the indices by sector](https://www.climdex.org/learn/indices/sector/), curated in
+`data-sources/climdex/data/by-sector.json`. Both are kept in the repository as source (see `DECISIONS.md`) and mapped
+with jq (`mapping/climdex.jq`, `mapping/by_sector.jq`, `snakemake --cores 4 climdex`) to
+`data-sources/climdex/rdf/climdex.jsonld` and `climdex-sectors.jsonld`. The units and time grids they use that are
+defined nowhere else are in `added-units.ttl` and `added-grids.ttl`.
 
 ### Met Office Hadley Centre controlled vocabularies
 
