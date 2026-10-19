@@ -7,10 +7,6 @@ data-sources/common-spacetime.ttl,https://w3id.org/hacid/data/cs,n
 data-sources/mips.ttl,https://w3id.org/hacid/data/cs,n
 data-sources/scenarios.ttl,https://w3id.org/hacid/data/cs,n
 data-sources/gwls/rdf/gwls.jsonld,https://w3id.org/hacid/data/cs,n
-data-sources/activities/rdf/data.ttl,https://w3id.org/hacid/data/cs/cmip6/cvs,y
-data-sources/experiments/rdf/data.ttl,https://w3id.org/hacid/data/cs/cmip6/cvs,y
-data-sources/istitutions/rdf/data.ttl,https://w3id.org/hacid/data/cs/cmip6/cvs,y
-data-sources/sources/rdf/data.ttl,https://w3id.org/hacid/data/cs/cmip6/cvs,y
 data-sources/cmor-tables/rdf/current/*/*.jsonld,https://w3id.org/hacid/data/cs/cmor-tables,n
 data-sources/cmor-tables/rdf/previous/*/*.jsonld,https://w3id.org/hacid/data/cs/cmor-tables,n
 data-sources/cf-standard-names/rdf/*.ttl,https://w3id.org/hacid/data/cs/cf,n
@@ -22,7 +18,5 @@ data-sources/cordex-cmip5-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cordex
 data-sources/cordex-cmip5/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cordex-cmip5/datasets,n
 data-sources/climdex/rdf/*.jsonld,https://w3id.org/hacid/data/cs/climdex,n
 data-sources/climdex/rdf/*.ttl,https://w3id.org/hacid/data/cs/climdex,n
-data-sources/workflow/metaWorkflow.jsonld,https://w3id.org/hacid/data/cs/wf,y
-data-sources/example-cases/*.ttl,https://w3id.org/hacid/data/cs/examples,y
 data-sources/mohc-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/mohc-cvs,n
 data-sources/ukcp18/rdf/*.jsonld,https://w3id.org/hacid/data/cs/ukcp18,n
