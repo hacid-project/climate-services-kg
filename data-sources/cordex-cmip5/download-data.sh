@@ -3,7 +3,7 @@
 # Download of the CORDEX-CMIP5 datasets from ESGF (CEDA), in pages of the search
 # results, to data/cordex-<n>.json (run from data-sources/cordex-cmip5). The
 # workflow uses the pages published on Zenodo
-# (https://doi.org/10.5281/zenodo.23364077, see workflow/rules/cordex_cmip5.smk).
+# (https://doi.org/10.5281/zenodo.23477951, see workflow/rules/cordex_cmip5.smk).
 
 BASE_URL="https://esgf.ceda.ac.uk/esg-search/search/"
 FILTER_ITEM_TYPE="Dataset"
