@@ -49,13 +49,15 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Situation:** several source mappings resolve variables through the same derived table, produced by another part of the pipeline.
 - **Requirement:** a module should be able to export a derived artefact (table or function) with a declared interface, and other modules should import it without knowing where it lives.
 - **Current handling:** file paths shared by convention, plus Snakemake dependencies.
+- **Notes:** more cases: the jq module `data-sources/cmip5/mapping/esgf.jq` (temporal grids, variable lookup) is shared by the CMIP5 and CORDEX-CMIP5 mappings; the list of the IRIs of the KG variables, once computed inline in each consumer, became a rule (`cmor_tables_variable_iris`, commit 1d2dd4d) used by three consumers; the CORDEX local variables reuse the CMOR-tables mapping function `variables_jsonld` (commit 1d2dd4d).
 
 ### R-003: Rebuild only what is affected by a change
-- **Category:** INC · **Priority:** M · **Status:** satisfied (partially)
-- **Date:** 2026-10-19 · **Evidence:** README ("Changing a mapping reruns only the affected steps")
+- **Category:** INC · **Priority:** M · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** README ("Changing a mapping reruns only the affected steps"); the `modules=[...]` inputs of the jq rules in `workflow/rules/*.smk`; commit 3a23c30 (adding `time.jq`, `ukcp18-time.jq` to the inputs of `ukcp18_unmapped_variables`)
 - **Situation:** mappings change often during development. Full rebuilds are slow.
 - **Requirement:** incremental recomputation at the granularity of the dataflow steps, including when a jq module *imported* by a mapping changes.
-- **Current handling:** Snakemake file timestamps and rules. **[check]** whether changes in imported jq modules are detected.
+- **Current handling:** Snakemake file timestamps and rules. Checked: a change in an imported jq module is detected only if the module is listed among the inputs of the rule (e.g. editing `cmip5/mapping/esgf.jq` reruns the CMIP5 and CORDEX mappings, which list it). The lists are maintained by hand, and a missing entry silently skips the rebuild (it happened when the UKCP18 variables module started importing the time modules).
+- **Notes:** the imports could be derived from the `include`/`import` directives of the programs (see R-015).
 
 ### R-004: Analyses and diagnostics as first-class outputs
 - **Category:** QUA · **Priority:** H · **Status:** satisfied (partially)
@@ -105,3 +107,46 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Situation:** loading into Fuseki (and publication to Virtuoso), consolidation and named-graph management are separate shell scripts.
 - **Requirement:** sinks (triple store, named graphs, publication dumps) should be declared steps of the dataflow, with the same versioning and incrementality as the mappings.
 - **Current handling:** shell scripts outside the workflow.
+
+---
+
+## Entries from the CMIP5, CORDEX-CMIP5 and UKCP18 work (2026-10-19)
+
+### R-011: Reference runs to validate the migration of a mapping
+- **Category:** QUA, VER · **Priority:** M · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** PR #31 (CORDEX-CMIP5 port, commit 5b9a8fc); `data-sources/cordex-cmip5/DECISIONS.md` ("Validation of the port from RML")
+- **Situation:** porting the CMIP5 and CORDEX-CMIP5 mappings from RML to jq was validated by comparing the triples with the outputs of the old mappings. For CMIP5 a committed output existed. For CORDEX-CMIP5 the old mapping had to be run again: the pyrml commit pinned in `requirements.txt` no longer exists, the released pyrml fails on the mapping (patched in a scratch copy), and empty input pages make it crash.
+- **Requirement:** when a step is replaced by another implementation, the dataflow should keep (or be able to regenerate) the reference outputs of the old one and check the equivalence of the new one as a declared test, with the old environment pinned in a reproducible way.
+- **Current handling:** manual reference runs and triple-set comparisons (rdflib) outside the workflow.
+- **Notes:** related to R-001 (pinning also the tools, not only the data) and R-006.
+
+### R-012: Declarative record of curation decisions on source data
+- **Category:** QUA, DOC · **Priority:** H · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** `data-sources/cordex-cmip5/mapping/data-issues.json`; `data-sources/*/DECISIONS.md`; commits 4378cae, 91924c7, 230a9b9, 767fb7f
+- **Situation:** the source metadata has errors and non-standard uses (wrong units, placeholder or non-CF standard names, homonyms, model-specific units). Each case needed a decision (exclude the records, take a name as an alias, correct the units, define a model-specific variable), with its reason and sometimes as a hypothesis to verify later.
+- **Requirement:** curation decisions should be data, separate from the mapping logic: matched on record attributes, each with its reason and status (e.g. hypothesis to verify), applied consistently by the mapping and by the quality checks, and reported (how many records each decision affects).
+- **Current handling:** a JSON file of rules per source (exclusions, aliases, unit errors, model variables) read by the jq mapping and by the check, plus a hand-written `DECISIONS.md` per source.
+- **Notes:** the rules are ad hoc per source; a general vocabulary (and their provenance in the KG) would allow reuse across sources. Related to R-004, R-005.
+
+### R-013: Inputs in heterogeneous formats
+- **Category:** INT · **Priority:** L · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** `workflow/scripts/cordex_standard_output.py` (commit 02f161c); `workflow/rules/cordex_cmip5.smk` (tar archive from Zenodo)
+- **Situation:** the CORDEX variables requested by the archive are a legacy Excel file (`.xls`), and the CORDEX-CMIP5 metadata is a tar archive (with macOS metadata files to skip). Before the jq mappings, the Excel had to be converted by a Python step with an extra dependency (`xlrd`), into the JSON format of the CMOR tables.
+- **Requirement:** readers for common formats (spreadsheets, archives, CSV, NetCDF headers) should be available as standard steps, producing a uniform intermediate representation for the mappings.
+- **Current handling:** ad hoc Python and shell steps in the rules.
+
+### R-014: Contracts between steps on the shape of intermediate outputs
+- **Category:** MOD, QUA · **Priority:** M · **Status:** open
+- **Date:** 2026-10-19 · **Evidence:** commit 22636a5 (variables typed `data:DeterministicVariable`) and the fix in commit 02f161c (`workflow/rules/ukcp18.smk`)
+- **Situation:** two UKCP18 rules selected the variables of the CMOR-tables output by `"@type" == "data:Variable"`. When the mapping started typing them `data:DeterministicVariable`, the rules would have silently found no variables (no error, empty outputs).
+- **Requirement:** the outputs consumed by other steps should have a declared schema or contract (e.g. the classes and properties they provide, or reasoning over the ontology), checked when either side changes, so that a change in a producer fails visibly in the consumers.
+- **Current handling:** none: found by reading the code; the selection now accepts both classes.
+- **Notes:** a single rule now produces the list of the KG variables (R-002), which reduces the places to fix.
+
+### R-015: Dependencies of mapping modules
+- **Category:** MAP, INC · **Priority:** L · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** `data-sources/cordex-cmip5/analysis/variables-check.jq` (`include "esgf"` besides `include "cordex-variables"`); the library paths (`-L`) of the jq rules
+- **Situation:** jq `include` does not pass on the definitions of the modules included in turn, so each program must include every module it uses directly, and each rule must give every library path and list every module file (R-003). Modules spread over the folders of several sources (`cmor-tables/mapping`, `cmip5/mapping`, `cordex-cmip5/mapping`).
+- **Requirement:** the dependencies between mapping modules should be declared once (as in a package system), with the dataflow deriving the library paths and the inputs to watch from them.
+- **Current handling:** by hand in each program and rule.
+
