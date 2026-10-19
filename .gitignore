@@ -182,6 +182,7 @@ data-sources/cordex-domains/data
 data-sources/cordex-domains/rdf
 data-sources/mohc-cvs/rdf
 data-sources/climdex/rdf
+data-sources/cmip5-cvs/rdf
 data-sources/cmor-tables/data
 data-sources/observations/data
 data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json
