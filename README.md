@@ -6,7 +6,7 @@ Code and data used to populate the climate services knowledge graph for the HACI
 
 Parts of the ingestion are being moved to a [Snakemake](https://snakemake.github.io/) workflow
 (`workflow/Snakefile`, configured in `config/config.yaml`).
-It requires `git`, `jq` (1.8, as the UKCP18 mapping uses its syntax) and the Python packages in
+It requires `git`, `curl`, `jq` (1.8, as the UKCP18 mapping uses its syntax) and the Python packages in
 `workflow/requirements.txt`:
 
 ```bash
@@ -17,8 +17,20 @@ snakemake --cores 4 cmor_tables        # just the variables of the CMOR tables
 ```
 
 The decisions taken for each data source on its issues, inconsistencies and conflicting versions (and the cases left
-for further analysis) are documented in its `DECISIONS.md` (`data-sources/cmor-tables`, `cmip5`, `cordex-cmip5`,
-`ukcp18`).
+for further analysis) are documented in its `DECISIONS.md` (`data-sources/cf-standard-names`, `cmor-tables`, `cmip5`,
+`cordex-cmip5`, `ukcp18`).
+
+### CF standard names
+
+The [CF standard name table](https://cfconventions.org/Data/cf-standard-names/), in the version of
+`config/config.yaml` (`cf_standard_names`), is downloaded as XML
+(`data-sources/cf-standard-names/data/cf-standard-name-table.xml`), converted to JSON by `xq` (of the Python
+package `yq`, with the conventions of [xmltodict](https://github.com/martinblech/xmltodict)) and mapped with jq (`mapping/standard-names.jq`,
+`snakemake --cores 4 cf_standard_names`) to `data-sources/cf-standard-names/rdf/standard-names.jsonld`: a
+variable for each entry, member of the CF variables, with its units of measure, and the aliases, the same as
+(`owl:sameAs`) their entries, with the alias as alternative label.
+
+The XML is also read by the analysis of the CMOR tables (to resolve the aliases).
 
 ### CMOR tables
 

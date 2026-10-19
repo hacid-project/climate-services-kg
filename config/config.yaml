@@ -45,3 +45,12 @@ cmip5:
   # (as in cmor_tables.editions), used to resolve their MIP variables (also of
   # the CORDEX-CMIP5 datasets)
   cmor_tables: cmip5/5.0
+
+cf_standard_names:
+  # Version of the CF standard name table, downloaded from
+  # {url}/{version}/src/cf-standard-name-table.xml. The site cfconventions.org
+  # is published from the GitHub repository cf-convention/cf-convention.github.io:
+  # the same files are at
+  # https://raw.githubusercontent.com/cf-convention/cf-convention.github.io/main/Data/cf-standard-names
+  version: 86
+  url: https://cfconventions.org/Data/cf-standard-names

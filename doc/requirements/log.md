@@ -79,6 +79,7 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Situation:** older sources use RML, newer ones jq. Some steps are still shell scripts outside Snakemake.
 - **Requirement:** a dataflow should host steps in different mapping languages behind uniform interfaces, so a source can migrate from one to the other without changing its consumers.
 - **Current handling:** partly migrated to Snakemake. The rest uses shell scripts.
+- **Notes:** the CF standard names were ported to jq too (R-016): `cordex-domains` is the last source mapped with RML.
 
 ### R-007: Generate FAIR metadata from the pipeline
 - **Category:** FAIR, DOC · **Priority:** M · **Status:** open
@@ -134,7 +135,7 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Situation:** the CORDEX variables requested by the archive are a legacy Excel file (`.xls`), and the CORDEX-CMIP5 metadata is a tar archive (with macOS metadata files to skip). Before the jq mappings, the Excel had to be converted by a Python step with an extra dependency (`xlrd`), into the JSON format of the CMOR tables.
 - **Requirement:** readers for common formats (spreadsheets, archives, CSV, NetCDF headers) should be available as standard steps, producing a uniform intermediate representation for the mappings.
 - **Current handling:** ad hoc Python and shell steps in the rules.
-- **Notes:** the macOS metadata files came from creating the archive on macOS (`tar` adds `._*` files unless `COPYFILE_DISABLE=1`, and extended-attribute headers unless `--no-xattrs`); the record was republished clean (10.5281/zenodo.23477951) after two attempts. Checking the archives of the inputs before publishing (expected file list) would have caught it.
+- **Notes:** the macOS metadata files came from creating the archive on macOS (`tar` adds `._*` files unless `COPYFILE_DISABLE=1`, and extended-attribute headers unless `--no-xattrs`); the record was republished clean (10.5281/zenodo.23477951) after two attempts. Checking the archives of the inputs before publishing (expected file list) would have caught it. For XML, a standard converter was preferred to ad hoc code: the CF standard name table is converted by `xq` (Python package `yq`, conventions of xmltodict, see R-016).
 
 ### R-014: Contracts between steps on the shape of intermediate outputs
 - **Category:** MOD, QUA · **Priority:** M · **Status:** open
@@ -151,3 +152,20 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Requirement:** the dependencies between mapping modules should be declared once (as in a package system), with the dataflow deriving the library paths and the inputs to watch from them.
 - **Current handling:** by hand in each program and rule.
 
+## Entries from the CF standard names work (2026-10-19)
+
+### R-016: Derived data edited by hand and committed outputs out of date
+- **Category:** VER, DOC · **Priority:** H · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** commit 0b585c8 ("Fix manually issue with CF variables"); commits bf597ef, 22636a5 (RML mapping changed, `rdf/data.ttl` not regenerated); `data-sources/cf-standard-names/DECISIONS.md`
+- **Situation:** the CF table was converted from XML to JSON with a tool that was not recorded. Two entries were then removed by hand from the JSON (and from the CSV and Turtle derived from it), with no reason given; the reason (the names are also aliases of other entries) had to be found again in the source. Later changes to the RML mapping (the class of the variables, the language of the unit labels) were not applied to the committed output.
+- **Requirement:** every transformation from the published source to the outputs should be a step of the dataflow, including format conversions and fixes, with the fixes recorded as curation decisions (R-012). Committed derived data should be either avoided or checked for being up to date with its inputs and steps.
+- **Current handling:** the conversion is done by a standard tool (`xq`, with the conventions of xmltodict), so the intermediate format is given by a known convention rather than by ad hoc code; the fix is a rule of the jq mapping (entries that are also aliases are left out), documented in `DECISIONS.md`. The derived data is no longer committed.
+- **Notes:** related to R-011 (the stale output was still usable as the reference, after accounting for the later changes).
+
+### R-017: Alternative locations of an input
+- **Category:** VER, OPS · **Priority:** L · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** `config/config.yaml` (`cf_standard_names.url`); `workflow/rules/cf_standard_names.smk`
+- **Situation:** the CF table is published at cfconventions.org, which was not reachable from the environment where the workflow was developed (blocked by its network policy). The same file is in the GitHub repository from which the site is published.
+- **Requirement:** an input should be identified independently of where it is fetched from (e.g. by version and checksum), with alternative locations (mirrors, archived copies) tried in turn and checked to give the same content.
+- **Current handling:** the base URL is configurable; the copy on GitHub was checked by hand to be identical to the committed XML.
+- **Notes:** related to R-001 and R-009.

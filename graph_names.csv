@@ -9,7 +9,6 @@ data-sources/scenarios.ttl,https://w3id.org/hacid/data/cs,n
 data-sources/gwls/rdf/gwls.jsonld,https://w3id.org/hacid/data/cs,n
 data-sources/cmor-tables/rdf/current/*/*.jsonld,https://w3id.org/hacid/data/cs/cmor-tables,n
 data-sources/cmor-tables/rdf/previous/*/*.jsonld,https://w3id.org/hacid/data/cs/cmor-tables,n
-data-sources/cf-standard-names/rdf/*.ttl,https://w3id.org/hacid/data/cs/cf,n
 data-sources/cf-standard-names/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cf,n
 data-sources/cmip5/rdf/datasets.jsonld,https://w3id.org/hacid/data/cs/cmip5/datasets,n
 data-sources/cmip5-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cmip5/cvs,n
