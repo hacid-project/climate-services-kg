@@ -25,12 +25,10 @@ for further analysis) are documented in its `DECISIONS.md` (`data-sources/cf-sta
 The [CF standard name table](https://cfconventions.org/Data/cf-standard-names/), in the version of
 `config/config.yaml` (`cf_standard_names`), is downloaded as XML
 (`data-sources/cf-standard-names/data/cf-standard-name-table.xml`), converted to JSON
-(`workflow/scripts/cf_standard_names_json.py`) and mapped with jq (`snakemake --cores 4 cf_standard_names`):
-
-1. `data-sources/cf-standard-names/rdf/standard-names.jsonld`: a variable for each entry, member of the CF
-   variables, with its units of measure (`mapping/standard-names.jq`);
-2. `data-sources/cf-standard-names/rdf/aliases.jsonld`: the aliases, the same as (`owl:sameAs`) their entries,
-   with the alias as alternative label (`mapping/aliases.jq`).
+(`workflow/scripts/cf_standard_names_json.py`) and mapped with jq (`mapping/standard-names.jq`,
+`snakemake --cores 4 cf_standard_names`) to `data-sources/cf-standard-names/rdf/standard-names.jsonld`: a
+variable for each entry, member of the CF variables, with its units of measure, and the aliases, the same as
+(`owl:sameAs`) their entries, with the alias as alternative label.
 
 The XML is also read by the analysis of the CMOR tables (to resolve the aliases).
 

@@ -1,7 +1,7 @@
 # Mapping of the CF standard name table (data/cf-standard-name-table.json,
 # converted from the XML of the table) to JSON-LD: a variable for each entry,
-# member of the CF variables, with its units of measure. The aliases are mapped
-# separately (aliases.jq).
+# member of the CF variables, with its units of measure, and the aliases, the
+# same as (owl:sameAs) their entries, with the alias as alternative label.
 #
 # The entries whose name is also an alias (of another entry) are left out, see
 # DECISIONS.md. Empty units or descriptions are left out.
@@ -14,13 +14,16 @@ def present: select(. != "");
 {
     "@context": {
         rdfs: "http://www.w3.org/2000/01/rdf-schema#",
+        owl: "http://www.w3.org/2002/07/owl#",
         top: "https://w3id.org/hacid/onto/top-level/",
         data: "https://w3id.org/hacid/onto/data/",
         label: {"@id": "rdfs:label", "@language": "en"},
         comment: {"@id": "rdfs:comment", "@language": "en"},
         isMemberOf: {"@id": "top:isMemberOf", "@type": "@id"},
         hasUnitOfMeasure: {"@id": "top:hasUnitOfMeasure", "@type": "@id"},
-        hasValuesOn: {"@id": "data:hasValuesOn", "@type": "@id"}
+        hasValuesOn: {"@id": "data:hasValuesOn", "@type": "@id"},
+        sameAs: {"@id": "owl:sameAs", "@type": "@id"},
+        altLabel: "top:altLabel"
     },
     "@graph": [
         # Variables
@@ -45,6 +48,18 @@ def present: select(. != "");
                 "@id": @uri "https://w3id.org/hacid/data/cs/unitsofmeasure/\(.)",
                 "@type": ["top:UnitOfMeasure", "data:DimensionalSpace"],
                 "rdfs:label": .
+            }
+        ),
+        # Aliases
+        (
+            .alias[] |
+            {
+                "@id": @uri "https://w3id.org/hacid/data/cs/variables/cf/\(.id)",
+                sameAs: @uri "https://w3id.org/hacid/data/cs/variables/cf/\(.entry_id)"
+            },
+            {
+                "@id": @uri "https://w3id.org/hacid/data/cs/variables/cf/\(.entry_id)",
+                altLabel: .id
             }
         )
     ]

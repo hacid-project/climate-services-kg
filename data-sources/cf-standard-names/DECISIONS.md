@@ -46,7 +46,8 @@ applied.
 
 The jq mapping reproduces the triples of the former RML mapping
 (`rml/cf-standard-names.ttl`, on the CSV of the entries made by
-`ws-data-rml.py`) as committed (`rdf/data.ttl`, 29,510 triples, and
-`rdf/aliases.jsonld`, 1,144 triples), but for the class of the variables, then
+`ws-data-rml.py`) as committed (`rdf/data.ttl`, 29,510 triples) and of the
+former jq mapping of the aliases (`mapping/aliases.jq`, `rdf/aliases.jsonld`,
+1,144 triples), now merged in the same mapping, but for the class of the variables, then
 `data:Variable` (the RML mapping had been changed to
 `data:DeterministicVariable` without regenerating the output).
