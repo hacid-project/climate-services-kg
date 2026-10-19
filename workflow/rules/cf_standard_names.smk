@@ -18,13 +18,17 @@ rule cf_standard_names_table:
         "curl -sSfL -o {output:q} {params.url:q}"
 
 
+# Conversion to JSON by xq (of the Python package yq), with the conventions of
+# xmltodict: attributes as "@" keys, text of the elements without attributes as
+# strings, empty elements as null, repeated elements as arrays (entry and alias
+# always)
 rule cf_standard_names_json:
     input:
-        xml="data-sources/cf-standard-names/data/cf-standard-name-table.xml",
+        "data-sources/cf-standard-names/data/cf-standard-name-table.xml",
     output:
-        json="data-sources/cf-standard-names/data/cf-standard-name-table.json",
-    script:
-        "../scripts/cf_standard_names_json.py"
+        "data-sources/cf-standard-names/data/cf-standard-name-table.json",
+    shell:
+        "xq --xml-force-list entry --xml-force-list alias . {input:q} > {output:q}"
 
 
 rule cf_standard_names_map:

@@ -1,16 +1,17 @@
 # Mapping of the CF standard name table (data/cf-standard-name-table.json,
-# converted from the XML of the table) to JSON-LD: a variable for each entry,
+# converted from the XML of the table by xq, i.e. with the conventions of
+# xmltodict: attributes as "@" keys, empty elements as null) to JSON-LD: a variable for each entry,
 # member of the CF variables, with its units of measure, and the aliases, the
 # same as (owl:sameAs) their entries, with the alias as alternative label.
 #
 # The entries whose name is also an alias (of another entry) are left out, see
-# DECISIONS.md. Empty units or descriptions are left out.
+# DECISIONS.md. Missing units or descriptions are left out.
 
-def present: select(. != "");
+def present: select(. != null and . != "");
 
 .standard_name_table |
-[.alias[].id] as $aliases |
-[.entry[] | select(.id | IN($aliases[]) | not)] as $entries |
+[.alias[]."@id"] as $aliases |
+[.entry[] | select(."@id" | IN($aliases[]) | not)] as $entries |
 {
     "@context": {
         rdfs: "http://www.w3.org/2000/01/rdf-schema#",
@@ -31,10 +32,10 @@ def present: select(. != "");
             $entries[] |
             ((.canonical_units | present | @uri "https://w3id.org/hacid/data/cs/unitsofmeasure/\(.)") // null) as $unit |
             {
-                "@id": @uri "https://w3id.org/hacid/data/cs/variables/cf/\(.id)",
+                "@id": @uri "https://w3id.org/hacid/data/cs/variables/cf/\(."@id")",
                 "@type": "data:DeterministicVariable",
                 isMemberOf: "https://w3id.org/hacid/data/cs/variables/cf",
-                label: .id,
+                label: ."@id",
                 comment: ((.description | present) // null),
                 hasUnitOfMeasure: $unit,
                 hasValuesOn: $unit
@@ -54,12 +55,12 @@ def present: select(. != "");
         (
             .alias[] |
             {
-                "@id": @uri "https://w3id.org/hacid/data/cs/variables/cf/\(.id)",
+                "@id": @uri "https://w3id.org/hacid/data/cs/variables/cf/\(."@id")",
                 sameAs: @uri "https://w3id.org/hacid/data/cs/variables/cf/\(.entry_id)"
             },
             {
                 "@id": @uri "https://w3id.org/hacid/data/cs/variables/cf/\(.entry_id)",
-                altLabel: .id
+                altLabel: ."@id"
             }
         )
     ]

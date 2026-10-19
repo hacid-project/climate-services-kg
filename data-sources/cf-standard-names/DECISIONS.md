@@ -11,13 +11,13 @@ applied.
   repository `cf-convention/cf-convention.github.io`, which has the same file
   (checked for version 86): its URL can be configured instead
   (`cf_standard_names.url`), e.g. where cfconventions.org is not reachable.
-- **Conversion to JSON** (`workflow/scripts/cf_standard_names_json.py`). The
-  conversion reproduces the JSON previously kept in the repository (made with a
-  tool not recorded): the child elements and then the attributes as keys, the
-  repeated elements (`entry`, `alias`) as arrays, the text of the elements
-  without children (empty if none) as strings. Unlike the previous JSON, the
-  namespace attributes of the root (`xmlns:xsi`, `xsi:noNamespaceSchemaLocation`)
-  are left out: they are not used.
+- **Conversion to JSON.** The XML is converted by `xq` (of the Python package
+  `yq`), a standard tool, with the conventions of xmltodict: attributes as keys
+  prefixed by `@` (e.g. `@id`), the text of the elements without attributes as
+  strings, empty elements as `null`, repeated elements as arrays (always for
+  `entry` and `alias`, `--xml-force-list`). The JSON previously kept in the
+  repository was made with a tool not recorded, with other conventions
+  (attributes as plain keys, empty elements as empty strings).
 
 ## Variables (`mapping/standard-names.jq`)
 
@@ -34,7 +34,7 @@ applied.
   (commit 0b585c8): mapping both would make the same IRI a variable of its own
   and the same as (`owl:sameAs`) another one. The rule applies to any name that
   is both, in any version.
-- **Empty values.** The entries without units (17, mostly of string-valued
+- **Missing values.** The entries without units (17, mostly of string-valued
   quantities, e.g. `region`, `platform_name`) have no units of measure, and those
   without a description (15) no comment, as in the former RML mapping. One of
   them, `volume_fraction_of_oxygen_in_sea_floor_sediment_pore_water`, is a
