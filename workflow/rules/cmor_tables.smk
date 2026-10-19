@@ -92,6 +92,21 @@ rule cmor_tables:
         ),
 
 
+# IRIs of the variables of the KG (MIP and previous variables), to tell the
+# variables of the datasets that are not variables of the KG
+rule cmor_tables_variable_iris:
+    input:
+        rules.cmor_tables.input,
+    output:
+        "data-sources/cmor-tables/data/variable-iris.json",
+    log:
+        "logs/cmor_tables/variable_iris.log",
+    shell:
+        "jq -n '[inputs | .[\"@graph\"][] |"
+        " select(.[\"@type\"] | IN(\"data:Variable\", \"data:DeterministicVariable\")) | .[\"@id\"]] | unique'"
+        " {input:q} > {output:q} 2> {log:q}"
+
+
 # MIP variables: all the variables of the current edition
 rule cmor_tables_map_variables:
     input:

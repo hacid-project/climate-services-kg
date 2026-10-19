@@ -123,17 +123,14 @@ rule ukcp18_unmapped_variables:
             "data-sources/cmor-tables/mapping/mip-variables.jq",
             "data-sources/cmor-tables/mapping/mip-mapping.json",
         ],
-        kg_variables=rules.cmor_tables.input,
+        kg_variables=rules.cmor_tables_variable_iris.output,
     output:
         "data-sources/ukcp18/analysis/unmapped-variables.json.gz",
     log:
         "logs/ukcp18/unmapped_variables.log",
     shell:
         "root=$PWD;"
-        " jq -n '[inputs | .[\"@graph\"][] | select((.[\"@type\"] | IN(\"data:Variable\", \"data:DeterministicVariable\"))) | .[\"@id\"]] | unique'"
-        " {input.kg_variables:q} > $root/{output:q}.variables.json 2> $root/{log:q} &&"
         " cd data-sources/ukcp18 &&"
-        " jq -L mapping -L ../cmor-tables/mapping --slurpfile kg_variables $root/{output:q}.variables.json"
-        " -f analysis/unmapped-variables.jq $root/{input.metadata:q} 2>> $root/{log:q} |"
-        " gzip -n > $root/{output:q} &&"
-        " rm $root/{output:q}.variables.json"
+        " jq -L mapping -L ../cmor-tables/mapping --slurpfile kg_variables $root/{input.kg_variables:q}"
+        " -f analysis/unmapped-variables.jq $root/{input.metadata:q} 2> $root/{log:q} |"
+        " gzip -n > $root/{output:q}"
