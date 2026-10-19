@@ -10,6 +10,7 @@
 #   snakemake --cores 1 cordex_domains        # CORDEX-CMIP5 domains and grids
 #   snakemake --cores 1 cordex_cmip5          # CORDEX-CMIP5 datasets
 #   snakemake --cores 1 ukcp18                # UKCP18 datasets
+#   snakemake --cores 1 mohc_cvs              # controlled vocabularies of the Met Office Hadley Centre
 #   snakemake --cores 1 cmor_tables_analysis  # analysis of all the CMOR tables editions
 
 import json
@@ -60,6 +61,9 @@ include: "rules/cordex_cmip5.smk"
 include: "rules/ukcp18.smk"
 
 
+include: "rules/mohc_cvs.smk"
+
+
 # Mappings of the sources to the KG
 rule mapping:
     default_target: True
@@ -70,6 +74,7 @@ rule mapping:
         rules.cordex_domains.input,
         rules.cordex_cmip5.input,
         rules.ukcp18.input,
+        rules.mohc_cvs.input,
 
 
 # Analyses of the sources

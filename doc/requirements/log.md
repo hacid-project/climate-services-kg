@@ -179,3 +179,21 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Requirement:** the inputs should be read by their schema (column names, types), checked against a declared one, so that a change of layout fails visibly; pinning by commit should be supported where there are no releases, with a way to compare versions of an input (values changed, columns added or dropped) before moving to a newer one.
 - **Current handling:** pinned to a commit in `config/config.yaml`; the tables are converted by a standard tool (`csvjson`) and merged by column name; the versions were compared by hand.
 - **Notes:** related to R-001 (pinning), R-014 (contracts between steps) and R-016 (data edited by hand).
+
+## Entries from the MOHC controlled vocabularies work (2026-10-19)
+
+### R-019: Data curated within the project as a source
+- **Category:** VER, QUA, DOC · **Priority:** M · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** `data-sources/mohc-cvs/DECISIONS.md`; the removed `cleanse.sh`, `CSVtoJSON.py` and `data-raw-*` (up to commit 8f1041e); commits cd7f9c7, 0da6e7b, 53e3ea7
+- **Situation:** the MOHC controlled vocabularies are collected and curated manually within the project. They were first kept in shared spreadsheets, converted to JSON and cleansed by scripts. It was then decided that the cleansed JSON files would be the source of truth, and later updates were made there, so the spreadsheets and the scripts became obsolete. The change of the authoring medium was a one-off migration, not a step of the dataflow.
+- **Requirement:** a dataflow should distinguish external sources from data authored within the project, and support the latter as first-class inputs: edited in a declared format (with a schema checked on each change, as nothing else validates hand edits), versioned with the history of the curation (who changed what and why), and with a recorded migration when the authoring medium changes (e.g. from spreadsheets to JSON).
+- **Current handling:** the JSON files are kept in the repository as source and edited directly; the curation history is only in git; no schema is checked.
+- **Notes:** related to R-012 (curation decisions on external data) and R-016.
+
+### R-020: Data files imported by a mapping
+- **Category:** MAP, MOD · **Priority:** L · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** `data-sources/mohc-cvs/mapping/operations.jq` (formerly `import "./data/cv-map" as $cv_map_inputs`)
+- **Situation:** a jq mapping imported a data file with a path relative to the working directory, which worked only when run from the folder of the source, and hid the dependency from the dataflow.
+- **Requirement:** the data a mapping reads should be declared as inputs of its step, not resolved implicitly by the mapping.
+- **Current handling:** passed with `--slurpfile` and listed among the inputs of the rule.
+- **Notes:** related to R-015.
