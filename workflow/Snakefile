@@ -7,6 +7,7 @@
 #   snakemake --cores 1 cf_standard_names     # variables of the CF standard name table
 #   snakemake --cores 1 cmor_tables           # variables of the CMOR tables (MIP and previous variables)
 #   snakemake --cores 1 cmip5                 # CMIP5 datasets
+#   snakemake --cores 1 cordex_domains        # CORDEX-CMIP5 domains and grids
 #   snakemake --cores 1 cordex_cmip5          # CORDEX-CMIP5 datasets
 #   snakemake --cores 1 ukcp18                # UKCP18 datasets
 #   snakemake --cores 1 cmor_tables_analysis  # analysis of all the CMOR tables editions
@@ -50,6 +51,9 @@ include: "rules/cmor_tables.smk"
 include: "rules/cmip5.smk"
 
 
+include: "rules/cordex_domains.smk"
+
+
 include: "rules/cordex_cmip5.smk"
 
 
@@ -63,6 +67,7 @@ rule mapping:
         rules.cf_standard_names.input,
         rules.cmor_tables.input,
         rules.cmip5.input,
+        rules.cordex_domains.input,
         rules.cordex_cmip5.input,
         rules.ukcp18.input,
 

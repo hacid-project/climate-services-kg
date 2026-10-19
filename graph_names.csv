@@ -12,7 +12,7 @@ data-sources/cmor-tables/rdf/previous/*/*.jsonld,https://w3id.org/hacid/data/cs/
 data-sources/cf-standard-names/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cf,n
 data-sources/cmip5/rdf/datasets.jsonld,https://w3id.org/hacid/data/cs/cmip5/datasets,n
 data-sources/cmip5-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cmip5/cvs,n
-data-sources/cordex-domains/rdf/data.ttl,https://w3id.org/hacid/data/cs/cordex/cvs,n
+data-sources/cordex-domains/rdf/domains.jsonld,https://w3id.org/hacid/data/cs/cordex/cvs,n
 data-sources/cordex-cmip5-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cordex/cvs,n
 data-sources/cordex-cmip5/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cordex-cmip5/datasets,n
 data-sources/climdex/rdf/*.jsonld,https://w3id.org/hacid/data/cs/climdex,n

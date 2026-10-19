@@ -5,5 +5,7 @@ snakemake-storage-plugin-git==0.1.0
 snakemake-storage-plugin-zenodo
 # xq, converting the CF standard name table from XML to JSON (it runs jq)
 yq
+# csvjson, converting the CORDEX domain tables from CSV to JSON
+csvkit
 # Reads the CORDEX standard output (data-sources/cordex-cmip5/CORDEX_standard_output.xls)
 xlrd

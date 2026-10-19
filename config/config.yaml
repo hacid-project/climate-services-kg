@@ -54,3 +54,12 @@ cf_standard_names:
   # https://raw.githubusercontent.com/cf-convention/cf-convention.github.io/main/Data/cf-standard-names
   version: 86
   url: https://cfconventions.org/Data/cf-standard-names
+
+cordex_domains:
+  # Git repository and ref (commit) of the CORDEX domain tables. The commit is
+  # the last one with the grids of CORDEX-CMIP5 in two tables, rotated and
+  # regular (CORDEX-CMIP5_rotated_grids.csv, CORDEX-CMIP5_regular_grids.csv),
+  # before they were merged in CORDEX-CMIP5_grids.csv (without the upper right
+  # coordinates)
+  repo: https://github.com/WCRP-CORDEX/domain-tables.git
+  version: 26696d7a0c559b32791ea3940ea3b0c5e79901e7

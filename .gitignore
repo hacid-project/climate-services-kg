@@ -178,6 +178,8 @@ data-sources/cordex-cmip5/rdf
 data-sources/cmor-tables/rdf
 data-sources/cf-standard-names/data
 data-sources/cf-standard-names/rdf
+data-sources/cordex-domains/data
+data-sources/cordex-domains/rdf
 data-sources/cmor-tables/data
 data-sources/observations/data
 data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json

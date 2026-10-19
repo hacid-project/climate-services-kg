@@ -79,7 +79,7 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Situation:** older sources use RML, newer ones jq. Some steps are still shell scripts outside Snakemake.
 - **Requirement:** a dataflow should host steps in different mapping languages behind uniform interfaces, so a source can migrate from one to the other without changing its consumers.
 - **Current handling:** partly migrated to Snakemake. The rest uses shell scripts.
-- **Notes:** the CF standard names were ported to jq too (R-016): `cordex-domains` is the last source mapped with RML.
+- **Notes:** the CF standard names were ported to jq too (R-016), then the CORDEX domains (R-018): no source is mapped with RML any more, so `ws-data-rml.py` (and its part of `map-data.sh`) is no longer used.
 
 ### R-007: Generate FAIR metadata from the pipeline
 - **Category:** FAIR, DOC · **Priority:** M · **Status:** open
@@ -169,3 +169,13 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Requirement:** an input should be identified independently of where it is fetched from (e.g. by version and checksum), with alternative locations (mirrors, archived copies) tried in turn and checked to give the same content.
 - **Current handling:** the base URL is configurable; the copy on GitHub was checked by hand to be identical to the committed XML.
 - **Notes:** related to R-001 and R-009.
+
+## Entries from the CORDEX domains work (2026-10-19)
+
+### R-018: Evolution of the layout of an input
+- **Category:** VER, QUA · **Priority:** M · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** `data-sources/cordex-domains/DECISIONS.md`; `workflow/rules/cordex_domains.smk`; the former `data-sources/cordex-domains/merge.sh`
+- **Situation:** the CORDEX domain tables are maintained in a git repository without tags, whose layout changed over time: columns reordered (2024-11), then the tables restructured and renamed, with other columns and derived values dropped (2026-06). The former merge script used column positions, so the reorder would have silently given wrong ids. The copy previously kept in this repository came from an older commit, and the merged table had been fixed by hand as upstream did later.
+- **Requirement:** the inputs should be read by their schema (column names, types), checked against a declared one, so that a change of layout fails visibly; pinning by commit should be supported where there are no releases, with a way to compare versions of an input (values changed, columns added or dropped) before moving to a newer one.
+- **Current handling:** pinned to a commit in `config/config.yaml`; the tables are converted by a standard tool (`csvjson`) and merged by column name; the versions were compared by hand.
+- **Notes:** related to R-001 (pinning), R-014 (contracts between steps) and R-016 (data edited by hand).
