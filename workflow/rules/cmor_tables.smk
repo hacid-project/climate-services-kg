@@ -156,7 +156,7 @@ rule cmor_tables_analysis:
             "data-sources/cmor-tables/data/{edition}/info.json",
             edition=config["cmor_tables"]["editions"],
         ),
-        cf_table="data-sources/cf-standard-names/data/skip/cf-standard-name-table.xml",
+        cf_table="data-sources/cf-standard-names/data/cf-standard-name-table.xml",
     output:
         steps="data-sources/cmor-tables/analysis/release-steps.csv",
         deletions="data-sources/cmor-tables/analysis/deletions.csv",
