@@ -1,6 +1,5 @@
-import "./data/cv-map" as $cv_map_inputs;
-
-$cv_map_inputs as [$cv_map_input] |
+# $cv_map: data/cv-map.json (--slurpfile)
+$cv_map as [$cv_map_input] |
 
 def to_camel_case:
     split("[ -/]";"g") |

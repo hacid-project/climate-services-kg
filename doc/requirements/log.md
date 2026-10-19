@@ -179,3 +179,21 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Requirement:** the inputs should be read by their schema (column names, types), checked against a declared one, so that a change of layout fails visibly; pinning by commit should be supported where there are no releases, with a way to compare versions of an input (values changed, columns added or dropped) before moving to a newer one.
 - **Current handling:** pinned to a commit in `config/config.yaml`; the tables are converted by a standard tool (`csvjson`) and merged by column name; the versions were compared by hand.
 - **Notes:** related to R-001 (pinning), R-014 (contracts between steps) and R-016 (data edited by hand).
+
+## Entries from the MOHC controlled vocabularies work (2026-10-19)
+
+### R-019: Curated data as the source of a step
+- **Category:** VER, DOC · **Priority:** M · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** `data-sources/mohc-cvs/DECISIONS.md`; the removed `cleanse.sh`, `CSVtoJSON.py` and `data-raw-*` (up to commit 8f1041e); commits cd7f9c7, 0da6e7b, 53e3ea7
+- **Situation:** the controlled vocabularies were produced from spreadsheets by conversion and cleansing scripts, and then edited by hand. The scripts could no longer regenerate the files without losing the edits, so the curated files became the source and the derivation was dropped.
+- **Requirement:** a dataflow should allow a curated dataset to be declared as a source, with its provenance (what it was derived from, which edits were made by hand, by whom) recorded, rather than lost when the derivation is dropped. Ideally the edits would be patches or curation rules applied on the derived data (R-012), so the derivation could still be rerun.
+- **Current handling:** the curated JSON files are kept in the repository as source; their history is only in git.
+- **Notes:** related to R-012 and R-016.
+
+### R-020: Data files imported by a mapping
+- **Category:** MAP, MOD · **Priority:** L · **Status:** workaround
+- **Date:** 2026-10-19 · **Evidence:** `data-sources/mohc-cvs/mapping/operations.jq` (formerly `import "./data/cv-map" as $cv_map_inputs`)
+- **Situation:** a jq mapping imported a data file with a path relative to the working directory, which worked only when run from the folder of the source, and hid the dependency from the dataflow.
+- **Requirement:** the data a mapping reads should be declared as inputs of its step, not resolved implicitly by the mapping.
+- **Current handling:** passed with `--slurpfile` and listed among the inputs of the rule.
+- **Notes:** related to R-015.

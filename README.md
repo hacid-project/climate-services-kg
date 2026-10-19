@@ -18,7 +18,7 @@ snakemake --cores 4 cmor_tables        # just the variables of the CMOR tables
 
 The decisions taken for each data source on its issues, inconsistencies and conflicting versions (and the cases left
 for further analysis) are documented in its `DECISIONS.md` (`data-sources/cf-standard-names`, `cmor-tables`, `cmip5`,
-`cordex-domains`, `cordex-cmip5`, `ukcp18`).
+`cordex-domains`, `cordex-cmip5`, `ukcp18`, `mohc-cvs`).
 
 ### CF standard names
 
@@ -157,3 +157,11 @@ extracted, to review their mapping, in `data-sources/ukcp18/analysis/unmapped-va
 
 The Zenodo plugin requires an access token, which is not needed for published records: a placeholder is
 used unless `SNAKEMAKE_STORAGE_ZENODO_ACCESS_TOKEN` is set.
+
+### Met Office Hadley Centre controlled vocabularies
+
+The controlled vocabularies of climate indices, hazards, methods and operations (tasks), with the schemes of
+their values, are kept in the repository as source (`data-sources/mohc-cvs/data/*.json`) and mapped with jq
+(`mapping/{name}.jq`, `snakemake --cores 4 mohc_cvs`) to `data-sources/mohc-cvs/rdf/{name}.jsonld`
+(`indices`, `hazards`, `methods`, `operations`, `cvs`). The operations are also the input of
+`for-hacid-dss/add-metadata.sh`.
