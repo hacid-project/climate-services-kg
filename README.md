@@ -18,7 +18,7 @@ snakemake --cores 4 cmor_tables        # just the variables of the CMOR tables
 
 The decisions taken for each data source on its issues, inconsistencies and conflicting versions (and the cases left
 for further analysis) are documented in its `DECISIONS.md` (`data-sources/cf-standard-names`, `cmor-tables`, `cmip5`,
-`cordex-cmip5`, `ukcp18`).
+`cordex-domains`, `cordex-cmip5`, `ukcp18`).
 
 ### CF standard names
 
@@ -69,6 +69,16 @@ to `data-sources/cmip5/data/cmip5.json` and mapped by `data-sources/cmip5/mappin
 models and their spatial and temporal grids. The variables of the datasets are the MIP variables
 resolved through `data-sources/cmor-tables/mapping/mip-mapping.json` from their definitions in the
 CMIP5 CMOR tables (e.g. a CMIP5 `tos`, in K, is `.../variables/mip/cmip6/6.0.19/tos`).
+
+### CORDEX-CMIP5 domains and grids
+
+The tables of the CORDEX-CMIP5 grids, rotated and regular, are read from the
+[domain tables](https://github.com/WCRP-CORDEX/domain-tables) of WCRP-CORDEX, at the commit of
+`config/config.yaml` (`cordex_domains`), through the git storage plugin. Each is converted to JSON by `csvjson`
+(of the Python package `csvkit`), the two are merged in `data-sources/cordex-domains/data/CORDEX-CMIP5.json` and
+mapped with jq (`mapping/domains.jq`, `snakemake --cores 4 cordex_domains`) to
+`data-sources/cordex-domains/rdf/domains.jsonld`: the domains, the grids (dimensional spaces) with their resolution,
+bounding regions and specializations, and the rotated dimensional spaces with their poles.
 
 ### CORDEX-CMIP5 datasets
 
