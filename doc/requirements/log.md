@@ -79,7 +79,7 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Situation:** older sources use RML, newer ones jq. Some steps are still shell scripts outside Snakemake.
 - **Requirement:** a dataflow should host steps in different mapping languages behind uniform interfaces, so a source can migrate from one to the other without changing its consumers.
 - **Current handling:** partly migrated to Snakemake. The rest uses shell scripts.
-- **Notes:** the CF standard names were ported to jq too (R-016), then the CORDEX domains (R-018): no source is mapped with RML any more, so `ws-data-rml.py` (and its part of `map-data.sh`) is no longer used.
+- **Notes:** the CF standard names were ported to jq too (R-016), then the CORDEX domains (R-018): no source is mapped with RML any more: `ws-data-rml.py` (with its pyrml dependency, the root `requirements.txt`) and `map-data.sh` were removed.
 
 ### R-007: Generate FAIR metadata from the pipeline
 - **Category:** FAIR, DOC · **Priority:** M · **Status:** open
