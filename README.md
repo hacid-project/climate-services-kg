@@ -61,7 +61,7 @@ CMIP5 CMOR tables (e.g. a CMIP5 `tos`, in K, is `.../variables/mip/cmip6/6.0.19/
 ### CORDEX-CMIP5 datasets
 
 The metadata of the CORDEX-CMIP5 datasets found on ESGF (see `download-data.sh`), in pages of the search results, is
-downloaded from Zenodo ([10.5281/zenodo.23364077](https://doi.org/10.5281/zenodo.23364077)) through the Zenodo
+downloaded from Zenodo ([10.5281/zenodo.23477951](https://doi.org/10.5281/zenodo.23477951)) through the Zenodo
 storage plugin to `data-sources/cordex-cmip5/data/cordex-<n>.json` and mapped by
 `data-sources/cordex-cmip5/mapping/datasets.jq` to `data-sources/cordex-cmip5/rdf/datasets.jsonld`
 (`snakemake --cores 4 cordex_cmip5`): datasets, the outputs of their simulations, driving ensembles, ensembles,

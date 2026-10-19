@@ -134,6 +134,7 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Situation:** the CORDEX variables requested by the archive are a legacy Excel file (`.xls`), and the CORDEX-CMIP5 metadata is a tar archive (with macOS metadata files to skip). Before the jq mappings, the Excel had to be converted by a Python step with an extra dependency (`xlrd`), into the JSON format of the CMOR tables.
 - **Requirement:** readers for common formats (spreadsheets, archives, CSV, NetCDF headers) should be available as standard steps, producing a uniform intermediate representation for the mappings.
 - **Current handling:** ad hoc Python and shell steps in the rules.
+- **Notes:** the macOS metadata files came from creating the archive on macOS (`tar` adds `._*` files unless `COPYFILE_DISABLE=1`, and extended-attribute headers unless `--no-xattrs`); the record was republished clean (10.5281/zenodo.23477951) after two attempts. Checking the archives of the inputs before publishing (expected file list) would have caught it.
 
 ### R-014: Contracts between steps on the shape of intermediate outputs
 - **Category:** MOD, QUA · **Priority:** M · **Status:** open

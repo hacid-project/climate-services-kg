@@ -9,17 +9,16 @@ rule cordex_cmip5:
         "data-sources/cordex-cmip5/rdf/variables.jsonld",
 
 
-# Metadata of the CORDEX-CMIP5 datasets (https://doi.org/10.5281/zenodo.23364077):
-# the pages of the ESGF search results, data/cordex-<n>.json (the archive also
-# has macOS metadata files, ._*, which are skipped)
+# Metadata of the CORDEX-CMIP5 datasets (https://doi.org/10.5281/zenodo.23477951):
+# the pages of the ESGF search results, data/cordex-<n>.json
 rule cordex_cmip5_metadata:
     input:
-        storage.zenodo("zenodo://record/23364077/cordex-cmip5.tar.gz"),
+        storage.zenodo("zenodo://record/23477951/cordex-cmip5.tar.gz"),
     output:
         directory("data-sources/cordex-cmip5/data"),
     shell:
         "mkdir -p {output:q} &&"
-        " tar -xzf {input:q} -C {output:q} --exclude='._*' --no-same-owner --warning=no-unknown-keyword"
+        " tar -xzf {input:q} -C {output:q} --no-same-owner"
 
 
 # Modules of the mapping and of the analysis of the variables

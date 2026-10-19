@@ -8,9 +8,11 @@ variables (`analysis/variables-check.json`, see the end of this document).
 ## Source data
 
 - **Pages of the search results.** The datasets are published on Zenodo
-  ([10.5281/zenodo.23364077](https://doi.org/10.5281/zenodo.23364077)) as the
-  pages of the ESGF search (`download-data.sh`). The archive also holds macOS
-  metadata files (`._*`), skipped when extracting. Two pages
+  ([10.5281/zenodo.23477951](https://doi.org/10.5281/zenodo.23477951)) as the
+  pages of the ESGF search (`download-data.sh`). The first version of the
+  record (10.5281/zenodo.23364077) also held macOS metadata files (`._*`),
+  skipped when extracting; the current version has only the pages, with the
+  same content. Two pages
   (`cordex-15.json`, `cordex-16.json`) are empty: they contribute nothing.
 - **Repeated datasets.** 145,493 records give 145,446 distinct datasets
   (`master_id`): the records of the same dataset in more than one page are
