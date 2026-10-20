@@ -56,7 +56,11 @@ Decisions taken in mapping the CMIP5 experiments and institutions to the KG.
   `CSIRO-BOM`, "Centre for Australian Weather and Climate Research (CAWCR)"
   in ESGF and "CSIRO/Bureau of Meteorology" in the CSV), 5 only in the CSV
   files (`EC-EARTH`, `GCESS`, `NCEP`, `NMR-KMA`, `RSMAS`, not used by the
-  datasets), 3 only in ESGF (`BNU`, `CSIRO`, `NICAM`). Also reported: the
+  datasets), 3 only in ESGF (`BNU`, `CSIRO`, `NICAM`). Decisions: the names
+  of ESGF are kept where they differ, also for `CSIRO-BOM` (the Centre for
+  Australian Weather and Climate Research is the partnership of CSIRO and the
+  Bureau of Meteorology), and the ids only in the CSV files are dropped (they
+  are not in the KG, as the institutions come from ESGF). Also reported: the
   names not parsed but correct (`INM`, `NASA-GISS`, `NASA-GMAO`), and the other
   name of `MOHC` given by the lines of `HadGEM2-A` ("National Institute of
   Meteorological Research/Korea Meteorological Administration", 2 lines
