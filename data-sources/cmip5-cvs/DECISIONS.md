@@ -7,7 +7,7 @@ Decisions taken in mapping the CMIP5 experiments and institutions to the KG.
 - **Source: the ESGF publisher configuration**
   ([ESGF/config](https://github.com/ESGF/config), at the commit of
   `config/config.yaml`, `cmip5_cvs`, read through the git storage plugin).
-  The institutions are obtained in jq (`mapping/esgf-institutions.jq`) by
+  The institutions are obtained in jq (`mapping/esgf-config.jq`) by
   joining:
   - the CMIP5 lines of the models table
     (`publisher-configs/esgcet_models_table.txt`, "project | model | URL |
@@ -30,7 +30,7 @@ Decisions taken in mapping the CMIP5 experiments and institutions to the KG.
   of the others, the most frequent among the lines of the models of the
   institute is taken.
 - **Fixes** (`mapping/institution-fixes.json`, applied by
-  `fix_institutions` in `mapping/esgf-institutions.jq`). Some names of ESGF
+  `fix_institutions` in `mapping/esgf-config.jq`). Some names of ESGF
   are not names of the institutes (descriptions without ", "):
 
   | Id | Name of ESGF | Decision |
@@ -68,23 +68,33 @@ Decisions taken in mapping the CMIP5 experiments and institutions to the KG.
 
 ## Experiments
 
-- **Local snapshot as source** (`data/experiments.csv`). Its origin was not
-  recorded:
-  - it is not the output of
-    [PCMDI/CMIP5_CVs](https://github.com/PCMDI/CMIP5_CVs) (`src/writeJson.py`,
-    last commit 7d57821, 2022-09-01): that script is a draft that cannot run
-    (it uses names it does not define: `getFileHistory`, `versionId`,
-    `versionHistory`, `source_id`, `sub_experiment_id`) and has only 34 of the
-    93 experiments (no `decadal*`, `noVolc*`, `volcIn2010`, ...), with other
-    descriptions. Neither are the institutions of the previous CSV, even
-    ignoring the case of the ids: 10 of its 24 ids are not in the script,
-    whose institutions are in the CMIP6 style (e.g. `CCCma`, with full
-    addresses), and none of the descriptions are the same;
-  - it is close to the experiments of the ESGF publisher configuration
-    (`esg.cmip5.ini`, `experiment_options`), probably of an earlier version:
-    the current one has the same experiments plus a few more (e.g.
-    `decadal1959`, `historicalAA`, `sst2090`), with capitalised and partly
-    reworded descriptions.
+- **Source: the ESGF publisher configuration**, the same as for the
+  institutions: `experiment_description_map` in
+  `publisher-configs/ini/esg.cmip5.ini`, parsed in jq (`esgf_experiments` in
+  `mapping/esgf-config.jq`).
+- **Comparison with the CSV file previously used** (`data/experiments.csv`, a
+  snapshot of unknown origin, removed; it remains in the git history up to
+  commit 198ed03). The map is the same in all the 22 versions of the file
+  (since 2016-05-10), so the snapshot is not a verbatim copy of any of them:
+  - all the 93 experiments of the CSV are in the map, which has 9 more:
+    `decadal1959`, `historicalAA`, `historicalAnt`, `noVolc1965`,
+    `noVolc1970`, `noVolc1995`, `noVolc2000`, `noVolc2005`, `sst2090`;
+  - 20 descriptions differ only in the capital first letter (e.g.
+    "pre-industrial control" in the CSV, "Pre-industrial control" in the map),
+    and `historicalExt` is reworded ("historical simulation extended through
+    year 2012" in the CSV, "Extension of the historical simulation through
+    year 2012" in the map).
+
+  The descriptions of the map are taken.
+- **Not PCMDI/CMIP5_CVs.** The snapshot was not the output of
+  [PCMDI/CMIP5_CVs](https://github.com/PCMDI/CMIP5_CVs) (`src/writeJson.py`,
+  last commit 7d57821, 2022-09-01) either: that script is a draft that cannot
+  run (it uses names it does not define: `getFileHistory`, `versionId`,
+  `versionHistory`, `source_id`, `sub_experiment_id`) and has only 34 of the
+  experiments, with other descriptions. Neither were the institutions of the
+  previous CSV, even ignoring the case of the ids: 10 of its 24 ids are not in
+  the script, whose institutions are in the CMIP6 style (e.g. `CCCma`, with
+  full addresses), and none of the descriptions are the same.
 - **Models.** The snapshot also had a table of the models
   (`data/models.csv`), never mapped (the models are mapped from the datasets,
   see `data-sources/cmip5`): removed (it remains in the git history, up to
@@ -92,6 +102,5 @@ Decisions taken in mapping the CMIP5 experiments and institutions to the KG.
 
 ## Validation
 
-The experiments are byte-identical to the JSON-LD previously kept in the
-repository (`rdf/experiments.jsonld`, made by `map.sh`). The institutions now
-come from ESGF (see the check above).
+Both vocabularies now come from ESGF: the differences from the outputs of the
+CSV files previously used are those reported above.

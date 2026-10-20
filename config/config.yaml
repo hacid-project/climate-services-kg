@@ -66,8 +66,8 @@ cordex_domains:
 
 cmip5_cvs:
   # Git repository and ref (commit) of the configuration of the ESGF publisher,
-  # whose models table (publisher-configs/esgcet_models_table.txt) and CMIP5
-  # institute map (publisher-configs/ini/esg.cmip5.ini) give the CMIP5
-  # institutions
+  # whose CMIP5 configuration (publisher-configs/ini/esg.cmip5.ini) gives the
+  # CMIP5 experiments and, with the models table
+  # (publisher-configs/esgcet_models_table.txt), the CMIP5 institutions
   esgf_config_repo: https://github.com/ESGF/config.git
   esgf_config_version: dc19f5b14e2e9408fddcda125c6e9969d12ff846

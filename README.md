@@ -62,11 +62,11 @@ modifications, names used for different quantities) is analysed in
 
 ### CMIP5 experiments and institutions
 
-The CMIP5 experiments are kept in the repository as source (`data-sources/cmip5-cvs/data/experiments.csv`),
-converted to JSON by `csvjson` and mapped with jq to `data-sources/cmip5-cvs/rdf/experiments.jsonld`. The CMIP5
-institutions are taken from the configuration of the ESGF publisher ([ESGF/config](https://github.com/ESGF/config),
-through the git storage plugin), joining in jq its models table with its CMIP5 institute map
-(`mapping/esgf-institutions.jq`), with some fixes (`mapping/institution-fixes.json`), and mapped to
+The CMIP5 experiments and institutions are taken from the configuration of the ESGF publisher
+([ESGF/config](https://github.com/ESGF/config), through the git storage plugin), parsed in jq
+(`data-sources/cmip5-cvs/mapping/esgf-config.jq`): the experiments from the map of their descriptions in
+`esg.cmip5.ini`, the institutions joining its institute map with the models table, with some fixes
+(`mapping/institution-fixes.json`). They are mapped to `data-sources/cmip5-cvs/rdf/experiments.jsonld` and
 `institutions.jsonld` (`snakemake --cores 4 cmip5_cvs`). See `DECISIONS.md`.
 
 ### CMIP5 datasets

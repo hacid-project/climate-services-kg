@@ -1,19 +1,20 @@
-# Institutions of CMIP5 from the configuration of the ESGF publisher
-# (https://github.com/ESGF/config), joining:
+# Controlled vocabularies of CMIP5 from the configuration of the ESGF
+# publisher (https://github.com/ESGF/config), read as raw text:
+# - publisher-configs/ini/esg.cmip5.ini: the maps experiment_description_map
+#   ("experiment | description") and institute_map ("model | institute");
 # - publisher-configs/esgcet_models_table.txt: lines "project | model | URL |
 #   description", the description being "<model name>, <institute name>" or
 #   just a name; the cmip5 lines give the names of the institutes of the
-#   models;
-# - publisher-configs/ini/esg.cmip5.ini, institute_map: lines "model |
-#   institute", the ids of the institutes of the models.
+#   models.
 #
-# The models are matched ignoring the case (the table has e.g. both HadCM3 and
-# HADCM3, the map inmcm4 and the table INMCM4).
+# The institutions are obtained joining the institute map with the models
+# table. The models are matched ignoring the case (the table has e.g. both
+# HadCM3 and HADCM3, the map inmcm4 and the table INMCM4).
 
 def _lines: split("\n");
 
 # Lines of a block of an ini file: the indented lines after the line $header
-def _ini_block($header):
+def ini_block($header):
     _lines | .[index($header) + 1:] as $rest |
     $rest[: ([range($rest | length) | select($rest[.] | test("^\\s+\\S") | not)] | first // ($rest | length))];
 
@@ -34,10 +35,19 @@ def esgf_cmip5_models($models_table):
         }
     );
 
+# Rows of a map of the ini ("<key> | <value>"): [[key, value]]
+def ini_map($name):
+    ini_block($name) | map(split("|") | map(trim));
+
+# The experiments of the ini (experiment_description_map): [{id, description}]
+def esgf_experiments($ini):
+    $ini | ini_map("experiment_description_map = map(experiment : experiment_description)") |
+    map({id: .[0], description: .[1]});
+
 # The institute_map of the ini: [{model, institute}]
 def esgf_institute_map($ini):
-    $ini | _ini_block("institute_map = map(model : institute)") |
-    map(split("|") | map(trim) | {model: .[0], institute: .[1]});
+    $ini | ini_map("institute_map = map(model : institute)") |
+    map({model: .[0], institute: .[1]});
 
 # Institutions: [{id, acronym, description, models, candidates}], with
 # - id: the id of the institute in upper case, as in the ids of the CMIP5
