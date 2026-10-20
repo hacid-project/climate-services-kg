@@ -4,6 +4,8 @@
 #   snakemake --cores 1                       # mapping (default)
 #   snakemake --cores 1 mapping               # all the mappings to the KG
 #   snakemake --cores 1 sources_analysis      # all the analyses of the sources (not in the KG)
+#   snakemake --cores 1 ontologies            # HACID ontologies (top-level, data, ccso)
+#   snakemake --cores 1 gwls                  # global warming levels
 #   snakemake --cores 1 cf_standard_names     # variables of the CF standard name table
 #   snakemake --cores 1 cmor_tables           # variables of the CMOR tables (MIP and previous variables)
 #   snakemake --cores 1 cmip5_cvs             # CMIP5 experiments and institutions
@@ -46,6 +48,12 @@ storage zenodo:
 include: "patches/git_storage_plugin.py"
 
 
+include: "rules/ontologies.smk"
+
+
+include: "rules/gwls.smk"
+
+
 include: "rules/cf_standard_names.smk"
 
 
@@ -80,6 +88,8 @@ include: "rules/mohc_cvs.smk"
 rule mapping:
     default_target: True
     input:
+        rules.ontologies.input,
+        rules.gwls.input,
         rules.cf_standard_names.input,
         rules.cmor_tables.input,
         rules.cmip5_cvs.input,
