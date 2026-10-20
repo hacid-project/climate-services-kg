@@ -18,7 +18,7 @@ snakemake --cores 4 cmor_tables        # just the variables of the CMOR tables
 
 The decisions taken for each data source on its issues, inconsistencies and conflicting versions (and the cases left
 for further analysis) are documented in its `DECISIONS.md` (`data-sources/cf-standard-names`, `cmor-tables`, `cmip5`,
-`cordex-domains`, `cordex-cmip5`, `ukcp18`, `mohc-cvs`, `climdex`).
+`cordex-domains`, `cordex-cmip5`, `ukcp18`, `mohc-cvs`, `climdex`, `cmip5-cvs`).
 
 ### CF standard names
 
@@ -59,6 +59,15 @@ Changing a mapping reruns only the affected steps.
 The evolution of the variable definitions across all the editions listed in `config/config.yaml` (additions, deletions,
 modifications, names used for different quantities) is analysed in
 `data-sources/cmor-tables/analysis/` (`snakemake --cores 4 cmor_tables_analysis`, see its README).
+
+### CMIP5 experiments and institutions
+
+The CMIP5 experiments and institutions are taken from the configuration of the ESGF publisher
+([ESGF/config](https://github.com/ESGF/config), through the git storage plugin), parsed in jq
+(`data-sources/cmip5-cvs/mapping/esgf-config.jq`): the experiments from the map of their descriptions in
+`esg.cmip5.ini`, the institutions joining its institute map with the models table, with some fixes
+(`mapping/institution-fixes.json`). They are mapped to `data-sources/cmip5-cvs/rdf/experiments.jsonld` and
+`institutions.jsonld` (`snakemake --cores 4 cmip5_cvs`). See `DECISIONS.md`.
 
 ### CMIP5 datasets
 
