@@ -10,7 +10,10 @@
 # - no_name: no name found;
 # - not_parsed: the name is a whole description, without "<model>, " (it may
 #   be the name of a model or of a project);
-# - other_candidates: other names from the lines of its models.
+# - other_candidates: other names from the lines of its models;
+# and, for those whose name was fixed (mapping/institution-fixes.json), the
+# name of ESGF and the reason (fix). The excluded institutions are not in
+# $esgf.
 
 map(.file |= sub("^.*/"; "")) as $csv |
 ($esgf[0] | map({key: .id, value: .}) | from_entries) as $by_esgf |
@@ -30,6 +33,7 @@ map(
             end
         ),
         esgf: (if $e then {acronym: $e.acronym, name: $e.description, models: $e.models} else null end),
+        fix: (if $e.fix then {esgf_name: $e.esgf_description, reason: $e.fix} else null end),
         csv: (if $c then {file: $c.file, id: $c.id, name: $c.description} else null end),
         issues: (
             if $e == null then []
@@ -47,7 +51,8 @@ map(
 {
     summary: {
         status: (group_by(.status) | map({key: .[0].status, value: length}) | from_entries),
-        issues: ([.[].issues // [] | .[]] | group_by(.) | map({key: .[0], value: length}) | from_entries)
+        issues: ([.[].issues // [] | .[]] | group_by(.) | map({key: .[0], value: length}) | from_entries),
+        fixed: [.[] | select(.fix) | .id]
     },
     institutions: .
 }

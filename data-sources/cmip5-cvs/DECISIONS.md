@@ -29,24 +29,38 @@ Decisions taken in mapping the CMIP5 experiments and institutions to the KG.
   (descriptions without ", ", e.g. `SP-CCSM4`, `MRI-AGCM3-2H`) are discarded;
   of the others, the most frequent among the lines of the models of the
   institute is taken.
+- **Fixes** (`mapping/institution-fixes.json`, applied by
+  `fix_institutions` in `mapping/esgf-institutions.jq`). Some names of ESGF
+  are not names of the institutes (descriptions without ", "):
+
+  | Id | Name of ESGF | Decision |
+  | --- | --- | --- |
+  | `ICHEC` | EC-EARTH consortium (the consortium of the model) | named "Irish Centre for High-End Computing" |
+  | `LASG-CESS` | LASG, Institute of Atmospheric Physics, Chinese Academy of Sciences (that of `LASG-IAP`) | named "LASG, Institute of Atmospheric Physics, Chinese Academy of Sciences and CESS, Tsinghua University" |
+  | `NCAR` | Community Climate System Model 4 (the model) | named "National Center for Atmospheric Research" |
+  | `DOE-COLA-CMMAP-GMU` | none (its model `SP-CCSM4` is described by its id) | excluded |
+  | `NSF-DOE-NCAR` | Community Earth System Model 1 (the models) | excluded |
+
+  The names of `ICHEC` and `LASG-CESS` were inferred from the ids and the
+  models of their datasets. The excluded institutions are not used by the
+  CMIP5 datasets mapped.
 - **Check against the CSV files** (`analysis/institutions-check.json`, rule
   `cmip5_cvs_institutions_check`). The CSV files previously used, kept for
-  now, are compared with the institutions of ESGF: `data/institutions.csv`
-  (the snapshot previously mapped, of unknown origin, very close to the models
+  now, are compared with the institutions of ESGF (after the fixes, reported
+  with the names of ESGF and their reasons): `data/institutions.csv` (the
+  snapshot previously mapped, of unknown origin, very close to the models
   table) and `data/institutions-added.csv` (the institutes of the datasets
-  missing from it, with names inferred by hand). Current result: 15 same
-  names, 8 different, 5 only in the CSV files, 5 only in ESGF. Issues of the
-  names of ESGF, left for further analysis:
-  - **not parsed** (the description has no ", "): `ICHEC` "EC-EARTH
-    consortium", `NCAR` "Community Climate System Model 4", `NSF-DOE-NCAR`
-    "Community Earth System Model 1" are names of models or projects, not of
-    the institutes (the CSV files have "Irish Centre for High-End Computing"
-    and "National Center for Atmospheric Research"); those of `INM`,
-    `NASA-GISS`, `NASA-GMAO` are correct;
-  - **other candidates**: `MOHC` is also named "National Institute of
-    Meteorological Research/Korea Meteorological Administration" by the lines
-    of `HadGEM2-A` (2 lines against 10);
-  - **no name**: `DOE-COLA-CMMAP-GMU` (only `SP-CCSM4`, described by its name).
+  missing from it, with names inferred by hand). Current result: 18 same
+  names, 5 different (minor variants, e.g. "The First Institute of
+  Oceanography" or "Max Planck Institute for Meteorology (MPI-M)", and
+  `CSIRO-BOM`, "Centre for Australian Weather and Climate Research (CAWCR)"
+  in ESGF and "CSIRO/Bureau of Meteorology" in the CSV), 5 only in the CSV
+  files (`EC-EARTH`, `GCESS`, `NCEP`, `NMR-KMA`, `RSMAS`, not used by the
+  datasets), 3 only in ESGF (`BNU`, `CSIRO`, `NICAM`). Also reported: the
+  names not parsed but correct (`INM`, `NASA-GISS`, `NASA-GMAO`), and the other
+  name of `MOHC` given by the lines of `HadGEM2-A` ("National Institute of
+  Meteorological Research/Korea Meteorological Administration", 2 lines
+  against 10).
 
 ## Experiments
 

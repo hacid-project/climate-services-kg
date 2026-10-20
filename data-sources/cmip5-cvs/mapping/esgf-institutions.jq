@@ -73,3 +73,19 @@ def esgf_institutions($models_table; $ini):
             candidates: $candidates
         }
     );
+
+# Fixes of the institutions ($fixes, mapping/institution-fixes.json, by id):
+# - names: {<id>: {name, reason}}, the name to use instead of that of ESGF,
+#   kept in esgf_description, with the reason in fix;
+# - excluded: {<id>: reason}, the institutions to leave out.
+def fix_institutions($fixes):
+    map(
+        select(.id | in($fixes.excluded) | not) |
+        if .id | in($fixes.names) then
+            . + {
+                description: $fixes.names[.id].name,
+                esgf_description: .description,
+                fix: $fixes.names[.id].reason
+            }
+        end
+    );

@@ -1,0 +1,20 @@
+{
+    "names": {
+        "ICHEC": {
+            "name": "Irish Centre for High-End Computing",
+            "reason": "ESGF gives the name of the consortium of the model (EC-EARTH consortium); name inferred from the id"
+        },
+        "LASG-CESS": {
+            "name": "LASG, Institute of Atmospheric Physics, Chinese Academy of Sciences and CESS, Tsinghua University",
+            "reason": "ESGF gives the name of LASG-IAP, without CESS; name inferred from the id and the model (FGOALS-g2)"
+        },
+        "NCAR": {
+            "name": "National Center for Atmospheric Research",
+            "reason": "ESGF gives the name of the model (Community Climate System Model 4)"
+        }
+    },
+    "excluded": {
+        "DOE-COLA-CMMAP-GMU": "no name in ESGF (only described by its model, SP-CCSM4); not used by the CMIP5 datasets mapped",
+        "NSF-DOE-NCAR": "ESGF gives the name of the models (Community Earth System Model 1); not used by the CMIP5 datasets mapped"
+    }
+}
