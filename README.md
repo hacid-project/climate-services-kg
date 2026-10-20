@@ -4,8 +4,9 @@ Code and data used to populate the climate services knowledge graph for the HACI
 
 ## Snakemake workflow
 
-Parts of the ingestion are being moved to a [Snakemake](https://snakemake.github.io/) workflow
-(`workflow/Snakefile`, configured in `config/config.yaml`).
+The ingestion is a [Snakemake](https://snakemake.github.io/) workflow (`workflow/Snakefile`, configured in
+`config/config.yaml`): every graph of the KG listed in `graph_names.csv` is either produced by the `mapping` target
+or a file written by hand (`data-sources/*.ttl`, `data-sources/climdex/*.ttl`).
 It requires `git`, `curl`, `jq` (1.8, as the UKCP18 mapping uses its syntax) and the Python packages in
 `workflow/requirements.txt`:
 
@@ -19,6 +20,18 @@ snakemake --cores 4 cmor_tables        # just the variables of the CMOR tables
 The decisions taken for each data source on its issues, inconsistencies and conflicting versions (and the cases left
 for further analysis) are documented in its `DECISIONS.md` (`data-sources/cf-standard-names`, `cmor-tables`, `cmip5`,
 `cordex-domains`, `cordex-cmip5`, `ukcp18`, `mohc-cvs`, `climdex`, `cmip5-cvs`, `cordex-cmip5-cvs`).
+
+### Ontologies
+
+The HACID ontologies used by the KG (`top-level`, `data`, `ccso`) are taken from their repository
+([hacid-project/knowledge-graph](https://github.com/hacid-project/knowledge-graph), `ontologies/{name}/{name}.owl`),
+at the commit of `config/config.yaml` (`ontologies`), through the git storage plugin, to
+`data-sources/ontologies/{name}.owl` (`snakemake --cores 4 ontologies`).
+
+### Global warming levels
+
+The global warming levels (1.5 to 6 °C, by 0.5 °C) are generated with jq (`data-sources/gwls/mapping/gwls.jq`,
+without input) to `data-sources/gwls/rdf/gwls.jsonld` (`snakemake --cores 4 gwls`).
 
 ### CF standard names
 

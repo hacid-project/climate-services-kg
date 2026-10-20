@@ -78,3 +78,13 @@ cordex_cmip5_cvs:
   # lists the CORDEX RCMs with their institutes
   repo: https://github.com/IS-ENES-Data/IS-ENES-Data.github.io.git
   version: d9c78eca56101cf0684e370bbc2a94ea3836b51a
+
+ontologies:
+  # Git repository and ref (commit) of the HACID ontologies, and the
+  # ontologies used by the KG (ontologies/{name}/{name}.owl in the repository)
+  repo: https://github.com/hacid-project/knowledge-graph.git
+  version: 5557cd03b75234c97bf171a956c7b5470eeeea57
+  names:
+    - top-level
+    - data
+    - ccso

@@ -78,8 +78,8 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Date:** 2026-10-19 · **Evidence:** `data-sources/*/rml/` (activities, experiments, sources, institutions, cf-standard-names) vs `data-sources/*/mapping/*.jq`; `ws-data-rml.py`; legacy `map-data.sh`
 - **Situation:** older sources use RML, newer ones jq. Some steps are still shell scripts outside Snakemake.
 - **Requirement:** a dataflow should host steps in different mapping languages behind uniform interfaces, so a source can migrate from one to the other without changing its consumers.
-- **Current handling:** partly migrated to Snakemake. The rest uses shell scripts.
-- **Notes:** the CF standard names were ported to jq too (R-016), then the CORDEX domains (R-018): no source is mapped with RML any more: `ws-data-rml.py` (with its pyrml dependency, the root `requirements.txt`) and `map-data.sh` were removed.
+- **Current handling:** all the sources migrated to jq steps in Snakemake (2026-10-20); the migration kept the outputs equivalent, checked against the previous ones (R-011).
+- **Notes:** the CF standard names were ported to jq too (R-016), then the CORDEX domains (R-018): no source is mapped with RML any more: `ws-data-rml.py` (with its pyrml dependency, the root `requirements.txt`) and `map-data.sh` were removed. With the global warming levels and the ontologies (taken from their git repository), every graph of the KG is now produced by the Snakemake workflow, except the files written by hand.
 
 ### R-007: Generate FAIR metadata from the pipeline
 - **Category:** FAIR, DOC · **Priority:** M · **Status:** open
