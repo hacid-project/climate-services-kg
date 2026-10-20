@@ -174,11 +174,17 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
 
 1. `rdf/spatial-grids.jsonld` and `data/spatial-grid-map.json`: the spatial grids of the UKCP18 resolutions;
 2. `data/model-variants.json`: the variants of the models of the land-gcm datasets;
-3. `rdf/ceda_ukcp18_metadata_merged.jsonld`: the datasets, with their simulations, models and grids
+3. `rdf/variables.jsonld`: the local variables of the datasets (`https://w3id.org/hacid/data/cs/variables/ukcp/...`),
+   with their units and baseline periods, specified in `mapping/ukcp-variables.json` (see below);
+4. `rdf/ceda_ukcp18_metadata_merged.jsonld`: the datasets, with their simulations, models and grids
    (the datasets whose id does not match their metadata are listed in `logs/ukcp18/map_datasets.log`).
-   Their variables are the MIP variables resolved through `data-sources/cmor-tables/mapping/mip-mapping.json`
-   from the variable name (CMIP5 era), units and, for the land-gcm datasets, CMIP5 table (`mapping/ukcp18-variables.jq`).
-   The UKCP18 variables not defined in the CMOR tables are defined in `https://w3id.org/hacid/data/cs/variables/ukcp/`:
+   The variable of a dataset is the local variable of `mapping/ukcp-variables.json` whose conditions it matches
+   (`mapping/ukcp18-variables.jq`), otherwise the MIP variable resolved through
+   `data-sources/cmor-tables/mapping/mip-mapping.json` from the variable name (CMIP5 era), units and, for the
+   land-gcm datasets, CMIP5 table.
+
+`mapping/ukcp-variables.json` lists the local variables, with their relationships with the MIP variables and the
+conditions on the metadata of their datasets (see `data-sources/ukcp18/DECISIONS.md`). They are:
    - each `<variable>Anom` with respect to a baseline period is an anomaly (`data:isAnomalyOf`) of the MIP variable
      `<variable>`, `.../ukcp/<variable>Anom/<start year>-<end year>` (e.g. `.../ukcp/tasAnom/1981-2000`), with its
      baseline period (`data:hasBaselineRegion`, a `data:TemporalRegion`, without representing the baseline variable);
@@ -200,8 +206,10 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
 
 The datasets whose variable is not a variable of the KG (neither a MIP nor a previous variable, nor a UKCP18
 variable linked to MIP variables of the KG) are
-extracted, to review their mapping, in `data-sources/ukcp18/analysis/unmapped-variables.json.gz`
-(part of `snakemake --cores 4 sources_analysis`).
+extracted, to review their mapping, in `data-sources/ukcp18/analysis/unmapped-variables.json.gz`, and the local
+variables are checked against the datasets in `data-sources/ukcp18/analysis/variables-check.json` (the datasets of
+each local variable, the local variables of no dataset, the datasets without a local variable whose units differ from
+those of their MIP variable) (both part of `snakemake --cores 4 sources_analysis`).
 
 The Zenodo plugin requires an access token, which is not needed for published records: a placeholder is
 used unless `SNAKEMAKE_STORAGE_ZENODO_ACCESS_TOKEN` is set.

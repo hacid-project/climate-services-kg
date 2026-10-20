@@ -1,0 +1,2502 @@
+{
+  "variables": [
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/beta",
+      "label": "soil_moisture_stress_factor (beta)",
+      "acronym": "beta",
+      "units": "1",
+      "datasets": [
+        {
+          "variable": "beta",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1961-1990",
+      "types": [
+        "data:RelativeAnomaly"
+      ],
+      "label": "Cloud area fraction relative anomaly with respect to 1961-1990 (cltAnom, 1961-1990)",
+      "acronym": "cltAnom",
+      "units": "%",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/clt",
+      "baseline": "1961-1990"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1961-1990/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of cloud area fraction relative anomaly with respect to 1961-1990 (cltAnom, 1961-1990, cdf)",
+      "acronym": "cltAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "cltAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1961-1990/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of cloud area fraction relative anomaly with respect to 1961-1990 (cltAnom, 1961-1990, pdf)",
+      "acronym": "cltAnom",
+      "units": "%-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "cltAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1961-1990/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of cloud area fraction relative anomaly with respect to 1961-1990 (cltAnom, 1961-1990, sample)",
+      "acronym": "cltAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "cltAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2000",
+      "types": [
+        "data:RelativeAnomaly"
+      ],
+      "label": "Cloud area fraction relative anomaly with respect to 1981-2000 (cltAnom, 1981-2000)",
+      "acronym": "cltAnom",
+      "units": "%",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/clt",
+      "baseline": "1981-2000"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2000/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of cloud area fraction relative anomaly with respect to 1981-2000 (cltAnom, 1981-2000, cdf)",
+      "acronym": "cltAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "cltAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2000/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of cloud area fraction relative anomaly with respect to 1981-2000 (cltAnom, 1981-2000, pdf)",
+      "acronym": "cltAnom",
+      "units": "%-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "cltAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2000/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of cloud area fraction relative anomaly with respect to 1981-2000 (cltAnom, 1981-2000, sample)",
+      "acronym": "cltAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "cltAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2010",
+      "types": [
+        "data:RelativeAnomaly"
+      ],
+      "label": "Cloud area fraction relative anomaly with respect to 1981-2010 (cltAnom, 1981-2010)",
+      "acronym": "cltAnom",
+      "units": "%",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/clt",
+      "baseline": "1981-2010"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2010/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of cloud area fraction relative anomaly with respect to 1981-2010 (cltAnom, 1981-2010, cdf)",
+      "acronym": "cltAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "cltAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2010/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of cloud area fraction relative anomaly with respect to 1981-2010 (cltAnom, 1981-2010, pdf)",
+      "acronym": "cltAnom",
+      "units": "%-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "cltAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2010/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of cloud area fraction relative anomaly with respect to 1981-2010 (cltAnom, 1981-2010, sample)",
+      "acronym": "cltAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/cltAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "cltAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/evspsbl/mm%2Fday",
+      "label": "Evaporation rate (evspsbl, mm/day)",
+      "acronym": "evspsbl",
+      "units": "mm/day",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/evspsbl",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/evspsbl",
+      "datasets": [
+        {
+          "variable": "evspsbl",
+          "units": "mm/day",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/evspsblsoi/mm%2Fday",
+      "label": "Evapotranspiration from soil moisture store (evspsblsoi, mm/day)",
+      "acronym": "evspsblsoi",
+      "units": "mm/day",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/evspsblsoi",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/evspsblsoi",
+      "datasets": [
+        {
+          "variable": "evspsblsoi",
+          "units": "mm/day",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/evspsblveg/mm%2Fday",
+      "label": "Evaporation from canopy (evspsblveg, mm/day)",
+      "acronym": "evspsblveg",
+      "units": "mm/day",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/evspsblveg",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/evspsblveg",
+      "datasets": [
+        {
+          "variable": "evspsblveg",
+          "units": "mm/day",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/flashrate/1",
+      "label": "NUMBER OF LIGHTNING FLASHES (flashrate, 1)",
+      "acronym": "flashrate",
+      "units": "1",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/flashrate",
+      "datasets": [
+        {
+          "variable": "flashrate",
+          "units": "1",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1961-1990",
+      "types": [
+        "data:RelativeAnomaly"
+      ],
+      "label": "Specific humidity relative anomaly with respect to 1961-1990 (hussAnom, 1961-1990)",
+      "acronym": "hussAnom",
+      "units": "%",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/huss",
+      "baseline": "1961-1990"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1961-1990/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of specific humidity relative anomaly with respect to 1961-1990 (hussAnom, 1961-1990, cdf)",
+      "acronym": "hussAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "hussAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1961-1990/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of specific humidity relative anomaly with respect to 1961-1990 (hussAnom, 1961-1990, pdf)",
+      "acronym": "hussAnom",
+      "units": "%-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "hussAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1961-1990/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of specific humidity relative anomaly with respect to 1961-1990 (hussAnom, 1961-1990, sample)",
+      "acronym": "hussAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "hussAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2000",
+      "types": [
+        "data:RelativeAnomaly"
+      ],
+      "label": "Specific humidity relative anomaly with respect to 1981-2000 (hussAnom, 1981-2000)",
+      "acronym": "hussAnom",
+      "units": "%",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/huss",
+      "baseline": "1981-2000"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2000/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of specific humidity relative anomaly with respect to 1981-2000 (hussAnom, 1981-2000, cdf)",
+      "acronym": "hussAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "hussAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2000/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of specific humidity relative anomaly with respect to 1981-2000 (hussAnom, 1981-2000, pdf)",
+      "acronym": "hussAnom",
+      "units": "%-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "hussAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2000/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of specific humidity relative anomaly with respect to 1981-2000 (hussAnom, 1981-2000, sample)",
+      "acronym": "hussAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "hussAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2010",
+      "types": [
+        "data:RelativeAnomaly"
+      ],
+      "label": "Specific humidity relative anomaly with respect to 1981-2010 (hussAnom, 1981-2010)",
+      "acronym": "hussAnom",
+      "units": "%",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/huss",
+      "baseline": "1981-2010"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2010/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of specific humidity relative anomaly with respect to 1981-2010 (hussAnom, 1981-2010, cdf)",
+      "acronym": "hussAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "hussAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2010/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of specific humidity relative anomaly with respect to 1981-2010 (hussAnom, 1981-2010, pdf)",
+      "acronym": "hussAnom",
+      "units": "%-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "hussAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2010/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of specific humidity relative anomaly with respect to 1981-2010 (hussAnom, 1981-2010, sample)",
+      "acronym": "hussAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/hussAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "hussAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/jetlat",
+      "label": "Latitude of eddy-driven jet (jetlat)",
+      "acronym": "jetlat",
+      "units": "degrees",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/mip/ua"
+      ],
+      "datasets": [
+        {
+          "variable": "jetlat",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/jetstr",
+      "label": "Strength of eddy-driven jet (jetstr)",
+      "acronym": "jetstr",
+      "units": "m s-1",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/mip/ua"
+      ],
+      "datasets": [
+        {
+          "variable": "jetstr",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/mrrob/mm%2Fday",
+      "label": "Sub-surface runoff flux (mrrob, mm/day)",
+      "acronym": "mrrob",
+      "units": "mm/day",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/mrrob",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/mrrob",
+      "datasets": [
+        {
+          "variable": "mrrob",
+          "units": "mm/day",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/mrros/mm%2Fday",
+      "label": "Surface runoff flux (mrros, mm/day)",
+      "acronym": "mrros",
+      "units": "mm/day",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/mrros",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/mrros",
+      "datasets": [
+        {
+          "variable": "mrros",
+          "units": "mm/day",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/naodjf",
+      "label": "Winter atlantic pressure gradient (naodjf)",
+      "acronym": "naodjf",
+      "units": "hPa",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/mip/psl"
+      ],
+      "datasets": [
+        {
+          "variable": "naodjf",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr/mm%2Fday",
+      "label": "Precipitation rate (pr, mm/day)",
+      "acronym": "pr",
+      "units": "mm/day",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/pr",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/pr",
+      "datasets": [
+        {
+          "variable": "pr",
+          "units": "mm/day",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr/mm%2Fhour",
+      "label": "Precipitation rate (pr, mm/hour)",
+      "acronym": "pr",
+      "units": "mm/hour",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/pr",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/pr",
+      "datasets": [
+        {
+          "variable": "pr",
+          "units": "mm/hour",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day",
+      "label": "1-day total precipitation (pr1day)",
+      "acronym": "pr1day",
+      "units": "mm",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/mip/pr"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day/rp100",
+      "label": "1-day total precipitation 100-year return level (pr1day, rp100)",
+      "acronym": "pr1day",
+      "units": "mm",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day/rp100/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of 1-day total precipitation 100-year return level (pr1day, rp100, cdf)",
+      "acronym": "pr1day",
+      "units": "mm",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day/rp100",
+      "datasets": [
+        {
+          "variable": "pr1day",
+          "return_period": "rp100",
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day/rp20",
+      "label": "1-day total precipitation 20-year return level (pr1day, rp20)",
+      "acronym": "pr1day",
+      "units": "mm",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day/rp20/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of 1-day total precipitation 20-year return level (pr1day, rp20, cdf)",
+      "acronym": "pr1day",
+      "units": "mm",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day/rp20",
+      "datasets": [
+        {
+          "variable": "pr1day",
+          "return_period": "rp20",
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day/rp50",
+      "label": "1-day total precipitation 50-year return level (pr1day, rp50)",
+      "acronym": "pr1day",
+      "units": "mm",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day/rp50/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of 1-day total precipitation 50-year return level (pr1day, rp50, cdf)",
+      "acronym": "pr1day",
+      "units": "mm",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pr1day/rp50",
+      "datasets": [
+        {
+          "variable": "pr1day",
+          "return_period": "rp50",
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day",
+      "label": "5-day total precipitation (pr5day)",
+      "acronym": "pr5day",
+      "units": "mm",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/mip/pr"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day/rp100",
+      "label": "5-day total precipitation 100-year return level (pr5day, rp100)",
+      "acronym": "pr5day",
+      "units": "mm",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day/rp100/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of 5-day total precipitation 100-year return level (pr5day, rp100, cdf)",
+      "acronym": "pr5day",
+      "units": "mm",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day/rp100",
+      "datasets": [
+        {
+          "variable": "pr5day",
+          "return_period": "rp100",
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day/rp20",
+      "label": "5-day total precipitation 20-year return level (pr5day, rp20)",
+      "acronym": "pr5day",
+      "units": "mm",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day/rp20/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of 5-day total precipitation 20-year return level (pr5day, rp20, cdf)",
+      "acronym": "pr5day",
+      "units": "mm",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day/rp20",
+      "datasets": [
+        {
+          "variable": "pr5day",
+          "return_period": "rp20",
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day/rp50",
+      "label": "5-day total precipitation 50-year return level (pr5day, rp50)",
+      "acronym": "pr5day",
+      "units": "mm",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day/rp50/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of 5-day total precipitation 50-year return level (pr5day, rp50, cdf)",
+      "acronym": "pr5day",
+      "units": "mm",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pr5day/rp50",
+      "datasets": [
+        {
+          "variable": "pr5day",
+          "return_period": "rp50",
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1961-1990",
+      "types": [
+        "data:RelativeAnomaly"
+      ],
+      "label": "Precipitation rate relative anomaly with respect to 1961-1990 (prAnom, 1961-1990)",
+      "acronym": "prAnom",
+      "units": "%",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/pr",
+      "baseline": "1961-1990"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1961-1990/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of precipitation rate relative anomaly with respect to 1961-1990 (prAnom, 1961-1990, cdf)",
+      "acronym": "prAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "prAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1961-1990/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of precipitation rate relative anomaly with respect to 1961-1990 (prAnom, 1961-1990, pdf)",
+      "acronym": "prAnom",
+      "units": "%-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "prAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1961-1990/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of precipitation rate relative anomaly with respect to 1961-1990 (prAnom, 1961-1990, sample)",
+      "acronym": "prAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "prAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2000",
+      "types": [
+        "data:RelativeAnomaly"
+      ],
+      "label": "Precipitation rate relative anomaly with respect to 1981-2000 (prAnom, 1981-2000)",
+      "acronym": "prAnom",
+      "units": "%",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/pr",
+      "baseline": "1981-2000"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2000/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of precipitation rate relative anomaly with respect to 1981-2000 (prAnom, 1981-2000, cdf)",
+      "acronym": "prAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "prAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2000/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of precipitation rate relative anomaly with respect to 1981-2000 (prAnom, 1981-2000, pdf)",
+      "acronym": "prAnom",
+      "units": "%-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "prAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2000/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of precipitation rate relative anomaly with respect to 1981-2000 (prAnom, 1981-2000, sample)",
+      "acronym": "prAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "prAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2010",
+      "types": [
+        "data:RelativeAnomaly"
+      ],
+      "label": "Precipitation rate relative anomaly with respect to 1981-2010 (prAnom, 1981-2010)",
+      "acronym": "prAnom",
+      "units": "%",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/pr",
+      "baseline": "1981-2010"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2010/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of precipitation rate relative anomaly with respect to 1981-2010 (prAnom, 1981-2010, cdf)",
+      "acronym": "prAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "prAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2010/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of precipitation rate relative anomaly with respect to 1981-2010 (prAnom, 1981-2010, pdf)",
+      "acronym": "prAnom",
+      "units": "%-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "prAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2010/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of precipitation rate relative anomaly with respect to 1981-2010 (prAnom, 1981-2010, sample)",
+      "acronym": "prAnom",
+      "units": "%",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/prAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "prAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/prsn/mm%2Fday",
+      "label": "Snowfall flux (prsn, mm/day)",
+      "acronym": "prsn",
+      "units": "mm/day",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/prsn",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/prsn",
+      "datasets": [
+        {
+          "variable": "prsn",
+          "units": "mm/day",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/psl/hPa",
+      "label": "Pressure at mean sea level (psl, hPa)",
+      "acronym": "psl",
+      "units": "hPa",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/psl",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/psl",
+      "datasets": [
+        {
+          "variable": "psl",
+          "units": "hPa",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1961-1990",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Pressure at mean sea level anomaly with respect to 1961-1990 (pslAnom, 1961-1990)",
+      "acronym": "pslAnom",
+      "units": "hPa",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/psl",
+      "baseline": "1961-1990"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1961-1990/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of pressure at mean sea level anomaly with respect to 1961-1990 (pslAnom, 1961-1990, cdf)",
+      "acronym": "pslAnom",
+      "units": "hPa",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "pslAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1961-1990/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of pressure at mean sea level anomaly with respect to 1961-1990 (pslAnom, 1961-1990, pdf)",
+      "acronym": "pslAnom",
+      "units": "hPa-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "pslAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1961-1990/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of pressure at mean sea level anomaly with respect to 1961-1990 (pslAnom, 1961-1990, sample)",
+      "acronym": "pslAnom",
+      "units": "hPa",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "pslAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2000",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Pressure at mean sea level anomaly with respect to 1981-2000 (pslAnom, 1981-2000)",
+      "acronym": "pslAnom",
+      "units": "hPa",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/psl",
+      "baseline": "1981-2000"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2000/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of pressure at mean sea level anomaly with respect to 1981-2000 (pslAnom, 1981-2000, cdf)",
+      "acronym": "pslAnom",
+      "units": "hPa",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "pslAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2000/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of pressure at mean sea level anomaly with respect to 1981-2000 (pslAnom, 1981-2000, pdf)",
+      "acronym": "pslAnom",
+      "units": "hPa-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "pslAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2000/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of pressure at mean sea level anomaly with respect to 1981-2000 (pslAnom, 1981-2000, sample)",
+      "acronym": "pslAnom",
+      "units": "hPa",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "pslAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2010",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Pressure at mean sea level anomaly with respect to 1981-2010 (pslAnom, 1981-2010)",
+      "acronym": "pslAnom",
+      "units": "hPa",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/psl",
+      "baseline": "1981-2010"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2010/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of pressure at mean sea level anomaly with respect to 1981-2010 (pslAnom, 1981-2010, cdf)",
+      "acronym": "pslAnom",
+      "units": "hPa",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "pslAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2010/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of pressure at mean sea level anomaly with respect to 1981-2010 (pslAnom, 1981-2010, pdf)",
+      "acronym": "pslAnom",
+      "units": "hPa-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "pslAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2010/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of pressure at mean sea level anomaly with respect to 1981-2010 (pslAnom, 1981-2010, sample)",
+      "acronym": "pslAnom",
+      "units": "hPa",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/pslAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "pslAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1961-1990",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Net surface long wave flux anomaly with respect to 1961-1990 (rlsAnom, 1961-1990)",
+      "acronym": "rlsAnom",
+      "units": "W m-2",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/rls",
+      "baseline": "1961-1990"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1961-1990/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of net surface long wave flux anomaly with respect to 1961-1990 (rlsAnom, 1961-1990, cdf)",
+      "acronym": "rlsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "rlsAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1961-1990/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of net surface long wave flux anomaly with respect to 1961-1990 (rlsAnom, 1961-1990, pdf)",
+      "acronym": "rlsAnom",
+      "units": "W-1 m2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "rlsAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1961-1990/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of net surface long wave flux anomaly with respect to 1961-1990 (rlsAnom, 1961-1990, sample)",
+      "acronym": "rlsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "rlsAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2000",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Net surface long wave flux anomaly with respect to 1981-2000 (rlsAnom, 1981-2000)",
+      "acronym": "rlsAnom",
+      "units": "W m-2",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/rls",
+      "baseline": "1981-2000"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2000/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of net surface long wave flux anomaly with respect to 1981-2000 (rlsAnom, 1981-2000, cdf)",
+      "acronym": "rlsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "rlsAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2000/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of net surface long wave flux anomaly with respect to 1981-2000 (rlsAnom, 1981-2000, pdf)",
+      "acronym": "rlsAnom",
+      "units": "W-1 m2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "rlsAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2000/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of net surface long wave flux anomaly with respect to 1981-2000 (rlsAnom, 1981-2000, sample)",
+      "acronym": "rlsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "rlsAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2010",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Net surface long wave flux anomaly with respect to 1981-2010 (rlsAnom, 1981-2010)",
+      "acronym": "rlsAnom",
+      "units": "W m-2",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/rls",
+      "baseline": "1981-2010"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2010/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of net surface long wave flux anomaly with respect to 1981-2010 (rlsAnom, 1981-2010, cdf)",
+      "acronym": "rlsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "rlsAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2010/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of net surface long wave flux anomaly with respect to 1981-2010 (rlsAnom, 1981-2010, pdf)",
+      "acronym": "rlsAnom",
+      "units": "W-1 m2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "rlsAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2010/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of net surface long wave flux anomaly with respect to 1981-2010 (rlsAnom, 1981-2010, sample)",
+      "acronym": "rlsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rlsAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "rlsAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1961-1990",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Downward surface shortwave flux anomaly with respect to 1961-1990 (rsdsAnom, 1961-1990)",
+      "acronym": "rsdsAnom",
+      "units": "W m-2",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/rsds",
+      "baseline": "1961-1990"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1961-1990/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of downward surface shortwave flux anomaly with respect to 1961-1990 (rsdsAnom, 1961-1990, cdf)",
+      "acronym": "rsdsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "rsdsAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1961-1990/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of downward surface shortwave flux anomaly with respect to 1961-1990 (rsdsAnom, 1961-1990, pdf)",
+      "acronym": "rsdsAnom",
+      "units": "W-1 m2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "rsdsAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1961-1990/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of downward surface shortwave flux anomaly with respect to 1961-1990 (rsdsAnom, 1961-1990, sample)",
+      "acronym": "rsdsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "rsdsAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2000",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Downward surface shortwave flux anomaly with respect to 1981-2000 (rsdsAnom, 1981-2000)",
+      "acronym": "rsdsAnom",
+      "units": "W m-2",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/rsds",
+      "baseline": "1981-2000"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2000/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of downward surface shortwave flux anomaly with respect to 1981-2000 (rsdsAnom, 1981-2000, cdf)",
+      "acronym": "rsdsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "rsdsAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2000/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of downward surface shortwave flux anomaly with respect to 1981-2000 (rsdsAnom, 1981-2000, pdf)",
+      "acronym": "rsdsAnom",
+      "units": "W-1 m2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "rsdsAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2000/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of downward surface shortwave flux anomaly with respect to 1981-2000 (rsdsAnom, 1981-2000, sample)",
+      "acronym": "rsdsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "rsdsAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2010",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Downward surface shortwave flux anomaly with respect to 1981-2010 (rsdsAnom, 1981-2010)",
+      "acronym": "rsdsAnom",
+      "units": "W m-2",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/rsds",
+      "baseline": "1981-2010"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2010/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of downward surface shortwave flux anomaly with respect to 1981-2010 (rsdsAnom, 1981-2010, cdf)",
+      "acronym": "rsdsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "rsdsAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2010/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of downward surface shortwave flux anomaly with respect to 1981-2010 (rsdsAnom, 1981-2010, pdf)",
+      "acronym": "rsdsAnom",
+      "units": "W-1 m2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "rsdsAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2010/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of downward surface shortwave flux anomaly with respect to 1981-2010 (rsdsAnom, 1981-2010, sample)",
+      "acronym": "rsdsAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rsdsAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "rsdsAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1961-1990",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Net surface short wave flux anomaly with respect to 1961-1990 (rssAnom, 1961-1990)",
+      "acronym": "rssAnom",
+      "units": "W m-2",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/rss",
+      "baseline": "1961-1990"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1961-1990/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of net surface short wave flux anomaly with respect to 1961-1990 (rssAnom, 1961-1990, cdf)",
+      "acronym": "rssAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "rssAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1961-1990/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of net surface short wave flux anomaly with respect to 1961-1990 (rssAnom, 1961-1990, pdf)",
+      "acronym": "rssAnom",
+      "units": "W-1 m2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "rssAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1961-1990/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of net surface short wave flux anomaly with respect to 1961-1990 (rssAnom, 1961-1990, sample)",
+      "acronym": "rssAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "rssAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2000",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Net surface short wave flux anomaly with respect to 1981-2000 (rssAnom, 1981-2000)",
+      "acronym": "rssAnom",
+      "units": "W m-2",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/rss",
+      "baseline": "1981-2000"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2000/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of net surface short wave flux anomaly with respect to 1981-2000 (rssAnom, 1981-2000, cdf)",
+      "acronym": "rssAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "rssAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2000/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of net surface short wave flux anomaly with respect to 1981-2000 (rssAnom, 1981-2000, pdf)",
+      "acronym": "rssAnom",
+      "units": "W-1 m2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "rssAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2000/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of net surface short wave flux anomaly with respect to 1981-2000 (rssAnom, 1981-2000, sample)",
+      "acronym": "rssAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "rssAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2010",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Net surface short wave flux anomaly with respect to 1981-2010 (rssAnom, 1981-2010)",
+      "acronym": "rssAnom",
+      "units": "W m-2",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/rss",
+      "baseline": "1981-2010"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2010/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of net surface short wave flux anomaly with respect to 1981-2010 (rssAnom, 1981-2010, cdf)",
+      "acronym": "rssAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "rssAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2010/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of net surface short wave flux anomaly with respect to 1981-2010 (rssAnom, 1981-2010, pdf)",
+      "acronym": "rssAnom",
+      "units": "W-1 m2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "rssAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2010/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of net surface short wave flux anomaly with respect to 1981-2010 (rssAnom, 1981-2010, sample)",
+      "acronym": "rssAnom",
+      "units": "W m-2",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/rssAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "rssAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/snw/mm",
+      "label": "Surface snow amount (snw, mm)",
+      "acronym": "snw",
+      "units": "mm",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/snw",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/snw",
+      "datasets": [
+        {
+          "variable": "snw",
+          "units": "mm",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tas/degC",
+      "label": "Mean air temperature (tas, degC)",
+      "acronym": "tas",
+      "units": "degC",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/tas",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/tas",
+      "datasets": [
+        {
+          "variable": "tas",
+          "units": "degC",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1961-1990",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Mean air temperature anomaly with respect to 1961-1990 (tasAnom, 1961-1990)",
+      "acronym": "tasAnom",
+      "units": "degC",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/tas",
+      "baseline": "1961-1990"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1961-1990/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of mean air temperature anomaly with respect to 1961-1990 (tasAnom, 1961-1990, cdf)",
+      "acronym": "tasAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "tasAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1961-1990/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of mean air temperature anomaly with respect to 1961-1990 (tasAnom, 1961-1990, pdf)",
+      "acronym": "tasAnom",
+      "units": "degC-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "tasAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1961-1990/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of mean air temperature anomaly with respect to 1961-1990 (tasAnom, 1961-1990, sample)",
+      "acronym": "tasAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "tasAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2000",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Mean air temperature anomaly with respect to 1981-2000 (tasAnom, 1981-2000)",
+      "acronym": "tasAnom",
+      "units": "degC",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/tas",
+      "baseline": "1981-2000"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2000/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of mean air temperature anomaly with respect to 1981-2000 (tasAnom, 1981-2000, cdf)",
+      "acronym": "tasAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "tasAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2000/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of mean air temperature anomaly with respect to 1981-2000 (tasAnom, 1981-2000, pdf)",
+      "acronym": "tasAnom",
+      "units": "degC-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "tasAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2000/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of mean air temperature anomaly with respect to 1981-2000 (tasAnom, 1981-2000, sample)",
+      "acronym": "tasAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "tasAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2010",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Mean air temperature anomaly with respect to 1981-2010 (tasAnom, 1981-2010)",
+      "acronym": "tasAnom",
+      "units": "degC",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/tas",
+      "baseline": "1981-2010"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2010/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of mean air temperature anomaly with respect to 1981-2010 (tasAnom, 1981-2010, cdf)",
+      "acronym": "tasAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "tasAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2010/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of mean air temperature anomaly with respect to 1981-2010 (tasAnom, 1981-2010, pdf)",
+      "acronym": "tasAnom",
+      "units": "degC-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "tasAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2010/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of mean air temperature anomaly with respect to 1981-2010 (tasAnom, 1981-2010, sample)",
+      "acronym": "tasAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "tasAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmax/degC",
+      "label": "Maximum air temperature (tasmax, degC)",
+      "acronym": "tasmax",
+      "units": "degC",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/tasmax",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/tasmax",
+      "datasets": [
+        {
+          "variable": "tasmax",
+          "units": "degC",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmax/rp100",
+      "label": "Maximum air temperature 100-year return level (tasmax, rp100)",
+      "acronym": "tasmax",
+      "units": "degC",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/mip/tasmax"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmax/rp100/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of maximum air temperature 100-year return level (tasmax, rp100, cdf)",
+      "acronym": "tasmax",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmax/rp100",
+      "datasets": [
+        {
+          "variable": "tasmax",
+          "return_period": "rp100",
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmax/rp20",
+      "label": "Maximum air temperature 20-year return level (tasmax, rp20)",
+      "acronym": "tasmax",
+      "units": "degC",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/mip/tasmax"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmax/rp20/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of maximum air temperature 20-year return level (tasmax, rp20, cdf)",
+      "acronym": "tasmax",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmax/rp20",
+      "datasets": [
+        {
+          "variable": "tasmax",
+          "return_period": "rp20",
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmax/rp50",
+      "label": "Maximum air temperature 50-year return level (tasmax, rp50)",
+      "acronym": "tasmax",
+      "units": "degC",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/mip/tasmax"
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmax/rp50/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of maximum air temperature 50-year return level (tasmax, rp50, cdf)",
+      "acronym": "tasmax",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmax/rp50",
+      "datasets": [
+        {
+          "variable": "tasmax",
+          "return_period": "rp50",
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1961-1990",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Maximum air temperature anomaly with respect to 1961-1990 (tasmaxAnom, 1961-1990)",
+      "acronym": "tasmaxAnom",
+      "units": "degC",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/tasmax",
+      "baseline": "1961-1990"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1961-1990/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of maximum air temperature anomaly with respect to 1961-1990 (tasmaxAnom, 1961-1990, cdf)",
+      "acronym": "tasmaxAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "tasmaxAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1961-1990/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of maximum air temperature anomaly with respect to 1961-1990 (tasmaxAnom, 1961-1990, pdf)",
+      "acronym": "tasmaxAnom",
+      "units": "degC-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "tasmaxAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1961-1990/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of maximum air temperature anomaly with respect to 1961-1990 (tasmaxAnom, 1961-1990, sample)",
+      "acronym": "tasmaxAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "tasmaxAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2000",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Maximum air temperature anomaly with respect to 1981-2000 (tasmaxAnom, 1981-2000)",
+      "acronym": "tasmaxAnom",
+      "units": "degC",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/tasmax",
+      "baseline": "1981-2000"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2000/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of maximum air temperature anomaly with respect to 1981-2000 (tasmaxAnom, 1981-2000, cdf)",
+      "acronym": "tasmaxAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "tasmaxAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2000/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of maximum air temperature anomaly with respect to 1981-2000 (tasmaxAnom, 1981-2000, pdf)",
+      "acronym": "tasmaxAnom",
+      "units": "degC-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "tasmaxAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2000/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of maximum air temperature anomaly with respect to 1981-2000 (tasmaxAnom, 1981-2000, sample)",
+      "acronym": "tasmaxAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "tasmaxAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2010",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Maximum air temperature anomaly with respect to 1981-2010 (tasmaxAnom, 1981-2010)",
+      "acronym": "tasmaxAnom",
+      "units": "degC",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/tasmax",
+      "baseline": "1981-2010"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2010/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of maximum air temperature anomaly with respect to 1981-2010 (tasmaxAnom, 1981-2010, cdf)",
+      "acronym": "tasmaxAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "tasmaxAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2010/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of maximum air temperature anomaly with respect to 1981-2010 (tasmaxAnom, 1981-2010, pdf)",
+      "acronym": "tasmaxAnom",
+      "units": "degC-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "tasmaxAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2010/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of maximum air temperature anomaly with respect to 1981-2010 (tasmaxAnom, 1981-2010, sample)",
+      "acronym": "tasmaxAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmaxAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "tasmaxAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasmin/degC",
+      "label": "Minimum air temperature (tasmin, degC)",
+      "acronym": "tasmin",
+      "units": "degC",
+      "linear_transformation_of": "https://w3id.org/hacid/data/cs/variables/mip/tasmin",
+      "local_version_of": "https://w3id.org/hacid/data/cs/variables/mip/tasmin",
+      "datasets": [
+        {
+          "variable": "tasmin",
+          "units": "degC",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1961-1990",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Minimum air temperature anomaly with respect to 1961-1990 (tasminAnom, 1961-1990)",
+      "acronym": "tasminAnom",
+      "units": "degC",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/tasmin",
+      "baseline": "1961-1990"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1961-1990/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of minimum air temperature anomaly with respect to 1961-1990 (tasminAnom, 1961-1990, cdf)",
+      "acronym": "tasminAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "tasminAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1961-1990/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of minimum air temperature anomaly with respect to 1961-1990 (tasminAnom, 1961-1990, pdf)",
+      "acronym": "tasminAnom",
+      "units": "degC-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "tasminAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1961-1990/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of minimum air temperature anomaly with respect to 1961-1990 (tasminAnom, 1961-1990, sample)",
+      "acronym": "tasminAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1961-1990",
+      "datasets": [
+        {
+          "variable": "tasminAnom",
+          "baseline_period": "b6190",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2000",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Minimum air temperature anomaly with respect to 1981-2000 (tasminAnom, 1981-2000)",
+      "acronym": "tasminAnom",
+      "units": "degC",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/tasmin",
+      "baseline": "1981-2000"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2000/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of minimum air temperature anomaly with respect to 1981-2000 (tasminAnom, 1981-2000, cdf)",
+      "acronym": "tasminAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "tasminAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2000/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of minimum air temperature anomaly with respect to 1981-2000 (tasminAnom, 1981-2000, pdf)",
+      "acronym": "tasminAnom",
+      "units": "degC-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "tasminAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2000/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of minimum air temperature anomaly with respect to 1981-2000 (tasminAnom, 1981-2000, sample)",
+      "acronym": "tasminAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2000",
+      "datasets": [
+        {
+          "variable": "tasminAnom",
+          "baseline_period": "b8100",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2010",
+      "types": [
+        "data:AbsoluteAnomaly"
+      ],
+      "label": "Minimum air temperature anomaly with respect to 1981-2010 (tasminAnom, 1981-2010)",
+      "acronym": "tasminAnom",
+      "units": "degC",
+      "anomaly_of": "https://w3id.org/hacid/data/cs/variables/mip/tasmin",
+      "baseline": "1981-2010"
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2010/cdf",
+      "types": [
+        "data:QuantileFunction"
+      ],
+      "label": "Quantile function of minimum air temperature anomaly with respect to 1981-2010 (tasminAnom, 1981-2010, cdf)",
+      "acronym": "tasminAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "tasminAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "cdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2010/pdf",
+      "types": [
+        "data:ProbabilityDensityFunction"
+      ],
+      "label": "Probability density of minimum air temperature anomaly with respect to 1981-2010 (tasminAnom, 1981-2010, pdf)",
+      "acronym": "tasminAnom",
+      "units": "degC-1",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "tasminAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "pdf"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2010/sample",
+      "types": [
+        "data:Sample"
+      ],
+      "label": "Sample of minimum air temperature anomaly with respect to 1981-2010 (tasminAnom, 1981-2010, sample)",
+      "acronym": "tasminAnom",
+      "units": "degC",
+      "probabilistic_representation_of": "https://w3id.org/hacid/data/cs/variables/ukcp/tasminAnom/1981-2010",
+      "datasets": [
+        {
+          "variable": "tasminAnom",
+          "baseline_period": "b8110",
+          "return_period": null,
+          "prob_data_type": "sample"
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/wtype30",
+      "label": "Weather type of 30 (wtype30)",
+      "acronym": "wtype30",
+      "units": "1",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/mip/psl"
+      ],
+      "datasets": [
+        {
+          "variable": "wtype30",
+          "prob_data_type": null
+        }
+      ]
+    },
+    {
+      "iri": "https://w3id.org/hacid/data/cs/variables/ukcp/wtype8",
+      "label": "Weather type of 8 (wtype8)",
+      "acronym": "wtype8",
+      "units": "1",
+      "derived_from": [
+        "https://w3id.org/hacid/data/cs/variables/mip/psl"
+      ],
+      "datasets": [
+        {
+          "variable": "wtype8",
+          "prob_data_type": null
+        }
+      ]
+    }
+  ]
+}
