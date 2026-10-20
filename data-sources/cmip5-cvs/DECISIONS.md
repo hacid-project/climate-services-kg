@@ -85,8 +85,10 @@ Decisions taken in mapping the CMIP5 experiments and institutions to the KG.
     the current one has the same experiments plus a few more (e.g.
     `decadal1959`, `historicalAA`, `sst2090`), with capitalised and partly
     reworded descriptions.
-- **Models** (`data/models.csv`). Not mapped (the models are mapped from the
-  datasets, see `data-sources/cmip5`).
+- **Models.** The snapshot also had a table of the models
+  (`data/models.csv`), never mapped (the models are mapped from the datasets,
+  see `data-sources/cmip5`): removed (it remains in the git history, up to
+  commit 26a9334).
 
 ## Validation
 
