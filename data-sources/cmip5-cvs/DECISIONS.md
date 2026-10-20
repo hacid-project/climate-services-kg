@@ -11,9 +11,12 @@ Decisions taken in mapping the CMIP5 experiments and institutions to the KG.
     last commit 7d57821, 2022-09-01). That script is a draft that cannot run
     (it uses names it does not define: `getFileHistory`, `versionId`,
     `versionHistory`, `source_id`, `sub_experiment_id`), and its content
-    differs: institutions in the CMIP6 style (e.g. `CCCma`, with full
-    addresses), no `decadal*`, `noVolc*` and `volcIn2010` experiments, other
-    descriptions.
+    differs, not just in the case of the ids: 10 of the 24 institutions of
+    the CSV (`CSIRO-BOM`, `CSIRO-QCCCE`, `EC-EARTH`, `FIO`, `GCESS`,
+    `LASG-IAP`, `NASA-GMAO`, `NCEP`, `NMR-KMA`, `RSMAS`) are not in it even
+    ignoring the case, the script has CMIP6-style institutions (e.g. `CCCma`,
+    with full addresses), only 34 of the 93 experiments (no `decadal*`,
+    `noVolc*`, `volcIn2010`, ...), and none of the descriptions of the CSV.
   - They are close to the CMIP5 configuration of the ESGF publisher
     ([ESGF/config](https://github.com/ESGF/config),
     `publisher-configs/ini/esg.cmip5.ini`, `experiment_options`), probably
@@ -28,16 +31,27 @@ Decisions taken in mapping the CMIP5 experiments and institutions to the KG.
 - **Models** (`data/models.csv`). Not mapped (the models are mapped from the
   datasets, see `data-sources/cmip5`).
 
+- **Institutions added** (`data/institutions-added.csv`). The institutes of
+  the CMIP5 datasets of the KG that are not in `institutions.csv` are added in
+  a separate file, so that the snapshot stays as it is (the two are
+  concatenated by `csvstack`). Their names were inferred from the models of
+  their datasets and the CMIP5 documentation, not taken from a vocabulary:
+
+  | Id | Name | Model of the datasets |
+  | --- | --- | --- |
+  | `ICHEC` | Irish Centre for High-End Computing | EC-EARTH |
+  | `LASG-CESS` | LASG, Institute of Atmospheric Physics, Chinese Academy of Sciences and CESS, Tsinghua University | FGOALS-g2 |
+  | `NIMR-KMA` | National Institute of Meteorological Research/Korea Meteorological Administration | HadGEM2-AO |
+  | `UNSW` | University of New South Wales | CSIRO-Mk3L-1-2 |
+
 ## Open cases
 
-- **Institutions of the datasets not in the vocabulary.** The CMIP5 datasets
-  of the KG have 4 institutes that are not in `institutions.csv`: `ICHEC`,
-  `LASG-CESS`, `NIMR-KMA` (the vocabulary has `NMR-KMA`, "National Institute
-  of Meteorological Research/Korea Meteorological Administration", probably
-  the same) and `UNSW`. Their organizations have no label.
+- `NMR-KMA` in `institutions.csv` has the name of `NIMR-KMA`, the id used by
+  the datasets: probably an older or mistaken id of the same institute.
 - `NCEP` has no description.
 
 ## Validation
 
 The Snakemake rules give byte-identical outputs to the JSON-LD previously kept
-in the repository (`rdf/*.jsonld`, made by `map.sh`).
+in the repository (`rdf/*.jsonld`, made by `map.sh`), but for the 4 added
+institutions.

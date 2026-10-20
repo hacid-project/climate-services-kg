@@ -2,7 +2,12 @@
 # institutions, data/*.csv, kept in the repository as source) to JSON-LD with
 # jq.
 
-CMIP5_CVS = ["experiments", "institutions"]
+# Source files of each vocabulary: the institutions of the CMIP5 datasets
+# missing from institutions.csv are added in institutions-added.csv
+CMIP5_CVS = {
+    "experiments": ["experiments.csv"],
+    "institutions": ["institutions.csv", "institutions-added.csv"],
+}
 
 
 rule cmip5_cvs:
@@ -10,11 +15,11 @@ rule cmip5_cvs:
         expand("data-sources/cmip5-cvs/rdf/{name}.jsonld", name=CMIP5_CVS),
 
 
-# Conversion to JSON by csvjson (of the Python package csvkit), without type
-# inference, and mapping
+# Concatenation of the source files by csvstack and conversion to JSON by
+# csvjson (of the Python package csvkit), without type inference, and mapping
 rule cmip5_cvs_map:
     input:
-        data="data-sources/cmip5-cvs/data/{name}.csv",
+        data=lambda wildcards: [f"data-sources/cmip5-cvs/data/{f}" for f in CMIP5_CVS[wildcards.name]],
         mapping="data-sources/cmip5-cvs/mapping/{name}.jq",
     output:
         "data-sources/cmip5-cvs/rdf/{name}.jsonld",
@@ -23,4 +28,4 @@ rule cmip5_cvs_map:
     log:
         "logs/cmip5_cvs/map_{name}.log",
     shell:
-        "(csvjson --no-inference {input.data:q} | jq -f {input.mapping:q}) > {output:q} 2> {log:q}"
+        "(csvstack {input.data:q} | csvjson --no-inference | jq -f {input.mapping:q}) > {output:q} 2> {log:q}"
