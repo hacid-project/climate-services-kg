@@ -199,5 +199,7 @@ data-sources/cmip5/data
 data-sources/cmip5/rdf
 
 # Snakemake workflow
+# TDB2 dataset and export of the consolidated KG (rule consolidate)
+kg/
 .snakemake/
 logs/

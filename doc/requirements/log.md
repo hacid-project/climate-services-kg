@@ -107,7 +107,8 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Date:** 2026-10-19 · **Evidence:** `load.sh`, `just-load.sh`, `upload_kg.sh`, `setup_kg.sh`, `reset_kg.sh`, `consolidate.sh`, `fuseki-conf.ttl`, `graph_names.csv`, `publication/drop_on_virtuoso.sh`
 - **Situation:** loading into Fuseki (and publication to Virtuoso), consolidation and named-graph management are separate shell scripts.
 - **Requirement:** sinks (triple store, named graphs, publication dumps) should be declared steps of the dataflow, with the same versioning and incrementality as the mappings.
-- **Current handling:** shell scripts outside the workflow.
+- **Current handling:** loading, consolidation and export are steps of the workflow (rule `consolidate`, 2026-10-20), with the Jena command-line tools on a TDB2 dataset inside the project, instead of Fuseki; the steps record their completion in marker files, as the dataset is modified in place. Serving (Fuseki) and publication (Virtuoso) are still outside.
+- **Notes:** a TDB2 dataset updated in place does not fit the file-based model of Snakemake (outputs are not modified by later steps): its state is tracked by marker files. The JSON-LD parser of Jena reads whole documents in memory, so the largest output (1.8 GB of JSON-LD) needs a large heap.
 
 ---
 
