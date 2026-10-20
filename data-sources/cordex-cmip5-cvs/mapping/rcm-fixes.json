@@ -1,0 +1,18 @@
+{
+    "CMCC-REMHI": {
+        "institute_name": "Centro Euro-Mediterraneo per I Cambiamenti Climatici",
+        "reason": "the name of CMCC in the CMIP5 institutions (from ESGF) and in its CMIP5 models"
+    },
+    "GERICS-REMO2015": {
+        "institute_name": "Helmholtz-Zentrum Geesthacht, Climate Service Center Germany",
+        "reason": "one name for the institute: that of GERICS-REMO2009"
+    },
+    "IITM-RegCM4-4": {
+        "institute_name": "Indian Institute of Tropical Meteorology",
+        "reason": "one name for the institute: that of IITM-RegCM4-1"
+    },
+    "UM-RegCM4-3": {
+        "institute_id": "UMICH",
+        "reason": "the id UM is used also by the Universidad de Murcia (UM-WRF331)"
+    }
+}

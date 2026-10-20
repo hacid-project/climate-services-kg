@@ -18,7 +18,7 @@ snakemake --cores 4 cmor_tables        # just the variables of the CMOR tables
 
 The decisions taken for each data source on its issues, inconsistencies and conflicting versions (and the cases left
 for further analysis) are documented in its `DECISIONS.md` (`data-sources/cf-standard-names`, `cmor-tables`, `cmip5`,
-`cordex-domains`, `cordex-cmip5`, `ukcp18`, `mohc-cvs`, `climdex`, `cmip5-cvs`).
+`cordex-domains`, `cordex-cmip5`, `ukcp18`, `mohc-cvs`, `climdex`, `cmip5-cvs`, `cordex-cmip5-cvs`).
 
 ### CF standard names
 
@@ -88,6 +88,14 @@ The tables of the CORDEX-CMIP5 grids, rotated and regular, are read from the
 mapped with jq (`mapping/domains.jq`, `snakemake --cores 4 cordex_domains`) to
 `data-sources/cordex-domains/rdf/domains.jsonld`: the domains, the grids (dimensional spaces) with their resolution,
 bounding regions and specializations, and the rotated dimensional spaces with their poles.
+
+### CORDEX RCMs
+
+The CORDEX regional climate models, with their institutes, are taken from the list of IS-ENES Data
+(`CORDEX_RCMs_info.txt` of [IS-ENES-Data.github.io](https://github.com/IS-ENES-Data/IS-ENES-Data.github.io), through
+the git storage plugin), parsed in jq (`data-sources/cordex-cmip5-cvs/mapping/rcms-info.jq`) with some fixes
+(`mapping/rcm-fixes.json`), and mapped to `data-sources/cordex-cmip5-cvs/rdf/models.jsonld`
+(`snakemake --cores 4 cordex_cmip5_cvs`). See `DECISIONS.md`.
 
 ### CORDEX-CMIP5 datasets
 
