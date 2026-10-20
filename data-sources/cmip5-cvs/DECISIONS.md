@@ -44,27 +44,27 @@ Decisions taken in mapping the CMIP5 experiments and institutions to the KG.
   The names of `ICHEC` and `LASG-CESS` were inferred from the ids and the
   models of their datasets. The excluded institutions are not used by the
   CMIP5 datasets mapped.
-- **Check against the CSV files** (`analysis/institutions-check.json`, rule
-  `cmip5_cvs_institutions_check`). The CSV files previously used, kept for
-  now, are compared with the institutions of ESGF (after the fixes, reported
-  with the names of ESGF and their reasons): `data/institutions.csv` (the
-  snapshot previously mapped, of unknown origin, very close to the models
-  table) and `data/institutions-added.csv` (the institutes of the datasets
-  missing from it, with names inferred by hand). Current result: 18 same
-  names, 5 different (minor variants, e.g. "The First Institute of
+- **Comparison with the CSV files previously used.** The institutions were
+  previously mapped from `data/institutions.csv` (a snapshot of unknown
+  origin, very close to the models table) and `data/institutions-added.csv`
+  (the institutes of the datasets missing from it, with names inferred by
+  hand). They were compared with the institutions of ESGF (after the fixes):
+  18 same names, 5 different (minor variants, e.g. "The First Institute of
   Oceanography" or "Max Planck Institute for Meteorology (MPI-M)", and
   `CSIRO-BOM`, "Centre for Australian Weather and Climate Research (CAWCR)"
   in ESGF and "CSIRO/Bureau of Meteorology" in the CSV), 5 only in the CSV
   files (`EC-EARTH`, `GCESS`, `NCEP`, `NMR-KMA`, `RSMAS`, not used by the
-  datasets), 3 only in ESGF (`BNU`, `CSIRO`, `NICAM`). Decisions: the names
-  of ESGF are kept where they differ, also for `CSIRO-BOM` (the Centre for
-  Australian Weather and Climate Research is the partnership of CSIRO and the
-  Bureau of Meteorology), and the ids only in the CSV files are dropped (they
-  are not in the KG, as the institutions come from ESGF). Also reported: the
-  names not parsed but correct (`INM`, `NASA-GISS`, `NASA-GMAO`), and the other
-  name of `MOHC` given by the lines of `HadGEM2-A` ("National Institute of
-  Meteorological Research/Korea Meteorological Administration", 2 lines
-  against 10).
+  datasets), 3 only in ESGF (`BNU`, `CSIRO`, `NICAM`). The names of ESGF are
+  kept where they differ, also for `CSIRO-BOM` (the Centre for Australian
+  Weather and Climate Research is the partnership of CSIRO and the Bureau of
+  Meteorology), and the ids only in the CSV files are dropped. The CSV files
+  and the check were then removed (they remain in the git history, up to
+  commit 1ee9183).
+- **Other issues of the names of ESGF**, accepted: the names of `INM`,
+  `NASA-GISS`, `NASA-GMAO` are whole descriptions, without "<model>, ", but
+  correct; `MOHC` is also named "National Institute of Meteorological
+  Research/Korea Meteorological Administration" by the lines of `HadGEM2-A`
+  (2 lines against 10, the name of the majority is taken).
 
 ## Experiments
 

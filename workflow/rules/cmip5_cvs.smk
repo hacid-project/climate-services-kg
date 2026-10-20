@@ -3,10 +3,8 @@
 # - the institutions, from the configuration of the ESGF publisher
 #   (https://github.com/ESGF/config), joining the names of the institutes of
 #   the models in the models table with the ids of the institutes of the
-#   models in the CMIP5 institute map (mapping/esgf-institutions.jq). The CSV
-#   files of the institutions previously used (data/institutions.csv,
-#   data/institutions-added.csv) are compared with them
-#   (analysis/institutions-check.json).
+#   models in the CMIP5 institute map (mapping/esgf-institutions.jq), with
+#   some fixes (mapping/institution-fixes.json).
 
 
 rule cmip5_cvs:
@@ -62,22 +60,3 @@ rule cmip5_cvs_map_institutions:
         "logs/cmip5_cvs/map_institutions.log",
     shell:
         "jq -f {input.mapping:q} {input.data:q} > {output:q} 2> {log:q}"
-
-
-# Comparison of the institutions of ESGF with the CSV files previously used
-# (concatenated by csvstack, with the file of each row)
-rule cmip5_cvs_institutions_check:
-    input:
-        esgf="data-sources/cmip5-cvs/data/institutions-esgf.json",
-        csv=[
-            "data-sources/cmip5-cvs/data/institutions.csv",
-            "data-sources/cmip5-cvs/data/institutions-added.csv",
-        ],
-        check="data-sources/cmip5-cvs/analysis/institutions-check.jq",
-    output:
-        "data-sources/cmip5-cvs/analysis/institutions-check.json",
-    log:
-        "logs/cmip5_cvs/institutions_check.log",
-    shell:
-        "(csvstack -n file --filenames {input.csv:q} | csvjson --no-inference"
-        " | jq --slurpfile esgf {input.esgf:q} -f {input.check:q}) > {output:q} 2> {log:q}"

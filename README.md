@@ -66,9 +66,8 @@ The CMIP5 experiments are kept in the repository as source (`data-sources/cmip5-
 converted to JSON by `csvjson` and mapped with jq to `data-sources/cmip5-cvs/rdf/experiments.jsonld`. The CMIP5
 institutions are taken from the configuration of the ESGF publisher ([ESGF/config](https://github.com/ESGF/config),
 through the git storage plugin), joining in jq its models table with its CMIP5 institute map
-(`mapping/esgf-institutions.jq`), and mapped to `institutions.jsonld` (`snakemake --cores 4 cmip5_cvs`). They are
-compared with the CSV files previously used in `analysis/institutions-check.json` (part of `sources_analysis`). See
-`DECISIONS.md`.
+(`mapping/esgf-institutions.jq`), with some fixes (`mapping/institution-fixes.json`), and mapped to
+`institutions.jsonld` (`snakemake --cores 4 cmip5_cvs`). See `DECISIONS.md`.
 
 ### CMIP5 datasets
 
