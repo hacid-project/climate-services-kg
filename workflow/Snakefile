@@ -9,6 +9,7 @@
 #   snakemake --cores 1 cmip5_cvs             # CMIP5 experiments and institutions
 #   snakemake --cores 1 cmip5                 # CMIP5 datasets
 #   snakemake --cores 1 cordex_domains        # CORDEX-CMIP5 domains and grids
+#   snakemake --cores 1 cordex_cmip5_cvs      # CORDEX RCMs and their institutes
 #   snakemake --cores 1 cordex_cmip5          # CORDEX-CMIP5 datasets
 #   snakemake --cores 1 ukcp18                # UKCP18 datasets
 #   snakemake --cores 1 climdex               # climate indices of Climdex/Climpact
@@ -60,6 +61,9 @@ include: "rules/cmip5.smk"
 include: "rules/cordex_domains.smk"
 
 
+include: "rules/cordex_cmip5_cvs.smk"
+
+
 include: "rules/cordex_cmip5.smk"
 
 
@@ -81,6 +85,7 @@ rule mapping:
         rules.cmip5_cvs.input,
         rules.cmip5.input,
         rules.cordex_domains.input,
+        rules.cordex_cmip5_cvs.input,
         rules.cordex_cmip5.input,
         rules.ukcp18.input,
         rules.climdex.input,

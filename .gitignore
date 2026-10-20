@@ -184,6 +184,8 @@ data-sources/mohc-cvs/rdf
 data-sources/climdex/rdf
 data-sources/cmip5-cvs/rdf
 data-sources/cmip5-cvs/data
+data-sources/cordex-cmip5-cvs/data
+data-sources/cordex-cmip5-cvs/rdf
 data-sources/cmor-tables/data
 data-sources/observations/data
 data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json
