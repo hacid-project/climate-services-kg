@@ -15,11 +15,29 @@ pip install -r workflow/requirements.txt
 snakemake --cores 4 mapping            # all the mappings to the KG (default target)
 snakemake --cores 4 sources_analysis   # all the analyses of the sources
 snakemake --cores 4 cmor_tables        # just the variables of the CMOR tables
+snakemake --cores 4 consolidate        # the KG loaded, consolidated and exported (kg/)
 ```
 
 The decisions taken for each data source on its issues, inconsistencies and conflicting versions (and the cases left
 for further analysis) are documented in its `DECISIONS.md` (`data-sources/cf-standard-names`, `cmor-tables`, `cmip5`,
 `cordex-domains`, `cordex-cmip5`, `ukcp18`, `mohc-cvs`, `climdex`, `cmip5-cvs`, `cordex-cmip5-cvs`).
+
+### Consolidation
+
+The rule `consolidate` (`workflow/rules/consolidate.smk`), run on the outputs of `mapping`, builds the KG with the
+[Apache Jena](https://jena.apache.org/) command-line tools (which must be on the `PATH`), in three steps:
+
+1. `consolidate_load`: the files of each graph listed in `graph_names.csv` (path or glob pattern, graph name, skip)
+   are loaded into a new TDB2 dataset, `kg/tdb2` (`config/config.yaml`, `consolidate.location`; `kg/` is not
+   tracked), with `tdb2.tdbloader` (`workflow/scripts/consolidate_load.py`, which writes the graphs and their files
+   in `kg/load.json`);
+2. `consolidate_updates`: the SPARQL updates listed in `consolidation_updates.csv` (in `consolidation/`) are applied
+   in their order with `tdb2.tdbupdate`, seeing the union of the named graphs as the default graph;
+3. `consolidate_export`: the dataset is exported as N-Quads, `kg/export/kg.nq.gz`, with `tdb2.tdbdump`.
+
+The JVM options of the tools are in `config/config.yaml` (`consolidate.jvm_args`, `-Xmx16G`: the JSON-LD parser of
+Jena reads a whole document in memory, and the UKCP18 datasets are about 1.8 GB). The dataset can be served by
+Fuseki pointing its configuration (`fuseki-conf.ttl`, installed by `setup_kg.sh`) to its location.
 
 ### Ontologies
 

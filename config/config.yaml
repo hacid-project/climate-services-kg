@@ -88,3 +88,9 @@ ontologies:
     - top-level
     - data
     - ccso
+
+consolidate:
+  # Location of the TDB2 dataset of the consolidated KG (not tracked)
+  location: kg/tdb2
+  # Options of the JVM of the Jena command-line tools (JVM_ARGS)
+  jvm_args: -Xmx16G
