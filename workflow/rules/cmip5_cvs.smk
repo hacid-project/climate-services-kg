@@ -1,31 +1,79 @@
-# Mapping of the controlled vocabularies of CMIP5 (experiments and
-# institutions, data/*.csv, kept in the repository as source) to JSON-LD with
-# jq.
-
-# Source files of each vocabulary: the institutions of the CMIP5 datasets
-# missing from institutions.csv are added in institutions-added.csv
-CMIP5_CVS = {
-    "experiments": ["experiments.csv"],
-    "institutions": ["institutions.csv", "institutions-added.csv"],
-}
+# Mapping of the controlled vocabularies of CMIP5 to JSON-LD with jq:
+# - the experiments (data/experiments.csv, kept in the repository as source);
+# - the institutions, from the configuration of the ESGF publisher
+#   (https://github.com/ESGF/config), joining the names of the institutes of
+#   the models in the models table with the ids of the institutes of the
+#   models in the CMIP5 institute map (mapping/esgf-institutions.jq). The CSV
+#   files of the institutions previously used (data/institutions.csv,
+#   data/institutions-added.csv) are compared with them
+#   (analysis/institutions-check.json).
 
 
 rule cmip5_cvs:
     input:
-        expand("data-sources/cmip5-cvs/rdf/{name}.jsonld", name=CMIP5_CVS),
+        "data-sources/cmip5-cvs/rdf/experiments.jsonld",
+        "data-sources/cmip5-cvs/rdf/institutions.jsonld",
 
 
-# Concatenation of the source files by csvstack and conversion to JSON by
-# csvjson (of the Python package csvkit), without type inference, and mapping
-rule cmip5_cvs_map:
+# Conversion to JSON by csvjson (of the Python package csvkit), without type
+# inference, and mapping
+rule cmip5_cvs_map_experiments:
     input:
-        data=lambda wildcards: [f"data-sources/cmip5-cvs/data/{f}" for f in CMIP5_CVS[wildcards.name]],
-        mapping="data-sources/cmip5-cvs/mapping/{name}.jq",
+        data="data-sources/cmip5-cvs/data/experiments.csv",
+        mapping="data-sources/cmip5-cvs/mapping/experiments.jq",
     output:
-        "data-sources/cmip5-cvs/rdf/{name}.jsonld",
-    wildcard_constraints:
-        name="|".join(CMIP5_CVS),
+        "data-sources/cmip5-cvs/rdf/experiments.jsonld",
     log:
-        "logs/cmip5_cvs/map_{name}.log",
+        "logs/cmip5_cvs/map_experiments.log",
     shell:
-        "(csvstack {input.data:q} | csvjson --no-inference | jq -f {input.mapping:q}) > {output:q} 2> {log:q}"
+        "(csvjson --no-inference {input.data:q} | jq -f {input.mapping:q}) > {output:q} 2> {log:q}"
+
+
+# Institutions of the ESGF publisher configuration: [{id, acronym,
+# description, models, candidates}]
+rule cmip5_cvs_institutions_esgf:
+    input:
+        checkout=storage.git(
+            "{cmip5_cvs[esgf_config_repo]}#{cmip5_cvs[esgf_config_version]}".format(**config)
+        ),
+        module="data-sources/cmip5-cvs/mapping/esgf-institutions.jq",
+    output:
+        "data-sources/cmip5-cvs/data/institutions-esgf.json",
+    log:
+        "logs/cmip5_cvs/institutions_esgf.log",
+    shell:
+        "jq -n -L data-sources/cmip5-cvs/mapping"
+        " --rawfile models_table {input.checkout:q}/publisher-configs/esgcet_models_table.txt"
+        " --rawfile ini {input.checkout:q}/publisher-configs/ini/esg.cmip5.ini"
+        " 'include \"esgf-institutions\"; esgf_institutions($models_table; $ini)' > {output:q} 2> {log:q}"
+
+
+rule cmip5_cvs_map_institutions:
+    input:
+        data="data-sources/cmip5-cvs/data/institutions-esgf.json",
+        mapping="data-sources/cmip5-cvs/mapping/institutions.jq",
+    output:
+        "data-sources/cmip5-cvs/rdf/institutions.jsonld",
+    log:
+        "logs/cmip5_cvs/map_institutions.log",
+    shell:
+        "jq -f {input.mapping:q} {input.data:q} > {output:q} 2> {log:q}"
+
+
+# Comparison of the institutions of ESGF with the CSV files previously used
+# (concatenated by csvstack, with the file of each row)
+rule cmip5_cvs_institutions_check:
+    input:
+        esgf="data-sources/cmip5-cvs/data/institutions-esgf.json",
+        csv=[
+            "data-sources/cmip5-cvs/data/institutions.csv",
+            "data-sources/cmip5-cvs/data/institutions-added.csv",
+        ],
+        check="data-sources/cmip5-cvs/analysis/institutions-check.jq",
+    output:
+        "data-sources/cmip5-cvs/analysis/institutions-check.json",
+    log:
+        "logs/cmip5_cvs/institutions_check.log",
+    shell:
+        "(csvstack -n file --filenames {input.csv:q} | csvjson --no-inference"
+        " | jq --slurpfile esgf {input.esgf:q} -f {input.check:q}) > {output:q} 2> {log:q}"

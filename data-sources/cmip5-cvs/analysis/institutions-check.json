@@ -1,0 +1,548 @@
+{
+  "summary": {
+    "status": {
+      "different": 8,
+      "only_csv": 5,
+      "only_esgf": 5,
+      "same": 15
+    },
+    "issues": {
+      "no_name": 1,
+      "not_parsed": 6,
+      "other_candidates": 1
+    }
+  },
+  "institutions": [
+    {
+      "id": "BCC",
+      "status": "same",
+      "esgf": {
+        "acronym": "BCC",
+        "name": "Beijing Climate Center, China Meteorological Administration",
+        "models": [
+          "bcc-csm",
+          "bcc-csm1-1",
+          "bcc-csm1-1-m"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "BCC",
+        "name": "Beijing Climate Center, China Meteorological Administration"
+      }
+    },
+    {
+      "id": "BNU",
+      "status": "only_esgf",
+      "esgf": {
+        "acronym": "BNU",
+        "name": "College of Global Change and Earth System Science, Beijing Normal University",
+        "models": [
+          "BNU-ESM"
+        ]
+      }
+    },
+    {
+      "id": "CCCMA",
+      "status": "same",
+      "esgf": {
+        "acronym": "CCCma",
+        "name": "Canadian Centre for Climate Modelling and Analysis",
+        "models": [
+          "CanAM4",
+          "CanCM4",
+          "CanESM2"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "CCCMA",
+        "name": "Canadian Centre for Climate Modelling and Analysis"
+      }
+    },
+    {
+      "id": "CMCC",
+      "status": "same",
+      "esgf": {
+        "acronym": "CMCC",
+        "name": "Centro Euro-Mediterraneo per I Cambiamenti Climatici",
+        "models": [
+          "CMCC-CESM",
+          "CMCC-CM",
+          "CMCC-CMS"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "CMCC",
+        "name": "Centro Euro-Mediterraneo per I Cambiamenti Climatici"
+      }
+    },
+    {
+      "id": "CNRM-CERFACS",
+      "status": "same",
+      "esgf": {
+        "acronym": "CNRM-CERFACS",
+        "name": "Centre National de Recherches Meteorologiques / Centre Europeen de Recherche et Formation Avancees en Calcul Scientifique (CNRM/CERFACS)",
+        "models": [
+          "CNRM-CM5",
+          "CNRM-CM5-2"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "CNRM-CERFACS",
+        "name": "Centre National de Recherches Meteorologiques / Centre Europeen de Recherche et Formation Avancees en Calcul Scientifique (CNRM/CERFACS)"
+      }
+    },
+    {
+      "id": "CSIRO",
+      "status": "only_esgf",
+      "esgf": {
+        "acronym": "CSIRO",
+        "name": "Commonwealth Scientific and Industrial Research Organization/Queensland Climate Change Centre of Excellence (CSIRO-QCCCE)",
+        "models": [
+          "CSIRO-Mk3-5A"
+        ]
+      }
+    },
+    {
+      "id": "CSIRO-BOM",
+      "status": "different",
+      "esgf": {
+        "acronym": "CSIRO-BOM",
+        "name": "Centre for Australian Weather and Climate Research (CAWCR)",
+        "models": [
+          "ACCESS1-0",
+          "ACCESS1-3"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "CSIRO-BOM",
+        "name": "CSIRO/Bureau of Meteorology"
+      }
+    },
+    {
+      "id": "CSIRO-QCCCE",
+      "status": "same",
+      "esgf": {
+        "acronym": "CSIRO-QCCCE",
+        "name": "Commonwealth Scientific and Industrial Research Organization/Queensland Climate Change Centre of Excellence (CSIRO-QCCCE)",
+        "models": [
+          "CSIRO-Mk3-6-0"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "CSIRO-QCCCE",
+        "name": "Commonwealth Scientific and Industrial Research Organization/Queensland Climate Change Centre of Excellence (CSIRO-QCCCE)"
+      }
+    },
+    {
+      "id": "DOE-COLA-CMMAP-GMU",
+      "status": "only_esgf",
+      "esgf": {
+        "acronym": "DOE-COLA-CMMAP-GMU",
+        "name": null,
+        "models": [
+          "SP-CCSM4"
+        ]
+      },
+      "issues": [
+        "no_name"
+      ]
+    },
+    {
+      "id": "EC-EARTH",
+      "status": "only_csv",
+      "csv": {
+        "file": "institutions.csv",
+        "id": "EC-EARTH",
+        "name": "EC-EARTH, EC-Earth consortium"
+      }
+    },
+    {
+      "id": "FIO",
+      "status": "different",
+      "esgf": {
+        "acronym": "FIO",
+        "name": "First Institute of Oceanography, SOA, China",
+        "models": [
+          "FIO-ESM"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "FIO",
+        "name": "The First Institute of Oceanography, SOA, China"
+      }
+    },
+    {
+      "id": "GCESS",
+      "status": "only_csv",
+      "csv": {
+        "file": "institutions.csv",
+        "id": "GCESS",
+        "name": "College of Global Change and Earth System Science, Beijing Normal University"
+      }
+    },
+    {
+      "id": "ICHEC",
+      "status": "different",
+      "esgf": {
+        "acronym": "ICHEC",
+        "name": "EC-EARTH consortium",
+        "models": [
+          "EC-EARTH"
+        ]
+      },
+      "csv": {
+        "file": "institutions-added.csv",
+        "id": "ICHEC",
+        "name": "Irish Centre for High-End Computing"
+      },
+      "issues": [
+        "not_parsed"
+      ]
+    },
+    {
+      "id": "INM",
+      "status": "same",
+      "esgf": {
+        "acronym": "INM",
+        "name": "Institute for Numerical Mathematics",
+        "models": [
+          "inmcm4"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "INM",
+        "name": "Institute for Numerical Mathematics"
+      },
+      "issues": [
+        "not_parsed"
+      ]
+    },
+    {
+      "id": "IPSL",
+      "status": "same",
+      "esgf": {
+        "acronym": "IPSL",
+        "name": "Institut Pierre-Simon Laplace",
+        "models": [
+          "IPSL-CM5A-LR",
+          "IPSL-CM5A-MR",
+          "IPSL-CM5B-LR"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "IPSL",
+        "name": "Institut Pierre-Simon Laplace"
+      }
+    },
+    {
+      "id": "LASG-CESS",
+      "status": "different",
+      "esgf": {
+        "acronym": "LASG-CESS",
+        "name": "LASG, Institute of Atmospheric Physics, Chinese Academy of Sciences",
+        "models": [
+          "FGOALS-g2"
+        ]
+      },
+      "csv": {
+        "file": "institutions-added.csv",
+        "id": "LASG-CESS",
+        "name": "LASG, Institute of Atmospheric Physics, Chinese Academy of Sciences and CESS, Tsinghua University"
+      }
+    },
+    {
+      "id": "LASG-IAP",
+      "status": "same",
+      "esgf": {
+        "acronym": "LASG-IAP",
+        "name": "LASG, Institute of Atmospheric Physics, Chinese Academy of Sciences",
+        "models": [
+          "FGOALS-gl",
+          "FGOALS-s2"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "LASG-IAP",
+        "name": "LASG, Institute of Atmospheric Physics, Chinese Academy of Sciences"
+      }
+    },
+    {
+      "id": "MIROC",
+      "status": "same",
+      "esgf": {
+        "acronym": "MIROC",
+        "name": "Atmosphere and Ocean Research Institute (The University of Tokyo), National Institute for Environmental Studies, and Japan Agency for Marine-Earth Science and Technology",
+        "models": [
+          "MIROC-ESM",
+          "MIROC-ESM-CHEM",
+          "MIROC4h",
+          "MIROC4m",
+          "MIROC5"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "MIROC",
+        "name": "Atmosphere and Ocean Research Institute (The University of Tokyo), National Institute for Environmental Studies, and Japan Agency for Marine-Earth Science and Technology"
+      }
+    },
+    {
+      "id": "MOHC",
+      "status": "same",
+      "esgf": {
+        "acronym": "MOHC",
+        "name": "Met Office Hadley Centre",
+        "models": [
+          "HadCM3",
+          "HadGEM2-A",
+          "HadGEM2-CC",
+          "HadGEM2-ES"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "MOHC",
+        "name": "Met Office Hadley Centre"
+      },
+      "issues": [
+        "other_candidates"
+      ],
+      "other_candidates": [
+        "National Institute of Meteorological Research/Korea Meteorological Administration"
+      ]
+    },
+    {
+      "id": "MPI-M",
+      "status": "different",
+      "esgf": {
+        "acronym": "MPI-M",
+        "name": "Max Planck Institute for Meteorology (MPI-M)",
+        "models": [
+          "MPI-ESM-LR",
+          "MPI-ESM-MR",
+          "MPI-ESM-P"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "MPI-M",
+        "name": "Max Planck Institute for Meteorology"
+      }
+    },
+    {
+      "id": "MRI",
+      "status": "same",
+      "esgf": {
+        "acronym": "MRI",
+        "name": "Meteorological Research Institute",
+        "models": [
+          "MRI-AGCM3-2H",
+          "MRI-AGCM3-2S",
+          "MRI-CGCM3",
+          "MRI-ESM1"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "MRI",
+        "name": "Meteorological Research Institute"
+      }
+    },
+    {
+      "id": "NASA-GISS",
+      "status": "same",
+      "esgf": {
+        "acronym": "NASA-GISS",
+        "name": "NASA Goddard Institute for Space Studies",
+        "models": [
+          "GISS-E2-H",
+          "GISS-E2-H-CC",
+          "GISS-E2-R",
+          "GISS-E2-R-CC"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "NASA-GISS",
+        "name": "NASA Goddard Institute for Space Studies"
+      },
+      "issues": [
+        "not_parsed"
+      ]
+    },
+    {
+      "id": "NASA-GMAO",
+      "status": "same",
+      "esgf": {
+        "acronym": "NASA-GMAO",
+        "name": "NASA Global Modeling and Assimilation Office",
+        "models": [
+          "GEOS-5"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "NASA-GMAO",
+        "name": "NASA Global Modeling and Assimilation Office"
+      },
+      "issues": [
+        "not_parsed"
+      ]
+    },
+    {
+      "id": "NCAR",
+      "status": "different",
+      "esgf": {
+        "acronym": "NCAR",
+        "name": "Community Climate System Model 4",
+        "models": [
+          "CCSM4"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "NCAR",
+        "name": "National Center for Atmospheric Research"
+      },
+      "issues": [
+        "not_parsed"
+      ]
+    },
+    {
+      "id": "NCC",
+      "status": "same",
+      "esgf": {
+        "acronym": "NCC",
+        "name": "Norwegian Climate Centre (NorClim)",
+        "models": [
+          "NorESM1-M",
+          "NorESM1-ME"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "NCC",
+        "name": "Norwegian Climate Centre (NorClim)"
+      }
+    },
+    {
+      "id": "NCEP",
+      "status": "only_csv",
+      "csv": {
+        "file": "institutions.csv",
+        "id": "NCEP",
+        "name": null
+      }
+    },
+    {
+      "id": "NICAM",
+      "status": "only_esgf",
+      "esgf": {
+        "acronym": "NICAM",
+        "name": "Nonhydrostatic Icosahedral Atmospheric Model Group",
+        "models": [
+          "NICAM-09"
+        ]
+      }
+    },
+    {
+      "id": "NIMR-KMA",
+      "status": "same",
+      "esgf": {
+        "acronym": "NIMR-KMA",
+        "name": "National Institute of Meteorological Research/Korea Meteorological Administration",
+        "models": [
+          "HadGEM2-AO"
+        ]
+      },
+      "csv": {
+        "file": "institutions-added.csv",
+        "id": "NIMR-KMA",
+        "name": "National Institute of Meteorological Research/Korea Meteorological Administration"
+      }
+    },
+    {
+      "id": "NMR-KMA",
+      "status": "only_csv",
+      "csv": {
+        "file": "institutions.csv",
+        "id": "NMR-KMA",
+        "name": "National Institute of Meteorological Research/Korea Meteorological Administration"
+      }
+    },
+    {
+      "id": "NOAA-GFDL",
+      "status": "different",
+      "esgf": {
+        "acronym": "NOAA-GFDL",
+        "name": "Geophysical Fluid Dynamics Laboratory",
+        "models": [
+          "GFDL-CM2p1",
+          "GFDL-CM3",
+          "GFDL-ESM2G",
+          "GFDL-ESM2M",
+          "GFDL-HIRAM-C180",
+          "GFDL-HIRAM-C360"
+        ]
+      },
+      "csv": {
+        "file": "institutions.csv",
+        "id": "NOAA-GFDL",
+        "name": "NOAA Geophysical Fluid Dynamics Laboratory"
+      }
+    },
+    {
+      "id": "NSF-DOE-NCAR",
+      "status": "only_esgf",
+      "esgf": {
+        "acronym": "NSF-DOE-NCAR",
+        "name": "Community Earth System Model 1",
+        "models": [
+          "CESM1-BGC",
+          "CESM1-CAM5",
+          "CESM1-CAM5-1-FV2",
+          "CESM1-FASTCHEM",
+          "CESM1-WACCM"
+        ]
+      },
+      "issues": [
+        "not_parsed"
+      ]
+    },
+    {
+      "id": "RSMAS",
+      "status": "only_csv",
+      "csv": {
+        "file": "institutions.csv",
+        "id": "RSMAS",
+        "name": "University of Miami - RSMAS"
+      }
+    },
+    {
+      "id": "UNSW",
+      "status": "different",
+      "esgf": {
+        "acronym": "UNSW",
+        "name": "University of New South Wales, Australia",
+        "models": [
+          "CSIRO-Mk3L-1-2"
+        ]
+      },
+      "csv": {
+        "file": "institutions-added.csv",
+        "id": "UNSW",
+        "name": "University of New South Wales"
+      }
+    }
+  ]
+}

@@ -9,7 +9,7 @@
         .[] | {
             "@id": @uri "https://w3id.org/hacid/data/cs/organizations/\(.id)",
             "@type": "top:Organization",
-            acronym: .id,
+            acronym: (.acronym // .id),
             label: .description
         }
     ]
