@@ -10,7 +10,7 @@ WHERE {
         data:hasOutput/data:dependsOnVariable ?geodeticVariable.
     ?geodeticVariable
         data:holdsSpecializationOfVariable* dimension:geodetic;
-        data:hasDiscretization ?geodeticDiscretization.
+        data:adoptsQuantization ?geodeticDiscretization.
     OPTIONAL {?geodeticDiscretization data:hasResolutionValue ?geodeticResolution}
 }
 LIMIT 100

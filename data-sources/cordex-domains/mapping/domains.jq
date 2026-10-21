@@ -40,7 +40,7 @@ def domain: "\(cs)cordex/domains/\(.area_id)";
         isMemberOf: {"@id": "top:isMemberOf", "@type": "@id"},
         isConstituentOf: {"@id": "top:isConstituentOf", "@type": "@id"},
         basedOnDimensionalSpace: {"@id": "data:basedOnDimensionalSpace", "@type": "@id"},
-        hasDiscretization: {"@id": "data:hasDiscretization", "@type": "@id"},
+        adoptsQuantization: {"@id": "data:adoptsQuantization", "@type": "@id"},
         hasExactBoundingRegion: {"@id": "data:hasExactBoundingRegion", "@type": "@id"},
         hasSelectedRegion: {"@id": "data:hasSelectedRegion", "@type": "@id"},
         isSpecializationOn: {"@id": "data:isSpecializationOn", "@type": "@id"},
@@ -67,7 +67,7 @@ def domain: "\(cs)cordex/domains/\(.area_id)";
             label: "CORDEX:\(.CORDEX_domain)",
             comment: "CORDEX geographic grid for \(.area_id), with \(.type) coordinates and a resolution of \(.dlon)° degrees (\(.CORDEX_domain)).",
             basedOnDimensionalSpace: (if .type == "rotated" then rotated_space else wgs84 end),
-            hasDiscretization: quantization,
+            adoptsQuantization: quantization,
             hasExactBoundingRegion: region
         },
         {

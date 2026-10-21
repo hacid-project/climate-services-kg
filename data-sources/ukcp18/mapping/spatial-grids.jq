@@ -23,7 +23,7 @@ import "./mapping/jsonld" as JSONLD;
     "@type": {
         "@id": {
             based_on_ds: "data:basedOnDimensionalSpace",
-            discretization: "data:hasDiscretization",
+            discretization: "data:adoptsQuantization",
             resolution: "data:hasResolution",
             exact_bounding_region: "data:hasExactBoundingRegion",
             pole: "data:hasReferencePoint",

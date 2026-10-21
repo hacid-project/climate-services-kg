@@ -318,7 +318,7 @@ cordex_variable_index($entries_by_name; $mip_index) as $variable_index |
                     id(ns + "dimensions/time/reference-frames/gregorian"),
                     id($time_iris.quantization)
                 ],
-                "data:hasDiscretization": id($time_iris.quantization),
+                "data:adoptsQuantization": id($time_iris.quantization),
                 "data:hasExactBoundingRegion": id($time_iris.region)
             },
             {
