@@ -1,5 +1,8 @@
 # Ids of the UKCP18 datasets: their components, and the variables to take from
-# them (see the description of the id structures in datasets.jq).
+# them (see the description of the id structures in datasets.jq); and the
+# missing units.
+
+import "./mapping/missing-units" as $MISSING_UNITS;
 
 def _id_structure_by_collection_group:
     [
@@ -68,16 +71,14 @@ def fix_variable:
         .variable = id_comp_struct.variable
     end;
 
-# The datasets (input: array of metadata) with the units missing (null or
-# "None") taken from the other datasets of the same collection and variable,
-# if they all have the same units
+# Units of the variables of the datasets whose units are missing (null or
+# "None"), by collection and variable (mapping/missing-units.json): the units
+# of the other datasets of the same collection and variable
+def _missing_units: $MISSING_UNITS::MISSING_UNITS[0];
+
+# A dataset (input: its metadata) with its units, if missing, taken from
+# mapping/missing-units.json
 def fix_units:
-    def key: [.collection, .variable] | tojson;
-    def missing: .units == null or .units == "None";
-    (
-        map(select(missing | not)) |
-        group_by(key) |
-        map({key: (.[0] | key), value: (map(.units) | unique)}) |
-        from_entries
-    ) as $units_by_key |
-    map(if missing then .units = ($units_by_key[key] | if length == 1 then .[0] else null end) end);
+    if .units == null or .units == "None" then
+        .units = _missing_units[.collection][.variable]
+    end;

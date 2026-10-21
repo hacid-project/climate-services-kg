@@ -1,0 +1,65 @@
+{
+    "variables": {
+        "beta": {"label": "Soil moisture stress factor", "units": "1"},
+        "jetlat": {"label": "Latitude of eddy-driven jet", "units": "degrees", "derived_from": ["ua"]},
+        "jetstr": {"label": "Strength of eddy-driven jet", "units": "m s-1", "derived_from": ["ua"]},
+        "naodjf": {"label": "Winter atlantic pressure gradient", "units": "hPa", "derived_from": ["psl"]},
+        "pr1day": {"label": "1-day total precipitation", "units": "mm", "derived_from": ["pr"]},
+        "pr5day": {"label": "5-day total precipitation", "units": "mm", "derived_from": ["pr"]},
+        "wtype30": {"label": "Weather type of 30", "units": "1", "derived_from": ["psl"]},
+        "wtype8": {"label": "Weather type of 8", "units": "1", "derived_from": ["psl"]}
+    },
+    "other_units": {
+        "evspsbl": {"label": "Evaporation rate", "units": {"mm/day": {"linear": true}}},
+        "evspsblsoi": {"label": "Evapotranspiration from soil moisture store", "units": {"mm/day": {"linear": true}}},
+        "evspsblveg": {"label": "Evaporation from canopy", "units": {"mm/day": {"linear": true}}},
+        "flashrate": {"label": "Number of lightning flashes", "units": {"1": {"linear": false}}},
+        "mrrob": {"label": "Sub-surface runoff flux", "units": {"mm/day": {"linear": true}}},
+        "mrros": {"label": "Surface runoff flux", "units": {"mm/day": {"linear": true}}},
+        "pr": {"label": "Precipitation rate", "units": {"mm/day": {"linear": true}, "mm/hour": {"linear": true}}},
+        "prsn": {"label": "Snowfall flux", "units": {"mm/day": {"linear": true}}},
+        "psl": {"label": "Pressure at mean sea level", "units": {"hPa": {"linear": true}}},
+        "snw": {"label": "Surface snow amount", "units": {"mm": {"linear": true}}},
+        "tas": {"label": "Mean air temperature", "units": {"degC": {"linear": true}}},
+        "tasmax": {"label": "Maximum air temperature", "units": {"degC": {"linear": true}}},
+        "tasmin": {"label": "Minimum air temperature", "units": {"degC": {"linear": true}}}
+    },
+    "anomalies": {
+        "variables": {
+            "cltAnom": {"anomaly_of": "clt", "label": "Cloud area fraction", "type": "relative", "units": "%"},
+            "hussAnom": {"anomaly_of": "huss", "label": "Specific humidity", "type": "relative", "units": "%"},
+            "prAnom": {"anomaly_of": "pr", "label": "Precipitation rate", "type": "relative", "units": "%"},
+            "pslAnom": {"anomaly_of": "psl", "label": "Pressure at mean sea level", "type": "absolute", "units": "hPa"},
+            "rlsAnom": {"anomaly_of": "rls", "label": "Net surface long wave flux", "type": "absolute", "units": "W m-2"},
+            "rsdsAnom": {"anomaly_of": "rsds", "label": "Downward surface shortwave flux", "type": "absolute", "units": "W m-2"},
+            "rssAnom": {"anomaly_of": "rss", "label": "Net surface short wave flux", "type": "absolute", "units": "W m-2"},
+            "tasAnom": {"anomaly_of": "tas", "label": "Mean air temperature", "type": "absolute", "units": "degC"},
+            "tasmaxAnom": {"anomaly_of": "tasmax", "label": "Maximum air temperature", "type": "absolute", "units": "degC"},
+            "tasminAnom": {"anomaly_of": "tasmin", "label": "Minimum air temperature", "type": "absolute", "units": "degC"}
+        },
+        "baselines": {
+            "1961-1990": {"label": "1961-1990", "start": 1961, "end": 1990, "datasets": ["b6190"]},
+            "1981-2000": {"label": "1981-2000", "start": 1981, "end": 2000, "datasets": ["b8100"]},
+            "1981-2010": {"label": "1981-2010", "start": 1981, "end": 2010, "datasets": ["b8110"]}
+        },
+        "distributions": ["pdf", "cdf", "sample"]
+    },
+    "return_levels": {
+        "variables": {
+            "pr1day": {},
+            "pr5day": {},
+            "tasmax": {"label": "Maximum air temperature", "units": "degC"}
+        },
+        "periods": {
+            "rp20": {"years": 20},
+            "rp50": {"years": 50},
+            "rp100": {"years": 100}
+        },
+        "distributions": ["cdf"]
+    },
+    "distributions": {
+        "pdf": {"label": "Probability density", "type": "data:ProbabilityDensityFunction", "inverse_units": true},
+        "cdf": {"label": "Quantile function", "type": "data:QuantileFunction"},
+        "sample": {"label": "Sample", "type": "data:Sample"}
+    }
+}

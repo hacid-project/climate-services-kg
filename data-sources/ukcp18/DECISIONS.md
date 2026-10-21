@@ -20,21 +20,64 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
   (`ensemble_member` in the EuroCORDEX datasets, `var__` for `evspsblveg`,
   `air_temperature` for `tasAnom`): the variable is taken from their id
   (`fix_variable`), and the units of `ensemble_member` are dropped.
-- **Missing units.** Missing units (null or `None`) are taken from the other
-  datasets of the same collection and variable, if they all have the same
-  units (`fix_units`).
+- **Missing units.** Missing units (null or `None`) are those of the other
+  datasets of the same collection and variable, all with the same units: 16
+  variables of EuroCORDEX (13,159 datasets). They are listed in
+  `mapping/missing-units.json` (`fix_units`), so that each dataset is mapped
+  on its own (previously they were taken from the whole input).
 - **CF names as variable names.** Some datasets name the variable by its CF
   standard name (`air_pressure_at_sea_level`, `subsurface_runoff_flux`), while
   their ids use the CMIP names: they are `psl` and `mrrob`
   (`_variable_renames` in `mapping/ukcp18-variables.jq`).
 
-## Variables (`mapping/ukcp18-variables.jq`)
+## Variables (`mapping/ukcp18-variables.jq`, `mapping/ukcp-variables.json`)
 
-- **Resolution to the MIP variables.** From the variable name in the CMIP5
-  era (UKCP18 is based on CMIP5 models), its units and, for the land-gcm
-  datasets, the CMIP5 table of the source data (`cmip5_table_id`).
-- **UKCP18 variables** not in the CMOR tables are defined in
-  `.../variables/ukcp/`:
+- **Local variables, generated from `mapping/ukcp-variables.json`.** The
+  local variables of the datasets (`.../variables/ukcp/`) are generated from a
+  compact specification maintained by hand, as
+  `data-sources/cmor-tables/mapping/mip-mapping.json` for the MIP variables,
+  not from the metadata of the datasets: the same specification gives their
+  mapping to the KG (`mapping/variables.jq`, `rdf/variables.jsonld`) and the
+  variable of each dataset (`variable_iri`). The ids are relative to
+  `.../variables/ukcp/` and the variables they refer to are MIP variables
+  (CMIP5 `out_name`s, resolved through `mip-mapping.json`) or local ones. The
+  specification has:
+  - `variables`: the UKCP18 variables not in the CMOR tables (id, `label`,
+    `units`, the MIP variables they are `derived_from`), `<id>`, the variables
+    of the datasets with that name;
+  - `other_units`: the MIP variables used in other units (`label`, the
+    `units`, each `linear` or not), `<variable>/<units>`, the variables of the
+    datasets with that name and units;
+  - `anomalies`: the anomaly variables (id, `anomaly_of`, `label`, `type`
+    absolute or relative, `units`), the baseline periods (id, `label`, `start`
+    and `end` year, the ids of the `datasets`, e.g. `b8100`), and the
+    `distributions` of their probabilistic datasets: an anomaly for each
+    variable and baseline, `<id>/<baseline>`, the variable of the datasets
+    with that name and baseline period;
+  - `return_levels`: the variables with return levels (local or MIP, with a
+    `label` and `units` for the MIP ones), the return periods (id, `years`),
+    and the `distributions` of their datasets: a return level for each
+    variable and period, `<variable>/<period>`, derived from the variable;
+  - `distributions`: the distribution representations (id, `label`, `type`,
+    and `inverse_units` for the densities): for each anomaly or return level
+    and each of its distributions, `<base>/<distribution>`, the variable of
+    the probabilistic datasets (`prob_data_type`) of the base.
+
+  The labels are generated from those of the specification (e.g. "Mean air
+  temperature anomaly with respect to 1981-2000 (tasAnom, 1981-2000)",
+  "Quantile function of maximum air temperature 20-year return level (tasmax,
+  rp20, cdf)"). The specification was written to give the same variables (160,
+  same triples) and the same variable for each dataset as the logic previously
+  in `mapping/ukcp18-variables.jq` (deriving them from the metadata of the
+  datasets, up to commit 1e72213). The check `analysis/variables-check.json`
+  (`sources_analysis`) reports the datasets of each local variable, the local
+  variables of no dataset, and the datasets without a local variable whose
+  units are not those of their MIP variable (a local variable may be missing).
+- **Resolution to the MIP variables.** The other datasets have the MIP
+  variable of their variable name in the CMIP5 era (UKCP18 is based on CMIP5
+  models), units and, for the land-gcm datasets, the CMIP5 table of the source
+  data (`cmip5_table_id`).
+- **The local variables** are:
   - **Indices** (`jetlat`, `jetstr`, `naodjf`, `wtype8`, `wtype30`) and
     `pr1day`, `pr5day`: derived (`data:derivedFromVariable`) from the MIP
     variables `ua`, `psl` and `pr`; `beta` (soil moisture stress factor) is
@@ -63,6 +106,9 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
     give the values of the variable at percentiles (in the units of the
     variable), i.e. its quantile function: they are `data:QuantileFunction`
     (the IRI keeps `/cdf`). The datasets have the same type as their variable.
-- **Labels.** The label of a UKCP18 variable is the most common among its
-  datasets, preferring the long names in plain words, and a doubled
-  "anomaly" in long names already ending with it is removed.
+- **Labels.** The labels of the specification are the most common long names
+  among the datasets of each variable, as previously chosen by the mapping
+  (preferring the long names in plain words), except those that were not
+  plain words: `beta` ("soil_moisture_stress_factor" in the datasets) is
+  "Soil moisture stress factor", `flashrate` ("NUMBER OF LIGHTNING FLASHES")
+  is "Number of lightning flashes".
