@@ -36,8 +36,12 @@ The rule `consolidate` (`workflow/rules/consolidate.smk`), run on the outputs of
 3. `consolidate_export`: the dataset is exported as N-Quads, `kg/export/kg.nq.gz`, with `tdb2.tdbdump`.
 
 The JVM options of the tools are in `config/config.yaml` (`consolidate.jvm_args`, `-Xmx16G`: the JSON-LD parser of
-Jena reads a whole document in memory, and the UKCP18 datasets are about 1.8 GB). The dataset can be served by
-Fuseki pointing its configuration (`fuseki-conf.ttl`, installed by `setup_kg.sh`) to its location.
+Jena reads a whole document in memory, and the UKCP18 datasets are about 1.8 GB). To inspect it, `./serve_kg.sh`
+serves the dataset read-only with Fuseki (`fuseki-server` must be on the `PATH`) at `http://localhost:3030/kg`
+(SPARQL endpoint `/kg/sparql`), with the union of the named graphs as the default graph (other location as first
+argument, further options for `fuseki-server` after it, e.g. `./serve_kg.sh kg/tdb2 --port=3031`; not while the
+workflow is writing the dataset). The dataset can also be served by a Fuseki installation pointing its configuration
+(`fuseki-conf.ttl`, installed by `setup_kg.sh`) to its location.
 
 ### Ontologies
 
