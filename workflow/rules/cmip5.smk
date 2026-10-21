@@ -25,6 +25,7 @@ rule cmip5_map_datasets:
     input:
         datasets="data-sources/cmip5/data/cmip5.json",
         mapping="data-sources/cmip5/mapping/datasets.jq",
+        mip_index="data-sources/cmor-tables/data/mip-mapping-index.json",
         cmor_tables=expand(
             "data-sources/cmor-tables/data/{edition}.json",
             edition=config["cmip5"]["cmor_tables"],
@@ -41,5 +42,5 @@ rule cmip5_map_datasets:
         "logs/cmip5/map_datasets.log",
     shell:
         "jq -L data-sources/cmip5/mapping -L data-sources/cmor-tables/mapping"
-        " --slurpfile cmor_tables {input.cmor_tables:q}"
+        " --slurpfile cmor_tables {input.cmor_tables:q} --slurpfile mip_index {input.mip_index:q}"
         " -f {input.mapping:q} {input.datasets:q} > {output:q} 2> {log:q}"

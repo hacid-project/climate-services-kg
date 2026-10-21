@@ -1,7 +1,10 @@
 # Mapping of the CORDEX-CMIP5 datasets (ESGF search results) to JSON-LD.
 #
-# Input: the pages of the response of an ESGF search of CORDEX datasets
-# (data/cordex-<n>.json), each {"response": {"docs": [...]}}, read with -n.
+# Input: a page of the response of an ESGF search of CORDEX datasets
+# (data/cordex-<n>.json, {"response": {"docs": [...]}}), read with -n (also
+# more pages): the workflow maps each page on its own, to a JSON-LD document
+# (rdf/datasets/cordex-<n>.jsonld). The mapping of a dataset depends only on
+# its metadata and on the configuration.
 #
 # Port of clean-data.jq and of the RML mapping rml/cordex.ttl (with its
 # functions in ws-data-rml.py). The driving models are normalised to the CMIP5
@@ -36,7 +39,8 @@
 # (data-sources/cmor-tables/data/cmip5/5.0.json), --slurpfile model_synonyms
 # mapping/cmip5-model-synonyms.json, --slurpfile standard_output
 # CORDEX_standard_output.json, --slurpfile kg_variables
-# data-sources/cmor-tables/data/variable-iris.json, --slurpfile data_issues
+# data-sources/cmor-tables/data/variable-iris.json, --slurpfile mip_index
+# data-sources/cmor-tables/data/mip-mapping-index.json, --slurpfile data_issues
 # mapping/data-issues.json (the known issues of the datasets, see
 # ../DECISIONS.md); the modules of this directory, of
 # data-sources/cmip5/mapping (esgf.jq) and of data-sources/cmor-tables/mapping
@@ -88,7 +92,11 @@ def _clean:
 [inputs | .response.docs[] | select(excluded($data_issues[0]) | not) | _clean] as $datasets |
 ($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
 ($kg_variables[0] | iri_set) as $kg |
-($datasets | variable_iris($entries_by_name; local_variables($standard_output[0]; $entries_by_name; $kg); $kg)) as $variable_iris |
+$mip_index[0] as $mip_index |
+# the variables defined locally and the IRIs of the variables of the CMIP5
+# tables, from the configuration
+local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables |
+cordex_variable_index($entries_by_name; $mip_index) as $variable_index |
 [
     $datasets[] |
     (.master_id | split(".")) as $parts |
@@ -134,7 +142,7 @@ def _clean:
         .variable[] |
         . as $variable |
         (($record | model_variable($data_issues[0]; $variable)) | if . then model_variable_iri else null end) //
-        $variable_iris[variable_key(.; $frequency)]
+        variable_iri_of($variable; $frequency; $variable_index; $entries_by_name; $mip_index; $local_variables; $kg)
     ] as $variables |
     (.experiment | scenario_iris | map(id(.))) as $refers_to_scenario |
     temporal_grid as $time |

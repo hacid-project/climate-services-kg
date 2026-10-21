@@ -127,7 +127,7 @@ def _cmip5_candidates($entries_by_name):
     ($entries_by_name[$variable] // []) as $entries |
     [$entries[] | select(.table as $table | $tables | index($table))] |
     if . == [] then $entries end |
-    ([.[] | select((.dimensions | test("\\btime2\\b")) == ($frequency == "monClim"))] | if . == [] then null end) // .;
+    ([.[] | select((.dimensions // "" | test("\\btime2\\b")) == ($frequency == "monClim"))] | if . == [] then null end) // .;
 
 def cmip5_variable_spec($entries_by_name):
     . as {$tables, $variable} |
@@ -158,6 +158,59 @@ def cmip5_variable_iri($entries_by_name):
         unique
     ) as $iris |
     if ($iris | length) == 1 then $iris[0] else cmip5_variable_spec($entries_by_name) | mip_variable_iri end;
+
+# As cmip5_variable_iri, resolving the MIP variables with the index of the
+# mapping ($mip_index, data-sources/cmor-tables/data/mip-mapping-index.json, see
+# mip_mapping_index), to resolve the variables of many datasets
+def cmip5_variable_iri($entries_by_name; $mip_index):
+    (
+        [
+            _cmip5_candidates($entries_by_name)[] |
+            {out_name, era: "cmip5", table, dimensions, quantity: .standard_name, units} |
+            mip_variable_iri_indexed($mip_index)
+        ] |
+        unique
+    ) as $iris |
+    if ($iris | length) == 1 then $iris[0] else cmip5_variable_spec($entries_by_name) | mip_variable_iri_indexed($mip_index) end;
+
+# Index of the MIP variables of the variables of the CMIP5 CMOR tables
+# ($entries_by_name, see cmip5_entries_by_name), from the configuration alone
+# (the tables and the index of the mapping of the MIP variables, $mip_index):
+# {<name>: {<table>: {climatology, other}}}, the IRI resolved by
+# cmip5_variable_iri for a dataset of the table (or of a table without the
+# name, "") with time frequency monClim or other. Built once, to resolve the
+# variables of many datasets (cmip5_variable_iri_indexed).
+def cmip5_variable_index($entries_by_name; $mip_index):
+    $entries_by_name |
+    with_entries(
+        .key as $name |
+        .value = (
+            [(.value | map(.table) | unique)[], ""] |
+            map({
+                key: .,
+                value: (
+                    (if . == "" then [] else [.] end) as $tables |
+                    {
+                        climatology: ({variable: $name, tables: $tables, frequency: "monClim"} | cmip5_variable_iri($entries_by_name; $mip_index)),
+                        other: ({variable: $name, tables: $tables, frequency: ""} | cmip5_variable_iri($entries_by_name; $mip_index))
+                    }
+                )
+            }) |
+            from_entries
+        )
+    );
+
+# IRI of the MIP variable of a variable of a dataset of a CMIP5 table (input:
+# {table, variable, frequency}) from the index ($index, cmip5_variable_index),
+# as cmip5_variable_iri with the table of the dataset as candidate table (a name
+# not in the tables is resolved from the name and table)
+def cmip5_variable_iri_indexed($index; $entries_by_name; $mip_index):
+    (if .frequency == "monClim" then "climatology" else "other" end) as $kind |
+    if $index[.variable] then
+        ($index[.variable][.table] // $index[.variable][""])[$kind]
+    else
+        .tables = [.table] | cmip5_variable_iri($entries_by_name; $mip_index)
+    end;
 
 # --- IRIs and literals
 

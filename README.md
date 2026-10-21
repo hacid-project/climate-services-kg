@@ -112,7 +112,10 @@ to `data-sources/cmip5/data/cmip5.json` and mapped by `data-sources/cmip5/mappin
 (`snakemake --cores 4 cmip5`): datasets, simulation, ensemble and experiment outputs, simulations,
 models and their spatial and temporal grids. The variables of the datasets are the MIP variables
 resolved through `data-sources/cmor-tables/mapping/mip-mapping.json` from their definitions in the
-CMIP5 CMOR tables (e.g. a CMIP5 `tos`, in K, is `.../variables/mip/cmip6/6.0.19/tos`).
+CMIP5 CMOR tables (e.g. a CMIP5 `tos`, in K, is `.../variables/mip/cmip6/6.0.19/tos`): the IRIs of the variables of
+the CMIP5 tables are indexed once from the configuration alone (`cmip5_variable_index` in `mapping/esgf.jq`, with
+the index of the mapping of the MIP variables, `data-sources/cmor-tables/data/mip-mapping-index.json`, rule
+`cmor_tables_mip_mapping_index`), and each dataset looks up its own.
 
 ### CORDEX-CMIP5 domains and grids
 
@@ -137,13 +140,14 @@ the git storage plugin), parsed in jq (`data-sources/cordex-cmip5-cvs/mapping/rc
 The metadata of the CORDEX-CMIP5 datasets found on ESGF (see `download-data.sh`), in pages of the search results, is
 downloaded from Zenodo ([10.5281/zenodo.23477951](https://doi.org/10.5281/zenodo.23477951)) through the Zenodo
 storage plugin to `data-sources/cordex-cmip5/data/cordex-<n>.json` and mapped by
-`data-sources/cordex-cmip5/mapping/datasets.jq` to `data-sources/cordex-cmip5/rdf/datasets.jsonld`
-(`snakemake --cores 4 cordex_cmip5`): datasets, the outputs of their simulations, driving ensembles, ensembles,
+`data-sources/cordex-cmip5/mapping/datasets.jq`, each page on its own, to `data-sources/cordex-cmip5/rdf/datasets/cordex-<n>.jsonld`
+(`snakemake --cores 4 cordex_cmip5`; small documents, to load them with less memory): datasets, the outputs of their simulations, driving ensembles, ensembles,
 experiments and domains, the simulations (downscalings of the CMIP5 simulations of the driving models), the regional
 models and the spatial (CORDEX domain) and temporal grids. The driving models are normalised to the CMIP5 model names
 (`mapping/cmip5-model-synonyms.json`), also in the dataset ids. The variables of the datasets are the MIP variables
 resolved, as for CMIP5, from their definitions in the CMIP5 CMOR tables of their time frequency (e.g. a CORDEX `sic`
-is `.../variables/mip/siconc`). The variables requested by CORDEX (see below) that are not variables of the KG (`ta200`,
+is `.../variables/mip/siconc`), looked up by each dataset in an index built once from the configuration
+(`cordex_variable_index` in `mapping/cordex-variables.jq`). The variables requested by CORDEX (see below) that are not variables of the KG (`ta200`,
 `ua500`, `va500`, `zg200`, `sund`, `clh`, `cll`, `clm`, `wsgsmax`) are defined locally from the CORDEX standard output,
 with the mapping of the CMOR tables (`variables_jsonld`), as `.../variables/cordex/<variable>` in
 `data-sources/cordex-cmip5/rdf/variables.jsonld` (collection `.../variables/cordex`), with the long names of those at a

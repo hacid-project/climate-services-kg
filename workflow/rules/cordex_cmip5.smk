@@ -5,7 +5,7 @@
 
 rule cordex_cmip5:
     input:
-        "data-sources/cordex-cmip5/rdf/datasets.jsonld",
+        "data-sources/cordex-cmip5/rdf/datasets",
         "data-sources/cordex-cmip5/rdf/variables.jsonld",
 
 
@@ -30,6 +30,10 @@ CORDEX_CMIP5_MODULES = [
 ]
 
 
+# Datasets: each page of the search results (data/cordex-<n>.json) mapped on
+# its own to a JSON-LD document, rdf/datasets/cordex-<n>.jsonld, to keep small
+# the documents to load (the datasets in more than one page are mapped in each
+# of them, with the same triples)
 rule cordex_cmip5_map_datasets:
     input:
         data="data-sources/cordex-cmip5/data",
@@ -41,20 +45,25 @@ rule cordex_cmip5_map_datasets:
         ),
         standard_output="data-sources/cordex-cmip5/CORDEX_standard_output.json",
         kg_variables=rules.cmor_tables_variable_iris.output,
+        mip_index="data-sources/cmor-tables/data/mip-mapping-index.json",
         data_issues="data-sources/cordex-cmip5/mapping/data-issues.json",
         modules=CORDEX_CMIP5_MODULES,
     output:
-        "data-sources/cordex-cmip5/rdf/datasets.jsonld",
+        directory("data-sources/cordex-cmip5/rdf/datasets"),
     log:
         "logs/cordex_cmip5/map_datasets.log",
     shell:
-        "jq -n -L data-sources/cordex-cmip5/mapping -L data-sources/cmip5/mapping -L data-sources/cmor-tables/mapping"
+        "mkdir -p {output:q}; : > {log:q};"
+        " for page in {input.data:q}/cordex-*.json; do"
+        " jq -n -L data-sources/cordex-cmip5/mapping -L data-sources/cmip5/mapping -L data-sources/cmor-tables/mapping"
         " --slurpfile model_synonyms {input.model_synonyms:q}"
         " --slurpfile cmor_tables {input.cmor_tables:q}"
         " --slurpfile standard_output {input.standard_output:q}"
         " --slurpfile kg_variables {input.kg_variables:q}"
+        " --slurpfile mip_index {input.mip_index:q}"
         " --slurpfile data_issues {input.data_issues:q}"
-        " -f {input.mapping:q} {input.data:q}/cordex-*.json > {output:q} 2> {log:q}"
+        " -f {input.mapping:q} \"$page\" > {output:q}/$(basename \"$page\" .json).jsonld 2>> {log:q};"
+        " done"
 
 
 # Variables defined locally: the variables requested by CORDEX (standard
