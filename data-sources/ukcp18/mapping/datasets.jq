@@ -49,11 +49,18 @@ def clean: walk( if type == "object" or type =="array" then map_values( select(v
     "@graph": [
         ($mohc_models[] | clean),
         (
-            .[] |
-            IDS::fix_variable |
-            IDS::fix_units |
-            # resolved once, used by the dataset and its simulation
-            .variable_iri = VARIABLES::variable_iri |
+            # the variable IRI of each dataset, used by the dataset and its
+            # simulation, memoized by its key (VARIABLES::variable_key): it
+            # depends only on the metadata of the dataset, the cache (as many
+            # entries as the distinct keys) avoids resolving it again
+            foreach (.[] | IDS::fix_variable | IDS::fix_units) as $dataset (
+                {iris: {}};
+                ($dataset | VARIABLES::variable_key) as $key |
+                if .iris | has($key) then . else .iris[$key] = ($dataset | VARIABLES::variable_iri) end |
+                .iris[$key] as $iri |
+                .dataset = ($dataset | .variable_iri = $iri);
+                .dataset
+            ) |
 
 #    "EuroCORDEX": 68255,
 #    "land-cpm": 225435,
