@@ -202,7 +202,7 @@ cmip5_variable_index($entries_by_name; $mip_index) as $variable_index |
                 "@id": .variable,
                 "@type": "data:DimensionalSpace",
                 "data:basedOnDimensionalSpace": id(ns + "dimensions/time/reference-frames/gregorian"),
-                "data:hasDiscretization": id(.quantization),
+                "data:adoptsQuantization": id(.quantization),
                 "data:hasExactBoundingRegion": id($region)
             },
             {

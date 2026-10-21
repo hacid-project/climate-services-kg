@@ -43,7 +43,7 @@ def context:
                     specialization_on: "data:isSpecializationOn",
                     selected_region: "data:hasSelectedRegion",
                     based_on_ds: "data:basedOnDimensionalSpace",
-                    discretization: "data:hasDiscretization",
+                    discretization: "data:adoptsQuantization",
                     exact_bounding_region: "data:hasExactBoundingRegion",
                     is_member_of: "top:isMemberOf",
                     is_anomaly_of: "data:isAnomalyOf",

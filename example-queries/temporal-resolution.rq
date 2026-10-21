@@ -10,7 +10,7 @@ WHERE {
         data:hasOutput/data:dependsOnVariable ?temporalVariable.
     ?temporalVariable
         data:holdsSpecializationOfVariable* dimension:time;
-        data:hasDiscretization ?temporalDiscretization.
+        data:adoptsQuantization ?temporalDiscretization.
     OPTIONAL {?temporalDiscretization data:hasResolutionValue ?temporalResolution}
     OPTIONAL {?temporalDiscretization data:hasPeriodValue ?temporalPeriod}
 }

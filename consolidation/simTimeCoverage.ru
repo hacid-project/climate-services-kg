@@ -14,7 +14,7 @@ INSERT {
         ?simulationTemporalGrid a data:DimensionalSpace;
             data:basedOnDimensionalSpace time:gregorian;
             data:hasExactBoundingRegion ?simulationTemporalRegion;
-            data:hasDiscretization ?simulationQuantization.
+            data:adoptsQuantization ?simulationQuantization.
         ?simulationTemporalSpecialization a data:VariableSpecialization;
             data:isSpecializationOn dimension:time;
             data:hasSelectedRegion ?simulationTemporalRegion.
@@ -51,7 +51,7 @@ WHERE {
                     data:hasStartDateTime ?startTime;
                     data:hasEndDateTime ?endTime
                 ];
-                data:hasDiscretization ?quantization.
+                data:adoptsQuantization ?quantization.
             ?quantization a ?quantizationType.
             OPTIONAL {?quantization data:hasResolutionValue ?resolution}.
 #                OPTIONAL {?quantization data:hasPeriodValue ?gridPeriod}.

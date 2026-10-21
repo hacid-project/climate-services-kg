@@ -110,7 +110,7 @@ WHERE {
         ?geodetic_variable
             data:basedOnDimensionalSpace ?geodetic_reference_frame;
             top:isConstituentOf ?cordex_domain;
-            data:hasDiscretization/data:hasResolutionValue ?geodetic_resolution.
+            data:adoptsQuantization/data:hasResolutionValue ?geodetic_resolution.
     
         ?geodetic_reference_frame data:basedOnDimensionalSpace* dimension:geodetic.
 
