@@ -14,8 +14,7 @@ import "./mapping/ukcp18-variables" as VARIABLES;
 import "./mapping/ukcp18-ids" as IDS;
 
 ($kg_variables[0] | map({key: ., value: true}) | from_entries) as $known |
-map(select(.collection != "marine-sim") | IDS::fix_variable) |
-IDS::fix_units |
+map(select(.collection != "marine-sim") | IDS::fix_variable | IDS::fix_units) |
 # whether the variables of the datasets are mapped, once for each key
 # (VARIABLES::variable_key): the variable, if not a UKCP18 one, or the variables
 # the UKCP18 ones are linked to must be variables of the KG

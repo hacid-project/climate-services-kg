@@ -39,13 +39,21 @@ $spatial_grid_maps as [$spatial_grid_map] |
 
 ["scenario", "collection", "domain", "resolution", "frequency"] as $id_comps_to_check |
 
-map(IDS::fix_variable) |
-IDS::fix_units |
-VARIABLES::with_variable_iris |
+# The JSON-LD resources without null values
+def clean: walk( if type == "object" or type =="array" then map_values( select(values) ) end );
 
-[
-    $mohc_models.[],
-    ( .[] |
+# The datasets are mapped one at a time: the mapping of a dataset depends only
+# on its metadata (and on the data and specifications of mapping/ and data/)
+{
+    "@context": CONTEXT::context,
+    "@graph": [
+        ($mohc_models[] | clean),
+        (
+            .[] |
+            IDS::fix_variable |
+            IDS::fix_units |
+            # resolved once, used by the dataset and its simulation
+            .variable_iri = VARIABLES::variable_iri |
 
 #    "EuroCORDEX": 68255,
 #    "land-cpm": 225435,
@@ -172,14 +180,8 @@ VARIABLES::with_variable_iris |
                     }
                 }
             end
+        ) |
+        clean
         )
-    )   
-] as $resources |
-
-CONTEXT::context as $context |
-
-{
-    "@context": $context,
-    "@graph": $resources
-} |
-walk( if type == "object" or type =="array" then map_values( select(values) ) end )
+    ]
+}

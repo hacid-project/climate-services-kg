@@ -1,0 +1,19 @@
+{
+    "EuroCORDEX": {
+        "clt": "%",
+        "hurs": "%",
+        "huss": "1",
+        "pr": "mm/day",
+        "prsn": "mm/day",
+        "psl": "hPa",
+        "rls": "W m-2",
+        "rss": "W m-2",
+        "sfcWind": "m s-1",
+        "snw": "mm",
+        "tas": "degC",
+        "tasmax": "degC",
+        "tasmin": "degC",
+        "uas": "m s-1",
+        "vas": "m s-1"
+    }
+}

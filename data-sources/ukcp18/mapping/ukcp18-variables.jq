@@ -224,18 +224,12 @@ def local_variables:
 
 # IRI of the variable of a dataset (input: its metadata): its local variable
 # (from its path), if any, otherwise the MIP variable (or the IRI already
-# resolved in the variable_iri field, see with_variable_iris)
+# resolved in the variable_iri field)
 def variable_iri:
     .variable_iri // (_local_path | values | _local_iri) // _mip_variable_iri;
 
 # Key of the metadata of a dataset determining its variables
 def variable_key: [.variable, .units, .cmip5_table_id, .collection, .return_period, .prob_data_type, .anomaly_type, .baseline_period] | tojson;
-
-# The datasets (input: array of metadata) with the IRIs of their variables in
-# the variable_iri field, resolved once for each key (variable_key)
-def with_variable_iris:
-    (unique_by(variable_key) | map({key: variable_key, value: variable_iri}) | from_entries) as $variable_iris |
-    map(.variable_iri = $variable_iris[variable_key]);
 
 # Nodes of the local variables (generated from mapping/ukcp-variables.json), with the terms of
 # the context of variables.jq; and the nodes of their units and baseline periods

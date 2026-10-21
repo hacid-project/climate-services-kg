@@ -17,6 +17,7 @@ rule ukcp18:
 # Modules of the variables of the datasets: the local variables are specified
 # in mapping/ukcp-variables.json, the others are the MIP variables
 UKCP18_VARIABLES_MODULES = [
+    "data-sources/ukcp18/mapping/missing-units.json",
     "data-sources/ukcp18/mapping/ukcp18-variables.jq",
     "data-sources/ukcp18/mapping/ukcp-variables.json",
     "data-sources/ukcp18/mapping/time.jq",

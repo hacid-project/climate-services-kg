@@ -16,8 +16,7 @@ import "./mapping/ukcp18-variables" as VARIABLES;
 import "./mapping/ukcp18-ids" as IDS;
 
 $mip_units[0] as $mip_units |
-map(select(.collection != "marine-sim") | IDS::fix_variable) |
-IDS::fix_units |
+map(select(.collection != "marine-sim") | IDS::fix_variable | IDS::fix_units) |
 [
     group_by(VARIABLES::variable_key)[] |
     {count: length} + (.[0] | {
