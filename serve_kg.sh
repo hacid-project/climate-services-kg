@@ -19,7 +19,7 @@ if [ ! -d "$LOCATION" ]; then
 fi
 LOCATION="$(cd "$LOCATION" && pwd)"
 
-CONF_DIR="$(mktemp -d "${TMPDIR:-/tmp}/serve_kg.XXXXXX")" || exit 1
+CONF_DIR="$(mktemp -d "${TMPDIR:-/tmp/}serve_kg.XXXXXX")" || exit 1
 CONF="$CONF_DIR/config.ttl"
 trap 'rm -rf "$CONF_DIR"' EXIT
 trap 'exit 130' INT TERM
@@ -42,4 +42,4 @@ PREFIX tdb2:   <http://jena.apache.org/2016/tdb#>
     tdb2:unionDefaultGraph true .
 EOF
 
-fuseki-server --config="$CONF" "$@"
+fuseki-server --conf="$CONF" "$@"
