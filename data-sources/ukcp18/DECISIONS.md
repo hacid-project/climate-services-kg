@@ -20,9 +20,11 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
   (`ensemble_member` in the EuroCORDEX datasets, `var__` for `evspsblveg`,
   `air_temperature` for `tasAnom`): the variable is taken from their id
   (`fix_variable`), and the units of `ensemble_member` are dropped.
-- **Missing units.** Missing units (null or `None`) are taken from the other
-  datasets of the same collection and variable, if they all have the same
-  units (`fix_units`).
+- **Missing units.** Missing units (null or `None`) are those of the other
+  datasets of the same collection and variable, all with the same units: 16
+  variables of EuroCORDEX (13,159 datasets). They are listed in
+  `mapping/missing-units.json` (`fix_units`), so that each dataset is mapped
+  on its own (previously they were taken from the whole input).
 - **CF names as variable names.** Some datasets name the variable by its CF
   standard name (`air_pressure_at_sea_level`, `subsurface_runoff_flux`), while
   their ids use the CMIP names: they are `psl` and `mrrob`
