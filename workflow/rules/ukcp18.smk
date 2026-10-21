@@ -137,6 +137,19 @@ rule ukcp18_map_models:
 # (mapping/datasets.jq, a node per line), and the nodes are framed as JSON-LD
 # documents (mapping/frame.jq) in blocks of ukcp18.block_size nodes,
 # rdf/datasets/datasets-NNNN.jsonld
+# Framing of the nodes of the datasets (one per line) in blocks of block_size
+# nodes, each piped to frame.jq and written to <dir>/datasets-<nnnn>.jsonld
+# (POSIX awk, as split --filter is not portable)
+AWK_FRAME_BLOCKS = (
+    "(NR - 1) % size == 0 {"
+    " if (cmd && close(cmd)) exit 1;"
+    " cmd = sprintf(\"jq -s -c -L mapping -f mapping/frame.jq > '%s/datasets-%04d.jsonld'\", dir, (NR - 1) / size)"
+    " }"
+    " { print | cmd }"
+    " END { if (cmd && close(cmd)) exit 1 }"
+)
+
+
 rule ukcp18_map_datasets:
     input:
         metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata.jsonl",
@@ -165,8 +178,7 @@ rule ukcp18_map_datasets:
         "root=$PWD; mkdir -p {output:q}; cd data-sources/ukcp18 &&"
         " jq -n -c -L mapping -L ../cmor-tables/mapping --slurpfile mip_index $root/{input.mip_index:q}"
         " -f mapping/datasets.jq $root/{input.metadata:q} 2> $root/{log:q} |"
-        " split -l {params.block_size} -d -a 4 --additional-suffix=.jsonld"
-        " --filter='jq -s -c -L mapping -f mapping/frame.jq > $FILE' - $root/{output:q}/datasets-"
+        " awk -v size={params.block_size} -v dir=$root/{output:q} {AWK_FRAME_BLOCKS:q}"
 
 
 # --- Analysis
