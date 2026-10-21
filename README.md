@@ -175,16 +175,18 @@ and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cor
 1. `rdf/spatial-grids.jsonld` and `data/spatial-grid-map.json`: the spatial grids of the UKCP18 resolutions;
 2. `data/model-variants.json`: the variants of the models of the land-gcm datasets;
 3. `rdf/variables.jsonld`: the local variables of the datasets (`https://w3id.org/hacid/data/cs/variables/ukcp/...`),
-   with their units and baseline periods, specified in `mapping/ukcp-variables.json` (see below);
+   with their units and baseline periods, generated from the specification `mapping/ukcp-variables.json` (see below);
 4. `rdf/ceda_ukcp18_metadata_merged.jsonld`: the datasets, with their simulations, models and grids
    (the datasets whose id does not match their metadata are listed in `logs/ukcp18/map_datasets.log`).
-   The variable of a dataset is the local variable of `mapping/ukcp-variables.json` whose conditions it matches
+   The variable of a dataset is its local variable according to `mapping/ukcp-variables.json`
    (`mapping/ukcp18-variables.jq`), otherwise the MIP variable resolved through
    `data-sources/cmor-tables/mapping/mip-mapping.json` from the variable name (CMIP5 era), units and, for the
    land-gcm datasets, CMIP5 table.
 
-`mapping/ukcp-variables.json` lists the local variables, with their relationships with the MIP variables and the
-conditions on the metadata of their datasets (see `data-sources/ukcp18/DECISIONS.md`). They are:
+`mapping/ukcp-variables.json` is a compact specification of the local variables, maintained by hand: the UKCP18
+variables, the MIP variables in other units, the anomaly variables with the baseline periods, the variables with return
+levels with the return periods, and the distribution representations (see `data-sources/ukcp18/DECISIONS.md`). The
+local variables are:
    - each `<variable>Anom` with respect to a baseline period is an anomaly (`data:isAnomalyOf`) of the MIP variable
      `<variable>`, `.../ukcp/<variable>Anom/<start year>-<end year>` (e.g. `.../ukcp/tasAnom/1981-2000`), with its
      baseline period (`data:hasBaselineRegion`, a `data:TemporalRegion`, without representing the baseline variable);

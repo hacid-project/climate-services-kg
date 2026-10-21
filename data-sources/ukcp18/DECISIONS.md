@@ -30,36 +30,44 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
 
 ## Variables (`mapping/ukcp18-variables.jq`, `mapping/ukcp-variables.json`)
 
-- **Local variables, specified in `mapping/ukcp-variables.json`.** The local
-  variables of the datasets (`.../variables/ukcp/`) are listed in the file,
-  maintained by hand, as `data-sources/cmor-tables/mapping/mip-mapping.json`
-  for the MIP variables. It is the source both of their mapping to the KG
-  (`mapping/variables.jq`, `rdf/variables.jsonld`) and of the IRI of the
-  variable of each dataset (`variable_iri`). Each variable (`variables`) has:
-  - `iri`, `label`, `acronym`, `units` (if any), `types` (subclasses of
-    `data:DeterministicVariable`, e.g. `data:AbsoluteAnomaly`) and `baseline`
-    (the baseline period of an anomaly, as years, e.g. `1981-2000`);
-  - its relationships with the MIP variables or other local variables
-    (IRIs): `anomaly_of`, `derived_from` (a list),
-    `linear_transformation_of`, `probabilistic_representation_of`, and
-    `local_version_of` (the MIP variable of a version in other units, also
-    when not a linear transformation, not mapped, for the analysis);
-  - `datasets`: the conditions on the metadata of the datasets whose variable
-    it is (a dataset has the variable of a condition it matches). Each
-    condition gives the value of some fields of the metadata (`variable`,
-    after the renames of `_variable_renames`, `units`, `baseline_period`,
-    `return_period`, `prob_data_type`, ...), or a list of the possible values,
-    `null` for a missing field (e.g. `"prob_data_type": null` for the
-    datasets that are not probabilistic). A dataset matching the conditions of
-    more than one variable is an error; a dataset matching none has the MIP
-    variable. The variables without `datasets` are only the base of others
-    (e.g. the anomaly whose probability density is the variable of a
-    dataset).
+- **Local variables, generated from `mapping/ukcp-variables.json`.** The
+  local variables of the datasets (`.../variables/ukcp/`) are generated from a
+  compact specification maintained by hand, as
+  `data-sources/cmor-tables/mapping/mip-mapping.json` for the MIP variables,
+  not from the metadata of the datasets: the same specification gives their
+  mapping to the KG (`mapping/variables.jq`, `rdf/variables.jsonld`) and the
+  variable of each dataset (`variable_iri`). The ids are relative to
+  `.../variables/ukcp/` and the variables they refer to are MIP variables
+  (CMIP5 `out_name`s, resolved through `mip-mapping.json`) or local ones. The
+  specification has:
+  - `variables`: the UKCP18 variables not in the CMOR tables (id, `label`,
+    `units`, the MIP variables they are `derived_from`), `<id>`, the variables
+    of the datasets with that name;
+  - `other_units`: the MIP variables used in other units (`label`, the
+    `units`, each `linear` or not), `<variable>/<units>`, the variables of the
+    datasets with that name and units;
+  - `anomalies`: the anomaly variables (id, `anomaly_of`, `label`, `type`
+    absolute or relative, `units`), the baseline periods (id, `label`, `start`
+    and `end` year, the ids of the `datasets`, e.g. `b8100`), and the
+    `distributions` of their probabilistic datasets: an anomaly for each
+    variable and baseline, `<id>/<baseline>`, the variable of the datasets
+    with that name and baseline period;
+  - `return_levels`: the variables with return levels (local or MIP, with a
+    `label` and `units` for the MIP ones), the return periods (id, `years`),
+    and the `distributions` of their datasets: a return level for each
+    variable and period, `<variable>/<period>`, derived from the variable;
+  - `distributions`: the distribution representations (id, `label`, `type`,
+    and `inverse_units` for the densities): for each anomaly or return level
+    and each of its distributions, `<base>/<distribution>`, the variable of
+    the probabilistic datasets (`prob_data_type`) of the base.
 
-  The file was generated from the logic previously in
-  `mapping/ukcp18-variables.jq` (deriving the variables from the metadata of
-  the datasets, up to commit 1e72213), giving the same variables and the same
-  variable for each dataset. The check `analysis/variables-check.json`
+  The labels are generated from those of the specification (e.g. "Mean air
+  temperature anomaly with respect to 1981-2000 (tasAnom, 1981-2000)",
+  "Quantile function of maximum air temperature 20-year return level (tasmax,
+  rp20, cdf)"). The specification was written to give the same variables (160,
+  same triples) and the same variable for each dataset as the logic previously
+  in `mapping/ukcp18-variables.jq` (deriving them from the metadata of the
+  datasets, up to commit 1e72213). The check `analysis/variables-check.json`
   (`sources_analysis`) reports the datasets of each local variable, the local
   variables of no dataset, and the datasets without a local variable whose
   units are not those of their MIP variable (a local variable may be missing).
@@ -96,9 +104,8 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
     give the values of the variable at percentiles (in the units of the
     variable), i.e. its quantile function: they are `data:QuantileFunction`
     (the IRI keeps `/cdf`). The datasets have the same type as their variable.
-- **Labels.** The labels in `mapping/ukcp-variables.json` were generated as
-  the most common among the datasets of each variable, preferring the long
-  names in plain words, with a doubled "anomaly" in long names already ending
-  with it removed. Some of them keep the names of the metadata that are not
-  plain words (e.g. "soil_moisture_stress_factor (beta)"): they can now be
-  edited in the file.
+- **Labels.** The labels of the specification are the most common long names
+  among the datasets of each variable, as previously chosen by the mapping
+  (preferring the long names in plain words). Some are not plain words (e.g.
+  `beta`, "soil_moisture_stress_factor", `flashrate`, "NUMBER OF LIGHTNING
+  FLASHES"): they can be edited in the specification.
