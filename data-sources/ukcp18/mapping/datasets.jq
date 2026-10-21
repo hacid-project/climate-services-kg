@@ -39,6 +39,9 @@ $spatial_grid_maps as [$spatial_grid_map] |
 
 ["scenario", "collection", "domain", "resolution", "frequency"] as $id_comps_to_check |
 
+# Index of the mapping of the MIP variables (built once)
+VARIABLES::mip_index as $mip_index |
+
 # The JSON-LD resources without null values
 def clean: walk( if type == "object" or type =="array" then map_values( select(values) ) end );
 
@@ -49,18 +52,11 @@ def clean: walk( if type == "object" or type =="array" then map_values( select(v
     "@graph": [
         ($mohc_models[] | clean),
         (
-            # the variable IRI of each dataset, used by the dataset and its
-            # simulation, memoized by its key (VARIABLES::variable_key): it
-            # depends only on the metadata of the dataset, the cache (as many
-            # entries as the distinct keys) avoids resolving it again
-            foreach (.[] | IDS::fix_variable | IDS::fix_units) as $dataset (
-                {iris: {}};
-                ($dataset | VARIABLES::variable_key) as $key |
-                if .iris | has($key) then . else .iris[$key] = ($dataset | VARIABLES::variable_iri) end |
-                .iris[$key] as $iri |
-                .dataset = ($dataset | .variable_iri = $iri);
-                .dataset
-            ) |
+            .[] |
+            IDS::fix_variable |
+            IDS::fix_units |
+            # resolved once, used by the dataset and its simulation
+            .variable_iri = VARIABLES::variable_iri($mip_index) |
 
 #    "EuroCORDEX": 68255,
 #    "land-cpm": 225435,

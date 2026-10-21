@@ -67,6 +67,58 @@ def mip_section_entries:
     (.sign_change | _versioned_entries("sign_change")),
     (.unit_change | _versioned_entries("unit_change"));
 
+# Index of a mapping (the array in mip-mapping.json), to resolve variables
+# without scanning the mapping each time: for each era (in the order of the
+# mapping), its keep/sign_change/unit_change entries by id ({version, kind,
+# entry}, ordered by version) and its rename groups. It depends only on the
+# mapping: built once (e.g. mip_mapping_index(mip_mapping) as $index), it is
+# used by mip_variable_resolution_indexed and mip_variable_iri_indexed.
+def mip_mapping_index($mapping):
+    $mapping |
+    map({
+        era,
+        entries: (
+            [mip_section_entries] |
+            sort_by(.version | if . == null then [] else _version_key end) |
+            group_by(.entry.id) |
+            map({key: .[0].entry.id, value: .}) |
+            from_entries
+        ),
+        rename: (.rename // [])
+    });
+
+# Resolution of a variable (input) with the index of a mapping
+# (mip_mapping_index), with the same result as mip_variable_resolution: faster
+# when resolving many variables with the same index
+def mip_variable_resolution_indexed($index; $after):
+    _variable_spec as $v |
+    ($index | map(.era) | index($v.era)) as $start |
+    reduce (if $start == null then empty else $index[$start:][] end) as $section (
+        {id: $v.id, era: null, version: null, kind: null, entry: null, renames: []};
+        if .kind != null then .
+        else
+            . as $state |
+            ($v + {id: $state.id}) as $current |
+            (first(
+                $section.entries[$current.id][]? |
+                select(
+                    $after == null or $section.era != $after.era or
+                    ($after.version != null and .version != null and
+                        (.version | _version_key) > ($after.version | _version_key))
+                ) |
+                select(.entry | _applies_to($current))
+            ) // null) as $match |
+            if $match != null then
+                .era = $section.era | .version = $match.version | .kind = $match.kind | .entry = $match.entry
+            else
+                (first($section.rename[] | select(_applies_to($current)) | .map[$current.id] // empty) // null) as $new_id |
+                if $new_id != null then
+                    .renames += [{era: $section.era, from: .id, to: $new_id}] | .id = $new_id
+                end
+            end
+        end
+    );
+
 # Resolution of a variable with a mapping (the array in mip-mapping.json):
 #   {
 #       id,        # out_name of the variable in the last version, or in the
@@ -130,3 +182,6 @@ def mip_variable_resolution_iri:
 def mip_variable_iri($mapping): mip_variable_resolution($mapping) | mip_variable_resolution_iri;
 
 def mip_variable_iri: mip_variable_resolution | mip_variable_resolution_iri;
+
+# IRI of a variable (input) with the index of a mapping (mip_mapping_index)
+def mip_variable_iri_indexed($index): mip_variable_resolution_indexed($index; null) | mip_variable_resolution_iri;

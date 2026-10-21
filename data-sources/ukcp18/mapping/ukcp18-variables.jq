@@ -146,14 +146,18 @@ def _ukcp_variables_collection: "https://w3id.org/hacid/data/cs/variables/ukcp";
 # name in the CMIP5 era (UKCP18 is based on CMIP5 models), with its units and,
 # if known, the CMIP5 table of the source data (cmip5_table_id, e.g.
 # "Table Amon (12 November 2010) 6e53...", for the land-gcm datasets)
-def _mip_variable_iri:
+def _mip_variable_iri($mip_index):
     {
         out_name: (_variable_renames[.variable] // .variable),
         era: "cmip5",
         table: ((.cmip5_table_id // "" | capture("^Table (?<table>\\S+)").table) // null),
         units
     } |
-    mip_variable_iri;
+    mip_variable_iri_indexed($mip_index);
+
+# Index of data-sources/cmor-tables/mapping/mip-mapping.json, to resolve the
+# MIP variables of many datasets (built once, e.g. mip_index as $mip_index)
+def mip_index: mip_mapping_index(mip_mapping);
 
 # Distribution representations (data ontology) of the probabilistic (land-prob)
 # datasets, by their prob_data_type. The "cdf" datasets give the values of the
@@ -223,10 +227,13 @@ def local_variables:
     [_local_path | values | _local_iri | $by_iri[.] | values | chain] | unique_by(.iri)[];
 
 # IRI of the variable of a dataset (input: its metadata): its local variable
-# (from its path), if any, otherwise the MIP variable (or the IRI already
-# resolved in the variable_iri field)
-def variable_iri:
-    .variable_iri // (_local_path | values | _local_iri) // _mip_variable_iri;
+# (from its path), if any, otherwise the MIP variable resolved with $mip_index
+# (mip_index) (or the IRI already resolved in the variable_iri field)
+def variable_iri($mip_index):
+    .variable_iri // (_local_path | values | _local_iri) // _mip_variable_iri($mip_index);
+
+# (building the index, unless the IRI is already resolved: for a few datasets)
+def variable_iri: .variable_iri // variable_iri(mip_index);
 
 # Key of the metadata of a dataset determining its variables
 def variable_key: [.variable, .units, .cmip5_table_id, .collection, .return_period, .prob_data_type, .anomaly_type, .baseline_period] | tojson;
