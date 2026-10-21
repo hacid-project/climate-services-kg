@@ -1,6 +1,6 @@
 {
     "variables": {
-        "beta": {"label": "soil_moisture_stress_factor", "units": "1"},
+        "beta": {"label": "Soil moisture stress factor", "units": "1"},
         "jetlat": {"label": "Latitude of eddy-driven jet", "units": "degrees", "derived_from": ["ua"]},
         "jetstr": {"label": "Strength of eddy-driven jet", "units": "m s-1", "derived_from": ["ua"]},
         "naodjf": {"label": "Winter atlantic pressure gradient", "units": "hPa", "derived_from": ["psl"]},
@@ -13,7 +13,7 @@
         "evspsbl": {"label": "Evaporation rate", "units": {"mm/day": {"linear": true}}},
         "evspsblsoi": {"label": "Evapotranspiration from soil moisture store", "units": {"mm/day": {"linear": true}}},
         "evspsblveg": {"label": "Evaporation from canopy", "units": {"mm/day": {"linear": true}}},
-        "flashrate": {"label": "NUMBER OF LIGHTNING FLASHES", "units": {"1": {"linear": false}}},
+        "flashrate": {"label": "Number of lightning flashes", "units": {"1": {"linear": false}}},
         "mrrob": {"label": "Sub-surface runoff flux", "units": {"mm/day": {"linear": true}}},
         "mrros": {"label": "Surface runoff flux", "units": {"mm/day": {"linear": true}}},
         "pr": {"label": "Precipitation rate", "units": {"mm/day": {"linear": true}, "mm/hour": {"linear": true}}},

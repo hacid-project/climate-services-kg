@@ -106,6 +106,7 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
     (the IRI keeps `/cdf`). The datasets have the same type as their variable.
 - **Labels.** The labels of the specification are the most common long names
   among the datasets of each variable, as previously chosen by the mapping
-  (preferring the long names in plain words). Some are not plain words (e.g.
-  `beta`, "soil_moisture_stress_factor", `flashrate`, "NUMBER OF LIGHTNING
-  FLASHES"): they can be edited in the specification.
+  (preferring the long names in plain words), except those that were not
+  plain words: `beta` ("soil_moisture_stress_factor" in the datasets) is
+  "Soil moisture stress factor", `flashrate` ("NUMBER OF LIGHTNING FLASHES")
+  is "Number of lightning flashes".
