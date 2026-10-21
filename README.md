@@ -169,15 +169,21 @@ variables of a model with their own units (e.g. `pr` in mm and mm/month of BOM-S
 ### UKCP18 datasets
 
 The metadata of the UKCP18 datasets (from CEDA) is downloaded from Zenodo
-([10.5281/zenodo.23362544](https://doi.org/10.5281/zenodo.23362544)) through the Zenodo storage plugin
-and mapped by the jq programs in `data-sources/ukcp18/mapping` (`snakemake --cores 4 ukcp18`):
+([10.5281/zenodo.23515656](https://doi.org/10.5281/zenodo.23515656)) through the Zenodo storage plugin, in JSON Lines
+(a dataset per line, `data/ceda_ukcp18_metadata.jsonl`), and mapped by the jq programs in
+`data-sources/ukcp18/mapping` (`snakemake --cores 4 ukcp18`), reading and mapping one dataset at a time:
 
 1. `rdf/spatial-grids.jsonld` and `data/spatial-grid-map.json`: the spatial grids of the UKCP18 resolutions;
 2. `data/model-variants.json`: the variants of the models of the land-gcm datasets;
 3. `rdf/variables.jsonld`: the local variables of the datasets (`https://w3id.org/hacid/data/cs/variables/ukcp/...`),
    with their units and baseline periods, generated from the specification `mapping/ukcp-variables.json` (see below);
-4. `rdf/ceda_ukcp18_metadata_merged.jsonld`: the datasets, with their simulations, models and grids
-   (the datasets whose id does not match their metadata are listed in `logs/ukcp18/map_datasets.log`).
+4. `rdf/models.jsonld`: the models of the Met Office Hadley Centre;
+5. `rdf/datasets/datasets-NNNN.jsonld`: the datasets, with their simulations and grids
+   (the datasets whose id does not match their metadata are listed in `logs/ukcp18/map_datasets.log`). Each dataset
+   is mapped on its own (`mapping/datasets.jq`, its nodes one per line, with the index of the MIP variables
+   `data-sources/cmor-tables/data/mip-mapping-index.json`), and the nodes are framed as JSON-LD documents of
+   `ukcp18.block_size` nodes (`config/config.yaml`, 10,000) by `mapping/frame.jq`: neither the mapping nor the
+   loading needs the whole data in memory.
    The variable of a dataset is its local variable according to `mapping/ukcp-variables.json`
    (`mapping/ukcp18-variables.jq`), otherwise the MIP variable resolved through
    `data-sources/cmor-tables/mapping/mip-mapping.json` from the variable name (CMIP5 era), units and, for the

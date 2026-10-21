@@ -171,3 +171,19 @@ rule cmor_tables_analysis:
         "logs/cmor_tables/analysis.log",
     script:
         "../scripts/cmor_tables_analysis.py"
+
+
+# Index of the mapping of the MIP variables (mip-mapping.json, see
+# mip_mapping_index in mapping/mip-variables.jq), to resolve the variables of
+# many datasets
+rule cmor_tables_mip_mapping_index:
+    input:
+        mapping="data-sources/cmor-tables/mapping/mip-mapping.json",
+        module="data-sources/cmor-tables/mapping/mip-variables.jq",
+    output:
+        "data-sources/cmor-tables/data/mip-mapping-index.json",
+    log:
+        "logs/cmor_tables/mip_mapping_index.log",
+    shell:
+        "jq -n -L data-sources/cmor-tables/mapping 'include \"mip-variables\"; mip_mapping_index(mip_mapping)'"
+        " > {output:q} 2> {log:q}"

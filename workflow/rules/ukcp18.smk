@@ -1,6 +1,11 @@
 # Mapping of the UKCP18 datasets (CEDA metadata, published on Zenodo) to
 # JSON-LD with jq.
 #
+# The metadata is in JSON Lines (a dataset per line), read and mapped one
+# dataset at a time: the nodes of the datasets, written one per line, are
+# framed as JSON-LD documents in blocks (config.yaml, ukcp18.block_size), so
+# that neither the mapping nor the loading needs the whole data in memory.
+#
 # The jq programs are run from data-sources/ukcp18, as their modules and data
 # are imported relative to it (./mapping/..., ./data/...). The variables of the
 # datasets are resolved to the MIP variables
@@ -11,7 +16,8 @@ rule ukcp18:
     input:
         "data-sources/ukcp18/rdf/spatial-grids.jsonld",
         "data-sources/ukcp18/rdf/variables.jsonld",
-        "data-sources/ukcp18/rdf/ceda_ukcp18_metadata_merged.jsonld",
+        "data-sources/ukcp18/rdf/models.jsonld",
+        "data-sources/ukcp18/rdf/datasets",
 
 
 # Modules of the variables of the datasets: the local variables are specified
@@ -28,12 +34,13 @@ UKCP18_VARIABLES_MODULES = [
 ]
 
 
-# Metadata of the UKCP18 datasets (https://doi.org/10.5281/zenodo.23362544)
+# Metadata of the UKCP18 datasets (https://doi.org/10.5281/zenodo.23515656), in
+# JSON Lines: a dataset per line
 rule ukcp18_metadata:
     input:
-        storage.zenodo("zenodo://record/23362544/ceda_ukcp18_metadata_merged.json.gz"),
+        storage.zenodo("zenodo://record/23515656/ukcp18_metadata.jsonl.gz"),
     output:
-        "data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json",
+        "data-sources/ukcp18/data/ceda_ukcp18_metadata.jsonl",
     shell:
         "gunzip -c {input:q} > {output:q}"
 
@@ -77,7 +84,7 @@ rule ukcp18_mip_variable_units:
 # Variants of the models of the land-gcm datasets
 rule ukcp18_model_variants:
     input:
-        metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json",
+        metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata.jsonl",
         mapping="data-sources/ukcp18/mapping/extract-model-variants.jq",
     output:
         "data-sources/ukcp18/data/model-variants.json",
@@ -85,7 +92,7 @@ rule ukcp18_model_variants:
         "logs/ukcp18/model_variants.log",
     shell:
         "root=$PWD; cd data-sources/ukcp18 &&"
-        " jq -L mapping -f mapping/extract-model-variants.jq $root/{input.metadata:q} > $root/{output:q} 2> $root/{log:q}"
+        " jq -n -L mapping -f mapping/extract-model-variants.jq $root/{input.metadata:q} > $root/{output:q} 2> $root/{log:q}"
 
 
 # Local variables (mapping/ukcp-variables.json), with their units and baseline
@@ -108,12 +115,34 @@ rule ukcp18_map_variables:
         " > $root/{output:q} 2> $root/{log:q}"
 
 
-# Datasets, with their simulations, models and grids (the log lists the
-# datasets whose id does not match their metadata)
+# The models of the Met Office Hadley Centre used by the datasets
+rule ukcp18_map_models:
+    input:
+        mapping="data-sources/ukcp18/mapping/models.jq",
+        modules=[
+            "data-sources/ukcp18/mapping/context.jq",
+            "data-sources/ukcp18/mapping/jsonld.jq",
+        ],
+    output:
+        "data-sources/ukcp18/rdf/models.jsonld",
+    log:
+        "logs/ukcp18/map_models.log",
+    shell:
+        "root=$PWD; cd data-sources/ukcp18 &&"
+        " jq -n -L mapping -f mapping/models.jq > $root/{output:q} 2> $root/{log:q}"
+
+
+# Datasets, with their simulations and grids (the log lists the datasets whose
+# id does not match their metadata): each dataset is mapped on its own
+# (mapping/datasets.jq, a node per line), and the nodes are framed as JSON-LD
+# documents (mapping/frame.jq) in blocks of ukcp18.block_size nodes,
+# rdf/datasets/datasets-NNNN.jsonld
 rule ukcp18_map_datasets:
     input:
-        metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json",
+        metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata.jsonl",
         mapping="data-sources/ukcp18/mapping/datasets.jq",
+        frame="data-sources/ukcp18/mapping/frame.jq",
+        mip_index="data-sources/cmor-tables/data/mip-mapping-index.json",
         modules=UKCP18_VARIABLES_MODULES
         + [
             "data-sources/ukcp18/mapping/simulations.jq",
@@ -127,13 +156,17 @@ rule ukcp18_map_datasets:
             "data-sources/ukcp18/data/cmip5-model-synonyms.json",
         ],
     output:
-        "data-sources/ukcp18/rdf/ceda_ukcp18_metadata_merged.jsonld",
+        directory("data-sources/ukcp18/rdf/datasets"),
+    params:
+        block_size=config["ukcp18"]["block_size"],
     log:
         "logs/ukcp18/map_datasets.log",
     shell:
-        "root=$PWD; cd data-sources/ukcp18 &&"
-        " jq -L mapping -L ../cmor-tables/mapping -f mapping/datasets.jq $root/{input.metadata:q}"
-        " > $root/{output:q} 2> $root/{log:q}"
+        "root=$PWD; mkdir -p {output:q}; cd data-sources/ukcp18 &&"
+        " jq -n -c -L mapping -L ../cmor-tables/mapping --slurpfile mip_index $root/{input.mip_index:q}"
+        " -f mapping/datasets.jq $root/{input.metadata:q} 2> $root/{log:q} |"
+        " split -l {params.block_size} -d -a 4 --additional-suffix=.jsonld"
+        " --filter='jq -s -c -L mapping -f mapping/frame.jq > $FILE' - $root/{output:q}/datasets-"
 
 
 # --- Analysis
@@ -142,10 +175,11 @@ rule ukcp18_map_datasets:
 # Datasets whose variable is not a variable of the KG, to review their mapping
 rule ukcp18_unmapped_variables:
     input:
-        metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json",
+        metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata.jsonl",
         filter="data-sources/ukcp18/analysis/unmapped-variables.jq",
         modules=UKCP18_VARIABLES_MODULES + ["data-sources/ukcp18/mapping/ukcp18-ids.jq"],
         kg_variables=rules.cmor_tables_variable_iris.output,
+        mip_index="data-sources/cmor-tables/data/mip-mapping-index.json",
     output:
         "data-sources/ukcp18/analysis/unmapped-variables.json.gz",
     log:
@@ -153,7 +187,8 @@ rule ukcp18_unmapped_variables:
     shell:
         "root=$PWD;"
         " cd data-sources/ukcp18 &&"
-        " jq -L mapping -L ../cmor-tables/mapping --slurpfile kg_variables $root/{input.kg_variables:q}"
+        " jq -n -L mapping -L ../cmor-tables/mapping --slurpfile kg_variables $root/{input.kg_variables:q}"
+        " --slurpfile mip_index $root/{input.mip_index:q}"
         " -f analysis/unmapped-variables.jq $root/{input.metadata:q} 2> $root/{log:q} |"
         " gzip -n > $root/{output:q}"
 
@@ -164,10 +199,11 @@ rule ukcp18_unmapped_variables:
 # of their MIP variable
 rule ukcp18_variables_check:
     input:
-        metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json",
+        metadata="data-sources/ukcp18/data/ceda_ukcp18_metadata.jsonl",
         filter="data-sources/ukcp18/analysis/variables-check.jq",
         modules=UKCP18_VARIABLES_MODULES + ["data-sources/ukcp18/mapping/ukcp18-ids.jq"],
         mip_units="data-sources/ukcp18/data/mip-variable-units.json",
+        mip_index="data-sources/cmor-tables/data/mip-mapping-index.json",
     output:
         "data-sources/ukcp18/analysis/variables-check.json",
     log:
@@ -175,5 +211,6 @@ rule ukcp18_variables_check:
     shell:
         "root=$PWD;"
         " cd data-sources/ukcp18 &&"
-        " jq -L mapping -L ../cmor-tables/mapping --slurpfile mip_units $root/{input.mip_units:q}"
+        " jq -n -L mapping -L ../cmor-tables/mapping --slurpfile mip_units $root/{input.mip_units:q}"
+        " --slurpfile mip_index $root/{input.mip_index:q}"
         " -f analysis/variables-check.jq $root/{input.metadata:q} > $root/{output:q} 2> $root/{log:q}"

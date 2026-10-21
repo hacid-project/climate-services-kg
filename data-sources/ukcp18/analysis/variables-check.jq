@@ -7,8 +7,11 @@
 #   units are not those of their MIP variable (a local variable may be needed),
 #   with the number of datasets.
 #
-# Input: the metadata of the UKCP18 datasets (data/ceda_ukcp18_metadata_merged.json).
-# Arguments: --slurpfile mip_units <units of the variables of the KG, by IRI>;
+# Input (read with -n): the metadata of the UKCP18 datasets, a JSON value for
+# each (data/ceda_ukcp18_metadata.jsonl), counted by key (variable_key) one at a
+# time.
+# Arguments: --slurpfile mip_units <units of the variables of the KG, by IRI>,
+# --slurpfile mip_index <data/mip-mapping-index.json>;
 # the modules of mapping and of data-sources/cmor-tables/mapping must be in the
 # library path (-L), run from data-sources/ukcp18.
 
@@ -16,13 +19,22 @@ import "./mapping/ukcp18-variables" as VARIABLES;
 import "./mapping/ukcp18-ids" as IDS;
 
 $mip_units[0] as $mip_units |
-map(select(.collection != "marine-sim") | IDS::fix_variable | IDS::fix_units) |
+$mip_index[0] as $mip_index |
+VARIABLES::local_variables_by_iri as $by_iri |
+# the number of datasets of each key, with the first dataset of the key
+reduce (
+    inputs | select(.collection != "marine-sim") | IDS::fix_variable | IDS::fix_units
+) as $dataset (
+    {};
+    ($dataset | VARIABLES::variable_key) as $key |
+    if has($key) then .[$key].count += 1 else .[$key] = {count: 1, dataset: $dataset} end
+) |
 [
-    group_by(VARIABLES::variable_key)[] |
-    {count: length} + (.[0] | {
+    .[] |
+    {count} + (.dataset | {
         variable, units, collection,
-        local: [VARIABLES::local_variables | .iri],
-        iri: VARIABLES::variable_iri
+        local: [VARIABLES::local_variables($by_iri) | .iri],
+        iri: VARIABLES::variable_iri($mip_index)
     })
 ] as $keys |
 ([VARIABLES::ukcp_variable_nodes[] | select(."@type" | index("data:DeterministicVariable")?) | ."@id"]) as $local |

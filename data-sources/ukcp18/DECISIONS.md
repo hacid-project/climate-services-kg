@@ -1,14 +1,18 @@
 # UKCP18: decisions on issues and inconsistencies
 
 Decisions taken in mapping the UKCP18 datasets (the CEDA metadata,
-`data/ceda_ukcp18_metadata_merged.json`) to the KG, with the place where each
+`data/ceda_ukcp18_metadata.jsonl`) to the KG, with the place where each
 one is applied. The datasets whose variable is not a variable of the KG are
 extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
 
 ## Source data
 
 - The metadata is published on Zenodo
-  ([10.5281/zenodo.23362544](https://doi.org/10.5281/zenodo.23362544)).
+  ([10.5281/zenodo.23515656](https://doi.org/10.5281/zenodo.23515656)), in
+  JSON Lines (a dataset per line), with the same content as the previous
+  version, a JSON array
+  ([10.5281/zenodo.23362544](https://doi.org/10.5281/zenodo.23362544)): the
+  datasets are read and mapped one at a time.
 - **marine-sim.** The `marine-sim` collection is not mapped: each of its
   versions has its own id structure (`mapping/datasets.jq`).
 - **Ids not matching the metadata.** The datasets whose id does not match

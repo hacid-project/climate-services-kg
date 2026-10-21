@@ -190,7 +190,7 @@ data-sources/gwls/rdf
 data-sources/ontologies
 data-sources/cmor-tables/data
 data-sources/observations/data
-data-sources/ukcp18/data/ceda_ukcp18_metadata_merged.json
+data-sources/ukcp18/data/ceda_ukcp18_metadata.jsonl
 data-sources/ukcp18/data/model-variants.json
 data-sources/ukcp18/data/spatial-grid-map.json
 data-sources/ukcp18/data/mip-variable-units.json

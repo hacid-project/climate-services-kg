@@ -14,8 +14,13 @@
     "realization"
 ] as $extracted_keys |
 
-map(
+# Input (read with -n): the metadata of the UKCP18 datasets, a JSON value for
+# each (data/ceda_ukcp18_metadata.jsonl); only the CMIP5 metadata of the
+# land-gcm datasets is kept
+[
+    inputs |
     select(.collection == "land-gcm") |
+    {id} + with_entries(select(.key | startswith("cmip5_"))) |
     .variant = (.id[:-3] | split("_").[5]) |
     if .variant == "25" and .cmip5_model_id == "HadGEM2-ES" then
         empty
@@ -24,8 +29,7 @@ map(
     if .cmip5_parent_experiment_rip == "N/A" 
         then .cmip5_parent_experiment_rip = "r\(.cmip5_realization)i\(.cmip5_initialization_method)p\(.cmip5_physics_version)"
     end
-
-) | group_by(.variant) |
+] | group_by(.variant) |
 map(
     # ([.[] | to_entries | .[] | .key | select(startswith("cmip5_")) | .[6:]] | unique) as $cmip5_keys |
     {
