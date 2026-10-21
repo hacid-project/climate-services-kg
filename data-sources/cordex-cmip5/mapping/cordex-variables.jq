@@ -30,12 +30,51 @@ def mip_variable_iri_of($variable; $frequency; $entries_by_name):
     {variable: $variable, frequency: $frequency, tables: (frequency_tables[$frequency] // [])} |
     cmip5_variable_iri($entries_by_name);
 
+# Index of the MIP variables of the variables of the CMIP5 CMOR tables
+# ($entries_by_name, see cmip5_entries_by_name) for the CORDEX datasets, from
+# the configuration alone (the tables, frequency_tables, the index of the
+# mapping of the MIP variables, $mip_index): {<name>: {<frequency>: <IRI>}},
+# the IRI resolved as mip_variable_iri_of for a dataset of each time frequency
+# of frequency_tables (or of another one, ""). Built once, to resolve the
+# variables of many datasets (variable_iri_of).
+def cordex_variable_index($entries_by_name; $mip_index):
+    $entries_by_name |
+    with_entries(
+        .key as $name |
+        .value = (
+            [(frequency_tables | keys[]), ""] |
+            map({
+                key: .,
+                value: (
+                    {variable: $name, frequency: ., tables: (frequency_tables[.] // [])} |
+                    cmip5_variable_iri($entries_by_name; $mip_index)
+                )
+            }) |
+            from_entries
+        )
+    );
+
 def _cordex_variables_base: ns + "variables/cordex/";
 
 def cordex_variables_collection: ns + "variables/cordex";
 
 # IRI of a variable defined locally (input: its out_name)
 def cordex_variable_iri: _cordex_variables_base + @uri;
+
+# IRI of a variable of a dataset of a time frequency: the MIP variable (from
+# the index, $index, see cordex_variable_index, or resolved for a name not in
+# the tables or a monClim frequency), unless it is not a variable of the KG
+# ($kg) and the variable is defined locally ($local_variables, see
+# local_variables)
+def variable_iri_of($variable; $frequency; $index; $entries_by_name; $mip_index; $local_variables; $kg):
+    (
+        ($index[$variable] | values | .[$frequency] // (if $frequency != "monClim" then .[""] else empty end)) //
+        (
+            {variable: $variable, frequency: $frequency, tables: (frequency_tables[$frequency] // [])} |
+            cmip5_variable_iri($entries_by_name; $mip_index)
+        )
+    ) as $iri |
+    if ($kg[$iri] | not) and $local_variables[$variable] then $variable | cordex_variable_iri else $iri end;
 
 # Variables defined locally, by out_name: the variables of the CORDEX standard
 # output ($standard_output: its tables, CORDEX_standard_output.json) whose MIP

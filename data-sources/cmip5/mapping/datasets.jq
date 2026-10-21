@@ -17,10 +17,13 @@
 # The IRIs of the variables are those of the MIP variables (see
 # data-sources/cmor-tables/mapping/mip-mapping.md), resolved from the
 # definitions of the variables in the CMIP5 CMOR tables (see
-# cmip5_variable_spec in esgf.jq).
+# cmip5_variable_spec in esgf.jq), for each dataset with the index of the
+# mapping of the MIP variables.
 #
 # Arguments: --slurpfile cmor_tables <tables of the CMIP5 CMOR tables>
-# (data-sources/cmor-tables/data/cmip5/5.0.json); the modules of
+# (data-sources/cmor-tables/data/cmip5/5.0.json), --slurpfile mip_index
+# <index of the mapping of the MIP variables>
+# (data-sources/cmor-tables/data/mip-mapping-index.json); the modules of
 # data-sources/cmor-tables/mapping and of this directory (esgf.jq) must be in
 # the library path (-L).
 
@@ -31,16 +34,9 @@ include "esgf";
 # --- Mapping
 
 ($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
-# IRIs of the variables of the datasets, by table, variable and time frequency
-(
-    [
-        .response.docs[] |
-        {table: .cmor_table[0], variable: .variable[]?, frequency: .time_frequency[0]}
-    ] |
-    unique |
-    map({key: "\(.table) \(.variable) \(.frequency)", value: (.tables = [.table] | cmip5_variable_iri($entries_by_name))}) |
-    from_entries
-) as $variable_iris |
+$mip_index[0] as $mip_index |
+# the IRIs of the variables of the CMIP5 tables, from the configuration
+cmip5_variable_index($entries_by_name; $mip_index) as $variable_index |
 [
     .response.docs[] |
     (.master_id | split(".")) as $parts |
@@ -64,7 +60,11 @@ include "esgf";
     [.institute[] | ns + "organizations/\(quote)"] as $institutes |
     .cmor_table[0] as $table |
     .time_frequency[0] as $frequency |
-    [.variable[]? | $variable_iris["\($table) \(.) \($frequency)"]] as $variables |
+    [
+        .variable[]? |
+        {table: $table, variable: ., frequency: $frequency} |
+        cmip5_variable_iri_indexed($variable_index; $entries_by_name; $mip_index)
+    ] as $variables |
     (.experiment | scenario_iris) as $scenarios |
     temporal_grid as $time |
     ($time | temporal_iris) as $time_iris |

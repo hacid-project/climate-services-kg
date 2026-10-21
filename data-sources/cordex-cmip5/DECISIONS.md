@@ -16,7 +16,9 @@ variables (`analysis/variables-check.json`, see the end of this document).
   (`cordex-15.json`, `cordex-16.json`) are empty: they contribute nothing.
 - **Repeated datasets.** 145,493 records give 145,446 distinct datasets
   (`master_id`): the records of the same dataset in more than one page are
-  mapped once.
+  mapped in each of the pages, as each page is mapped on its own (to a JSON-LD
+  document, `rdf/datasets/cordex-<n>.jsonld`), with the same triples, merged
+  when loaded.
 
 ## Datasets and simulations (`mapping/datasets.jq`)
 
