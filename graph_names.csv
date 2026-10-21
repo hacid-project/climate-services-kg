@@ -19,3 +19,4 @@ data-sources/climdex/rdf/*.jsonld,https://w3id.org/hacid/data/cs/climdex,n
 data-sources/climdex/*.ttl,https://w3id.org/hacid/data/cs/climdex,n
 data-sources/mohc-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/mohc-cvs,n
 data-sources/ukcp18/rdf/*.jsonld,https://w3id.org/hacid/data/cs/ukcp18,n
+data-sources/ukcp18/rdf/datasets/*.jsonld,https://w3id.org/hacid/data/cs/ukcp18,n

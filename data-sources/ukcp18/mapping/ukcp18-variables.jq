@@ -217,8 +217,15 @@ def _local_path:
 
 # The local variables of a dataset (input: its metadata): its local variable
 # and those it is a representation of or derived from, recursively
-def local_variables:
-    _local_variables_by_iri as $by_iri |
+def local_variables: local_variables(local_variables_by_iri);
+
+# The local variables by IRI (generated from the specification: built once to
+# find the local variables of many datasets, local_variables($by_iri))
+def local_variables_by_iri: _local_variables_by_iri;
+
+# The local variables of a dataset (input: its metadata), with the local
+# variables by IRI (local_variables_by_iri)
+def local_variables($by_iri):
     def chain:
         ., (
             [.probabilistic_representation_of, .derived_from[]?] | .[] | strings |

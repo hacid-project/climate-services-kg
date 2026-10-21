@@ -94,3 +94,9 @@ consolidate:
   location: kg/tdb2
   # Options of the JVM of the Jena command-line tools (JVM_ARGS)
   jvm_args: -Xmx16G
+
+ukcp18:
+  # Number of nodes of each JSON-LD document of the UKCP18 datasets
+  # (rdf/datasets/datasets-NNNN.jsonld), framed from the output of the mapping,
+  # a node per line: it bounds the memory needed to load them
+  block_size: 10000
