@@ -7,8 +7,13 @@
 #   snakemake runs just for the inputs of the target jobs, so a repository used
 #   deeper in the DAG is reported as missing: clone (or fetch) it when its
 #   existence is checked instead, as the plugin itself does in its unit tests
-#   (once per run, see _clone_or_pull).
+#   (once per run, see _clone_or_pull);
+# - the plugin fetches each repository at every run (once per checkout, i.e.
+#   per ref), even when nothing changed: a checkout whose ref is already there
+#   as a tag or a commit id, which cannot move, is not fetched (a branch still
+#   is, as is a ref not there yet).
 import os
+import re
 from urllib.parse import urlparse
 
 import pygit2
@@ -17,6 +22,7 @@ from snakemake_storage_plugin_git import StorageObject as GitStorageObject
 
 _git_local_suffix = GitStorageObject.local_suffix
 _git_exists = GitStorageObject.exists
+_git_clone_or_pull = GitStorageObject._clone_or_pull
 _git_checked_out = set()
 
 
@@ -42,6 +48,36 @@ def _git_checkout_ref(repo, ref):
     repo.set_head(commit.id)
 
 
+def _git_has_fixed_ref(local_path, ref):
+    """Whether a checkout has a ref as a tag or a commit id (not a branch)."""
+    try:
+        repo = pygit2.Repository(local_path)
+    except pygit2.GitError:
+        return False
+    if f"refs/tags/{ref}" in repo.references:
+        return True
+    if re.fullmatch(r"[0-9a-f]{7,40}", ref) and f"refs/remotes/origin/{ref}" not in repo.references:
+        try:
+            repo.revparse_single(ref).peel(pygit2.Commit)
+            return True
+        except (KeyError, ValueError, pygit2.GitError):
+            return False
+    return False
+
+
+def _git_clone_or_pull_unless_fixed(self):
+    ref = _git_ref(self)
+    local_path = str(self.local_path())
+    if (
+        self.query not in self.provider.done_queries
+        and ref
+        and os.path.exists(local_path)
+        and _git_has_fixed_ref(local_path, ref)
+    ):
+        self.provider.done_queries.add(self.query)
+    _git_clone_or_pull(self)
+
+
 def _git_clone_and_exists(self):
     self._clone_or_pull()
     local_path = str(self.local_path())
@@ -54,3 +90,4 @@ def _git_clone_and_exists(self):
 
 GitStorageObject.local_suffix = _git_local_suffix_with_ref
 GitStorageObject.exists = _git_clone_and_exists
+GitStorageObject._clone_or_pull = _git_clone_or_pull_unless_fixed
