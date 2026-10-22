@@ -119,7 +119,10 @@ resolved through `data-sources/cmor-tables/mapping/mip-mapping.json` from their 
 CMIP5 CMOR tables (e.g. a CMIP5 `tos`, in K, is `.../variables/mip/cmip6/6.0.19/tos`): the IRIs of the variables of
 the CMIP5 tables are indexed once from the configuration alone (`cmip5_variable_index` in `mapping/esgf.jq`, with
 the index of the mapping of the MIP variables, `data-sources/cmor-tables/data/mip-mapping-index.json`, rule
-`cmor_tables_mip_mapping_index`), and each dataset looks up its own.
+`cmor_tables_mip_mapping_index`), and each dataset looks up its own. The variables not in the CMOR tables are skipped (`gridspec`),
+renamed (the INM-CM4 `rluscs`, a misnamed `rsuscs`) or defined locally for their model (e.g. the CanESM2 `orograw`, as
+`.../variables/cmip5/CanESM2/orograw`, in `data-sources/cmip5/rdf/variables.jsonld`), as given by
+`data-sources/cmip5/mapping/variables.json` (see `data-sources/cmip5/DECISIONS.md`).
 
 ### CORDEX-CMIP5 domains and grids
 

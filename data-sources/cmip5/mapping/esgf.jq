@@ -216,6 +216,28 @@ def cmip5_variable_iri_indexed($index; $entries_by_name; $mip_index):
 
 def ns: "https://w3id.org/hacid/data/cs/";
 
+# --- Variables of the models (mapping/variables.json)
+
+# Collection of the variables defined locally for a CMIP5 model (its ESGF name)
+def cmip5_model_variables_collection($model): ns + "variables/cmip5/" + ($model | @uri);
+
+# IRI of a variable defined locally for a CMIP5 model (input: its name)
+def cmip5_model_variable_iri($model): cmip5_model_variables_collection($model) + "/" + @uri;
+
+# IRI of a variable (input: its name) of a dataset of a CMIP5 model, given the
+# variables of the models ($variables, mapping/variables.json): none if it is
+# skipped, the variable defined locally for the model if any, otherwise the
+# MIP variable (of the name it is renamed to for the model, if any) resolved
+# by mip_iri (input: the name)
+def cmip5_dataset_variable_iri($variables; $model; mip_iri):
+    if $variables.skip[.] then
+        empty
+    elif $variables.local[$model][.] then
+        cmip5_model_variable_iri($model)
+    else
+        ($variables.renames[$model][.].variable // .) | mip_iri
+    end;
+
 # Percent-encoding as in Python's urllib.parse.quote (keeping "/")
 def quote: @uri | gsub("%2F"; "/");
 
