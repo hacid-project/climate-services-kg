@@ -162,7 +162,9 @@ single pressure level derived from the analogous MIP variables (e.g. `ta200` is 
 on `p500`). The other variables at a single pressure or height level that are not variables of the KG (e.g. `hus200`,
 `ua50m`) are defined in the same way from a compact specification (`mapping/level-variables.json`: for each base its
 long name, standard name, units and levels; `u` and `v` are aliases of `ua` and `va`); the other variables not in the
-CMOR tables (e.g. `pr-bc`, `crs`) keep the IRI `.../variables/mip/<variable>`, which is not a variable of the KG.
+CMOR tables are skipped (coordinates, e.g. `crs`), renamed to MIP variables (e.g. `sst` to `tos`) or defined locally
+(e.g. the bias-corrected `pr-bc`, derived from `pr`), as given by `mapping/local-variables.json` (see
+`data-sources/cordex-cmip5/DECISIONS.md`, which also records the doubtful cases).
 
 The variables requested for the CORDEX archive (`data-sources/cordex-cmip5/CORDEX_standard_output.xls`, the CORDEX
 standard output) are converted to JSON tables in the format of the CMOR tables, one per frequency

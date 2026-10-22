@@ -11,18 +11,21 @@
             "pressure_levels": [200, 500, 700, 850, 925]
         },
         "clfr": {
+            "all_levels": true,
             "long_name": "Cloud Area Fraction in Atmosphere Layer",
             "standard_name": "cloud_area_fraction_in_atmosphere_layer",
             "units": "1",
             "pressure_levels": [200, 500, 850]
         },
         "clice": {
+            "all_levels": true,
             "long_name": "Mass Fraction of Cloud Ice",
             "standard_name": "mass_fraction_of_cloud_ice_in_air",
             "units": "1",
             "pressure_levels": [200, 500, 850]
         },
         "clwmr": {
+            "all_levels": true,
             "long_name": "Mass Fraction of Cloud Liquid Water",
             "standard_name": "mass_fraction_of_cloud_liquid_water_in_air",
             "units": "1",

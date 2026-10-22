@@ -128,18 +128,62 @@ variables (`analysis/variables-check.json`, see the end of this document).
   are not CF names, taken as those of `cl`, `cli` and `clw`), and of the CMIP6
   `wbptemp` (`wet_bulb_potential_temperature`) for `thetapw`. The bases `u` and
   `v` (zonal and meridional wind at 200, 500 and 850 hPa, 36 datasets each)
-  are aliases of `ua` and `va` (`aliases`, `level_variable_name`): `u200` is
+  are aliases of `ua` and `va` (`aliases`, `cordex_variable_name`): `u200` is
   the variable of `ua200`.
-- **Other variables not in the CMOR tables** (not requested by CORDEX, e.g.
-  the coordinates `crs`, `heightv`, `soil_bounds`, `soil_layer`) keep the IRI
-  `.../variables/mip/<name>`, which is not a variable of the KG.
-- **Bias-corrected variables** (`pr-bc`, `tasmax-bc`, `tasmin-bc`, `pr-fl`,
-  432 datasets, all of NARCliM, UNSW, AUS-44i, WRF360J/K): the ESGF metadata
-  says nothing about the bias correction. According to the NARCliM
-  documentation (Technical Note 3, Evans and Argüeso, 2014), it is a quantile
-  mapping of daily precipitation and maximum and minimum temperature; the
-  details were not verified (the NetCDF attributes at esgf.nci.org.au could
-  not be read). They keep the IRI `.../variables/mip/<name>` for now.
+  The bases `clfr`, `clice` and `clwmr` are also published on all their
+  levels (`all_levels`, WRF341I, SAM-44), as variables on the vertical
+  dimension (`.../variables/cordex/clfr`).
+- **Other variables not in the CMOR tables** (`mapping/local-variables.json`,
+  `cordex_variable_name` and `local_variables` in `mapping/cordex-variables.jq`):
+  the other 32 names of the datasets in no edition of the CMOR tables are
+  skipped, renamed or defined locally, from their ESGF metadata (long name,
+  standard name, units), with a `note` for each:
+  - **Skipped** (`skip`, no variable held by their datasets): the coordinates
+    `crs` (grid mapping), `heightv`, `soil_bounds` and `soil_layer`.
+  - **Renamed** (`renames`) to the MIP variables of the same quantity and
+    units: `sst` to `tos` (resolved as the CMIP5 `tos`, in K), `tds` to
+    `tdps`, `mross` (subsurface runoff) to `mrrob`, `cdnctop` to `cldncl`,
+    `cltc100` to `cltc`.
+  - **Defined locally** (`local`, `.../variables/cordex/<name>`, as the
+    variables requested), with the CF standard name of the quantity where one
+    fits and, for a variant of a MIP variable (`derived_from`), derived from
+    it (`data:derivedFromVariable`): the bias-corrected `pr-bc`, `tasmax-bc`,
+    `tasmin-bc` and the `pr-fl` of NARCliM (from `pr`, `tasmax`, `tasmin`),
+    the monthly or seasonal maximum of the daily maximum wind speed
+    `sfcWindmaxmax` (from `sfcWindmax`), `tasmaxts` and `tasmints` (from
+    `tasmax`, `tasmin`), the daily maximum and minimum surface temperature
+    `tsmax`, `tsmin` (from `ts`), and `aclwdnt`, `alb`, `apet`, `cape`,
+    `hufs`, `icod`, `lcod`, `mrsosat`, `mrsowp`, `prls`, `rluscs` (the
+    ALADIN63 longwave, unlike the CMIP5 one of INM-CM4), `snownc`, `ustar`,
+    `zo`.
+- **Doubtful cases**, decided on the metadata alone (see the notes in
+  `mapping/local-variables.json`):
+  - **Bias-corrected variables** (`pr-bc`, `tasmax-bc`, `tasmin-bc`, 324
+    datasets of NARCliM, UNSW, AUS-44i, WRF360J/K): the ESGF metadata says
+    nothing about the bias correction. According to the NARCliM
+    documentation (Technical Note 3, Evans and Argüeso, 2014), it is a
+    quantile mapping of daily precipitation and maximum and minimum
+    temperature; the details were not verified (the NetCDF attributes at
+    esgf.nci.org.au could not be read).
+  - **`pr-fl`** (NARCliM, 108 datasets): the meaning of the suffix is not
+    documented; its metadata are those of `pr`, so it is a variable derived
+    from `pr` ("Precipitation, Variant fl").
+  - **`cltc100`** (ALADIN63): renamed to `cltc` (convective cloud fraction,
+    in `%`), taking the suffix for the percentage; not documented.
+  - **`tasmaxts`, `tasmints`** (WRF341I): their metadata are those of
+    `tasmax` and `tasmin`, also published, but their time axis is shifted by
+    one day (1949-12-31 to 2100-12-30 instead of 1950-01-01 to 2100-12-31):
+    presumably the daily extremes of the near-surface air temperature over
+    another daily window or sampling of the time series ("ts"), defined as
+    an alternative computation derived from `tasmax` and `tasmin`. They
+    differ from `tsmax` and `tsmin`, the daily extremes of the surface (skin)
+    temperature `ts`.
+  - **CF standard names by educated guess**: `snownc`
+    (`lwe_thickness_of_large_scale_snowfall_amount`, the WRF accumulated
+    grid-scale snow and ice) and `ustar`
+    (`magnitude_of_surface_friction_velocity_in_air`); `clfr`, `clice` and
+    `clwmr`, whose ESGF standard names are not CF names, take those of the
+    CMIP `cl`, `cli` and `clw` (see above).
 
 ## Standard names and units (`analysis/variables-check.jq`)
 
@@ -172,7 +216,7 @@ definitions of the standard output and of the CMIP5 CMOR tables:
 ## Open cases
 
 - **Checks against the NetCDF files.** The edge cases above (the alternative
-  units, the placeholder metadata, the bias-corrected variables) should be
+  units, the placeholder metadata, the doubtful variables) should be
   checked against the content of the NetCDF files; not done for now, as it
   would take too much effort and the ESGF nodes could not easily be accessed.
   For the heat fluxes of `CCAM-2008`, the magnitudes of the values tell the

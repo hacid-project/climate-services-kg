@@ -1,0 +1,221 @@
+{
+    "skip": {
+        "crs": "RegCM4-3 (SEA-22): the grid mapping (units None, no long name), not a variable",
+        "heightv": "WRF341E (EUR-44): a height coordinate (height, m), not a variable",
+        "soil_bounds": "RegCM4-3 (SEA-22): the bounds of the soil layers (depth, m), a coordinate",
+        "soil_layer": "RegCM4-3 (SEA-22): the depth of the soil layers (depth, m), a coordinate"
+    },
+    "renames": {
+        "cdnctop": {
+            "variable": "cldncl",
+            "note": "ALADIN63: Cloud Droplet Number Concentration At Cloud Top (m-3), the CMIP6 cldncl"
+        },
+        "cltc100": {
+            "variable": "cltc",
+            "note": "ALADIN63: Convective Cloud Fraction (convective_cloud_area_fraction, %); the meaning of the suffix 100 is not documented (presumably the percentage)"
+        },
+        "mross": {
+            "variable": "mrrob",
+            "note": "WRF341I: Subsurface runoff (kg m-2 s-1), the CMIP6 mrrob; the same model publishes mrro and mrros"
+        },
+        "sst": {
+            "variable": "tos",
+            "note": "WRF341I, WRF360J/K/L: sea surface temperature (K), resolved as the CMIP5 tos (in K)"
+        },
+        "tds": {
+            "variable": "tdps",
+            "note": "COSMO-crCLIM-v1-1: 2m Dew Point Temperature (K), the CMIP6 tdps"
+        }
+    },
+    "local": {
+        "aclwdnt": {
+            "long_name": "Accumulated Downwelling Longwave Flux at Top",
+            "units": "J m-2",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "note": "WRF341I: accumulated_downwelling_lw_flux_at_top in the metadata, not a CF standard name"
+        },
+        "alb": {
+            "long_name": "Surface Albedo",
+            "standard_name": "surface_albedo",
+            "units": "1",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "note": "WRF341I, WRF360J/K/L: no units in most of the metadata"
+        },
+        "apet": {
+            "long_name": "Accumulated Morton Areal Potential Evapotranspiration",
+            "standard_name": "water_potential_evapotranspiration_amount",
+            "units": "kg m-2",
+            "modeling_realm": "land",
+            "dimensions": "longitude latitude time",
+            "note": "WRF360J/K (NARCliM): Kg m-2 in the metadata"
+        },
+        "cape": {
+            "long_name": "Convective Available Potential Energy",
+            "standard_name": "atmosphere_convective_available_potential_energy",
+            "units": "J kg-1",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "note": "COSMO-crCLIM-v1-1"
+        },
+        "hufs": {
+            "long_name": "Upward Moisture Flux at the Surface",
+            "standard_name": "surface_upward_water_vapor_flux_in_air",
+            "units": "kg m-2 s-1",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "note": "WRF341I: published with evspsbl"
+        },
+        "icod": {
+            "long_name": "Ice Cloud Optical Depth",
+            "units": "1",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "note": "ALADIN63: ice_cloud_optical_depth in the metadata; CF has no optical thickness due to cloud ice"
+        },
+        "lcod": {
+            "long_name": "Liquid Cloud Optical Depth",
+            "standard_name": "atmosphere_optical_thickness_due_to_cloud_liquid_water",
+            "units": "1",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "note": "ALADIN63: liquid_cloud_optical_depth in the metadata"
+        },
+        "mrsosat": {
+            "long_name": "Soil Moisture Saturation Point",
+            "units": "kg m-2",
+            "modeling_realm": "land",
+            "dimensions": "longitude latitude",
+            "note": "RACMO22E/T (fx): CF has the soil moisture at saturation only as a volume fraction"
+        },
+        "mrsowp": {
+            "long_name": "Soil Moisture Wilting Point",
+            "units": "kg m-2",
+            "modeling_realm": "land",
+            "dimensions": "longitude latitude",
+            "note": "RACMO22E/T (fx): CF has the soil moisture at the wilting point only as a volume fraction"
+        },
+        "pr-bc": {
+            "long_name": "Bias-Corrected Precipitation",
+            "standard_name": "precipitation_flux",
+            "units": "kg m-2 s-1",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "derived_from": "pr",
+            "note": "WRF360J/K (NARCliM): the metadata do not mention the bias correction; according to the NARCliM documentation (Technical Note 3) a quantile mapping, details not verified"
+        },
+        "pr-fl": {
+            "long_name": "Precipitation, Variant fl",
+            "standard_name": "precipitation_flux",
+            "units": "kg m-2 s-1",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "derived_from": "pr",
+            "note": "WRF360J/K (NARCliM): the meaning of the suffix fl is not documented; the metadata are those of pr (precipitation_flux, Precipitation), published with pr and pr-bc"
+        },
+        "prls": {
+            "long_name": "Large-Scale Precipitation",
+            "standard_name": "large_scale_precipitation_flux",
+            "units": "kg m-2 s-1",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "note": "WRF341I: large_scale_precipitation_amount and Kg m-2 s-1 in the metadata, a flux by its units"
+        },
+        "rluscs": {
+            "long_name": "Clear-Sky Surface Upwelling Longwave Radiation",
+            "standard_name": "surface_upwelling_longwave_flux_in_air_assuming_clear_sky",
+            "units": "W m-2",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "note": "ALADIN63: not in the CMOR tables"
+        },
+        "sfcWindmaxmax": {
+            "long_name": "Maximum Daily Maximum Near-Surface Wind Speed",
+            "standard_name": "wind_speed",
+            "units": "m s-1",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "derived_from": "sfcWindmax",
+            "note": "WRF360J/K/L (NARCliM): the monthly or seasonal maximum of the daily maximum (Monthly/Seasonal Maximum Daily Maximum Near-Surface Wind Speed), published with sfcWindmax"
+        },
+        "snownc": {
+            "long_name": "Accumulated Grid-Scale Snow and Ice",
+            "standard_name": "lwe_thickness_of_large_scale_snowfall_amount",
+            "units": "mm",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "note": "WRF341I: accumulated_total_grid_scale_snow_and_ice in the metadata (the WRF SNOWNC); the CF standard name is an educated guess (grid-scale, i.e. large-scale, snowfall as liquid water equivalent thickness, also including ice and graupel)"
+        },
+        "tasmax-bc": {
+            "long_name": "Bias-Corrected Daily Maximum Near-Surface Air Temperature",
+            "standard_name": "air_temperature",
+            "units": "K",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "derived_from": "tasmax",
+            "note": "WRF360J/K (NARCliM): as pr-bc, for tasmax"
+        },
+        "tasmin-bc": {
+            "long_name": "Bias-Corrected Daily Minimum Near-Surface Air Temperature",
+            "standard_name": "air_temperature",
+            "units": "K",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "derived_from": "tasmin",
+            "note": "WRF360J/K (NARCliM): as pr-bc, for tasmin"
+        },
+        "tasmaxts": {
+            "long_name": "Daily Maximum Near-Surface Air Temperature, Alternative Computation",
+            "standard_name": "air_temperature",
+            "units": "K",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "derived_from": "tasmax",
+            "note": "WRF341I: the metadata are those of tasmax, also published, but the time axis is shifted by one day (e.g. 1949-12-31 to 2100-12-30 instead of 1950-01-01 to 2100-12-31): presumably the daily maximum over another daily window or sampling of the time series (ts); not documented"
+        },
+        "tasmints": {
+            "long_name": "Daily Minimum Near-Surface Air Temperature, Alternative Computation",
+            "standard_name": "air_temperature",
+            "units": "K",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "derived_from": "tasmin",
+            "note": "WRF341I: as tasmaxts, for tasmin"
+        },
+        "tsmax": {
+            "long_name": "Daily Maximum Surface Temperature",
+            "standard_name": "surface_temperature",
+            "units": "K",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "derived_from": "ts",
+            "note": "WRF341I: the daily maximum of the surface (skin) temperature ts, not of the near-surface air temperature (tasmax)"
+        },
+        "tsmin": {
+            "long_name": "Daily Minimum Surface Temperature",
+            "standard_name": "surface_temperature",
+            "units": "K",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "derived_from": "ts",
+            "note": "WRF341I: the daily minimum of the surface (skin) temperature ts, not of the near-surface air temperature (tasmin)"
+        },
+        "ustar": {
+            "long_name": "Friction Velocity",
+            "standard_name": "magnitude_of_surface_friction_velocity_in_air",
+            "units": "m s-1",
+            "modeling_realm": "atmos",
+            "dimensions": "longitude latitude time",
+            "note": "WRF341I: frictional_velocity_in_similarity_theory in the metadata, not a CF standard name"
+        },
+        "zo": {
+            "long_name": "Surface Roughness Length",
+            "standard_name": "surface_roughness_length",
+            "units": "m",
+            "modeling_realm": "land",
+            "dimensions": "longitude latitude time",
+            "note": "RegCM4-7 (SEA-22)"
+        }
+    }
+}

@@ -19,23 +19,31 @@
     "variables_found": 208,
     "variables_requested": 66,
     "variables_defined_locally": [
+      "aclwdnt",
+      "alb",
+      "apet",
+      "cape",
       "cdnc200",
       "cdnc500",
       "cdnc700",
       "cdnc850",
       "cdnc925",
+      "clfr",
       "clfr200",
       "clfr500",
       "clfr850",
       "clh",
+      "clice",
       "clice200",
       "clice500",
       "clice850",
       "cll",
       "clm",
+      "clwmr",
       "clwmr200",
       "clwmr500",
       "clwmr850",
+      "hufs",
       "hur200",
       "hur500",
       "hur700",
@@ -52,6 +60,16 @@
       "hus700",
       "hus925",
       "hus975",
+      "icod",
+      "lcod",
+      "mrsosat",
+      "mrsowp",
+      "pr-bc",
+      "pr-fl",
+      "prls",
+      "rluscs",
+      "sfcWindmaxmax",
+      "snownc",
       "sund",
       "ta100",
       "ta200",
@@ -62,10 +80,16 @@
       "ta600",
       "ta925",
       "ta975",
+      "tasmax-bc",
+      "tasmaxts",
+      "tasmin-bc",
+      "tasmints",
       "thetapw1000",
       "thetapw700",
       "thetapw850",
       "thetapw925",
+      "tsmax",
+      "tsmin",
       "ua100",
       "ua150m",
       "ua200m",
@@ -79,6 +103,7 @@
       "ua700",
       "ua925",
       "ua975",
+      "ustar",
       "va100",
       "va150m",
       "va200m",
@@ -110,7 +135,8 @@
       "zg700",
       "zg850",
       "zg925",
-      "zg975"
+      "zg975",
+      "zo"
     ],
     "by_requested": {
       "no": {
@@ -274,43 +300,7 @@
       "zg975",
       "zo"
     ],
-    "not_in_kg": [
-      "aclwdnt",
-      "alb",
-      "apet",
-      "cape",
-      "cdnctop",
-      "clfr",
-      "clice",
-      "cltc100",
-      "clwmr",
-      "crs",
-      "heightv",
-      "hufs",
-      "icod",
-      "lcod",
-      "mross",
-      "mrsosat",
-      "mrsowp",
-      "pr-bc",
-      "pr-fl",
-      "prls",
-      "rluscs",
-      "sfcWindmaxmax",
-      "snownc",
-      "soil_bounds",
-      "soil_layer",
-      "sst",
-      "tasmax-bc",
-      "tasmaxts",
-      "tasmin-bc",
-      "tasmints",
-      "tds",
-      "tsmax",
-      "tsmin",
-      "ustar",
-      "zo"
-    ],
+    "not_in_kg": [],
     "requested_not_in_kg": [],
     "standard_name_status": {
       "known_alias": 16,
@@ -390,8 +380,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Surface albedo",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/alb",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/alb",
+      "in_kg": true
     },
     {
       "variable": "clt",
@@ -896,8 +886,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "2m Dew Point Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tds",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tdps",
+      "in_kg": true
     },
     {
       "variable": "ua100m",
@@ -1011,8 +1001,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Surface albedo",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/alb",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/alb",
+      "in_kg": true
     },
     {
       "variable": "cape",
@@ -1034,8 +1024,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Convective available potential energy (CAPE)",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cape",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/cape",
+      "in_kg": true
     },
     {
       "variable": "clt",
@@ -1080,8 +1070,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/crs",
-      "in_kg": false
+      "variable_iri": null,
+      "in_kg": null
     },
     {
       "variable": "emiss",
@@ -1172,8 +1162,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/heightv",
-      "in_kg": false
+      "variable_iri": null,
+      "in_kg": null
     },
     {
       "variable": "hfls",
@@ -1816,8 +1806,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Soil layer depth",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/soil_bounds",
-      "in_kg": false
+      "variable_iri": null,
+      "in_kg": null
     },
     {
       "variable": "soil_layer",
@@ -1839,8 +1829,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Soil layer depth",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/soil_layer",
-      "in_kg": false
+      "variable_iri": null,
+      "in_kg": null
     },
     {
       "variable": "sst",
@@ -1862,8 +1852,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "sea surface temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/sst",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.19/tos",
+      "in_kg": true
     },
     {
       "variable": "sund",
@@ -2805,8 +2795,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Surface Roughness Length",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zo",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zo",
+      "in_kg": true
     },
     {
       "variable": "alb",
@@ -2828,8 +2818,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Surface albedo",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/alb",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/alb",
+      "in_kg": true
     },
     {
       "variable": "clh",
@@ -2989,8 +2979,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/crs",
-      "in_kg": false
+      "variable_iri": null,
+      "in_kg": null
     },
     {
       "variable": "emiss",
@@ -3081,8 +3071,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/heightv",
-      "in_kg": false
+      "variable_iri": null,
+      "in_kg": null
     },
     {
       "variable": "hfls",
@@ -3955,8 +3945,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Soil layer depth",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/soil_bounds",
-      "in_kg": false
+      "variable_iri": null,
+      "in_kg": null
     },
     {
       "variable": "soil_layer",
@@ -3978,8 +3968,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Soil layer depth",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/soil_layer",
-      "in_kg": false
+      "variable_iri": null,
+      "in_kg": null
     },
     {
       "variable": "sst",
@@ -4001,8 +3991,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "sea surface temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/sst",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.19/tos",
+      "in_kg": true
     },
     {
       "variable": "sund",
@@ -5358,8 +5348,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Accumulated downwelling LW flux at top",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/aclwdnt",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/aclwdnt",
+      "in_kg": true
     },
     {
       "variable": "alb",
@@ -5381,8 +5371,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Surface albedo",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/alb",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/alb",
+      "in_kg": true
     },
     {
       "variable": "apet",
@@ -5404,8 +5394,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Accumulated Morton areal potential evapotranspiration",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/apet",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/apet",
+      "in_kg": true
     },
     {
       "variable": "clfr",
@@ -5427,8 +5417,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud fraction",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clfr",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clfr",
+      "in_kg": true
     },
     {
       "variable": "clfr200",
@@ -5542,8 +5532,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Ice mixing ratio",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clice",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clice",
+      "in_kg": true
     },
     {
       "variable": "clice200",
@@ -5726,8 +5716,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud water content",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clwmr",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clwmr",
+      "in_kg": true
     },
     {
       "variable": "clwmr200",
@@ -5956,8 +5946,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Upward moisture flux at the surface",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hufs",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hufs",
+      "in_kg": true
     },
     {
       "variable": "hur",
@@ -6393,8 +6383,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Subsurface runoff",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/mross",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/mrrob",
+      "in_kg": true
     },
     {
       "variable": "mrro",
@@ -6508,8 +6498,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Precipitation",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/pr-bc",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/pr-bc",
+      "in_kg": true
     },
     {
       "variable": "pr-fl",
@@ -6531,8 +6521,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Precipitation",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/pr-fl",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/pr-fl",
+      "in_kg": true
     },
     {
       "variable": "prc",
@@ -6600,8 +6590,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Precipitation large scale",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/prls",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/prls",
+      "in_kg": true
     },
     {
       "variable": "prsn",
@@ -6784,8 +6774,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Clear-Sky Surface Upwelling Longwave Radiation",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/rluscs",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/rluscs",
+      "in_kg": true
     },
     {
       "variable": "rlut",
@@ -7152,8 +7142,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Accumulated total grid scale snow and ice",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/snownc",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/snownc",
+      "in_kg": true
     },
     {
       "variable": "snw",
@@ -7198,8 +7188,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "sea surface temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/sst",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.19/tos",
+      "in_kg": true
     },
     {
       "variable": "sund",
@@ -7520,8 +7510,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Daily Maximum Near-Surface Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tasmax-bc",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/tasmax-bc",
+      "in_kg": true
     },
     {
       "variable": "tasmaxts",
@@ -7543,8 +7533,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Daily Maximum Near-Surface Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tasmaxts",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/tasmaxts",
+      "in_kg": true
     },
     {
       "variable": "tasmin",
@@ -7589,8 +7579,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Daily Minimum Near-Surface Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tasmin-bc",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/tasmin-bc",
+      "in_kg": true
     },
     {
       "variable": "tasmints",
@@ -7612,8 +7602,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Daily Minimum Near-Surface Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tasmints",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/tasmints",
+      "in_kg": true
     },
     {
       "variable": "tauu",
@@ -7704,8 +7694,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Daily Maximum Surface Temperature; Surface Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tsmax",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/tsmax",
+      "in_kg": true
     },
     {
       "variable": "tsmin",
@@ -7727,8 +7717,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Daily Minimum Surface Temperature; Surface Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tsmin",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/tsmin",
+      "in_kg": true
     },
     {
       "variable": "u200",
@@ -8095,8 +8085,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Frictional velocity in similarity theory",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ustar",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ustar",
+      "in_kg": true
     },
     {
       "variable": "v200",
@@ -8739,8 +8729,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Surface Roughness Length",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zo",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zo",
+      "in_kg": true
     },
     {
       "variable": "areacella",
@@ -8808,8 +8798,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Soil Moisture Saturation Point",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/mrsosat",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/mrsosat",
+      "in_kg": true
     },
     {
       "variable": "mrsowp",
@@ -8831,8 +8821,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Soil Moisture Wilting Point",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/mrsowp",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/mrsowp",
+      "in_kg": true
     },
     {
       "variable": "orog",
@@ -8946,8 +8936,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Surface albedo",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/alb",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/alb",
+      "in_kg": true
     },
     {
       "variable": "apet",
@@ -8969,8 +8959,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Accumulated Morton areal potential evapotranspiration",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/apet",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/apet",
+      "in_kg": true
     },
     {
       "variable": "cdnc200",
@@ -9107,8 +9097,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud Droplet Number Concentration At Cloud Top",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cdnctop",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cldncl",
+      "in_kg": true
     },
     {
       "variable": "clh",
@@ -9245,8 +9235,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Convective Cloud Fraction",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cltc100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cltc",
+      "in_kg": true
     },
     {
       "variable": "clwvi",
@@ -9797,8 +9787,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Ice Cloud Optical Depth",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/icod",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/icod",
+      "in_kg": true
     },
     {
       "variable": "lcod",
@@ -9820,8 +9810,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Liquid Cloud Optical Depth",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/lcod",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/lcod",
+      "in_kg": true
     },
     {
       "variable": "lwp",
@@ -9981,8 +9971,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Precipitation",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/pr-bc",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/pr-bc",
+      "in_kg": true
     },
     {
       "variable": "pr-fl",
@@ -10004,8 +9994,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Precipitation",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/pr-fl",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/pr-fl",
+      "in_kg": true
     },
     {
       "variable": "prc",
@@ -10257,8 +10247,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Clear-Sky Surface Upwelling Longwave Radiation",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/rluscs",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/rluscs",
+      "in_kg": true
     },
     {
       "variable": "rlut",
@@ -10533,8 +10523,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Monthly Maximum Daily Maximum Near-Surface Wind Speed",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/sfcWindmaxmax",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/sfcWindmaxmax",
+      "in_kg": true
     },
     {
       "variable": "sic",
@@ -10671,8 +10661,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "sea surface temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/sst",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.19/tos",
+      "in_kg": true
     },
     {
       "variable": "sund",
@@ -10993,8 +10983,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Daily Maximum Near-Surface Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tasmax-bc",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/tasmax-bc",
+      "in_kg": true
     },
     {
       "variable": "tasmin",
@@ -11039,8 +11029,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Daily Minimum Near-Surface Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tasmin-bc",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/tasmin-bc",
+      "in_kg": true
     },
     {
       "variable": "tauu",
@@ -12189,8 +12179,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Surface albedo",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/alb",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/alb",
+      "in_kg": true
     },
     {
       "variable": "apet",
@@ -12212,8 +12202,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Accumulated Morton areal potential evapotranspiration",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/apet",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/apet",
+      "in_kg": true
     },
     {
       "variable": "clivi",
@@ -12764,8 +12754,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Precipitation",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/pr-bc",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/pr-bc",
+      "in_kg": true
     },
     {
       "variable": "pr-fl",
@@ -12787,8 +12777,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Precipitation",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/pr-fl",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/pr-fl",
+      "in_kg": true
     },
     {
       "variable": "prc",
@@ -13155,8 +13145,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Seasonal Maximum Daily Maximum Near-Surface Wind Speed",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/sfcWindmaxmax",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/sfcWindmaxmax",
+      "in_kg": true
     },
     {
       "variable": "sic",
@@ -13293,8 +13283,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "sea surface temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/sst",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.19/tos",
+      "in_kg": true
     },
     {
       "variable": "sund",
@@ -13592,8 +13582,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Daily Maximum Near-Surface Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tasmax-bc",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/tasmax-bc",
+      "in_kg": true
     },
     {
       "variable": "tasmin",
@@ -13638,8 +13628,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Daily Minimum Near-Surface Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/tasmin-bc",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/tasmin-bc",
+      "in_kg": true
     },
     {
       "variable": "tauu",
