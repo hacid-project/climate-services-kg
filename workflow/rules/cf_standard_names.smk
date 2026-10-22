@@ -6,6 +6,7 @@
 rule cf_standard_names:
     input:
         "data-sources/cf-standard-names/rdf/standard-names.jsonld",
+        "data-sources/cf-standard-names/data/standard-names.json",
 
 
 # The table, in the version of config.yaml (cf_standard_names)
@@ -41,3 +42,17 @@ rule cf_standard_names_map:
         "logs/cf_standard_names/map.log",
     shell:
         "jq -f {input.mapping:q} {input.table:q} > {output:q} 2> {log:q}"
+
+
+# The names of the table (entries and aliases), as a sorted array, to tell the
+# CF standard names in other sources (e.g. the CMOR tables)
+rule cf_standard_names_list:
+    input:
+        "data-sources/cf-standard-names/data/cf-standard-name-table.json",
+    output:
+        "data-sources/cf-standard-names/data/standard-names.json",
+    log:
+        "logs/cf_standard_names/list.log",
+    shell:
+        "jq '.standard_name_table | [.entry[], .alias[] | .[\"@id\"]] | unique'"
+        " {input:q} > {output:q} 2> {log:q}"

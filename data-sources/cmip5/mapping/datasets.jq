@@ -20,8 +20,13 @@
 # cmip5_variable_spec in esgf.jq), for each dataset with the index of the
 # mapping of the MIP variables.
 #
+# The variables not in the CMOR tables are skipped, renamed or defined locally
+# for their model as given by mapping/variables.json (see
+# cmip5_dataset_variable_iri in esgf.jq and variables.jq).
+#
 # Arguments: --slurpfile cmor_tables <tables of the CMIP5 CMOR tables>
-# (data-sources/cmor-tables/data/cmip5/5.0.json), --slurpfile mip_index
+# (data-sources/cmor-tables/data/cmip5/5.0.json), --slurpfile model_variables
+# mapping/variables.json, --slurpfile mip_index
 # <index of the mapping of the MIP variables>
 # (data-sources/cmor-tables/data/mip-mapping-index.json); the modules of
 # data-sources/cmor-tables/mapping and of this directory (esgf.jq) must be in
@@ -60,10 +65,14 @@ cmip5_variable_index($entries_by_name; $mip_index) as $variable_index |
     [.institute[] | ns + "organizations/\(quote)"] as $institutes |
     .cmor_table[0] as $table |
     .time_frequency[0] as $frequency |
+    .model[0] as $model |
     [
         .variable[]? |
-        {table: $table, variable: ., frequency: $frequency} |
-        cmip5_variable_iri_indexed($variable_index; $entries_by_name; $mip_index)
+        cmip5_dataset_variable_iri(
+            $model_variables[0]; $model;
+            {table: $table, variable: ., frequency: $frequency} |
+            cmip5_variable_iri_indexed($variable_index; $entries_by_name; $mip_index)
+        )
     ] as $variables |
     (.experiment | scenario_iris) as $scenarios |
     temporal_grid as $time |

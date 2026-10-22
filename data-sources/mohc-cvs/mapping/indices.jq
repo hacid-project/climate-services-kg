@@ -11,6 +11,10 @@
     from_entries
 ) as $mohc_sectors_map |
 
+# The CF standard names (--slurpfile cf_names
+# data-sources/cf-standard-names/data/standard-names.json), as object keys
+($cf_names[0] | map({key: ., value: true}) | from_entries) as $cf_names |
+
 def to_camel_case:
     split(" ") |
     map((.[:1] | ascii_upcase) + (.[1:] | ascii_downcase)) |
@@ -30,6 +34,7 @@ def to_camel_case:
         sector: "https://w3id.org/hacid/data/cs/climdex/sectors/",
         climdex: "https://w3id.org/hacid/data/cs/climdex/indices/",
         variable: "https://w3id.org/hacid/data/cs/variables/mip/",
+        cfvariable: "https://w3id.org/hacid/data/cs/variables/cf/",
         unit: "https://w3id.org/hacid/data/cs/unitsofmeasure/",
         dimension: "https://w3id.org/hacid/data/cs/dimensions/",
         label: "rdfs:label",
@@ -175,7 +180,8 @@ def to_camel_case:
                                     .AssociatedVariables[] |
                                     {
                                         type: "derivedFrom",
-                                        related: @uri "variable:\(.)"
+                                        # a CF standard name is a CF variable, any other name a MIP variable
+                                        related: (if $cf_names[.] then @uri "cfvariable:\(.)" else @uri "variable:\(.)" end)
                                     }
                                 else
                                     empty

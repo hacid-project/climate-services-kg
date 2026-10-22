@@ -52,7 +52,7 @@ cf_standard_names:
   # is published from the GitHub repository cf-convention/cf-convention.github.io:
   # the same files are at
   # https://raw.githubusercontent.com/cf-convention/cf-convention.github.io/main/Data/cf-standard-names
-  version: 86
+  version: 95
   url: https://cfconventions.org/Data/cf-standard-names
 
 cordex_domains:

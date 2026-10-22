@@ -37,3 +37,28 @@ Decisions taken in mapping the CMIP5 datasets (the ESGF search results,
 - **Several definitions.** When each of the definitions resolves to the same
   IRI, that IRI is used (no CMIP5 dataset changed with this rule, introduced
   for CORDEX-CMIP5).
+
+## Variables not in the CMOR tables (`mapping/variables.json`)
+
+Seven variable names of the datasets are in no edition of the CMOR tables.
+Each is skipped, renamed or defined locally for its model, as given by
+`mapping/variables.json` (`cmip5_dataset_variable_iri` in `mapping/esgf.jq`),
+from the ESGF metadata of the datasets (long name, standard name, units):
+
+| Variable | Model, table | Metadata | Mapping |
+| --- | --- | --- | --- |
+| `gridspec` | GFDL-CM2.1, CM3, ESM2G, ESM2M, `fx` | no long name, standard name `gridspec` | skipped (`skip`): grid description files, not a variable; the datasets hold no variable for it |
+| `rluscs` | INM-CM4, `3hr` | "Surface Upwelling Clear-Sky Shortwave Radiation" | renamed (`renames`) to `rsuscs`: its metadata are those of `rsuscs`, the `3hr` table has no `rluscs`, and INM-CM4 publishes all the other variables of the table but `rsuscs` |
+| `orograw` | CanESM2, `fx` | "Surface Altitude Unmodified", `surface_altitude`, `m` | local: the raw orography, as opposed to the surface altitude of the model (`orog`) |
+| `lm` | FGOALS-s2, `fx` | "land sea mask", `land_sea_mask`, `1` | local, specialization of the CF `land_binary_mask` (an educated guess: the binary counterpart of `sftlf`; the values were not verified) |
+| `rtoa` | GFDL-CM2.1, `AmonExtras` | "TOA Net Downward Radiation", `toa_net_downward_radiative_flux`, `W m-2` | local: at the top of the atmosphere, unlike `rtmt` (at the top of the model) |
+| `pbp` | GFDL-ESM2M, `OyrExtras` | "Biogenic Phosphorus Production", `biogenic_phosphorus_production`, `mol m-3 s-1` | local, without CF variable: the phosphorus counterpart of `pbfe` and `pbsi` (`Oyr`); the closest CF name is vertically integrated |
+| `swit` | CNRM-CM5, `3hr` | "Total Soil Wetness Index", `total_soil_wetness_index`, `1` | local, without CF variable: the soil wetness index of the ISBA land surface model |
+
+The local variables (`local`, in the format of the CMOR tables) are mapped as
+the variables of the CMOR tables (`mapping/variables.jq`, `rdf/variables.jsonld`)
+as `.../variables/cmip5/<model>/<name>`, members of the collection of the
+variables of the model (`.../variables/cmip5/<model>`, associated with the
+model), with the label "<long name> (<name>, <model>)". The `fx` variables
+depend on the geodetic dimension only. Each entry has a `note` with the
+reasons.

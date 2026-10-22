@@ -23,6 +23,8 @@ rule mohc_cvs_map:
         mapping="data-sources/mohc-cvs/mapping/{name}.jq",
         # schemes of the values of the operations
         cv_map="data-sources/mohc-cvs/data/cv-map.json",
+        # CF standard names, to tell the CF variables among the associated variables
+        cf_names="data-sources/cf-standard-names/data/standard-names.json",
     output:
         "data-sources/mohc-cvs/rdf/{name}.jsonld",
     wildcard_constraints:
@@ -30,4 +32,5 @@ rule mohc_cvs_map:
     log:
         "logs/mohc_cvs/map_{name}.log",
     shell:
-        "jq --slurpfile cv_map {input.cv_map:q} -f {input.mapping:q} {input.data:q} > {output:q} 2> {log:q}"
+        "jq --slurpfile cv_map {input.cv_map:q} --slurpfile cf_names {input.cf_names:q}"
+        " -f {input.mapping:q} {input.data:q} > {output:q} 2> {log:q}"

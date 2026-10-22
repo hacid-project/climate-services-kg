@@ -11,6 +11,7 @@ data-sources/cmor-tables/rdf/current/*/*.jsonld,https://w3id.org/hacid/data/cs/c
 data-sources/cmor-tables/rdf/previous/*/*.jsonld,https://w3id.org/hacid/data/cs/cmor-tables,n
 data-sources/cf-standard-names/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cf,n
 data-sources/cmip5/rdf/datasets.jsonld,https://w3id.org/hacid/data/cs/cmip5/datasets,n
+data-sources/cmip5/rdf/variables.jsonld,https://w3id.org/hacid/data/cs/cmip5/datasets,n
 data-sources/cmip5-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cmip5/cvs,n
 data-sources/cordex-domains/rdf/domains.jsonld,https://w3id.org/hacid/data/cs/cordex/cvs,n
 data-sources/cordex-cmip5-cvs/rdf/*.jsonld,https://w3id.org/hacid/data/cs/cordex/cvs,n

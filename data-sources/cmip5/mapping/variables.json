@@ -1,0 +1,63 @@
+{
+    "skip": {
+        "gridspec": "grid description files of the GFDL models (fx, no long name), not a variable"
+    },
+    "renames": {
+        "INM-CM4": {
+            "rluscs": {
+                "variable": "rsuscs",
+                "note": "3hr: the metadata (long name, standard name, units) are those of rsuscs, the 3hr table has no rluscs, and INM-CM4 publishes all the other variables of the 3hr table but rsuscs"
+            }
+        }
+    },
+    "local": {
+        "CanESM2": {
+            "orograw": {
+                "long_name": "Surface Altitude Unmodified",
+                "standard_name": "surface_altitude",
+                "units": "m",
+                "modeling_realm": "atmos",
+                "dimensions": "longitude latitude",
+                "note": "fx: the raw orography, as opposed to the surface altitude of the model (orog), also published"
+            }
+        },
+        "CNRM-CM5": {
+            "swit": {
+                "long_name": "Total Soil Wetness Index",
+                "units": "1",
+                "modeling_realm": "land",
+                "dimensions": "longitude latitude time",
+                "note": "3hr: the soil wetness index of the ISBA land surface model (total_soil_wetness_index in the metadata, not a CF standard name)"
+            }
+        },
+        "FGOALS-s2": {
+            "lm": {
+                "long_name": "Land Sea Mask",
+                "standard_name": "land_binary_mask",
+                "units": "1",
+                "modeling_realm": "atmos",
+                "dimensions": "longitude latitude",
+                "note": "fx: land_sea_mask in the metadata (not a CF standard name), presumably the binary counterpart of sftlf (1 land, 0 sea; values not verified)"
+            }
+        },
+        "GFDL-CM2.1": {
+            "rtoa": {
+                "long_name": "TOA Net Downward Radiation",
+                "standard_name": "toa_net_downward_radiative_flux",
+                "units": "W m-2",
+                "modeling_realm": "atmos",
+                "dimensions": "longitude latitude time",
+                "note": "AmonExtras: at the top of the atmosphere, unlike rtmt (at the top of the model)"
+            }
+        },
+        "GFDL-ESM2M": {
+            "pbp": {
+                "long_name": "Biogenic Phosphorus Production",
+                "units": "mol m-3 s-1",
+                "modeling_realm": "ocnBgchem",
+                "dimensions": "longitude latitude olevel time",
+                "note": "OyrExtras: the phosphorus counterpart of pbfe and pbsi (Oyr); biogenic_phosphorus_production in the metadata is not a CF standard name, and the CF tendency_of_ocean_mole_content_of_phosphorus_due_to_biological_production is vertically integrated"
+            }
+        }
+    }
+}

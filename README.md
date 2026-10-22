@@ -63,7 +63,11 @@ The [CF standard name table](https://cfconventions.org/Data/cf-standard-names/),
 package `yq`, with the conventions of [xmltodict](https://github.com/martinblech/xmltodict)) and mapped with jq (`mapping/standard-names.jq`,
 `snakemake --cores 4 cf_standard_names`) to `data-sources/cf-standard-names/rdf/standard-names.jsonld`: a
 variable for each entry, member of the CF variables, with its units of measure, and the aliases, the same as
-(`owl:sameAs`) their entries, with the alias as alternative label.
+(`owl:sameAs`) their entries, with the alias as alternative label. The names of the table (entries and aliases) are also listed in
+`data-sources/cf-standard-names/data/standard-names.json`: the variables of the CMOR tables and the indices of the MOHC
+controlled vocabularies are linked to CF variables only by names of the table (the standard names of the CMOR tables
+that are not, are corrected when obvious, `data-sources/cmor-tables/mapping/cf-standard-name-fixes.json`, or not
+linked).
 
 The XML is also read by the analysis of the CMOR tables (to resolve the aliases).
 
@@ -115,7 +119,10 @@ resolved through `data-sources/cmor-tables/mapping/mip-mapping.json` from their 
 CMIP5 CMOR tables (e.g. a CMIP5 `tos`, in K, is `.../variables/mip/cmip6/6.0.19/tos`): the IRIs of the variables of
 the CMIP5 tables are indexed once from the configuration alone (`cmip5_variable_index` in `mapping/esgf.jq`, with
 the index of the mapping of the MIP variables, `data-sources/cmor-tables/data/mip-mapping-index.json`, rule
-`cmor_tables_mip_mapping_index`), and each dataset looks up its own.
+`cmor_tables_mip_mapping_index`), and each dataset looks up its own. The variables not in the CMOR tables are skipped (`gridspec`),
+renamed (the INM-CM4 `rluscs`, a misnamed `rsuscs`) or defined locally for their model (e.g. the CanESM2 `orograw`, as
+`.../variables/cmip5/CanESM2/orograw`, in `data-sources/cmip5/rdf/variables.jsonld`), as given by
+`data-sources/cmip5/mapping/variables.json` (see `data-sources/cmip5/DECISIONS.md`).
 
 ### CORDEX-CMIP5 domains and grids
 
@@ -152,8 +159,12 @@ is `.../variables/mip/siconc`), looked up by each dataset in an index built once
 with the mapping of the CMOR tables (`variables_jsonld`), as `.../variables/cordex/<variable>` in
 `data-sources/cordex-cmip5/rdf/variables.jsonld` (collection `.../variables/cordex`), with the long names of those at a
 single pressure level derived from the analogous MIP variables (e.g. `ta200` is "Air Temperature at 200hPa", as `ta500`
-on `p500`); the other variables not in the
-CMOR tables (e.g. `ua100m`, `pr-bc`) keep the IRI `.../variables/mip/<variable>`, which is not a variable of the KG.
+on `p500`). The other variables at a single pressure or height level that are not variables of the KG (e.g. `hus200`,
+`ua50m`) are defined in the same way from a compact specification (`mapping/level-variables.json`: for each base its
+long name, standard name, units and levels; `u` and `v` are aliases of `ua` and `va`); the other variables not in the
+CMOR tables are skipped (coordinates, e.g. `crs`), renamed to MIP variables (e.g. `sst` to `tos`) or defined locally
+(e.g. the bias-corrected `pr-bc`, derived from `pr`), as given by `mapping/local-variables.json` (see
+`data-sources/cordex-cmip5/DECISIONS.md`, which also records the doubtful cases).
 
 The variables requested for the CORDEX archive (`data-sources/cordex-cmip5/CORDEX_standard_output.xls`, the CORDEX
 standard output) are converted to JSON tables in the format of the CMOR tables, one per frequency

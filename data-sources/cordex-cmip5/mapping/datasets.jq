@@ -32,13 +32,20 @@
 # of the dataset (see cordex-variables.jq).
 #
 # The variables not in the KG that CORDEX requests (CORDEX_standard_output.json)
+# and the variables at a single level not in the KG (mapping/level-variables.json)
 # are defined locally (see variables.jq and local_variables in
-# cordex-variables.jq), https://w3id.org/hacid/data/cs/variables/cordex/<name>.
+# cordex-variables.jq), https://w3id.org/hacid/data/cs/variables/cordex/<name>;
+# the bases of the single level variables that are aliases (e.g. u200, of
+# ua200) are resolved. The other variables not in the CMOR tables are skipped,
+# renamed or defined locally as given by mapping/local-variables.json (see
+# cordex_variable_name and local_variables in cordex-variables.jq).
 #
 # Arguments: --slurpfile cmor_tables <tables of the CMIP5 CMOR tables>
 # (data-sources/cmor-tables/data/cmip5/5.0.json), --slurpfile model_synonyms
 # mapping/cmip5-model-synonyms.json, --slurpfile standard_output
-# CORDEX_standard_output.json, --slurpfile kg_variables
+# CORDEX_standard_output.json, --slurpfile level_variables
+# mapping/level-variables.json, --slurpfile local_spec
+# mapping/local-variables.json, --slurpfile kg_variables
 # data-sources/cmor-tables/data/variable-iris.json, --slurpfile mip_index
 # data-sources/cmor-tables/data/mip-mapping-index.json, --slurpfile data_issues
 # mapping/data-issues.json (the known issues of the datasets, see
@@ -95,7 +102,7 @@ def _clean:
 $mip_index[0] as $mip_index |
 # the variables defined locally and the IRIs of the variables of the CMIP5
 # tables, from the configuration
-local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables |
+local_variables($standard_output[0]; $level_variables[0]; $local_spec[0]; $entries_by_name; $kg) as $local_variables |
 cordex_variable_index($entries_by_name; $mip_index) as $variable_index |
 [
     $datasets[] |
@@ -142,7 +149,10 @@ cordex_variable_index($entries_by_name; $mip_index) as $variable_index |
         .variable[] |
         . as $variable |
         (($record | model_variable($data_issues[0]; $variable)) | if . then model_variable_iri else null end) //
-        variable_iri_of($variable; $frequency; $variable_index; $entries_by_name; $mip_index; $local_variables; $kg)
+        (
+            $variable | cordex_variable_name($level_variables[0]; $local_spec[0]) |
+            variable_iri_of(.; $frequency; $variable_index; $entries_by_name; $mip_index; $local_variables; $kg)
+        )
     ] as $variables |
     (.experiment | scenario_iris | map(id(.))) as $refers_to_scenario |
     temporal_grid as $time |

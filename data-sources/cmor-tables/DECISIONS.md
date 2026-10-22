@@ -49,3 +49,27 @@ The evolution of the definitions across all the editions is analysed in
 - The same mapping (`variables_jsonld`, with the collection as parameter) is
   used for the variables defined locally from tables in the same format (the
   CORDEX standard output, see `data-sources/cordex-cmip5/DECISIONS.md`).
+- **Standard names not in the CF table.** A variable is a specialization of
+  the CF variable of its standard name (`data:isSpecializationOfVariable`)
+  only if the name is in the CF standard name table of the KG (its entries and
+  aliases, `data-sources/cf-standard-names/data/standard-names.json`), so that
+  no link points to a CF variable that is not in the KG. The standard names of
+  some editions are not in the table; those that are obvious typos or were
+  renamed in later editions are corrected (`mapping/cf-standard-name-fixes.json`,
+  with a note for each, `cf_standard_name`):
+
+  | Variable | Standard name of the tables | CF standard name |
+  | --- | --- | --- |
+  | `fg14co2` (up to 6.0.15) | `air_sea_flux_of_14CO2` | `surface_downward_mass_flux_of_14C_dioxide_abiotic_analogue_expressed_as_carbon` |
+  | `pod0` (6.2.24) | `integration_wrt_time_of_mole_stomatal_uptake_of_ozone` | `integral_wrt_time_of_mole_stomatal_uptake_of_ozone` |
+  | `rootdsl` (6.2.24) | `root_mass_content` | `root_mass_content_of_carbon` |
+  | `irrLut` (up to 6.1.23) | `surface_downward_water_flux_due_to_irrigation` | `surface_downward_mass_flux_of_water_due_to_irrigation` |
+  | `fLulccAtmLut` (up to 6.1.23) | `..._direct_to_atmosphere_due_to_anthropogenic_land_use_land_cover_change` | `..._due_to_anthropogenic_land_use_or_land_cover_change_excluding_forestry_and_agricultural_products` |
+  | `fProductDecompLut` (up to 6.1.23) | `tendency_of_atmospheric_..._from_wood_and_agricultural_product_pool` | `tendency_of_atmosphere_..._from_forestry_and_agricultural_products` |
+
+  The others are not linked to a CF variable: `CO2_total_mass_in_atmos`
+  (`co2totalmass`), `depth_of_frozen_soil` (`dfr`), `heat_content_of_ocean_layer`
+  (`hcont300`), `integral_wrt_depth_of_product_of_sea_water_density_and_prognostic_temperature`
+  (`tomint`), `strat_aerosol_optical_depth` (`od550aerstrat`), never CF names
+  (up to version 95), and the placeholder `missing` (`nwdFracLut`). The same
+  rule applies to the variables defined locally with `variables_jsonld`.

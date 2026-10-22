@@ -15,10 +15,11 @@
 #
 # Input: the array of the tables of the edition (see variables-jsonld.jq).
 # Arguments: --arg era <era> --arg version <version> (the edition, as in
-# config/config.yaml) --slurpfile eras config/cmor-tables-eras.json
+# config/config.yaml) --slurpfile eras config/cmor-tables-eras.json,
+# --slurpfile cf_names and --slurpfile cf_fixes (as for variables.jq)
 #
 #   jq -L data-sources/cmor-tables/mapping --arg era cmip6 --arg version 6.0.19 \
-#       --slurpfile eras config/cmor-tables-eras.json \
+#       --slurpfile eras config/cmor-tables-eras.json --slurpfile cf_names <names> --slurpfile cf_fixes <fixes> \
 #       -f data-sources/cmor-tables/mapping/mip-previous-variables.jq data-sources/cmor-tables/data/cmip6/6.0.19.json
 
 include "./variables-jsonld";
@@ -62,5 +63,5 @@ include "./mip-variables";
     map({key: .[0].iri, value: {(.[0].relation): (map(.follower) | unique | map({"@id": .}))}}) |
     from_entries
 ) as $relations |
-variables_jsonld(.iri; "\(.long_name) (\(.out_name), \(.era_version))") |
+variables_jsonld(.iri; "\(.long_name) (\(.out_name), \(.era_version))"; cf_standard_names($cf_names[0]; $cf_fixes[0])) |
 .["@graph"] |= map(. + ($relations[.["@id"]] // {}))

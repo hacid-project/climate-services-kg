@@ -61,7 +61,8 @@ def cordex_variables_collection: ns + "variables/cordex";
 # IRI of a variable defined locally (input: its out_name)
 def cordex_variable_iri: _cordex_variables_base + @uri;
 
-# IRI of a variable of a dataset of a time frequency: the MIP variable (from
+# IRI of a variable of a dataset of a time frequency (the name to resolve, see
+# cordex_variable_name): the MIP variable (from
 # the index, $index, see cordex_variable_index, or resolved for a name not in
 # the tables or a monClim frequency), unless it is not a variable of the KG
 # ($kg) and the variable is defined locally ($local_variables, see
@@ -76,33 +77,86 @@ def variable_iri_of($variable; $frequency; $index; $entries_by_name; $mip_index;
     ) as $iri |
     if ($kg[$iri] | not) and $local_variables[$variable] then $variable | cordex_variable_iri else $iri end;
 
+# Variables at a single level (pressure or height), by out_name, from their
+# specification ($levels, mapping/level-variables.json): for each base and
+# level, <base><level> (e.g. hus200, at 200 hPa) and <base><level>m (e.g.
+# ua50m, at 50 m), and the base itself on all the levels if all_levels (e.g.
+# clfr), with an entry as those of the CMOR tables (long name at the level,
+# standard name and units of the base), marked as specified (its long name is
+# given)
+def level_variables($levels):
+    $levels.variables | to_entries | map(
+        .key as $base |
+        .value as $spec |
+        {long_name: $spec.long_name, standard_name: $spec.standard_name, units: $spec.units,
+         modeling_realm: "atmos", dimensions: "longitude latitude time", specified: true} as $entry |
+        (
+            (if $spec.all_levels then {key: $base, value: ($entry | .dimensions = "longitude latitude alevel time")} else empty end),
+            ($spec.pressure_levels[]? as $level | {key: "\($base)\($level)", value: ($entry | .long_name += " at \($level)hPa")}),
+            ($spec.height_levels[]? as $level | {key: "\($base)\($level)m", value: ($entry | .long_name += " at \($level)m")})
+        )
+    ) | from_entries;
+
+# The name of a variable (input) of the datasets to resolve, given the
+# specifications of the variables at a single level ($levels) and of the other
+# variables not in the CMOR tables ($locals, mapping/local-variables.json):
+# none if skipped ($locals.skip), the variable it is renamed to
+# ($locals.renames), or the name with the base of a single level variable
+# replaced by the one it is an alias of ($levels.aliases, e.g. u200 is ua200)
+def cordex_variable_name($levels; $locals):
+    if $locals.skip[.] then
+        empty
+    elif $locals.renames[.] then
+        $locals.renames[.].variable
+    else
+        (capture("^(?<base>[A-Za-z]+)(?<level>[0-9]+m?)$") // null) as $name |
+        if $name != null and $levels.aliases[$name.base] then $levels.aliases[$name.base] + $name.level else . end
+    end;
+
 # Variables defined locally, by out_name: the variables of the CORDEX standard
 # output ($standard_output: its tables, CORDEX_standard_output.json) whose MIP
 # variable is not a variable of the KG ($kg: object with the IRIs of the
 # variables of the KG as keys) at any of their frequencies, with their entry
-# (of the daily table, if they have one, otherwise the first one)
-def local_variables($standard_output; $entries_by_name; $kg):
-    [$standard_output[] | .variable_entry | to_entries[] | .value + {name: .key}] |
-    group_by(.name) |
-    map(
-        select(all(.[]; $kg[mip_variable_iri_of(.name; .frequency; $entries_by_name)] | not)) |
-        {key: .[0].name, value: ((map(select(.frequency == "day")) + .)[0] | del(.name))}
-    ) |
-    from_entries;
+# (of the daily table, if they have one, otherwise the first one), the
+# variables at a single level ($levels, see level_variables) whose MIP
+# variable is not a variable of the KG, and the other variables not in the
+# CMOR tables ($locals.local, mapping/local-variables.json, marked as
+# specified)
+def local_variables($standard_output; $levels; $locals; $entries_by_name; $kg):
+    (
+        [$standard_output[] | .variable_entry | to_entries[] | .value + {name: .key}] |
+        group_by(.name) |
+        map(
+            select(all(.[]; $kg[mip_variable_iri_of(.name; .frequency; $entries_by_name)] | not)) |
+            {key: .[0].name, value: ((map(select(.frequency == "day")) + .)[0] | del(.name))}
+        ) |
+        from_entries
+    ) as $requested |
+    (
+        level_variables($levels) +
+        ($locals.local | map_values(. + {specified: true})) |
+        with_entries(select(($kg[mip_variable_iri_of(.key; ""; $entries_by_name)] | not) and $requested[.key] == null))
+    ) + $requested;
 
 # IRIs of the variables of the datasets (input: their ESGF metadata, as an
-# array), by variable_key: the MIP variables (mip_variable_iri_of), unless they
-# are not variables of the KG and the variable is defined locally
-# ($local_variables, by local_variables)
-def variable_iris($entries_by_name; $local_variables; $kg):
+# array), by variable_key: the MIP variables (mip_variable_iri_of, of the name
+# to resolve, see cordex_variable_name), unless they are not variables of the
+# KG and the variable is defined locally ($local_variables, by
+# local_variables); null for the variables skipped
+def variable_iris($entries_by_name; $local_variables; $levels; $locals; $kg):
     [.[] | {variable: .variable[], frequency: .time_frequency[0]}] |
     unique |
     map(
         . as {$variable, $frequency} |
-        mip_variable_iri_of($variable; $frequency; $entries_by_name) as $iri |
         {
             key: variable_key($variable; $frequency),
-            value: (if ($kg[$iri] | not) and $local_variables[$variable] then $variable | cordex_variable_iri else $iri end)
+            value: (
+                first(
+                    ($variable | cordex_variable_name($levels; $locals)) as $name |
+                    mip_variable_iri_of($name; $frequency; $entries_by_name) as $iri |
+                    if ($kg[$iri] | not) and $local_variables[$name] then $name | cordex_variable_iri else $iri end
+                ) // null
+            )
         }
     ) |
     from_entries;

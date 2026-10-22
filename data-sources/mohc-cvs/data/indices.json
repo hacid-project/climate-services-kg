@@ -1098,7 +1098,7 @@
       "Source": "Climate ADAPT",
       "SourceLink": "https://climate-adapt.eea.europa.eu/en/knowledge/european-climate-data-explorer/overview-list",
       "AssociatedVariables": [
-        "tmin"
+        "tasmin"
       ],
       "_AssociatedVariable": "tmin",
       "Sectors": [
@@ -1131,7 +1131,7 @@
       "Source": "Copernicus CCS",
       "SourceLink": "https://surfobs.climate.copernicus.eu/userguidance/indicesdictionary.php",
       "AssociatedVariables": [
-        "tmax"
+        "tasmax"
       ],
       "_AssociatedVariable": "tmax",
       "Sectors": [
@@ -1711,7 +1711,7 @@
       "DefinitionSource": "UK CRI",
       "Commentary": "Calculated using hydrological model",
       "AssociatedVariables": [
-        "mrso "
+        "mrso"
       ],
       "_AssociatedVariable": "mrso (mass_content_of_water_in_soil), mrsofc (soil_moisture_content_at_field_capacity) or calculate using land surface model: pr, tas, huss, rls, rss, sfcWind, psl",
       "Sectors": [
@@ -2153,7 +2153,7 @@
       },
       "LinkedIndicatorRelation": "identicalTo",
       "AssociatedVariables": [
-        "mrso "
+        "mrso"
       ],
       "_AssociatedVariable": "mrso (Mass Content Of Water In Soil) or calculate using land surface model: pr, tas, huss, rls, rss, sfcWind, psl",
       "Sectors": [

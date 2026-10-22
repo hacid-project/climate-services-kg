@@ -15,7 +15,7 @@
 
 <https://w3id.org/hacid/data/cs/variables/cordex> a top:Collection ;
     rdfs:label "CORDEX variables"@en ;
-    rdfs:comment "Collection of variables requested by CORDEX (CORDEX standard output) not defined in the CMOR Tables (e.g. variables at a single pressure level)."@en .
+    rdfs:comment "Collection of variables of the CORDEX-CMIP5 datasets not defined in the CMOR Tables: variables requested by CORDEX (CORDEX standard output), other variables at a single pressure or height level, and other variables of the datasets (e.g. bias-corrected variables)."@en .
 
 <https://w3id.org/hacid/data/cs/climdex/indices> a top:Collection ;
     rdfs:label "Climdex indices"@en ;
