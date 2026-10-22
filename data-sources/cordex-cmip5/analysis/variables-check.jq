@@ -6,7 +6,8 @@
 # Input: the pages of the ESGF search results (data/cordex-<n>.json), read
 # with -n. Arguments: --slurpfile data_issues mapping/data-issues.json,
 # --slurpfile standard_output
-# CORDEX_standard_output.json, --slurpfile cmor_tables (the CMIP5
+# CORDEX_standard_output.json, --slurpfile level_variables
+# mapping/level-variables.json, --slurpfile cmor_tables (the CMIP5
 # CMOR tables, as for the mapping), --slurpfile kg_variables (the IRIs of the
 # variables of the KG); the modules of mapping/, data-sources/cmip5/mapping and
 # data-sources/cmor-tables/mapping must be in the library path (-L).
@@ -91,8 +92,8 @@ $data_issues[0] as $issues |
 ) as $excluded |
 ($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
 ($kg_variables[0] | iri_set) as $kg |
-local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables |
-($datasets | variable_iris($entries_by_name; $local_variables; $kg)) as $variable_iris |
+local_variables($standard_output[0]; $level_variables[0]; $entries_by_name; $kg) as $local_variables |
+($datasets | variable_iris($entries_by_name; $local_variables; $level_variables[0]; $kg)) as $variable_iris |
 # Entries of the standard output by variable, with their frequency
 (
     [$standard_output[0][] | .variable_entry | to_entries[] | .value + {name: .key}] |
@@ -204,7 +205,13 @@ local_variables($standard_output[0]; $entries_by_name; $kg) as $local_variables 
             long_name: $entry.long_name,
             long_names: ($f.long_names | unique | join("; ")),
             variable_iri: $iri,
-            in_kg: (if $iri != null then ($kg[$iri] // false) or ($local_variables[$variable] != null) else null end)
+            in_kg: (
+                if $iri != null then
+                    ($kg[$iri] // false) or ($local_variables[$variable | level_variable_name($level_variables[0])] != null)
+                else
+                    null
+                end
+            )
         }
     )
 ) as $variables |

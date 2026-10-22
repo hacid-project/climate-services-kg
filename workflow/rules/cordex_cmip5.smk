@@ -47,6 +47,7 @@ rule cordex_cmip5_map_datasets:
         kg_variables=rules.cmor_tables_variable_iris.output,
         mip_index="data-sources/cmor-tables/data/mip-mapping-index.json",
         data_issues="data-sources/cordex-cmip5/mapping/data-issues.json",
+        level_variables="data-sources/cordex-cmip5/mapping/level-variables.json",
         modules=CORDEX_CMIP5_MODULES,
     output:
         directory("data-sources/cordex-cmip5/rdf/datasets"),
@@ -62,6 +63,7 @@ rule cordex_cmip5_map_datasets:
         " --slurpfile kg_variables {input.kg_variables:q}"
         " --slurpfile mip_index {input.mip_index:q}"
         " --slurpfile data_issues {input.data_issues:q}"
+        " --slurpfile level_variables {input.level_variables:q}"
         " -f {input.mapping:q} \"$page\" > {output:q}/$(basename \"$page\" .json).jsonld 2>> {log:q};"
         " done"
 
@@ -80,6 +82,9 @@ rule cordex_cmip5_map_variables:
         ),
         kg_variables=rules.cmor_tables_variable_iris.output,
         data_issues="data-sources/cordex-cmip5/mapping/data-issues.json",
+        level_variables="data-sources/cordex-cmip5/mapping/level-variables.json",
+        cf_names="data-sources/cf-standard-names/data/standard-names.json",
+        cf_fixes="data-sources/cmor-tables/mapping/cf-standard-name-fixes.json",
         # tables of the editions of the MIP variables, for the long names
         mip_tables=expand(
             "data-sources/cmor-tables/data/{edition}.json",
@@ -96,6 +101,8 @@ rule cordex_cmip5_map_variables:
         " --slurpfile cmor_tables {input.cmor_tables:q}"
         " --slurpfile kg_variables {input.kg_variables:q}"
         " --slurpfile data_issues {input.data_issues:q}"
+        " --slurpfile level_variables {input.level_variables:q}"
+        " --slurpfile cf_names {input.cf_names:q} --slurpfile cf_fixes {input.cf_fixes:q}"
         " -f {input.mapping:q} {input.mip_tables:q} > {output:q} 2> {log:q}"
 
 
@@ -131,6 +138,7 @@ rule cordex_cmip5_variables_check:
         modules=CORDEX_CMIP5_MODULES,
         kg_variables=rules.cmor_tables_variable_iris.output,
         data_issues="data-sources/cordex-cmip5/mapping/data-issues.json",
+        level_variables="data-sources/cordex-cmip5/mapping/level-variables.json",
     output:
         json="data-sources/cordex-cmip5/analysis/variables-check.json",
         csv="data-sources/cordex-cmip5/analysis/variables-check.csv",
@@ -142,6 +150,7 @@ rule cordex_cmip5_variables_check:
         " --slurpfile cmor_tables {input.cmor_tables:q}"
         " --slurpfile kg_variables {input.kg_variables:q}"
         " --slurpfile data_issues {input.data_issues:q}"
+        " --slurpfile level_variables {input.level_variables:q}"
         " -f {input.check:q} {input.data:q}/cordex-*.json > {output.json:q} 2> {log:q} &&"
         " jq -r '.variables | (.[0] | keys_unsorted) as $keys | ($keys | @csv), (.[] | [.[$keys[]]] | @csv)'"
         " {output.json:q} > {output.csv:q} 2>> {log:q}"

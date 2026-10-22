@@ -19,15 +19,98 @@
     "variables_found": 208,
     "variables_requested": 66,
     "variables_defined_locally": [
+      "cdnc200",
+      "cdnc500",
+      "cdnc700",
+      "cdnc850",
+      "cdnc925",
+      "clfr200",
+      "clfr500",
+      "clfr850",
       "clh",
+      "clice200",
+      "clice500",
+      "clice850",
       "cll",
       "clm",
+      "clwmr200",
+      "clwmr500",
+      "clwmr850",
+      "hur200",
+      "hur500",
+      "hur700",
+      "hur850",
+      "hur925",
+      "hus100",
+      "hus200",
+      "hus250",
+      "hus300",
+      "hus400",
+      "hus500",
+      "hus50m",
+      "hus600",
+      "hus700",
+      "hus925",
+      "hus975",
       "sund",
+      "ta100",
       "ta200",
+      "ta250",
+      "ta300",
+      "ta400",
+      "ta50m",
+      "ta600",
+      "ta925",
+      "ta975",
+      "thetapw1000",
+      "thetapw700",
+      "thetapw850",
+      "thetapw925",
+      "ua100",
+      "ua150m",
+      "ua200m",
+      "ua250",
+      "ua250m",
+      "ua300",
+      "ua400",
       "ua500",
+      "ua50m",
+      "ua600",
+      "ua700",
+      "ua925",
+      "ua975",
+      "va100",
+      "va150m",
+      "va200m",
+      "va250",
+      "va250m",
+      "va300",
+      "va400",
       "va500",
+      "va50m",
+      "va600",
+      "va700",
+      "va925",
+      "va975",
+      "wap200",
+      "wap700",
+      "wap850",
+      "wap925",
       "wsgsmax",
-      "zg200"
+      "zg100m",
+      "zg150m",
+      "zg200",
+      "zg200m",
+      "zg250",
+      "zg250m",
+      "zg300",
+      "zg400",
+      "zg50m",
+      "zg600",
+      "zg700",
+      "zg850",
+      "zg925",
+      "zg975"
     ],
     "by_requested": {
       "no": {
@@ -196,44 +279,14 @@
       "alb",
       "apet",
       "cape",
-      "cdnc200",
-      "cdnc500",
-      "cdnc700",
-      "cdnc850",
-      "cdnc925",
       "cdnctop",
       "clfr",
-      "clfr200",
-      "clfr500",
-      "clfr850",
       "clice",
-      "clice200",
-      "clice500",
-      "clice850",
       "cltc100",
       "clwmr",
-      "clwmr200",
-      "clwmr500",
-      "clwmr850",
       "crs",
       "heightv",
       "hufs",
-      "hur200",
-      "hur500",
-      "hur700",
-      "hur850",
-      "hur925",
-      "hus100",
-      "hus200",
-      "hus250",
-      "hus300",
-      "hus400",
-      "hus500",
-      "hus50m",
-      "hus600",
-      "hus700",
-      "hus925",
-      "hus975",
       "icod",
       "lcod",
       "mross",
@@ -248,73 +301,14 @@
       "soil_bounds",
       "soil_layer",
       "sst",
-      "ta100",
-      "ta250",
-      "ta300",
-      "ta400",
-      "ta50m",
-      "ta600",
-      "ta925",
-      "ta975",
       "tasmax-bc",
       "tasmaxts",
       "tasmin-bc",
       "tasmints",
       "tds",
-      "thetapw1000",
-      "thetapw700",
-      "thetapw850",
-      "thetapw925",
       "tsmax",
       "tsmin",
-      "u200",
-      "u500",
-      "u850",
-      "ua100",
-      "ua150m",
-      "ua200m",
-      "ua250",
-      "ua250m",
-      "ua300",
-      "ua400",
-      "ua50m",
-      "ua600",
-      "ua700",
-      "ua925",
-      "ua975",
       "ustar",
-      "v200",
-      "v500",
-      "v850",
-      "va100",
-      "va150m",
-      "va200m",
-      "va250",
-      "va250m",
-      "va300",
-      "va400",
-      "va50m",
-      "va600",
-      "va700",
-      "va925",
-      "va975",
-      "wap200",
-      "wap700",
-      "wap850",
-      "wap925",
-      "zg100m",
-      "zg150m",
-      "zg200m",
-      "zg250",
-      "zg250m",
-      "zg300",
-      "zg400",
-      "zg50m",
-      "zg600",
-      "zg700",
-      "zg850",
-      "zg925",
-      "zg975",
       "zo"
     ],
     "requested_not_in_kg": [],
@@ -1270,8 +1264,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus50m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus50m",
+      "in_kg": true
     },
     {
       "variable": "hus850",
@@ -1960,8 +1954,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta50m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta50m",
+      "in_kg": true
     },
     {
       "variable": "ta850",
@@ -2121,8 +2115,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua150m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua150m",
+      "in_kg": true
     },
     {
       "variable": "ua200",
@@ -2167,8 +2161,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua200m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua200m",
+      "in_kg": true
     },
     {
       "variable": "ua250m",
@@ -2190,8 +2184,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua250m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua250m",
+      "in_kg": true
     },
     {
       "variable": "ua500",
@@ -2236,8 +2230,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua50m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua50m",
+      "in_kg": true
     },
     {
       "variable": "ua700",
@@ -2259,8 +2253,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua700",
+      "in_kg": true
     },
     {
       "variable": "ua850",
@@ -2351,8 +2345,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va150m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va150m",
+      "in_kg": true
     },
     {
       "variable": "va200",
@@ -2397,8 +2391,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va200m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va200m",
+      "in_kg": true
     },
     {
       "variable": "va250m",
@@ -2420,8 +2414,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va250m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va250m",
+      "in_kg": true
     },
     {
       "variable": "va500",
@@ -2466,8 +2460,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va50m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va50m",
+      "in_kg": true
     },
     {
       "variable": "va700",
@@ -2489,8 +2483,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va700",
+      "in_kg": true
     },
     {
       "variable": "va850",
@@ -2558,8 +2552,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg100m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg100m",
+      "in_kg": true
     },
     {
       "variable": "zg150m",
@@ -2581,8 +2575,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg150m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg150m",
+      "in_kg": true
     },
     {
       "variable": "zg200",
@@ -2627,8 +2621,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg200m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg200m",
+      "in_kg": true
     },
     {
       "variable": "zg250m",
@@ -2650,8 +2644,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg250m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg250m",
+      "in_kg": true
     },
     {
       "variable": "zg500",
@@ -2696,8 +2690,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg50m",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg50m",
+      "in_kg": true
     },
     {
       "variable": "zg700",
@@ -2719,8 +2713,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg700",
+      "in_kg": true
     },
     {
       "variable": "zg850",
@@ -2742,8 +2736,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg850",
+      "in_kg": true
     },
     {
       "variable": "zg925",
@@ -2765,8 +2759,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg925",
+      "in_kg": true
     },
     {
       "variable": "zmla",
@@ -3179,8 +3173,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus100",
+      "in_kg": true
     },
     {
       "variable": "hus200",
@@ -3202,8 +3196,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity; Specific humidity in air",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus200",
+      "in_kg": true
     },
     {
       "variable": "hus250",
@@ -3225,8 +3219,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus250",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus250",
+      "in_kg": true
     },
     {
       "variable": "hus300",
@@ -3248,8 +3242,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity; Specific humidity in air",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus300",
+      "in_kg": true
     },
     {
       "variable": "hus400",
@@ -3271,8 +3265,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity; Specific humidity in air",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus400",
+      "in_kg": true
     },
     {
       "variable": "hus500",
@@ -3294,8 +3288,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity; Specific humidity in air",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus500",
+      "in_kg": true
     },
     {
       "variable": "hus600",
@@ -3317,8 +3311,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity; Specific humidity in air",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus600",
+      "in_kg": true
     },
     {
       "variable": "hus700",
@@ -3340,8 +3334,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity; Specific humidity in air",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus700",
+      "in_kg": true
     },
     {
       "variable": "hus850",
@@ -3386,8 +3380,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity; Specific humidity in air",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus925",
+      "in_kg": true
     },
     {
       "variable": "hus975",
@@ -3409,8 +3403,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus975",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus975",
+      "in_kg": true
     },
     {
       "variable": "huss",
@@ -4053,8 +4047,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta100",
+      "in_kg": true
     },
     {
       "variable": "ta200",
@@ -4099,8 +4093,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta250",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta250",
+      "in_kg": true
     },
     {
       "variable": "ta300",
@@ -4122,8 +4116,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta300",
+      "in_kg": true
     },
     {
       "variable": "ta400",
@@ -4145,8 +4139,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta400",
+      "in_kg": true
     },
     {
       "variable": "ta500",
@@ -4191,8 +4185,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta600",
+      "in_kg": true
     },
     {
       "variable": "ta700",
@@ -4260,8 +4254,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta925",
+      "in_kg": true
     },
     {
       "variable": "ta975",
@@ -4283,8 +4277,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta975",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta975",
+      "in_kg": true
     },
     {
       "variable": "tas",
@@ -4375,8 +4369,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "wet-bulb_potential_temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/thetapw1000",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/thetapw1000",
+      "in_kg": true
     },
     {
       "variable": "thetapw700",
@@ -4398,8 +4392,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "wet-bulb_potential_temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/thetapw700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/thetapw700",
+      "in_kg": true
     },
     {
       "variable": "thetapw850",
@@ -4421,8 +4415,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "wet-bulb_potential_temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/thetapw850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/thetapw850",
+      "in_kg": true
     },
     {
       "variable": "thetapw925",
@@ -4444,8 +4438,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "wet-bulb_potential_temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/thetapw925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/thetapw925",
+      "in_kg": true
     },
     {
       "variable": "ts",
@@ -4490,8 +4484,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua100",
+      "in_kg": true
     },
     {
       "variable": "ua100m",
@@ -4559,8 +4553,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua250",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua250",
+      "in_kg": true
     },
     {
       "variable": "ua300",
@@ -4582,8 +4576,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind; Grid Eastward Wind; Zonal component of wind (westerly)",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua300",
+      "in_kg": true
     },
     {
       "variable": "ua400",
@@ -4605,8 +4599,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind; Grid Eastward Wind; Zonal component of wind (westerly)",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua400",
+      "in_kg": true
     },
     {
       "variable": "ua500",
@@ -4651,8 +4645,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind; Grid Eastward Wind; Zonal component of wind (westerly)",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua600",
+      "in_kg": true
     },
     {
       "variable": "ua700",
@@ -4674,8 +4668,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind; Grid Eastward Wind; Zonal component of wind (westerly)",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua700",
+      "in_kg": true
     },
     {
       "variable": "ua850",
@@ -4720,8 +4714,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind; Grid Eastward Wind; Zonal component of wind (westerly)",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua925",
+      "in_kg": true
     },
     {
       "variable": "ua975",
@@ -4743,8 +4737,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua975",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua975",
+      "in_kg": true
     },
     {
       "variable": "uas",
@@ -4789,8 +4783,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va100",
+      "in_kg": true
     },
     {
       "variable": "va100m",
@@ -4858,8 +4852,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va250",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va250",
+      "in_kg": true
     },
     {
       "variable": "va300",
@@ -4881,8 +4875,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Grid Northward Wind; Meridional component of wind (southerly); Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va300",
+      "in_kg": true
     },
     {
       "variable": "va400",
@@ -4904,8 +4898,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Grid Northward Wind; Meridional component of wind (southerly); Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va400",
+      "in_kg": true
     },
     {
       "variable": "va500",
@@ -4950,8 +4944,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Grid Northward Wind; Meridional component of wind (southerly); Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va600",
+      "in_kg": true
     },
     {
       "variable": "va700",
@@ -4973,8 +4967,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Grid Northward Wind; Meridional component of wind (southerly); Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va700",
+      "in_kg": true
     },
     {
       "variable": "va850",
@@ -5019,8 +5013,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Grid Northward Wind; Meridional component of wind (southerly); Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va925",
+      "in_kg": true
     },
     {
       "variable": "va975",
@@ -5042,8 +5036,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va975",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va975",
+      "in_kg": true
     },
     {
       "variable": "vas",
@@ -5134,8 +5128,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg250",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg250",
+      "in_kg": true
     },
     {
       "variable": "zg300",
@@ -5157,8 +5151,8 @@
       "known_units_issues": 8,
       "long_name": null,
       "long_names": "Air Temperature; Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg300",
+      "in_kg": true
     },
     {
       "variable": "zg400",
@@ -5180,8 +5174,8 @@
       "known_units_issues": 8,
       "long_name": null,
       "long_names": "Air Temperature; Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg400",
+      "in_kg": true
     },
     {
       "variable": "zg500",
@@ -5226,8 +5220,8 @@
       "known_units_issues": 8,
       "long_name": null,
       "long_names": "Air Temperature; Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg600",
+      "in_kg": true
     },
     {
       "variable": "zg700",
@@ -5249,8 +5243,8 @@
       "known_units_issues": 8,
       "long_name": null,
       "long_names": "Air Temperature; Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg700",
+      "in_kg": true
     },
     {
       "variable": "zg850",
@@ -5272,8 +5266,8 @@
       "known_units_issues": 8,
       "long_name": null,
       "long_names": "Air Temperature; Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg850",
+      "in_kg": true
     },
     {
       "variable": "zg925",
@@ -5295,8 +5289,8 @@
       "known_units_issues": 8,
       "long_name": null,
       "long_names": "Air Temperature; Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg925",
+      "in_kg": true
     },
     {
       "variable": "zg975",
@@ -5318,8 +5312,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg975",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg975",
+      "in_kg": true
     },
     {
       "variable": "zmla",
@@ -5456,8 +5450,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud fraction",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clfr200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clfr200",
+      "in_kg": true
     },
     {
       "variable": "clfr500",
@@ -5479,8 +5473,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud fraction",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clfr500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clfr500",
+      "in_kg": true
     },
     {
       "variable": "clfr850",
@@ -5502,8 +5496,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud fraction",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clfr850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clfr850",
+      "in_kg": true
     },
     {
       "variable": "clh",
@@ -5571,8 +5565,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Ice mixing ratio",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clice200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clice200",
+      "in_kg": true
     },
     {
       "variable": "clice500",
@@ -5594,8 +5588,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Ice mixing ratio",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clice500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clice500",
+      "in_kg": true
     },
     {
       "variable": "clice850",
@@ -5617,8 +5611,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Ice mixing ratio",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clice850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clice850",
+      "in_kg": true
     },
     {
       "variable": "clivi",
@@ -5755,8 +5749,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud water content",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clwmr200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clwmr200",
+      "in_kg": true
     },
     {
       "variable": "clwmr500",
@@ -5778,8 +5772,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud water content",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clwmr500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clwmr500",
+      "in_kg": true
     },
     {
       "variable": "clwmr850",
@@ -5801,8 +5795,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud water content",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/clwmr850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/clwmr850",
+      "in_kg": true
     },
     {
       "variable": "clwvi",
@@ -6008,8 +6002,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Relative humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hur200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hur200",
+      "in_kg": true
     },
     {
       "variable": "hur500",
@@ -6031,8 +6025,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Relative humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hur500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hur500",
+      "in_kg": true
     },
     {
       "variable": "hur850",
@@ -6054,8 +6048,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Relative humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hur850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hur850",
+      "in_kg": true
     },
     {
       "variable": "hurs",
@@ -6123,8 +6117,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus100",
+      "in_kg": true
     },
     {
       "variable": "hus200",
@@ -6146,8 +6140,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity; Specific humidity at 200hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus200",
+      "in_kg": true
     },
     {
       "variable": "hus300",
@@ -6169,8 +6163,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus300",
+      "in_kg": true
     },
     {
       "variable": "hus400",
@@ -6192,8 +6186,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus400",
+      "in_kg": true
     },
     {
       "variable": "hus500",
@@ -6215,8 +6209,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus500",
+      "in_kg": true
     },
     {
       "variable": "hus600",
@@ -6238,8 +6232,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus600",
+      "in_kg": true
     },
     {
       "variable": "hus700",
@@ -6261,8 +6255,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus700",
+      "in_kg": true
     },
     {
       "variable": "hus850",
@@ -6307,8 +6301,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus925",
+      "in_kg": true
     },
     {
       "variable": "huss",
@@ -7273,8 +7267,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta100",
+      "in_kg": true
     },
     {
       "variable": "ta200",
@@ -7319,8 +7313,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta300",
+      "in_kg": true
     },
     {
       "variable": "ta400",
@@ -7342,8 +7336,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta400",
+      "in_kg": true
     },
     {
       "variable": "ta500",
@@ -7388,8 +7382,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta600",
+      "in_kg": true
     },
     {
       "variable": "ta700",
@@ -7457,8 +7451,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta925",
+      "in_kg": true
     },
     {
       "variable": "tas",
@@ -7756,8 +7750,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Zonal wind at 200hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/u200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.16/ua200",
+      "in_kg": true
     },
     {
       "variable": "u500",
@@ -7779,8 +7773,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Zonal wind at 500hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/u500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua500",
+      "in_kg": true
     },
     {
       "variable": "u850",
@@ -7802,8 +7796,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Zonal wind at 850hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/u850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.16/ua850",
+      "in_kg": true
     },
     {
       "variable": "ua",
@@ -7848,8 +7842,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua100",
+      "in_kg": true
     },
     {
       "variable": "ua100m",
@@ -7917,8 +7911,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua300",
+      "in_kg": true
     },
     {
       "variable": "ua400",
@@ -7940,8 +7934,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua400",
+      "in_kg": true
     },
     {
       "variable": "ua500",
@@ -7986,8 +7980,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua600",
+      "in_kg": true
     },
     {
       "variable": "ua700",
@@ -8009,8 +8003,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua700",
+      "in_kg": true
     },
     {
       "variable": "ua850",
@@ -8055,8 +8049,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua925",
+      "in_kg": true
     },
     {
       "variable": "uas",
@@ -8124,8 +8118,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Meridional wind at 200hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/v200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.16/va200",
+      "in_kg": true
     },
     {
       "variable": "v500",
@@ -8147,8 +8141,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Meridional wind at 500hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/v500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va500",
+      "in_kg": true
     },
     {
       "variable": "v850",
@@ -8170,8 +8164,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Meridional wind at 850hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/v850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.16/va850",
+      "in_kg": true
     },
     {
       "variable": "va",
@@ -8216,8 +8210,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va100",
+      "in_kg": true
     },
     {
       "variable": "va100m",
@@ -8285,8 +8279,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va300",
+      "in_kg": true
     },
     {
       "variable": "va400",
@@ -8308,8 +8302,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va400",
+      "in_kg": true
     },
     {
       "variable": "va500",
@@ -8354,8 +8348,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va600",
+      "in_kg": true
     },
     {
       "variable": "va700",
@@ -8377,8 +8371,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va700",
+      "in_kg": true
     },
     {
       "variable": "va850",
@@ -8423,8 +8417,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va925",
+      "in_kg": true
     },
     {
       "variable": "vas",
@@ -8561,8 +8555,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg300",
+      "in_kg": true
     },
     {
       "variable": "zg400",
@@ -8584,8 +8578,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg400",
+      "in_kg": true
     },
     {
       "variable": "zg500",
@@ -8630,8 +8624,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg600",
+      "in_kg": true
     },
     {
       "variable": "zg700",
@@ -8653,8 +8647,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg700",
+      "in_kg": true
     },
     {
       "variable": "zg850",
@@ -8676,8 +8670,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg850",
+      "in_kg": true
     },
     {
       "variable": "zg925",
@@ -8699,8 +8693,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg925",
+      "in_kg": true
     },
     {
       "variable": "zmla",
@@ -8998,8 +8992,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud Droplet Number Concentration",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cdnc200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/cdnc200",
+      "in_kg": true
     },
     {
       "variable": "cdnc500",
@@ -9021,8 +9015,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud Droplet Number Concentration",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cdnc500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/cdnc500",
+      "in_kg": true
     },
     {
       "variable": "cdnc700",
@@ -9044,8 +9038,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud Droplet Number Concentration",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cdnc700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/cdnc700",
+      "in_kg": true
     },
     {
       "variable": "cdnc850",
@@ -9067,8 +9061,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud Droplet Number Concentration",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cdnc850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/cdnc850",
+      "in_kg": true
     },
     {
       "variable": "cdnc925",
@@ -9090,8 +9084,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Cloud Droplet Number Concentration",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cdnc925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/cdnc925",
+      "in_kg": true
     },
     {
       "variable": "cdnctop",
@@ -9412,8 +9406,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Relative Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hur200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hur200",
+      "in_kg": true
     },
     {
       "variable": "hur500",
@@ -9435,8 +9429,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Relative Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hur500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hur500",
+      "in_kg": true
     },
     {
       "variable": "hur700",
@@ -9458,8 +9452,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Relative Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hur700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hur700",
+      "in_kg": true
     },
     {
       "variable": "hur850",
@@ -9481,8 +9475,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Relative Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hur850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hur850",
+      "in_kg": true
     },
     {
       "variable": "hur925",
@@ -9504,8 +9498,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Relative Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hur925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hur925",
+      "in_kg": true
     },
     {
       "variable": "hurs",
@@ -9573,8 +9567,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus100",
+      "in_kg": true
     },
     {
       "variable": "hus200",
@@ -9596,8 +9590,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity; Specific humidity at 200hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus200",
+      "in_kg": true
     },
     {
       "variable": "hus300",
@@ -9619,8 +9613,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus300",
+      "in_kg": true
     },
     {
       "variable": "hus400",
@@ -9642,8 +9636,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus400",
+      "in_kg": true
     },
     {
       "variable": "hus500",
@@ -9665,8 +9659,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus500",
+      "in_kg": true
     },
     {
       "variable": "hus600",
@@ -9688,8 +9682,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus600",
+      "in_kg": true
     },
     {
       "variable": "hus700",
@@ -9711,8 +9705,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus700",
+      "in_kg": true
     },
     {
       "variable": "hus850",
@@ -9757,8 +9751,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus925",
+      "in_kg": true
     },
     {
       "variable": "huss",
@@ -10746,8 +10740,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta100",
+      "in_kg": true
     },
     {
       "variable": "ta200",
@@ -10792,8 +10786,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta300",
+      "in_kg": true
     },
     {
       "variable": "ta400",
@@ -10815,8 +10809,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta400",
+      "in_kg": true
     },
     {
       "variable": "ta500",
@@ -10861,8 +10855,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta600",
+      "in_kg": true
     },
     {
       "variable": "ta700",
@@ -10930,8 +10924,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta925",
+      "in_kg": true
     },
     {
       "variable": "tas",
@@ -11137,8 +11131,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Zonal wind at 200hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/u200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.16/ua200",
+      "in_kg": true
     },
     {
       "variable": "u500",
@@ -11160,8 +11154,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Zonal wind at 500hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/u500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua500",
+      "in_kg": true
     },
     {
       "variable": "u850",
@@ -11183,8 +11177,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Zonal wind at 850hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/u850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.16/ua850",
+      "in_kg": true
     },
     {
       "variable": "ua",
@@ -11229,8 +11223,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua100",
+      "in_kg": true
     },
     {
       "variable": "ua100m",
@@ -11298,8 +11292,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua300",
+      "in_kg": true
     },
     {
       "variable": "ua400",
@@ -11321,8 +11315,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua400",
+      "in_kg": true
     },
     {
       "variable": "ua500",
@@ -11367,8 +11361,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua600",
+      "in_kg": true
     },
     {
       "variable": "ua700",
@@ -11390,8 +11384,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua700",
+      "in_kg": true
     },
     {
       "variable": "ua850",
@@ -11436,8 +11430,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua925",
+      "in_kg": true
     },
     {
       "variable": "uas",
@@ -11482,8 +11476,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Meridional wind at 200hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/v200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.16/va200",
+      "in_kg": true
     },
     {
       "variable": "v500",
@@ -11505,8 +11499,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Meridional wind at 500hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/v500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va500",
+      "in_kg": true
     },
     {
       "variable": "v850",
@@ -11528,8 +11522,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Meridional wind at 850hPa",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/v850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/cmip6/6.0.16/va850",
+      "in_kg": true
     },
     {
       "variable": "va",
@@ -11574,8 +11568,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va100",
+      "in_kg": true
     },
     {
       "variable": "va100m",
@@ -11643,8 +11637,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va300",
+      "in_kg": true
     },
     {
       "variable": "va400",
@@ -11666,8 +11660,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va400",
+      "in_kg": true
     },
     {
       "variable": "va500",
@@ -11712,8 +11706,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va600",
+      "in_kg": true
     },
     {
       "variable": "va700",
@@ -11735,8 +11729,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va700",
+      "in_kg": true
     },
     {
       "variable": "va850",
@@ -11781,8 +11775,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va925",
+      "in_kg": true
     },
     {
       "variable": "vas",
@@ -11827,8 +11821,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Vertical Velocity In Pressure Coordinates",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/wap200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/wap200",
+      "in_kg": true
     },
     {
       "variable": "wap500",
@@ -11873,8 +11867,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Vertical Velocity In Pressure Coordinates",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/wap700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/wap700",
+      "in_kg": true
     },
     {
       "variable": "wap850",
@@ -11896,8 +11890,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Vertical Velocity In Pressure Coordinates",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/wap850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/wap850",
+      "in_kg": true
     },
     {
       "variable": "wap925",
@@ -11919,8 +11913,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Vertical Velocity In Pressure Coordinates",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/wap925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/wap925",
+      "in_kg": true
     },
     {
       "variable": "zg",
@@ -12011,8 +12005,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg300",
+      "in_kg": true
     },
     {
       "variable": "zg400",
@@ -12034,8 +12028,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg400",
+      "in_kg": true
     },
     {
       "variable": "zg500",
@@ -12080,8 +12074,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg600",
+      "in_kg": true
     },
     {
       "variable": "zg700",
@@ -12103,8 +12097,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg700",
+      "in_kg": true
     },
     {
       "variable": "zg850",
@@ -12126,8 +12120,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg850",
+      "in_kg": true
     },
     {
       "variable": "zg925",
@@ -12149,8 +12143,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg925",
+      "in_kg": true
     },
     {
       "variable": "zmla",
@@ -12425,8 +12419,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus100",
+      "in_kg": true
     },
     {
       "variable": "hus200",
@@ -12448,8 +12442,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus200",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus200",
+      "in_kg": true
     },
     {
       "variable": "hus300",
@@ -12471,8 +12465,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus300",
+      "in_kg": true
     },
     {
       "variable": "hus400",
@@ -12494,8 +12488,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus400",
+      "in_kg": true
     },
     {
       "variable": "hus500",
@@ -12517,8 +12511,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus500",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus500",
+      "in_kg": true
     },
     {
       "variable": "hus600",
@@ -12540,8 +12534,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus600",
+      "in_kg": true
     },
     {
       "variable": "hus700",
@@ -12563,8 +12557,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus700",
+      "in_kg": true
     },
     {
       "variable": "hus850",
@@ -12609,8 +12603,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Specific Humidity",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/hus925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/hus925",
+      "in_kg": true
     },
     {
       "variable": "huss",
@@ -13345,8 +13339,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta100",
+      "in_kg": true
     },
     {
       "variable": "ta200",
@@ -13391,8 +13385,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta300",
+      "in_kg": true
     },
     {
       "variable": "ta400",
@@ -13414,8 +13408,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta400",
+      "in_kg": true
     },
     {
       "variable": "ta500",
@@ -13460,8 +13454,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta600",
+      "in_kg": true
     },
     {
       "variable": "ta700",
@@ -13529,8 +13523,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Air Temperature",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ta925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ta925",
+      "in_kg": true
     },
     {
       "variable": "tas",
@@ -13736,8 +13730,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua100",
+      "in_kg": true
     },
     {
       "variable": "ua200",
@@ -13782,8 +13776,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua300",
+      "in_kg": true
     },
     {
       "variable": "ua400",
@@ -13805,8 +13799,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua400",
+      "in_kg": true
     },
     {
       "variable": "ua500",
@@ -13851,8 +13845,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua600",
+      "in_kg": true
     },
     {
       "variable": "ua700",
@@ -13874,8 +13868,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua700",
+      "in_kg": true
     },
     {
       "variable": "ua850",
@@ -13920,8 +13914,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Eastward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/ua925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/ua925",
+      "in_kg": true
     },
     {
       "variable": "uas",
@@ -13966,8 +13960,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va100",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va100",
+      "in_kg": true
     },
     {
       "variable": "va200",
@@ -14012,8 +14006,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va300",
+      "in_kg": true
     },
     {
       "variable": "va400",
@@ -14035,8 +14029,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va400",
+      "in_kg": true
     },
     {
       "variable": "va500",
@@ -14081,8 +14075,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va600",
+      "in_kg": true
     },
     {
       "variable": "va700",
@@ -14104,8 +14098,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va700",
+      "in_kg": true
     },
     {
       "variable": "va850",
@@ -14150,8 +14144,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Northward Wind",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/va925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/va925",
+      "in_kg": true
     },
     {
       "variable": "vas",
@@ -14242,8 +14236,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg300",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg300",
+      "in_kg": true
     },
     {
       "variable": "zg400",
@@ -14265,8 +14259,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg400",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg400",
+      "in_kg": true
     },
     {
       "variable": "zg500",
@@ -14311,8 +14305,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg600",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg600",
+      "in_kg": true
     },
     {
       "variable": "zg700",
@@ -14334,8 +14328,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg700",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg700",
+      "in_kg": true
     },
     {
       "variable": "zg850",
@@ -14357,8 +14351,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg850",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg850",
+      "in_kg": true
     },
     {
       "variable": "zg925",
@@ -14380,8 +14374,8 @@
       "known_units_issues": 0,
       "long_name": null,
       "long_names": "Geopotential Height",
-      "variable_iri": "https://w3id.org/hacid/data/cs/variables/mip/zg925",
-      "in_kg": false
+      "variable_iri": "https://w3id.org/hacid/data/cs/variables/cordex/zg925",
+      "in_kg": true
     },
     {
       "variable": "zmla",

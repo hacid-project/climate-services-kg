@@ -21,6 +21,21 @@ def words:
 # Missing values are not mapped
 def present: select(. != null and . != "");
 
+# CF standard names, to link the variables to the CF variables of the KG only
+# by names of the CF standard name table: {names, fixes}, from the names of the
+# table ($names, data-sources/cf-standard-names/data/standard-names.json, its
+# entries and aliases) and the corrections of the names of the CMOR tables that
+# are not in it ($fixes, cf-standard-name-fixes.json, {<name>: {standard_name,
+# note}})
+def cf_standard_names($names; $fixes):
+    {names: ($names | map({key: ., value: true}) | from_entries), fixes: $fixes};
+
+# The CF standard name of a standard name of the CMOR tables (input), given the
+# CF standard names ($cf, see cf_standard_names): the name or its correction,
+# if in the table, otherwise none (e.g. placeholders as "missing")
+def cf_standard_name($cf):
+    ($cf.fixes[.].standard_name // .) | select($cf.names[.]);
+
 # Dimensions (CMOR axes) to dimensional spaces (see data-sources/common-spacetime.ttl)
 def _dimension_map:
     {
@@ -52,8 +67,10 @@ def variable_entries:
 # JSON-LD document of variable entries (as given by variable_entries), with the
 # IRI and the label of each variable given by iri_of and label_of (applied to
 # the entry; the label only if the entry has a long_name), members of the
-# collection $collection (and of their realms)
-def variables_jsonld(iri_of; label_of; $collection):
+# collection $collection (and of their realms), specializations of the CF
+# variables of their standard names ($cf, see cf_standard_names and
+# cf_standard_name)
+def variables_jsonld(iri_of; label_of; $collection; $cf):
     . as $entries |
     _dimension_map as $dimension_map |
     {
@@ -86,7 +103,10 @@ def variables_jsonld(iri_of; label_of; $collection):
                         ],
                         label: (((.long_name | present) as $long_name | label_of) // null),
                         isSpecializationOfVariable: (
-                            (.standard_name | present | @uri "https://w3id.org/hacid/data/cs/variables/cf/\(.)") // null
+                            (
+                                .standard_name | present | cf_standard_name($cf) |
+                                @uri "https://w3id.org/hacid/data/cs/variables/cf/\(.)"
+                            ) // null
                         ),
                         dependsOnVariable: [
                             .dimensions | words | $dimension_map[.] // [] | .[] |
@@ -122,5 +142,5 @@ def variables_jsonld(iri_of; label_of; $collection):
 
 # JSON-LD document of variable entries of the CMOR tables, members of the
 # collection of the MIP variables
-def variables_jsonld(iri_of; label_of):
-    variables_jsonld(iri_of; label_of; "https://w3id.org/hacid/data/cs/variables/mip");
+def variables_jsonld(iri_of; label_of; $cf):
+    variables_jsonld(iri_of; label_of; "https://w3id.org/hacid/data/cs/variables/mip"; $cf);

@@ -1,0 +1,26 @@
+{
+    "air_sea_flux_of_14CO2": {
+        "standard_name": "surface_downward_mass_flux_of_14C_dioxide_abiotic_analogue_expressed_as_carbon",
+        "note": "fg14co2 (CMIP6 up to 6.0.15); renamed in later editions (surface_downward_mass_flux_of_carbon14_dioxide_..., now an alias of this entry)"
+    },
+    "integration_wrt_time_of_mole_stomatal_uptake_of_ozone": {
+        "standard_name": "integral_wrt_time_of_mole_stomatal_uptake_of_ozone",
+        "note": "pod0 (CMIP6 6.2.24); typo, integral in the other editions"
+    },
+    "root_mass_content": {
+        "standard_name": "root_mass_content_of_carbon",
+        "note": "rootdsl (CMIP6 6.2.24); renamed in later editions"
+    },
+    "surface_downward_water_flux_due_to_irrigation": {
+        "standard_name": "surface_downward_mass_flux_of_water_due_to_irrigation",
+        "note": "irrLut (CMIP6 up to 6.1.23); renamed in later editions"
+    },
+    "surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_direct_to_atmosphere_due_to_anthropogenic_land_use_land_cover_change": {
+        "standard_name": "surface_upward_mass_flux_of_carbon_dioxide_expressed_as_carbon_due_to_anthropogenic_land_use_or_land_cover_change_excluding_forestry_and_agricultural_products",
+        "note": "fLulccAtmLut (CMIP6 up to 6.1.23); renamed in later editions"
+    },
+    "tendency_of_atmospheric_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_wood_and_agricultural_product_pool": {
+        "standard_name": "tendency_of_atmosphere_mass_content_of_carbon_dioxide_expressed_as_carbon_due_to_emission_from_forestry_and_agricultural_products",
+        "note": "fProductDecompLut (CMIP6 up to 6.1.23); renamed in later editions"
+    }
+}

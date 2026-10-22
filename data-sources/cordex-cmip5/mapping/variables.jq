@@ -1,14 +1,15 @@
 # Mapping to JSON-LD of the variables of the CORDEX-CMIP5 datasets defined
 # locally: the variables requested by CORDEX (the CORDEX standard output,
-# CORDEX_standard_output.json, in the format of the CMOR tables) that are not
+# CORDEX_standard_output.json, in the format of the CMOR tables) and the
+# variables at a single level (mapping/level-variables.json) that are not
 # variables of the KG (see local_variables in cordex-variables.jq), mapped as
 # the variables of the CMOR tables (variables_jsonld in
 # data-sources/cmor-tables/mapping/variables-jsonld.jq), as
 # https://w3id.org/hacid/data/cs/variables/cordex/<out_name>, members of the
 # collection https://w3id.org/hacid/data/cs/variables/cordex.
 #
-# The long names of the variables at a single pressure level, <base><level>
-# (e.g. ta200), are derived from the analogous MIP variables, of the same base
+# The long names of the variables of the standard output at a single pressure
+# level, <base><level> (e.g. ta200), are derived from the analogous MIP variables, of the same base
 # at a single pressure level (e.g. ta500, on the dimension p500): the quantity
 # of their long names (without a level, e.g. "Air Temperature") at the level,
 # as in the CMOR tables (e.g. "Air Temperature at 200hPa").
@@ -23,9 +24,12 @@
 #
 # Arguments (run with -n): --slurpfile data_issues mapping/data-issues.json,
 # --slurpfile standard_output
-# CORDEX_standard_output.json, --slurpfile cmor_tables (the CMIP5 CMOR tables,
+# CORDEX_standard_output.json, --slurpfile level_variables
+# mapping/level-variables.json, --slurpfile cmor_tables (the CMIP5 CMOR tables,
 # as for datasets.jq), --slurpfile kg_variables
-# data-sources/cmor-tables/data/variable-iris.json; the modules of this
+# data-sources/cmor-tables/data/variable-iris.json, --slurpfile cf_names
+# data-sources/cf-standard-names/data/standard-names.json, --slurpfile cf_fixes
+# data-sources/cmor-tables/mapping/cf-standard-name-fixes.json; the modules of this
 # directory, of data-sources/cmip5/mapping and of
 # data-sources/cmor-tables/mapping must be in the library path (-L).
 
@@ -50,17 +54,19 @@ def _single_level_quantities:
 ($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
 ($kg_variables[0] | iri_set) as $kg |
 [
-    local_variables($standard_output[0]; $entries_by_name; $kg) | to_entries[] |
+    local_variables($standard_output[0]; $level_variables[0]; $entries_by_name; $kg) | to_entries[] |
     .value + {out_name: .key} |
     ((.out_name | capture("^(?<base>[A-Za-z]+)(?<level>[0-9]+)$")) // null) as $name |
-    if $name != null and $quantities[$name.base] != null then
+    if $name != null and $quantities[$name.base] != null and (.level_variable | not) then
         .long_name = "\($quantities[$name.base]) at \($name.level)hPa"
-    end
+    end |
+    del(.level_variable)
 ] |
 variables_jsonld(
     .out_name | cordex_variable_iri;
     "\(.long_name) (\(.out_name))";
-    cordex_variables_collection
+    cordex_variables_collection;
+    cf_standard_names($cf_names[0]; $cf_fixes[0])
 ) |
 # The variables of a model with their own units (model_variables in
 # mapping/data-issues.json), derived from the MIP variable, members of the

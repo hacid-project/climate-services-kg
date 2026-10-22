@@ -1,6 +1,6 @@
 # CF standard names: decisions on issues and inconsistencies
 
-Decisions taken in mapping the CF standard name table (version 86,
+Decisions taken in mapping the CF standard name table (version 95,
 `data/cf-standard-name-table.xml`) to the KG, with the place where each one is
 applied.
 
@@ -18,10 +18,18 @@ applied.
   `entry` and `alias`, `--xml-force-list`). The JSON previously kept in the
   repository was made with a tool not recorded, with other conventions
   (attributes as plain keys, empty elements as empty strings).
+- **Version.** Version 95, the latest (previously 86, which lacks a standard
+  name of the current MIP variables,
+  `isotope_ratio_of_2H_to_1H_in_sea_water_excluding_solutes_and_solids` of
+  `sw2H`, added in version 90).
+- **Names of the table** (`data/standard-names.json`, rule
+  `cf_standard_names_list`): the names of the entries and of the aliases, read
+  by the mappings that link variables to the CF variables only by names of the
+  table (the CMOR tables, `variables_jsonld`, and the MOHC indices).
 
 ## Variables (`mapping/standard-names.jq`)
 
-- **Entries that are also aliases.** In version 86, two names are both an entry
+- **Entries that are also aliases.** In version 95 (as in 86), two names are both an entry
   and an alias of another entry:
 
   | Name | Units | Alias of | Units |
@@ -36,7 +44,7 @@ applied.
   is both, in any version.
 - **Missing values.** The entries without units (17, mostly of string-valued
   quantities, e.g. `region`, `platform_name`) have no units of measure, and those
-  without a description (15) no comment, as in the former RML mapping. One of
+  without a description (16) no comment, as in the former RML mapping. One of
   them, `volume_fraction_of_oxygen_in_sea_floor_sediment_pore_water`, is a
   volume fraction, so presumably `1`: left as in the table.
 - **Class.** The variables are `data:DeterministicVariable`s, as those of the

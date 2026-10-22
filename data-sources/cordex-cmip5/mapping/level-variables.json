@@ -1,0 +1,85 @@
+{
+    "aliases": {
+        "u": "ua",
+        "v": "va"
+    },
+    "variables": {
+        "cdnc": {
+            "long_name": "Cloud Liquid Droplet Number Concentration",
+            "standard_name": "number_concentration_of_cloud_liquid_water_particles_in_air",
+            "units": "m-3",
+            "pressure_levels": [200, 500, 700, 850, 925]
+        },
+        "clfr": {
+            "long_name": "Cloud Area Fraction in Atmosphere Layer",
+            "standard_name": "cloud_area_fraction_in_atmosphere_layer",
+            "units": "1",
+            "pressure_levels": [200, 500, 850]
+        },
+        "clice": {
+            "long_name": "Mass Fraction of Cloud Ice",
+            "standard_name": "mass_fraction_of_cloud_ice_in_air",
+            "units": "1",
+            "pressure_levels": [200, 500, 850]
+        },
+        "clwmr": {
+            "long_name": "Mass Fraction of Cloud Liquid Water",
+            "standard_name": "mass_fraction_of_cloud_liquid_water_in_air",
+            "units": "1",
+            "pressure_levels": [200, 500, 850]
+        },
+        "hur": {
+            "long_name": "Relative Humidity",
+            "standard_name": "relative_humidity",
+            "units": "%",
+            "pressure_levels": [200, 500, 700, 850, 925]
+        },
+        "hus": {
+            "long_name": "Specific Humidity",
+            "standard_name": "specific_humidity",
+            "units": "1",
+            "pressure_levels": [100, 200, 250, 300, 400, 500, 600, 700, 925, 975],
+            "height_levels": [50]
+        },
+        "ta": {
+            "long_name": "Air Temperature",
+            "standard_name": "air_temperature",
+            "units": "K",
+            "pressure_levels": [100, 250, 300, 400, 600, 925, 975],
+            "height_levels": [50]
+        },
+        "thetapw": {
+            "long_name": "Wet Bulb Potential Temperature",
+            "standard_name": "wet_bulb_potential_temperature",
+            "units": "K",
+            "pressure_levels": [700, 850, 925, 1000]
+        },
+        "ua": {
+            "long_name": "Eastward Wind",
+            "standard_name": "eastward_wind",
+            "units": "m s-1",
+            "pressure_levels": [100, 250, 300, 400, 600, 700, 925, 975],
+            "height_levels": [50, 150, 200, 250]
+        },
+        "va": {
+            "long_name": "Northward Wind",
+            "standard_name": "northward_wind",
+            "units": "m s-1",
+            "pressure_levels": [100, 250, 300, 400, 600, 700, 925, 975],
+            "height_levels": [50, 150, 200, 250]
+        },
+        "wap": {
+            "long_name": "Omega (=dp/dt)",
+            "standard_name": "lagrangian_tendency_of_air_pressure",
+            "units": "Pa s-1",
+            "pressure_levels": [200, 700, 850, 925]
+        },
+        "zg": {
+            "long_name": "Geopotential Height",
+            "standard_name": "geopotential_height",
+            "units": "m",
+            "pressure_levels": [250, 300, 400, 600, 700, 850, 925, 975],
+            "height_levels": [50, 100, 150, 200, 250]
+        }
+    }
+}

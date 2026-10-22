@@ -113,12 +113,16 @@ rule cmor_tables_map_variables:
         tables="data-sources/cmor-tables/data/{era}/{version}.json",
         mapping="data-sources/cmor-tables/mapping/variables.jq",
         modules="data-sources/cmor-tables/mapping/variables-jsonld.jq",
+        cf_names="data-sources/cf-standard-names/data/standard-names.json",
+        cf_fixes="data-sources/cmor-tables/mapping/cf-standard-name-fixes.json",
     output:
         "data-sources/cmor-tables/rdf/current/{era}/{version}.jsonld",
     log:
         "logs/cmor_tables/map_variables/{era}/{version}.log",
     shell:
-        "jq -L data-sources/cmor-tables/mapping -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"
+        "jq -L data-sources/cmor-tables/mapping"
+        " --slurpfile cf_names {input.cf_names:q} --slurpfile cf_fixes {input.cf_fixes:q}"
+        " -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"
 
 
 # Previous variables of an edition (keep/sign_change/unit_change entries of the mapping)
@@ -132,6 +136,8 @@ rule cmor_tables_map_previous_variables:
             "data-sources/cmor-tables/mapping/mip-mapping.json",
         ],
         eras="config/cmor-tables-eras.json",
+        cf_names="data-sources/cf-standard-names/data/standard-names.json",
+        cf_fixes="data-sources/cmor-tables/mapping/cf-standard-name-fixes.json",
     output:
         "data-sources/cmor-tables/rdf/previous/{era}/{version}.jsonld",
     log:
@@ -140,6 +146,7 @@ rule cmor_tables_map_previous_variables:
         "jq -L data-sources/cmor-tables/mapping"
         " --arg era {wildcards.era:q} --arg version {wildcards.version:q}"
         " --slurpfile eras {input.eras:q}"
+        " --slurpfile cf_names {input.cf_names:q} --slurpfile cf_fixes {input.cf_fixes:q}"
         " -f {input.mapping:q} {input.tables:q} > {output:q} 2> {log:q}"
 
 

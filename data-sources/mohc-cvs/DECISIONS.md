@@ -18,6 +18,22 @@ methods, operations) to the KG.
   KG (`mapping/cvs.jq`), and read by the mapping of the operations
   (`mapping/operations.jq`, as `$cv_map`) for the values of their parameters.
 
+## Variables (`mapping/indices.jq`)
+
+- **Associated variables.** The variables an index is derived from
+  (`AssociatedVariables`) are MIP variables (`.../variables/mip/<name>`),
+  except for the CF standard names (e.g. the sea levels of the Climate-ADAPT
+  indices `ExtremeSeaLevel` and `RelativeSeaLevelRise`,
+  `sea_surface_height_above_geoid`), which are CF variables
+  (`.../variables/cf/<name>`): a name is a CF standard name if it is in the CF
+  standard name table of the KG
+  (`data-sources/cf-standard-names/data/standard-names.json`).
+- **Names fixed in the data** (`data/indices.json`): `mrso ` (with a trailing
+  space, in `DaysAboveFieldCapacity` and `SoilMoisture`) is `mrso`, and `tmin`
+  and `tmax` (the minimum and maximum temperature indices) are the MIP
+  variables `tasmin` and `tasmax`. The original text of the sources
+  (`_AssociatedVariable`) is kept.
+
 ## Validation
 
 The Snakemake rules give byte-identical outputs to the JSON-LD previously kept
