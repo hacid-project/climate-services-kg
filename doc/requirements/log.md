@@ -238,3 +238,11 @@ Priority: `H` (blocks or costs much), `M`, `L`. Status: `open` · `workaround` �
 - **Requirement:** the representation of an entity that several sources refer to (its IRI and its triples) should be defined once, as a function of declared inputs (named metadata, not parsed ids), and used by every source that refers to it, so that any of them can give the entity when its own source is missing, and the KG gets the same triples from each.
 - **Current handling:** the nodes of the CMIP5 and CORDEX-CMIP5 datasets, simulations and models are given by jq module functions, with their inputs documented in comments, used by the CMIP5 and CORDEX-CMIP5 mappings (same triples as before); the UKCP18 mapping still builds the IRIs on its own. A function maps the CMIP5 model names to the model ids.
 - **Notes:** related to R-002 (shared lookup tables) and R-014 (contracts between steps): the input keys are documented, not checked. The model ids not derivable from the names are a table in code.
+
+### R-025: Mapped keys without a meaning
+- **Category:** MAP, QUA · **Priority:** H · **Status:** workaround
+- **Date:** 2026-10-23 · **Evidence:** `data-sources/ukcp18/mapping/context.jq`; `data-sources/ukcp18/DECISIONS.md` (Simulations and lineage)
+- **Situation:** the UKCP18 mapping wrote nodes with compact keys (`derived_from`, `input`, `is_rescaled_version_of`, `is_part_of`) that were not terms of its JSON-LD context; JSON-LD silently drops undefined terms, so the links between about 370,000 datasets and the outputs they come from, and between the derived products and their inputs, were never in the KG. Nothing in the dataflow reported it; it surfaced only while analysing dangling links.
+- **Requirement:** every key a mapping writes should have a defined meaning in the target model, and a step that loses data (dropped keys, values that cannot be converted) should fail or report it.
+- **Current handling:** the keys are now terms of the context; no check yet.
+- **Notes:** related to R-014 (contracts between steps). A check could expand each JSON-LD document and compare the keys of the input nodes with the terms of the context (or run the JSON-LD processor in a strict mode, if available).

@@ -5,6 +5,11 @@ import "./mapping/ukcp18-time" as UKCP18_TIME;
 import "./mapping/jsonld" as JSONLD;
 import "./mapping/ukcp18-variables" as VARIABLES;
 import "./data/cmip5-model-synonyms" as $model_synonyms_source;
+# (the shared functions of the CMIP5 and CORDEX-CMIP5 mappings, see
+# data-sources/cmip5/mapping/cmip5-datasets.jq and
+# data-sources/cordex-cmip5/mapping/cordex-datasets.jq, in the library path)
+import "cmip5-datasets" as CMIP5;
+import "cordex-datasets" as CORDEX;
 
 
 def scenario_uri:
@@ -89,6 +94,59 @@ def get_model_variant_from_id:
     ) as $model_variant_from_id |
     $model_variant_from_id[.];
 
+# The CMIP5 runs that the UKCP18 global datasets of CMIP5 members would refer
+# to, but that are not in CMIP5 ("<model id>.<experiment>.<ensemble>"): the
+# rcp26 datasets of these members cover only the historical period (up to 2005,
+# 2009 for EC-EARTH, whose historical run goes up to 2012), so they come from
+# the historical run alone
+def _runs_not_in_cmip5:
+    {
+        "ACCESS1-3.rcp26.r1i1p1": true,
+        "CESM1-BGC.rcp26.r1i1p1": true,
+        "CMCC-CM.rcp26.r1i1p1": true,
+        "EC-EARTH.rcp26.r1i1p1": true
+    };
+
+# Accessors of the results of the dataset_to_*_simulation functions: a node
+# (a simulation, or the processing of a source, see the CMIP5 members and
+# dataset_to_cordex_simulation), with has_output, the output the datasets are
+# part of (or rescaled versions of), and in these private keys:
+# - _simulations, _outputs: the simulations and their outputs (of other
+#   sources) the output derives from, if not the node and its output;
+# - _ensemble: the UKCP18 ensemble, if not given by the key ensemble;
+# - _members: nodes giving the membership of the simulations in the ensemble;
+# - _extra: the nodes of the simulations of other sources (e.g. CMIP5).
+def simulation_ids: if ._simulations then ._simulations[] else JSONLD::id end;
+def simulation_outputs: if ._outputs then ._outputs[] else .has_output | JSONLD::id end;
+def simulation_ensemble: ._ensemble // .ensemble;
+def extra_nodes: ._extra[]?;
+# All the nodes of a result
+def nodes: del(._simulations, ._outputs, ._ensemble, ._members, ._extra), ._members[]?, extra_nodes;
+
+# The ensemble of the UKCP18 global simulations of a scenario (input: a
+# dataset), whose output has the output of a member ($output)
+def _global_ensemble($output):
+    {
+        "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.global.\(.scenario)",
+        "@type": ["ccso:EnsembleSimulation", "ccso:GlobalClimateSimulation"],
+        label: "ukcp18.global.\(.scenario)",
+        scenario: (.scenario | scenario_uri),
+        has_output: {
+            "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.global.\(.scenario)/output",
+            label: "ukcp18.global.\(.scenario)",
+            "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
+            dependent_variable: VARIABLES::variable_iri,
+            sub_dataset: $output
+        }
+    };
+
+# The simulation of a global dataset (input: its metadata): a HadGEM3-GC3.05
+# simulation of UKCP18, or for a CMIP5 member the processing by UKCP18 of the
+# outputs of its CMIP5 runs (the historical run and the run of the scenario, if
+# in CMIP5, see _runs_not_in_cmip5; product output1), whose output (a UKCP18
+# dataset, derived from those outputs) is the output of the member; the CMIP5
+# runs, with the model (its CMIP5 model id and name, cmip5_model_id and
+# cmip5_model_name), are members of the ensemble
 def dataset_to_gcm_simulation:
     (.model_variant_id | get_model_variant_from_id) as {$model, $variant} |
     if $model == "HadGEM3-GC3.05" then 
@@ -104,32 +162,40 @@ def dataset_to_gcm_simulation:
                 label: "ukcp18.global.\(.scenario).\(.model_variant_id)",
                 dependent_variable: VARIABLES::variable_iri
             }
-        }
+        } as $simulation |
+        $simulation + {ensemble: _global_ensemble($simulation.has_output | JSONLD::id)}
     else
+        ($model | CMIP5::cmip5_model_id) as $model_id |
+        ($model_id | CMIP5::cmip5_model_name) as $model_name |
+        [
+            "historical",
+            (.scenario | select(_runs_not_in_cmip5["\($model_id).\(.).\($variant)"] | not))
+        ] as $experiments |
+        [$experiments[] | {model: $model_id, experiment: ., ensemble: $variant, product: "output1", models: [$model_name]}] as $runs |
+        [$runs[] | CMIP5::cmip5_simulation_iris] as $iris |
+        "ukcp18.global.\(.scenario).\(.model_variant_id)" as $id |
+        (@uri "https://w3id.org/hacid/data/cs/ukcp18/land-gcm/datasets/\(.scenario).\(.model_variant_id)") as $output |
+        _global_ensemble($output) as $ensemble |
         {
-            "@id": @uri "https://w3id.org/hacid/data/cs/simulations/cmip5.\($model | normalize_model_id).\(.scenario).\($variant)",
-            has_output: @uri "https://w3id.org/hacid/data/cs/datasets/cmip5.\($model | normalize_model_id).\(.scenario).\($variant).output1"
-        }
-    end as $simulation_with_output |
-
-    # ($simulation_with_output | .has_output? | JSONLD::id) // .has_external_output)) as $output_id |
-
-    $simulation_with_output +      
-    {
-        ensemble: {
-            "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.global.\(.scenario)",
-            "@type": ["ccso:EnsembleSimulation", "ccso:GlobalClimateSimulation"],
-            label: "ukcp18.global.\(.scenario)",
-            scenario: (.scenario | scenario_uri),
+            "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/land-gcm/processing/\(.scenario).\(.model_variant_id)",
+            "@type": "data:DataTransformation",
+            label: "processing of \([$iris[].simulation_id] | join(", ")) for \($id)",
+            input: [$iris[].output],
             has_output: {
-                "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.global.\(.scenario)/output",
-                label: "ukcp18.global.\(.scenario)",
-                "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
+                "@id": $output,
+                "@type": ["ccso:SingleProjection", "ccso:ScenarioBasedProjection"],
+                label: $id,
+                scenario: (.scenario | scenario_uri),
                 dependent_variable: VARIABLES::variable_iri,
-                sub_dataset: ($simulation_with_output | .has_output | JSONLD::id) #$output_id
-            }
+                derived_from: [$iris[].output]
+            },
+            _simulations: [$iris[].simulation],
+            _outputs: [$iris[].output],
+            _ensemble: $ensemble,
+            _members: [$iris[] | {"@id": .simulation, ensemble: $ensemble}],
+            _extra: [($runs[] | CMIP5::cmip5_simulation_jsonld), ({name: $model_name} | CMIP5::cmip5_model_jsonld)]
         }
-    };
+    end;
 
 def dataset_to_rcm_simulation:
     dataset_to_gcm_simulation as $gcm_simulation |
@@ -137,7 +203,7 @@ def dataset_to_rcm_simulation:
         "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.regional.\(.scenario).\(.model_variant_id)/output",
         "@type": ["ccso:SingleProjection", "ccso:ScenarioBasedProjection"],
         label: "ukcp18.regional.\(.scenario).\(.model_variant_id)",
-        derived_from: ($gcm_simulation.has_output | JSONLD::id),
+        derived_from: [$gcm_simulation | simulation_outputs],
         dependent_variable: VARIABLES::variable_iri
     } as $output |
     {
@@ -151,7 +217,7 @@ def dataset_to_rcm_simulation:
             "@type": ["ccso:EnsembleSimulation","ccso:DynamicalDownscaling"],
             label: "ukcp18.regional.\(.scenario)",
             scenario: (.scenario | scenario_uri),
-            downscaling_of: ($gcm_simulation.ensemble | JSONLD::id),
+            downscaling_of: ($gcm_simulation | simulation_ensemble | JSONLD::id),
             has_output: {
                 "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/land-rcm/datasets/\(.scenario)/output",
                 "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
@@ -159,8 +225,9 @@ def dataset_to_rcm_simulation:
                 sub_dataset: ($output | JSONLD::id)
             }
         },
-        downscaling_of: ($gcm_simulation | JSONLD::id),
-        has_output: $output
+        downscaling_of: [$gcm_simulation | simulation_ids],
+        has_output: $output,
+        _extra: [$gcm_simulation | extra_nodes]
     };
 
 def dataset_to_cpm_simulation:
@@ -195,28 +262,68 @@ def dataset_to_cpm_simulation:
             }
         },
         downscaling_of: ($rcm_simulation | JSONLD::id),
-        has_output: $output
+        has_output: $output,
+        _extra: [$rcm_simulation | extra_nodes]
     };
 
+# The simulation of a EuroCORDEX dataset (input: its metadata): the processing
+# by UKCP18 of the outputs of the CORDEX-CMIP5 simulations (the historical one
+# and the one of the scenario, as the datasets cover both periods; product
+# output), whose output (a UKCP18 dataset of a time frequency and variable,
+# derived from those outputs, with the id of a CORDEX-CMIP5 dataset of the
+# scenario, cordex_dataset_id) is part of the output of the ensemble; the
+# CORDEX-CMIP5 simulations (with their driving CMIP5 simulations and their
+# regional model) are members of the ensemble
 def dataset_to_cordex_simulation:
-    @uri "https://w3id.org/hacid/data/cs/datasets/cordex.output.EUR-11.\(.institution_id).\(.driving_model_id | normalize_model_id).\(.scenario).\(.driving_model_ensemble_member).\(.model_id | normalize_model_id).\(.rcm_version_id).\(.frequency).\(.variable)" as $output |
+    (.model_id | normalize_model_id) as $rcm_name |
     {
-        "@id": @uri "https://w3id.org/hacid/data/cs/simulations/cordex.EUR-11.\(.driving_model_id | normalize_model_id).\(.scenario).\(.model_id | normalize_model_id).\(.rcm_version_id).\(.driving_model_ensemble_member)",
-        has_output: $output,
-        ensemble: {
-            "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.eurocordex.\(.scenario)",
-            "@type": ["ccso:EnsembleSimulation","ccso:DynamicalDownscaling"],
+        domain: "EUR-11",
+        driving_model: (.driving_model_id | normalize_model_id),
+        ensemble: .driving_model_ensemble_member,
+        rcm_name: $rcm_name,
+        rcm_version: .rcm_version_id,
+        product: "output",
+        models: [$rcm_name]
+    } as $simulation |
+    [("historical", .scenario) as $experiment | $simulation + {$experiment}] as $runs |
+    [$runs[] | CORDEX::cordex_simulation_iris] as $iris |
+    (
+        $simulation + {experiment: .scenario, institute: .institution_id, time_frequency: .frequency, variable} |
+        CORDEX::cordex_dataset_id
+    ) as $product_id |
+    (@uri "https://w3id.org/hacid/data/cs/ukcp18/EuroCORDEX/datasets/\($product_id)") as $output |
+    {
+        "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.eurocordex.\(.scenario)",
+        "@type": ["ccso:EnsembleSimulation","ccso:DynamicalDownscaling"],
+        label: "ukcp18.eurocordex.\(.scenario)",
+        scenario: (.scenario | scenario_uri),
+        has_output: {
+            "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/EuroCORDEX/datasets/\(.scenario)/output",
+            "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
             label: "ukcp18.eurocordex.\(.scenario)",
             scenario: (.scenario | scenario_uri),
-            has_output: {
-                "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/EuroCORDEX/datasets/\(.scenario)/output",
-                "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
-                label: "ukcp18.eurocordex.\(.scenario)",
-                scenario: (.scenario | scenario_uri),
-                dependent_variable: VARIABLES::variable_iri,
-                sub_dataset: $output
-            }
+            dependent_variable: VARIABLES::variable_iri,
+            sub_dataset: $output
         }
+    } as $ensemble |
+    {
+        "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/EuroCORDEX/processing/\($product_id)",
+        "@type": "data:DataTransformation",
+        label: "processing of \([$iris[].simulation_id] | join(", ")) for ukcp18.eurocordex.\(.scenario)",
+        input: [$iris[].output],
+        has_output: {
+            "@id": $output,
+            "@type": ["ccso:SingleProjection", "ccso:ScenarioBasedProjection"],
+            label: "ukcp18.\($product_id)",
+            scenario: (.scenario | scenario_uri),
+            dependent_variable: VARIABLES::variable_iri,
+            derived_from: [$iris[].output]
+        },
+        _simulations: [$iris[].simulation],
+        _outputs: [$iris[].output],
+        _ensemble: $ensemble,
+        _members: [$iris[] | {"@id": .simulation, ensemble: $ensemble}],
+        _extra: [($runs[] | CORDEX::cordex_simulation_jsonld), ({name: $rcm_name} | CORDEX::cordex_model_jsonld)]
     };
 
 def dataset_to_gcm_derived_projection:
@@ -248,7 +355,7 @@ def dataset_to_gcm_derived_projection:
             label: "ukcp18.derived.\(.scenario)",
             scenario: (.scenario | scenario_uri),
             gwl: (.scenario | gwl_uri),
-            input: ($gcm_simulation.ensemble | JSONLD::id),
+            input: ($gcm_simulation | simulation_ensemble | .has_output | JSONLD::id),
             has_output: {
                 "@id": @uri "https://w3id.org/hacid/data/cs/derivations/ukcp18.derived.\(.scenario)/output",
                 "@type": "ccso:EnsembleProjection",
@@ -256,11 +363,11 @@ def dataset_to_gcm_derived_projection:
                 scenario: (.scenario | scenario_uri),
                 gwl: (.scenario | gwl_uri),
                 dependent_variable: VARIABLES::variable_iri,
-                derived_from: ($gcm_simulation.ensemble | JSONLD::id),
+                derived_from: ($gcm_simulation | simulation_ensemble | .has_output | JSONLD::id),
                 sub_dataset: ($output | JSONLD::id)
             }
         },
-        input: ($gcm_simulation | JSONLD::id),
+        input: ($gcm_simulation.has_output | JSONLD::id),
         has_output: $output
     };
 
@@ -300,18 +407,18 @@ def dataset_to_gcm_indices:
             "@type": ["ccso:EnsembleProjectionProduction", "ccso:StatisticalProjectionTransformation"],
             label: "ukcp18.indices.\(.scenario)",
             scenario: (.scenario | scenario_uri),
-            input: ($gcm_simulation.ensemble | JSONLD::id),
+            input: ($gcm_simulation | simulation_ensemble | .has_output | JSONLD::id),
             has_output: {
                 "@id": @uri "https://w3id.org/hacid/data/cs/derivations/ukcp18.indices.\(.scenario)/output",
                 "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
                 label: "ukcp18.indices.\(.scenario)",
                 scenario: (.scenario | scenario_uri),
                 dependent_variable: VARIABLES::variable_iri,
-                derived_from: ($gcm_simulation.ensemble | JSONLD::id),
+                derived_from: ($gcm_simulation | simulation_ensemble | .has_output | JSONLD::id),
                 sub_dataset: ($output | JSONLD::id)
             }
         },
-        input: ($gcm_simulation | JSONLD::id),
+        input: ($gcm_simulation.has_output | JSONLD::id),
         has_output: $output
     };
 

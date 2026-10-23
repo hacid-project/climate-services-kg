@@ -7,7 +7,9 @@
 #
 # Arguments: --slurpfile mip_index <data/mip-mapping-index.json> (index of
 # data-sources/cmor-tables/mapping/mip-mapping.json, mip_mapping_index); the
-# modules of mapping and of data-sources/cmor-tables/mapping must be in the
+# modules of mapping, of data-sources/cmor-tables/mapping, of
+# data-sources/cmip5/mapping and of data-sources/cordex-cmip5/mapping (the
+# CMIP5 and CORDEX-CMIP5 simulations, see simulations.jq) must be in the
 # library path (-L), run from data-sources/ukcp18.
 
 import "./data/spatial-grid-map" as $spatial_grid_maps;
@@ -148,14 +150,14 @@ UKCP18_TIME::dataset_to_interval as $time_interval |
 
     $rescale_map[.domain]?[.resolution]? as $rescale |
     if $rescale then
-        $simulation,
+        ($simulation | SIMULATIONS::nodes),
         {
             "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
             is_rescaled_version_of: ($simulation.has_output | JSONLD::id),
             is_part_of: (
-                $simulation.ensemble?.has_output | 
+                ($simulation | SIMULATIONS::simulation_ensemble)?.has_output |
                 if . then {
-                    "@id": (JSONLD::id + $rescale),
+                    "@id": (JSONLD::id + "/" + $rescale),
                     "@type": "data:Dataset",
                     is_rescaled_version_of: JSONLD::id
                 }
@@ -163,7 +165,7 @@ UKCP18_TIME::dataset_to_interval as $time_interval |
             )
         }
     else
-        $simulation,
+        ($simulation | SIMULATIONS::nodes),
         {
             "@id": ($simulation.has_output | JSONLD::id),
             sub_dataset: {

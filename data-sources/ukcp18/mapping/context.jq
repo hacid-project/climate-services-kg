@@ -23,6 +23,15 @@ def context:
         geodetic: "https://w3id.org/hacid/data/cs/dimensions/geodetic/reference-frames/",
         ensemble: {
             "@reverse": "top:hasComponent"
+        },
+        # a dataset that is part of another one
+        is_part_of: {
+            "@reverse": "top:hasComponent"
+        },
+        # a rescaled version of a dataset (a dataset is a variable)
+        is_rescaled_version_of: {
+            "@reverse": "data:hasRescaledVersion",
+            "@type": "@id"
         }
     } +
     (
@@ -50,6 +59,9 @@ def context:
                     has_baseline_region: "data:hasBaselineRegion",
                     is_probabilistic_representation_of: "data:isProbabilisticRepresentationOf",
                     derived_from_variable: "data:derivedFromVariable",
+                    # a dataset derived from another one (a dataset is a variable)
+                    derived_from: "data:derivedFromVariable",
+                    input: "data:hasInput",
                     is_linear_transformation_of: "data:isLinearTransformationOf",
                     has_unit_of_measure: "top:hasUnitOfMeasure",
                     has_values_on: "data:hasValuesOn",
