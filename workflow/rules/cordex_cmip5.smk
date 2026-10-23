@@ -24,7 +24,9 @@ rule cordex_cmip5_metadata:
 # Modules of the mapping and of the analysis of the variables
 CORDEX_CMIP5_MODULES = [
     "data-sources/cordex-cmip5/mapping/cordex-variables.jq",
+    "data-sources/cordex-cmip5/mapping/cordex-datasets.jq",
     "data-sources/cmip5/mapping/esgf.jq",
+    "data-sources/cmip5/mapping/cmip5-datasets.jq",
     "data-sources/cmor-tables/mapping/mip-variables.jq",
     "data-sources/cmor-tables/mapping/mip-mapping.json",
 ]

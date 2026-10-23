@@ -84,6 +84,46 @@ variables (`analysis/variables-check.json`, see the end of this document).
   | `snw` | `m` (snow depth as liquid water) | CSIRO/CCAM | 36 | linear transformation (`snw`, `kg m-2`, density of water) |
   | `mrso` | `m3/m3` (volumetric soil moisture) | CSIRO/CCAM | 36 | none (the soil depth would be needed) |
 
+## Ids and metadata (`mapping/cordex-datasets.jq`)
+
+The nodes of the datasets, simulations, ensembles, experiments, domains and
+regional models are given by functions of `mapping/cordex-datasets.jq`
+(`cordex_dataset_jsonld`, `cordex_simulation_jsonld`, `cordex_model_jsonld`,
+with the IRIs of `cordex_simulation_iris` and the ids of the datasets of
+`cordex_dataset_id`), so that the mappings of the sources referring to
+CORDEX-CMIP5 simulations and datasets (UKCP18) can give the nodes of those
+missing from the search results, with the same IRIs and triples. The CMIP5
+simulations they downscale are referred to with `cmip5_simulation_iri`
+(`data-sources/cmip5/mapping/cmip5-datasets.jq`). Their input keys are
+documented with each function.
+
+- **Values from the metadata, not from the ids.** The functions take the
+  product, domain, driving model (normalised, see above), experiment,
+  ensemble member, regional model and version from the facets of the records,
+  not from the components of the dataset ids (`master_id`), which is only the
+  id of the dataset (its IRI and label). Compared on all the 145,493 records,
+  the components of the ids agree with the facets but for:
+  - **Institute.** 283 records have `CCCma` in the ids and `CCCMA` in the
+    facet `institute`. The institute is not in the IRIs of the simulations;
+    the organization is the one of the facet, as before.
+  - **Variables** (52 records, not handled for now, an open case): the
+    facet `variable` lists the variables of the files, which are not always
+    the variable of the id:
+    - the RU-CORE `RegCM4-3` datasets (SEA-22) of `sfcWind` (9) have only
+      `crs` (the grid mapping, skipped), and those of `mrsol` (9) only `crs`,
+      `soil_bounds` and `soil_layer` (coordinates, skipped): they are mapped
+      without variables;
+    - the UCAN `WRF341I` datasets (SAM-44) of the variables at a single level
+      (`hus200`, `ta500`, `zg850`, ..., 24) have the variable of all the
+      levels (`hus`, `ta`, `zg`, ...): they are mapped to it rather than to
+      the variable at the level (e.g. `.../cordex/hus200`);
+    - some datasets have the variable of the id with others (`heightv`, a
+      coordinate, skipped, 9; `snd` with `snw`, 1): they are mapped to all of them.
+
+    Fixing them needs the variable of the id or a rule of
+    `mapping/data-issues.json` for these records.
+- **Same triples.** The refactoring gives the same triples as before.
+
 ## Variables (`mapping/cordex-variables.jq`, `mapping/variables.jq`)
 
 - **Resolution to the MIP variables.** As for CMIP5 (see

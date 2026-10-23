@@ -9,9 +9,10 @@
 # Port of clean-data.jq and of the RML mapping rml/cordex.ttl (with its
 # functions in ws-data-rml.py). The driving models are normalised to the CMIP5
 # model names (--slurpfile model_synonyms mapping/cmip5-model-synonyms.json),
-# also in the dataset ids. For each dataset (master_id cordex.<product>.
-# <domain>.<institute>.<driving_model>.<experiment>.<ensemble>.<rcm_name>.
-# <rcm_version>.<time_frequency>.<variable>):
+# also in the dataset ids. For each dataset, from its metadata (the facets
+# product, domain, institute, driving_model, experiment, ensemble, rcm_name,
+# rcm_version, time_frequency, variable, see cordex_dataset_jsonld in
+# cordex-datasets.jq):
 # - the dataset, the output of its simulation (all the datasets of the same
 #   domain, driving model, experiment, regional model and version, ensemble
 #   member and product), the outputs of the driving ensemble, of the ensemble,
@@ -22,8 +23,11 @@
 #   experiment and regional model), the experiment, the domain and the
 #   regional model, with its institute;
 # - the variables of the dataset, its spatial grid (the CORDEX grid of the
-#   domain, see data-sources/cordex-domains) and its temporal grid (the time interval of the dataset rounded to
-#   the time frequency).
+#   domain, see data-sources/cordex-domains) and its temporal grid (the time
+#   interval of the dataset rounded to the time frequency).
+# The nodes of the simulations and models are given by functions of
+# cordex-datasets.jq, also used by the mappings of the sources referring to the
+# CORDEX-CMIP5 simulations.
 #
 # The IRIs of the variables are those of the MIP variables (see
 # data-sources/cmor-tables/mapping/mip-mapping.md), resolved from the
@@ -50,11 +54,12 @@
 # data-sources/cmor-tables/data/mip-mapping-index.json, --slurpfile data_issues
 # mapping/data-issues.json (the known issues of the datasets, see
 # ../DECISIONS.md); the modules of this directory, of
-# data-sources/cmip5/mapping (esgf.jq) and of data-sources/cmor-tables/mapping
-# must be in the library path (-L).
+# data-sources/cmip5/mapping (esgf.jq, cmip5-datasets.jq) and of
+# data-sources/cmor-tables/mapping must be in the library path (-L).
 
 include "esgf";
 include "cordex-variables";
+include "cordex-datasets";
 
 # --- Driving models (clean-data.jq)
 
@@ -106,41 +111,6 @@ local_variables($standard_output[0]; $level_variables[0]; $local_spec[0]; $entri
 cordex_variable_index($entries_by_name; $mip_index) as $variable_index |
 [
     $datasets[] |
-    (.master_id | split(".")) as $parts |
-    {
-        product: $parts[1],
-        domain: $parts[2],
-        institute: $parts[3],
-        driving_model: $parts[4],
-        experiment: $parts[5],
-        ensemble: $parts[6],
-        model: $parts[7],
-        model_version: $parts[8]
-    } as $id |
-
-    "cordex.\($id.product).\($id.domain).\($id.driving_model).\($id.experiment).\($id.model).\($id.model_version).\($id.ensemble)" as $output_id |
-    "cordex.\($id.domain).\($id.driving_model).\($id.experiment).\($id.model).\($id.model_version).\($id.ensemble)" as $simulation_id |
-    "cordex.\($id.domain).\($id.driving_model).\($id.experiment).\($id.model).\($id.model_version)" as $driving_ensemble_id |
-    "cordex.\($id.product).\($id.domain).\($id.driving_model).\($id.experiment).\($id.model).\($id.model_version)" as $driving_ensemble_output_id |
-    "cordex.\($id.domain).\($id.experiment).\($id.model).\($id.model_version)" as $ensemble_id |
-    "cordex.\($id.domain).\($id.experiment)" as $experiment_id |
-    "cordex.\($id.domain)" as $domain_id |
-
-    (ns + "datasets/\(.master_id)") as $dataset |
-    (ns + "datasets/\($output_id)") as $output |
-    (ns + "simulations/\($simulation_id)") as $simulation |
-    (ns + "simulations/\($driving_ensemble_id)") as $driving_ensemble |
-    (ns + "datasets/\($driving_ensemble_output_id)") as $driving_ensemble_output |
-    (ns + "simulations/\($ensemble_id)") as $ensemble |
-    (ns + "datasets/\($ensemble_id)") as $ensemble_output |
-    (ns + "simulations/\($experiment_id)") as $experiment |
-    (ns + "datasets/\($experiment_id)") as $experiment_output |
-    (ns + "simulations/\($domain_id)") as $domain |
-    (ns + "datasets/\($domain_id)") as $domain_output |
-    # (a domain id without resolution, as AUS, is not a CORDEX grid)
-    (.domain[0] | if test("-") then ns + "cordex/grids/\(.)" else null end) as $grid |
-    [.rcm_name[] | ns + "models/\(quote)"] as $models |
-    [.institute[] | ns + "organizations/\(quote)"] as $institutes |
     .time_frequency[0] as $frequency |
     # (the variables of a model with their own units, model_variables in
     # mapping/data-issues.json, are those of the model)
@@ -154,205 +124,11 @@ cordex_variable_index($entries_by_name; $mip_index) as $variable_index |
             variable_iri_of(.; $frequency; $variable_index; $entries_by_name; $mip_index; $local_variables; $kg)
         )
     ] as $variables |
-    (.experiment | scenario_iris | map(id(.))) as $refers_to_scenario |
-    temporal_grid as $time |
-    ($time | temporal_iris) as $time_iris |
-    ($variables | map(id(.))) as $variable_ids |
-    (if $grid != null then id("\($grid)/ds") else null end) as $geodetic_variable |
-    (if $grid != null then id("\($grid)/specialization") else null end) as $geodetic_specialization |
-    ($models | map(id(.))) as $uses_model |
-
-    # Dataset
-    {
-        "@id": $dataset,
-        "@type": ["ccso:SingleProjection", "ccso:ScenarioBasedProjection"],
-        "rdfs:label": .master_id,
-        "data:isSpecializationOfVariable": $variable_ids,
-        "data:dependsOnVariable": [($geodetic_variable | values), ($time_iris.variable | values | id(.))],
-        "data:isSpecializedAccordingTo": [($geodetic_specialization | values), ($time_iris.specialization | values | id(.))],
-        "ccso:refersToScenario": $refers_to_scenario
-    },
-    # Output of the simulation
-    {
-        "@id": $output,
-        "@type": ["ccso:SingleProjection", "ccso:ScenarioBasedProjection"],
-        "rdfs:label": ($output_id | en),
-        "data:holdsSpecializationOfVariable": $variable_ids,
-        "data:dependsOnVariable": $geodetic_variable,
-        "data:isSpecializedAccordingTo": $geodetic_specialization,
-        "top:hasComponent": id($dataset),
-        "ccso:refersToScenario": $refers_to_scenario
-    },
-    # Simulation
-    {
-        "@id": $simulation,
-        "@type": ["ccso:SingleSimulation", "ccso:DynamicalDownscaling"],
-        "rdfs:label": ($simulation_id | en),
-        "ccso:isDownscalingOf": id(ns + "simulations/cmip5.\($id.driving_model).\($id.experiment).\($id.ensemble)"),
-        "data:hasOutput": id($output),
-        "ccso:usesModel": $uses_model,
-        "ccso:refersToScenario": $refers_to_scenario
-    },
-    # Driving ensemble
-    {
-        "@id": $driving_ensemble,
-        "@type": ["ccso:EnsembleSimulation", "ccso:DynamicalDownscaling"],
-        "rdfs:label": ($driving_ensemble_id | en),
-        "top:hasComponent": id($simulation),
-        "data:hasOutput": id($driving_ensemble_output),
-        "ccso:usesModel": $uses_model,
-        "ccso:refersToScenario": $refers_to_scenario
-    },
-    # Output of the driving ensemble
-    {
-        "@id": $driving_ensemble_output,
-        "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
-        "rdfs:label": ($driving_ensemble_output_id | en),
-        "data:holdsSpecializationOfVariable": $variable_ids,
-        "top:hasComponent": id($output),
-        "data:dependsOnVariable": $geodetic_variable,
-        "data:isSpecializedAccordingTo": $geodetic_specialization,
-        "ccso:refersToScenario": $refers_to_scenario
-    },
-    # Ensemble
-    {
-        "@id": $ensemble,
-        "@type": ["ccso:ClimateModelIntercomparisonExperiment", "ccso:DynamicalDownscaling"],
-        "rdfs:label": ($ensemble_id | en),
-        "top:hasComponent": id($driving_ensemble),
-        "data:hasOutput": id($ensemble_output),
-        "ccso:usesModel": $uses_model,
-        "ccso:refersToScenario": $refers_to_scenario
-    },
-    # Output of the ensemble
-    {
-        "@id": $ensemble_output,
-        "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
-        "rdfs:label": ($ensemble_id | en),
-        "data:holdsSpecializationOfVariable": $variable_ids,
-        "top:hasComponent": id($driving_ensemble_output),
-        "data:dependsOnVariable": $geodetic_variable,
-        "data:isSpecializedAccordingTo": $geodetic_specialization,
-        "ccso:refersToScenario": $refers_to_scenario
-    },
-    # Experiment
-    {
-        "@id": $experiment,
-        "@type": ["ccso:ClimateModelIntercomparisonExperiment", "ccso:DynamicalDownscaling"],
-        "rdfs:label": ($experiment_id | en),
-        "top:hasComponent": id($ensemble),
-        "data:hasOutput": id($experiment_output),
-        "ccso:refersToScenario": $refers_to_scenario
-    },
-    # Output of the experiment
-    {
-        "@id": $experiment_output,
-        "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
-        "rdfs:label": ("output of \($experiment_id)" | en),
-        "data:holdsSpecializationOfVariable": $variable_ids,
-        "top:hasComponent": id($ensemble_output),
-        "data:dependsOnVariable": $geodetic_variable,
-        "data:isSpecializedAccordingTo": $geodetic_specialization,
-        "ccso:refersToScenario": $refers_to_scenario
-    },
-    # Domain
-    {
-        "@id": $domain,
-        "@type": "top:Action",
-        "rdfs:label": ($domain_id | en),
-        "top:hasComponent": id($experiment),
-        "data:hasOutput": id($domain_output)
-    },
-    # Output of the domain
-    {
-        "@id": $domain_output,
-        "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
-        "rdfs:label": ("output of \($domain_id)" | en),
-        "top:hasComponent": id($experiment_output),
-        "data:dependsOnVariable": $geodetic_variable,
-        "data:isSpecializedAccordingTo": $geodetic_specialization
-    },
-    # CORDEX-CMIP5 and its output
-    {
-        "@id": (ns + "mips/cordex-cmip5"),
-        "top:hasComponent": id($domain)
-    },
-    {
-        "@id": (ns + "mips/cordex-cmip5/output"),
-        "top:hasComponent": id($domain_output)
-    },
-    # Regional model
-    (
-        [.rcm_name[] | en] as $labels |
-        $models[] |
-        {
-            "@id": .,
-            "@type": "ccso:RegionalClimateModel",
-            "rdfs:label": $labels,
-            "ccso:isMaintainedBy": ($institutes | map(id(.)))
-        }
-    ),
-    # Institute
-    (
-        .institute as $acronyms |
-        $institutes[] |
-        {
-            "@id": .,
-            "@type": "top:Organization",
-            "top:acronym": $acronyms
-        }
-    ),
-    # Temporal grid
-    (
-        $time | values |
-        {
-            "@id": $time_iris.specialization,
-            "@type": "data:VariableSpecialization",
-            "data:isSpecializationOn": id(ns + "dimensions/time"),
-            "data:hasSelectedRegion": id($time_iris.region)
-        },
-        {
-            "@id": $time_iris.region,
-            "@type": "data:TemporalRegion",
-            "data:hasStartDateTime": (.start | typed("xsd:dateTime")),
-            "data:hasEndDateTime": (.end | typed("xsd:dateTime")),
-            "rdfs:label": ("Time interval \(.start) - \(.end)" | en),
-            "rdfs:comment": ("Time interval starting at date time \(.start) and ending at date time \(.end)." | en)
-        },
-        (
-            select($time_iris.variable != null) |
-            {
-                "@id": $time_iris.variable,
-                "@type": "data:DimensionalSpace",
-                "data:basedOnDimensionalSpace": [
-                    id(ns + "dimensions/time/reference-frames/gregorian"),
-                    id($time_iris.quantization)
-                ],
-                "data:adoptsQuantization": id($time_iris.quantization),
-                "data:hasExactBoundingRegion": id($time_iris.region)
-            },
-            {
-                "@id": $time_iris.quantization,
-                "@type": "data:\(.dimensional_space_type)",
-                "data:basedOnDimensionalSpace": id(ns + "dimensions/time"),
-                "data:hasResolutionValue": (.step | typed("xsd:duration")),
-                "data:hasPeriodValue": (.period | typed("xsd:duration")),
-                "data:hasInPeriodResolutionValue": (.in_period_step | typed("xsd:duration")),
-                "data:hasOffsetValue": (.offset | typed("xsd:duration"))
-            }
-        )
-    )
+    cordex_dataset_jsonld($variables)
 ] |
-# without empty values, each node once
-map(with_entries(select(.value != null and .value != []))) |
+# each node once
 unique |
 {
-    "@context": {
-        rdfs: "http://www.w3.org/2000/01/rdf-schema#",
-        xsd: "http://www.w3.org/2001/XMLSchema#",
-        top: "https://w3id.org/hacid/onto/top-level/",
-        ccso: "https://w3id.org/hacid/onto/ccso/",
-        data: "https://w3id.org/hacid/onto/data/"
-    },
+    "@context": esgf_context,
     "@graph": .
 }

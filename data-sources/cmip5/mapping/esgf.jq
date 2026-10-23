@@ -275,3 +275,13 @@ def temporal_iris:
             quantization: (if .grid_type_id != null then "\(ns)dimensions/time/reference-frames/gregorian/quantizations/\(.grid_type_id)" else null end)
         }
     end;
+
+# JSON-LD context of the nodes of the mappings of the ESGF search results
+def esgf_context:
+    {
+        rdfs: "http://www.w3.org/2000/01/rdf-schema#",
+        xsd: "http://www.w3.org/2001/XMLSchema#",
+        top: "https://w3id.org/hacid/onto/top-level/",
+        ccso: "https://w3id.org/hacid/onto/ccso/",
+        data: "https://w3id.org/hacid/onto/data/"
+    };

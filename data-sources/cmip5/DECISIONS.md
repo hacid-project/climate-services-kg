@@ -20,6 +20,41 @@ Decisions taken in mapping the CMIP5 datasets (the ESGF search results,
   frequency (the frequencies shorter than a day to days, `monClim` to months),
   as in the RML mapping (`round_datetime` in `esgf.jq`).
 
+## Ids and metadata (`mapping/cmip5-datasets.jq`)
+
+The nodes of the datasets, simulations, ensembles, experiments and models are
+given by functions of `mapping/cmip5-datasets.jq` (`cmip5_dataset_jsonld`,
+`cmip5_simulation_jsonld`, `cmip5_model_jsonld`, with the IRIs of
+`cmip5_simulation_iris`), so that the mappings of the sources referring to
+CMIP5 simulations (CORDEX-CMIP5, UKCP18) can give the nodes of the
+simulations missing from the search results, with the same IRIs and triples.
+Their input keys are documented with each function.
+
+- **Values from the metadata, not from the ids.** The functions take the
+  product, model, experiment and ensemble member from the facets of the
+  records, not from the components of the dataset ids (`master_id`), which is
+  only the id of the dataset (its IRI and label). Compared on all the 6,445
+  records, the components of the ids agree with the facets but for:
+  - **Model names.** The facet `model` is the name of the model (e.g.
+    `CSIRO-Mk3.6.0`, the IRI of the model), the ids have the CMIP5 model id of
+    the DRS (e.g. `CSIRO-Mk3-6-0`, in the IRIs of the simulations). The id is
+    derived from the name (`cmip5_model_id`): each `.` replaced by `-`, except
+    for `GFDL-CM2.1` (`GFDL-CM2p1`) and `INM-CM4` (`inmcm4`), the only
+    exceptions in the search results, and for `BCC-CSM1.1` (`bcc-csm1-1`) and
+    `BCC-CSM1.1(m)` (`bcc-csm1-1-m`), not in the search results but driving
+    CORDEX-CMIP5 and UKCP18 simulations. Same IRIs as before for all the
+    records.
+  - **Institute.** The 492 CanESM2 records have the institute `CCCma` in the
+    ids and `CCCMA` in the facet `institute`. The institute is not in the IRIs
+    of the simulations; the organization is the one of the facet
+    (`.../organizations/CCCMA`), as before.
+  - **Ids without CMOR table.** 378 of the CanESM2 ids have 8 components, with
+    no CMOR table (e.g. `cmip5.output.CCCma.CanESM2.historical.6hr.atmos.r1i1p1`,
+    of the table `6hrLev`). They are kept as the ids of their datasets (no two
+    records of different tables have the same id); the ensemble member was
+    already taken as the last component.
+- **Same triples.** The refactoring gives the same triples as before (282,210).
+
 ## Variables (`cmip5_variable_spec`, `cmip5_variable_iri` in `mapping/esgf.jq`)
 
 - **Resolution to the MIP variables.** The variables are resolved to the MIP
