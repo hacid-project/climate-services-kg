@@ -148,6 +148,33 @@ def cordex_dataset_id:
 # IRI of a CORDEX-CMIP5 dataset (input: its id, e.g. cordex_dataset_id)
 def cordex_dataset_iri: ns + "datasets/\(.)";
 
+# Nodes of a CORDEX-CMIP5 dataset from its parts, for a dataset referred to by
+# another source (also when missing from the search results): the dataset (id
+# cordex_dataset_id, with its scenario and spatial grid), component of the
+# output of its simulation. Its variable and temporal grid are given only by
+# the mapping of the search results (cordex_dataset_jsonld), from its metadata.
+#
+# Input: the keys of cordex_dataset_id (with the product), and grids
+# (optional, see cordex_simulation_iris).
+def cordex_dataset_part_jsonld:
+    (cordex_dataset_id | cordex_dataset_iri) as $dataset |
+    cordex_simulation_iris as $iris |
+    (
+        {
+            "@id": $dataset,
+            "@type": ["ccso:SingleProjection", "ccso:ScenarioBasedProjection"],
+            "rdfs:label": cordex_dataset_id,
+            "data:dependsOnVariable": ($iris.grid | values | id("\(.)/ds")),
+            "data:isSpecializedAccordingTo": ($iris.grid | values | id("\(.)/specialization")),
+            "ccso:refersToScenario": ([.experiment] | scenario_iris | map(id(.)))
+        },
+        {
+            "@id": $iris.output,
+            "top:hasComponent": id($dataset)
+        }
+    ) |
+    _nodes;
+
 # Nodes of a CORDEX-CMIP5 simulation (a downscaling of the CMIP5 simulation of
 # the driving model), of the driving ensemble (the simulations of the same
 # domain, driving model, experiment and regional model), of the ensemble (of

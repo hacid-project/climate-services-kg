@@ -63,6 +63,7 @@ def context:
                     derived_from: "data:derivedFromVariable",
                     input: "data:hasInput",
                     is_linear_transformation_of: "data:isLinearTransformationOf",
+                    is_equivalent_to: "data:isEquivalentTo",
                     has_unit_of_measure: "top:hasUnitOfMeasure",
                     has_values_on: "data:hasValuesOn",
                 },

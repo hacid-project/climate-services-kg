@@ -121,8 +121,9 @@ variables (`analysis/variables-check.json`, see the end of this document).
 The nodes of the datasets, simulations, ensembles, experiments, domains and
 regional models are given by functions of `mapping/cordex-datasets.jq`
 (`cordex_dataset_jsonld`, `cordex_simulation_jsonld`, `cordex_model_jsonld`,
-with the IRIs of `cordex_simulation_iris` and the ids of the datasets of
-`cordex_dataset_id`), so that the mappings of the sources referring to
+with the IRIs of `cordex_simulation_iris`, the ids of the datasets of
+`cordex_dataset_id` and the nodes of a dataset from its parts,
+`cordex_dataset_part_jsonld`, without its variable and temporal grid), so that the mappings of the sources referring to
 CORDEX-CMIP5 simulations and datasets (UKCP18) can give the nodes of those
 missing from the search results, with the same IRIs and triples. The CMIP5
 simulations they downscale are referred to with `cmip5_simulation_iri`

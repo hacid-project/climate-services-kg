@@ -153,7 +153,7 @@ UKCP18_TIME::dataset_to_interval as $time_interval |
         ($simulation | SIMULATIONS::nodes),
         {
             "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
-            is_rescaled_version_of: ($simulation.has_output | JSONLD::id),
+            is_rescaled_version_of: ($simulation | SIMULATIONS::simulation_output),
             is_part_of: (
                 ($simulation | SIMULATIONS::simulation_ensemble)?.has_output |
                 if . then {
@@ -167,7 +167,7 @@ UKCP18_TIME::dataset_to_interval as $time_interval |
     else
         ($simulation | SIMULATIONS::nodes),
         {
-            "@id": ($simulation.has_output | JSONLD::id),
+            "@id": ($simulation | SIMULATIONS::simulation_output),
             sub_dataset: {
                 "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/datasets/\(.id)",
             }
