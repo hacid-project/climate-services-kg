@@ -21,8 +21,9 @@
 #
 # Also the variables of a model with their own units (model_variables in
 # mapping/data-issues.json), variables/cordex/<model>/<variable>/<units>,
-# related to the MIP variable as given by their relation
-# (data:isLinearTransformationOf, data:derivedFromVariable, or none).
+# related to the MIP variable (or to the variable defined locally, e.g. hur200)
+# as given by their relation (data:isLinearTransformationOf,
+# data:derivedFromVariable, or none).
 #
 # Arguments (run with -n): --slurpfile data_issues mapping/data-issues.json,
 # --slurpfile standard_output
@@ -65,6 +66,7 @@ def _single_level_quantities:
     end |
     del(.specified)
 ] as $variables |
+($variables | map({key: .out_name, value: true}) | from_entries) as $local_names |
 # the MIP variables the variables are derived from (derived_from), by IRI
 (
     [
@@ -98,7 +100,11 @@ variables_jsonld(
         (
             {linear_transformation: "data:isLinearTransformationOf", derived: "data:derivedFromVariable"}[.relation // ""] //
             "data:relatedTo"
-        ): (if .relation then {"@id": mip_variable_iri_of($rule.variable; ""; $entries_by_name)} else null end),
+        ): (
+            if .relation then
+                {"@id": (if $local_names[$rule.variable] then $rule.variable | cordex_variable_iri else mip_variable_iri_of($rule.variable; ""; $entries_by_name) end)}
+            else null end
+        ),
         hasUnitOfMeasure: $unit,
         hasValuesOn: $unit
     },

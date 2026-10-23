@@ -78,7 +78,7 @@ variables (`analysis/variables-check.json`, see the end of this document).
   | --- | --- | --- | --- | --- |
   | `pr` | `mm`, `mm/month` | BOM/BOM-SDM | 67 | derived (`pr`) |
   | `hurs` | `1` | NUIM/WRF341E | 12 | linear transformation (`hurs`, `%`) |
-  | `hur` | `1` | UCAN/WRF341I | 3 | linear transformation (`hur`, `%`) |
+  | `hur200`, `hur500`, `hur850` | `1` | UCAN/WRF341I | 12 | linear transformation (`hur200`, ..., `%`, defined locally) |
   | `sic` | `1` ("Sea Ice Flag", `sea_ice_flag`) | UCAN/WRF341I | 4 | derived (`siconc`): a flag, not the fraction |
   | `sftlf` | `1` | DMI/HIRHAM5 | 3 | linear transformation (`sftlf`, `%`) |
   | `snw` | `m` (snow depth as liquid water) | CSIRO/CCAM | 36 | linear transformation (`snw`, `kg m-2`, density of water) |
@@ -106,23 +106,34 @@ documented with each function.
   - **Institute.** 283 records have `CCCma` in the ids and `CCCMA` in the
     facet `institute`. The institute is not in the IRIs of the simulations;
     the organization is the one of the facet, as before.
-  - **Variables** (52 records, not handled for now, an open case): the
-    facet `variable` lists the variables of the files, which are not always
-    the variable of the id:
-    - the RU-CORE `RegCM4-3` datasets (SEA-22) of `sfcWind` (9) have only
-      `crs` (the grid mapping, skipped), and those of `mrsol` (9) only `crs`,
-      `soil_bounds` and `soil_layer` (coordinates, skipped): they are mapped
-      without variables;
+  - **Variables** (`mapping/data-issues.json`, `variables_from_id`; 52
+    records): the facet `variable` lists the variables of the files, which are
+    not always the variable of the id:
+    - the RU-CORE `RegCM4-3` datasets (SEA-22) of `sfcWind` (9) list only
+      `crs` (the grid mapping), and those of `mrsol` (9) only `crs`,
+      `soil_bounds` and `soil_layer` (coordinates), with their metadata;
     - the UCAN `WRF341I` datasets (SAM-44) of the variables at a single level
-      (`hus200`, `ta500`, `zg850`, ..., 24) have the variable of all the
-      levels (`hus`, `ta`, `zg`, ...): they are mapped to it rather than to
-      the variable at the level (e.g. `.../cordex/hus200`);
+      (`hus200`, `ta500`, `zg850`, ..., 27) list the variable of all the
+      levels (`hus`, `ta`, `zg`, ...), with the metadata of the dataset
+      (e.g. "Specific Humidity", `specific_humidity`, `1`);
     - some datasets have the variable of the id with others (`heightv`, a
-      coordinate, skipped, 9; `snd` with `snw`, 1): they are mapped to all of them.
+      coordinate, skipped, 9; `snd` with `snw`, 1): left as they are.
 
-    Fixing them needs the variable of the id or a rule of
-    `mapping/data-issues.json` for these records.
-- **Same triples.** The refactoring gives the same triples as before.
+    The datasets matching a rule of `variables_from_id` (by regional model,
+    institute, domain and facet `variable`) get the variable of their id (its
+    last component) in place of the facet `variable` (`fix_variables` in
+    `mapping/cordex-variables.jq`), before the other rules of
+    `mapping/data-issues.json` are applied and before the mapping
+    (`cordex_dataset_jsonld` takes the variables of the dataset as given). The
+    metadata of the facets are kept when they are those of the variable of the
+    dataset (`facet_metadata`, the `WRF341I` rule), otherwise dropped (the
+    `RegCM4-3` rule): the check (`analysis/variables-check.jq`) leaves those
+    datasets out of the comparison of the units and standard names. The
+    `RegCM4-3` datasets now hold `sfcWind` and `mrsol` (before, no variable),
+    the `WRF341I` datasets the variables at their levels (before, the variables
+    on all the levels, e.g. `.../mip/hus` instead of `.../mip/hus850`).
+- **Same triples.** The refactoring gave the same triples as before (the
+  variables of the datasets of `variables_from_id`, added afterwards, apart).
 
 ## Variables (`mapping/cordex-variables.jq`, `mapping/variables.jq`)
 
@@ -170,9 +181,11 @@ documented with each function.
   `v` (zonal and meridional wind at 200, 500 and 850 hPa, 36 datasets each)
   are aliases of `ua` and `va` (`aliases`, `cordex_variable_name`): `u200` is
   the variable of `ua200`.
-  The bases `clfr`, `clice` and `clwmr` are also published on all their
-  levels (`all_levels`, WRF341I, SAM-44), as variables on the vertical
-  dimension (`.../variables/cordex/clfr`).
+  The bases `clfr`, `clice` and `clwmr` appeared also on all their levels
+  (WRF341I, SAM-44), and were defined as variables on the vertical dimension
+  (`.../variables/cordex/clfr`): those were the datasets at a single level
+  whose facet `variable` is the base (see `variables_from_id` above), so they
+  are no longer defined.
 - **Other variables not in the CMOR tables** (`mapping/local-variables.json`,
   `cordex_variable_name` and `local_variables` in `mapping/cordex-variables.jq`):
   the other 32 names of the datasets in no edition of the CMOR tables are

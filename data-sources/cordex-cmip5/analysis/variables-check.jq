@@ -84,7 +84,8 @@ def canonical_units:
     end;
 
 $data_issues[0] as $issues |
-[inputs | .response.docs[]] as $all_datasets |
+# (with the variables of the ids for the datasets of variables_from_id)
+[inputs | .response.docs[] | fix_variables($data_issues[0])] as $all_datasets |
 [$all_datasets[] | select(excluded($issues) | not)] as $datasets |
 # Excluded datasets by variable and frequency
 (
@@ -121,7 +122,9 @@ local_variables($standard_output[0]; $level_variables[0]; $local_spec[0]; $entri
             fixed_units: ($dataset | units_error($issues; $variables[$i])),
             model_variable: (($dataset | model_variable($issues; $variables[$i])) != null),
             model: "\($dataset.institute[0])/\($dataset.rcm_name[0])",
-            long_name: ($long_names[$i]? // null)
+            long_name: ($long_names[$i]? // null),
+            # whether the metadata of the variable are known (see fix_variables)
+            metadata: ($dataset.variables_metadata != false)
         }
     ] |
     group_by([.variable, .frequency]) |
@@ -131,13 +134,14 @@ local_variables($standard_output[0]; $level_variables[0]; $local_spec[0]; $entri
             variable: .[0].variable,
             frequency: .[0].frequency,
             datasets: length,
-            units: [.[].units],
-            records: [.[] | {units, fixed_units, model_variable, model}],
-            standard_names: [.[].standard_name],
+            # (of the records whose metadata are known)
+            units: [.[] | select(.metadata) | .units],
+            records: [.[] | select(.metadata) | {units, fixed_units, model_variable, model}],
+            standard_names: [.[] | select(.metadata) | .standard_name],
             # the standard names, with the known aliases replaced
-            cf_standard_names: [.[] | .alias_of // .standard_name],
-            aliased: ([.[] | select(.alias_of)] | length),
-            long_names: [.[].long_name | values]
+            cf_standard_names: [.[] | select(.metadata) | .alias_of // .standard_name],
+            aliased: ([.[] | select(.metadata and .alias_of)] | length),
+            long_names: [.[] | select(.metadata) | .long_name | values]
         }
     }) |
     from_entries

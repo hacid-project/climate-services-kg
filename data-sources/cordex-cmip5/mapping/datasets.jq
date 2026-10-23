@@ -100,8 +100,9 @@ def _clean:
 
 # --- Mapping
 
-# (without the datasets excluded in mapping/data-issues.json)
-[inputs | .response.docs[] | select(excluded($data_issues[0]) | not) | _clean] as $datasets |
+# (with the variables of the ids for the datasets of variables_from_id, without
+# the datasets excluded, see mapping/data-issues.json)
+[inputs | .response.docs[] | fix_variables($data_issues[0]) | select(excluded($data_issues[0]) | not) | _clean] as $datasets |
 ($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
 ($kg_variables[0] | iri_set) as $kg |
 $mip_index[0] as $mip_index |
