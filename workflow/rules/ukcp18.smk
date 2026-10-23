@@ -139,11 +139,16 @@ rule ukcp18_map_models:
 # rdf/datasets/datasets-NNNN.jsonld
 # Framing of the nodes of the datasets (one per line) in blocks of block_size
 # nodes, each piped to frame.jq and written to <dir>/datasets-<nnnn>.jsonld
-# (POSIX awk, as split --filter is not portable)
+# (POSIX awk, as split --filter is not portable). The nodes of the CMIP5 and
+# CORDEX-CMIP5 simulations, outputs and models (and their membership in the
+# UKCP18 ensembles), given again by each dataset referring to them, are written
+# once (their distinct lines are few).
 AWK_FRAME_BLOCKS = (
-    "(NR - 1) % size == 0 {"
+    "/^[{]\"@id\":\"https:[/][/]w3id[.]org[/]hacid[/]data[/]cs[/](simulations[/](cmip5|cordex)[.]|datasets[/](cmip5|cordex)[.]|mips[/]|models[/])/"
+    " { if (seen[$0]++) next }"
+    " (n++) % size == 0 {"
     " if (cmd && close(cmd)) exit 1;"
-    " cmd = sprintf(\"jq -s -c -L mapping -f mapping/frame.jq > '%s/datasets-%04d.jsonld'\", dir, (NR - 1) / size)"
+    " cmd = sprintf(\"jq -s -c -L mapping -f mapping/frame.jq > '%s/datasets-%04d.jsonld'\", dir, (n - 1) / size)"
     " }"
     " { print | cmd }"
     " END { if (cmd && close(cmd)) exit 1 }"
@@ -162,6 +167,9 @@ rule ukcp18_map_datasets:
             "data-sources/ukcp18/mapping/jsonld.jq",
             "data-sources/ukcp18/mapping/context.jq",
             "data-sources/ukcp18/mapping/ukcp18-ids.jq",
+            "data-sources/cmip5/mapping/cmip5-datasets.jq",
+            "data-sources/cmip5/mapping/esgf.jq",
+            "data-sources/cordex-cmip5/mapping/cordex-datasets.jq",
         ],
         data=[
             "data-sources/ukcp18/data/spatial-grid-map.json",
@@ -176,7 +184,8 @@ rule ukcp18_map_datasets:
         "logs/ukcp18/map_datasets.log",
     shell:
         "root=$PWD; mkdir -p {output:q}; cd data-sources/ukcp18 &&"
-        " jq -n -c -L mapping -L ../cmor-tables/mapping --slurpfile mip_index $root/{input.mip_index:q}"
+        " jq -n -c -L mapping -L ../cmor-tables/mapping -L ../cmip5/mapping -L ../cordex-cmip5/mapping"
+        " --slurpfile mip_index $root/{input.mip_index:q}"
         " -f mapping/datasets.jq $root/{input.metadata:q} 2> $root/{log:q} |"
         " awk -v size={params.block_size} -v dir=$root/{output:q} {AWK_FRAME_BLOCKS:q}"
 

@@ -80,8 +80,7 @@ def variable_iri_of($variable; $frequency; $index; $entries_by_name; $mip_index;
 # Variables at a single level (pressure or height), by out_name, from their
 # specification ($levels, mapping/level-variables.json): for each base and
 # level, <base><level> (e.g. hus200, at 200 hPa) and <base><level>m (e.g.
-# ua50m, at 50 m), and the base itself on all the levels if all_levels (e.g.
-# clfr), with an entry as those of the CMOR tables (long name at the level,
+# ua50m, at 50 m), with an entry as those of the CMOR tables (long name at the level,
 # standard name and units of the base), marked as specified (its long name is
 # given)
 def level_variables($levels):
@@ -91,7 +90,6 @@ def level_variables($levels):
         {long_name: $spec.long_name, standard_name: $spec.standard_name, units: $spec.units,
          modeling_realm: "atmos", dimensions: "longitude latitude time", specified: true} as $entry |
         (
-            (if $spec.all_levels then {key: $base, value: ($entry | .dimensions = "longitude latitude alevel time")} else empty end),
             ($spec.pressure_levels[]? as $level | {key: "\($base)\($level)", value: ($entry | .long_name += " at \($level)hPa")}),
             ($spec.height_levels[]? as $level | {key: "\($base)\($level)m", value: ($entry | .long_name += " at \($level)m")})
         )
@@ -176,6 +174,31 @@ def matches($match):
 # Whether a dataset (input: its ESGF metadata) is excluded
 # ($issues: data-issues.json)
 def excluded($issues): . as $dataset | any($issues.excluded_datasets[]; .match as $m | $dataset | matches($m));
+
+# A dataset (input: its ESGF metadata) with the variable of its id (the last
+# component of master_id) in place of the facet variable, if it matches a rule
+# of variables_from_id (its facet variable is known not to list its variable),
+# to apply before the other rules. Unless the rule has facet_metadata (the
+# metadata of the facets are those of the variable of the dataset), the
+# metadata of the variables are dropped and the dataset is marked with
+# variables_metadata false.
+def fix_variables($issues):
+    . as $dataset |
+    ([$issues.variables_from_id[]? | select(.match as $m | $dataset | matches($m))][0]) as $rule |
+    if $rule == null then .
+    else
+        .variable = [.master_id | split(".") | .[-1]] |
+        if $rule.facet_metadata then .
+        else .variable_units = [] | .cf_standard_name = [] | .variable_long_name = [] | .variables_metadata = false
+        end
+    end;
+
+# A dataset (input: its ESGF metadata) with the experiment evaluation in place
+# of the facet experiment, if it matches a rule of evaluation_runs (an
+# evaluation run, driven by a reanalysis, with another experiment)
+def fix_experiment($issues):
+    . as $dataset |
+    if any($issues.evaluation_runs[]?; .match as $m | $dataset | matches($m)) then .experiment = ["evaluation"] end;
 
 # The CF standard name of the standard name of a variable of a dataset (input:
 # its ESGF metadata) known to be used in its place, if any

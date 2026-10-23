@@ -116,3 +116,98 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
   plain words: `beta` ("soil_moisture_stress_factor" in the datasets) is
   "Soil moisture stress factor", `flashrate` ("NUMBER OF LIGHTNING FLASHES")
   is "Number of lightning flashes".
+
+## Simulations and lineage (`mapping/simulations.jq`, `mapping/context.jq`)
+
+- **Links lost in the JSON-LD.** The keys `derived_from`, `input`,
+  `is_rescaled_version_of` and `is_part_of` were not terms of the context, so
+  they gave no triples (JSON-LD drops the undefined terms): the about 370,000
+  datasets on the UK grids and regional splits (rescaled versions of an
+  output) were not linked to the output they come from, and the derived
+  projections and indices were not linked to their inputs. They are now terms
+  of the context: `derived_from` as `data:derivedFromVariable`, `input` as
+  `data:hasInput`, `is_rescaled_version_of` as the reverse of
+  `data:hasRescaledVersion` and `is_part_of` as the reverse of
+  `top:hasComponent` (a dataset is a variable, so the properties of the
+  variables relate also datasets). The IRIs of the rescaled ensemble outputs
+  (`is_part_of`) now have a `/` between the output and the grid (e.g.
+  `.../ukcp18.global.rcp85/output/ukcp18/regional-splits/region`), and the
+  inputs of the derived projections and indices are the outputs of the
+  simulations (`data:hasInput` relates a process to a dataset), not the
+  simulations.
+- **CMIP5 members** (land-gcm, members 16 to 28, and the CMIP5 driven
+  members of land-rcm and land-cpm, 23, 25, 27, 29). The UKCP18 global
+  datasets of a CMIP5 member are derived from the CMIP5 data, regridded and
+  joined: every dataset has `cmip5_experiment_id` `historical`, as the series
+  join the historical run (from 1899) to the run of the scenario (from 2006).
+  The output of a member is a UKCP18 dataset
+  (`.../ukcp18/land-gcm/datasets/<scenario>.<member>`), output of a rescaling
+  (`ccso:Rescaling`, `ccso:StatisticalProjectionTransformation`:
+  `.../ukcp18/land-gcm/processing/<scenario>.<member>`) whose inputs are the
+  outputs (product `output1`) of the CMIP5 historical run and of the run of
+  the scenario, of which it is a rescaled version (`data:hasRescaledVersion`).
+  It is a rescaling rather than an aggregation, as most CMIP5 grids are coarser
+  than the 60 km grid of UKCP18; the means over time (monthly, seasonal,
+  annual, 20 and 30 years) are aggregations, but the output of a member holds
+  all the frequencies. The CMIP5 runs are members of the UKCP18 ensemble, and
+  the regional members are downscalings of both. The nodes of the CMIP5 runs
+  and of the model are given with the functions of
+  `data-sources/cmip5/mapping/cmip5-datasets.jq`, so the runs missing from the
+  CMIP5 search results (e.g. `CCSM4`, `bcc-csm1-1`) are in the KG.
+- **CMIP5 runs that do not exist** (`_runs_not_in_cmip5`): `ACCESS1-3`,
+  `CESM1-BGC`, `CMCC-CM` and `EC-EARTH` (`r1i1p1`) have no `rcp26` run in
+  CMIP5: their `rcp26` datasets cover only the historical period (up to 2005,
+  2009 for `EC-EARTH`, whose historical run goes up to 2012), so they are
+  derived from the historical run alone.
+- **Model ids.** The CMIP5 model ids are given by `cmip5_model_id` from the
+  `cmip5_model_id` of the datasets (e.g. `ACCESS1.3`, `ACCESS1-3`); the
+  extraction of the model variants (`mapping/extract-model-variants.jq`) no
+  longer renames `bcc-csm1-1` to `BCC-CSM1-1`, which is not its CMIP5 id.
+- **EuroCORDEX datasets.** They were linked to IRIs of CORDEX-CMIP5 datasets
+  (`.../datasets/cordex.output.EUR-11.<institute>.<driving model>.rcp85.<ensemble>.<model>.<version>.<frequency>.<variable>`),
+  but of frequencies (`ann`, `seas`) or variables (`rls`, `rss`) that CORDEX
+  does not publish, or of simulations missing from the CORDEX search results:
+  2,302 without a node. The datasets of a simulation, frequency and variable
+  are now UKCP18 datasets (`.../ukcp18/EuroCORDEX/datasets/<that id>`), from
+  the CORDEX-CMIP5 historical simulation and the one of the scenario (the
+  datasets cover 1980 to 2080; product `output`), part of the output of the
+  UKCP18 ensemble, of which the CORDEX-CMIP5 simulations are members:
+  - the variables computed by UKCP18 (`rls`, `rss`, the net longwave and
+    shortwave radiation): output of a `ccso:StatisticalProjectionTransformation`
+    (also a `ccso:Aggregation` for `ann` and `seas`,
+    `.../ukcp18/EuroCORDEX/processing/<that id>`) whose inputs are the outputs
+    of the simulations, from which they are derived
+    (`data:derivedFromVariable`);
+  - the other variables, `ann` and `seas`: output of a `ccso:Aggregation`
+    (also a `ccso:StatisticalProjectionTransformation`) whose inputs are the
+    outputs of the simulations, of which they are a rescaled version
+    (`data:hasRescaledVersion`);
+  - the other variables, `day` and `mon`: made of a part for each period
+    (`<that dataset>/historical`, `<that dataset>/rcp85`), each a linear
+    transformation (`data:isLinearTransformationOf`) of the CORDEX-CMIP5
+    dataset of its period, for the variables in other units (`tas`, `tasmax`,
+    `tasmin` in `degC`, `pr`, `prsn` in `mm/day`, `psl` in `hPa`), or
+    equivalent to it (`data:isEquivalentTo`: `clt`, `hurs`, `huss`,
+    `sfcWind`, `uas`, `vas`, and `snw` in `mm`, with the values of `kg m-2`).
+    Not a component of the CORDEX-CMIP5 datasets, whose values are in other
+    units. The CORDEX-CMIP5 datasets are given from their parts
+    (`cordex_dataset_part_jsonld` in
+    `data-sources/cordex-cmip5/mapping/cordex-datasets.jq`, without their
+    variables, given by the mapping of the search results), also those missing
+    from the search results. Assumed: the monthly datasets of UKCP18 come from
+    the monthly ones of CORDEX (not computed from the daily ones, which would
+    make them aggregations); not documented in the metadata.
+
+  The nodes of the simulations (with their driving CMIP5 simulations) and of
+  the regional model are given with the functions of
+  `data-sources/cordex-cmip5/mapping/cordex-datasets.jq`, so the simulations
+  missing from the CORDEX search results (`REMO2015` driven by `EC-EARTH`
+  `r12i1p1` and by `HadGEM2-ES`) are in the KG.
+- **RegCM4-6 driven by CNRM-CM5.** The UKCP18 metadata give the version `v1`,
+  while ESGF has only `v2` of this simulation: as nothing shows that `v1` is a
+  metadata error (it may have been replaced by `v2`), the `v1` simulation is
+  in the KG, as given.
+- **Nodes given once.** The nodes of the CMIP5 and CORDEX-CMIP5 simulations,
+  outputs and models are given by each dataset referring to them: the framing
+  (`AWK_FRAME_BLOCKS` in `workflow/rules/ukcp18.smk`) writes each of their
+  lines once.

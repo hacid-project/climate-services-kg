@@ -34,6 +34,7 @@ rule cmip5_map_datasets:
         ),
         modules=[
             "data-sources/cmip5/mapping/esgf.jq",
+            "data-sources/cmip5/mapping/cmip5-datasets.jq",
             "data-sources/cmor-tables/mapping/variables-jsonld.jq",
             "data-sources/cmor-tables/mapping/mip-variables.jq",
             "data-sources/cmor-tables/mapping/mip-mapping.json",

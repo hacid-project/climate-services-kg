@@ -139,7 +139,7 @@
         {
             "match": {
                 "variable": [
-                    "hur"
+                    "hur200"
                 ],
                 "rcm_name": [
                     "WRF341I"
@@ -149,9 +149,45 @@
                 ]
             },
             "model": "WRF341I",
-            "variable": "hur",
+            "variable": "hur200",
             "units": "1",
-            "long_name": "Relative Humidity",
+            "long_name": "Relative Humidity at 200hPa",
+            "relation": "linear_transformation"
+        },
+        {
+            "match": {
+                "variable": [
+                    "hur500"
+                ],
+                "rcm_name": [
+                    "WRF341I"
+                ],
+                "variable_units": [
+                    "1"
+                ]
+            },
+            "model": "WRF341I",
+            "variable": "hur500",
+            "units": "1",
+            "long_name": "Relative Humidity at 500hPa",
+            "relation": "linear_transformation"
+        },
+        {
+            "match": {
+                "variable": [
+                    "hur850"
+                ],
+                "rcm_name": [
+                    "WRF341I"
+                ],
+                "variable_units": [
+                    "1"
+                ]
+            },
+            "model": "WRF341I",
+            "variable": "hur850",
+            "units": "1",
+            "long_name": "Relative Humidity at 850hPa",
             "relation": "linear_transformation"
         },
         {
@@ -226,7 +262,7 @@
             "long_name": "Average Soil Moisture"
         }
     ],
-    "model_variables_reason": "The BoM statistical downscaling (BOM, BOM-SDM, domain AUS) gives pr in mm (daily datasets) and mm/month (monthly datasets), a different use of the variable: each is a variable of its own, variables/cordex/<model>/<variable>/<units>, member of the CORDEX variables and of the variables of the model (variables/cordex/<model>, associated with the model), derived from the MIP variable. Also the fractions in 1 instead of % (hurs of NUIM WRF341E, hur and sic of UCAN WRF341I, sftlf of DMI HIRHAM5), and snw in m (snow depth as liquid water) and mrso in m3/m3 (volumetric soil moisture) of CSIRO CCAM, taken as legitimate alternative units or measures of the same phenomena (not checked in the NetCDF files). The relation to the MIP variable is linear_transformation (data:isLinearTransformationOf) if the units are convertible (1 and %; m of liquid water and kg m-2, assuming the density of water), derived (data:derivedFromVariable) for a different quantity (pr totals in mm and mm/month; the sea ice flag of WRF341I, sea_ice_flag, from the sea ice fraction), and none if neither (mrso in m3/m3 needs the soil depth).",
+    "model_variables_reason": "The BoM statistical downscaling (BOM, BOM-SDM, domain AUS) gives pr in mm (daily datasets) and mm/month (monthly datasets), a different use of the variable: each is a variable of its own, variables/cordex/<model>/<variable>/<units>, member of the CORDEX variables and of the variables of the model (variables/cordex/<model>, associated with the model), derived from the MIP variable. Also the fractions in 1 instead of % (hurs of NUIM WRF341E, hur200, hur500, hur850 and sic of UCAN WRF341I, sftlf of DMI HIRHAM5), and snw in m (snow depth as liquid water) and mrso in m3/m3 (volumetric soil moisture) of CSIRO CCAM, taken as legitimate alternative units or measures of the same phenomena (not checked in the NetCDF files). The relation to the MIP variable is linear_transformation (data:isLinearTransformationOf) if the units are convertible (1 and %; m of liquid water and kg m-2, assuming the density of water), derived (data:derivedFromVariable) for a different quantity (pr totals in mm and mm/month; the sea ice flag of WRF341I, sea_ice_flag, from the sea ice fraction), and none if neither (mrso in m3/m3 needs the soil depth).",
     "standard_name_aliases": [
         {
             "match": {
@@ -359,5 +395,63 @@
             "cf_standard_name": "convective_precipitation_flux"
         }
     ],
-    "standard_name_aliases_reason": "The CNRM ALADIN63 datasets of the clear-sky radiation fluxes (and of reffclwtop) use descriptive names that are not CF standard names; their variables, units and long names are those of the MIP variables with the same name, so they are taken as the CF standard names of the MIP variables (the datasets keep the MIP variables) and reported separately by the check (known_alias). The RegCM4 datasets of the geopotential heights at the pressure levels have the standard name (and long name) of the air temperature, an error in generating the metadata (in RegCM4-3 also the units, see units_errors): taken as the standard name of the geopotential height. The placeholder standard names of the ts of CCAM-1704 (long_name) and of the prc of RegCM4-7 (prc) are those of the MIP variables (see units_errors)."
+    "standard_name_aliases_reason": "The CNRM ALADIN63 datasets of the clear-sky radiation fluxes (and of reffclwtop) use descriptive names that are not CF standard names; their variables, units and long names are those of the MIP variables with the same name, so they are taken as the CF standard names of the MIP variables (the datasets keep the MIP variables) and reported separately by the check (known_alias). The RegCM4 datasets of the geopotential heights at the pressure levels have the standard name (and long name) of the air temperature, an error in generating the metadata (in RegCM4-3 also the units, see units_errors): taken as the standard name of the geopotential height. The placeholder standard names of the ts of CCAM-1704 (long_name) and of the prc of RegCM4-7 (prc) are those of the MIP variables (see units_errors).",
+    "variables_from_id": [
+        {
+            "match": {
+                "rcm_name": [
+                    "RegCM4-3"
+                ],
+                "institute": [
+                    "RU-CORE"
+                ],
+                "domain": [
+                    "SEA-22"
+                ],
+                "variable": [
+                    "crs"
+                ]
+            },
+            "facet_metadata": false
+        },
+        {
+            "match": {
+                "rcm_name": [
+                    "WRF341I"
+                ],
+                "institute": [
+                    "UCAN"
+                ],
+                "domain": [
+                    "SAM-44"
+                ],
+                "variable": [
+                    "clfr",
+                    "clice",
+                    "clwmr",
+                    "hur",
+                    "hus",
+                    "ta",
+                    "ua",
+                    "va",
+                    "zg"
+                ]
+            },
+            "facet_metadata": true
+        }
+    ],
+    "variables_from_id_reason": "The facet variable of some datasets does not list the variable of the dataset, which is the variable of their id (its last component): the RU-CORE RegCM4-3 datasets (SEA-22) of sfcWind (9) list only crs (the grid mapping), and those of mrsol (9) only crs, soil_bounds and soil_layer (coordinates), with their metadata; the UCAN WRF341I datasets (SAM-44) of the variables at a single pressure level (hus200, ta500, zg850, ..., 27) list the variable of all the levels (hus, ta, zg, ...), with the metadata of the dataset. The datasets matching a rule get the variable of the id in place of the facet variable, before the other rules are applied; facet_metadata tells whether the metadata of the facets (variable_units, cf_standard_name, variable_long_name) are those of the variable of the dataset (if not, they are dropped).",
+    "evaluation_runs": [
+        {
+            "match": {
+                "driving_model": [
+                    "ECMWF-ERAINT"
+                ],
+                "experiment": [
+                    "historical"
+                ]
+            }
+        }
+    ],
+    "evaluation_runs_reason": "The CSIRO CCAM-2008 datasets (ANT-44i, AUS-44i, 34) driven by the ERA-Interim reanalysis (ECMWF-ERAINT) have the experiment historical: they are evaluation runs, driven by a reanalysis, not by a CMIP5 simulation. The datasets matching a rule get the experiment evaluation in place of the facet experiment (the dataset ids are kept), so that their simulations are evaluation runs, without a driving CMIP5 simulation."
 }

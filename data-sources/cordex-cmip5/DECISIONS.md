@@ -29,6 +29,38 @@ variables (`analysis/variables-check.json`, see the end of this document).
 - **Domains without resolution.** The domain `AUS` (199 datasets) has no
   resolution suffix, so it is not a CORDEX grid of the KG: these datasets get
   no spatial grid, as in the former RML mapping.
+- **Domains not in the domain tables.** `ARC-22` (48 datasets, CCCma
+  `CanRCM4`) and `SAM-20` (36, INPE `Eta`) are not grids of the WCRP domain
+  tables (`data-sources/cordex-domains`): these datasets get no spatial grid
+  either (`cordex_grid_iri`, with the grids of the KG, `cordex_grids`), rather
+  than links to grids that are not defined. Defining them locally would need
+  their grid parameters (pole, spacing, extent), not given by the ESGF
+  metadata.
+- **Evaluation runs** (`mapping/data-issues.json`, `evaluation_runs`): the
+  CSIRO `CCAM-2008` datasets (ANT-44i, AUS-44i, 34) driven by `ECMWF-ERAINT`
+  have the experiment `historical`, but they are driven by the ERA-Interim
+  reanalysis. They get the experiment `evaluation` (`fix_experiment`, the
+  dataset ids are kept), and their simulations, ensembles and experiments are
+  those of `evaluation` (e.g.
+  `.../simulations/cordex.AUS-44i.ECMWF-ERAINT.evaluation.CCAM-2008.v1.r1i1p1`),
+  without a driving CMIP5 simulation: the ontologies have no class for a
+  reanalysis, and `ccso:isDownscalingOf` is for projection productions.
+- **Driving CMIP5 simulations.** Each simulation also gives the nodes of its
+  driving CMIP5 simulation (with its ensemble and experiment, without outputs,
+  whose product is not known) and of the driving model (named by
+  `cmip5_model_name`, without its institutes), with the functions of
+  `data-sources/cmip5/mapping/cmip5-datasets.jq`, the same triples as those of
+  the CMIP5 mapping. The simulations driving CORDEX-CMIP5 simulations but
+  missing from the CMIP5 search results are so in the KG: the models
+  `BNU-ESM`, `CCSM4` and `bcc-csm1-1-m` (`BCC-CSM1.1(m)`), whose data nodes
+  are not in the search results; `EC-EARTH` `rcp26` `r3i1p1`; and the fixed
+  fields (`r0i0p0`) of experiments without them in the search results
+  (`CMCC-CM` `rcp45`, `EC-EARTH` `historical`, `rcp26`, `rcp45`, `rcp85`,
+  `GFDL-ESM2M` `historical`), as those of the other experiments.
+- **Driving model synonyms.** `mapping/cmip5-model-synonyms.json` gave
+  `GFDL-CM2-1` and `INM-CM4` for `NOAA-GFDL-GFDL-CM2-1` and `INM-INM-CM4`,
+  which are not CMIP5 model ids: corrected to `GFDL-CM2p1` and `inmcm4` (not
+  used by the current search results).
 - **Excluded datasets** (`mapping/data-issues.json`, `excluded_datasets`):
   - `emiss` of the NARCliM datasets (UNSW, `WRF360J`, `WRF360K`, `WRF360L`,
     201 datasets): it is the surface emissivity (`surface_emissivity`, no
@@ -78,11 +110,63 @@ variables (`analysis/variables-check.json`, see the end of this document).
   | --- | --- | --- | --- | --- |
   | `pr` | `mm`, `mm/month` | BOM/BOM-SDM | 67 | derived (`pr`) |
   | `hurs` | `1` | NUIM/WRF341E | 12 | linear transformation (`hurs`, `%`) |
-  | `hur` | `1` | UCAN/WRF341I | 3 | linear transformation (`hur`, `%`) |
+  | `hur200`, `hur500`, `hur850` | `1` | UCAN/WRF341I | 12 | linear transformation (`hur200`, ..., `%`, defined locally) |
   | `sic` | `1` ("Sea Ice Flag", `sea_ice_flag`) | UCAN/WRF341I | 4 | derived (`siconc`): a flag, not the fraction |
   | `sftlf` | `1` | DMI/HIRHAM5 | 3 | linear transformation (`sftlf`, `%`) |
   | `snw` | `m` (snow depth as liquid water) | CSIRO/CCAM | 36 | linear transformation (`snw`, `kg m-2`, density of water) |
   | `mrso` | `m3/m3` (volumetric soil moisture) | CSIRO/CCAM | 36 | none (the soil depth would be needed) |
+
+## Ids and metadata (`mapping/cordex-datasets.jq`)
+
+The nodes of the datasets, simulations, ensembles, experiments, domains and
+regional models are given by functions of `mapping/cordex-datasets.jq`
+(`cordex_dataset_jsonld`, `cordex_simulation_jsonld`, `cordex_model_jsonld`,
+with the IRIs of `cordex_simulation_iris`, the ids of the datasets of
+`cordex_dataset_id` and the nodes of a dataset from its parts,
+`cordex_dataset_part_jsonld`, without its variable and temporal grid), so that the mappings of the sources referring to
+CORDEX-CMIP5 simulations and datasets (UKCP18) can give the nodes of those
+missing from the search results, with the same IRIs and triples. The CMIP5
+simulations they downscale are referred to with `cmip5_simulation_iri`
+(`data-sources/cmip5/mapping/cmip5-datasets.jq`). Their input keys are
+documented with each function.
+
+- **Values from the metadata, not from the ids.** The functions take the
+  product, domain, driving model (normalised, see above), experiment,
+  ensemble member, regional model and version from the facets of the records,
+  not from the components of the dataset ids (`master_id`), which is only the
+  id of the dataset (its IRI and label). Compared on all the 145,493 records,
+  the components of the ids agree with the facets but for:
+  - **Institute.** 283 records have `CCCma` in the ids and `CCCMA` in the
+    facet `institute`. The institute is not in the IRIs of the simulations;
+    the organization is the one of the facet, as before.
+  - **Variables** (`mapping/data-issues.json`, `variables_from_id`; 52
+    records): the facet `variable` lists the variables of the files, which are
+    not always the variable of the id:
+    - the RU-CORE `RegCM4-3` datasets (SEA-22) of `sfcWind` (9) list only
+      `crs` (the grid mapping), and those of `mrsol` (9) only `crs`,
+      `soil_bounds` and `soil_layer` (coordinates), with their metadata;
+    - the UCAN `WRF341I` datasets (SAM-44) of the variables at a single level
+      (`hus200`, `ta500`, `zg850`, ..., 27) list the variable of all the
+      levels (`hus`, `ta`, `zg`, ...), with the metadata of the dataset
+      (e.g. "Specific Humidity", `specific_humidity`, `1`);
+    - some datasets have the variable of the id with others (`heightv`, a
+      coordinate, skipped, 9; `snd` with `snw`, 1): left as they are.
+
+    The datasets matching a rule of `variables_from_id` (by regional model,
+    institute, domain and facet `variable`) get the variable of their id (its
+    last component) in place of the facet `variable` (`fix_variables` in
+    `mapping/cordex-variables.jq`), before the other rules of
+    `mapping/data-issues.json` are applied and before the mapping
+    (`cordex_dataset_jsonld` takes the variables of the dataset as given). The
+    metadata of the facets are kept when they are those of the variable of the
+    dataset (`facet_metadata`, the `WRF341I` rule), otherwise dropped (the
+    `RegCM4-3` rule): the check (`analysis/variables-check.jq`) leaves those
+    datasets out of the comparison of the units and standard names. The
+    `RegCM4-3` datasets now hold `sfcWind` and `mrsol` (before, no variable),
+    the `WRF341I` datasets the variables at their levels (before, the variables
+    on all the levels, e.g. `.../mip/hus` instead of `.../mip/hus850`).
+- **Same triples.** The refactoring gave the same triples as before (the
+  variables of the datasets of `variables_from_id`, added afterwards, apart).
 
 ## Variables (`mapping/cordex-variables.jq`, `mapping/variables.jq`)
 
@@ -130,9 +214,11 @@ variables (`analysis/variables-check.json`, see the end of this document).
   `v` (zonal and meridional wind at 200, 500 and 850 hPa, 36 datasets each)
   are aliases of `ua` and `va` (`aliases`, `cordex_variable_name`): `u200` is
   the variable of `ua200`.
-  The bases `clfr`, `clice` and `clwmr` are also published on all their
-  levels (`all_levels`, WRF341I, SAM-44), as variables on the vertical
-  dimension (`.../variables/cordex/clfr`).
+  The bases `clfr`, `clice` and `clwmr` appeared also on all their levels
+  (WRF341I, SAM-44), and were defined as variables on the vertical dimension
+  (`.../variables/cordex/clfr`): those were the datasets at a single level
+  whose facet `variable` is the base (see `variables_from_id` above), so they
+  are no longer defined.
 - **Other variables not in the CMOR tables** (`mapping/local-variables.json`,
   `cordex_variable_name` and `local_variables` in `mapping/cordex-variables.jq`):
   the other 32 names of the datasets in no edition of the CMOR tables are
