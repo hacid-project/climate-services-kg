@@ -43,7 +43,14 @@ Their input keys are documented with each function.
     exceptions in the search results, and for `BCC-CSM1.1` (`bcc-csm1-1`) and
     `BCC-CSM1.1(m)` (`bcc-csm1-1-m`), not in the search results but driving
     CORDEX-CMIP5 and UKCP18 simulations. Same IRIs as before for all the
-    records.
+    records. The other way round, the name of a model is given by its id
+    (`cmip5_model_name`, for the sources that have only the id), so the table
+    of the exceptions (`_cmip5_model_ids`) lists all the models whose name is
+    not their id: those of the search results (also `ACCESS1.0`, `ACCESS1.3`,
+    `CSIRO-Mk3.6.0`) and `CESM1(BGC)` (`CESM1-BGC`), `BCC-CSM1.1` and
+    `BCC-CSM1.1(m)`, not in the search results (their names from the CMIP5
+    conventions, not checked against ESGF). For the other models (e.g.
+    `BNU-ESM`, `CCSM4`) the name is the id.
   - **Institute.** The 492 CanESM2 records have the institute `CCCma` in the
     ids and `CCCMA` in the facet `institute`. The institute is not in the IRIs
     of the simulations; the organization is the one of the facet

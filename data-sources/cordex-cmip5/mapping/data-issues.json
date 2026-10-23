@@ -440,5 +440,18 @@
             "facet_metadata": true
         }
     ],
-    "variables_from_id_reason": "The facet variable of some datasets does not list the variable of the dataset, which is the variable of their id (its last component): the RU-CORE RegCM4-3 datasets (SEA-22) of sfcWind (9) list only crs (the grid mapping), and those of mrsol (9) only crs, soil_bounds and soil_layer (coordinates), with their metadata; the UCAN WRF341I datasets (SAM-44) of the variables at a single pressure level (hus200, ta500, zg850, ..., 27) list the variable of all the levels (hus, ta, zg, ...), with the metadata of the dataset. The datasets matching a rule get the variable of the id in place of the facet variable, before the other rules are applied; facet_metadata tells whether the metadata of the facets (variable_units, cf_standard_name, variable_long_name) are those of the variable of the dataset (if not, they are dropped)."
+    "variables_from_id_reason": "The facet variable of some datasets does not list the variable of the dataset, which is the variable of their id (its last component): the RU-CORE RegCM4-3 datasets (SEA-22) of sfcWind (9) list only crs (the grid mapping), and those of mrsol (9) only crs, soil_bounds and soil_layer (coordinates), with their metadata; the UCAN WRF341I datasets (SAM-44) of the variables at a single pressure level (hus200, ta500, zg850, ..., 27) list the variable of all the levels (hus, ta, zg, ...), with the metadata of the dataset. The datasets matching a rule get the variable of the id in place of the facet variable, before the other rules are applied; facet_metadata tells whether the metadata of the facets (variable_units, cf_standard_name, variable_long_name) are those of the variable of the dataset (if not, they are dropped).",
+    "evaluation_runs": [
+        {
+            "match": {
+                "driving_model": [
+                    "ECMWF-ERAINT"
+                ],
+                "experiment": [
+                    "historical"
+                ]
+            }
+        }
+    ],
+    "evaluation_runs_reason": "The CSIRO CCAM-2008 datasets (ANT-44i, AUS-44i, 34) driven by the ERA-Interim reanalysis (ECMWF-ERAINT) have the experiment historical: they are evaluation runs, driven by a reanalysis, not by a CMIP5 simulation. The datasets matching a rule get the experiment evaluation in place of the facet experiment (the dataset ids are kept), so that their simulations are evaluation runs, without a driving CMIP5 simulation."
 }

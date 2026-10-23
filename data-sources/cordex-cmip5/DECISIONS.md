@@ -29,6 +29,38 @@ variables (`analysis/variables-check.json`, see the end of this document).
 - **Domains without resolution.** The domain `AUS` (199 datasets) has no
   resolution suffix, so it is not a CORDEX grid of the KG: these datasets get
   no spatial grid, as in the former RML mapping.
+- **Domains not in the domain tables.** `ARC-22` (48 datasets, CCCma
+  `CanRCM4`) and `SAM-20` (36, INPE `Eta`) are not grids of the WCRP domain
+  tables (`data-sources/cordex-domains`): these datasets get no spatial grid
+  either (`cordex_grid_iri`, with the grids of the KG, `cordex_grids`), rather
+  than links to grids that are not defined. Defining them locally would need
+  their grid parameters (pole, spacing, extent), not given by the ESGF
+  metadata.
+- **Evaluation runs** (`mapping/data-issues.json`, `evaluation_runs`): the
+  CSIRO `CCAM-2008` datasets (ANT-44i, AUS-44i, 34) driven by `ECMWF-ERAINT`
+  have the experiment `historical`, but they are driven by the ERA-Interim
+  reanalysis. They get the experiment `evaluation` (`fix_experiment`, the
+  dataset ids are kept), and their simulations, ensembles and experiments are
+  those of `evaluation` (e.g.
+  `.../simulations/cordex.AUS-44i.ECMWF-ERAINT.evaluation.CCAM-2008.v1.r1i1p1`),
+  without a driving CMIP5 simulation: the ontologies have no class for a
+  reanalysis, and `ccso:isDownscalingOf` is for projection productions.
+- **Driving CMIP5 simulations.** Each simulation also gives the nodes of its
+  driving CMIP5 simulation (with its ensemble and experiment, without outputs,
+  whose product is not known) and of the driving model (named by
+  `cmip5_model_name`, without its institutes), with the functions of
+  `data-sources/cmip5/mapping/cmip5-datasets.jq`, the same triples as those of
+  the CMIP5 mapping. The simulations driving CORDEX-CMIP5 simulations but
+  missing from the CMIP5 search results are so in the KG: the models
+  `BNU-ESM`, `CCSM4` and `bcc-csm1-1-m` (`BCC-CSM1.1(m)`), whose data nodes
+  are not in the search results; `EC-EARTH` `rcp26` `r3i1p1`; and the fixed
+  fields (`r0i0p0`) of experiments without them in the search results
+  (`CMCC-CM` `rcp45`, `EC-EARTH` `historical`, `rcp26`, `rcp45`, `rcp85`,
+  `GFDL-ESM2M` `historical`), as those of the other experiments.
+- **Driving model synonyms.** `mapping/cmip5-model-synonyms.json` gave
+  `GFDL-CM2-1` and `INM-CM4` for `NOAA-GFDL-GFDL-CM2-1` and `INM-INM-CM4`,
+  which are not CMIP5 model ids: corrected to `GFDL-CM2p1` and `inmcm4` (not
+  used by the current search results).
 - **Excluded datasets** (`mapping/data-issues.json`, `excluded_datasets`):
   - `emiss` of the NARCliM datasets (UNSW, `WRF360J`, `WRF360K`, `WRF360L`,
     201 datasets): it is the surface emissivity (`surface_emissivity`, no

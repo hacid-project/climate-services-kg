@@ -51,6 +51,7 @@ rule cordex_cmip5_map_datasets:
         data_issues="data-sources/cordex-cmip5/mapping/data-issues.json",
         level_variables="data-sources/cordex-cmip5/mapping/level-variables.json",
         local_spec="data-sources/cordex-cmip5/mapping/local-variables.json",
+        domains="data-sources/cordex-domains/data/CORDEX-CMIP5.json",
         modules=CORDEX_CMIP5_MODULES,
     output:
         directory("data-sources/cordex-cmip5/rdf/datasets"),
@@ -68,6 +69,7 @@ rule cordex_cmip5_map_datasets:
         " --slurpfile data_issues {input.data_issues:q}"
         " --slurpfile level_variables {input.level_variables:q}"
         " --slurpfile local_spec {input.local_spec:q}"
+        " --slurpfile domains {input.domains:q}"
         " -f {input.mapping:q} \"$page\" > {output:q}/$(basename \"$page\" .json).jsonld 2>> {log:q};"
         " done"
 

@@ -193,6 +193,13 @@ def fix_variables($issues):
         end
     end;
 
+# A dataset (input: its ESGF metadata) with the experiment evaluation in place
+# of the facet experiment, if it matches a rule of evaluation_runs (an
+# evaluation run, driven by a reanalysis, with another experiment)
+def fix_experiment($issues):
+    . as $dataset |
+    if any($issues.evaluation_runs[]?; .match as $m | $dataset | matches($m)) then .experiment = ["evaluation"] end;
+
 # The CF standard name of the standard name of a variable of a dataset (input:
 # its ESGF metadata) known to be used in its place, if any
 def standard_name_alias($issues; $variable; $standard_name):

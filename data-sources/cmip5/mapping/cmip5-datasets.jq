@@ -25,20 +25,40 @@ include "esgf";
 # Nodes without null or empty values
 def _nodes: with_entries(select(.value != null and .value != []));
 
+# Reference to a node (null without IRI)
+def _id_or_null($iri): if $iri != null then id($iri) else null end;
+
 # --- Models
 
-# CMIP5 model id of a model, as in the dataset ids of the DRS and in the IRIs
-# of the simulations (input: its name, as the ESGF facet model, e.g.
-# CSIRO-Mk3.6.0): the name with each "." replaced by "-" (e.g. CSIRO-Mk3-6-0),
-# except for the models whose id is not derived that way (e.g. INM-CM4,
-# inmcm4). An id is kept as it is.
-def cmip5_model_id:
+# CMIP5 models whose name (the ESGF facet model) is not their model id (as in
+# the dataset ids of the DRS and in the IRIs of the simulations): {<name>:
+# <id>}. Those of the CMIP5 search results (data/cmip5.json), and those not in
+# the search results referred to by other sources (BCC-CSM1.1, BCC-CSM1.1(m),
+# CESM1(BGC), from the CMIP5 conventions). For the other models the name and
+# the id are the same.
+def _cmip5_model_ids:
     {
+        "ACCESS1.0": "ACCESS1-0",
+        "ACCESS1.3": "ACCESS1-3",
         "BCC-CSM1.1": "bcc-csm1-1",
         "BCC-CSM1.1(m)": "bcc-csm1-1-m",
+        "CESM1(BGC)": "CESM1-BGC",
+        "CSIRO-Mk3.6.0": "CSIRO-Mk3-6-0",
         "GFDL-CM2.1": "GFDL-CM2p1",
         "INM-CM4": "inmcm4"
-    }[.] // gsub("\\."; "-");
+    };
+
+# CMIP5 model id of a model (input: its name, as the ESGF facet model, e.g.
+# CSIRO-Mk3.6.0): as given by _cmip5_model_ids (e.g. CSIRO-Mk3-6-0, inmcm4),
+# otherwise the name with each "." replaced by "-". An id is kept as it is.
+def cmip5_model_id: _cmip5_model_ids[.] // gsub("\\."; "-");
+
+# Name of a CMIP5 model (input: its model id, e.g. CSIRO-Mk3-6-0), as the ESGF
+# facet model and in the IRIs of the models (e.g. CSIRO-Mk3.6.0): as given by
+# _cmip5_model_ids, otherwise the id itself
+def cmip5_model_name:
+    . as $id |
+    first(_cmip5_model_ids | to_entries[] | select(.value == $id) | .key) // $id;
 
 # IRI of a model (input: its name, as the ESGF facet model)
 def cmip5_model_iri: ns + "models/\(quote)";
@@ -112,11 +132,12 @@ def cmip5_simulation_output_iri: cmip5_simulation_iris.output;
 # Nodes of a CMIP5 simulation, of its ensemble (the simulations of the same
 # model and experiment), of its experiment, of their outputs for a product,
 # and of the output of CMIP5, with the spatial grid of the simulation (the
-# whole globe).
+# whole globe). Without a product, the outputs of the simulation and of the
+# ensemble are not given.
 #
 # Input:
-# - model, experiment, ensemble, product: as for cmip5_simulation_iris, with
-#   the product;
+# - model, experiment, ensemble, product (optional): as for
+#   cmip5_simulation_iris;
 # - models (optional): the names of the models used (as the ESGF facet model,
 #   see cmip5_model_jsonld for their nodes);
 # - variables (optional): the IRIs of the variables of which the outputs hold
@@ -150,7 +171,7 @@ def cmip5_simulation_jsonld:
             "@type": ["ccso:SingleSimulation", "ccso:GlobalClimateSimulation"],
             "rdfs:label": ($iris.simulation_id | en),
             "top:componentIdentifier": .ensemble,
-            "data:hasOutput": id($iris.output),
+            "data:hasOutput": _id_or_null($iris.output),
             "ccso:usesModel": $uses_model,
             "ccso:refersToScenario": $refers_to_scenario
         },
@@ -160,7 +181,7 @@ def cmip5_simulation_jsonld:
             "@type": ["ccso:PerturbedParameterClimateEnsembleSimulation", "ccso:GlobalClimateSimulation"],
             "rdfs:label": ($iris.ensemble_id | en),
             "top:hasComponent": id($iris.simulation),
-            "data:hasOutput": id($iris.ensemble_output),
+            "data:hasOutput": _id_or_null($iris.ensemble_output),
             "ccso:usesModel": $uses_model,
             "ccso:refersToScenario": $refers_to_scenario
         },
@@ -188,7 +209,7 @@ def cmip5_simulation_jsonld:
             "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
             "rdfs:label": ("output of cmip5.\(.experiment)" | en),
             "data:holdsSpecializationOfVariable": $holds_variable,
-            "top:hasComponent": id($iris.ensemble_output),
+            "top:hasComponent": _id_or_null($iris.ensemble_output),
             "data:isSpecializedAccordingTo": $geodetic_specialization,
             "ccso:refersToScenario": $refers_to_scenario
         },
@@ -205,6 +226,8 @@ def cmip5_simulation_jsonld:
             "data:hasExactBoundingRegion": id(ns + "dimensions/geodetic/all")
         }
     ) |
+    # (no outputs without a product)
+    select(."@id" != null) |
     _nodes;
 
 # --- Datasets

@@ -53,7 +53,9 @@
 # data-sources/cmor-tables/data/variable-iris.json, --slurpfile mip_index
 # data-sources/cmor-tables/data/mip-mapping-index.json, --slurpfile data_issues
 # mapping/data-issues.json (the known issues of the datasets, see
-# ../DECISIONS.md); the modules of this directory, of
+# ../DECISIONS.md), --slurpfile domains
+# data-sources/cordex-domains/data/CORDEX-CMIP5.json (the domain tables, for
+# the grids of the KG); the modules of this directory, of
 # data-sources/cmip5/mapping (esgf.jq, cmip5-datasets.jq) and of
 # data-sources/cmor-tables/mapping must be in the library path (-L).
 
@@ -100,9 +102,17 @@ def _clean:
 
 # --- Mapping
 
-# (with the variables of the ids for the datasets of variables_from_id, without
-# the datasets excluded, see mapping/data-issues.json)
-[inputs | .response.docs[] | fix_variables($data_issues[0]) | select(excluded($data_issues[0]) | not) | _clean] as $datasets |
+# (with the variables of the ids for the datasets of variables_from_id, the
+# experiment evaluation for those of evaluation_runs, without the datasets
+# excluded, see mapping/data-issues.json)
+[
+    inputs | .response.docs[] |
+    fix_variables($data_issues[0]) | fix_experiment($data_issues[0]) |
+    select(excluded($data_issues[0]) | not) |
+    _clean
+] as $datasets |
+# the grids of the KG (cordex_grids)
+($domains[0] | cordex_grids) as $grids |
 ($cmor_tables[0] | cmip5_entries_by_name) as $entries_by_name |
 ($kg_variables[0] | iri_set) as $kg |
 $mip_index[0] as $mip_index |
@@ -125,7 +135,7 @@ cordex_variable_index($entries_by_name; $mip_index) as $variable_index |
             variable_iri_of(.; $frequency; $variable_index; $entries_by_name; $mip_index; $local_variables; $kg)
         )
     ] as $variables |
-    cordex_dataset_jsonld($variables)
+    cordex_dataset_jsonld($variables; $grids)
 ] |
 # each node once
 unique |

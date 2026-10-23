@@ -63,9 +63,20 @@ def cordex_model_jsonld:
 # --- Simulations
 
 # IRI of the CORDEX grid of a domain (input: the domain, e.g. EUR-11), null for
-# a domain without resolution (e.g. AUS), which is not a CORDEX grid (see
+# a domain without resolution (e.g. AUS), which is not a CORDEX grid, or not
+# among the grids of the KG ($grids, {<domain>: true}, if not null: e.g.
+# ARC-22, not in the domain tables; see
 # data-sources/cordex-domains)
-def cordex_grid_iri: if test("-") then ns + "cordex/grids/\(.)" else null end;
+def cordex_grid_iri($grids):
+    if test("-") and ($grids == null or $grids[.]) then ns + "cordex/grids/\(.)" else null end;
+
+# The grids of the KG (input: the CORDEX-CMIP5 domain tables, as
+# data-sources/cordex-domains/data/CORDEX-CMIP5.json) as {<domain>: true}, for
+# cordex_grid_iri
+def cordex_grids: map({key: .CORDEX_domain, value: true}) | from_entries;
+
+# Reference to a node (null without IRI)
+def _id_or_null($iri): if $iri != null then id($iri) else null end;
 
 # Ids and IRIs of a CORDEX-CMIP5 simulation, of the ensembles it is part of, of
 # its experiment and domain, and of their outputs.
@@ -79,9 +90,13 @@ def cordex_grid_iri: if test("-") then ns + "cordex/grids/\(.)" else null end;
 # - rcm_name, rcm_version: the regional model (e.g. RACMO22E) and its version
 #   (e.g. v1);
 # - product (optional): the product (e.g. output), for the IRIs of the outputs
-#   of the simulation and of the driving ensemble.
+#   of the simulation and of the driving ensemble;
+# - grids (optional): the grids of the KG (see cordex_grid_iri, cordex_grids).
+# The driving simulation is the CMIP5 simulation of the driving model,
+# experiment and ensemble member, but for the experiment evaluation (driven by
+# a reanalysis, e.g. ECMWF-ERAINT), which has none.
 def cordex_simulation_iris:
-    . as {$domain, $driving_model, $experiment, $ensemble, $rcm_name, $rcm_version, $product} |
+    . as {$domain, $driving_model, $experiment, $ensemble, $rcm_name, $rcm_version, $product, $grids} |
     "cordex.\($domain).\($driving_model).\($experiment).\($rcm_name).\($rcm_version).\($ensemble)" as $simulation_id |
     "cordex.\($domain).\($driving_model).\($experiment).\($rcm_name).\($rcm_version)" as $driving_ensemble_id |
     "cordex.\($domain).\($experiment).\($rcm_name).\($rcm_version)" as $ensemble_id |
@@ -94,7 +109,7 @@ def cordex_simulation_iris:
         simulation: (ns + "simulations/\($simulation_id)"),
         output_id: $output_id,
         output: (if $output_id != null then ns + "datasets/\($output_id)" else null end),
-        driving_simulation: ({model: $driving_model, $experiment, $ensemble} | cmip5_simulation_iri),
+        driving_simulation: (if $experiment != "evaluation" then {model: $driving_model, $experiment, $ensemble} | cmip5_simulation_iri else null end),
         driving_ensemble_id: $driving_ensemble_id,
         driving_ensemble: (ns + "simulations/\($driving_ensemble_id)"),
         driving_ensemble_output_id: $driving_ensemble_output_id,
@@ -108,7 +123,7 @@ def cordex_simulation_iris:
         domain_id: $domain_id,
         domain: (ns + "simulations/\($domain_id)"),
         domain_output: (ns + "datasets/\($domain_id)"),
-        grid: ($domain | cordex_grid_iri)
+        grid: ($domain | cordex_grid_iri($grids))
     };
 
 # IRI of a CORDEX-CMIP5 simulation (input as for cordex_simulation_iris)
@@ -138,11 +153,14 @@ def cordex_dataset_iri: ns + "datasets/\(.)";
 # domain, driving model, experiment and regional model), of the ensemble (of
 # the same domain, experiment and regional model), of the experiment, of the
 # domain, of their outputs, and of CORDEX-CMIP5 and its output. Their spatial
-# grid is the CORDEX grid of the domain (cordex_grid_iri), if any.
+# grid is the CORDEX grid of the domain (cordex_grid_iri), if any. Also the
+# nodes of the driving CMIP5 simulation (cmip5_simulation_jsonld) and of the
+# driving model (cmip5_model_jsonld, with its name, cmip5_model_name, without
+# its institutes), if any.
 #
 # Input:
 # - domain, driving_model, experiment, ensemble, rcm_name, rcm_version,
-#   product: as for cordex_simulation_iris, with the product;
+#   product, grids: as for cordex_simulation_iris, with the product;
 # - models (optional): the names of the regional models used (as the ESGF
 #   facet rcm_name, see cordex_model_jsonld for their nodes);
 # - variables (optional): the IRIs of the variables of which the outputs hold
@@ -157,117 +175,127 @@ def cordex_simulation_jsonld:
     (if $iris.grid != null then id("\($iris.grid)/specialization") else null end) as $geodetic_specialization |
     ([.models[]? | cordex_model_iri] | map(id(.))) as $uses_model |
     (
-        # Output of the simulation
-        {
-            "@id": $iris.output,
-            "@type": ["ccso:SingleProjection", "ccso:ScenarioBasedProjection"],
-            "rdfs:label": ($iris.output_id | en),
-            "data:holdsSpecializationOfVariable": $variable_ids,
-            "data:dependsOnVariable": $geodetic_variable,
-            "data:isSpecializedAccordingTo": $geodetic_specialization,
-            "top:hasComponent": [.datasets[]? | id(.)],
-            "ccso:refersToScenario": $refers_to_scenario
-        },
-        # Simulation
-        {
-            "@id": $iris.simulation,
-            "@type": ["ccso:SingleSimulation", "ccso:DynamicalDownscaling"],
-            "rdfs:label": ($iris.simulation_id | en),
-            "ccso:isDownscalingOf": id($iris.driving_simulation),
-            "data:hasOutput": id($iris.output),
-            "ccso:usesModel": $uses_model,
-            "ccso:refersToScenario": $refers_to_scenario
-        },
-        # Driving ensemble
-        {
-            "@id": $iris.driving_ensemble,
-            "@type": ["ccso:EnsembleSimulation", "ccso:DynamicalDownscaling"],
-            "rdfs:label": ($iris.driving_ensemble_id | en),
-            "top:hasComponent": id($iris.simulation),
-            "data:hasOutput": id($iris.driving_ensemble_output),
-            "ccso:usesModel": $uses_model,
-            "ccso:refersToScenario": $refers_to_scenario
-        },
-        # Output of the driving ensemble
-        {
-            "@id": $iris.driving_ensemble_output,
-            "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
-            "rdfs:label": ($iris.driving_ensemble_output_id | en),
-            "data:holdsSpecializationOfVariable": $variable_ids,
-            "top:hasComponent": id($iris.output),
-            "data:dependsOnVariable": $geodetic_variable,
-            "data:isSpecializedAccordingTo": $geodetic_specialization,
-            "ccso:refersToScenario": $refers_to_scenario
-        },
-        # Ensemble
-        {
-            "@id": $iris.ensemble,
-            "@type": ["ccso:ClimateModelIntercomparisonExperiment", "ccso:DynamicalDownscaling"],
-            "rdfs:label": ($iris.ensemble_id | en),
-            "top:hasComponent": id($iris.driving_ensemble),
-            "data:hasOutput": id($iris.ensemble_output),
-            "ccso:usesModel": $uses_model,
-            "ccso:refersToScenario": $refers_to_scenario
-        },
-        # Output of the ensemble
-        {
-            "@id": $iris.ensemble_output,
-            "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
-            "rdfs:label": ($iris.ensemble_id | en),
-            "data:holdsSpecializationOfVariable": $variable_ids,
-            "top:hasComponent": id($iris.driving_ensemble_output),
-            "data:dependsOnVariable": $geodetic_variable,
-            "data:isSpecializedAccordingTo": $geodetic_specialization,
-            "ccso:refersToScenario": $refers_to_scenario
-        },
-        # Experiment
-        {
-            "@id": $iris.experiment,
-            "@type": ["ccso:ClimateModelIntercomparisonExperiment", "ccso:DynamicalDownscaling"],
-            "rdfs:label": ($iris.experiment_id | en),
-            "top:hasComponent": id($iris.ensemble),
-            "data:hasOutput": id($iris.experiment_output),
-            "ccso:refersToScenario": $refers_to_scenario
-        },
-        # Output of the experiment
-        {
-            "@id": $iris.experiment_output,
-            "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
-            "rdfs:label": ("output of \($iris.experiment_id)" | en),
-            "data:holdsSpecializationOfVariable": $variable_ids,
-            "top:hasComponent": id($iris.ensemble_output),
-            "data:dependsOnVariable": $geodetic_variable,
-            "data:isSpecializedAccordingTo": $geodetic_specialization,
-            "ccso:refersToScenario": $refers_to_scenario
-        },
-        # Domain
-        {
-            "@id": $iris.domain,
-            "@type": "top:Action",
-            "rdfs:label": ($iris.domain_id | en),
-            "top:hasComponent": id($iris.experiment),
-            "data:hasOutput": id($iris.domain_output)
-        },
-        # Output of the domain
-        {
-            "@id": $iris.domain_output,
-            "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
-            "rdfs:label": ("output of \($iris.domain_id)" | en),
-            "top:hasComponent": id($iris.experiment_output),
-            "data:dependsOnVariable": $geodetic_variable,
-            "data:isSpecializedAccordingTo": $geodetic_specialization
-        },
-        # CORDEX-CMIP5 and its output
-        {
-            "@id": (ns + "mips/cordex-cmip5"),
-            "top:hasComponent": id($iris.domain)
-        },
-        {
-            "@id": (ns + "mips/cordex-cmip5/output"),
-            "top:hasComponent": id($iris.domain_output)
-        }
-    ) |
-    _nodes;
+        (
+            # Output of the simulation
+            {
+                "@id": $iris.output,
+                "@type": ["ccso:SingleProjection", "ccso:ScenarioBasedProjection"],
+                "rdfs:label": ($iris.output_id | en),
+                "data:holdsSpecializationOfVariable": $variable_ids,
+                "data:dependsOnVariable": $geodetic_variable,
+                "data:isSpecializedAccordingTo": $geodetic_specialization,
+                "top:hasComponent": [.datasets[]? | id(.)],
+                "ccso:refersToScenario": $refers_to_scenario
+            },
+            # Simulation
+            {
+                "@id": $iris.simulation,
+                "@type": ["ccso:SingleSimulation", "ccso:DynamicalDownscaling"],
+                "rdfs:label": ($iris.simulation_id | en),
+                "ccso:isDownscalingOf": _id_or_null($iris.driving_simulation),
+                "data:hasOutput": id($iris.output),
+                "ccso:usesModel": $uses_model,
+                "ccso:refersToScenario": $refers_to_scenario
+            },
+            # Driving ensemble
+            {
+                "@id": $iris.driving_ensemble,
+                "@type": ["ccso:EnsembleSimulation", "ccso:DynamicalDownscaling"],
+                "rdfs:label": ($iris.driving_ensemble_id | en),
+                "top:hasComponent": id($iris.simulation),
+                "data:hasOutput": id($iris.driving_ensemble_output),
+                "ccso:usesModel": $uses_model,
+                "ccso:refersToScenario": $refers_to_scenario
+            },
+            # Output of the driving ensemble
+            {
+                "@id": $iris.driving_ensemble_output,
+                "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
+                "rdfs:label": ($iris.driving_ensemble_output_id | en),
+                "data:holdsSpecializationOfVariable": $variable_ids,
+                "top:hasComponent": id($iris.output),
+                "data:dependsOnVariable": $geodetic_variable,
+                "data:isSpecializedAccordingTo": $geodetic_specialization,
+                "ccso:refersToScenario": $refers_to_scenario
+            },
+            # Ensemble
+            {
+                "@id": $iris.ensemble,
+                "@type": ["ccso:ClimateModelIntercomparisonExperiment", "ccso:DynamicalDownscaling"],
+                "rdfs:label": ($iris.ensemble_id | en),
+                "top:hasComponent": id($iris.driving_ensemble),
+                "data:hasOutput": id($iris.ensemble_output),
+                "ccso:usesModel": $uses_model,
+                "ccso:refersToScenario": $refers_to_scenario
+            },
+            # Output of the ensemble
+            {
+                "@id": $iris.ensemble_output,
+                "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
+                "rdfs:label": ($iris.ensemble_id | en),
+                "data:holdsSpecializationOfVariable": $variable_ids,
+                "top:hasComponent": id($iris.driving_ensemble_output),
+                "data:dependsOnVariable": $geodetic_variable,
+                "data:isSpecializedAccordingTo": $geodetic_specialization,
+                "ccso:refersToScenario": $refers_to_scenario
+            },
+            # Experiment
+            {
+                "@id": $iris.experiment,
+                "@type": ["ccso:ClimateModelIntercomparisonExperiment", "ccso:DynamicalDownscaling"],
+                "rdfs:label": ($iris.experiment_id | en),
+                "top:hasComponent": id($iris.ensemble),
+                "data:hasOutput": id($iris.experiment_output),
+                "ccso:refersToScenario": $refers_to_scenario
+            },
+            # Output of the experiment
+            {
+                "@id": $iris.experiment_output,
+                "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
+                "rdfs:label": ("output of \($iris.experiment_id)" | en),
+                "data:holdsSpecializationOfVariable": $variable_ids,
+                "top:hasComponent": id($iris.ensemble_output),
+                "data:dependsOnVariable": $geodetic_variable,
+                "data:isSpecializedAccordingTo": $geodetic_specialization,
+                "ccso:refersToScenario": $refers_to_scenario
+            },
+            # Domain
+            {
+                "@id": $iris.domain,
+                "@type": "top:Action",
+                "rdfs:label": ($iris.domain_id | en),
+                "top:hasComponent": id($iris.experiment),
+                "data:hasOutput": id($iris.domain_output)
+            },
+            # Output of the domain
+            {
+                "@id": $iris.domain_output,
+                "@type": ["ccso:EnsembleProjection", "ccso:ScenarioBasedProjection"],
+                "rdfs:label": ("output of \($iris.domain_id)" | en),
+                "top:hasComponent": id($iris.experiment_output),
+                "data:dependsOnVariable": $geodetic_variable,
+                "data:isSpecializedAccordingTo": $geodetic_specialization
+            },
+            # CORDEX-CMIP5 and its output
+            {
+                "@id": (ns + "mips/cordex-cmip5"),
+                "top:hasComponent": id($iris.domain)
+            },
+            {
+                "@id": (ns + "mips/cordex-cmip5/output"),
+                "top:hasComponent": id($iris.domain_output)
+            }
+        ) |
+        _nodes
+    ),
+    # The driving CMIP5 simulation (without its outputs, whose product is not
+    # known), also when missing from the CMIP5 search results
+    (
+        select($iris.driving_simulation != null) |
+        (.driving_model | cmip5_model_name) as $driving_model_name |
+        ({model: .driving_model, experiment, ensemble, models: [$driving_model_name]} | cmip5_simulation_jsonld),
+        ({name: $driving_model_name} | cmip5_model_jsonld)
+    );
 
 # --- Datasets
 
@@ -291,13 +319,14 @@ def cordex_simulation_jsonld:
 # The regional model of the simulation is the first one.
 #
 # Arguments: $variables, the IRIs of the variables of the dataset (e.g.
-# resolved with variable_iri_of, see datasets.jq).
-def cordex_dataset_jsonld($variables):
+# resolved with variable_iri_of, see datasets.jq); $grids, the grids of the KG
+# (see cordex_grid_iri, cordex_grids), or null.
+def cordex_dataset_jsonld($variables; $grids):
     (ns + "datasets/\(.master_id)") as $dataset |
     ([.experiment[]] | scenario_iris | map(id(.))) as $refers_to_scenario |
     temporal_grid as $time |
     ($time | temporal_iris) as $time_iris |
-    (.domain[0] | cordex_grid_iri) as $grid |
+    (.domain[0] | cordex_grid_iri($grids)) as $grid |
     (
         # Dataset
         {
@@ -327,7 +356,8 @@ def cordex_dataset_jsonld($variables):
                 product: .product[0],
                 models: .rcm_name,
                 variables: $variables,
-                datasets: [$dataset]
+                datasets: [$dataset],
+                grids: $grids
             } |
             cordex_simulation_jsonld
         ),
