@@ -216,7 +216,7 @@ def dataset_to_rcm_simulation:
         "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.regional.\(.scenario).\(.model_variant_id)",
         "@type": ["ccso:DynamicalDownscaling", "ccso:SingleSimulation"],
         label: "ukcp18.regional.\(.scenario).\(.model_variant_id)",
-        model: "https://w3id.org/hacid/data/cs/models/HadREM3-GA705",
+        model: ("HadREM3-GA705" | normalize_model_id | CORDEX::cordex_model_iri),
         scenario: (.scenario | scenario_uri),
         ensemble: {
             "@id": @uri "https://w3id.org/hacid/data/cs/simulations/ukcp18.regional.\(.scenario)",
@@ -276,6 +276,11 @@ def dataset_to_cpm_simulation:
 # variables of CORDEX (net longwave and shortwave radiation)
 def _derived_cordex_variables: {"rls": true, "rss": true};
 
+# Frequencies of the EuroCORDEX datasets that are those of CORDEX (the others,
+# ann, seas and the climatologies ann-20y, mon-20y, seas-20y, ann-30y, ...,
+# are aggregations computed by UKCP18)
+def _cordex_frequencies: {"day": true, "mon": true};
+
 # Units of the EuroCORDEX datasets that differ from those of CORDEX (K,
 # kg m-2 s-1, Pa): their values are a linear transformation of those of CORDEX
 # (mm of snow, for kg m-2, has the same values)
@@ -288,10 +293,10 @@ def _converted_cordex_units: {"degC": true, "mm/day": true, "hPa": true};
 # historical one and the one of the scenario, as the datasets cover both
 # periods; product output):
 # - of a variable computed by UKCP18 (_derived_cordex_variables): output of a
-#   statistical transformation (also an aggregation for the frequencies ann
-#   and seas), derived from those outputs;
-# - of the frequencies ann and seas: output of an aggregation, rescaled version
-#   of those outputs;
+#   statistical transformation (also an aggregation for the frequencies other
+#   than those of CORDEX, _cordex_frequencies), derived from those outputs;
+# - of the other frequencies (ann, seas and the climatologies, e.g. ann-20y,
+#   mon-30y): output of an aggregation, rescaled version of those outputs;
 # - of the frequencies day and mon: made of a part for each period
 #   (<dataset>/historical, <dataset>/<scenario>), each a linear transformation
 #   (for other units, _converted_cordex_units) or equivalent of the CORDEX-CMIP5
@@ -349,11 +354,12 @@ def dataset_to_cordex_simulation:
         _members: [$iris[] | {"@id": .simulation, ensemble: $ensemble}],
         _extra: [($runs[] | CORDEX::cordex_simulation_jsonld), ({name: $rcm_name} | CORDEX::cordex_model_jsonld)]
     } as $common |
-    if _derived_cordex_variables[$variable] or ($frequency | IN("ann", "seas")) then
+    (_cordex_frequencies[$frequency] | not) as $aggregated |
+    if _derived_cordex_variables[$variable] or $aggregated then
         {
             "@id": @uri "https://w3id.org/hacid/data/cs/ukcp18/EuroCORDEX/processing/\($product_id)",
             "@type": [
-                (if $frequency | IN("ann", "seas") then "ccso:Aggregation" else empty end),
+                (if $aggregated then "ccso:Aggregation" else empty end),
                 "ccso:StatisticalProjectionTransformation"
             ],
             label: "processing of \([$iris[].simulation_id] | join(", ")) for ukcp18.\($product_id)",

@@ -33,7 +33,13 @@ $spatial_grid_maps as [$spatial_grid_map] |
     )
 ) as $rescale_map |
 
-["scenario", "collection", "domain", "resolution", "frequency"] as $id_comps_to_check |
+# The components of the id checked against the metadata: a dataset whose id
+# does not match its metadata is not mapped, except for the resolution and the
+# frequency, taken from the id (the metadata give the resolution of the source
+# grid for some regional averages, the frequency without the period of the
+# climatologies or a wrong one, see DECISIONS.md)
+["scenario", "collection", "domain"] as $id_comps_to_check |
+["resolution", "frequency"] as $id_comps_from_id |
 
 $mip_index[0] as $mip_index |
 
@@ -79,19 +85,19 @@ select($collection != "marine-sim") |
 
 IDS::id_comp_struct as $id_comp_struct |
 
-(
-    . as $all |
-    $id_comps_to_check |
-    map(
-        if ($id_comp_struct[.] and $id_comp_struct[.] != $all[.]) then
-            "[\($all.id)] - Missmatch for \(.): \($id_comp_struct[.]) != \($all[.])!"
-        else 
-            empty
-        end
-    )
-) as $issues |
+. as $dataset |
+def mismatches($comps):
+    [$comps[] | select($id_comp_struct[.] and $id_comp_struct[.] != $dataset[.])];
+def mismatch_message($comps; $outcome):
+    "[\($dataset.id)] - Mismatch for \($comps | map("\(.): \($id_comp_struct[.]) != \($dataset[.])") | join(", ")), \($outcome)";
+mismatches($id_comps_to_check) as $issues |
 if $issues | any then
-    $issues | debug | empty
+    mismatch_message($issues + mismatches($id_comps_from_id); "not mapped!") | debug | empty
+end |
+mismatches($id_comps_from_id) as $fixes |
+if $fixes | any then
+    debug(mismatch_message($fixes; "taken from the id")) |
+    reduce $fixes[] as $comp (.; .[$comp] = $id_comp_struct[$comp])
 end |
 
 if $id_comp_struct.model_variant_id then
