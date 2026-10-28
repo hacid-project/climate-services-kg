@@ -15,8 +15,41 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
   datasets are read and mapped one at a time.
 - **marine-sim.** The `marine-sim` collection is not mapped: each of its
   versions has its own id structure (`mapping/datasets.jq`).
-- **Ids not matching the metadata.** The datasets whose id does not match
-  their metadata are listed in `logs/ukcp18/map_datasets.log`.
+- **Ids not matching the metadata: the id wins** (`mapping/datasets.jq`). The
+  components of the id (scenario, collection, domain, resolution, frequency)
+  are checked against the metadata, and the datasets whose id does not match
+  are listed in `logs/ukcp18/map_datasets.log`. Those datasets were not
+  mapped at all (no node, and no other IRI they were merged into): 45,694
+  datasets, 814 of land-cpm, land-rcm and land-derived and 44,880 of
+  EuroCORDEX. All the mismatches are in the resolution or in the frequency,
+  and the id is right in all of them (it is the name of the file at CEDA, and
+  agrees with the dates of the file and with the other datasets of the
+  collection), so the dataset is now mapped with the resolution and frequency
+  of its id (logged as "taken from the id"); a mismatch in the other
+  components (none currently) still excludes the dataset (logged as "not
+  mapped"):
+  - **Climatologies without their period** (`ann-20y`, `seas-30y`, ... in the
+    id, `ann`, `seas`, ... in the metadata): all the 20 and 30 year
+    climatologies of EuroCORDEX (44,880: 7,480 for each of `ann-20y`,
+    `ann-30y`, `mon-20y`, `mon-30y`, `seas-20y`, `seas-30y`) and 610 of
+    land-derived (112 `ann-20y`, 224 `ann-30y`, 114 `seas-20y`, 160
+    `seas-30y`, e.g.
+    `sfcWind_rcp26_land-derived_uk_region_07_seas-30y_198012-201011.nc`). The
+    other collections, and the other climatologies of land-derived, give the
+    period in the frequency of the metadata as well.
+  - **Monthly datasets with frequency `day`**: 132 of land-rcm, regional
+    splits (`country`, `region`, `river`) of the CMIP5 driven members 23, 25,
+    27 and 29 (e.g. `clt_rcp85_land-rcm_uk_country_23_mon_198012-208011.nc`):
+    their dates (one file for 1980-2080) are those of the monthly datasets,
+    while the daily ones are split by decade.
+  - **Regional averages with the resolution of the grid**: 72 of land-cpm,
+    `wsgmax10m` on the `country` and `river` splits (36 each, e.g.
+    `wsgmax10m_rcp85_land-cpm_uk_country_01_day_19801201-20001130.nc`), with
+    resolution `2.2km` (the grid they are computed from) in the metadata.
+
+  All the datasets are now in the KG under their id: 263,911 of land-cpm,
+  land-rcm and land-derived (previously 263,097) and 68,255 of EuroCORDEX
+  (previously 23,375).
 
 ## Wrong or missing values (`mapping/ukcp18-ids.jq`)
 
@@ -163,6 +196,20 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
   `cmip5_model_id` of the datasets (e.g. `ACCESS1.3`, `ACCESS1-3`); the
   extraction of the model variants (`mapping/extract-model-variants.jq`) no
   longer renames `bcc-csm1-1` to `BCC-CSM1-1`, which is not its CMIP5 id.
+- **The regional model, HadREM3-GA7-05.** The regional simulations of UKCP18
+  (land-rcm) used the model `.../models/HadREM3-GA705` (the name in the UKCP18
+  metadata, "Met Office Unified Model Global Atmosphere GA7 model
+  (HadREM3-GA705)"), while the CORDEX-CMIP5 EUR-11 simulations of MOHC (also
+  members of the EuroCORDEX ensemble of UKCP18, `model_id`
+  `MOHC-HadREM3-GA7-05`) use `.../models/HadREM3-GA7-05`. They are the same
+  model, HadREM3 in the GA7.05 configuration: the UKCP18 regional projections
+  (12 km, HadREM3-GA7-05 driven by HadGEM3-GC3.05 and by CMIP5 models) and the
+  MOHC contribution to EURO-CORDEX come from the same model, registered in
+  CORDEX as `HadREM3-GA7-05`. The regional simulations of UKCP18 now use
+  `.../models/HadREM3-GA7-05`: `HadREM3-GA705` is a synonym of it in
+  `data/cmip5-model-synonyms.json` (resolved by `normalize_model_id`), and the
+  node of the model (`mapping/models.jq`) has the CORDEX name as label, the
+  UKCP18 name in its comment, and MOHC as maintainer.
 - **EuroCORDEX datasets.** They were linked to IRIs of CORDEX-CMIP5 datasets
   (`.../datasets/cordex.output.EUR-11.<institute>.<driving model>.rcp85.<ensemble>.<model>.<version>.<frequency>.<variable>`),
   but of frequencies (`ann`, `seas`) or variables (`rls`, `rss`) that CORDEX
@@ -174,11 +221,13 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
   UKCP18 ensemble, of which the CORDEX-CMIP5 simulations are members:
   - the variables computed by UKCP18 (`rls`, `rss`, the net longwave and
     shortwave radiation): output of a `ccso:StatisticalProjectionTransformation`
-    (also a `ccso:Aggregation` for `ann` and `seas`,
+    (also a `ccso:Aggregation` for the frequencies other than `day` and
+    `mon`,
     `.../ukcp18/EuroCORDEX/processing/<that id>`) whose inputs are the outputs
     of the simulations, from which they are derived
     (`data:derivedFromVariable`);
-  - the other variables, `ann` and `seas`: output of a `ccso:Aggregation`
+  - the other variables, of the frequencies `ann` and `seas` and of the
+    climatologies (`ann-20y`, `mon-30y`, ...): output of a `ccso:Aggregation`
     (also a `ccso:StatisticalProjectionTransformation`) whose inputs are the
     outputs of the simulations, of which they are a rescaled version
     (`data:hasRescaledVersion`);
@@ -197,6 +246,15 @@ extracted for review in `analysis/unmapped-variables.json.gz` (currently none).
     from the search results. Assumed: the monthly datasets of UKCP18 come from
     the monthly ones of CORDEX (not computed from the daily ones, which would
     make them aggregations); not documented in the metadata.
+
+  Each EuroCORDEX dataset is in the KG under its id
+  (`.../ukcp18/datasets/<id>`, 68,255), as a component of the dataset of its
+  simulation, frequency and variable (or, for the regional splits, as a
+  rescaled version of it): 935 simulations and variables, 9,350 such
+  datasets for the 10 frequencies (`day`, `mon`, `seas`, `ann` and the six
+  climatologies; 3,740 when the climatologies were not mapped), with 3,228
+  parts for the periods of the `day` and `mon` ones (not for `rls`, `rss`),
+  besides the output of the ensemble.
 
   The nodes of the simulations (with their driving CMIP5 simulations) and of
   the regional model are given with the functions of
