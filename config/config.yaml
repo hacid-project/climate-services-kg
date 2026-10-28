@@ -102,5 +102,7 @@ ukcp18:
   block_size: 10000
   # Number of the last distinct repeated nodes (the CMIP5 and CORDEX-CMIP5
   # simulations, outputs and models) remembered to write them once: a node
-  # repeated after more distinct ones is written again (harmless in RDF)
-  unique_cache_size: 10000
+  # repeated after more distinct ones is written again (harmless in RDF). The
+  # datasets cycle through all of them (26,781), so that a smaller cache
+  # writes again most of their repetitions (about 78,000 nodes more)
+  unique_cache_size: 50000
