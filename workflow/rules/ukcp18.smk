@@ -136,22 +136,21 @@ rule ukcp18_map_models:
 # id does not match their metadata): each dataset is mapped on its own
 # (mapping/datasets.jq, a node per line), and the nodes are framed as JSON-LD
 # documents (mapping/frame.jq) in blocks of ukcp18.block_size nodes,
-# rdf/datasets/datasets-NNNN.jsonld
-# Framing of the nodes of the datasets (one per line) in blocks of block_size
-# nodes, each piped to frame.jq and written to <dir>/datasets-<nnnn>.jsonld
-# (POSIX awk, as split --filter is not portable). The nodes of the CMIP5 and
-# CORDEX-CMIP5 simulations, outputs and models (and their membership in the
-# UKCP18 ensembles), given again by each dataset referring to them, are written
-# once (their distinct lines are few).
-AWK_FRAME_BLOCKS = (
-    "/^[{]\"@id\":\"https:[/][/]w3id[.]org[/]hacid[/]data[/]cs[/](simulations[/](cmip5|cordex)[.]|datasets[/](cmip5|cordex)[.]|mips[/]|models[/])/"
-    " { if (seen[$0]++) next }"
-    " (n++) % size == 0 {"
-    " if (cmd && close(cmd)) exit 1;"
-    " cmd = sprintf(\"jq -s -c -L mapping -f mapping/frame.jq > '%s/datasets-%04d.jsonld'\", dir, (n - 1) / size)"
-    " }"
-    " { print | cmd }"
-    " END { if (cmd && close(cmd)) exit 1 }"
+# rdf/datasets/datasets-NNNN.jsonld.
+# The nodes of the CMIP5 and CORDEX-CMIP5 simulations, outputs and models (and
+# their membership in the UKCP18 ensembles), given again by each dataset
+# referring to them, are written once (best_effort_unique.jq, among the last
+# ukcp18.unique_cache_size distinct ones): the other nodes are all kept, as the
+# nodes of a UKCP18 simulation, given again by each of its datasets, differ (in
+# the variables of its outputs).
+UKCP18_REPEATED_NODES = (
+    'if ."@id" | test("^https://w3id[.]org/hacid/data/cs/'
+    '(simulations/(cmip5|cordex)[.]|datasets/(cmip5|cordex)[.]|mips/|models/)")'
+    " then tojson else null end"
+)
+# Writing of each framed document (a line) to <dir>/datasets-<nnnn>.jsonld
+AWK_WRITE_BLOCKS = (
+    '{ f = sprintf("%s/datasets-%04d.jsonld", dir, NR - 1); print > f; close(f) }'
 )
 
 
@@ -176,10 +175,16 @@ rule ukcp18_map_datasets:
             "data-sources/ukcp18/data/model-variants.json",
             "data-sources/ukcp18/data/cmip5-model-synonyms.json",
         ],
+        scripts=[
+            "workflow/scripts/best_effort_unique.jq",
+            "workflow/scripts/paginate.jq",
+        ],
     output:
         directory("data-sources/ukcp18/rdf/datasets"),
     params:
         block_size=config["ukcp18"]["block_size"],
+        unique_cache_size=config["ukcp18"]["unique_cache_size"],
+        unique=f'include "best_effort_unique"; best_effort_unique_by({UKCP18_REPEATED_NODES}; $cache_size)',
     log:
         "logs/ukcp18/map_datasets.log",
     shell:
@@ -187,7 +192,11 @@ rule ukcp18_map_datasets:
         " jq -n -c -L mapping -L ../cmor-tables/mapping -L ../cmip5/mapping -L ../cordex-cmip5/mapping"
         " --slurpfile mip_index $root/{input.mip_index:q}"
         " -f mapping/datasets.jq $root/{input.metadata:q} 2> $root/{log:q} |"
-        " awk -v size={params.block_size} -v dir=$root/{output:q} {AWK_FRAME_BLOCKS:q}"
+        " jq -n -c -L $root/workflow/scripts --argjson cache_size {params.unique_cache_size}"
+        " {params.unique:q} |"
+        " jq -n -c -L $root/workflow/scripts 'include \"paginate\"; paginate({params.block_size})' |"
+        " jq -c -L mapping -f mapping/frame.jq |"
+        " awk -v dir=$root/{output:q} {AWK_WRITE_BLOCKS:q}"
 
 
 # --- Analysis
