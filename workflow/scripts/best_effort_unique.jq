@@ -70,15 +70,13 @@ def best_effort_unique_by(f; $cache_size):
             end
         end;
 
-    def _read_input:
-        try (
-            {item: input, cache: .} |
-            _filter_input |
-            ((.item | if not then empty end), (.cache | _read_input))
-        ) catch empty;
-
-
-    null | _read_input;
+    # foreach, not a recursion on input: each output of a recursion goes back
+    # through all the previous calls, quadratic in the number of inputs
+    foreach inputs as $item (
+        {};
+        {item: $item, cache} | _filter_input;
+        .item | if not then empty end
+    );
 
 # The inputs without the repetitions of the same @id among the last
 # $cache_size distinct ids
