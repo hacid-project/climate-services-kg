@@ -201,10 +201,11 @@ The metadata of the UKCP18 datasets (from CEDA) is downloaded from Zenodo
    (the datasets whose id does not match their metadata are listed in `logs/ukcp18/map_datasets.log`). Each dataset
    is mapped on its own (`mapping/datasets.jq`, its nodes one per line, with the index of the MIP variables
    `data-sources/cmor-tables/data/mip-mapping-index.json`), and the nodes are framed as JSON-LD documents of
-   `ukcp18.block_size` nodes (`config/config.yaml`, 10,000; `workflow/scripts/paginate.jq`) by `mapping/frame.jq`:
-   neither the mapping nor the loading needs the whole data in memory. The nodes of the CMIP5 and CORDEX-CMIP5
-   simulations, outputs and models, given again by each dataset referring to them, are written once
-   (`workflow/scripts/best_effort_unique.jq`, among the last `ukcp18.unique_cache_size` distinct ones).
+   `ukcp18.block_size` nodes (`config/config.yaml`, 10,000) by `mapping/frame.jq`, in a single jq process with the
+   modules `workflow/scripts/paginate.jq` and `workflow/scripts/best_effort_unique.jq`: neither the mapping nor the
+   loading needs the whole data in memory. The nodes of the CMIP5 and CORDEX-CMIP5 simulations, outputs and models,
+   given again by each dataset referring to them, are written once (among the last `ukcp18.unique_cache_size`
+   distinct ones).
    The variable of a dataset is its local variable according to `mapping/ukcp-variables.json`
    (`mapping/ukcp18-variables.jq`), otherwise the MIP variable resolved through
    `data-sources/cmor-tables/mapping/mip-mapping.json` from the variable name (CMIP5 era), units and, for the

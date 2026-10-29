@@ -18,9 +18,10 @@ def print_cache:
 
     _print_cache(.);
 
-# The inputs without the repetitions of the same key (item | f, a string) among
-# the last $cache_size distinct keys; the inputs with a null key are all kept
-def best_effort_unique_by(f; $cache_size):
+# The items (outputs of items) without the repetitions of the same key (item |
+# f, a string) among the last $cache_size distinct keys; the items with a null
+# key are all kept
+def best_effort_unique_by(items; f; $cache_size):
 
     # The cache (the state of foreach, with keep: whether the input is kept):
     # only scalars and entries are bound to variables, never the cache or
@@ -65,12 +66,18 @@ def best_effort_unique_by(f; $cache_size):
 
     # foreach, not a recursion on input: each output of a recursion goes back
     # through all the previous calls, quadratic in the number of inputs
-    foreach inputs as $item (
+    foreach items as $item (
         {size: 0};
         _filter_input($item | f);
         if .keep then $item else empty end
     );
 
-# The inputs without the repetitions of the same @id among the last
-# $cache_size distinct ids
-def best_effort_unique($cache_size): best_effort_unique_by(."@id"; $cache_size);
+# The same for the inputs
+def best_effort_unique_by(f; $cache_size): best_effort_unique_by(inputs; f; $cache_size);
+
+# The items without the repetitions of the same @id among the last $cache_size
+# distinct ids
+def best_effort_unique(items; $cache_size): best_effort_unique_by(items; ."@id"; $cache_size);
+
+# The same for the inputs
+def best_effort_unique($cache_size): best_effort_unique(inputs; $cache_size);
