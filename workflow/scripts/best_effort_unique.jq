@@ -65,10 +65,13 @@ def best_effort_unique_by(items; f; $cache_size):
         end;
 
     # foreach, not a recursion on input: each output of a recursion goes back
-    # through all the previous calls, quadratic in the number of inputs
-    foreach items as $item (
+    # through all the previous calls, quadratic in the number of inputs. The
+    # key is computed in the source of foreach, not in its update: a generator
+    # in f (e.g. any) would leave choice points holding the cache, then copied
+    # instead of updated in place
+    foreach (items | . as $item | f | [$item, .]) as [$item, $id] (
         {size: 0};
-        _filter_input($item | f);
+        _filter_input($id);
         if .keep then $item else empty end
     );
 
